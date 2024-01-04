@@ -33,6 +33,22 @@
 * [Dive into QuickStarts](quickstarts/dive-into-quickstarts/README.md)
   * [Swan Chain: Developing Smart Contracts with Go](quickstarts/dive-into-quickstarts/swan-chain-developing-smart-contracts-with-go.md)
 
+***
+
+* [Orchestrator](orchestrator/README.md)
+  * [How to connect to Orchestrator](orchestrator/how-to-connect-to-orchestrator.md)
+  * [Computing Provider Setup](swan-testnet/swan-jupiter-testnet/computing-provider-setup/README.md)
+    * [Prerequisites](swan-testnet/swan-jupiter-testnet/computing-provider-setup/prerequisites.md)
+    * [Install the Kubernetes](swan-testnet/swan-jupiter-testnet/computing-provider-setup/install-the-kubernetes.md)
+    * [Install and config the Nginx](swan-testnet/swan-jupiter-testnet/computing-provider-setup/install-and-config-the-nginx.md)
+    * [Install the Hardware resource-exporter](swan-testnet/swan-jupiter-testnet/computing-provider-setup/install-the-hardware-resource-exporter.md)
+    * [Install the Redis service](swan-testnet/swan-jupiter-testnet/computing-provider-setup/install-the-redis-service.md)
+    * [Build and config the Computing Provider](swan-testnet/swan-jupiter-testnet/computing-provider-setup/build-and-config-the-computing-provider.md)
+    * [Install AI Inference Dependency(Optional)](swan-testnet/swan-jupiter-testnet/computing-provider-setup/install-ai-inference-dependency-optional.md)
+    * [Start the Computing Provider](swan-testnet/swan-jupiter-testnet/computing-provider-setup/start-the-computing-provider.md)
+    * [CLI of Computing Provider](swan-testnet/swan-jupiter-testnet/computing-provider-setup/cli-of-computing-provider.md)
+    * [FAQ](swan-testnet/swan-jupiter-testnet/computing-provider-setup/faq.md)
+
 ## Development Resource
 
 * [Swan Token Contract](development-resource/swan-token-contract/README.md)
@@ -45,19 +61,3 @@
   * [Before You Get Started](swan-testnet/swan-jupiter-testnet/before-you-get-started.md)
   * [Network Early Adopter](swan-testnet/swan-jupiter-testnet/network-early-adopter.md)
   * [FAQ](swan-testnet/swan-jupiter-testnet/faq.md)
-
-***
-
-* [Orchestrator](orchestrator/README.md)
-  * [How to connect to Orchestrator](orchestrator/how-to-connect-to-orchestrator.md)
-  * [Computing Provider Setup](orchestrator/computing-provider-setup/README.md)
-    * [Prerequisites](orchestrator/computing-provider-setup/prerequisites.md)
-    * [Install the Kubernetes](orchestrator/computing-provider-setup/install-the-kubernetes.md)
-    * [Install and config the Nginx](orchestrator/computing-provider-setup/install-and-config-the-nginx.md)
-    * [Install the Hardware resource-exporter](orchestrator/computing-provider-setup/install-the-hardware-resource-exporter.md)
-    * [Install the Redis service](orchestrator/computing-provider-setup/install-the-redis-service.md)
-    * [Build and config the Computing Provider](orchestrator/computing-provider-setup/build-and-config-the-computing-provider.md)
-    * [Install AI Inference Dependency(Optional)](orchestrator/computing-provider-setup/install-ai-inference-dependency-optional.md)
-    * [Start the Computing Provider](orchestrator/computing-provider-setup/start-the-computing-provider.md)
-    * [CLI of Computing Provider](orchestrator/computing-provider-setup/cli-of-computing-provider.md)
-    * [FAQ](orchestrator/computing-provider-setup/faq.md)

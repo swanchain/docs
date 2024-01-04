@@ -45,7 +45,7 @@ computing-provider collateral info
 Once you've completed the collateral deposit, follow the appropriate steps based on your CP deployment status:
 
 1. **If you haven't deployed a CP yet:**
-   * Please refer to the provided [instructions](computing-provider-setup/) to set up your Computing Provider (CP) .
+   * Please refer to the provided [instructions](../swan-testnet/swan-jupiter-testnet/computing-provider-setup/) to set up your Computing Provider (CP) .
 2. **If you have already deployed a CP:**
    * Initiate the connection to the Orchestrator by updating your CP configuration file (`config.toml`).
 
