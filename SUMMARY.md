@@ -35,19 +35,22 @@
 
 ## Orchestrator
 
-* [Orchestrator](orchestrator/orchestrator/README.md)
-  * [How to connect to Orchestrator](orchestrator/orchestrator/how-to-connect-to-orchestrator.md)
-  * [Computing Provider Setup](orchestrator/orchestrator/computing-provider-setup/README.md)
-    * [Prerequisites](orchestrator/orchestrator/computing-provider-setup/prerequisites.md)
-    * [Install the Kubernetes](orchestrator/orchestrator/computing-provider-setup/install-the-kubernetes.md)
-    * [Install and config the Nginx](orchestrator/orchestrator/computing-provider-setup/install-and-config-the-nginx.md)
-    * [Install the Hardware resource-exporter](orchestrator/orchestrator/computing-provider-setup/install-the-hardware-resource-exporter.md)
-    * [Install the Redis service](orchestrator/orchestrator/computing-provider-setup/install-the-redis-service.md)
-    * [Build and config the Computing Provider](orchestrator/orchestrator/computing-provider-setup/build-and-config-the-computing-provider.md)
-    * [Install AI Inference Dependency(Optional)](orchestrator/orchestrator/computing-provider-setup/install-ai-inference-dependency-optional.md)
-    * [Start the Computing Provider](orchestrator/orchestrator/computing-provider-setup/start-the-computing-provider.md)
-    * [CLI of Computing Provider](orchestrator/orchestrator/computing-provider-setup/cli-of-computing-provider.md)
-    * [FAQ](orchestrator/orchestrator/computing-provider-setup/faq.md)
+* [Overview](orchestrator/overview.md)
+* [As a Computing Provider](orchestrator/as-a-computing-provider/README.md)
+  * [Computing Provider Setup](orchestrator/as-a-computing-provider/computing-provider-setup/README.md)
+    * [Prerequisites](orchestrator/as-a-computing-provider/computing-provider-setup/prerequisites.md)
+    * [Install the Kubernetes](orchestrator/as-a-computing-provider/computing-provider-setup/install-the-kubernetes.md)
+    * [Install and config the Nginx](orchestrator/as-a-computing-provider/computing-provider-setup/install-and-config-the-nginx.md)
+    * [Install the Hardware resource-exporter](orchestrator/as-a-computing-provider/computing-provider-setup/install-the-hardware-resource-exporter.md)
+    * [Install the Redis service](orchestrator/as-a-computing-provider/computing-provider-setup/install-the-redis-service.md)
+    * [Build and config the Computing Provider](orchestrator/as-a-computing-provider/computing-provider-setup/build-and-config-the-computing-provider.md)
+    * [Install AI Inference Dependency(Optional)](orchestrator/as-a-computing-provider/computing-provider-setup/install-ai-inference-dependency-optional.md)
+    * [Start the Computing Provider](orchestrator/as-a-computing-provider/computing-provider-setup/start-the-computing-provider.md)
+    * [CLI of Computing Provider](orchestrator/as-a-computing-provider/computing-provider-setup/cli-of-computing-provider.md)
+    * [FAQ](orchestrator/as-a-computing-provider/computing-provider-setup/faq.md)
+  * [Connect to Orchestrator](orchestrator/as-a-computing-provider/connect-to-orchestrator.md)
+* [As a Client](orchestrator/as-a-client/README.md)
+  * [SDK](orchestrator/as-a-client/sdk.md)
 
 ## Development Resource
 
