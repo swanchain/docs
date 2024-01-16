@@ -31,7 +31,7 @@
 ## QuickStarts
 
 * [Dive into QuickStarts](quickstarts/dive-into-quickstarts/README.md)
-  * [Swan Chain: Developing Smart Contracts with Go](quickstarts/dive-into-quickstarts/swan-chain-developing-smart-contracts-with-go.md)
+  * [Developing Smart Contracts with Go](quickstarts/dive-into-quickstarts/developing-smart-contracts-with-go.md)
 
 ## Orchestrator
 
@@ -64,3 +64,10 @@
   * [Before You Get Started](swan-testnet/swan-jupiter-testnet/before-you-get-started.md)
   * [Network Early Adopter](swan-testnet/swan-jupiter-testnet/network-early-adopter.md)
   * [FAQ](swan-testnet/swan-jupiter-testnet/faq.md)
+* [Swan Saturn Testnet](swan-testnet/swan-saturn-testnet/README.md)
+  * [Before You Get Started](swan-testnet/swan-saturn-testnet/before-you-get-started/README.md)
+    * [Claim Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/claim-tokens.md)
+    * [Bridge Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens.md)
+  * [Partnership and Integration Program](swan-testnet/swan-saturn-testnet/partnership-and-integration-program.md)
+  * [Community and Educational Events](swan-testnet/swan-saturn-testnet/community-and-educational-events.md)
+  * [User Engagement and Transaction Drive](swan-testnet/swan-saturn-testnet/user-engagement-and-transaction-drive.md)
