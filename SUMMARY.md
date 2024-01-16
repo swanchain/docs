@@ -66,7 +66,7 @@
   * [FAQ](swan-testnet/swan-jupiter-testnet/faq.md)
 * [Swan Saturn Testnet](swan-testnet/swan-saturn-testnet/README.md)
   * [Before You Get Started](swan-testnet/swan-saturn-testnet/before-you-get-started/README.md)
-    * [Claim Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/claim-tokens.md)
+    * [Claim Faucet Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md)
     * [Bridge Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens.md)
   * [Partnership and Integration Program](swan-testnet/swan-saturn-testnet/partnership-and-integration-program.md)
   * [Community and Educational Events](swan-testnet/swan-saturn-testnet/community-and-educational-events.md)
