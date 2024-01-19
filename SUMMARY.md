@@ -69,5 +69,6 @@
     * [Claim Faucet Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md)
     * [Bridge Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens.md)
   * [Partnership and Integration Program](swan-testnet/swan-saturn-testnet/partnership-and-integration-program.md)
+  * [Computing Provider Program](swan-testnet/swan-saturn-testnet/computing-provider-program.md)
   * [Transaction Drive Program](swan-testnet/swan-saturn-testnet/transaction-drive-program.md)
   * [FAQ](swan-testnet/swan-saturn-testnet/faq.md)
