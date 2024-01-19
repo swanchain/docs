@@ -32,6 +32,7 @@
 
 * [Dive into QuickStarts](quickstarts/dive-into-quickstarts/README.md)
   * [Developing Smart Contracts with Go](quickstarts/dive-into-quickstarts/developing-smart-contracts-with-go.md)
+  * [Deploying Your First Smart Contract with Remix](quickstarts/dive-into-quickstarts/deploying-your-first-smart-contract-with-remix.md)
 
 ## Orchestrator
 
@@ -45,6 +46,7 @@
     * [Install the Redis service](orchestrator/as-a-computing-provider/computing-provider-setup/install-the-redis-service.md)
     * [Build and config the Computing Provider](orchestrator/as-a-computing-provider/computing-provider-setup/build-and-config-the-computing-provider.md)
     * [Install AI Inference Dependency(Optional)](orchestrator/as-a-computing-provider/computing-provider-setup/install-ai-inference-dependency-optional.md)
+    * [Config and Receive UBI Tasks(optional)](orchestrator/as-a-computing-provider/computing-provider-setup/config-and-receive-ubi-tasks-optional.md)
     * [Start the Computing Provider](orchestrator/as-a-computing-provider/computing-provider-setup/start-the-computing-provider.md)
     * [CLI of Computing Provider](orchestrator/as-a-computing-provider/computing-provider-setup/cli-of-computing-provider.md)
     * [FAQ](orchestrator/as-a-computing-provider/computing-provider-setup/faq.md)
@@ -66,9 +68,11 @@
   * [FAQ](swan-testnet/swan-jupiter-testnet/faq.md)
 * [Swan Saturn Testnet](swan-testnet/swan-saturn-testnet/README.md)
   * [Before You Get Started](swan-testnet/swan-saturn-testnet/before-you-get-started/README.md)
+    * [Set Up MetaMask](swan-testnet/swan-saturn-testnet/before-you-get-started/set-up-metamask.md)
     * [Claim Faucet Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md)
     * [Bridge Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens.md)
   * [Partnership and Integration Program](swan-testnet/swan-saturn-testnet/partnership-and-integration-program.md)
   * [Computing Provider Program](swan-testnet/swan-saturn-testnet/computing-provider-program.md)
   * [Transaction Drive Program](swan-testnet/swan-saturn-testnet/transaction-drive-program.md)
+  * [Computing Provider Program](swan-testnet/swan-saturn-testnet/computing-provider-program-1.md)
   * [FAQ](swan-testnet/swan-saturn-testnet/faq.md)
