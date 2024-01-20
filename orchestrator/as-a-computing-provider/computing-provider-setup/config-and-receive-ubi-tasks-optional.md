@@ -76,7 +76,7 @@ UbiTask = true
 
 Note: Follow [this guide](https://app.gitbook.com/s/y5iPODl9iwLxyYirHs2D/api-reference) to claim Swan-ETH and bridge it to Swan Saturn Chain.
 
-### **Step 4: Initialization:**
+### **Step 4: Initialization**
 
 1.  Deploy a contract with CP's basic info:
 
@@ -92,7 +92,7 @@ Note: Follow [this guide](https://app.gitbook.com/s/y5iPODl9iwLxyYirHs2D/api-ref
     The height of the block: 44900354
     ```
 
-### **Step 5: Account Management:**
+### **Step 5: Account Management**
 
 Use `computing-provider account` subcommands to update CP details:
 
@@ -113,4 +113,23 @@ COMMANDS:
 
 OPTIONS:
    --help, -h  show help
+```
+
+### Step 6: Check the Status of UBI-Task&#x20;
+
+To check the UBI task list, use the following command:
+
+```
+computing-provider ubi-task list
+```
+
+Example output:
+
+```
+TASK ID TASK TYPE       ZK TYPE         TRANSACTION HASH                                                        STATUS  REWARD  CREATE TIME         
+2       CPU             fil-c2-512M     0xb06b3a8c2b2b96b564777a3866e27ce7c61631f77e5de3196e93eb916b0d2575      success 2.0     2024-01-20 03:30:30
+33      CPU             fil-c2-512M     0x7567435e83a4a019a6356da8cf33e64a071f2d3355fce5289b9c17cf0144f282      success 2.0     2024-01-18 15:58:21
+13      CPU             fil-c2-512M     0x7b3081314891aad3788c84935c67f9be0a8acc6b4fc77c5aa6fdfda728877fde      success 2.0     2024-01-20 04:27:40
+238     CPU             fil-c2-512M     0xb8eb1f7b3cfc8210fa5546adc528f230241110e5cc9b4900725a9da28895aad9      success 2.0     2024-01-18 17:08:21
+23      CPU             fil-c2-512M     0xb315b26324ce2b7e1bf191407d328250d11f25fd83c9cd5d8459fd274d661809      success 
 ```

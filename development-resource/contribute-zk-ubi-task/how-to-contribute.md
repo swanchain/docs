@@ -150,7 +150,9 @@ const (
 )
 ```
 
-> _**Note**: If the configurations mentioned above (GPU/CPU) do not meet your requirements, please leave your specific requirements in the_ [_GitHub issue_](https://github.com/swanchain/devgrants/issues)_._
+<table><thead><tr><th width="87">resourceId</th><th width="87">type</th><th width="87">cpu</th><th width="87">memory_gb</th><th width="87">storage_gb</th></tr></thead><tbody><tr><td>1</td><td>CPU512</td><td>5</td><td>3</td><td>30</td></tr><tr><td>2</td><td>CPU32G</td><td>8</td><td>275</td><td>50</td></tr><tr><td>3</td><td>GPU512</td><td>5</td><td>3</td><td>30</td></tr><tr><td>4</td><td>GPU32G</td><td>8</td><td>275</td><td>50</td></tr></tbody></table>
+
+_**Note**: If the configurations mentioned above (GPU/CPU) do not meet your requirements, please leave your specific requirements in the_ [_GitHub issue_](https://github.com/swanchain/devgrants/issues)_._
 
 ### Step 3: Get the ZK-Task Proof
 
