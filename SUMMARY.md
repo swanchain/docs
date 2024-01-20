@@ -58,6 +58,9 @@
 
 * [Swan Token Contract](development-resource/swan-token-contract/README.md)
   * [Acquire Testnet USDC and MATIC tokens](development-resource/swan-token-contract/acquire-testnet-usdc-and-matic-tokens.md)
+* [Contribute zk-UBI-task](development-resource/contribute-zk-ubi-task/README.md)
+  * [How to Contribute](development-resource/contribute-zk-ubi-task/how-to-contribute.md)
+  * [Example](development-resource/contribute-zk-ubi-task/example.md)
 
 ## Swan Testnet
 
@@ -71,8 +74,10 @@
     * [Set Up MetaMask](swan-testnet/swan-saturn-testnet/before-you-get-started/set-up-metamask.md)
     * [Claim Faucet Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md)
     * [Bridge Tokens](swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens.md)
+  * [Transaction Drive Program](swan-testnet/swan-saturn-testnet/transaction-drive-program.md)
+  * [Community and Educational Events](swan-testnet/swan-saturn-testnet/community-and-educational-events.md)
   * [Partnership and Integration Program](swan-testnet/swan-saturn-testnet/partnership-and-integration-program.md)
   * [Computing Provider Program](swan-testnet/swan-saturn-testnet/computing-provider-program.md)
-  * [Transaction Drive Program](swan-testnet/swan-saturn-testnet/transaction-drive-program.md)
-  * [Computing Provider Program](swan-testnet/swan-saturn-testnet/computing-provider-program-1.md)
+  * [Bug Bounty Program](swan-testnet/swan-saturn-testnet/bug-bounty-program.md)
+  * [Developer Grant Program](swan-testnet/swan-saturn-testnet/developer-grant-program.md)
   * [FAQ](swan-testnet/swan-saturn-testnet/faq.md)
