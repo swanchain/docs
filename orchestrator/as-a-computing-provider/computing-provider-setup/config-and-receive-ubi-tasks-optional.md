@@ -28,7 +28,8 @@ For more details please refer to[ ](../../../getting-started/protocol-stack/econ
 
     ```bash
     export FIL_PROOFS_PARAMETER_CACHE=/var/tmp/filecoin-proof-parameters
-    lotus-shed fetch-params --proving-params 32GiB # 512MiB, 32GiB represent sector sizes
+    lotus-shed fetch-params --proving-params 512MiB # 512MiB represent sector size
+    lotus-shed fetch-params --proving-params 32GiB # 32GiB represent sector size
     ```
 3.  Configure environment variables in `fil-c2.env` under CP repo ($CP\_PATH):
 
