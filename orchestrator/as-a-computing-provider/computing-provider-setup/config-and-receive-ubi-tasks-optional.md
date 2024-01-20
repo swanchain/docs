@@ -17,13 +17,12 @@ These tasks offer varying UBI rewards, and the UBI engine periodically checks fo
 
 For more details please refer to[ ](../../../getting-started/protocol-stack/economic-system/swan-universal-basic-income-ubi.md)[Universal Basic Income here](../../../getting-started/protocol-stack/economic-system/swan-universal-basic-income-ubi.md)
 
-### **Step1: Prerequisites:** Perform Filecoin Commit2 (fil-c2) UBI tasks.
+### **Step 1: Prerequisites:** Perform Filecoin Commit2 (fil-c2) UBI tasks.
 
 1.  Download the tool for Filecoin Commit2 task parameters:
 
     ```bash
-    wget https://286cb2c989.acl.multichain.storage/ipfs/QmTTD7kcAR9i3SJ8CXoncinkYNerP9t3DUvib8H8MfAaph?filename=shed.zip -O shed.zip
-    unzip shed.zip
+    wget https://github.com/swanchain/ubi-benchmark/releases/download/untagged-fa6d8d728d32d500d16d/lotus-shed
     ```
 2.  Download parameters (specify path with FIL\_PROOFS\_PARAMETER\_CACHE variable):
 
@@ -38,16 +37,46 @@ For more details please refer to[ ](../../../getting-started/protocol-stack/econ
     RUST_GPU_TOOLS_CUSTOM_GPU="GeForce RTX 3080:8704" 
     ```
 
-Adjust the value of `RUST_GPU_TOOLS_CUSTOM_GPU` based on the GPU used by the CP's Kubernetes cluster for fil-c2 tasks.
+* Adjust the value of `RUST_GPU_TOOLS_CUSTOM_GPU` based on the GPU used by the CP's Kubernetes cluster for fil-c2 tasks.
+* For more device choices, please refer to this page:[https://github.com/filecoin-project/bellperson](https://github.com/filecoin-project/bellperson)
 
-### **Step2: Modify CP config to enable UBI tasks in `fil-c2.env`:**
+### **Step 2: Modify CP config to enable UBI tasks in** `cp config.toml`**:**
 
 ```ini
 [API]
 UbiTask = true
 ```
 
-### **Step3: Initialization:**
+### Step 3: Initialize a Wallet and Deposit Swan-ETH
+
+1.  Generate a new wallet address:
+
+    ```bash
+    computing-provider wallet new
+    ```
+
+    Example output:
+
+    ```
+    0x7791f48931DB81668854921fA70bFf0eB85B8211
+    ```
+2.  Deposit Swan-ETH to the generated wallet address as a gas fee:
+
+    ```bash
+    computing-provider wallet send --from 0xFbc1d38a2127D81BFe3EA347bec7310a1cfa2373 0x7791f48931DB81668854921fA70bFf0eB85B8211 0.001
+    ```
+
+    Example output:
+
+    ```
+    0xa255d9046eff7c7c7ef6f4b55efcf97b62c79aeece748ab2188de21da620f29b
+    ```
+
+
+
+Note: Follow [this guide](https://app.gitbook.com/s/y5iPODl9iwLxyYirHs2D/api-reference) to claim Swan-ETH and bridge it to Swan Saturn Chain.
+
+### **Step 4: Initialization:**
 
 1.  Deploy a contract with CP's basic info:
 
@@ -63,7 +92,7 @@ UbiTask = true
     The height of the block: 44900354
     ```
 
-**Step4: Account Management:**
+### **Step 5: Account Management:**
 
 Use `computing-provider account` subcommands to update CP details:
 
