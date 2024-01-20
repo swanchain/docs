@@ -6,7 +6,7 @@ To contribute your zk-tasks to the UBI Task Pool, please follow these steps. For
 
 Provide details below and create a new [GitHub Issue](https://github.com/swanchain/devgrants/issues).
 
-**ZK-Task Information:**
+**ZK-Task Information:**&#x20;
 
 * Describe your zk-task, including task details, completion requirements, and minimal resource prerequisites.
 * **Resource Requirements:**
@@ -68,7 +68,7 @@ You can submit your zk-task to the pool through the API.
   "zk_type": "fil-c2-512M",
   "input_param": "example_input_zsdt_url",
   "verify_param": "example_verify_url",
-  "resource_id": 123
+  "resource_id": 1
 }
 ```
 
