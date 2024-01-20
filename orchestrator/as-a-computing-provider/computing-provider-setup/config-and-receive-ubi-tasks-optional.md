@@ -41,7 +41,7 @@ For more details please refer to[ ](../../../getting-started/protocol-stack/econ
 * Adjust the value of `RUST_GPU_TOOLS_CUSTOM_GPU` based on the GPU used by the CP's Kubernetes cluster for fil-c2 tasks.
 * For more device choices, please refer to this page:[https://github.com/filecoin-project/bellperson](https://github.com/filecoin-project/bellperson)
 
-### **Step 2: Modify CP config to enable UBI tasks in** `cp config.toml`**:**
+### **Step 2: Enable UBI tasks in CP's** `config.toml`**:**
 
 ```ini
 [API]
