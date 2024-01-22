@@ -10,7 +10,7 @@ Show off Swan Chain's potential and earn rewards: [https://saturn-testnet.swanch
 
 ## Duration
 
-22nd January 2024, 00:00 (EST) - 22nd March 2024, 00:00 (EST)
+24th January 2024, 09:00 (EST) - 22nd March 2024, 00:00 (EST)
 
 ## **Rules and Participation**
 

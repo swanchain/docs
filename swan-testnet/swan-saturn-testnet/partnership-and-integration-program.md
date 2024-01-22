@@ -4,7 +4,7 @@ Swan Chain is seeking integration partnerships with innovative platforms and eco
 
 ## Duration
 
-25th January 2024, 00:00 (EST) - 25th March 2024, 00:00 (EST)
+22th January 2024, 00:00 (EST) - 22th March 2024, 00:00 (EST)
 
 ### **How to Participate:**
 

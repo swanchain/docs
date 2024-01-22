@@ -22,7 +22,7 @@ For more details please refer to[ ](../../../getting-started/protocol-stack/econ
 1.  Download the tool for Filecoin Commit2 task parameters:
 
     ```bash
-    wget https://github.com/swanchain/ubi-benchmark/releases/download/untagged-fa6d8d728d32d500d16d/lotus-shed
+    wget  https://github.com/swanchain/ubi-benchmark/releases/download/v0.0.1/lotus-shed
     ```
 2.  Download parameters (specify path with FIL\_PROOFS\_PARAMETER\_CACHE variable):
 
