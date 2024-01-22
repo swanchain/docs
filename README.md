@@ -2,9 +2,7 @@
 description: An L2 for decentralized cloud computing
 ---
 
-# Welcome to the Swan Docs
-
-![](<.gitbook/assets/image (58).png>)
+# A gentle introduction to Swan Chain
 
 Swan Chain built as an Ethereum Layer 2 solution, is designed to enhance decentralized computing networks. It integrates a tool suite that streamers developers' access to resources across multiple blockchains.
 
