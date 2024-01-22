@@ -8,7 +8,7 @@ Swan's Community and Educational Events is a vital component of the Swan Chain S
 
 #### Duration
 
-22nd January 2024, 09:00 (EST) - 22nd March 2024, 00:00 (EST)
+22nd January 2024, 10:00 (EST) - 22nd March 2024, 00:00 (EST)
 
 **RULES/TERMS:**
 
@@ -17,20 +17,19 @@ Swan's Community and Educational Events is a vital component of the Swan Chain S
 
 **HOW TO JOIN:**
 
-* Visit Swan Space on Galxe
+* Visit Swan Space on Galxe&#x20;
 
 **REWARD STRUCTURE (350,000 SWAN):**
 
 * Earn OAT as a reward with no participant limit.
-* Addresses claiming OAT Swan Saturn and [Early Adopter (Jupiter Testnet)](https://docs.google.com/spreadsheets/d/1yS4Eh\_PWTz6PpSOra1Cgiv-vs2AtjQV\_i4ript6W0x8/edit#gid=49911947) are eligible to join the airdrop.
+* Addresses claiming OAT Swan Saturn and [Network Early Adopter Winners](https://docs.google.com/spreadsheets/d/1yS4Eh\_PWTz6PpSOra1Cgiv-vs2AtjQV\_i4ript6W0x8/edit#gid=49911947) are eligible to join the raffle airdrop.
 * Airdrop Prize Pool: 350,000 SWAN.
-* Estimated reward per participant (assuming 10k participants): 35 SWAN each.
 
-## **Zealy**
+## **ZealyA**
 
 #### **Duration:**&#x20;
 
-22nd January 2024, 09:00 (EST) - 22nd March 2024, 00:00 (EST)
+22nd January 2024, 10:00 (EST) - 22nd March 2024, 00:00 (EST)
 
 **RULES/TERMS:**
 
@@ -38,21 +37,18 @@ Swan's Community and Educational Events is a vital component of the Swan Chain S
 * Attend webinars, participate in AMAs, and engage in contests (content creation, quiz competitions).
 * Participants earn XP for completing tasks; more tasks lead to more XP.
 * Top 1-30 receive OG Elite, Top 31-100 receive OG Platinum.
-* Winners of OG Elite and Platinum in the previous campaign receive SWAN tokens.
 
 **HOW TO JOIN:**
 
 * Join Swan Saturn community on Zealy ⇒ [Zealy Swan Community](https://zealy.io/c/swan/questboard).
 
-**Reward Structure ($97,000):**
+**REWARD STRUCTURE ($100,000):**
 
 * Winners are the top 100 on the Leaderboard.
-* Top 30: Get OG Elite (1,000 SWAN each = 37,000 SWAN).
-* Top 31-100: Get OG Platinum (500 SWAN each = 60,000 SWAN).
+* Top 1-30: Get OG Elite (1,000 SWAN/each)
+* Top 31-100: Get OG Platinum (500 SWAN/each)
 
 ### **Ambassador Compensation**
-
-**First Payday:** April 20, 2024
 
 **Rules/Terms:**
 
@@ -67,7 +63,6 @@ Swan's Community and Educational Events is a vital component of the Swan Chain S
 **Reward Structure (250,000 SWAN in total):**
 
 * Prize Pool/month: 20,000 SWAN.
-* Ending time: Unidentified, depending on effectiveness and budget.
 
 ### **AMA and Webinar**
 
@@ -78,6 +73,7 @@ Swan's Community and Educational Events is a vital component of the Swan Chain S
 **Reward Structure:**
 
 * 500 SWAN for each event.
-* Estimated total for 4 AMAs: 2,000 SWAN.
+
+
 
 \
