@@ -8,15 +8,11 @@ description: This is a tutorial on how to claim test tokens from the Swan faucet
 
 **1.Join the**[ **Swan official Discord**](https://discord.com/invite/FEv2hMby9A)**.**
 
-Go to the[ usdc-faucet](https://discord.gg/RuHBdBqcWR) channel under the Swan - Testnet section, and type the command `$swan_usdc_faucet {your-wallet-address}` to claim.
-
-**2.Switch to the Swan Saturn Chain :**
-
-Follow the [guide](set-up-metamask.md) to import test-USDC tokens into your wallet, and check your balance.
+> _**The faucet will be ready on Jan. 24th**_
 
 ### Step 2: **Fund Your Wallet with Sepolia ETH Tokens**
 
-To process payments in addition to **test\_USDC**, you will require **SwanETH** tokens, which are bridged at a 1:1 ratio with **Sepolia ETH**. Therefore, it is necessary to obtain Sepolia Testnet ETH tokens initially from Alchemy and Quicknode faucets.
+To process payments in addition to **test\_SWAN**, you will require **SwanETH** tokens, which are bridged at a 1:1 ratio with **Sepolia ETH**. Therefore, it is necessary to obtain Sepolia Testnet ETH tokens initially from Alchemy and Quicknode faucets.
 
 **Claim Sepolia ETH on the Alchemy Sepolia Faucet:**
 
