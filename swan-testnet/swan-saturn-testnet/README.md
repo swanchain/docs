@@ -1,6 +1,6 @@
 # Swan Saturn Testnet
 
-### Swan Saturn Info
+Swan Saturn Info
 
 RPC: [https://saturn-rpc.swanchain.io](https://saturn-rpc.swanchain.io)&#x20;
 
