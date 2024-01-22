@@ -18,7 +18,7 @@ A: On the Swan Chain Testnet, you can:
 A: Various programs and incentives are available to reward your participation, with a total allocation of 3,000,000 SWAN tokens across these programs:
 
 * [Transaction Drive Program](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/transaction-drive-program): Earn SWAN tokens by making transactions on the testnet.
-* [Computing Provider Program](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/computing-provider-program): Receive rewards for contributing computing power and referring new providers.
+* [Computing Provider Program](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/computing-provider-program): Receive rewards for contributing computing power.
 * [Community and Educational Events](https://discord.com/channels/867879887871672331/1186156859485343865): Gain insights and earn tokens by joining webinars, AMAs, quizzes, and more.
 * [Partnership and Integration Program](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/partnership-and-integration-program): Collaborate with us for integration benefits and mutual growth.
 * [Bug Bounty Program:](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/bug-bounty-program) Report bugs and vulnerabilities for rewards.
