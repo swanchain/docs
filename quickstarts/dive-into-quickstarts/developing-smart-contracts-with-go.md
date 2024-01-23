@@ -1,4 +1,4 @@
-# Swan Chain: Developing Smart Contracts with Go
+# Developing Smart Contracts with Go
 
 #### &#x20;Introduction to Swan Chain and Connecting to RPC
 
@@ -11,7 +11,7 @@ Setup your RPC URL
 
 <pre><code>package main
 // Shared RPC URL
-<strong>const rpcURL = "https://rpc-testnet.swanchain.io" // Replace with your testnet's RPC URL
+<strong>const rpcURL = "https://saturn-rpc.swanchain.io" // Replace with your testnet's RPC URL
 </strong></code></pre>
 
 ```
