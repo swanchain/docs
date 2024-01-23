@@ -1,5 +1,16 @@
 # Connect to Orchestrator
 
+**Prerequisites :**
+
+* **SwanETH**
+  * Ensure that you have sufficient SwanETH for collateral.&#x20;
+  * You can obtain SwanETH following this [guide](../../swan-testnet/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md) and [bridge](../../swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens.md) them from Sepolia to Swan Saturn Chain
+* **Obtain Filecoin V28 Parameters(optional)**
+  * To complete [UBI tasks](computing-provider-setup/config-and-receive-ubi-tasks-optional.md), you need to have the Filecoin V28 parameters.&#x20;
+  * Make sure you have the parameters corresponding to 512M and 32G sectors, as these cater to different task requirements.
+
+Ensure that you have completed all these preparations before connecting to the Orchestrator.&#x20;
+
 **Step 1: Setup Your Computing Provider**
 
 Follow this [guide](computing-provider-setup/) to deploy your Computing Provider and make sure you have the latest version installed.
@@ -8,17 +19,17 @@ Follow this [guide](computing-provider-setup/) to deploy your Computing Provider
 
 **Step 2: Deposit SWAN Tokens as Collateral**
 
-To connect to the Orchestrator, a minimum of **50 SWAN** tokens must be deposited as collateral. Use the following command to deposit tokens into the contract:
+To connect to the Orchestrator, a minimum of **0.01 SwanETH** tokens must be deposited as collateral for each task. Use the following command to deposit tokens into the contract:
 
 ```bash
 # Collateral deposit command
 computing-provider collateral [Wallet Address] [Amount]
 ```
 
-_Example: Deposit 1000 Swan tokens as collateral_
+_Example: Deposit 1 SwanETH tokens as collateral_
 
 ```bash
-computing-provider collateral 0xFbc1d3...2373 1000
+computing-provider collateral 0xFbc1d3...2373 1
 ```
 
 **Step 3: Real-Time Monitoring**

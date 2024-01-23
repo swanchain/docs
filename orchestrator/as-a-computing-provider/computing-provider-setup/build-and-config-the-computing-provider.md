@@ -25,7 +25,7 @@ cp config.toml.sample config.toml
 **Important Update:**&#x20;
 
 1. **Connection Update:** The Computing Provider has transitioned from connecting to the **LAG Server** to connecting to the **Swan Hub**.
-2. **Collateral Requirement:** CPs are now mandated to deposit a minimum of **50 SWAN** tokens as collateral into the contract. Failure to meet this requirement will result in the inability to receive task assignments.
+2. **Collateral Requirement:** For each task, CPs are now mandated to deposit a minimum of **0.01 SwanETH** tokens as collateral into the contract. Failure to meet this requirement will result in the inability to receive task assignments.
 3. **Real-Time Monitoring:** Computing Providers now support real-time monitoring of collateral balances. If the balance falls below the configured threshold, a warning will be logged.
 {% endhint %}
 
@@ -36,28 +36,25 @@ Step4: Update your configuration file (config.toml) as follows, paying special a
 Port = 8085                                     # The port number that the web server listens on
 MultiAddress = "/ip4/<public_ip>/tcp/<port>"    # The multiAddress for libp2p
 Domain = ""                                     # The domain name
+NodeName = ""                                   # The computing-provider node name
 
 RedisUrl = "redis://127.0.0.1:6379"           # The redis server address
 RedisPassword = ""                            # The redis server access password
 
+[UBI]
+UbiTask = true                                 # Accept the UBI task (Default: true)
+UbiEnginePk = "0xf5b7F848FaB22bdFD689Fedf26AA31bD5e890fCD"  # UBI Engine's public key, CP only accept the task from this UBI engine 
+UbiUrl ="https://ubi-task.swanchain.io/v1"     # UBI Engine's API address
+
 [LOG]
-CrtFile = "/YOUR_DOMAIN_NAME_CRT_PATH/server.crt"	# Your domain name SSL .crt file path
-KeyFile = "/YOUR_DOMAIN_NAME_KEY_PATH/server.key"   	# Your domain name SSL .key file path
+CrtFile = "/YOUR_DOMAIN_NAME_CRT_PATH/server.crt"   # Your domain name SSL .crt file path
+KeyFile = "/YOUR_DOMAIN_NAME_KEY_PATH/server.key"   # Your domain name SSL .key file path
 
 [HUB]
-ServerUrl = "https://swanhub-cali.swanchain.io"     # The swan hub API address
-AccessToken = ""                                    # Login to"https://testnet-provider.lagrangedao.org/provider-status"-> show API-KEY 
-WalletAddress = ""                                  # The cp wallet address
+ServerUrl = "https://orchestrator-api.swanchain.io"     # The Orchestrator's API address
+AccessToken = ""                                    # The Orchestrator's access token, Acquired from "https://orchestrator.swanchain.io" 
+WalletAddress = ""                                  # The cp‘s wallet address
 BalanceThreshold= 50                                # The cp’s collateral balance threshold
-
-[RPC]
-GOERLI_URL = "https://goerli.infura.io/v3/"
-SWAN_TESTNET ="https://rpc-testnet.swanchain.io"
-SWAN_MAINNET= ""
-
-[CONTRACT]
-SWAN_CONTRACT="0x407a5856050053CF1DB54113bd9Ea9D2Eeee7C35"
-SWAN_COLLATERAL_CONTRACT="0xaAea25dF7D20f2098B816486880E4b706DD57044"
 
 [MCS]
 ApiKey = ""                                   # Acquired from "https://www.multichain.storage" -> setting -> Create API Key
@@ -65,10 +62,18 @@ BucketName = ""                               # Acquired from "https://www.multi
 Network = "polygon.mainnet"                   # polygon.mainnet for mainnet, polygon.mumbai for testnet
 FileCachePath = "/tmp"                        # Cache directory of job data
 
-[Registry]                                    
+[Registry]
 ServerAddress = ""                            # The docker container image registry address, if only a single node, you can ignore
 UserName = ""                                 # The login username, if only a single node, you can ignore
 Password = ""                                 # The login password, if only a single node, you can ignore
+
+[RPC]
+SWAN_TESTNET ="https://saturn-rpc.swanchain.io"  # Swan testnet RPC
+SWAN_MAINNET= ""								   # Swan mainnet RPC
+
+[CONTRACT]
+SWAN_CONTRACT="0x91B25A65b295F0405552A4bbB77879ab5e38166c"   # Swan token's contract address
+SWAN_COLLATERAL_CONTRACT="0xd0370c1D117653Be799AC697FdfB3C8B1A80Dec1"   # Swan's collateral address
 ```
 
 **Note: You can check your token balance and collateral using the following command:**
@@ -80,6 +85,6 @@ computing-provider collateral info
 # collateral 
 computing-provider collateral [Wallet Address] [amount]
 
-Example: Deposit 1000 Swan tokens as collateral
-computing-provider collateral 0xFbc1d3...2373 1000
+Example: Deposit 1 SwanETH tokens as collateral
+computing-provider collateral 0xFbc1d3...2373 1
 ```
