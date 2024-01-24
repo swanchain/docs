@@ -6,9 +6,16 @@ description: This is a tutorial on how to claim test tokens from the Swan faucet
 
 ### Step 1: Claim **test** tokens from Discord Faucet:
 
-**1.Join the**[ **Swan official Discord**](https://discord.com/invite/FEv2hMby9A)**.**
+**1.Join the**[ **Swan official Discord**](https://discord.com/invite/FEv2hMby9A) and go to the [**swan-faucet** ](https://discord.com/channels/867879887871672331/1174304906031661076)channel under the **SWAN - TESTNET** section.
 
-> _**The faucet will be ready on Jan. 24th**_
+1. Type the command $swan\_faucet {your-wallet-address}.
+2. Switch to the Swan Chain, import tokens into your wallet, and check your balance.
+
+`Token contract address:`
+
+`0x91B25A65b295F0405552A4bbB77879ab5e38166c`
+
+
 
 ### Step 2: **Fund Your Wallet with Sepolia ETH Tokens**
 

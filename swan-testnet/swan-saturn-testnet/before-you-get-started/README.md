@@ -10,6 +10,7 @@ Here's what you'll need before you ge started:
 
 Before immersing yourself in the Swan Saturn Testnet Campaign, ensure you make the necessary preparations:
 
-* Set up your Metamask Wallet&#x20;
-* Fund your Wallet with SwanETH&#x20;
-* Fund your Wallet with Swan test SWAN
+* [Set up your Metamask Wallet ](set-up-metamask.md)
+* [Fund your Wallet with testSWAN & SepoliaETH](claim-faucet-tokens.md)
+* [Bridge Sepolia ETH to Swan Chain](bridge-tokens.md)
+
