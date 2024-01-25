@@ -12,8 +12,9 @@ Get ready to contribute to the [**Swan Chain Saturn Testnet** ](http://saturn-te
 
 ## **How to Participate**
 
-1. **Deploy a Computing Provider:** Follow the [easy-to-understand documentation](https://docs.swanchain.io/orchestrator/as-a-computing-provider/computing-provider-setup) to get started.
-2. **Maintain Uptime:** Keep your provider running smoothly with an uptime exceeding 90%. Monitor your status through [the dashboard](https://orchestrator.swanchain.io/).
+1. **Sign Up:** Fill this[ registration form](https://docs.google.com/forms/d/e/1FAIpQLSdARmvfjo6w7pNMdL6qlmGHFbBcQwRhShCEjiy8MaMNEERe\_A/viewform?usp=sf\_link) with your detailed informartion.
+2. **Deploy a Computing Provider:** Follow the [easy-to-understand documentation](https://docs.swanchain.io/orchestrator/as-a-computing-provider/computing-provider-setup) to get started.
+3. **Maintain Uptime:** Keep your provider running smoothly with an uptime exceeding 90%. Monitor your status through [the dashboard](https://orchestrator.swanchain.io/).
 
 ## Reward Structure
 

@@ -14,9 +14,18 @@ Show off Swan Chain's potential and earn rewards: [https://saturn-testnet.swanch
 
 ## **Rules and Participation**
 
-* _Eligibility:_ Open to all Swan Chain testnet users.
-* _Task:_ Engage in on-chain activities such as transactions, smart contract interactions, or using DApps like [Lagrange](https://lagrangedao.org/spaces) on Swan Chain.
-* _Monitoring:_ Activities are automatically tracked on the [https://saturn-explorer.swanchain.io/](https://saturn-explorer.swanchain.io/).
+**1. Eligibility:** Open to all Swan Chain testnet users.
+
+**2. Task:**
+
+Engage in on-chain activities such as:
+
+* [Deploying smart contracts](https://docs.swanchain.io/quickstarts/dive-into-quickstarts/developing-smart-contracts-with-go)
+* Transferring tokens
+* [Bridging tokens](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens)
+* Using dApps on Swan Chain, including deploying [Lagrange spaces](https://docs.lagrangedao.org/spaces), etc.
+
+**3. Monitoring**_:_ Activities are automatically tracked on the [https://saturn-explorer.swanchain.io/](https://saturn-explorer.swanchain.io/).
 
 {% hint style="info" %}
 We may, at our sole discretion, modify or terminate your right to receive the prize upon discovery of any fraudulent and dishonest acts conducted by you in order to increase transaction counts under the Transaction Drive Program. Our decision shall be final and we will not enter into any discussion regarding this matter.
