@@ -48,16 +48,16 @@ Use high-density GPUs like Nvidia H100s, A100s, or top consumer models to receiv
 {% hint style="info" %}
 **High-density GPU reward details:**
 
+* 4090: 3X
 * H100: 4X
-* H200: 10X
-* H800: 6X
 * A100: 4X
 * A6000: 4X
 * A10: 4X
 * A6000: 4X
-* L40S: 8X
+* H800: 6X
 * L40: 7X
-* 4090: 3X
+* L40S: 8X
+* H200: 10X
 {% endhint %}
 
 ### **3. Regional Computing Dao Pilot Rewards (50,000 SWAN)**
