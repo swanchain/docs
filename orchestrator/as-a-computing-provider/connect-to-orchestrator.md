@@ -17,7 +17,7 @@ Follow this [guide](computing-provider-setup/) to deploy your Computing Provider
 
 {% embed url="https://github.com/swanchain/go-computing-provider" %}
 
-**Step 2: Deposit SWAN Tokens as Collateral**
+**Step 2: Deposit SwanETH Tokens as Collateral**
 
 To connect to the Orchestrator, a minimum of **0.01 SwanETH** tokens must be deposited as collateral for each task. Use the following command to deposit tokens into the contract:
 
