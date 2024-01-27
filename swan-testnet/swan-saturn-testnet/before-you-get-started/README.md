@@ -6,7 +6,7 @@ Here's what you'll need before you ge started:
 
 **Payment to Computing Providers:** In addition to gas fees, you'll need to pay Computing Providers in **SWAN** to exchange their computing resources for powering your Space (Application).
 
-**Collateral (Required for CPs Only)**: CPs are now mandated to deposit a minimum of 50 **SWAN** tokens as collateral into the contract. Failure to meet this requirement will result in the inability to receive task assignments.
+**Collateral (Required for CPs Only)**: CPs are now mandated to deposit a minimum of **0.01** **SwanETH**  per task as collateral into the contract. Failure to meet this requirement will result in the inability to receive task assignments.
 
 Before immersing yourself in the Swan Saturn Testnet Campaign, ensure you make the necessary preparations:
 
