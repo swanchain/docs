@@ -68,3 +68,5 @@ Click the blue "readMessage" button to read the on-chain message.
 <figure><img src="https://lh7-us.googleusercontent.com/Og4j16JQNEGhVqxe0p_t9B4prneNgTh_SxOr0g3hOU8q_uZ_7eUxCYIf6nj1LSGxQ4_Is3p_lE3IVGV7qLarKK9c9xZo93LBdep6PmKfsy_MHzJrB5o8XBfnw5e1A__F55nqaKJ-_VCsRyZmO-IGqG0" alt=""><figcaption></figcaption></figure>
 
 Now you've successfully deployed and interacted with your first smart contract using Remix and MetaMask.
+
+{% embed url="https://www.youtube.com/watch?time_continue=15&v=pwDs_il-2U0&embeds_referring_euri=https%3A%2F%2Fcdn.iframe.ly%2F&source_ve_path=Mjg2NjMsMjg2NjY&feature=emb_logo" %}

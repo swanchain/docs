@@ -117,15 +117,13 @@ contract MessageContract {
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-{% embed url="https://youtu.be/7AagMh-WdoA?si=avxXdud0HmFPJGt0" %}
+{% embed url="https://www.youtube.com/watch?v=7AagMh-WdoA" %}
 
 #### Writing and Reading from a Smart Contract
 
 * Setting up Go for Smart Contract Interaction
 * Writing Data to a Smart Contract on Swan Chain
-* Reading and Interpreting Data from a Smart Contra
-
-
+* Reading and Interpreting Data from a Smart Contract
 
 Source code can be found here:
 
