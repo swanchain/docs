@@ -20,23 +20,23 @@ Tutorials&#x20;
 
 **A**:
 
-1.  Replace the UbiEnginePk in the $CP\_PATH/config.toml file with the ownerAddress:
+1.  Replace the UbiEnginePk in the **`$CP_PATH/config.toml`** file with the `ownerAddress`:
 
     ```toml
     [UBI]
     UbiEnginePk ="0xxxxx"
     ```
-2. Restart computing-provider.
+2. Restart `computing-provider`.
 3.  Generate the signature using the following command:
 
     ```bash
-    computing-provider wallet sign <0xxxxx> <nodeid+id>
+    computing-provider wallet sign <ownerAddress> <nodeid+id>
     ```
 
-    For example, if nodeid is abcd and taskid is 1:
+    For example, if nodeid is `abcd` and taskid is `1`:
 
     ```bash
-    computing-provider wallet sign <0xxxxx> abcd1
+    computing-provider wallet sign <ownerAddress> abcd1
     ```
 4.  Prepare raw data for the ubi-task test task:
 
@@ -48,18 +48,18 @@ Tutorials&#x20;
         "zk_type": "fil-c2-512M",
         "input_param": "https://286cb2c989.acl.multichain.storage/ipfs/QmYg4CfA5E2zR4ktb5B3PafAeCWyEEXiKUVS4g2UE9occ5",
         "resource": {"cpu": "2", "gpu": "1", "memory": "5.00 GiB", "storage": "1.00 GiB"},
-        "signature": "Signing nodeid and taskid with owneraddress"
+        "signature": "Signing_nodeid_and_taskid_with_ownerAddress"
     }
 
     ```
-5.  Submit the ubi-task using the following command:
+5.  Submit the `ubi-task` using the following command(using your public IP and port ):
 
     ```bash
-    curl -k --location --request POST 'https://<publicIp>:<port>/api/v1/computing/cp/ubi' \
+    curl -k --location --request POST 'https://<public_IP>:<port>/api/v1/computing/cp/ubi' \
     --header 'Content-Type: application/json' \
     --data-raw '{
         "id": 11,
-        "name": "test",
+        "name": "test-ubi",
         "type": 1,
         "zk_type": "fil-c2-512M",
         "input_param": "https://286cb2c989.acl.multichain.storage/ipfs/QmYg4CfA5E2zR4ktb5B3PafAeCWyEEXiKUVS4g2UE9occ5",
@@ -72,31 +72,7 @@ Tutorials&#x20;
     ```bash
     computing-provider ubi-task list
     ```
-7. If the test is successful, restore the UbiEnginePk in the config.toml file to its original value
-
-#### Q: How to run a UBI task.
-
-**A**:
-
-1\. Run the following command:
-
-```bash
-curl -k --location --request POST 'https://<public ip>:<port>/api/v1/computing/lagrange/cp/proof' \
---header 'Content-Type: application/json' \
---data-raw '{
-"method": "mine",
-"block_data": "this-is-a-ubi-test-task",
-"exp": 230
-}'
-```
-
-2\. The returned result matches the example provided below, indicating that your Computing Provider has run successfully
-
-Example result:
-
-```json
-{"status":"success","code":200,"data":"{\"data\":\"this-is-a-ubi-test-task\",\"hash\":\"0000003885a242c2c6c82be3e0ef8adb8fff43ec2b990ae86b748d8566215a36\",\"nonce\":\"12387293\",\"target\":\"1725436586697640946858688965569256363112777243042596638790631055949824\"}\n"}
-```
+7. If the test is successful, restore the `UbiEnginePk` in the `config.toml` file to its original value
 
 #### Q: How can I know if the status of the computing provider is normal?
 
@@ -181,7 +157,7 @@ Otherwise, the application won't be displayed correctly on the Space App page.
 
 **A**: No, it is not possible.
 
-#### Q: Is the "pod" used for communication, and "Calico" is used to manage this communication within the cluster?&#x20;
+#### Q: Is the "`pod"` used for communication, and "`Calico`" is used to manage this communication within the cluster?&#x20;
 
 **A**: Both are used for intra-cluster communication. You can use one of these approaches.
 
