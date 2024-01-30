@@ -31,8 +31,8 @@
 ## QuickStarts
 
 * [Dive into QuickStarts](quickstarts/dive-into-quickstarts/README.md)
-  * [Developing Smart Contracts with Go](quickstarts/dive-into-quickstarts/developing-smart-contracts-with-go.md)
   * [Deploying Your First Smart Contract with Remix](quickstarts/dive-into-quickstarts/deploying-your-first-smart-contract-with-remix.md)
+  * [Interacting with Smart Contract on Swan Chain Using Go](quickstarts/dive-into-quickstarts/interacting-with-smart-contract-on-swan-chain-using-go.md)
 
 ## Orchestrator
 
@@ -77,7 +77,8 @@
   * [Transaction Drive Program](swan-testnet/swan-saturn-testnet/transaction-drive-program.md)
   * [Community and Educational Events](swan-testnet/swan-saturn-testnet/community-and-educational-events.md)
   * [Partnership and Integration Program](swan-testnet/swan-saturn-testnet/partnership-and-integration-program.md)
-  * [Computing Provider Program](swan-testnet/swan-saturn-testnet/computing-provider-program.md)
+  * [Computing Provider Program](swan-testnet/swan-saturn-testnet/computing-provider-program/README.md)
+    * [FAQ](swan-testnet/swan-saturn-testnet/computing-provider-program/faq.md)
   * [Bug Bounty Program](swan-testnet/swan-saturn-testnet/bug-bounty-program.md)
   * [Developer Grant Program](swan-testnet/swan-saturn-testnet/developer-grant-program.md)
   * [FAQ](swan-testnet/swan-saturn-testnet/faq.md)

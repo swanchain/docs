@@ -1,4 +1,4 @@
-# Developing Smart Contracts with Go
+# Interacting with Smart Contract on Swan Chain Using Go
 
 #### &#x20;Introduction to Swan Chain and Connecting to RPC
 
@@ -7,12 +7,14 @@
 * Connecting to a Swan Chain RPC Using Go
 * Fetching Basic Blockchain Data from Swan Chain
 
-Setup your RPC URL
+#### 1.Setting up the Go Development Environment for Swan Chain
 
 <pre><code>package main
 // Shared RPC URL
 <strong>const rpcURL = "https://saturn-rpc.swanchain.io" // Replace with your testnet's RPC URL
 </strong></code></pre>
+
+#### 2.Connecting to a Swan Chain RPC Using Go
 
 ```
 func TestConnectToTestnet(t *testing.T) {
@@ -43,15 +45,7 @@ func TestConnectToTestnet(t *testing.T) {
 }
 ```
 
-Output
-
-> \=== RUN TestGetAccountBalance ethclient\_test.go:64: Balance of account \[0xA41c36BCd65bDbFB62FE93E3b7a28d290E63C1F7]: 0.045930 Ether
->
-> &#x20;\--- PASS: TestGetAccountBalance (0.21s)&#x20;
-
-{% embed url="https://youtu.be/o0X_7oDG9T4" %}
-
-#### &#x20;Managing Wallets and Checking Balances
+#### &#x20;3.Managing Wallets and Checking Balances
 
 * Creating and Managing Swan Chain Wallets with Go
 * Understanding and Checking Wallet Balances on Swan Chain
@@ -85,41 +79,15 @@ func TestGetAccountBalance(t *testing.T) {
 }
 ```
 
-####
+Output:
 
-#### Deploying a Smart Contract
+> \=== RUN TestGetAccountBalance ethclient\_test.go:64: Balance of account \[0xA41c36BCd65bDbFB62FE93E3b7a28d290E63C1F7]: 0.045930 Ether
+>
+> &#x20;\--- PASS: TestGetAccountBalance (0.21s)&#x20;
 
-* Install and fund your MetaMask wallet
-* Write, compile, and deploy your first smart contract
+{% embed url="https://www.youtube.com/watch?feature=youtu.be&v=o0X_7oDG9T4" %}
 
-```
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
-
-contract MessageContract {
-    string private message;
-
-    function writeMessage(string calldata newMessage) public {
-        message = newMessage;
-    }
-
-    function readMessage() public view returns (string memory) {
-        return message;
-    }
-}
-```
-
-* Click "Advanced Configurations" , and choose "London"
-
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
-
-* Click ![](<../../.gitbook/assets/image (2).png>) and choose "WalletConnect" to deploy&#x20;
-
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
-{% embed url="https://www.youtube.com/watch?v=7AagMh-WdoA" %}
-
-#### Writing and Reading from a Smart Contract
+#### 4.Writing and Reading from a Smart Contract
 
 * Setting up Go for Smart Contract Interaction
 * Writing Data to a Smart Contract on Swan Chain

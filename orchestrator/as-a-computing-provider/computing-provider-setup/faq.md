@@ -1,5 +1,79 @@
 # FAQ
 
+#### Q: What is the current version of Computing Provider, and are there any tutorials?
+
+**A:**
+
+Upgrade to version 0.4.1 here:
+
+[https://github.com/swanchain/go-computing-provider/releases/tag/v0.4.1](https://github.com/swanchain/go-computing-provider/releases/tag/v0.4.1)&#x20;
+
+Check the dashboard here : [https://orchestrator.swanchain.io/provider-status](https://orchestrator.swanchain.io/provider-status)
+
+Tutorials&#x20;
+
+* [Deploy your CP](./)
+* [Connect to the Orchestrator and Collateral](../connect-to-orchestrator.md)
+* [Config and receive the UBI task](config-and-receive-ubi-tasks-optional.md):&#x20;
+
+#### Q: How can I verify if my Computing Provider is set up to receive UBI tasks?
+
+**A**:
+
+1.  Replace the UbiEnginePk in the $CP\_PATH/config.toml file with the ownerAddress:
+
+    ```toml
+    [UBI]
+    UbiEnginePk ="0xxxxx"
+    ```
+2. Restart computing-provider.
+3.  Generate the signature using the following command:
+
+    ```bash
+    computing-provider wallet sign <0xxxxx> <nodeid+id>
+    ```
+
+    For example, if nodeid is abcd and taskid is 1:
+
+    ```bash
+    computing-provider wallet sign <0xxxxx> abcd1
+    ```
+4.  Prepare raw data for the ubi-task test task:
+
+    ```json
+    {
+        "id": 11,
+        "name": "test",
+        "type": 1,
+        "zk_type": "fil-c2-512M",
+        "input_param": "https://286cb2c989.acl.multichain.storage/ipfs/QmYg4CfA5E2zR4ktb5B3PafAeCWyEEXiKUVS4g2UE9occ5",
+        "resource": {"cpu": "2", "gpu": "1", "memory": "5.00 GiB", "storage": "1.00 GiB"},
+        "signature": "Signing nodeid and taskid with owneraddress"
+    }
+
+    ```
+5.  Submit the ubi-task using the following command:
+
+    ```bash
+    curl -k --location --request POST 'https://<publicIp>:<port>/api/v1/computing/cp/ubi' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "id": 11,
+        "name": "test",
+        "type": 1,
+        "zk_type": "fil-c2-512M",
+        "input_param": "https://286cb2c989.acl.multichain.storage/ipfs/QmYg4CfA5E2zR4ktb5B3PafAeCWyEEXiKUVS4g2UE9occ5",
+        "resource": {"cpu": "2", "gpu": "1", "memory": "5.00 GiB", "storage": "1.00 GiB"},
+        "signature": "Signing_nodeid_and_taskid_using_the_owner's_address."
+    }'
+    ```
+6.  After running ubi-task, check if the task status is success:
+
+    ```bash
+    computing-provider ubi-task list
+    ```
+7. If the test is successful, restore the UbiEnginePk in the config.toml file to its original value
+
 #### Q: How to run a UBI task.
 
 **A**:
