@@ -77,6 +77,7 @@
   * [Transaction Drive Program](swan-testnet/swan-saturn-testnet/transaction-drive-program.md)
   * [Community and Educational Events](swan-testnet/swan-saturn-testnet/community-and-educational-events.md)
   * [Partnership and Integration Program](swan-testnet/swan-saturn-testnet/partnership-and-integration-program.md)
+  * [KOL Program](swan-testnet/swan-saturn-testnet/kol-program.md)
   * [Computing Provider Program](swan-testnet/swan-saturn-testnet/computing-provider-program/README.md)
     * [FAQ](swan-testnet/swan-saturn-testnet/computing-provider-program/faq.md)
   * [Bug Bounty Program](swan-testnet/swan-saturn-testnet/bug-bounty-program.md)
