@@ -27,11 +27,13 @@ contract MessageContract {
 
 Remix automatically compiles the contract when saved. Ensure there are no compilation errors.
 
-**4.Compile Manually (Optional):** Click the "Solidity Compiler" icon, then "Compile."
+**4.Compile Manually (Optional):** Click the "Advanced Configurations" tab and select the Solidity version `london`.
 
-<figure><img src="https://lh7-us.googleusercontent.com/VbI6PZcv_-13Yu2FHAGfYFjXQwPKbGeKf595txk_9lLN2abSMlelJ8xNOg--k0xLkwVEIqp6A79QmZIL5mBUHlrmxuM-zorqPoh-EJ29irPQ80XTOE39zdxpDhP4EwhnbaxLoByVwhnAScGVasWtAxY" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 **5.Deploy the Contract:** Click the "Deploy" icon logo (it looks like an Ethereum logo with an arrow pointing to the right).
+
+
 
 <figure><img src="https://lh7-us.googleusercontent.com/ipWX5Hf3N3dLz03VSskdtYs5Y_8wUjy-XAriWpYbZpsX8jucpNBqOMu5sNomIfa8Q3oBCzvqtVsIAlBAsbFVvDC7cERlspm80AbtZEI-oJtWq3mN87yxCagZr1LiXnlK8rbt3b8AqgkAmmkncjpDesw" alt=""><figcaption></figcaption></figure>
 
