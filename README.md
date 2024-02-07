@@ -1,10 +1,10 @@
 ---
-description: An L2 for decentralized cloud computing
+description: An L2 for AI cloud computing
 ---
 
 # A gentle introduction to Swan Chain
 
-Swan Chain built as an Ethereum Layer 2 solution, is designed to enhance decentralized computing networks. It integrates a tool suite that streamers developers' access to resources across multiple blockchains.
+Swan Chain built as an Ethereum layer 2 AI computing blockchain built on OP Stack, helping Web3 and AI projects to integrate storage, computing, CDN, and payment into one suite..
 
 The Swan network streamlines storage provider selection and data management. Meanwhile, multichain.storage enables seamless integration from IPFS to the Filecoin network. Additionally, Lagrange Dao provides a web3-oriented source code management platform powered by cross-chain computing. Swan network offers a comprehensive ecosystem that serves as a powerful tool for seamless storage, payment gateway integration, and decentralized computing.
 
