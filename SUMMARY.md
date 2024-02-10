@@ -10,7 +10,7 @@
   * [Service Discovery](getting-started/protocol-stack/service-discovery.md)
   * [Data Marketplace](getting-started/protocol-stack/data-marketplace.md)
   * [Indexing and Caching Marketplace](getting-started/protocol-stack/indexing-and-caching-marketplace.md)
-  * [Web3 Task Auction](getting-started/protocol-stack/web3-task-auction.md)
+  * [Orchestrator](getting-started/protocol-stack/web3-task-auction.md)
   * [Storage Layer](getting-started/protocol-stack/storage-layer.md)
   * [Computing Layer](getting-started/protocol-stack/computing-layer.md)
   * [CDN Layer](getting-started/protocol-stack/cdn-layer.md)
