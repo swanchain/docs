@@ -2,26 +2,32 @@
 description: An L2 for AI cloud computing
 ---
 
-# A gentle introduction to Swan Chain
+# Introduction to Swan Chain
 
 Swan Chain built as an Ethereum layer 2 AI computing blockchain built on OP Stack, helping Web3 and AI projects to integrate storage, computing, CDN, and payment into one suite..
 
-The Swan network streamlines storage provider selection and data management. Meanwhile, multichain.storage enables seamless integration from IPFS to the Filecoin network. Additionally, Lagrange Dao provides a web3-oriented source code management platform powered by cross-chain computing. Swan network offers a comprehensive ecosystem that serves as a powerful tool for seamless storage, payment gateway integration, and decentralized computing.
+\
+Swan Chain represents a pioneering initiative in the blockchain and decentralized computing domain, aimed at creating a robust ecosystem for AI development and Web3 applications. It leverages the power of GPU and cloud infrastructure to support the computationally intensive demands of AI models, while also facilitating decentralized computing across a variety of Web3 projects. Swan Chain's ecosystem is designed to democratize access to high-performance computing resources, making it easier for developers and businesses to build and scale their applications without the prohibitive costs and limitations of traditional cloud services.
 
-## 1.1. Motivation
+#### Core Objectives and Motivation
 
-On May 22, 2010, the first Bitcoin transaction was made by exchanging 10,000 mined BTC for two pizzas delivered from a local pizza restaurant in Florida. Ethereum was initially described in late 2013 in a white paper by Vitalik Buterin. Since then, the blockchain’s goal is not just a peer-to-peer coin but also a global computer as Ethereum described.
+* **Decentralized AI Computing Market**: Swan Chain is motivated by the vision to establish a marketplace where AI developers can access the computational resources needed for training and deploying sophisticated AI models. This initiative seeks to bridge the gap between the demand for high-performance computing in AI research and development and the available resources within the blockchain ecosystem.
+* **Support for Web3 Projects**: Recognizing the transformative potential of Web3 technologies, Swan Chain aims to provide a foundational infrastructure that supports the deployment and operation of decentralized applications (DApps). This includes offering decentralized storage solutions, computing power, and other essential services to facilitate the growth of the decentralized web.
+* **Innovative Ecosystem Products**: The platform's ecosystem is enriched with products such as MultiChain.storage for decentralized data storage, the Lagrange platform for decentralized computing, and a Decentralized Task Orchestrator to efficiently manage and distribute computing tasks across the network.
+* **Universal Basic Income (UBI) Model**: A distinctive feature of Swan Chain is its commitment to a fair and equitable ecosystem through the implementation of a UBI model for computing providers. This approach ensures that participants are compensated for their contributions, fostering a more inclusive and sustainable network.
 
-As of day, we already have over 9000 tokens on coinmarketcap.com, with more than 500 SDKs. It became a huge challenge to the developer when they start the _Decentralized Applications (dApps)_ development. A typical web3 website development requires the developer to have the following prerequisite:
+#### Technologies and Infrastructure
 
-* EVM compatible or not
-* Payment channel: Ethereum, BNB, Polygon, Solona
-* Storage layer: Filecoin, IPFS, Arweave
-* Computing layer: ICP, Akash
-* Domain Name: ENS, Bonfida
+Swan Chain integrates cutting-edge technologies to achieve its ambitious goals:
 
-Developers are currently bogged down with the intricacies of managing tokens and navigating various SDKs, diverting their focus from the primary features of their products. The lack of tools that facilitate easy access to web3 applications hinders the efficient creation of dApps. This not only slows down product development but also limits the economic potential of the decentralized application landscape.
+* **Kubernetes and Blockchain Integration**: Utilizing Kubernetes for container orchestration and blockchain for securing transactions and automating processes, Swan Chain creates a highly efficient, scalable, and secure infrastructure for decentralized computing.
+* **Global Data Center Connectivity**: The orchestration of data centers worldwide allows Swan Chain to tap into a vast pool of computational resources, ensuring high availability and redundancy for its services.
+* **Zero-Knowledge (ZK) Proofs**: Embracing ZK proofs for benchmarking computing providers and facilitating privacy-preserving transactions, Swan Chain underscores its commitment to security and privacy within its ecosystem.
 
-Swan offers a comprehensive solution to this challenge by providing an infrastructure layer for Web3, the next-generation web application stack. It introduces a cross-chain consensus layer for dApps, enabling developers to utilize cross-chain tools and seamlessly access web3 resources across multiple blockchain networks. These tools encompass payment channels and web3 infura, streamlining the development process. By integrating economic incentives, Swan ensures a thriving ecosystem, paving the way for more efficient dApp creation and unlocking vast economic opportunities.
+#### Goals and Vision
+
+Swan Chain is driven by the goal to revolutionize how AI and Web3 projects are developed, deployed, and scaled. By providing accessible, secure, and high-performance computing resources, Swan Chain not only addresses the current challenges faced by developers and businesses but also lays the groundwork for future innovations in the AI and blockchain space. The platform's emphasis on a sustainable and equitable ecosystem, exemplified by its UBI model, sets a precedent for how decentralized networks can operate with a focus on community welfare and participation.
+
+In summary, Swan Chain's overarching motivation is to empower the next generation of AI and Web3 applications by providing a comprehensive suite of decentralized computing resources and services. Through innovation, collaboration, and a commitment to accessibility and fairness, Swan Chain aims to be at the forefront of the decentralized computing revolution.
 
 <figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption><p>Layer1, Layer2,Layer3</p></figcaption></figure>
