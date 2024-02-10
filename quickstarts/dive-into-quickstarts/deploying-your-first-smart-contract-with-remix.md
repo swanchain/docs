@@ -29,7 +29,7 @@ Remix automatically compiles the contract when saved. Ensure there are no compil
 
 **4.Compile Manually (Optional):** Click the "Advanced Configurations" tab and select the Solidity version `london`.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 **5.Deploy the Contract:** Click the "Deploy" icon logo (it looks like an Ethereum logo with an arrow pointing to the right).
 
