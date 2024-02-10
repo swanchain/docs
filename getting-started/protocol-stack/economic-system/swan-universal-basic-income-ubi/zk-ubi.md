@@ -20,4 +20,4 @@ The ZK-UBI (Zero-Knowledge Universal Basic Income) on Swan Chain is an innovativ
 4. **Proof Submission and Verification**: Upon completion, providers submit their ZK proofs back to the Swan Chain for verification. This ensures the integrity and validity of the computations performed.
 5. **UBI Distribution**: Once verified, the ZK proofs trigger the smart contract-based UBI system to distribute $SWAN to the computing providers, ensuring a steady income stream and incentivizing continuous participation in the network.
 
-#### n networks, contributing to the overall robustness and utility of the Swan Chain ecosystem.
+<figure><img src="../../../../.gitbook/assets/image (158).png" alt=""><figcaption><p> ZK-UBI reward Dashboard</p></figcaption></figure>
