@@ -13,7 +13,7 @@
     * [Auction Engine](getting-started/protocol-stack/decentralized-ai-computing-marketplace/auction-engine.md)
     * [Bidding Task State Machine](getting-started/protocol-stack/decentralized-ai-computing-marketplace/bidding-task-state-machine.md)
     * [Reputation System](getting-started/protocol-stack/decentralized-ai-computing-marketplace/reputation-system.md)
-  * [Indexing and Caching Marketplace](getting-started/protocol-stack/indexing-and-caching-marketplace.md)
+  * [ZK Proof Marketplace](getting-started/protocol-stack/indexing-and-caching-marketplace.md)
   * [Orchestrator](getting-started/protocol-stack/web3-task-auction.md)
   * [Storage Layer](getting-started/protocol-stack/storage-layer.md)
   * [Computing Layer](getting-started/protocol-stack/computing-layer.md)
