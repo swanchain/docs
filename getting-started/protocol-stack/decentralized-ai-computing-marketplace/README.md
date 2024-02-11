@@ -1,23 +1,32 @@
+---
+description: Globle AI Computing Task Market
+---
+
 # Decentralized AI Computing Marketplace
 
-The Decentralized AI Computing Marketplace is an innovative system designed to enable efficient and secure interactions between users and providers in a decentralized environment. This system utilizes smart contracts, a bidding engine, and decentralized storage to create a transparent and efficient marketplace for various tasks.
+The SwanChain AI Market is a cutting-edge decentralized platform specifically designed to cater to the needs of AI development by streamlining the distribution of AI model training tasks to a global network of computing providers. Utilizing a sophisticated AI auction engine, SwanChain facilitates a transparent and competitive marketplace that operates on blockchain technology. Here’s how the SwanChain AI Market functions:
 
-Providers in the system contribute their resources, such as storage, network bandwidth, CPU, and GPU, to offer services to users who publish tasks on the platform. These tasks are stored on decentralized storage like IPFS/Filecoin, ensuring data security and transparency.
+#### AI Model Training Distribution
 
-The bidding engine manages a competitive bidding process, where providers with different resource capabilities bid on tasks. Smart contracts on the Ethereum blockchain govern the bidding rules, enforce fair competition, and ensure the security of transactions.
+SwanChain's AI Market is a conduit for distributing intensive AI training tasks, which require substantial computational resources, including GPUs for processing large datasets and performing complex calculations inherent in machine learning and neural network training.
 
-Upon completion of a task by the selected provider, the final results are uploaded to the decentralized storage, maintaining data integrity and tamper-proofing. The smart contract then facilitates the automatic transfer of rewards from the task publisher to the provider as compensation for their services.
+#### AI Auction Engine
 
-In summary, the Decentralized Auction Marketplace offers a secure and efficient platform for users to outsource tasks to a global network of providers with various resources. By leveraging blockchain technology, smart contracts, and decentralized storage, the system ensures transparency, security, and fairness in the bidding process and the execution of tasks.
+1. **Task Listing**: AI developers or businesses in need of computational power for model training can list their tasks on the platform, providing detailed requirements for processing power, memory, storage, and specific preferences for hardware capabilities.
+2. **Bidding System**: Computing providers equipped with the necessary hardware and capabilities review the listed tasks and place competitive bids to offer their services. The bidding system is designed to balance the cost with the quality and efficiency of service.
+3. **Provider Selection**: The AI auction engine processes the bids and selects the most appropriate provider based on several factors, including cost, provider reputation, and resource availability. This ensures that AI tasks are assigned to providers who can offer optimal value and performance.
 
-### Key concepts
+#### Task Execution and Verification
 
-**Bidder (Provider)**: A bidder, also known as a provider, is a participant in the marketplace who offers their services to complete tasks. These services may include storage, network bandwidth, CPU, and GPU resources. Bidders are typically composed of blockchain nodes worldwide, and they actively participate in the competitive bidding process to secure tasks. Once assigned a task, bidders work to complete it to the best of their abilities, and the one with the best performance is rewarded by the task publisher.
+1. **Task Performance**: The chosen provider performs the AI training task using their computational infrastructure. Progress and performance can be monitored through the platform to ensure that the task is carried out according to the agreed-upon standards.
+2. **Validation**: Upon task completion, the results are subject to validation to confirm they meet the predefined criteria. The validation process is crucial to maintain high standards and trust within the marketplace.
+3. **Reward and Rating**: After successful validation, the platform's smart contract system automatically processes the payment to the provider in $SWAN tokens, the native cryptocurrency of SwanChain. Participants can also rate each other, contributing to a trust-based ecosystem.
 
-**Publisher (User)**: A publisher, also known as a user, is an individual or organization that creates tasks in the marketplace. Publishers are responsible for defining the tasks, providing necessary details, and setting the rewards. They rely on the Decentralized Auction Marketplace to find suitable providers (bidders) to complete their tasks. Once the bidding process is complete and a provider has successfully delivered the task, the publisher rewards the provider through the smart contract system.
+#### Advantages of SwanChain AI Market
 
-**Decentralized Storage**: Decentralized storage systems like IPFS/Filecoin are used to store tasks and their associated data. This ensures that the data remains secure, transparent, and tamper-proof, while also allowing for easy access by authorized parties.
+* **Accessibility**: Developers worldwide can access computational resources without heavy upfront investments in hardware.
+* **Economies of Scale**: Providers can leverage idle computational resources, and users benefit from competitive pricing due to the marketplace's scale.
+* **Decentralization and Security**: The decentralized nature of blockchain provides enhanced security, transparency, and data integrity.
+* **Incentivization**: The use of $SWAN tokens as a form of payment incentivizes participation and investment in the SwanChain ecosystem.
 
-**Bidding Engine**: The bidding engine manages the competitive bidding process, where providers bid on tasks based on their resource capabilities and offered prices. This component ensures that tasks are allocated to providers in a fair and efficient manner.
-
-**Smart Contracts**: Smart contracts are self-executing contracts on the EVM blockchain that govern the bidding rules, enforce fair competition, and ensure the security of transactions. They facilitate the automatic transfer of rewards from users to providers upon task completion and manage other aspects of the bidding process.
+\
