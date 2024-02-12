@@ -22,6 +22,7 @@ Ready to join? Head over to: [**https://saturn-testnet.swanchain.io/**](https://
 * **ChainID:** 2024
 * **Bridge Address:** 0x1B240FA1e884Cb5e09A7a22edf2563f371c5f882
 * **Explorer:** [https://saturn-explorer.swanchain.io](https://saturn-explorer.swanchain.io/)
+* **Chainlist:** [https://chainlist.org/chain/2024](https://chainlist.org/chain/2024)
 
 ***
 
