@@ -2,7 +2,7 @@
 
 The ZK-UBI (Zero-Knowledge Universal Basic Income) on Swan Chain is an innovative implementation that blends a Universal Basic Income model with the privacy and efficiency of zero-knowledge proofs (ZKPs), underpinned by an embedded ZK market. This integration creates a self-sustaining and privacy-preserving ecosystem for participants who contribute computing resources.
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Concept and Functionality
 
