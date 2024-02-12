@@ -4,7 +4,7 @@ description: An L2 for AI cloud computing
 
 # Introduction to Swan Chain
 
-[Swan Chain ](https://www.swanchain.io/)built as an Ethereum layer 2 AI computing blockchain built on OP Stack, helping Web3 and AI projects to integrate storage, computing, CDN, and payment into one suite..
+[Swan Chain ](https://www.swanchain.io/)built as an Ethereum layer 2 AI computing blockchain built on OP Stack, helping Web3 and AI projects to integrate storage, computing, CDN, and payment into one suite.
 
 \
 This initiative marks a significant stride in the blockchain and decentralized computing arena, aiming to forge a vigorous ecosystem conducive to AI development and Web3 applications. By harnessing GPU and cloud infrastructure, Swan Chain adeptly meets the computationally intensive requisites of AI models while promoting decentralized computing across a myriad of Web3 projects. The core of Swan Chain's ethos is to democratize high-performance computing resources, thereby enabling developers and businesses to escalate their applications without the constraints and expenses typical of traditional cloud services.
