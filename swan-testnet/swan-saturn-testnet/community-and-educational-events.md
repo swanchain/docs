@@ -96,6 +96,10 @@ Let your brilliance take flight! Round 2 is your chance to showcase your unique 
 
 {% embed url="https://swanchain.medium.com/introducing-the-swan-ambassador-program-ee10511b7212" %}
 
+{% hint style="info" %}
+The KOL program and Swan Ambassador programs are two separate incentivized programs. One user cannot receive rewards for both programs. You can opt out of any program at any time.&#x20;
+{% endhint %}
+
 ***
 
 ## **AMA and Webinar**

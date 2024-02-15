@@ -29,4 +29,4 @@ SwanChain's AI Market is a conduit for distributing intensive AI training tasks,
 * **Decentralization and Security**: The decentralized nature of blockchain provides enhanced security, transparency, and data integrity.
 * **Incentivization**: The use of $SWAN tokens as a form of payment incentivizes participation and investment in the SwanChain ecosystem.
 
-\
+To start contributing your computing resources, click [here](broken-reference). \

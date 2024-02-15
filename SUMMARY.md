@@ -28,16 +28,6 @@
   * [Governance](getting-started/protocol-stack/governance/README.md)
     * [Treasure DAO](getting-started/protocol-stack/governance/treasure-dao.md)
   * [Glossary](getting-started/protocol-stack/glossary.md)
-* [Contact Us](getting-started/contact-us/README.md)
-  * [Social Accounts & Communities](getting-started/contact-us/social-accounts-and-communities.md)
-  * [Business Partnerships](getting-started/contact-us/business-partnerships.md)
-* [FAQ](getting-started/filswan-faq.md)
-
-## QuickStarts
-
-* [Dive into QuickStarts](quickstarts/dive-into-quickstarts/README.md)
-  * [Deploying Your First Smart Contract with Remix](quickstarts/dive-into-quickstarts/deploying-your-first-smart-contract-with-remix.md)
-  * [Interacting with Smart Contract on Swan Chain Using Go](quickstarts/dive-into-quickstarts/interacting-with-smart-contract-on-swan-chain-using-go.md)
 
 ## Orchestrator
 
@@ -61,19 +51,23 @@
 
 ## Development Resource
 
+* [QuickStarts](development-resource/quickstarts/README.md)
+  * [Set Up MetaMask](development-resource/quickstarts/set-up-metamask.md)
+  * [Claim Faucet Tokens](development-resource/quickstarts/claim-faucet-tokens.md)
+  * [Bridge Tokens](development-resource/quickstarts/bridge-tokens.md)
+  * [Deploying Your First Smart Contract with Remix](development-resource/quickstarts/deploying-your-first-smart-contract-with-remix.md)
+  * [Interacting with Smart Contract on Swan Chain Using Go](development-resource/quickstarts/interacting-with-smart-contract-on-swan-chain-using-go.md)
+  * [Swan SDK](development-resource/quickstarts/swan-sdk.md)
 * [Swan Token Contract](development-resource/swan-token-contract/README.md)
   * [Acquire Testnet USDC and MATIC tokens](development-resource/swan-token-contract/acquire-testnet-usdc-and-matic-tokens.md)
+* [Contribute Orchestrator task](development-resource/contribute-orchestrator-task/README.md)
+  * [How to Contribute](development-resource/contribute-orchestrator-task/how-to-contribute.md)
 * [Contribute zk-UBI-task](development-resource/contribute-zk-ubi-task/README.md)
   * [How to Contribute](development-resource/contribute-zk-ubi-task/how-to-contribute.md)
   * [Example](development-resource/contribute-zk-ubi-task/example.md)
 
 ## Swan Testnet
 
-* [Swan Jupiter Testnet](swan-testnet/swan-jupiter-testnet/README.md)
-  * [How to Participate](swan-testnet/swan-jupiter-testnet/how-to-participate.md)
-  * [Before You Get Started](swan-testnet/swan-jupiter-testnet/before-you-get-started.md)
-  * [Network Early Adopter](swan-testnet/swan-jupiter-testnet/network-early-adopter.md)
-  * [FAQ](swan-testnet/swan-jupiter-testnet/faq.md)
 * [Swan Saturn Testnet](swan-testnet/swan-saturn-testnet/README.md)
   * [Before You Get Started](swan-testnet/swan-saturn-testnet/before-you-get-started/README.md)
     * [Set Up MetaMask](swan-testnet/swan-saturn-testnet/before-you-get-started/set-up-metamask.md)
@@ -88,3 +82,8 @@
   * [Bug Bounty Program](swan-testnet/swan-saturn-testnet/bug-bounty-program.md)
   * [Developer Grant Program](swan-testnet/swan-saturn-testnet/developer-grant-program.md)
   * [FAQ](swan-testnet/swan-saturn-testnet/faq.md)
+* [Swan Jupiter Testnet](swan-testnet/swan-jupiter-testnet/README.md)
+  * [How to Participate](swan-testnet/swan-jupiter-testnet/how-to-participate.md)
+  * [Before You Get Started](swan-testnet/swan-jupiter-testnet/before-you-get-started.md)
+  * [Network Early Adopter](swan-testnet/swan-jupiter-testnet/network-early-adopter.md)
+  * [FAQ](swan-testnet/swan-jupiter-testnet/faq.md)

@@ -29,7 +29,6 @@ A: The testnet allows you to perform various types of testing. In terms of exper
 
 A: Follow the setup instructions in the Documentation to deploy a Computing Provider on Swan Testnet. Ensure that you have at least one Space deployed and running.
 
-\
 
 
 **Q: What are the goals of the Swan Testnet Campaign?**

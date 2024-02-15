@@ -97,3 +97,7 @@ Eligible groups/communities are those groups/communities with over 200 members.
 {% endhint %}
 
 <table><thead><tr><th width="173">Group Count</th><th width="306">Reward in SWAN</th></tr></thead><tbody><tr><td>5+</td><td>50</td></tr><tr><td>10+</td><td>100</td></tr><tr><td>15+</td><td>200</td></tr><tr><td>20+</td><td>250</td></tr></tbody></table>
+
+{% hint style="info" %}
+The KOL program and Swan Ambassador programs are two separate incentivized programs. One user cannot receive rewards for both programs. You can opt out of any program at any time.&#x20;
+{% endhint %}

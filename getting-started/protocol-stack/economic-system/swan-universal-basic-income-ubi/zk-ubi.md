@@ -10,7 +10,7 @@ The ZK-UBI (Zero-Knowledge Universal Basic Income) on Swan Chain is an innovativ
 
 **Zero-Knowledge Proofs**: ZKPs are a form of cryptographic protocol that allow one party (the prover) to prove to another party (the verifier) that a statement is true, without revealing any information beyond the validity of the statement itself.
 
-**Embedded ZK Market**: Swan Chain integrates a specialized ZK market that serves as a platform for various blockchain protocols in need of ZK computation, such as Aleo, Filecoin, and StarkNet. This market is where tasks requiring ZK proofs are listed and sourced.
+[**Embedded ZK Market**](../../indexing-and-caching-marketplace.md): Swan Chain integrates a specialized ZK market that serves as a platform for various blockchain protocols in need of ZK computation, such as Aleo, Filecoin, and StarkNet. This market is where tasks requiring ZK proofs are listed and sourced.
 
 #### Workflow
 
@@ -21,3 +21,5 @@ The ZK-UBI (Zero-Knowledge Universal Basic Income) on Swan Chain is an innovativ
 5. **UBI Distribution**: Once verified, the ZK proofs trigger the smart contract-based UBI system to distribute $SWAN to the computing providers, ensuring a steady income stream and incentivizing continuous participation in the network.
 
 <figure><img src="../../../../.gitbook/assets/image (158).png" alt=""><figcaption><p> ZK-UBI reward Dashboard</p></figcaption></figure>
+
+To get started as a ZK-UBI contributor, click [here](../../../../development-resource/contribute-zk-ubi-task/).&#x20;
