@@ -1,5 +1,5 @@
 ---
-description: An L2 for AI cloud computing
+description: An L2 for decentralized cloud computing
 ---
 
 # Introduction to Swan Chain
