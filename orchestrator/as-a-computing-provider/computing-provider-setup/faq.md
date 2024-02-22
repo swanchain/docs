@@ -31,10 +31,10 @@ Tutorials&#x20;
     computing-provider wallet sign <ownerAddress> <nodeid+id>
     ```
 
-    For example, if nodeid is `abcd` and taskid is `1`:
+    For example, if nodeid is `abcd` and taskid is `11`:
 
     ```bash
-    computing-provider wallet sign <ownerAddress> abcd1
+    computing-provider wallet sign <ownerAddress> abcd11
     ```
 4.  Prepare raw data for the ubi-task test task:
 
