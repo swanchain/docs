@@ -51,3 +51,8 @@ For any issues or more instant assistance, feel free to open a ticket on[ our Di
 A: For more information, updates, and official announcements about the testnet and project, please visit:
 
 [Saturn Testnet Landing Page ](https://saturn-testnet.swanchain.io)| [Discord](https://discord.com/invite/37ze379kqW) | [Telegram](https://t.me/swan\_chain/1) | [Twitter](https://twitter.com/swan\_chain) | [Github](https://github.com/filswan) | [Website](https://www.swanchain.io/homepage/) | [Youtube](https://www.youtube.com/@swan\_chain) | [Lagrange Platform](https://lagrangedao.org/main) | [Newsletter](https://mailchi.mp/swanchain/swan-chain)
+
+#### Q: What can I do if my transaction is pending?
+
+You should follow [this guide ](https://support.metamask.io/hc/en-us/articles/360015488891-How-to-clear-your-account-activity-reset-account)to clear your account activity, as it is the most common way to resolve stuck and pending transactions.
+
