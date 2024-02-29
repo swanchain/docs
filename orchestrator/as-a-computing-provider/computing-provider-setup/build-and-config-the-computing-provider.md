@@ -3,9 +3,9 @@
 Step1: Firstly, clone the code to your local:
 
 ```bash
-git clone https://github.com/lagrangedao/go-computing-provider.git
+git clone https://github. com/swanchain/go-computing-provider/releases/
 cd go-computing-provider
-git checkout v0.3.0
+git checkout v0.4.3
 ```
 
 Step2: Then build the Computing provider follow the below steps:
@@ -73,7 +73,7 @@ SWAN_MAINNET= ""								   # Swan mainnet RPC
 
 [CONTRACT]
 SWAN_CONTRACT="0x91B25A65b295F0405552A4bbB77879ab5e38166c"   # Swan token's contract address
-SWAN_COLLATERAL_CONTRACT="0xd0370c1D117653Be799AC697FdfB3C8B1A80Dec1"   # Swan's collateral address
+SWAN_COLLATERAL_CONTRACT="0xdc200f89258e72aC3602dD23BD3642C4bd4eE34e"   # Swan's collateral address
 ```
 
 **Note: You can check your token balance and collateral using the following command:**
