@@ -4,9 +4,9 @@ description: An L2 for decentralized cloud computing
 
 # Introduction to Swan Chain
 
-[Swan Chain ](https://www.swanchain.io/)built as an Ethereum layer 2 AI computing blockchain built on OP Stack, helping Web3 and AI projects to integrate storage, computing, CDN, and payment into one suite.
+[Swan Chain ](https://www.swanchain.io/)built on Ethereum Layer 2 with [OP Stack](https://docs.optimism.io/stack/getting-started) technology, revolutionizes Web3 and AI integration by offering comprehensive solutions that seamlessly combine decentralized storage, AI, and[ Zero-Knowledge (ZK) marketplaces](getting-started/protocol-stack/indexing-and-caching-marketplace.md). Through [LagrangeDAO](https://app.gitbook.com/o/-Ma7\_tf6L8A170GHT9fr/s/y5iPODl9iwLxyYirHs2D/), it enables efficient AI model deployment while reducing computing costs by up to 70% and monetizing idle computing resources.
 
-&#x20;It innovatively combines decentralized storage, AI, and Zero-Knowledge (ZK) marketplaces, facilitating seamless AI model deployment via LagrangeDAO. This approach significantly reduces computing costs by up to 70% and enables monetization of idle computing resources. Moreover, SwanChain's ZK market introduces a Universal Basic Income (UBI) model for computing providers, ensuring a stable income and encouraging continuous contribution.
+SwanChain's innovative approach introduces a [Universal Basic Income (UBI) ](getting-started/protocol-stack/economic-system/swan-universal-basic-income-ubi.md)model for [computing providers](orchestrator/as-a-computing-provider/computing-provider-setup/) within its ZK market, ensuring stable income and incentivizing continuous contributions.&#x20;
 
 #### Core Objectives and Motivation
 
@@ -32,3 +32,7 @@ Swan Chain significantly enhances AI computing payment systems through smart con
 Swan Chain is steadfast in its mission to redefine the development, deployment, and scaling of AI and Web3 projects. By offering accessible, secure, and high-performance computing resources, coupled with innovative payment solutions and a ZK computing market, Swan Chain addresses the extant challenges faced by developers and businesses. The platform's dedication to a sustainable and equitable ecosystem, highlighted by its UBI model, paves the way for how decentralized networks can prioritize community welfare and participation.
 
 <figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption><p>Layer1, Layer2,Layer3</p></figcaption></figure>
+
+#### Roadmap
+
+{% embed url="https://gist.github.com/flyworker/9822afc8d7ca236694926bf373008cdc#file-swanroadmap-md" %}
