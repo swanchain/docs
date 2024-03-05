@@ -167,9 +167,9 @@ Alchemy allows registered users to claim up to 0.02 Goerli ETH daily at the time
 
 In addition to Goerli ETH for gas fees, you'll need test-USDC tokens for the Swan Testnet campaign. Follow these steps to claim test USDC tokens:
 
-#### 1.Join the [Swan official Discord](https://discord.com/invite/FEv2hMby9A).
+#### 1.Join the [Swan official Discord](https://discord.com/invite/swanchain).
 
-Go to the [**usdc-faucet**](https://discord.gg/RuHBdBqcWR) channel under the **Swan - Testnet** section, and type the command `$swan_usdc_faucet {your-wallet-address}` to claim.
+Go to the **usdc-faucet** channel under the **Swan - Testnet** section, and type the command `$swan_usdc_faucet {your-wallet-address}` to claim.
 
 #### 2.Switch to the Swan Testnet:
 
