@@ -3,7 +3,7 @@
 Step1: Firstly, clone the code to your local:
 
 ```bash
-git clone https://github.com/swanchain/go-computing-provider.git
+git clone https://github.com/lagrangedao/go-computing-provider.git
 cd go-computing-provider
 git checkout releases
 ```
@@ -57,8 +57,8 @@ WalletAddress = ""                                  # The cp‘s wallet address
 BalanceThreshold= 50                                # The cp’s collateral balance threshold
 
 [MCS]
-ApiKey = ""                                   # Acquired from "https://www.multichain.storage" -> setting -> Create API Key
-BucketName = ""                               # Acquired from "https://www.multichain.storage" -> bucket -> Add Bucket
+ApiKey = ""                                   # Acquired from "https://www.swanipfs.com" -> setting -> Create API Key
+BucketName = ""                               # Acquired from "https://www.swanipfs.com" -> bucket -> Add Bucket
 Network = "polygon.mainnet"                   # polygon.mainnet for mainnet, polygon.mumbai for testnet
 FileCachePath = "/tmp"                        # Cache directory of job data
 
