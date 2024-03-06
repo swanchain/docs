@@ -82,7 +82,6 @@
   * [KOL Program](swan-testnet/swan-saturn-testnet/kol-program.md)
   * [Computing Provider Program](swan-testnet/swan-saturn-testnet/computing-provider-program/README.md)
     * [FAQ](swan-testnet/swan-saturn-testnet/computing-provider-program/faq.md)
-  * [Bug Bounty Program](swan-testnet/swan-saturn-testnet/bug-bounty-program.md)
   * [Developer Grant Program](swan-testnet/swan-saturn-testnet/developer-grant-program.md)
   * [FAQ](swan-testnet/swan-saturn-testnet/faq.md)
 * [Swan Jupiter Testnet](swan-testnet/swan-jupiter-testnet/README.md)

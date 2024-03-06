@@ -42,7 +42,6 @@ Remember, active participation is key! The more you engage, the greater your cha
 * [**Community and Educational Events**](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/community-and-educational-events)**:** Learn, participate, and earn through webinars, AMAs, and quizzes.
 * [**Partnership and Integration Program**](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/partnership-and-integration-program)**:** Partner with Swan Chain for a win-win future.
 * [**Computing Provider Program**](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/computing-provider-program)**:** Share your resources and be handsomely compensated.
-* [**Bug Bounty Program**](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/bug-bounty-program)**:** Help us sharpen our code and be recognized for your contribution.
 * [**Developer Grant Program:**](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/developer-grant-program) Build innovative dApps and receive the grants.
 
 ## Helpful Documents and Tutorials
