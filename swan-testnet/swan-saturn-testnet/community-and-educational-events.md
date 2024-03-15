@@ -15,7 +15,7 @@ Swan's Community and Educational Events are a vital component of the Swan Chain 
 
 #### 1. DURATION:
 
-22nd January 2024, 10:00 (EST) - 22nd March 2024, 00:00 (EST)
+22nd January 2024, 10:00 (EST) -  15th April 2024, 23:59 (EST)
 
 **2. RULES/TERMS:**
 
@@ -38,7 +38,7 @@ Swan's Community and Educational Events are a vital component of the Swan Chain 
 
 #### 1. DURATION:&#x20;
 
-22nd January 2024, 10:00 (EST) - 22nd March 2024, 00:00 (EST)
+22nd January 2024, 10:00 (EST) -  15th April 2024, 23:59 (EST)
 
 **2. RULES/TERMS:**
 
@@ -106,7 +106,7 @@ The KOL program and Swan Ambassador programs are two separate incentivized progr
 
 #### 1. DURATION:&#x20;
 
-22nd January 2024, 10:00 (EST) - 22nd March 2024, 00:00 (EST)
+22nd January 2024, 10:00 (EST) -  15th April 2024, 23:59 (EST)
 
 **2. RULES/TERMS:**
 

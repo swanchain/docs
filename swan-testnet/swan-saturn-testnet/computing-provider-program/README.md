@@ -8,7 +8,7 @@ Get ready to contribute to the [**Swan Chain Saturn Testnet** ](http://saturn-te
 
 ## Duration
 
-24th January 2024, 09:00 (EST) - 22nd March 2024, 00:00 (EST)
+24th January 2024, 09:00 (EST) -  15th April 2024, 23:59 (EST)
 
 ## **How to Participate**
 

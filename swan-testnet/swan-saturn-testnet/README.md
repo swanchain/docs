@@ -4,7 +4,7 @@ description: Join the future of AI computing and share up to 3,000,000 SWAN toke
 
 # Swan Saturn Testnet
 
-Welcome to the **Swan Saturn Testnet**, the public testnet of Swan Chain, running from **January 22nd, 2024,** to **March 22nd, 2024.**
+Welcome to the **Swan Saturn Testnet**, the public testnet of Swan Chain, running from **January 22nd, 2024, to April 15th , 2024.**
 
 The Swan Saturn Testnet is your chance to:
 
