@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: resource-exporter
-        image: filswan/resource-exporter:v11.2.5
+        image: filswan/resource-exporter:v11.2.6
         imagePullPolicy: IfNotPresent
 EOF
 ```
