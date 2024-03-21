@@ -38,7 +38,7 @@ Swan's Community and Educational Events are a vital component of the Swan Chain 
 
 #### 1. DURATION:&#x20;
 
-22nd January 2024, 10:00 (EST) -  15th April 2024, 23:59 (EST)
+22nd January 2024, 10:00 (EST) -  22nd March 2024, 23:59 (EST)
 
 **2. RULES/TERMS:**
 
