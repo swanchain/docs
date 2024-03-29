@@ -46,9 +46,12 @@ To install the `Docker Container Runtime` and the `cri-dockerd`, follow the step
 * Install `cri-dockerd`:
   * `cri-dockerd` is a CRI (Container Runtime Interface) implementation for Docker. You can install it refer to [here](https://github.com/Mirantis/cri-dockerd).
 
-**Option 2: Install the `Containerd`**
+**Option 2: Install  the `Docker`  and the `Containerd`**
 
-`Containerd` is an industry-standard container runtime that can be used as an alternative to Docker. To install `containerd` on your system, follow the instructions on [getting started with containerd](https://github.com/containerd/containerd/blob/main/docs/getting-started.md).
+* Install the `Docker`:
+  * Please refer to the official documentation from [here](https://docs.docker.com/engine/install/).
+* To install `containerd` on your system:
+  * `Containerd` is an industry-standard container runtime that can be used as an alternative to Docker. To install `containerd` on your system, follow the instructions on [getting started with containerd](https://github.com/containerd/containerd/blob/main/docs/getting-started.md).
 
 #### Optional-Setup a docker registry server
 
