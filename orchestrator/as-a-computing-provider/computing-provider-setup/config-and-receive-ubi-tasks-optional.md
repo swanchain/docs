@@ -5,7 +5,7 @@ The [Universal Basic Income (UBI)](../../../getting-started/protocol-stack/econo
 Configuring your Computing Provider (CP) to receive UBI tasks within the Swan decentralized computing ecosystem is crucial for participating in the incentive mechanism and earning fair compensation for your contributions.
 
 {% hint style="info" %}
-**UBI Task Types:** The UBI tasks are categorized based on Filecoin zk-stark proof mechanisms. Providers can earn rewards by completing Commit2 proof processes within specific time frames. The task types and their corresponding rewards are as follows:
+**UBI Task Types:** The UBI tasks are categorized based on Filecoin zk-SNARK proof mechanisms. Providers can earn rewards by completing Commit2 proof processes within specific time frames. The task types and their corresponding rewards are as follows:
 
 * **512M Sector CPU Task:** 1 SWAN
 * **512M Sector GPU Task:** 2 SWAN
