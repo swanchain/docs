@@ -64,35 +64,62 @@ Winners are the top 100 on the Leaderboard.
 
 ## **Ambassador Program**
 
-**1. REWARD STRUCTURE (250,000 SWAN):**
+### Overview
 
-* Prize Pool/month: 20,000 SWAN/10 chosen ambassadors
+Being an Ambassador will NOT give you eternal fame and glory.
 
-#### 2. DETAILED INFORMATION:
+✅ Ambassadors will help onboard thousands of users into the Swan ecosystem through education and collaboration.
 
-#### **Round 1: Pre-Ambassador (Jan 13 — Feb 14)** <a href="#d425" id="d425"></a>
+✅ Being an Ambassador will up your skill level as a contributor, and in doing so, you will help others in the program up theirs through collaboration in a positive environment.
 
-Step 1: Fill out the application form to demonstrate your dedication: [Form](https://forms.gle/TDDk1aF9ZQQBxHBR7)
+As a Swan Ambassador, you’ll be more than just a fan — you’ll be an advocate, an educator, and a leader. You’ll play a crucial role in:
 
-Step 2: Complete all tasks on Zealy and earn the Pre-Ambassador role: [here](https://zealy.io/c/swanambassadorprogram/questboard?invitationId=yVJLYADWTAUWtk89tLdHh)
+* Spread the Love: Share Swan’s vision and value proposition with both technical and non-technical audiences.
+* Grow Our Family: Foster a vibrant and supportive space for Swan users and enthusiasts to connect, learn, and grow.
+* Be the Guide: Share your knowledge and expertise to help newcomers navigate the world of Swan and unlock its potential.
 
-Step 3: Take flight with these key activities:
+### Guide & Goals
 
-* Stay active: Be a consistent voice and engage in meaningful conversations on [Discord](https://discord.com/invite/M2Y9ynVAhy), [Telegram](https://t.me/swan\_chain), [Twitter](https://twitter.com/swan\_chain),[ Medium](https://swanchain.medium.com/), and [Youtube](https://www.youtube.com/@swan\_chain).
-* Share your knowledge: Answer user questions with accuracy and clarity, empowering others to explore Swan.
-* Bridge the gap: Translate essential information and announcements, fostering inclusivity within the Swan family.
-* Quality matters: Focus on high-quality contributions that spark valuable discussions and enrich the community.
+**Content Creation Guidelines for Swanchain Ecosystem Ambassadors:**
 
-> _**Remember:** Actively contribute for **at least one week** to be considered for Round 2. The Swan team will select the most impactful Pre-Ambassadors to advance._
+Ambassadors within the Swanchain ecosystem are tasked with producing written or video content focusing on Swanchain and its various products. To ensure diversity and freshness, topics must not be duplicated within the same month and should only be revisited in a new month.
 
-#### Round 2: Shine as an Ambassador (Feb 19 — Mar 19) <a href="#id-6007" id="id-6007"></a>
+Goal: To ensure quality materials are available to ensure proper onboarding and orientation of members into the community whilst keeping pre-existing members updated.
 
-Let your brilliance take flight! Round 2 is your chance to showcase your unique talents and deepen your connection with the Swan community.
+**Community Engagement and Events:**
 
-* **Prepare campaign materials:** Craft captivating visuals, write compelling posts, and support initiatives like AMAs, translations, and informative guides.
-* **Engage deeper:** Be present in the community, answer questions, participate in discussions, and showcase your dedication to Swan.
+Ambassadors are encouraged to actively participate in community activities, engaging in discussions across various Swanchain social platforms. All Ambassadors will team up/collaborating to organize and host community events. Events like quizzes or educational sessions must be submitted for review by the team at least 3 days prior to the scheduled event.
 
-**Read full announcement about the Ambassador Program here:**
+Events will be held every friday.
+
+Goal: To foster a positive work relationship between the ambassadors (their level of involvement will be closely monitored, with points awarded based on their activity levels), and also to increase community togetherness and activities.
+
+**AMA Sessions and Twitter Space Events:**
+
+Ambassadors have the opportunity to conduct AMA (Ask Me Anything) sessions or Twitter Space events either individually or in pairs, with a maximum of two Ambassadors per event. Points will be awarded separately for each organized session.
+
+Goal: Spread the word about Swan or any of it’s active ongoing campaign for publicity.
+
+### Activity/Rules
+
+Swan Ambassador Program Activity & Reward Rules
+
+#### **Maintaining Active Status:**
+
+Minimum Activity Requirement: To maintain active status and eligibility for rewards, you must accumulate at least 50 points per month.
+
+#### **Points System:**
+
+Your activity will be tracked through a point system. Different activities will earn you different points, with higher engagement earning more points.
+
+#### **Monthly Review:**
+
+At the beginning of each month, your activity will be reviewed based on the previous month's point total. Consequences of Inactivity: If you fall below the minimum point threshold for two consecutive months, you will be removed from the Ambassador program.
+
+#### **Consequences of Inactivity:**
+
+If you fall below the minimum point threshold for two consecutive months, you will be removed from the Ambassador program.\
+
 
 {% embed url="https://swanchain.medium.com/introducing-the-swan-ambassador-program-ee10511b7212" %}
 
