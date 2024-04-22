@@ -71,6 +71,13 @@
 
 ## Swan Testnet
 
+* [Atom Accelerator Race](swan-testnet/atom-accelerator-race/README.md)
+  * [Before You Get started](swan-testnet/atom-accelerator-race/before-you-get-started.md)
+  * [CP Acceleration Program](swan-testnet/atom-accelerator-race/cp-acceleration-program.md)
+  * [Builder Acceleration Program](swan-testnet/atom-accelerator-race/builder-acceleration-program.md)
+  * [On-chain Interaction Race](swan-testnet/atom-accelerator-race/on-chain-interaction-race.md)
+  * [TVL Drive Program](swan-testnet/atom-accelerator-race/tvl-drive-program.md)
+  * [FAQ](swan-testnet/atom-accelerator-race/faq.md)
 * [Swan Saturn Testnet](swan-testnet/swan-saturn-testnet/README.md)
   * [Before You Get Started](swan-testnet/swan-saturn-testnet/before-you-get-started/README.md)
     * [Set Up MetaMask](swan-testnet/swan-saturn-testnet/before-you-get-started/set-up-metamask.md)
