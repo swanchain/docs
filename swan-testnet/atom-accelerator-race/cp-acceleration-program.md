@@ -12,10 +12,34 @@ April 25th , 00:00 (EST) - June 25th, 2024, 23:59 (EST)
 
 * Participants will need to deploy a [Computing Provider](https://docs.swanchain.io/orchestrator/as-a-computing-provider/computing-provider-setup) according to the instructions provided and follow this [documentation](https://docs.swanchain.io/orchestrator/as-a-computing-provider/connect-to-orchestrator) to complete ZK tasks. Credits will be earned based on their performance in ZK jobs.
 
+{% hint style="info" %}
+**ECP hardware requirements:**
+
+* Possess a public IP
+* Have at least one GPU&#x20;
+* At least 4 vCPUs&#x20;
+* Minimum 300GB HDD storage&#x20;
+* Minimum 32GB memory&#x20;
+* Minimum 20MB bandwidth
+{% endhint %}
+
 #### As an FCP (Fog Computing Provider)
 
 * Participants will be required to deploy a Computing Provider.
 * The longer their GPUs and CPUs are utilized, and the higher their uptime, the more credits they'll earn.
+
+{% hint style="info" %}
+**FCP hardware requirements:**
+
+* Possess a public IP
+* Have a domain name (\*.example.com)
+* Have an SSL certificate
+* Have at least one GPU&#x20;
+* At least 8 vCPUs&#x20;
+* Minimum 100GB SSD storage
+* Minimum 64GB memory
+* Minimum 50MB bandwidth
+{% endhint %}
 
 {% hint style="info" %}
 **Extra Rewards**
