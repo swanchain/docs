@@ -4,7 +4,7 @@ The Computing Provider Acceleration Program is an exciting event designed to att
 
 ### Duration
 
-April 25th , 00:00 (EST) - June 25th, 2024, 23:59 (EST)
+April 29th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 
 ### How to Participate
 

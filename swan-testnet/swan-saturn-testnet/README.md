@@ -10,9 +10,9 @@ The Swan Saturn Testnet is your chance to:
 
 * Discover and test [Swan Chain](https://swanchain.io/)'s features before its mainnet launch.&#x20;
 * Contribute your valuable feedback and help mold the platform's evolution.
-* Participate in various programs and activities to earn up to **3,000,000 SWAN** tokens.
+* Participate in various programs and activities to earn up to **15,000,000 credits**.
 
-Ready to join? Head over to: [**https://saturn-testnet.swanchain.io/**](https://saturn-testnet.swanchain.io/)
+Ready to join? Head over to: [**https://proxima-testnet.swanchain.io/**](https://proxima-testnet.swanchain.io/)
 
 ***
 
