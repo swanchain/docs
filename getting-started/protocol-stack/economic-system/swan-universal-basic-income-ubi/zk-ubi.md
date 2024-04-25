@@ -2,7 +2,7 @@
 
 The ZK-UBI (Zero-Knowledge Universal Basic Income) on Swan Chain is an innovative implementation that blends a Universal Basic Income model with the privacy and efficiency of zero-knowledge proofs (ZKPs), underpinned by an embedded ZK market. This integration creates a self-sustaining and privacy-preserving ecosystem for participants who contribute computing resources.
 
-<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Concept and Functionality
 
@@ -20,6 +20,6 @@ The ZK-UBI (Zero-Knowledge Universal Basic Income) on Swan Chain is an innovativ
 4. **Proof Submission and Verification**: Upon completion, providers submit their ZK proofs back to the Swan Chain for verification. This ensures the integrity and validity of the computations performed.
 5. **UBI Distribution**: Once verified, the ZK proofs trigger the smart contract-based UBI system to distribute $SWAN to the computing providers, ensuring a steady income stream and incentivizing continuous participation in the network.
 
-<figure><img src="../../../../.gitbook/assets/image (158).png" alt=""><figcaption><p> ZK-UBI reward Dashboard</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (158) (1).png" alt=""><figcaption><p> ZK-UBI reward Dashboard</p></figcaption></figure>
 
 To get started as a ZK-UBI contributor, click [here](../../../../development-resource/contribute-zk-ubi-task/).&#x20;

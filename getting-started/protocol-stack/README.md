@@ -19,7 +19,7 @@ In order to enable a new class of web3 native dApps, a Decentralized Query Proto
 
 ## Protocol Layers
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Swan Protocol Stack</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (158).png" alt=""><figcaption><p>Swan Protocol Stack</p></figcaption></figure>
 
 1. [Consensus Layer](cross-chain-contracts.md)—responsible for smart contract execution and payment settlement.
 2. &#x20;[Peer-to-peer (P2P) Network](peer-to-peer-p2p-network.md)—defines how nodes locate and connect.
