@@ -21,9 +21,13 @@ April 29th, 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 
 The On-chain Interaction Race is allocated 10% of the total [Atom Accelerator Race ](https://proxima-testnet.swanchain.io/)campaign pool of 15,000,000 credits. This translates to a dedicated reward pool of **1,500,000 credits** for the On-chain Interaction Race.
 
-Rewards will be distributed based on the following contribution weightings to incentivize various activities:
+**Rewards Distribution:**&#x20;
 
-<table><thead><tr><th>Activity</th><th width="136">Weighting</th><th>Reward Pool Allocation (Credits)</th></tr></thead><tbody><tr><td>Token Transfers</td><td>10%</td><td>150,000</td></tr><tr><td>Bridge</td><td>10%</td><td>150,000</td></tr><tr><td>Contract Deployment</td><td>20%</td><td>300,000</td></tr><tr><td>Lagrange Space Deployment</td><td>60%</td><td>900,000</td></tr></tbody></table>
+Participants will earn rewards based on their contributions to the tasks they choose to participate in. Higher effort and engagement will potentially result in higher rewards. T**he difficulty level of each task determines the complexity and potential rewards available**.
+
+<table><thead><tr><th width="129">Task</th><th>Task Name</th><th>Difficulty Level</th></tr></thead><tbody><tr><td>1</td><td>Transferring Tokens</td><td>Beginner</td></tr><tr><td>2</td><td>Bridging Tokens</td><td>Elementary</td></tr><tr><td>3</td><td>Deploying Contracts</td><td>Intermediate</td></tr><tr><td>4</td><td>Deploying Space on Lagrange</td><td>Advanced</td></tr></tbody></table>
+
+**Bonus for Task 2:** There will be a  bonus from the prize pool to reward users who bridge more Sepolia ETH from the Ethereum network to the Swan Chain.
 
 {% hint style="danger" %}
 We may, at our sole discretion, modify or terminate your right to receive the prize upon discovery of any fraudulent and dishonest acts conducted by you in order to increase transaction counts under the On-chain Interaction Race. Our decision shall be final and we will not enter into any discussion regarding this matter.

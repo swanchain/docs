@@ -72,7 +72,7 @@
 ## Swan Testnet
 
 * [Atom Accelerator Race](swan-testnet/atom-accelerator-race/README.md)
-  * [Before You Get started](swan-testnet/atom-accelerator-race/before-you-get-started/README.md)
+  * [Before You Get Started](swan-testnet/atom-accelerator-race/before-you-get-started/README.md)
     * [Set Up MetaMask](swan-testnet/atom-accelerator-race/before-you-get-started/set-up-metamask.md)
     * [Claim SepoliaETH](swan-testnet/atom-accelerator-race/before-you-get-started/claim-sepoliaeth.md)
     * [Claim testSWAN](swan-testnet/atom-accelerator-race/before-you-get-started/claim-testswan.md)
