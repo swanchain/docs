@@ -10,7 +10,7 @@ Before you install the Computing Provider, you need to know there are some resou
 * ✅ Minimum 50GB SSD storage
 * ✅ Minimum 32GB memory
 * ✅ Minimum 50MB bandwidth
-* ✅ `Go` version must be 1.21+, you can refer here:
+* ✅ `Go` version must be 1.21.7+, you can refer here:
 
 ```bash
 wget -c https://golang.org/dl/go1.21.7.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local

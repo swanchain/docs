@@ -35,6 +35,10 @@ April 29th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 * Earn OAT as a reward, with no participant limit.
 * Airdrop Prize Pool: 900,000 SWAN credits.
 
+{% hint style="info" %}
+**Note:** The 900k reward credits mentioned here cover all Galxe-related campaigns, not just a single one.
+{% endhint %}
+
 ### Social Engagement <a href="#zealy" id="zealy"></a>
 
 #### **1. DURATION:**

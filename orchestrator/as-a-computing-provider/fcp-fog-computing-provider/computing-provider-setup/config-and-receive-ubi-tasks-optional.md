@@ -1,6 +1,6 @@
 # Config and Receive UBI Tasks(optional)
 
-The [Universal Basic Income (UBI)](../../../getting-started/protocol-stack/economic-system/swan-universal-basic-income-ubi.md) model is implemented to provide a foundational level of compensation to qualified providers.
+The [Universal Basic Income (UBI)](../../../../getting-started/protocol-stack/economic-system/swan-universal-basic-income-ubi.md) model is implemented to provide a foundational level of compensation to qualified providers.
 
 Configuring your Computing Provider (CP) to receive UBI tasks within the Swan decentralized computing ecosystem is crucial for participating in the incentive mechanism and earning fair compensation for your contributions.
 
@@ -15,7 +15,7 @@ Configuring your Computing Provider (CP) to receive UBI tasks within the Swan de
 These tasks offer varying UBI rewards, and the UBI engine periodically checks for idle resources, randomly sending UBI tasks that the computing provider (CP) can undertake.
 {% endhint %}
 
-For more details please refer to[ ](../../../getting-started/protocol-stack/economic-system/swan-universal-basic-income-ubi.md)[Universal Basic Income here](../../../getting-started/protocol-stack/economic-system/swan-universal-basic-income-ubi.md)
+For more details please refer to[ ](../../../../getting-started/protocol-stack/economic-system/swan-universal-basic-income-ubi.md)[Universal Basic Income here](../../../../getting-started/protocol-stack/economic-system/swan-universal-basic-income-ubi.md)
 
 ### **Step 1: Prerequisites:** Perform Filecoin Commit2 (fil-c2) UBI tasks.
 

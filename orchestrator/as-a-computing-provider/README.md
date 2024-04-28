@@ -1,12 +1,8 @@
 # As a Computing Provider
 
-A Computing Provider is an individual or organization that participates in the decentralized computing network by offering computational resources such as processing power (CPU and GPU), memory, storage, and bandwidth. Their primary role is to execute tasks posted by users on the Lagrange platform.
+A computing provider is an individual or organization that participates in the decentralized computing network by offering computational resources such as processing power (CPU and GPU), memory, storage, and bandwidth.
 
-To become a computing provider in Lagrange, one needs to:
+As a resource provider, you can run a **ECP**(Edge Computing Provider) and **FCP**(Fog Computing Provider) to contribute yourcomputing resource.
 
-1. Bid for tasks: Computing providers compete with others by bidding on tasks through a smart contract. During the bidding process, they may be required to deposit collateral as a guarantee of their commitment to completing the assigned task.
-2. Perform the computing: Once a computing provider wins the bid, they are responsible for executing the task using their resources. This may involve processing data, running simulations, or carrying out complex calculations.
-3. Upload the results: After completing the task, the computing provider submits the results to a storage provider within the Lagrange network. These results are stored for future validation by task validators.
-4. Receive rewards: Upon successful validation of the results, the computing provider is rewarded by the task publisher. This reward acts as an incentive for providers to contribute resources to the network and maintain high-quality services.
-
-Computing Providers play a vital role in creating a decentralized and efficient ecosystem that fosters innovation, reduces reliance on centralized systems, and offers scalable computational resources to users.
+* **ECP (Edge Computing Provider)** specializes in processing data at the source of data generation, using minimal latency setups ideal for real-time applications. This provider handles specific, localized tasks directly on devices at the network’s edge, such as IoT devices. At the current stage, ECP supports the generation of **ZK-Snark proof of Filecoin network**, and more ZK proof types will be gradually supported, such as Aleo, Scroll, starkNet, etc. [Install Guideline](https://github.com/swanchain/go-computing-provider/blob/v0.4.6/ubi/README.md)
+* **FCP (Fog Computing Provider)** Offers a layered network that extends cloud capabilities to the edge of the network, providing services such as AI model training and deployment. This provider utilizes infrastructure like Kubernetes (K8S) to support scalable, distributed computing tasks. **FCP** will execute tasks assigned by Market Provider, like [Orchestrator](https://orchestrator.swanchain.io/) on the [Swan chain](https://swanchain.io/).

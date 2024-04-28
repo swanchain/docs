@@ -2,7 +2,7 @@
 
 [Commit 2](https://docs.filecoin.io/storage-providers/architecture/sealing-pipeline#commit-2) (C2) is an intensive computational step in Filecoin's sector sealing pipeline requiring generation of a [zk-SNARK](https://docs.filecoin.io/reference/general/glossary#zero-knowledge-succinct-non-interactive-argument-of-knowledge-zk-snark) proof to validate storage commitment.
 
-Swan's ZK-UBI mechanism incorporates such heavy workloads into an incentive design that allows [Computing Provider](../../../../../orchestrator/as-a-computing-provider/computing-provider-setup/) within Swan ecosystem to accelerate proofs while earning ZK-UBI rewards.
+Swan's ZK-UBI mechanism incorporates such heavy workloads into an incentive design that allows [Computing Provider](../../../../../orchestrator/as-a-computing-provider/fcp-fog-computing-provider/computing-provider-setup/) within Swan ecosystem to accelerate proofs while earning ZK-UBI rewards.
 
 **Key Points about C2**
 
@@ -11,7 +11,7 @@ Swan's ZK-UBI mechanism incorporates such heavy workloads into an incentive desi
 
 **Receiving ZK-Tasks**
 
-Computing providers on Swan can following this [guide](../../../../../orchestrator/as-a-computing-provider/computing-provider-setup/config-and-receive-ubi-tasks-optional.md) to configure themselves to receive and process outsourced Filecoin C2 sector sealing tasks.
+Computing providers on Swan can following this [guide](../../../../../orchestrator/as-a-computing-provider/fcp-fog-computing-provider/computing-provider-setup/config-and-receive-ubi-tasks-optional.md) to configure themselves to receive and process outsourced Filecoin C2 sector sealing tasks.
 
 Once set up, suitable C2 tasks get automatically assigned based on provider declared capacity.
 
