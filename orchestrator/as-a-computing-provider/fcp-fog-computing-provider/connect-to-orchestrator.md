@@ -5,7 +5,7 @@
 * **SwanETH**
   * Ensure that you have sufficient SwanETH for collateral.&#x20;
   * You can obtain SwanETH following this [guide](../../../swan-testnet/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md) and [bridge](../../../swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens.md) them from Sepolia to Swan Saturn Chain
-* **Obtain Filecoin V28 Parameters(optional)**
+* **Obtain Filecoin V28 Parameters (optional)**
   * To complete [UBI tasks](broken-reference), you need to have the Filecoin V28 parameters.&#x20;
   * Make sure you have the parameters corresponding to 512M and 32G sectors, as these cater to different task requirements.
 
@@ -23,13 +23,13 @@ To connect to the Orchestrator, a minimum of **0.01 SwanETH** tokens must be dep
 
 ```bash
 # Collateral deposit command
-computing-provider collateral [Wallet Address] [Amount]
+computing-provider collateral add [Wallet Address] [Amount]
 ```
 
-_Example: Deposit 1 SwanETH tokens as collateral_
+_Example: Deposit 1 SwanETH token as collateral_
 
 ```bash
-computing-provider collateral 0xFbc1d3...2373 1
+computing-provider collateral add 0xFbc1d3...2373 1
 ```
 
 **Step 3: Real-Time Monitoring**
