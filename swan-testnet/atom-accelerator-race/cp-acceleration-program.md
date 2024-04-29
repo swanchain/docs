@@ -10,7 +10,7 @@ April 29th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 
 #### As an ECP (Edge Computing Provider)
 
-* Participants will need to deploy a [Computing Provider](https://docs.swanchain.io/orchestrator/as-a-computing-provider/computing-provider-setup) according to the instructions provided and follow this [documentation](https://docs.swanchain.io/orchestrator/as-a-computing-provider/connect-to-orchestrator) to complete ZK tasks. Credits will be earned based on their performance in ZK jobs.
+* Participants will need to deploy a ECP according to the instructions provided and follow this [documentation](https://docs.swanchain.io/orchestrator/as-a-computing-provider/ecp-edge-computing-provider)[ ](https://docs.swanchain.io/orchestrator/as-a-computing-provider/ecp-edge-computing-provider/ecp-setup)to complete ZK tasks. Credits will be earned based on their performance in ZK jobs.
 
 {% hint style="info" %}
 **ECP hardware requirements:**
@@ -25,7 +25,7 @@ April 29th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 
 #### As an FCP (Fog Computing Provider)
 
-* Participants will be required to deploy a Computing Provider.
+* Participants will be required to deploy a FCP following the [documentation.](https://docs.swanchain.io/orchestrator/as-a-computing-provider/fcp-fog-computing-provider/computing-provider-setup)
 * The longer their GPUs and CPUs are utilized, and the higher their uptime, the more credits they'll earn.
 
 {% hint style="info" %}
