@@ -4,7 +4,7 @@
 
 **A:**
 
-The latest version is [v0.4.1](https://github.com/swanchain/go-computing-provider/releases/tag/v0.4.1)&#x20;
+The latest version is  [v0.4.6](https://github.com/swanchain/go-computing-provider/releases/tag/v0.4.6)
 
 Check the dashboard here : [https://orchestrator.swanchain.io/provider-status](https://orchestrator.swanchain.io/provider-status)
 
