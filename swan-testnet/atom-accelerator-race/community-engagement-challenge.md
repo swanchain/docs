@@ -87,28 +87,4 @@ April 29th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 
 * 1000 SWAN for each event.
 
-### **Twitter Thread Competition** <a href="#ama-and-webinar" id="ama-and-webinar"></a>
-
-#### **1. DURATION:**
-
-April 29th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
-
-#### **2. RULES/TERMS:**
-
-Below are some guidelines for crafting a top-notch thread:
-
-* Ensure that your thread is original and factual, avoiding any plagiarized or duplicated content.
-* Enhance your thread with pertinent images, GIFs, or videos to boost engagement.
-* Each tweet will undergo evaluation by the Swan team, considering their creativity, quality, content, and level of interaction.
-
-#### **3. HOW TO JOIN:**
-
-Below are some guidelines for crafting a top-notch thread:
-
-* Ensure that your thread is original and factual, avoiding any plagiarized or duplicated content.
-* Enhance your thread with pertinent images, GIFs, or videos to boost engagement.
-* Each tweet will undergo evaluation by the Swan team, considering their creativity, quality, content, and level of interaction.
-
-#### **4. REWARD STRUCTURE:**
-
-* 1000 SWAN for each event.
+### &#x20;<a href="#ama-and-webinar" id="ama-and-webinar"></a>
