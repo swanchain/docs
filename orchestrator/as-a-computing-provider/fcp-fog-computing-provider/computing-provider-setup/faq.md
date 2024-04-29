@@ -1,4 +1,4 @@
-# FAQ
+# FCP FAQ
 
 #### Q: What is the current version of Computing Provider, and are there any tutorials?
 
@@ -12,7 +12,7 @@ Tutorials&#x20;
 
 * [Deploy your CP](./)
 * [Connect to the Orchestrator and Collateral](../connect-to-orchestrator.md)
-* [Config and receive the UBI task](config-and-receive-ubi-tasks-optional.md):&#x20;
+* [Config and receive the UBI task](broken-reference):&#x20;
 
 #### Q: How can I verify if my Computing Provider is set up to receive UBI tasks?
 

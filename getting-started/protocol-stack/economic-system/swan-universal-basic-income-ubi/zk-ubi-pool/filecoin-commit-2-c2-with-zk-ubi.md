@@ -11,7 +11,7 @@ Swan's ZK-UBI mechanism incorporates such heavy workloads into an incentive desi
 
 **Receiving ZK-Tasks**
 
-Computing providers on Swan can following this [guide](../../../../../orchestrator/as-a-computing-provider/fcp-fog-computing-provider/computing-provider-setup/config-and-receive-ubi-tasks-optional.md) to configure themselves to receive and process outsourced Filecoin C2 sector sealing tasks.
+Computing providers on Swan can following this [guide](broken-reference) to configure themselves to receive and process outsourced Filecoin C2 sector sealing tasks.
 
 Once set up, suitable C2 tasks get automatically assigned based on provider declared capacity.
 
