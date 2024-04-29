@@ -68,7 +68,7 @@ Tutorials&#x20;
 6.  After running ubi-task, check if the task status is success:
 
     ```bash
-    computing-provider ubi-task list
+    computing-provider ubi list
     ```
 7. If the test is successful, restore the `UbiEnginePk` in the `config.toml` file to its original value
 
