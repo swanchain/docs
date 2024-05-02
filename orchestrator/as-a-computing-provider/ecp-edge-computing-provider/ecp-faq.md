@@ -3,7 +3,7 @@
 #### Q: How can I verify whether the ECP environment is installed successfully?
 
 ```bash
-curl -k --location --request GET 'https://<PublicIp>:<port>/api/v1/computing/cp' \
+curl -k --location --request GET 'http://<PublicIp>:<port>/api/v1/computing/cp' \
 --header 'Content-Type: application/json'
 
 ```
