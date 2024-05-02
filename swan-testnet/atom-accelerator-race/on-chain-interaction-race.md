@@ -41,6 +41,8 @@ To participate in the On-chain Interaction Race, users will need to:
 2. Acquire testnet SWAN tokens. These tokens can be obtained through [faucets provided by Swan Chain](https://discord.com/invite/swanchain).
 3. Begin engaging in on-chain activities such as those listed above.
 
+**Prerequisite:** ✅ Verify your wallet address by completing the [Galxe campaign](https://app.galxe.com/quest/filswan/GCCQuthxve). This is a mandatory step to verify your wallet address for participation.
+
 ## **Additional Information**
 
 {% embed url="https://docs.swanchain.io/swan-testnet/atom-accelerator-race/before-you-get-started" %}
