@@ -10,9 +10,8 @@ Check the dashboard here : [https://orchestrator.swanchain.io/provider-status](h
 
 Tutorials&#x20;
 
-* [Deploy your CP](./)
-* [Connect to the Orchestrator and Collateral](../connect-to-orchestrator.md)
-* [Config and receive the UBI task](broken-reference):&#x20;
+* Deploy&#x20;
+* [Depoy your FCP](./)
 
 #### Q: How can I verify if my Computing Provider is set up to receive UBI tasks?
 
@@ -83,7 +82,7 @@ _**\*Note: Please replace**** ****`<YOUR_MULTI_ADDRESS_IP>:<PORT>`**** ****with 
 {% endhint %}
 
 ```
-curl --location --request POST 'http://<YOUR_MULTI_ADDRESS_IP>:<PORT>/api/v1/computing/lagrange/jobs' \
+curl -k --location --request POST 'https://<YOUR_MULTI_ADDRESS_IP>:<PORT>/api/v1/computing/lagrange/jobs' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 "uuid": "5641877b-dc94-469a-bb3b-ecab6d10f7dd",
