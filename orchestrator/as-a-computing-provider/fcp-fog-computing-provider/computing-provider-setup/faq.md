@@ -75,6 +75,13 @@ Tutorials&#x20;
 
 **A**:&#x20;
 
+Set the `[HUB].VerifySign` in the **`$CP_PATH/config.toml`** file&#x20;
+
+```
+[HUB]
+VerifySign = false
+```
+
 Run the following command:
 
 {% hint style="info" %}
