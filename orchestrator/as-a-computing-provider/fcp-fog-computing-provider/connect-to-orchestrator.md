@@ -13,7 +13,7 @@ Ensure that you have completed all these preparations before connecting to the O
 
 **Step 1: Setup Your Computing Provider**
 
-Follow this [guide](computing-provider-setup/) to deploy your Computing Provider and make sure you have the latest version installed.
+Follow this [guide](computing-provider-setup.md) to deploy your Computing Provider and make sure you have the latest version installed.
 
 {% embed url="https://github.com/swanchain/go-computing-provider" %}
 

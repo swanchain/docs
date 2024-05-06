@@ -10,8 +10,8 @@ Check the dashboard here : [https://orchestrator.swanchain.io/provider-status](h
 
 Tutorials&#x20;
 
-* Deploy&#x20;
-* [Depoy your FCP](./)
+* [Deploy your ECP](../ecp-edge-computing-provider/ecp-setup.md)
+* [Depoy your FCP](computing-provider-setup.md)
 
 #### Q: How can I verify if my Computing Provider is set up to receive UBI tasks?
 

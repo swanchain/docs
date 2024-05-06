@@ -3,22 +3,22 @@
 ## Table of Content
 
 * As a FCP
-  * [Prerequisites](./#prerequisites)
-  * [Install the Kubernetes](./#install-the-kubernetes)
+  * [Prerequisites](computing-provider-setup.md#prerequisites)
+  * [Install the Kubernetes](computing-provider-setup.md#install-the-kubernetes)
     * Install Container Runtime Environment
     * Optional-Setup a docker registry server
     * Create a Kubernetes Cluster
     * Install the Network Plugin
     * Install the NVIDIA Plugin
     * Install the Ingress-nginx Controller
-  * [Install and config the Nginx](./#install-and-config-the-nginx)
-  * [Install the Hardware resource-exporter](./#install-the-hardware-resource-exporter)
-  * [Install the Redis service](./#install-redis-service)
-  * [Build and config the Computing Provider](./#build-and-config-the-computing-provider)
-  * [Install AI Inference Dependency(Optional)](./#install-ai-inference-dependency)
-  * [Config and Receive UBI Tasks(optional)](./#config-and-receive-ubi-tasks)
-  * [Start the Computing Provider](./#start-the-computing-provider)
-  * [CLI of Computing Provider](./#cli-of-computing-provider)
+  * [Install and config the Nginx](computing-provider-setup.md#install-and-config-the-nginx)
+  * [Install the Hardware resource-exporter](computing-provider-setup.md#install-the-hardware-resource-exporter)
+  * [Install the Redis service](computing-provider-setup.md#install-redis-service)
+  * [Build and config the Computing Provider](computing-provider-setup.md#build-and-config-the-computing-provider)
+  * [Install AI Inference Dependency(Optional)](computing-provider-setup.md#install-ai-inference-dependency)
+  * [Config and Receive UBI Tasks(optional)](computing-provider-setup.md#config-and-receive-ubi-tasks)
+  * [Start the Computing Provider](computing-provider-setup.md#start-the-computing-provider)
+  * [CLI of Computing Provider](computing-provider-setup.md#cli-of-computing-provider)
 
 ### Prerequisites
 
