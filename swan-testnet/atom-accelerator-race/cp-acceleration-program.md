@@ -28,7 +28,7 @@ April 29th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 * Participants will be required to deploy a FCP following the [documentation.](https://docs.swanchain.io/orchestrator/as-a-computing-provider/fcp-fog-computing-provider/computing-provider-setup)
 * The longer their GPUs and CPUs are utilized, and the higher their uptime, the more credits they'll earn.
 * **Boost:** Using high-density GPUs such as Nvidia H100s, A100s, or top consumer models can yield a substantial 3-10x acceleration in reward calculations.
-  * High-density GPU Reward Details
+  * High-density GPU Boost Details
     * RTX 4090: 3X
     * H100: 4X
     * A100: 4X
