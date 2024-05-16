@@ -1,5 +1,15 @@
 # FCP FAQ
 
+#### **Question: How can I migrate my CP (Computing Provider) to a new environment?**
+
+**A:** To migrate your CP to a new environment, follow these steps:
+
+1. **Copy Files**: Copy all files under the old CP directory (`$CP_PATH`) to a directory on the new machine, for example: `/data/swan`.
+2. **Set Environment Variable**: Set the environment variable `CP_PATH` to the directory where you copied the CP files on the new machine. For example, you can do this by running the command: `export CP_PATH=/data/swan`.
+3. **Start CP Service Process**: Once the files are copied and the environment variable is set, start the CP service process on the new machine.
+
+By following these steps, you'll successfully migrate your CP to the new computer, ensuring that it operates smoothly in the new environment.
+
 #### Q: What is the current version of Computing Provider, and are there any tutorials?
 
 **A:**
