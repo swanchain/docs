@@ -41,3 +41,12 @@ Alchemy allows registered users to claim up to 0.5 Sepolia ETH daily at the time
 Go to [Bridge](https://bridge.swanchain.io/), enter the amount of ETH you wish to bridge, and click on the "Deposit" button
 
 <figure><img src="../../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="warning" %}
+Sepolia ETH withdrawal via Swan Bridge is temporarily suspended for maintenance. However, deposit services from Sepolia to Swan Chain (Proxima) remain active.
+{% endhint %}
+
+{% hint style="info" %}
+Please be advised not to bridge a large amount of Sepolia ETH to Swan Chain during this period, as immediate withdrawal may not be possible. We recommend bridging an appropriate amount of Sepolia ETH based on your interaction level.
+{% endhint %}
+

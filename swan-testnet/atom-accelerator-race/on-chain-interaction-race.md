@@ -10,7 +10,6 @@ This program incentivizes participants to explore and interact with Swan Chain b
 
 * [Deploying smart contracts](https://docs.swanchain.io/development-resource/quickstarts/deploying-your-first-smart-contract-with-remix)
 * Transferring tokens
-* [Bridging](https://bridge.swanchain.io/) tokens
 * Deploying [Lagrange spaces](https://lagrangedao.org/)
 
 ## Duration
@@ -25,9 +24,11 @@ The On-chain Interaction Race is allocated 10% of the total [Atom Accelerator Ra
 
 Participants will earn rewards based on their contributions to the tasks they choose to participate in. Higher effort and engagement will potentially result in higher rewards. T**he difficulty level of each task determines the complexity and potential rewards available**.
 
-<table><thead><tr><th width="129">Task</th><th>Task Name</th><th>Difficulty Level</th></tr></thead><tbody><tr><td>1</td><td>Transferring Tokens</td><td>Beginner</td></tr><tr><td>2</td><td>Bridging Tokens</td><td>Elementary</td></tr><tr><td>3</td><td>Deploying Contracts</td><td>Intermediate</td></tr><tr><td>4</td><td>Deploying Space on Lagrange</td><td>Advanced</td></tr></tbody></table>
+<table><thead><tr><th width="129">Task</th><th>Task Name</th><th>Difficulty Level</th></tr></thead><tbody><tr><td>1</td><td>Transferring Tokens</td><td>Beginner</td></tr><tr><td>2</td><td>Deploying Contracts</td><td>Intermediate</td></tr><tr><td>3</td><td>Deploying Space on Lagrange</td><td>Advanced</td></tr></tbody></table>
 
-**Bonus for Task 2:** There will be a  bonus from the prize pool to reward users who bridge more Sepolia ETH from the Ethereum network to the Swan Chain.
+{% hint style="info" %}
+Please avoid bridging a large amount of Sepolia ETH to Swan Chain during maintenane period, as immediate withdrawal may not be possible. We recommend bridging an appropriate amount based on your interaction level.
+{% endhint %}
 
 {% hint style="danger" %}
 We may, at our sole discretion, modify or terminate your right to receive the prize upon discovery of any fraudulent and dishonest acts conducted by you in order to increase transaction counts under the On-chain Interaction Race. Our decision shall be final and we will not enter into any discussion regarding this matter.
