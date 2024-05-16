@@ -27,6 +27,22 @@ April 29th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 
 * Participants will be required to deploy a FCP following the [documentation.](https://docs.swanchain.io/orchestrator/as-a-computing-provider/fcp-fog-computing-provider/computing-provider-setup)
 * The longer their GPUs and CPUs are utilized, and the higher their uptime, the more credits they'll earn.
+* **Boost:** Using high-density GPUs such as Nvidia H100s, A100s, or top consumer models can yield a substantial 3-10x acceleration in reward calculations.
+  * High-density GPU Reward Details
+    * RTX 4090: 3X
+    * H100: 4X
+    * A100: 4X
+    * A6000: 4X
+    * A10: 4X
+    * A6000: 4X
+    * H800: 6X
+    * L40: 7X
+    * L40S: 8X
+    * H200: 10X
+
+{% hint style="info" %}
+It's important to note that this enhancement doesn't directly translate to a 3-10x increase in SWAN credits rewards; rather, it amplifies your contribution by the same factor.
+{% endhint %}
 
 {% hint style="info" %}
 **FCP hardware requirements:**
@@ -39,27 +55,6 @@ April 29th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 * Minimum 100GB SSD storage
 * Minimum 64GB memory
 * Minimum 50MB bandwidth
-{% endhint %}
-
-{% hint style="info" %}
-**Extra Rewards**
-
-Use high-density GPUs like Nvidia H100s, A100s, or top consumer models to receive a 3-10x reward boost for completed tasks.
-{% endhint %}
-
-{% hint style="info" %}
-**High-density GPU Reward Details**
-
-* RTX 4090: 3X
-* H100: 4X
-* A100: 4X
-* A6000: 4X
-* A10: 4X
-* A6000: 4X
-* H800: 6X
-* L40: 7X
-* L40S: 8X
-* H200: 10X
 {% endhint %}
 
 #### As a Market Provider (Coming Soon)
