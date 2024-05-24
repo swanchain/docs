@@ -99,122 +99,42 @@ To ensure commitment and mitigate potential risks associated with fraudulent act
 
 #### Fog Computing Provider (FCP) Formula
 
-* **Collateral Requirement (C\_FCP):**&#x20;
+*   **Collateral Requirement (C\_FCP):**
 
-$$
-C_{FCP} = 100 \times (vCPU + \frac{SSD_storage}{100} + \frac{memory}{10} + \frac{bandwidth}{10} + GPU)
-$$
+    $$
+    CFCP=100×(Number of Jobs+Job Complexity Factor)CFCP​=100×(Number of Jobs+Job Complexity Factor)
+    $$
 
-* &#x20;Where:
-  * vCPU: Number of virtual CPUs
-  * SSD\_storage: SSD storage in GB
-  * memory: Memory in GB
-  * bandwidth: Bandwidth in MB/s
-  * GPU: Number of GPUs
+    Where:
+
+    * Number of Jobs: Total number of jobs handled by the provider
+    * Job Complexity Factor: A factor based on the complexity and resources required for the jobs
 
 #### Edge Computing Provider (ECP) Formula
 
-* **Collateral Requirement (C\_ECP):**&#x20;
+*   **Collateral Requirement (C\_ECP):**
 
-$$
-C_{ECP} = 50 \times (vCPU + \frac{HDD_storage}{100} + \frac{memory}{10} + \frac{bandwidth}{10} + GPU)
-$$
+    $$
+    CECP=50×(Number of Jobs+Job Complexity Factor)CECP​=50×(Number of Jobs+Job Complexity Factor)
+    $$
 
-&#x20;Where:
+    Where:
 
-* vCPU: Number of virtual CPUs
-* HDD\_storage: HDD storage in GB
-* memory: Memory in GB
-* bandwidth: Bandwidth in MB/s
-* GPU: Number of GPUs
+    * Number of Jobs: Total number of jobs handled by the provider
+    * Job Complexity Factor: A factor based on the complexity and resources required for the jobs
 
 #### Market Provider (MP) Formula
 
-* **Collateral Requirement (C\_MP):**&#x20;
-
-$$
-C_{MP} = 200 \times (\text{Base Collateral} + \frac{\text{Transaction Volume}}{1000})
-$$
-
-Where:
-
-* Base Collateral: A fixed minimum collateral required
-* Transaction Volume: Total transaction volume handled by the Market Provider
-
-### Sample Collateral Calculation for FCP and ECP
-
-#### Fog Computing Provider (FCP) Collateral Calculation
-
-#### Sample Hardware Configuration for FCP
-
-* **vCPUs:** 8
-* **SSD Storage:** 100 GB
-* **Memory:** 64 GB
-* **Bandwidth:** 50 MB/s
-* **GPUs:** 2 (e.g., RTX 3080)
-
-#### Collateral Requirement Formula
-
-$$
-CFCP=100×(vCPU+SSD_storage100+memory10+bandwidth10+GPU)CFCP​=100×(vCPU+100SSD_storage​+10memory​+10bandwidth​+GPU)
-$$
-
-#### Calculation Steps
-
-1. **Calculate each component:**
-   * vCPUs: $$8×100=8008×100=800$$
-   * SSD Storage: $$100100×100=100100100​×100=100$$
-   * Memory: $$6410×100=6401064​×100=640$$
-   * Bandwidth: $$5010×100=5001050​×100=500$$
-   * GPUs: $$2×100=2002×100=200$$
-2.  **Sum all components:**
+*   **Collateral Requirement (C\_MP):**
 
     $$
-    CFCP=800+100+640+500+200=2240 Swan TokensCFCP​=800+100+640+500+200=2240 Swan Tokens
+    CMP=200×(Base Collateral+Transaction Volume1000)CMP​=200×(Base Collateral+1000Transaction Volume​)
     $$
 
-### Example Collateral for FCP:
+    Where:
 
-$$Collateral for FCP=2240 Swan TokensCollateral for FCP=2240 Swan Tokens$$
-
-#### Edge Computing Provider (ECP) Collateral Calculation
-
-#### Sample Hardware Configuration for ECP
-
-* **vCPUs:** 4
-* **HDD Storage:** 300 GB
-* **Memory:** 32 GB
-* **Bandwidth:** 20 MB/s
-* **GPUs:** 1 (e.g., RTX 3080)
-
-#### Collateral Requirement Formula
-
-$$
-CECP=50×(vCPU+HDD_storage100+memory10+bandwidth10+GPU)CECP​=50×(vCPU+100HDD_storage​+10memory​+10bandwidth​+GPU)
-$$
-
-#### Calculation Steps
-
-1. **Calculate each component:**
-   * vCPUs: $$4×50=2004×50=200$$
-   * HDD Storage: $$300100×50=150100300​×50=150$$
-   * Memory: $$3210×50=1601032​×50=160$$
-   * Bandwidth: $$2010×50=1001020​×50=100$$
-   * GPUs: $$1×50=501×50=50$$
-2.  **Sum all components:**
-
-    $$
-    CECP=200+150+160+100+50=660 Swan TokensCECP​=200+150+160+100+50=660 Swan Tokens
-    $$
-
-#### Example Collateral for ECP:
-
-$$Collateral for ECP=660 Swan TokensCollateral for ECP=660 Swan Tokens$$
-
-#### Summary
-
-* **Fog Computing Provider (FCP) Collateral:** 2240 Swan Tokens
-* **Edge Computing Provider (ECP) Collateral:** 660 Swan Tokens
+    * Base Collateral: A fixed minimum collateral required
+    * Transaction Volume: Total transaction volume handled by the Market Provider
 
 ### UBI Distribution Example
 
@@ -237,30 +157,61 @@ To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5
 
 #### Step-by-Step Calculation:
 
-1. **Calculate the total annual UBI allocation:**
+1.  **Calculate the total annual UBI allocation:**
 
-$$\text{Total Annual UBI} = \text{Circulating Supply} \times \text{Annual Inflation Rate}$$&#x20;
+    $$
+    Total Annual UBI=Circulating Supply×Annual Inflation RateTotal Annual UBI=Circulating Supply×Annual Inflation Rate
+    $$
 
-$$
-\text{Total Annual UBI} = 50,000,000 \times 0.05 = 2,500,000 \text{ Swan Tokens}
-$$
+    $$
+    Total Annual UBI=50,000,000×0.05=2,500,000 Swan TokensTotal Annual UBI=50,000,000×0.05=2,500,000 Swan Tokens
+    $$
+2. **Determine the allocation for each provider category:**
+   *   **ECP Allocation:**
 
-1.  **Determine the allocation for each provider category:**
+       $$
+       ECP Allocation=Total Annual UBI×0.40=2,500,000×0.40=1,000,000 Swan TokensECP Allocation=Total Annual UBI×0.40=2,500,000×0.40=1,000,000 Swan Tokens
+       $$
+   *   **FCP Allocation:**
 
-    * **ECP Allocation:**&#x20;
+       $$
+       FCP Allocation=Total Annual UBI×0.40=2,500,000×0.40=1,000,000 Swan TokensFCP Allocation=Total Annual UBI×0.40=2,500,000×0.40=1,000,000 Swan Tokens
+       $$
+   *   **MP Allocation:**
 
-    $$\text{ECP Allocation} = \text{Total Annual UBI} \times 0.40 = 2,500,000 \times 0.40 = 1,000,000 \text{ Swan Tokens}$$
+       $$
+       MP Allocation=Total Annual UBI×0.20=2,500,000×0.20=500,000 Swan TokensMP Allocation=Total Annual UBI×0.20=2,500,000×0.20=500,000 Swan Tokens
+       $$
+3. **Calculate the UBI per provider in each category:**
+   *   **UBI per ECP:**
 
-* **FCP Allocation:** $$\text{FCP Allocation} = \text{Total Annual UBI} \times 0.40 = 2,500,000 \times 0.40 = 1,000,000 \text{ Swan Tokens}$$
-* **MP Allocation:** $$\text{MP Allocation} = \text{Total Annual UBI} \times 0.20 = 2,500,000 \times 0.20 = 500,000 \text{ Swan Tokens}$$
+       $$
+       UBI per ECP=ECP AllocationNumber of ECPs=1,000,000400=2,500 Swan Tokens per ECPUBI per ECP=Number of ECPsECP Allocation​=4001,000,000​=2,500 Swan Tokens per ECP
+       $$
+   *   **UBI per FCP:**
 
-1. **Calculate the UBI per provider in each category:**
-   * **UBI per ECP:** $$\text{UBI per ECP} = \frac{\text{ECP Allocation}}{\text{Number of ECPs}} = \frac{1,000,000}{400} = 2,500 \text{ Swan Tokens per ECP}$$
-   * **UBI per FCP:** $$\text{UBI per FCP} = \frac{\text{FCP Allocation}}{\text{Number of FCPs}} = \frac{1,000,000}{100} = 10,000 \text{ Swan Tokens per FCP}$$
-   * **UBI per MP:** $$\text{UBI per MP} = \frac{\text{MP Allocation}}{\text{Number of MPs}} = \frac{500,000}{3} \approx 166,666.67 \text{ Swan Tokens per MP}$$
-2.  **Calculate the monthly UBI per provider:**
+       $$
+       UBI per FCP=FCP AllocationNumber of FCPs=1,000,000100=10,000 Swan Tokens per FCPUBI per FCP=Number of FCPsFCP Allocation​=1001,000,000​=10,000 Swan Tokens per FCP
+       $$
+   *   **UBI per MP:**
 
-    * **Monthly UBI per ECP:** $$\text{Monthly UBI per ECP} = \frac{\text{UBI per ECP}}{12} = \frac{2,500}{12} \approx 208.33 \text{ Swan Tokens}$$
-    * **Monthly UBI per FCP:** $$\text{Monthly UBI per FCP} = \frac{\text{UBI per FCP}}{12} = \frac{10,000}{12} \approx 833.33 \text{ Swan Tokens}$$
-    * **Monthly UBI per MP:** $$\text{Monthly UBI per MP} = \frac{\text{UBI per MP}}{12} = \frac{166,666.67}{12} \approx 13,888.89 \text{ Swan Tokens}$$
+       $$
+       UBI per MP=MP AllocationNumber of MPs=500,0003≈166,666.67 Swan Tokens per MPUBI per MP=Number of MPsMP Allocation​=3500,000​≈166,666.67 Swan Tokens per MP
+       $$
+4. **Calculate the monthly UBI per provider:**
+   *   **Monthly UBI per ECP:**
 
+       $$
+       Monthly UBI per ECP=UBI per ECP12=2,50012≈208.33 Swan TokensMonthly UBI per ECP=12UBI per ECP​=122,500​≈208.33 Swan Tokens
+       $$
+   *   **Monthly UBI per FCP:**
+
+       $$
+       Monthly UBI per FCP=UBI per FCP12=10,00012≈833.33 Swan TokensMonthly UBI per FCP=12UBI per FCP​=1210,000​≈833.33 Swan Tokens
+       $$
+   *   **Monthly UBI per MP:**
+
+       $$
+       Monthly UBI per MP=UBI per MP12=166,666.6712≈13,888.89 Swan TokensMonthly UBI per MP=12UBI per MP​=12166,666.67​≈13,888.89 Swan Tokens
+       $$
+5.
