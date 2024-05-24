@@ -79,6 +79,66 @@ To ensure commitment and mitigate potential risks associated with fraudulent act
 * **Fraud Detection:** If a provider’s computing job is proven fraudulent, the collateral is subject to a 2x slashing.
 * **Token Burn:** The slashed tokens are sent to a burning address, effectively removing them from circulation and penalizing dishonest behavior.
 
+#### Income and Commission Structure for Computing Jobs Auction Engine and Market Providers (MP)
+
+#### Computing Jobs Auction Engine
+
+**Income Generation**
+
+The computing jobs auction engine facilitates the distribution of computing tasks to providers (FCPs and ECPs) through a competitive bidding process. This system ensures that tasks are allocated efficiently, with providers offering the best rates and performance.
+
+#### Commission Structure for Market Providers (MP)
+
+Market Providers (MP) play a crucial role in this ecosystem by managing the auction process. They ensure that tasks are allocated fairly and efficiently to the most suitable providers. MPs earn commissions from the tasks auctioned through the following structure:
+
+#### Commission Calculation
+
+1. **Task Auction Commission Rate:** Let's assume the MP commission rate is set at 5% of the task value.
+2. **Example Task Value:** Assume a computing task is valued at 1000 Swan Tokens.
+
+#### Calculation of MP Commission
+
+$$
+MP Commission=Task Value×Commission RateMP Commission=Task Value×Commission Rate
+$$
+
+$$
+MP Commission=1000 Swan Tokens×0.05=50 Swan TokensMP Commission=1000 Swan Tokens×0.05=50 Swan Tokens
+$$
+
+#### Example Monthly Income for MP
+
+Assuming an MP manages 100 such tasks per month, the total monthly income from commissions would be:
+
+$$
+Total Monthly MP Commission=Number of Tasks×MP CommissionTotal Monthly MP Commission=Number of Tasks×MP Commission
+$$
+
+$$
+Total Monthly MP Commission=100×50 Swan Tokens=5000 Swan TokensTotal Monthly MP Commission=100×50 Swan Tokens=5000 Swan Tokens
+$$
+
+#### Income from Computing Jobs for Providers
+
+**Income Calculation**
+
+The income for providers (FCPs and ECPs) is derived from successfully completing and delivering computing tasks. The income per task is determined by the auction process, where the provider with the winning bid executes the task.
+
+#### Example Calculation for Provider Income
+
+1. **Winning Bid:** Assume an FCP wins a bid for a computing task valued at 1000 Swan Tokens.
+2. **Monthly Task Completion:** Assume the FCP completes 20 such tasks per month.
+
+#### Calculation of Monthly Income for FCP
+
+$$
+Monthly Income for FCP=Number of Tasks×Task ValueMonthly Income for FCP=Number of Tasks×Task Value
+$$
+
+$$
+Monthly Income for FCP=20×1000 Swan Tokens=20000 Swan TokensMonthly Income for FCP=20×1000 Swan Tokens=20000 Swan Tokens
+$$
+
 ### Token Flow Diagram
 
 ![](https://your-image-url)
