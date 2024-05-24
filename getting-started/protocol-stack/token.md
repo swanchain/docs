@@ -136,11 +136,11 @@ The income for providers (FCPs and ECPs) is derived from successfully completing
 #### Calculation of Monthly Income for FCP
 
 $$
-Monthly Income for FCP=Number of Tasks×Task Value
+FCP_{Mon}=\sum_{i}task_i× V_{i}
 $$
 
 $$
-Monthly Income for FCP=20×1000 Swan Tokens=20000 Swan Tokens
+FCP_{Mon}=\sum_{i=1}^{20} task_{i}*V_{i}
 $$
 
 
@@ -225,7 +225,7 @@ To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5
 
 
 $$
-UBI_{totalAannual}=Circulating Supply×Annual Inflation Rate
+UBI_{totalAannual}=CS_{swan}×RF_{annual }
 $$
 
 $$
@@ -233,7 +233,7 @@ Total Annual UBI=Circulating Supply×Annual Inflation Rate
 $$
 
 $$
-Total Annual UBI=50,000,000×0.05=2,500,000 Swan TokensTotal Annual UBI=50,000,000×0.05=2,500,000 Swan Tokens
+Total Annual UBI=50,000,000×0.05=2,500,000 Swan Tokens
 $$
 
 1. **Determine the allocation for each provider category:**
