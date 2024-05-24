@@ -27,7 +27,7 @@
         * [Filecoin Commit 2 (C2) with ZK-UBI](getting-started/protocol-stack/economic-system/swan-universal-basic-income-ubi/zk-ubi-pool/filecoin-commit-2-c2-with-zk-ubi.md)
     * [Swan Provider Income](getting-started/protocol-stack/economic-system/swan-provider-income.md)
     * [Grants](getting-started/protocol-stack/economic-system/grants.md)
-  * [Token](getting-started/protocol-stack/token.md)
+  * [Tokenomics](getting-started/protocol-stack/token.md)
   * [Governance](getting-started/protocol-stack/governance/README.md)
     * [Treasure DAO](getting-started/protocol-stack/governance/treasure-dao.md)
   * [Glossary](getting-started/protocol-stack/glossary.md)
