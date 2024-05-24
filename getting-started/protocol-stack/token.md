@@ -115,7 +115,7 @@ To ensure commitment and mitigate potential risks associated with fraudulent act
 *   **Collateral Requirement (C\_ECP):**
 
     $$
-    CECP=50×(Number of Jobs+Job Complexity Factor)CECP​=50×(Number of Jobs+Job Complexity Factor)
+    CECP=50×(Number of Jobs+Job Complexity Factor)
     $$
 
     Where:
@@ -128,7 +128,7 @@ To ensure commitment and mitigate potential risks associated with fraudulent act
 *   **Collateral Requirement (C\_MP):**
 
     $$
-    CMP=200×(Base Collateral+Transaction Volume1000)CMP​=200×(Base Collateral+1000Transaction Volume​)
+    CMP=200×(Base Collateral+Transaction Volume1000)
     $$
 
     Where:
