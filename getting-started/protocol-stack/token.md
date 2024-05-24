@@ -41,6 +41,10 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 * **Purpose:** To incentivize broad network participation and engagement.
 * **Details:** Airdrops distribute Swan tokens widely across the community to stimulate network activity and growth, enhancing user adoption and community vibrancy.
 
+### Token Flow Diagram
+
+<figure><img src="../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+
 ### Governance and Incentives
 
 #### Governance Participation
@@ -139,11 +143,7 @@ $$
 Monthly Income for FCP=20×1000 Swan Tokens=20000 Swan TokensMonthly Income for FCP=20×1000 Swan Tokens=20000 Swan Tokens
 $$
 
-### Token Flow Diagram
 
-![](https://your-image-url)
-
-<figure><img src="../../.gitbook/assets/swanchain.png" alt=""><figcaption><p>Token Flow Diagram</p></figcaption></figure>
 
 #### Explanation:
 
