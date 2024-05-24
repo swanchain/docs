@@ -128,7 +128,7 @@ To ensure commitment and mitigate potential risks associated with fraudulent act
 *   **Collateral Requirement (C\_MP):**
 
     $$
-    CMP=200×(Base Collateral+Transaction Volume1000)
+    CMP=200×(Base Collateral+Transaction Volume/1000)
     $$
 
     Where:
@@ -160,7 +160,7 @@ To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5
 1.  **Calculate the total annual UBI allocation:**
 
     $$
-    Total Annual UBI=Circulating Supply×Annual Inflation RateTotal Annual UBI=Circulating Supply×Annual Inflation Rate
+    Total Annual UBI=Circulating Supply×Annual Inflation Rate
     $$
 
     $$
