@@ -12,7 +12,7 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 
 * **Total Supply:** 1,000,000,000 Swan Tokens
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Swan Chain Tokenomics</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Swan Chain Tokenomics</p></figcaption></figure>
 
 ### Token Allocation and Distribution Breakdown
 
@@ -43,7 +43,7 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 
 ### Token Flow Diagram
 
-<figure><img src="../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
 
 ### Governance and Incentives
 
