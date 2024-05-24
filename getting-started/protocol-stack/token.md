@@ -62,33 +62,17 @@ To ensure commitment and mitigate potential risks associated with fraudulent act
 **Fog Computing Provider (FCP)**
 
 * **Role:** Offers a layered network extending cloud capabilities to the edge, providing services like AI model training and deployment.
-* **Hardware Requirements:**
-  * Public IP
-  * Domain name (\*.example.com)
-  * SSL certificate
-  * At least 8 vCPUs
-  * Minimum 100 GB SSD storage
-  * 64 GB memory
-  * 50 MB bandwidth
-  * 2 GPUs (e.g., RTX 3080)
-* **Collateral:** Required to stake a significant amount of tokens as collateral to ensure commitment and reliability.
+* **Job-Based Collateral:** Required to stake a significant amount of tokens based on the number and complexity of jobs they handle.
 
 **Edge Computing Provider (ECP)**
 
 * **Role:** Focuses on processing data for near real-time applications at the network’s edge, such as IoT sensor data analysis and image recognition.
-* **Hardware Requirements:**
-  * Public IP
-  * At least 4 vCPUs
-  * 300 GB HDD storage
-  * 32 GB memory
-  * 20 MB bandwidth
-  * 1 GPU (e.g., RTX 3080)
-* **Collateral:** Required to stake a substantial amount of tokens as collateral to ensure service quality and prevent fraudulent activities.
+* **Job-Based Collateral:** Required to stake a substantial amount of tokens based on the number and complexity of jobs they handle.
 
 **Market Provider (MP)**
 
 * **Role:** Facilitates the allocation of computing jobs to providers using an auction engine for job distribution and a payment engine for financial transactions.
-* **Collateral:** Required to stake a large amount of tokens as collateral. Market providers benefit from the ability to collect commission fees and receive 20% of the network incentives.
+* **Job-Based Collateral:** Required to stake a large amount of tokens based on the number and volume of transactions they manage.
 
 #### Slashing Mechanism
 
