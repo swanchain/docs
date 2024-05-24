@@ -39,7 +39,7 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 #### 5. Airdrops (20%)
 
 * **Purpose:** To incentivize broad network participation and engagement.
-* **Details:** Airdrops distribute Swan tokens widely across the community to stimulate network activity and growth, enhancing user adoption and community vibrancy.
+* **Details:** Airdrops distribute Swan tokens widely across the community to stimulate network activity and growth, enhancing user adoption and community vibrancy. 10% is reserved for computing providers including FCP, ECP and MP.
 
 ### Token Flow Diagram
 
