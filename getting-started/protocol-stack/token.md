@@ -100,26 +100,31 @@ Market Providers (MP) play a crucial role in this ecosystem by managing the auct
 1. **Task Auction Commission Rate:** Let's assume the MP commission rate is set at 5% of the task value.
 2. **Example Task Value:** Assume a computing task is valued at 1000 Swan Tokens.
 
-#### Calculation of MP Commission
+#### Calculation of MP Commission ($$MPC$$ )&#x20;
 
 $$
-MP Commission=Task Value×Commission Rate
+MPC = TV × CR
 $$
 
 $$
-MP Commission=1000* Swan Tokens×0.05=50
+MPC=1000SWAN ×0.05=50SWAN
 $$
+
+Where:
+
+* $$TV$$ represents the Task Value.
+* $$CR$$ represents the Commission Rate.
 
 #### Example Monthly Income for MP
 
-Assuming an MP manages 100 such tasks per month, the total monthly income from commissions would be:
+Assuming an MP manages 100 such tasks per month, the total monthly income from commissions ($$TMPC_{\text{Mon}}$$ ) would be:
 
 $$
-Total Monthly MP Commission=Number of Tasks×MP Commission
+TMPC_{\text{Mon}} = \text{Number of Tasks} \times MPC
 $$
 
 $$
-Total Monthly MP Commission=100×50 Swan Tokens=5000 Swan Tokens
+T\text{MPC}_{\text{Mon}} = 100 \times 50 \, \text{SWAN} = 5,000 \, \text{SWAN}
 $$
 
 #### Income from Computing Jobs for Providers
@@ -143,7 +148,11 @@ $$
 FCP_{Mon}=\sum_{i=1}^{20} task_{i}*V_{i}
 $$
 
+Where:
 
+* $$FCP_{Mon}$$ represents the monthly income for the Fog Computing Provider (FCP).
+* $$task$$ represents the number of tasks performed for in a month.
+* $$V$$ represents the value of task.
 
 #### Explanation:
 
@@ -159,7 +168,7 @@ $$
 
 #### Fog Computing Provider (FCP) Formula
 
-*   **Collateral Requirement (C\_FCP):**
+*   **Collateral Requirement (**$$C_{FCP}$$ **):**
 
     $$
     C_{FCP}=\sum_{i}^{} J_{F}*JCF
@@ -167,28 +176,29 @@ $$
 
     Where:
 
-    * Number of Jobs: Total number of jobs handled by the provider
-    * Job Complexity Factor: A factor based on the complexity and resources required for the jobs
-*
-
-
+    * $$C_{FCP}$$ represents the Collateral Requirement for the FCP
+    * $$J_{F}$$ represents the job handled by the FCP.
+    * $$JCF$$ represents the Job Complexity Factor, which is a factor based on the complexity and resources required for the jobs.
 
 #### Edge Computing Provider (ECP) Formula
 
-*   **Collateral Requirement (C\_ECP):**
+*   **Collateral Requirement (**$$C_{ECP}$$ **):**
 
     $$
     C_{ECP} = \sum_{i}^{} J_{E}*JCF
     $$
 
+
+
     Where:
 
-    * Number of Jobs: Total number of jobs handled by the provider
-    * Job Complexity Factor: A factor based on the complexity and resources required for the jobs
+    * $$C_{ECP}$$ represents the Collateral Requirement for the ECP
+    * $$J_{E}$$ represents the job handled by the ECP.
+    * $$JCF$$ represents the Job Complexity Factor, which is a factor based on the complexity and resources required for the jobs.
 
 #### Market Provider (MP) Formula
 
-*   **Collateral Requirement (**C\_MP[^1]**):**
+*   **Collateral Requirement  (**$$C_{MP}$$ **):**
 
     $$
     C_{MP}=200×(BC+CF)
@@ -222,67 +232,65 @@ To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5
 
 1. **Calculate the total annual UBI allocation:**
 
-
-
 $$
 UBI_{totalAannual}=CS_{swan}×RF_{annual }
 $$
 
-$$
-Total Annual UBI=Circulating Supply×Annual Inflation Rate
-$$
+Where:
+
+* $$UBI_{\text{totalAnnual}}$$ represents the Total Annual Universal Basic Income (UBI).
+* $$CS_{\text{swan}}$$ represents the Circulating Supply of Swan tokens.
+* $$RF_{\text{annual}}$$ represents the Annual Inflation Rate.
 
 $$
-Total Annual UBI=50,000,000×0.05=2,500,000 Swan Tokens
+UBI_{\text{totalAnnual}}=50,000,000×0.05=2,500,000 SWAN
 $$
 
 1. **Determine the allocation for each provider category:**
    *   **ECP Allocation:**
 
        $$
-       ECP Allocation=Total Annual UBI×0.40=2,500,000×0.40=1,000,000 Swan TokensECP Allocation=Total Annual UBI×0.40=2,500,000×0.40=1,000,000 Swan Tokens
+       ECP_{\text{Allocation}} = UBI_{\text{totalAnnual}} \times 0.40 = 2{,}500{,}000 \times 0.40 = 1{,}000{,}000 \text{ SWAN}
        $$
    *   **FCP Allocation:**
 
        $$
-       FCP Allocation=Total Annual UBI×0.40=2,500,000×0.40=1,000,000 Swan TokensFCP Allocation=Total Annual UBI×0.40=2,500,000×0.40=1,000,000 Swan Tokens
+       FCP_{\text{Allocation}} = UBI_{\text{totalAnnual}} \times 0.40 = 2{,}500{,}000 \times 0.40 = 1{,}000{,}000 \text{ SWAN}
        $$
    *   **MP Allocation:**
 
        $$
-       MP Allocation=Total Annual UBI×0.20=2,500,000×0.20=500,000 Swan TokensMP Allocation=Total Annual UBI×0.20=2,500,000×0.20=500,000 Swan Tokens
+       MP_{\text{Allocation}} =UBI_{\text{totalAnnual}} \times 0.20 = 2{,}500{,}000 \times 0.20 = 500{,}000 \text{ Swan Tokens}
        $$
 2. **Calculate the UBI per provider in each category:**
    *   **UBI per ECP:**
 
        $$
-       UBI per ECP=ECP AllocationNumber of ECPs=1,000,000400=2,500 Swan Tokens per ECPUBI per ECP=Number of ECPsECP Allocation​=4001,000,000​=2,500 Swan Tokens per ECP
+       \text{UBI per ECP} = \frac{ECP_{\text{Allocation}}}{\text{Number of ECPs}} = \frac{1{,}000{,}000}{400} = 2{,}500 \text{ SWAN per ECP}
        $$
    *   **UBI per FCP:**
 
        $$
-       UBI per FCP=FCP AllocationNumber of FCPs=1,000,000100=10,000 Swan Tokens per FCPUBI per FCP=Number of FCPsFCP Allocation​=1001,000,000​=10,000 Swan Tokens per FCP
+       \text{UBI per FCP} = \frac{FCP_{\text{Allocation}}}{\text{Number of FCPs}} = \frac{1{,}000{,}000}{100} = 10{,}000 \text{ Swan Tokens per FCP}
        $$
    *   **UBI per MP:**
 
        $$
-       UBI per MP=MP AllocationNumber of MPs=500,0003≈166,666.67 Swan Tokens per MPUBI per MP=Number of MPsMP Allocation​=3500,000​≈166,666.67 Swan Tokens per MP
+       \text{UBI per MP} = \frac{MP_{\text{Allocation}}}{\text{Number of MPs}} = \frac{500{,}000}{3} \approx 166{,}666.67 \text{ Swan Tokens per MP}
        $$
 3. **Calculate the monthly UBI per provider:**
    *   **Monthly UBI per ECP:**
 
        $$
-       Monthly UBI per ECP=UBI per ECP12=2,50012≈208.33 Swan TokensMonthly UBI per ECP=12UBI per ECP​=122,500​≈208.33 Swan Tokens
+       UBI_{\text{monthly}}\text{per ECP} = \frac{\text{UBI per ECP}}{12} = \frac{2{,}500}{12} \approx 208.33 \text{ SWAN}
        $$
    *   **Monthly UBI per FCP:**
 
        $$
-       Monthly UBI per FCP=UBI per FCP12=10,00012≈833.33 Swan TokensMonthly UBI per FCP=12UBI per FCP​=1210,000​≈833.33 Swan Tokens
+       UBI_{\text{monthly}}\text{per FCP} = \frac{\text{UBI per FCP}}{12} = \frac{10{,}000}{12} \approx 833.33 \text{ SWAN}
        $$
    *   **Monthly UBI per MP:**
 
        $$
-       Monthly UBI per MP=UBI per MP12=166,666.6712≈13,888.89 Swan TokensMonthly UBI per MP=12UBI per MP​=12166,666.67​≈13,888.89 Swan Tokens
+       UBI_{\text{monthly}}\text{per MP}= \frac{\text{UBI per MP}}{12} = \frac{166{,}666.67}{12} \approx 13{,}888.89 \text{ SWAN}
        $$
-
-[^1]: 
