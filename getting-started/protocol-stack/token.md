@@ -199,25 +199,86 @@ $$
    * **UBI per ECP:** $$\text{UBI per ECP} = \frac{\text{ECP Allocation}}{\text{Number of ECPs}} = \frac{1,000,000}{400} = 2,500 \text{ Swan Tokens per ECP}$$
    * **UBI per FCP:** $$\text{UBI per FCP} = \frac{\text{FCP Allocation}}{\text{Number of FCPs}} = \frac{1,000,000}{100} = 10,000 \text{ Swan Tokens per FCP}$$
    * **UBI per MP:** $$\text{UBI per MP} = \frac{\text{MP Allocation}}{\text{Number of MPs}} = \frac{500,000}{3} \approx 166,666.67 \text{ Swan Tokens per MP}$$
-2. **Calculate the monthly UBI per provider:**
-   * **Monthly UBI per ECP:** $$\text{Monthly UBI per ECP} = \frac{\text{UBI per ECP}}{12} = \frac{2,500}{12} \approx 208.33 \text{ Swan Tokens}$$
-   * **Monthly UBI per FCP:** $$\text{Monthly UBI per FCP} = \frac{\text{UBI per FCP}}{12} = \frac{10,000}{12} \approx 833.33 \text{ Swan Tokens}$$
-   * **Monthly UBI per MP:** $$\text{Monthly UBI per MP} = \frac{\text{UBI per MP}}{12} = \frac{166,666.67}{12} \approx 13,888.89 \text{ Swan Tokens}$$
+2.  **Calculate the monthly UBI per provider:**
+
+    * **Monthly UBI per ECP:** $$\text{Monthly UBI per ECP} = \frac{\text{UBI per ECP}}{12} = \frac{2,500}{12} \approx 208.33 \text{ Swan Tokens}$$
+    * **Monthly UBI per FCP:** $$\text{Monthly UBI per FCP} = \frac{\text{UBI per FCP}}{12} = \frac{10,000}{12} \approx 833.33 \text{ Swan Tokens}$$
+    * **Monthly UBI per MP:** $$\text{Monthly UBI per MP} = \frac{\text{UBI per MP}}{12} = \frac{166,666.67}{12} \approx 13,888.89 \text{ Swan Tokens}$$
 
 
 
-## Swan Token Value Flow
+### Sample Collateral Calculation for FCP and ECP
 
-The Swan token has 2 stages:
+#### Fog Computing Provider (FCP) Collateral Calculation
 
-1. [Swan Testnet](token.md#swan-testnet-token)
-2. [Swan Mainnet](token.md#swan-mainet-token)
+#### Sample Hardware Configuration for FCP
 
-#### Swan Testnet
+* **vCPUs:** 8
+* **SSD Storage:** 100 GB
+* **Memory:** 64 GB
+* **Bandwidth:** 50 MB/s
+* **GPUs:** 2 (e.g., RTX 3080)
 
-Swan Testnet Token (Swan) is used on Swan Testnet. The Swan Testnet is designed to Launch in Q4 2023.
+#### Collateral Requirement Formula
 
-#### Swan Mainnet
+$$
+CFCP=100×(vCPU+SSD_storage100+memory10+bandwidth10+GPU)CFCP​=100×(vCPU+100SSD_storage​+10memory​+10bandwidth​+GPU)
+$$
 
-Swan is a L2 blockchain on Ethereum with Rollup technology.
+#### Calculation Steps
+
+1. **Calculate each component:**
+   * vCPUs: $$8×100=8008×100=800$$
+   * SSD Storage: $$100100×100=100100100​×100=100$$
+   * Memory: $$6410×100=6401064​×100=640$$
+   * Bandwidth: $$5010×100=5001050​×100=500$$
+   * GPUs: $$2×100=2002×100=200$$
+2.  **Sum all components:**
+
+    $$
+    CFCP=800+100+640+500+200=2240 Swan TokensCFCP​=800+100+640+500+200=2240 Swan Tokens
+    $$
+
+### Example Collateral for FCP:
+
+$$Collateral for FCP=2240 Swan TokensCollateral for FCP=2240 Swan Tokens$$
+
+#### Edge Computing Provider (ECP) Collateral Calculation
+
+#### Sample Hardware Configuration for ECP
+
+* **vCPUs:** 4
+* **HDD Storage:** 300 GB
+* **Memory:** 32 GB
+* **Bandwidth:** 20 MB/s
+* **GPUs:** 1 (e.g., RTX 3080)
+
+#### Collateral Requirement Formula
+
+$$
+CECP=50×(vCPU+HDD_storage100+memory10+bandwidth10+GPU)CECP​=50×(vCPU+100HDD_storage​+10memory​+10bandwidth​+GPU)
+$$
+
+#### Calculation Steps
+
+1. **Calculate each component:**
+   * vCPUs: $$4×50=2004×50=200$$
+   * HDD Storage: $$300100×50=150100300​×50=150$$
+   * Memory: $$3210×50=1601032​×50=160$$
+   * Bandwidth: $$2010×50=1001020​×50=100$$
+   * GPUs: $$1×50=501×50=50$$
+2.  **Sum all components:**
+
+    $$
+    CECP=200+150+160+100+50=660 Swan TokensCECP​=200+150+160+100+50=660 Swan Tokens
+    $$
+
+#### Example Collateral for ECP:
+
+$$Collateral for ECP=660 Swan TokensCollateral for ECP=660 Swan Tokens$$
+
+#### Summary
+
+* **Fog Computing Provider (FCP) Collateral:** 2240 Swan Tokens
+* **Edge Computing Provider (ECP) Collateral:** 660 Swan Tokens
 
