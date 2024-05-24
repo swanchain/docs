@@ -79,7 +79,7 @@ To ensure commitment and mitigate potential risks associated with fraudulent act
 * **Fraud Detection:** If a provider’s computing job is proven fraudulent, the collateral is subject to a 2x slashing.
 * **Token Burn:** The slashed tokens are sent to a burning address, effectively removing them from circulation and penalizing dishonest behavior.
 
-#### Income and Commission Structure for Computing Jobs Auction Engine and Market Providers (MP)
+### Income and Commission Structure for Computing Jobs Auction Engine and Market Providers (MP)
 
 #### Computing Jobs Auction Engine
 
@@ -274,4 +274,3 @@ To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5
        $$
        Monthly UBI per MP=UBI per MP12=166,666.6712≈13,888.89 Swan TokensMonthly UBI per MP=12UBI per MP​=12166,666.67​≈13,888.89 Swan Tokens
        $$
-5.
