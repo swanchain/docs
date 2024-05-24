@@ -157,56 +157,6 @@ Where:
 * Base Collateral: A fixed minimum collateral required
 * Transaction Volume: Total transaction volume handled by the Market Provider
 
-### UBI Distribution Example
-
-To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5% annual inflation rate and a governance-determined allocation, we will provide examples using the given parameters:
-
-#### Parameters:
-
-* **Annual Inflation Rate:** 5%
-* **Circulating Supply for the First Year:** 50,000,000 Swan Tokens
-* **UBI Allocation:**
-  * 40% to Edge Computing Providers (ECP)
-  * 40% to Fog Computing Providers (FCP)
-  * 20% to Market Providers (MP)
-
-#### Providers:
-
-* **Number of ECPs:** 400
-* **Number of FCPs:** 100
-* **Number of MPs:** 3
-
-#### Step-by-Step Calculation:
-
-1. **Calculate the total annual UBI allocation:**
-
-$$\text{Total Annual UBI} = \text{Circulating Supply} \times \text{Annual Inflation Rate}$$&#x20;
-
-$$
-\text{Total Annual UBI} = 50,000,000 \times 0.05 = 2,500,000 \text{ Swan Tokens}
-$$
-
-1.  **Determine the allocation for each provider category:**
-
-    * **ECP Allocation:**&#x20;
-
-    $$\text{ECP Allocation} = \text{Total Annual UBI} \times 0.40 = 2,500,000 \times 0.40 = 1,000,000 \text{ Swan Tokens}$$
-
-* **FCP Allocation:** $$\text{FCP Allocation} = \text{Total Annual UBI} \times 0.40 = 2,500,000 \times 0.40 = 1,000,000 \text{ Swan Tokens}$$
-* **MP Allocation:** $$\text{MP Allocation} = \text{Total Annual UBI} \times 0.20 = 2,500,000 \times 0.20 = 500,000 \text{ Swan Tokens}$$
-
-1. **Calculate the UBI per provider in each category:**
-   * **UBI per ECP:** $$\text{UBI per ECP} = \frac{\text{ECP Allocation}}{\text{Number of ECPs}} = \frac{1,000,000}{400} = 2,500 \text{ Swan Tokens per ECP}$$
-   * **UBI per FCP:** $$\text{UBI per FCP} = \frac{\text{FCP Allocation}}{\text{Number of FCPs}} = \frac{1,000,000}{100} = 10,000 \text{ Swan Tokens per FCP}$$
-   * **UBI per MP:** $$\text{UBI per MP} = \frac{\text{MP Allocation}}{\text{Number of MPs}} = \frac{500,000}{3} \approx 166,666.67 \text{ Swan Tokens per MP}$$
-2.  **Calculate the monthly UBI per provider:**
-
-    * **Monthly UBI per ECP:** $$\text{Monthly UBI per ECP} = \frac{\text{UBI per ECP}}{12} = \frac{2,500}{12} \approx 208.33 \text{ Swan Tokens}$$
-    * **Monthly UBI per FCP:** $$\text{Monthly UBI per FCP} = \frac{\text{UBI per FCP}}{12} = \frac{10,000}{12} \approx 833.33 \text{ Swan Tokens}$$
-    * **Monthly UBI per MP:** $$\text{Monthly UBI per MP} = \frac{\text{UBI per MP}}{12} = \frac{166,666.67}{12} \approx 13,888.89 \text{ Swan Tokens}$$
-
-
-
 ### Sample Collateral Calculation for FCP and ECP
 
 #### Fog Computing Provider (FCP) Collateral Calculation
@@ -281,4 +231,52 @@ $$Collateral for ECP=660 Swan TokensCollateral for ECP=660 Swan Tokens$$
 
 * **Fog Computing Provider (FCP) Collateral:** 2240 Swan Tokens
 * **Edge Computing Provider (ECP) Collateral:** 660 Swan Tokens
+
+### UBI Distribution Example
+
+To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5% annual inflation rate and a governance-determined allocation, we will provide examples using the given parameters:
+
+#### Parameters:
+
+* **Annual Inflation Rate:** 5%
+* **Circulating Supply for the First Year:** 50,000,000 Swan Tokens
+* **UBI Allocation:**
+  * 40% to Edge Computing Providers (ECP)
+  * 40% to Fog Computing Providers (FCP)
+  * 20% to Market Providers (MP)
+
+#### Providers:
+
+* **Number of ECPs:** 400
+* **Number of FCPs:** 100
+* **Number of MPs:** 3
+
+#### Step-by-Step Calculation:
+
+1. **Calculate the total annual UBI allocation:**
+
+$$\text{Total Annual UBI} = \text{Circulating Supply} \times \text{Annual Inflation Rate}$$&#x20;
+
+$$
+\text{Total Annual UBI} = 50,000,000 \times 0.05 = 2,500,000 \text{ Swan Tokens}
+$$
+
+1.  **Determine the allocation for each provider category:**
+
+    * **ECP Allocation:**&#x20;
+
+    $$\text{ECP Allocation} = \text{Total Annual UBI} \times 0.40 = 2,500,000 \times 0.40 = 1,000,000 \text{ Swan Tokens}$$
+
+* **FCP Allocation:** $$\text{FCP Allocation} = \text{Total Annual UBI} \times 0.40 = 2,500,000 \times 0.40 = 1,000,000 \text{ Swan Tokens}$$
+* **MP Allocation:** $$\text{MP Allocation} = \text{Total Annual UBI} \times 0.20 = 2,500,000 \times 0.20 = 500,000 \text{ Swan Tokens}$$
+
+1. **Calculate the UBI per provider in each category:**
+   * **UBI per ECP:** $$\text{UBI per ECP} = \frac{\text{ECP Allocation}}{\text{Number of ECPs}} = \frac{1,000,000}{400} = 2,500 \text{ Swan Tokens per ECP}$$
+   * **UBI per FCP:** $$\text{UBI per FCP} = \frac{\text{FCP Allocation}}{\text{Number of FCPs}} = \frac{1,000,000}{100} = 10,000 \text{ Swan Tokens per FCP}$$
+   * **UBI per MP:** $$\text{UBI per MP} = \frac{\text{MP Allocation}}{\text{Number of MPs}} = \frac{500,000}{3} \approx 166,666.67 \text{ Swan Tokens per MP}$$
+2.  **Calculate the monthly UBI per provider:**
+
+    * **Monthly UBI per ECP:** $$\text{Monthly UBI per ECP} = \frac{\text{UBI per ECP}}{12} = \frac{2,500}{12} \approx 208.33 \text{ Swan Tokens}$$
+    * **Monthly UBI per FCP:** $$\text{Monthly UBI per FCP} = \frac{\text{UBI per FCP}}{12} = \frac{10,000}{12} \approx 833.33 \text{ Swan Tokens}$$
+    * **Monthly UBI per MP:** $$\text{Monthly UBI per MP} = \frac{\text{UBI per MP}}{12} = \frac{166,666.67}{12} \approx 13,888.89 \text{ Swan Tokens}$$
 
