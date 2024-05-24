@@ -103,11 +103,11 @@ Market Providers (MP) play a crucial role in this ecosystem by managing the auct
 #### Calculation of MP Commission
 
 $$
-MP Commission=Task Value×Commission RateMP Commission=Task Value×Commission Rate
+MP Commission=Task Value×Commission Rate
 $$
 
 $$
-MP Commission=1000 Swan Tokens×0.05=50 Swan TokensMP Commission=1000 Swan Tokens×0.05=50 Swan Tokens
+MP Commission=1000* Swan Tokens×0.05=50
 $$
 
 #### Example Monthly Income for MP
@@ -115,11 +115,11 @@ $$
 Assuming an MP manages 100 such tasks per month, the total monthly income from commissions would be:
 
 $$
-Total Monthly MP Commission=Number of Tasks×MP CommissionTotal Monthly MP Commission=Number of Tasks×MP Commission
+Total Monthly MP Commission=Number of Tasks×MP Commission
 $$
 
 $$
-Total Monthly MP Commission=100×50 Swan Tokens=5000 Swan TokensTotal Monthly MP Commission=100×50 Swan Tokens=5000 Swan Tokens
+Total Monthly MP Commission=100×50 Swan Tokens=5000 Swan Tokens
 $$
 
 #### Income from Computing Jobs for Providers
@@ -136,11 +136,11 @@ The income for providers (FCPs and ECPs) is derived from successfully completing
 #### Calculation of Monthly Income for FCP
 
 $$
-Monthly Income for FCP=Number of Tasks×Task ValueMonthly Income for FCP=Number of Tasks×Task Value
+Monthly Income for FCP=Number of Tasks×Task Value
 $$
 
 $$
-Monthly Income for FCP=20×1000 Swan Tokens=20000 Swan TokensMonthly Income for FCP=20×1000 Swan Tokens=20000 Swan Tokens
+Monthly Income for FCP=20×1000 Swan Tokens=20000 Swan Tokens
 $$
 
 
@@ -162,20 +162,23 @@ $$
 *   **Collateral Requirement (C\_FCP):**
 
     $$
-    CFCP=100×(Number of Jobs+Job Complexity Factor)CFCP​=100×(Number of Jobs+Job Complexity Factor)
+    C_{FCP}=\sum_{i}^{} J_{F}*JCF
     $$
 
     Where:
 
     * Number of Jobs: Total number of jobs handled by the provider
     * Job Complexity Factor: A factor based on the complexity and resources required for the jobs
+*
+
+
 
 #### Edge Computing Provider (ECP) Formula
 
 *   **Collateral Requirement (C\_ECP):**
 
     $$
-    CECP=50×(Number of Jobs+Job Complexity Factor)
+    C_{ECP} = \sum_{i}^{} J_{E}*JCF
     $$
 
     Where:
@@ -185,16 +188,16 @@ $$
 
 #### Market Provider (MP) Formula
 
-*   **Collateral Requirement (C\_MP):**
+*   **Collateral Requirement (**C\_MP[^1]**):**
 
     $$
-    CMP=200×(Base Collateral+Transaction Volume/1000)
+    C_{MP}=200×(BC+CF)
     $$
 
     Where:
 
-    * Base Collateral: A fixed minimum collateral required
-    * Transaction Volume: Total transaction volume handled by the Market Provider
+    * BC (Base Collateral): A fixed minimum collateral required
+    * CF: Total transaction volume handled by the Market Provider
 
 ### UBI Distribution Example
 
@@ -217,16 +220,23 @@ To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5
 
 #### Step-by-Step Calculation:
 
-1.  **Calculate the total annual UBI allocation:**
+1. **Calculate the total annual UBI allocation:**
 
-    $$
-    Total Annual UBI=Circulating Supply×Annual Inflation Rate
-    $$
 
-    $$
-    Total Annual UBI=50,000,000×0.05=2,500,000 Swan TokensTotal Annual UBI=50,000,000×0.05=2,500,000 Swan Tokens
-    $$
-2. **Determine the allocation for each provider category:**
+
+$$
+UBI_{totalAannual}=Circulating Supply×Annual Inflation Rate
+$$
+
+$$
+Total Annual UBI=Circulating Supply×Annual Inflation Rate
+$$
+
+$$
+Total Annual UBI=50,000,000×0.05=2,500,000 Swan TokensTotal Annual UBI=50,000,000×0.05=2,500,000 Swan Tokens
+$$
+
+1. **Determine the allocation for each provider category:**
    *   **ECP Allocation:**
 
        $$
@@ -242,7 +252,7 @@ To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5
        $$
        MP Allocation=Total Annual UBI×0.20=2,500,000×0.20=500,000 Swan TokensMP Allocation=Total Annual UBI×0.20=2,500,000×0.20=500,000 Swan Tokens
        $$
-3. **Calculate the UBI per provider in each category:**
+2. **Calculate the UBI per provider in each category:**
    *   **UBI per ECP:**
 
        $$
@@ -258,7 +268,7 @@ To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5
        $$
        UBI per MP=MP AllocationNumber of MPs=500,0003≈166,666.67 Swan Tokens per MPUBI per MP=Number of MPsMP Allocation​=3500,000​≈166,666.67 Swan Tokens per MP
        $$
-4. **Calculate the monthly UBI per provider:**
+3. **Calculate the monthly UBI per provider:**
    *   **Monthly UBI per ECP:**
 
        $$
@@ -274,3 +284,5 @@ To illustrate how SwanChain's Universal Basic Income (UBI) system works with a 5
        $$
        Monthly UBI per MP=UBI per MP12=166,666.6712≈13,888.89 Swan TokensMonthly UBI per MP=12UBI per MP​=12166,666.67​≈13,888.89 Swan Tokens
        $$
+
+[^1]: 
