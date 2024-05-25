@@ -54,8 +54,12 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 
 #### Annual Inflation and UBI
 
-* **Annual Inflation Rate:** Swan Token is fixed supply, 0 inflation rate.
-* **Universal Basic Income (UBI):** Tokens are distributed as UBI to eligible network participants, promoting sustained engagement and rewarding contributions, 10% of the total supply over 20 years.
+* **Annual Inflation Rate:** Swan Token is fixed supply, and the inflation rate is 0 .
+* **Universal Basic Income (UBI):** Tokens are distributed as UBI to eligible network participants, promoting sustained engagement and rewarding contributions, this part is from airdrops.
+
+#### Validators
+
+As a Layer 2 (L2) solution built on Ethereum, SwanChain leverages the security and consensus mechanisms of Ethereum's Layer 1 (L1) network. This means that SwanChain does not require its validators to secure the network. Instead, it inherits the robust security properties of the Ethereum mainnet.
 
 ### Collateral and Slashing Mechanism
 
