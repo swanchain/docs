@@ -54,8 +54,8 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 
 #### Annual Inflation and UBI
 
-* **Annual Inflation Rate:** Ranges between 5% and 10%, determined by the governance team.
-* **Universal Basic Income (UBI):** Tokens are distributed as UBI to eligible network participants, promoting sustained engagement and rewarding contributions.
+* **Annual Inflation Rate:** Swan Token is fixed supply, 0 inflation rate.
+* **Universal Basic Income (UBI):** Tokens are distributed as UBI to eligible network participants, promoting sustained engagement and rewarding contributions, 10% of the total supply over 20 years.
 
 ### Collateral and Slashing Mechanism
 
