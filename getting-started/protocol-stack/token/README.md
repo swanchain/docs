@@ -39,11 +39,11 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 #### 5. Airdrops (20%)
 
 * **Purpose:** To incentivize broad network participation and engagement.
-* **Details:** Airdrops distribute Swan tokens widely across the community to stimulate network activity and growth, enhancing user adoption and community vibrancy. 10% is reserved for computing providers including FCP, ECP and MP.
+* **Details:** Airdrops distribute Swan tokens widely across the community to stimulate network activity and growth, enhancing user adoption and community vibrancy. 10% of the total supply has been reserved for computing providers over the years. The annual airdrop rate cannot exceed 10% of the current circulation supply.
 
 ### Token Flow Diagram
 
-<figure><img src="../../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (172).png" alt=""><figcaption><p>Token Flow Diagram</p></figcaption></figure>
 
 ### Governance and Incentives
 
@@ -81,7 +81,7 @@ To ensure commitment and mitigate potential risks associated with fraudulent act
 #### Slashing Mechanism
 
 * **Fraud Detection:** If a provider’s computing job is proven fraudulent, the collateral is subject to a 2x slashing.
-* **Token Burn:** The slashed tokens are sent to a burning address, effectively removing them from circulation and penalizing dishonest behavior.
+* **Token Burn:** The slashed tokens are sent to a burning address, effectively removing them from circulation and penalizing dishonest behaviour.
 
 ### Income and Commission Structure for Computing Jobs Auction Engine and Market Providers (MP)
 
