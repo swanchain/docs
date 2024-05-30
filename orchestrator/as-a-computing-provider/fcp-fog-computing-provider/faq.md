@@ -1,15 +1,5 @@
 # FCP FAQ
 
-#### **Question: How can I migrate my CP (Computing Provider) to a new environment?**
-
-**A:** To migrate your CP to a new environment, follow these steps:
-
-1. **Backup CP Repo**: Copy all files under the old CP directory (`$CP_PATH`) to a directory on the new server, for example: `/data/swan`.
-2. **Set Environment Variable**: Set the environment variable `CP_PATH` to the directory where you copied the CP files on the new server. For example, you can do this by running the command: `export CP_PATH=/data/swan`.
-3. **Start CP Service**: Once the files are copied and the environment variable is set, start the CP service process on the new server.
-
-By following these steps, you'll successfully migrate your CP to the new environment, ensuring that it operates smoothly in the new environment.
-
 #### Q: What is the current version of Computing Provider, and are there any tutorials?
 
 **A:**
@@ -182,3 +172,24 @@ Otherwise, the application won't be displayed correctly on the Space App page.
 #### Q: Can I move my computing provider to a new one while maintaining my previous server? Will this reset my uptime?
 
 **A**: Yes, you need to move  `.swan_node` to the new server. The uptime will not be reset.
+
+#### **Q: How can I migrate my CP (Computing Provider) to a new environment?**
+
+**A:** To migrate your CP to a new environment, follow these steps:
+
+1. **Backup CP Repo**: Copy all files under the old CP directory (`$CP_PATH`) to a directory on the new server, for example: `/data/swan`.
+2. **Set Environment Variable**: Set the environment variable `CP_PATH` to the directory where you copied the CP files on the new server. For example, you can do this by running the command: `export CP_PATH=/data/swan`.
+3. **Start CP Service**: Once the files are copied and the environment variable is set, start the CP service process on the new server.
+
+By following these steps, you'll successfully migrate your CP to the new environment, ensuring that it operates smoothly in the new environment.
+
+**Q: How can I resolve the error “(error) MISCONF Redis is configured to save RDB snapshots” seen in the FCP logs?**
+
+**A:** MISCONF Redis is configured to save RDB snapshots but is currently not able to persist on disk, Commands that may modify the data set are disabled.&#x20;
+
+You can try to change the setting:
+
+```
+$ redis-cli
+> config set stop-writes-on-bgsave-error no
+```

@@ -47,9 +47,6 @@
 ## Development Resource
 
 * [QuickStarts](development-resource/quickstarts/README.md)
-  * [Set Up MetaMask](development-resource/quickstarts/set-up-metamask.md)
-  * [Claim Faucet Tokens](development-resource/quickstarts/claim-faucet-tokens.md)
-  * [Bridge Tokens](development-resource/quickstarts/bridge-tokens.md)
   * [Deploying Your First Smart Contract with Remix](development-resource/quickstarts/deploying-your-first-smart-contract-with-remix.md)
   * [Interacting with Smart Contract on Swan Chain Using Go](development-resource/quickstarts/interacting-with-smart-contract-on-swan-chain-using-go.md)
   * [Swan SDK](development-resource/quickstarts/swan-sdk.md)
