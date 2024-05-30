@@ -4,7 +4,7 @@
 
 **A:**
 
-The latest version is[ v0.4.7](https://github.com/swanchain/go-computing-provider/releases/tag/v0.4.7)
+The latest version is [v0.4.8](https://github.com/swanchain/go-computing-provider/releases/tag/v0.4.8)
 
 Check the dashboard here : [https://orchestrator.swanchain.io/provider-status](https://orchestrator.swanchain.io/provider-status)
 
@@ -12,6 +12,70 @@ Tutorials&#x20;
 
 * [Deploy your ECP](../ecp-edge-computing-provider/ecp-setup.md)
 * [Depoy your FCP](computing-provider-setup.md)
+
+#### Q: How can I know if the status of the computing provider is normal?
+
+**A**:&#x20;
+
+Set the `[HUB].VerifySign` in the **`$CP_PATH/config.toml`** file&#x20;
+
+```
+[HUB]
+VerifySign = false
+```
+
+Run the following command:
+
+{% hint style="info" %}
+_**\*Note: Please replace**** ****`<YOUR_MULTI_ADDRESS_IP>:<PORT>`**** ****with your actual multi-address IP and port.**_
+{% endhint %}
+
+```
+curl -k --location --request POST 'https://<YOUR_MULTI_ADDRESS_IP>:<PORT>/api/v1/computing/lagrange/jobs' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"uuid": "5641877b-dc94-469a-bb3b-ecab6d10f7dd",
+"name": "Job-5641877b-dc94-469a-bb3b-ecab6d10f7dd",
+"status": "Submitted",
+"duration": 900,
+"job_source_uri": "https://api.lagrangedao.org/spaces/51d6abbb-f928-43e4-91fd-79e93e2b276f",
+"storage_source": "lagrange",
+"task_uuid": "92cd5595-9789-4af3-9100-7c7e4aacb456"
+}'
+```
+
+After running this command, wait for 3-5 minutes, and then execute&#x20;
+
+<pre><code><strong>kubectl get ing -n ns-0x6091b2f5678952cafbf02755d78973ebff302e11
+</strong></code></pre>
+
+Find the hosts corresponding to the name `ing-minesweeper` and ensure that the domain can be accessed in a browser to confirm its normal status.
+
+#### Q: My node has been running for so long, yet the uptime is 0%.
+
+**A**:
+
+1\. Run the following command:
+
+{% hint style="info" %}
+_**Ensure that****  ****`<YOUR_MULTI_ADDRESS_IP>`**** ****is the Public IP.**_
+{% endhint %}
+
+```bash
+curl -k https://<YOUR_MULTI_ADDRESS_IP>:<PORT>/api/v1/computing/host/info
+```
+
+2\. Compare the returned result with the example provided below. If they are different, you should review your port mappings.
+
+Example result:
+
+```json
+{"status":"success","code":"","data":{"swan_miner_version":"","operating_system":"linux","architecture":"amd64","cpu_cores":48}}
+```
+
+3\. If your port mappings are correct and the result matches the example, then proceed to check the configuration file of the computing provider.&#x20;
+
+Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`.
 
 #### Q: How can I verify if my Computing Provider is set up to receive UBI tasks?
 
@@ -71,71 +135,7 @@ Tutorials&#x20;
     ```
 7. If the test is successful, restore the `UbiEnginePk` in the `config.toml` file to its original value
 
-#### Q: How can I know if the status of the computing provider is normal?
 
-**A**:&#x20;
-
-Set the `[HUB].VerifySign` in the **`$CP_PATH/config.toml`** file&#x20;
-
-```
-[HUB]
-VerifySign = false
-```
-
-Run the following command:
-
-{% hint style="info" %}
-_**\*Note: Please replace**** ****`<YOUR_MULTI_ADDRESS_IP>:<PORT>`**** ****with your actual multi-address IP and port.**_
-{% endhint %}
-
-```
-curl -k --location --request POST 'https://<YOUR_MULTI_ADDRESS_IP>:<PORT>/api/v1/computing/lagrange/jobs' \
---header 'Content-Type: application/json' \
---data-raw '{
-"uuid": "5641877b-dc94-469a-bb3b-ecab6d10f7dd",
-"name": "Job-5641877b-dc94-469a-bb3b-ecab6d10f7dd",
-"status": "Submitted",
-"duration": 900,
-"job_source_uri": "https://api.lagrangedao.org/spaces/51d6abbb-f928-43e4-91fd-79e93e2b276f",
-"storage_source": "lagrange",
-"task_uuid": "92cd5595-9789-4af3-9100-7c7e4aacb456"
-}'
-```
-
-After running this command, wait for 3-5 minutes, and then execute&#x20;
-
-<pre><code><strong>kubectl get ing -n ns-0x6091b2f5678952cafbf02755d78973ebff302e11
-</strong></code></pre>
-
-Find the hosts corresponding to the name `ing-minesweeper` and ensure that the domain can be accessed in a browser to confirm its normal status.
-
-<img src="broken-reference" alt="" data-size="original">
-
-#### Q: My node has been running for so long, yet the uptime is 0%.
-
-**A**:
-
-1\. Run the following command:
-
-{% hint style="info" %}
-_**Ensure that****  ****`<YOUR_MULTI_ADDRESS_IP>`**** ****is the Public IP.**_
-{% endhint %}
-
-```bash
-curl -k https://<YOUR_MULTI_ADDRESS_IP>:<PORT>/api/v1/computing/host/info
-```
-
-2\. Compare the returned result with the example provided below. If they are different, you should review your port mappings.
-
-Example result:
-
-```json
-{"status":"success","code":"","data":{"swan_miner_version":"","operating_system":"linux","architecture":"amd64","cpu_cores":48}}
-```
-
-3\. If your port mappings are correct and the result matches the example, then proceed to check the configuration file of the computing provider.&#x20;
-
-Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`.
 
 #### Q: Which ports need to be mapped?&#x20;
 
