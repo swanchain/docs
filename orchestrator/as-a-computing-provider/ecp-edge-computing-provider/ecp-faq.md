@@ -62,7 +62,7 @@ out:
 
 
 
-**Q: What are `ownerAddress`, `workerAddress`, and `beneficiaryAddress`?**
+#### **Q: What are `ownerAddress`, `workerAddress`, and `beneficiaryAddress`?**
 
 **A:** These are three different types of accounts used in the system for security and separation of concerns:
 
