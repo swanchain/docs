@@ -1,5 +1,8 @@
 # ECP Setup
 
+> Source link: [https://github.com/swanchain/go-computing-provider/blob/releases/ubi/README.md](https://github.com/swanchain/go-computing-provider/blob/releases/ubi/README.md)\
+> **Please refer to the above link for up-to-date information.**
+
 ## Prerequisites
 
 * Need to map the ECP service port of the intranet to the public network, the default port is`9085`:
