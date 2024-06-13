@@ -3,7 +3,11 @@
 > Source link: [https://github.com/swanchain/go-computing-provider/blob/releases/ubi/README.md](https://github.com/swanchain/go-computing-provider/blob/releases/ubi/README.md)\
 > **Please refer to the above link for up-to-date information.**
 
-## Prerequisites
+**ECP (Edge Computing Provider)** specializes in processing data at the source of data generation, using minimal latency setups ideal for real-time applications. This provider handles specific, localized tasks directly on devices at the network’s edge, such as IoT devices.
+
+At the current stage, ECP supports the generation of **ZK-Snark proof of Filecoin network**, and more ZK proof types will be gradually supported, such as Aleo, Scroll, starkNet, etc
+
+### Prerequisites
 
 * Need to map the ECP service port of the intranet to the public network, the default port is`9085`:
 
@@ -36,7 +40,7 @@ curl -fsSL https://raw.githubusercontent.com/swanchain/go-computing-provider/rel
 * Download `computing-provider`
 
 ```bash
-wget https://github.com/swanchain/go-computing-provider/releases/download/v0.4.8/computing-provider
+wget https://github.com/swanchain/go-computing-provider/releases/download/v0.5.0/computing-provider
 ```
 
 * Initialize ECP repo
@@ -71,8 +75,22 @@ Output:
 * Initialize ECP Account
 
 ```bash
-./computing-provider account create --ownerAddress <YOUR_WALLET_ADDRESS> --ubi-flag=true
+./computing-provider account create \
+                    --ownerAddress <YOUR_OWNER_ADDRESS> \
+                    --workerAddress <YOUR_WORKER_ADDRESS> \
+                    --beneficiaryAddress <YOUR_BENEFICIAERY_ADDRESS  \
+                    --task-types 1,2,4
 ```
+
+**Note:** `--task-types`: Supports 4 task types (1: Fil-C2-512M, 2: Aleo, 3: AI, 4: Fil-C2-32G), separated by commas. For ECP, it needs to be set to 1,2,4.
+
+* Collateral Swan-ETH for ECP
+
+```bash
+./computing-provider collateral add --ecp --from <YOUR_WALLET_ADDRESS>  <AMOUNT>   
+```
+
+**Note:** Currently one zk-task requires 0.0005 Swan-ETH.
 
 ### Start ECP service
 
@@ -90,3 +108,4 @@ nohup ./computing-provider ubi daemon >> cp.log 2>&1 &
 * `RUST_GPU_TOOLS_CUSTOM_GPU` is your GPU model and cores, you should update it to your own GPU model. More examples can be found [here](https://github.com/filecoin-project/bellperson?tab=readme-ov-file#supported--tested-cards)
 * `<YOUR_PUBLIC_IP>`, `<YOUR_PORT>` are your public IP and port ,
 * `<YOUR_NODE_NAME>` is your CP name which will show in the dashboard, If not specified, the default is `hostname`.
+
