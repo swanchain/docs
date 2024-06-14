@@ -6,7 +6,7 @@ Ready to dive in? Join us at: [https://proxima-testnet.swanchain.io/](https://pr
 
 ## Campaign Duration
 
-The campaign spans two full months, **from April 29th, 00:00 (EST) - June 29th, 2024, 23:59 (EST)**
+The campaign spans two full months, **from April 29th, 00:00 (EST) - July 15, 23:59 (EST)**
 
 ## **Total Reward Pool**
 

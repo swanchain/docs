@@ -91,10 +91,10 @@ Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`
 3.  Generate the signature using the following command:
 
     ```bash
-    computing-provider wallet sign <ownerAddress> <nodeid+id>
+    computing-provider wallet sign <ownerAddress> <nodeid+contract_addr>
     ```
 
-    For example, if nodeid is `abcd` and taskid is `11`:
+    For example, if nodeid is abcd and task contract\_addr is 11:
 
     ```bash
     computing-provider wallet sign <ownerAddress> abcd11
@@ -103,13 +103,14 @@ Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`
 
     ```json
     {
-        "id": 11,
-        "name": "test",
-        "type": 1,
-        "zk_type": "fil-c2-512M",
-        "input_param": "https://286cb2c989.acl.multichain.storage/ipfs/QmYg4CfA5E2zR4ktb5B3PafAeCWyEEXiKUVS4g2UE9occ5",
-        "resource": {"cpu": "2", "gpu": "1", "memory": "5.00 GiB", "storage": "1.00 GiB"},
-        "signature": "Signing_nodeid_and_taskid_with_ownerAddress"
+    	"id":518906,
+    	"name":"1000-0-7-518906",
+    	"type": 1,
+    	"source_type":1,
+    	"input_param":"https://286cb2c989.acl.swanipfs.com/ipfs/QmTgoX6LkzZTsTjSjXvujzgJEHBLTEg3KMUadQGnyTrNFG",
+    	"resource":{"cpu":"1","memory":"3.00 GiB","storage":"10.00 GiB"},
+    	"contract_addr": "0x5126be41b93be38C541eB0EB7f6b3407dfDf5544",
+    	"signature": "Signing_nodeid_and_contractaddr_with_ownerAddress"
     }
 
     ```
@@ -119,13 +120,14 @@ Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`
     curl -k --location --request POST 'https://<public_IP>:<port>/api/v1/computing/cp/ubi' \
     --header 'Content-Type: application/json' \
     --data-raw '{
-        "id": 11,
-        "name": "test-ubi",
-        "type": 1,
-        "zk_type": "fil-c2-512M",
-        "input_param": "https://286cb2c989.acl.multichain.storage/ipfs/QmYg4CfA5E2zR4ktb5B3PafAeCWyEEXiKUVS4g2UE9occ5",
-        "resource": {"cpu": "2", "gpu": "1", "memory": "5.00 GiB", "storage": "1.00 GiB"},
-        "signature": "Signing_nodeid_and_taskid_using_the_owner's_address."
+        "id":518906,
+    	"name":"1000-0-7-518906",
+    	"type": 1,
+    	"source_type": 0,
+    	"input_param":"https://286cb2c989.acl.swanipfs.com/ipfs/QmTgoX6LkzZTsTjSjXvujzgJEHBLTEg3KMUadQGnyTrNFG",
+    	"resource":{"cpu":"1","memory":"3.00 GiB","storage":"10.00 GiB"},
+    	"contract_addr": "0x5126be41b93be38C541eB0EB7f6b3407dfDf5544",
+    	"signature": "Signing_nodeid_and_contractaddr_with_ownerAddress"
     }'
     ```
 6.  After running ubi-task, check if the task status is success:

@@ -14,11 +14,11 @@ This program incentivizes participants to explore and interact with Swan Chain b
 
 ## Duration
 
-April 29th, 00:00 (EST) - June 29th, 2024, 23:59 (EST)
+April 29th, 00:00 (EST) - June 14, 23:59 (EST)
 
 ## **Reward Structure**
 
-The On-chain Interaction Race is allocated 10% of the total [Atom Accelerator Race ](https://proxima-testnet.swanchain.io/)campaign pool of 15,000,000 credits. This translates to a dedicated reward pool of **1,500,000 credits** for the On-chain Interaction Race.
+The On-chain Interaction Race is allocated **1,125,000 Swan Credits** .
 
 **Rewards Distribution:**&#x20;
 
