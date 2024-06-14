@@ -1,10 +1,10 @@
 ---
-description: An L2 for decentralized cloud computing
+description: Depin built for AI
 ---
 
 # Introduction to Swan Chain
 
-[Swan Chain ](https://www.swanchain.io/)built on Ethereum Layer 2 with [OP Stack](https://docs.optimism.io/stack/getting-started) technology, revolutionizes Web3 and AI integration by offering comprehensive solutions that seamlessly combine decentralized storage, AI, and[ Zero-Knowledge (ZK) marketplaces](getting-started/protocol-stack/indexing-and-caching-marketplace.md). Through [LagrangeDAO](https://app.gitbook.com/o/-Ma7\_tf6L8A170GHT9fr/s/y5iPODl9iwLxyYirHs2D/), it enables efficient AI model deployment while reducing computing costs by up to 70% and monetizing idle computing resources.
+[Swan Chain](https://www.swanchain.io) (formerly FilSwan), initiated in 2021, is a decentralized infrastructure designed to accelerate AI adoption. Utilizing OP Stack's Ethereum Layer 2 technology, [Swan Chain](https://www.swanchain.io/) merges Web3 with AI, offering comprehensive solutions across storage, computing, bandwidth, and payments. Through [LagrangeDAO](https://app.gitbook.com/o/-Ma7\_tf6L8A170GHT9fr/s/y5iPODl9iwLxyYirHs2D/), it enables efficient AI model deployment while reducing computing costs by up to 70% and monetizing idle computing resources.
 
 SwanChain's innovative approach introduces a [Universal Basic Income (UBI) ](getting-started/protocol-stack/token/swan-universal-basic-income-ubi/)model for [computing providers](orchestrator/as-a-computing-provider/fcp-fog-computing-provider/computing-provider-setup.md) within its ZK market, ensuring stable income and incentivizing continuous contributions.&#x20;
 
