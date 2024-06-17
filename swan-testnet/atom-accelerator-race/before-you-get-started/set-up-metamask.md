@@ -31,6 +31,10 @@ Swan, built at OP Stack, is currently available on the **Sepolia Testnet**. To e
 | Currency symbol    | SwanETH                                                                          |
 | Block explorer URL | [https://proxima-explorer.swanchain.io/](https://proxima-explorer.swanchain.io/) |
 
+{% hint style="info" %}
+If the above RPC fails, please try using this RPC: [https://rpc-proxima-tp.nebulablock.com](https://rpc-proxima-tp.nebulablock.com)
+{% endhint %}
+
 3.Click **Save** or **Add** to save the network.
 
 <figure><img src="../../../.gitbook/assets/image (166).png" alt=""><figcaption></figcaption></figure>
