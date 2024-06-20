@@ -2,13 +2,13 @@
 
 The Computing Provider Acceleration Program is an exciting event designed to attract more computing providers to the Swan Chain network, boosting its overall computing power and capabilities. This program is part of the larger Atom Accelerator Race, which aims to drive ecosystem growth and adoption before the mainnet launch.
 
-### Duration
+## Duration
 
 April 29th , 00:00 (EST) - July 15, 23:59 (EST)
 
-### How to Participate
+## How to Participate
 
-#### As an ECP (Edge Computing Provider)
+### As an ECP (Edge Computing Provider)
 
 * Participants will need to deploy a ECP according to the instructions provided and follow this [documentation](https://docs.swanchain.io/orchestrator/as-a-computing-provider/ecp-edge-computing-provider)[ ](https://docs.swanchain.io/orchestrator/as-a-computing-provider/ecp-edge-computing-provider/ecp-setup)to complete ZK tasks. Credits will be earned based on their performance in ZK jobs.
 
@@ -23,7 +23,7 @@ April 29th , 00:00 (EST) - July 15, 23:59 (EST)
 * Minimum 20MB bandwidth
 {% endhint %}
 
-#### As an FCP (Fog Computing Provider)
+### As an FCP (Fog Computing Provider)
 
 * Participants will be required to deploy a FCP following the [documentation.](https://docs.swanchain.io/orchestrator/as-a-computing-provider/fcp-fog-computing-provider/computing-provider-setup)
 * The longer their GPUs and CPUs are utilized, and the higher their uptime, the more credits they'll earn.
@@ -57,9 +57,59 @@ It's important to note that this enhancement doesn't directly translate to a 3-1
 * Minimum 50MB bandwidth
 {% endhint %}
 
-#### As a Market Provider (Coming Soon)
+### As a Market Provider:
 
-Details about the Market Provider participation will be announced soon.
+Participants can submit your code that facilitates the allocation of computing jobs to providers, utilizing an auction engine for job distribution and a payment engine for financial transactions.
+
+#### How to Participate
+
+To participate, follow these steps:
+
+1. **Submission**: Submit your code to the [GitHub repository](https://github.com/swanchain/market-providers) provided.
+2. **Review Criteria**: Ensure your code meets the [Minimum Viable Product (MVP) criteria and other requirements](cp-acceleration-program.md#rules-and-acceptance-criteria) listed below.
+3. **Fill Out the Form:** Remember to fill out this [form](https://forms.gle/2NitUKKsZyCg2Ntq9) when you finish this task. Code submission form will require:
+   * Source Code Repository
+   * Contract Code
+   * Deployment Documentation
+   * MP Operational Website
+   * APIs Documentation
+
+#### Rules and Acceptance Criteria
+
+**Minimum Viable Product (MVP)**
+
+Your code must include at least the following functionalities:
+
+1. **Network Scan**: Scan the entire network for CP accounts, retrieve basic CP information, and display available CPs.
+2. **Resource Information**: Retrieve detailed CP resource information.
+3. **Whitelist**: Retrieve and manage the whitelist.
+4. **Task Management**: Send tasks (including AI tasks and ZK-tasks) to CPs, with options to renew or terminate tasks.
+5. **Task Lifecycle Management**: Ensure complete management of the task lifecycle.
+6. **Collateral Functionality**: Implement CP-compatible collateral functionality.
+7. **Payment Mechanism**: Establish a comprehensive payment mechanism involving User -> MP -> CP transactions.
+8. **Platform Integration**: Integrate seamlessly with the LagrangeDAO platform.
+
+**Code and Deployment**
+
+* **Source Code**: Provide the complete source code.
+* **Deployment Documentation**: Include a full deployment document, ensuring both frontend and backend services are operational.
+
+**Collateral Functionality**
+
+* **Collateral Contract**: Submit the source code for the collateral contract.
+
+**APIs Documentation**
+
+* **Comprehensive Documentation**: Provide detailed documentation for platform integration with the Market Provider, including API details and parameter descriptions.
+
+### Evaluation Process
+
+Submissions will be evaluated based on:
+
+* Compliance with MVP criteria and additional requirements.
+* Quality and readability of the code.
+* Thoroughness of deployment documentation.
+* Clarity and completeness of API documentation.
 
 ### Key Components
 
