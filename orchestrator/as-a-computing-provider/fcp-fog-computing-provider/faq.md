@@ -201,5 +201,5 @@ $ redis-cli
 To withdraw collateral from FCP, use the following command:
 
 ```bash
-computing-provider --repo <YOUR_CP_PATH> collateral withdraw --fcp --owner <YOUR_OWNER_WALLET_ADDRESS> <AMOUNT>
+computing-provider --repo <YOUR_CP_PATH> collateral withdraw --fcp --owner <YOUR_OWNER_WALLET_ADDRESS> --account <YOUR_CP_ACCOUNT> <AMOUNT>
 ```
