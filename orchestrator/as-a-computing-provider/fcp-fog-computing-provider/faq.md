@@ -195,3 +195,11 @@ You can try to change the setting:
 $ redis-cli
 > config set stop-writes-on-bgsave-error no
 ```
+
+#### Q: **How do I withdraw collateral from FCP?**
+
+To withdraw collateral from FCP, use the following command:
+
+```bash
+computing-provider --repo <YOUR_CP_PATH> collateral withdraw --fcp --owner <YOUR_OWNER_WALLET_ADDRESS> <AMOUNT>
+```

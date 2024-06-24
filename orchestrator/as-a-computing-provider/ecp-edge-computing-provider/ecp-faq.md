@@ -94,3 +94,11 @@ Verify that the resource-exporter is functioning correctly by monitoring its log
 ```bash
 docker logs -f resource-exporter
 ```
+
+#### **Q: How do I withdraw collateral from ECP?**
+
+To withdraw collateral from ECP, use the following command:
+
+```bash
+computing-provider --repo <YOUR_CP_PATH> collateral withdraw --ecp --owner <YOUR_OWNER_WALLET_ADDRESS> <AMOUNT>
+```
