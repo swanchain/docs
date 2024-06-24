@@ -100,5 +100,5 @@ docker logs -f resource-exporter
 To withdraw collateral from ECP, use the following command:
 
 ```bash
-computing-provider --repo <YOUR_CP_PATH> collateral withdraw --ecp --owner <YOUR_OWNER_WALLET_ADDRESS> <AMOUNT>
+computing-provider --repo <YOUR_CP_PATH> collateral withdraw --ecp --owner <YOUR_OWNER_WALLET_ADDRESS> --account <YOUR_CP_ACCOUNT> <AMOUNT>
 ```
