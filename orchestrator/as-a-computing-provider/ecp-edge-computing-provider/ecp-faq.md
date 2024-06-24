@@ -71,3 +71,26 @@ out:
 * `beneficiaryAddress`: This is the address where all earnings from the CP account will be sent. It is solely used for receiving funds. For security purposes, the private key of the `beneficiaryAddress` should not be stored on the server to maintain isolation.
 
 By separating these accounts, the system ensures that only the necessary `workerAddress` private key is present on the server, while the more sensitive `ownerAddress` and `beneficiaryAddress` private keys are kept separate, enhancing the overall security of the system.
+
+#### **Q: How do I update the resource-exporter in ECP?**
+
+**A:**&#x20;
+
+Step 1: Stop the computing-provider process.
+
+Step 2: Execute the following commands:
+
+```bash
+docker rm -f resource-exporter
+docker rmi filswan/hardware-exporter:v2.0
+```
+
+Step 3: Restart the computing-provider process.
+
+Step 4: Check resource-exporter logs:
+
+Verify that the resource-exporter is functioning correctly by monitoring its logs:
+
+```bash
+docker logs -f resource-exporter
+```
