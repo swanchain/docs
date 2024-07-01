@@ -21,9 +21,9 @@ A Market Provider (MP) in the Swan network is a crucial entity that offers vario
 
 1. [**FilSwan Storage Market**](storage-market.md):
    * Specializes in decentralized storage solutions, managing large datasets and ensuring data integrity and availability.
-2. [**Orchestrator AI Market**](../../../swan-provider/mp-market-provider/orchestrator.md):
+2. [**Orchestrator AI Market**](../decentralized-ai-computing-marketplace/):
    * Focuses on AI tasks, providing the necessary infrastructure for training and deploying AI models.
-3. [**ZK-UBI ZK Proofing Market**](../../../swan-provider/mp-market-provider/zk-engine.md):
+3. [**ZK-UBI ZK Proofing Market**](../indexing-and-caching-marketplace.md):
    * Handles Zero-Knowledge (ZK) proofs, supporting privacy-preserving computations and decentralized identity solutions.
 
 #### Advantages of Being a Market Provider:
