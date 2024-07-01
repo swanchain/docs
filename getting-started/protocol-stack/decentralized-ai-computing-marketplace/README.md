@@ -6,7 +6,7 @@ description: Globle AI Computing Task Market
 
 The SwanChain AI Market is a cutting-edge decentralized platform specifically designed to cater to the needs of AI development by streamlining the distribution of AI model training tasks to a global network of computing providers. Utilizing a sophisticated AI auction engine, SwanChain facilitates a transparent and competitive marketplace that operates on blockchain technology.
 
-<figure><img src="../../../../.gitbook/assets/MicrosoftTeams-image (19) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/MicrosoftTeams-image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here’s how the SwanChain AI Market functions:
 

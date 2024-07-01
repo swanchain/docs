@@ -6,7 +6,7 @@ The Swan Chain ZK market is an embodiment of how distributed computing power, pa
 
 Swan Chain taps into a worldwide network of computing providers, each contributing their processing power to form a distributed supercomputer of sorts. This decentralized network allows for the parallel processing of tasks, significantly reducing the time required for generating ZK proofs.
 
-<figure><img src="../../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
 
 #### Utilization of GPU Hardware
 
@@ -20,7 +20,7 @@ The embedded ZK market within Swan Chain operates as a marketplace for ZK proof 
 
 The computing providers participating in the ZK market are rewarded for their contributions in the native cryptocurrency of Swan Chain, which forms part of their UBI. This UBI serves as a consistent stream of income, providing an economic incentive for maintaining the necessary computational infrastructure and for the continuous provision of processing power.
 
-<figure><img src="../../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
 
 #### Advantages and Innovation
 
