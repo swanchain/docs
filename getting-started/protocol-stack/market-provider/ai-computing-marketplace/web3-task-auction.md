@@ -4,7 +4,7 @@ description: Smart contract based AI Task Auction Engine
 
 # Orchestrator
 
-<figure><img src="../../../../.gitbook/assets/image (141).png" alt=""><figcaption><p>FiLSwan Auto-Bidding Storage Market</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (141).png" alt=""><figcaption><p>Swan Computing Auction Engine</p></figcaption></figure>
 
 An AI computing and storage bid market is a decentralized platform where users can post requests for computing power and storage space and hire other users to provide these services. These platforms are built on blockchain technology and use smart contracts to create a transparent and secure marketplace where users can buy and sell computing and storage resources.
 
