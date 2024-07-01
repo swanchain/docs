@@ -10,4 +10,4 @@ The orchestrator within the Swan Chain ecosystem serves as a critical component,
 * **Auto Payment Execution**: Upon successful task verification, the orchestrator facilitates automatic payments to the computing providers through smart contracts, ensuring timely and fair compensation for their services.
 * **Resource Optimization**: The Orchestrator continuously monitors the network to optimize the allocation of computing resources, ensuring high efficiency and minimizing idle resources.
 
-[Read more](../../getting-started/protocol-stack/web3-task-auction.md) about Orchestrator. \
+[Read more](../../getting-started/protocol-stack/market-provider/ai-computing-marketplace/web3-task-auction.md) about Orchestrator. \
