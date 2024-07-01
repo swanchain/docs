@@ -4,6 +4,8 @@ description: Cross Chain Computing Protocol
 
 # Protocol Stack
 
+Swan Chain is designed as a full toolset AI Blockchain infrastructure, providing comprehensive solutions across storage, computing, bandwidth, and payments. The protocol stack is a multi-layered architecture that ensures efficient and secure operations within the Swan Chain ecosystem. Below is an overview of each layer in the protocol stack:
+
 ## Protocol Layers
 
 <figure><img src="../../.gitbook/assets/image (175).png" alt=""><figcaption><p>Protocol Stack</p></figcaption></figure>
