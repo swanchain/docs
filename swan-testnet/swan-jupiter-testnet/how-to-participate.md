@@ -42,7 +42,7 @@ All eligible CPs who successfully refer new CPs to the Network, and the referred
 
 #### Eligibility Criteria
 
-* Run at least one [**UBI task**](../../orchestrator/as-a-computing-provider/fcp-fog-computing-provider/faq.md) during the campaign to confirm a successful setup.
+* Run at least one [**UBI task**](../../swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq.md) during the campaign to confirm a successful setup.
 * Maintain provider uptime exceeding **90%**.
 * Submission of the [**form**](https://docs.google.com/forms/d/e/1FAIpQLSeTDXjTGmPB7MuSGJJZMO2Ctk12VAoYU6aTmLeFR0jeW5M-zw/viewform) is required upon task completion.
 

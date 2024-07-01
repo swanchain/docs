@@ -29,34 +29,35 @@
         * [Filecoin Commit 2 (C2) with ZK-UBI](getting-started/protocol-stack/token/swan-universal-basic-income-ubi/zk-ubi-pool/filecoin-commit-2-c2-with-zk-ubi.md)
   * [Glossary](getting-started/protocol-stack/glossary.md)
 
-## Orchestrator
-
-* [Overview](orchestrator/overview.md)
-* [As a Computing Provider](orchestrator/as-a-computing-provider/README.md)
-  * [ECP (Edge Computing Provider)](orchestrator/as-a-computing-provider/ecp-edge-computing-provider/README.md)
-    * [ECP Setup](orchestrator/as-a-computing-provider/ecp-edge-computing-provider/ecp-setup.md)
-    * [ECP FAQ](orchestrator/as-a-computing-provider/ecp-edge-computing-provider/ecp-faq.md)
-  * [FCP (Fog Computing Provider)](orchestrator/as-a-computing-provider/fcp-fog-computing-provider/README.md)
-    * [FCP Setup](orchestrator/as-a-computing-provider/fcp-fog-computing-provider/computing-provider-setup.md)
-    * [Connect to Orchestrator](orchestrator/as-a-computing-provider/fcp-fog-computing-provider/connect-to-orchestrator.md)
-    * [FCP FAQ](orchestrator/as-a-computing-provider/fcp-fog-computing-provider/faq.md)
-  * [MP(Market Provider)](orchestrator/as-a-computing-provider/mp-market-provider.md)
-* [As a Client](orchestrator/as-a-client/README.md)
-  * [SDK](orchestrator/as-a-client/sdk.md)
-
 ## Development Resource
 
 * [QuickStarts](development-resource/quickstarts/README.md)
   * [Deploying Your First Smart Contract with Remix](development-resource/quickstarts/deploying-your-first-smart-contract-with-remix.md)
   * [Interacting with Smart Contract on Swan Chain Using Go](development-resource/quickstarts/interacting-with-smart-contract-on-swan-chain-using-go.md)
   * [Swan SDK](development-resource/quickstarts/swan-sdk.md)
-* [Swan Token Contract](development-resource/swan-token-contract/README.md)
-  * [Acquire Testnet USDC and MATIC tokens](development-resource/swan-token-contract/acquire-testnet-usdc-and-matic-tokens.md)
-* [Contribute Orchestrator task](development-resource/contribute-orchestrator-task/README.md)
-  * [How to Contribute](development-resource/contribute-orchestrator-task/how-to-contribute.md)
 * [Contribute zk-UBI-task](development-resource/contribute-zk-ubi-task/README.md)
   * [How to Contribute](development-resource/contribute-zk-ubi-task/how-to-contribute.md)
   * [Example](development-resource/contribute-zk-ubi-task/example.md)
+
+## Swan PROVIder
+
+* [CP(Computing Provider)](swan-provider/cp-computing-provider/README.md)
+  * [CP Protocol](swan-provider/cp-computing-provider/cp-protocol.md)
+  * [ECP (Edge Computing Provider)](swan-provider/cp-computing-provider/ecp-edge-computing-provider/README.md)
+    * [ECP Setup](swan-provider/cp-computing-provider/ecp-edge-computing-provider/ecp-setup.md)
+    * [ECP FAQ](swan-provider/cp-computing-provider/ecp-edge-computing-provider/ecp-faq.md)
+  * [FCP (Fog Computing Provider)](swan-provider/cp-computing-provider/fcp-fog-computing-provider/README.md)
+    * [FCP Setup](swan-provider/cp-computing-provider/fcp-fog-computing-provider/computing-provider-setup.md)
+    * [Connect to Orchestrator](swan-provider/cp-computing-provider/fcp-fog-computing-provider/connect-to-orchestrator.md)
+    * [FCP FAQ](swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq.md)
+* [MP(Market Provider)](swan-provider/mp-market-provider/README.md)
+  * [Orchestrator](swan-provider/mp-market-provider/orchestrator.md)
+  * [ZK Engine](swan-provider/mp-market-provider/zk-engine.md)
+
+## Use Case
+
+* [Lagrange](use-case/lagrange.md)
+* [Multi-Chain Storage](use-case/multi-chain-storage.md)
 
 ## Swan Testnet
 

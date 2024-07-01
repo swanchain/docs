@@ -1,4 +1,4 @@
-# As a Computing Provider
+# CP(Computing Provider)
 
 A computing provider is an individual or organization that participates in the decentralized computing network by offering computational resources such as processing power (CPU and GPU), memory, storage, and bandwidth.
 
