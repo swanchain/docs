@@ -18,7 +18,8 @@
       * [Reputation System](getting-started/protocol-stack/decentralized-ai-computing-marketplace/reputation-system.md)
     * [ZK Proof Marketplace](getting-started/protocol-stack/indexing-and-caching-marketplace.md)
   * [Storage Layer](getting-started/protocol-stack/storage-layer.md)
-  * [Computing Layer](getting-started/protocol-stack/computing-layer.md)
+  * [Computing Layer](getting-started/protocol-stack/computing-layer/README.md)
+    * [CP Protocol](getting-started/protocol-stack/computing-layer/cp-protocol.md)
   * [CDN Layer](getting-started/protocol-stack/cdn-layer.md)
   * [Tokenomics](getting-started/protocol-stack/token/README.md)
     * [Swan Provider Income](getting-started/protocol-stack/token/swan-provider-income.md)
@@ -44,7 +45,6 @@
 ## Swan PROVIder
 
 * [CP(Computing Provider)](swan-provider/cp-computing-provider/README.md)
-  * [CP Protocol](swan-provider/cp-computing-provider/cp-protocol.md)
   * [ECP (Edge Computing Provider)](swan-provider/cp-computing-provider/ecp-edge-computing-provider/README.md)
     * [ECP Setup](swan-provider/cp-computing-provider/ecp-edge-computing-provider/ecp-setup.md)
     * [ECP FAQ](swan-provider/cp-computing-provider/ecp-edge-computing-provider/ecp-faq.md)

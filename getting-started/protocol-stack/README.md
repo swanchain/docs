@@ -29,6 +29,6 @@ In order to enable a new class of web3 native dApps, a Decentralized Query Proto
 6. [Decentralized AI Computing Marketplace](decentralized-ai-computing-marketplace/) — globe AI computing task market
 7. [ZK Proof Marketplace](indexing-and-caching-marketplace.md)— globe zk computing task market
 8. [Storage Layer](storage-layer.md) — data stored on public blockchains or content addressable networks.
-9. [Computing Layer ](computing-layer.md)— how a query is routed to a specific node for computing.
+9. [Computing Layer ](computing-layer/)— how a query is routed to a specific node for computing.
 10. [CDN Layer ](cdn-layer.md)– how data is distributed and hosted on the global network
 11. [Governance](token/governance/) —manages schemas, treasure, and disputes.
