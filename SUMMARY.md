@@ -8,12 +8,14 @@
   * [Peer-to-peer (P2P) Network](getting-started/protocol-stack/peer-to-peer-p2p-network.md)
   * [Payment Channels](getting-started/protocol-stack/payment-channels.md)
   * [Service Discovery](getting-started/protocol-stack/service-discovery.md)
-  * [Data Marketplace](getting-started/protocol-stack/data-marketplace.md)
-  * [Decentralized AI Computing Marketplace](getting-started/protocol-stack/decentralized-ai-computing-marketplace/README.md)
-    * [Auction Engine](getting-started/protocol-stack/decentralized-ai-computing-marketplace/auction-engine.md)
-    * [Bidding Task State Machine](getting-started/protocol-stack/decentralized-ai-computing-marketplace/bidding-task-state-machine.md)
-    * [Reputation System](getting-started/protocol-stack/decentralized-ai-computing-marketplace/reputation-system.md)
-  * [ZK Proof Marketplace](getting-started/protocol-stack/indexing-and-caching-marketplace.md)
+  * [Market Provider](getting-started/protocol-stack/market-provider/README.md)
+    * [Storage Market](getting-started/protocol-stack/market-provider/storage-market.md)
+    * [Data Marketplace](getting-started/protocol-stack/market-provider/data-marketplace.md)
+    * [AI Computing Marketplace](getting-started/protocol-stack/market-provider/ai-computing-marketplace/README.md)
+      * [Auction Engine](getting-started/protocol-stack/market-provider/ai-computing-marketplace/auction-engine.md)
+      * [Bidding Task State Machine](getting-started/protocol-stack/market-provider/ai-computing-marketplace/bidding-task-state-machine.md)
+      * [Reputation System](getting-started/protocol-stack/market-provider/ai-computing-marketplace/reputation-system.md)
+    * [ZK Proof Marketplace](getting-started/protocol-stack/market-provider/indexing-and-caching-marketplace.md)
   * [Orchestrator](getting-started/protocol-stack/web3-task-auction.md)
   * [Storage Layer](getting-started/protocol-stack/storage-layer.md)
   * [Computing Layer](getting-started/protocol-stack/computing-layer.md)
@@ -90,7 +92,3 @@
   * [Before You Get Started](swan-testnet/swan-jupiter-testnet/before-you-get-started.md)
   * [Network Early Adopter](swan-testnet/swan-jupiter-testnet/network-early-adopter.md)
   * [FAQ](swan-testnet/swan-jupiter-testnet/faq.md)
-
-## Market Provider
-
-* [Overview](market-provider/overview.md)
