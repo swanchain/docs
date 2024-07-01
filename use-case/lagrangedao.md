@@ -1,6 +1,6 @@
-# Lagrange
+# LagrangeDao
 
-Lagrange is a decentralized Web3 platform for natural language processing (NLP) development and deployment, built on Swan Chain. It aims to provide a more cost-effective, secure, and interoperable alternative to centralized cloud services like AWS.&#x20;
+[LagrangeDao](https://lagrangedao.org) is a decentralized Web3 platform for natural language processing (NLP) development and deployment, built on Swan Chain. It aims to provide a more cost-effective, secure, and interoperable alternative to centralized cloud services like AWS.&#x20;
 
 {% hint style="info" %}
 _Learn more about Lagrange in_[ _its documentation_](https://docs.lagrangedao.org/)_._

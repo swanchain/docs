@@ -58,7 +58,7 @@
 
 ## Use Case
 
-* [Lagrange](use-case/lagrange.md)
+* [LagrangeDao](use-case/lagrangedao.md)
 * [Multi-Chain Storage](use-case/multi-chain-storage.md)
 
 ## Swan Testnet
