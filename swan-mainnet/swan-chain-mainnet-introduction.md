@@ -34,7 +34,7 @@ For more information, users can visit the website: [https://orchestrator.swancha
 Users can claim free SWAN Credit Token from the faucet under the following conditions: Each wallet can claim 24 tokens every 24 hours. If your wallet balance exceeds 240 tokens, you won't be able to claim any more tokens. \
 
 
-Two ways to receive SWAN Credit Token, you can claim them from the faucet or earn them by participating in a computing provider job. Visit the following website to start claiming tokens: [https://swanscan.io/](https://swanscan.io/).\
+Two ways to receive SWAN Credit Token, you can claim them from the faucet or earn them by participating in a computing provider job. Visit the following website to start claiming tokens: [https://faucet.swanchain.io](https://swanscan.io/).\
 \
 Note: Please note that the test token for the mainnet (SWAN Credit) is not connected to the rewards of the Atom testnet, even though they share the same name (SWAN Credit). The SWAN Credit in this mainnet phase is only used as a test token for deploying space on the mainnet.
 
