@@ -1,6 +1,6 @@
 # ECP (Edge Computing Provider)
 
-## Edge Computing Provider(ECP)
+## Edge Computing Provider (ECP)
 
 **ECP (Edge Computing Provider)** specializes in processing data at the source of data generation, using minimal latency setups ideal for real-time applications. This provider handles specific, localized tasks directly on devices at the network’s edge, such as IoT devices.
 

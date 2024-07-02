@@ -16,4 +16,4 @@ Note: The more points you collect, the bigger the surprise reward waiting for yo
 
 3. #### How To Join
 
-Visit[ ](https://app.galxe.com/quest/filswan/GCCQuthxve)[https://app.galxe.com/quest/filswan/GC8iktgfnW](https://app.galxe.com/quest/filswan/GC8iktgfnW)
+Visit:[ ](https://app.galxe.com/quest/filswan/GCCQuthxve)[https://app.galxe.com/quest/filswan/GC8iktgfnW](https://app.galxe.com/quest/filswan/GC8iktgfnW)

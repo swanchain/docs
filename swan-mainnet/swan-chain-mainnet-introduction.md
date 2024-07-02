@@ -40,19 +40,13 @@ Users can claim free SWAN Credit Token from the faucet under the following condi
 
 Two ways to receive SWAN Credit Token, you can claim them from the faucet or earn them by participating in a computing provider job. Visit the following website to start claiming tokens: [https://faucet.swanchain.io/](https://faucet.swanchain.io/).\
 \
-Note: Please note that the test token for the mainnet (SWAN Credit) is not connected to the rewards of the Atom testnet, even though they share the same name (SWAN Credit). The SWAN Credit in this mainnet phase is only used as a test token for deploying space on the mainnet.
+Note: The test token for the mainnet (SWAN Credit) is not connected to the rewards of the Atom testnet, even though they share the same name (SWAN Credit). The SWAN Credit in this mainnet phase is only used as a test token for deploying space on the mainnet.
 
 ### **Explorer**
 
 In the mainnet phase, we will update the UI/UX of the old explorer website to a new, more user-friendly design. The new site will offer faster and more accurate updates, making it easier for users, developers, and computing providers to track Swan Chain's on-chain metric.&#x20;
 
 Here is the new Swan Explorer: [https://mainnet-explorer.swanchain.io](https://mainnet-explorer.swanchain.io) or [https://swanscan.io/ ](https://swanscan.io/)
-
-***
-
-## Campaign Duration
-
-The campaign spans two full months, **from July 2nd, 23:00 (EST).**&#x20;
 
 ***
 

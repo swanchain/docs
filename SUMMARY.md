@@ -34,17 +34,17 @@
 
 ## Development Resource
 
-* [QuickStarts](development-resource/quickstarts/README.md)
-  * [Deploying Your First Smart Contract with Remix](development-resource/quickstarts/deploying-your-first-smart-contract-with-remix.md)
-  * [Interacting with Smart Contract on Swan Chain Using Go](development-resource/quickstarts/interacting-with-smart-contract-on-swan-chain-using-go.md)
-  * [Swan SDK](development-resource/quickstarts/swan-sdk.md)
+* [Quick Start](development-resource/quick-start/README.md)
+  * [Deploying Your First Smart Contract with Remix](development-resource/quick-start/deploying-your-first-smart-contract-with-remix.md)
+  * [Interacting with Smart Contract on Swan Chain Using Go](development-resource/quick-start/interacting-with-smart-contract-on-swan-chain-using-go.md)
+  * [Swan SDK](development-resource/quick-start/swan-sdk.md)
 * [Contribute zk-UBI-task](development-resource/contribute-zk-ubi-task/README.md)
   * [How to Contribute](development-resource/contribute-zk-ubi-task/how-to-contribute.md)
   * [Example](development-resource/contribute-zk-ubi-task/example.md)
 
 ## Swan PROVIder
 
-* [CP(Computing Provider)](swan-provider/cp-computing-provider/README.md)
+* [CP (Computing Provider)](swan-provider/cp-computing-provider/README.md)
   * [ECP (Edge Computing Provider)](swan-provider/cp-computing-provider/ecp-edge-computing-provider/README.md)
     * [ECP Setup](swan-provider/cp-computing-provider/ecp-edge-computing-provider/ecp-setup.md)
     * [ECP FAQ](swan-provider/cp-computing-provider/ecp-edge-computing-provider/ecp-faq.md)
@@ -52,7 +52,7 @@
     * [FCP Setup](swan-provider/cp-computing-provider/fcp-fog-computing-provider/computing-provider-setup.md)
     * [Connect to Orchestrator](swan-provider/cp-computing-provider/fcp-fog-computing-provider/connect-to-orchestrator.md)
     * [FCP FAQ](swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq.md)
-* [MP(Market Provider)](swan-provider/mp-market-provider/README.md)
+* [MP (Market Provider)](swan-provider/mp-market-provider/README.md)
   * [Orchestrator](swan-provider/mp-market-provider/orchestrator.md)
   * [ZK Engine](swan-provider/mp-market-provider/zk-engine.md)
 
