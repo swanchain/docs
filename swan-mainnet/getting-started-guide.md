@@ -58,8 +58,10 @@ Funding your network account is required to use the network. All transactions, i
 
 Go to[ Bridge](https://bridge.swanchain.io/), enter the amount of ETH you wish to bridge, and click on the "Deposit" button.
 
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
-The Bridge is currently undergoing maintenance, so ETH cannot be bridged from Ethereum to the Swan Chain Mainnet at the moment.
+_You can switch the network at the top left corner of this bridge page._
 {% endhint %}
 
 **Step 3: Claiming Swan Credits**
