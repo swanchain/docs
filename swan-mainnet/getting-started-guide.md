@@ -56,10 +56,6 @@ Go to[ Bridge](https://bridge.swanchain.io/), enter the amount of ETH you wish t
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-_The Bridge is currently undergoing maintenance, so ETH cannot be bridged from Ethereum to the Swan Cain Mainnet at the moment._
-{% endhint %}
-
 **Step 3: Claiming Swan Credits**
 
 1. Visit the [faucet page](https://faucet.swanchain.io/) and connect your wallet address.

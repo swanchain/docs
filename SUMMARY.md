@@ -63,7 +63,7 @@
 
 ## SWAN MAINNET
 
-* [Swan Chain Mainnet Introduction](swan-mainnet/swan-chain-mainnet-introduction.md)
+* [Overview](swan-mainnet/overview.md)
 * [Getting Started Guide](swan-mainnet/getting-started-guide.md)
 * [Computing Provider Campaign](swan-mainnet/computing-provider-campaign.md)
 * [GALXE Campaign](swan-mainnet/galxe-campaign.md)
