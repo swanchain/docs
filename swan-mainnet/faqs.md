@@ -14,7 +14,7 @@ A: After completing the entire “Planet” Testnet series, we will proceed to l
   * Faucet: Claim free SWAN Credit Token
   * Orchestrator: New Orchestrator page with detailed CP information, a global provider map, and active provider statistics…
 * Campaign:&#x20;
-  * [Swan Mainnet Mission](swan-mainnet-mission.md)
+  * [Swan Mainnet Mission](swan-chain-mission.md)
   * [Swan Galxe Campaign](galxe-campaign.md)
   * [Computing Provider Program](computing-provider-campaign.md)
 

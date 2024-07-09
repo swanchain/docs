@@ -67,7 +67,7 @@
 * [Getting Started Guide](swan-mainnet/getting-started-guide.md)
 * [Computing Provider Campaign](swan-mainnet/computing-provider-campaign.md)
 * [GALXE Campaign](swan-mainnet/galxe-campaign.md)
-* [Swan Mainnet Mission](swan-mainnet/swan-mainnet-mission.md)
+* [Swan Chain Mission](swan-mainnet/swan-chain-mission.md)
 * [FAQs](swan-mainnet/faqs.md)
 
 ## Swan Testnet
