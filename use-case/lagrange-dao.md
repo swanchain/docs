@@ -18,22 +18,44 @@ _Learn more about Lagrange in_[ _its documentation_](https://docs.lagrangedao.or
 
 Let’s explore some of the [Spaces](https://docs.lagrangedao.org/lagrange-dao/spaces/use-case) built by Lagrange community across categories like AI, gaming, blockchain, and tools.
 
-#### Artificial Intelligence (AI)
+### **Awesome Spaces**
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td align="center"><strong>Stable Diffusion</strong></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Stable-Diffusion-Base-LoRA/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Stable-Diffusion-Base-LoRA/app</a></td><td></td></tr><tr><td align="center"><strong>MusicGen</strong></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/MusicGen/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/MusicGen/app</a></td><td></td></tr><tr><td align="center"><strong>Text-to-Speech</strong></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Text-to-Speech/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Text-to-Speech/app</a></td><td></td></tr><tr><td align="center"><strong>ComfyUI</strong></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/ComfyUI/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/ComfyUI/app</a></td><td></td></tr></tbody></table>
+#### **AI and Creative Spaces**
 
-#### Tools
+Harness cutting-edge AI models to generate content and boost your creative projects.
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"><strong>Jupyter</strong></td><td></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Jupyter-Labs/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Jupyter-Labs/app</a></td></tr><tr><td align="center"><strong>Terminal</strong></td><td></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Terminal/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Terminal/app</a></td></tr><tr><td align="center"><strong>Json-view</strong></td><td></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Json-view/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Json-view/app</a></td></tr></tbody></table>
+* [**MusicGen**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/MusicGen/app): Create original music tracks using simple text prompts.
+* [**Stable Diffusion**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Stable-Diffusion-Base-LoRA/app): Transform text descriptions into stunning AI-generated images.
+* [**Text-to-Speech**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Text-to-Speech/app): Convert written text into natural-sounding speech effortlessly.
+* [**ComfyUI**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/ComfyUI/app): Streamline AI image generation with an intuitive graphical interface.
+* [**Llama2-13B-LLM-Chat LDL**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Llama2-13B-LLM-Chat/app)**:** Explore Meta’s latest large language models (LLM), which has wide applications and great influence.
+* [**Llama3-8B-LLM-Chat**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Llama3-8B-LLM-Chat/app)**:** Meta’s Llama 3, the next iteration of the open-access Llama family.
 
-#### Game
+#### **Gaming Spaces**&#x20;
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td align="center"><strong>Tetris</strong></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/tetris/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/tetris/app</a></td><td></td></tr><tr><td align="center"><strong>Mario</strong></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Mario/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Mario/app</a></td><td></td></tr><tr><td align="center"><strong>Pac-Man</strong></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/pac-man/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/pac-man/app</a></td><td></td></tr></tbody></table>
+Relive classic gaming experiences and challenge yourself with timeless favorites.
 
-#### Blockchain
+* [**Tetris**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/tetris/app): Test your spatial skills with this iconic block-stacking puzzle.
+* [**Super Mario**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Mario/app): Embark on a nostalgic adventure with gaming's most famous plumber.
+* [**Pac-Man**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/pac-man/app): Navigate mazes and outmaneuver ghosts in this beloved arcade classic.
+* [**2048**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/2048/app): Slide numbered tiles and aim for the elusive 2048 in this addictive challenge.
 
-<table data-view="cards"><thead><tr><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td align="center"><strong>Chainnode-RPC</strong></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/chainnode-rpc/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/chainnode-rpc/app</a></td><td></td></tr><tr><td align="center"><strong>Uniswap</strong></td><td><a href="https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/uniswap/app">https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/uniswap/app</a></td><td></td></tr></tbody></table>
+#### **Blockchain Spaces**&#x20;
+
+Explore and interact with decentralized technologies using these powerful tools.
+
+* [**Chainnode-RPC**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/chainnode-rpc/app): Access and analyze blockchain data with this comprehensive RPC interface.
+* [**Uniswap**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/uniswap/app): Experience decentralized trading on the Ethereum blockchain.
 
 {% hint style="success" %}
 _Exploring more models from the reporitory_ [_here_](https://github.com/swanchain/awesome-swanchain)_._
 {% endhint %}
+
+### Contribute to Lagrange
+
+Have an idea for a new space? We welcome contributions from our community!
+
+* [Fork and build your first Space](https://docs.lagrangedao.org/spaces/fork-space)
+* [Explore our model repository](https://github.com/swanchain/awesome-swanchain)
+
+Join us in expanding the Lagrange ecosystem and share your innovations with developers worldwide.
