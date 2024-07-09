@@ -47,6 +47,18 @@ task_info = orchestrator.get_deployment_info(task_uuid=task_uuid)
 print(task_info)
 ```
 
+A sample output:
+
+```
+['https://krfswstf2g.anlu.loveismoney.fun', 'https://l2s5o476wf.cp162.bmysec.xyz', 'https://e2uw19k9uq.cp5.node.study']
+```
+
+The "hello-world" task is deployed to 3 computing providers, open any link in the browser&#x20;
+
+```
+Hello World
+```
+
 For more detailed information and advanced usage, refer to the [official documentation](https://github.com/swanchain/python-swan-sdk).
 
 ### Documentation and Support
