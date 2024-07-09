@@ -31,23 +31,20 @@ git clone https://github.com/swanchain/python-swan-sdk.git
 Here’s a basic example to help you get started with the Swan SDK:
 
 ```python
-from swan_sdk import SwanClient
+import os
+import swan
 
-# Initialize the client
-client = SwanClient(api_key='your_api_key')
+orchestrator = swan.resource(api_key='<SWAN_API_KEY>', service_name='Orchestrator')
 
-# Retrieve hardware information
-hardware_info = client.get_hardware()
-
-# Create a new task
-task = client.create_task(
-    hardware_id=hardware_info[0]['id'],
-    script='print("Hello, SwanChain!")'
+result = orchestrator.create_task(
+    app_repo_image='hello-world',
+    wallet_address='<WALLET_ADDRESS>',
+    private_key='<PRIVATE_KEY>',
 )
-
-# Monitor the task status
-status = client.get_task_status(task['id'])
-print(status)
+task_uuid = result['id']
+# Get task info
+task_info = orchestrator.get_deployment_info(task_uuid=task_uuid)
+print(task_info)
 ```
 
 For more detailed information and advanced usage, refer to the [official documentation](https://github.com/swanchain/python-swan-sdk).
