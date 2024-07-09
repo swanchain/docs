@@ -81,7 +81,6 @@
   * [Builder Acceleration Program](swan-testnet/atom-accelerator-race/builder-acceleration-program.md)
   * [On-chain Interaction Race](swan-testnet/atom-accelerator-race/on-chain-interaction-race.md)
   * [Community Engagement Challenge](swan-testnet/atom-accelerator-race/community-engagement-challenge.md)
-  * [Mainnet Program](swan-testnet/atom-accelerator-race/mainnet-program.md)
   * [FAQ](swan-testnet/atom-accelerator-race/faq.md)
 * [Swan Saturn Testnet](swan-testnet/swan-saturn-testnet/README.md)
   * [Before You Get Started](swan-testnet/swan-saturn-testnet/before-you-get-started/README.md)

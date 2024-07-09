@@ -1,3 +1,0 @@
-# Mainnet Program
-
-Coming Soon!
