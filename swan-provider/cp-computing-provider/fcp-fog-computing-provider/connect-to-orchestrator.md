@@ -4,7 +4,7 @@
 
 * **SwanETH**
   * Ensure that you have sufficient SwanETH for collateral.&#x20;
-  * You can obtain SwanETH following this [guide](../../../swan-testnet/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md) and [bridge](../../../swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens.md) them from Sepolia to Swan Saturn Chain
+  * You can obtain SwanETH following this [guide](../../../swan-chain/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md) and [bridge](../../../swan-chain/swan-saturn-testnet/before-you-get-started/bridge-tokens.md) them from Sepolia to Swan Saturn Chain
 * **Obtain Filecoin V28 Parameters (optional)**
   * To complete UBI tasks, you need to have the Filecoin V28 parameters.&#x20;
   * Make sure you have the parameters corresponding to 512M and 32G sectors, as these cater to different task requirements.

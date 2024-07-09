@@ -1,4 +1,4 @@
-# Overview
+# Swan Chain Mainnet
 
 Welcome to the Swan Chain Mainnet! Concluding the legacy of our successful "Planet" testnet series — Lagrange Mars, Swan Jupiter, Swan Saturn, and Proxima Tesnets, this new chapter of Swan Chain introduces a new era with enhanced functionalities in AI, Data, and more rewards for computing providers, dApp developers, and AI enthusiasts.
 
@@ -12,7 +12,7 @@ _**Please read the "**_[_**Getting Started Guide**_](getting-started-guide.md)_*
 
 After completing the entire “Planet” Testnet series, we will launch the mainnet. This is an important step in realizing our vision of becoming a toolset for AI Blockchain. We have updated the mainnet with several new features, including:
 
-<figure><img src="../.gitbook/assets/MicrosoftTeams-image (8).png" alt=""><figcaption><p>Swan Chain Mainnet Technical Updates </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MicrosoftTeams-image (8).png" alt=""><figcaption><p>Swan Chain Mainnet Technical Updates </p></figcaption></figure>
 
 ### **Bridge**
 
@@ -54,5 +54,3 @@ Here is the new Swan Explorer: [https://mainnet-explorer.swanchain.io](https://m
 
 1. [**Computing Provider Program**](computing-provider-campaign.md)**:** Boost our computational resources with diverse providers from fog to edge computing.&#x20;
 2. **Social Engagement Mission:** Participate in interactive social challenges on [Swan Galxe Campaign](galxe-campaign.md) and [Swan Mainnet Mission](swan-chain-mission.md) to earn massive rewards.
-
-***

@@ -4,7 +4,7 @@
 
 From July 2nd, 23:00 (EST)
 
-<figure><img src="../.gitbook/assets/MicrosoftTeams-image (7).png" alt=""><figcaption><p>Swan Galxe Campaign</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MicrosoftTeams-image (7).png" alt=""><figcaption><p>Swan Galxe Campaign</p></figcaption></figure>
 
 2. #### Rules/Terms
 
