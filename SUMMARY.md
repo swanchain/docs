@@ -37,10 +37,8 @@
 * [Quick Start](development-resource/quick-start/README.md)
   * [Deploying Your First Smart Contract with Remix](development-resource/quick-start/deploying-your-first-smart-contract-with-remix.md)
   * [Interacting with Smart Contract on Swan Chain Using Go](development-resource/quick-start/interacting-with-smart-contract-on-swan-chain-using-go.md)
-  * [Swan SDK](development-resource/quick-start/swan-sdk.md)
-* [Contribute zk-UBI-task](development-resource/contribute-zk-ubi-task/README.md)
-  * [How to Contribute](development-resource/contribute-zk-ubi-task/how-to-contribute.md)
-  * [Example](development-resource/contribute-zk-ubi-task/example.md)
+* [Swan SDK](development-resource/swan-sdk.md)
+* [Swan Node](development-resource/swan-node.md)
 
 ## Swan PROVIder
 
@@ -50,11 +48,14 @@
     * [ECP FAQ](swan-provider/cp-computing-provider/ecp-edge-computing-provider/ecp-faq.md)
   * [FCP (Fog Computing Provider)](swan-provider/cp-computing-provider/fcp-fog-computing-provider/README.md)
     * [FCP Setup](swan-provider/cp-computing-provider/fcp-fog-computing-provider/computing-provider-setup.md)
-    * [Connect to Orchestrator](swan-provider/cp-computing-provider/fcp-fog-computing-provider/connect-to-orchestrator.md)
     * [FCP FAQ](swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq.md)
 * [MP (Market Provider)](swan-provider/mp-market-provider/README.md)
-  * [Orchestrator](swan-provider/mp-market-provider/orchestrator.md)
-  * [ZK Engine](swan-provider/mp-market-provider/zk-engine.md)
+  * [Orchestrator](swan-provider/mp-market-provider/orchestrator/README.md)
+    * [Connect to Orchestrator](swan-provider/mp-market-provider/orchestrator/connect-to-orchestrator.md)
+  * [ZK Engine](swan-provider/mp-market-provider/zk-engine/README.md)
+    * [Contribute zk-UBI-task](swan-provider/mp-market-provider/zk-engine/contribute-zk-ubi-task/README.md)
+      * [How to Contribute](swan-provider/mp-market-provider/zk-engine/contribute-zk-ubi-task/how-to-contribute.md)
+      * [Example](swan-provider/mp-market-provider/zk-engine/contribute-zk-ubi-task/example.md)
 
 ## Use Case
 
