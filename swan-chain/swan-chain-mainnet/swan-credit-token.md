@@ -1,4 +1,4 @@
-# Getting Started Guide
+# Swan Credit Token
 
 ## What You Need
 
@@ -14,35 +14,7 @@
 
 * Fog Computing Providers (FCPs) must deposit a minimum of 0.001 sETH per task as collateral. Ensure you meet this requirement to receive task assignments.
 
-### Set Up MetaMask
-
-**Step 1: Add Swan Chain to MetaMask**
-
-1. Open MetaMask and click on the network selector at the top left.
-2. Select "Add network" and then "Add a network manually."
-3. Fill in the details for Swan Chain Mainnet:
-
-* Network Name: Swan Chain Mainnet
-* New RPC URL:[ https://mainnet-rpc01.swanchain.io](https://mainnet-rpc01.swanchain.io)
-* Chain ID: 254
-* Currency Symbol: sETH
-* Block Explorer URL: [https://mainnet-explorer.swanchain.io](https://mainnet-explorer.swanchain.io)
-
-<figure><img src="https://lh7-us.googleusercontent.com/docsz/AD_4nXcqP5AL9QXr18ymM644YJywG-0b3Q1x9pSSrmoKOriyfgAzPRpRcVGs6OPG54lrYmd-MfhJz9hYZ8VRRM6DoRHIZ96J-RKw4ZgYb26cqjCk5zGsnkFnzhMtoPPS3dUatOhNhDtWbE8cyK94Vp-NCHEXf7_x?key=PP4_jHREiRWUOtX6TLIS5g" alt=""><figcaption></figcaption></figure>
-
-4. Click "Save" or "Add" to save the network.
-
-**Step 2: Import Tokens**
-
-1. In MetaMask, click on "Import tokens" at the bottom of the Tokens tab.
-2. Enter the token contract address for SWAN Credit Token:
-
-`0xAF90ac6428775E1Be06BAFA932c2d80119a7bd02`
-
-3. The token symbols and decimals should autofill. If not, check the block explorer.
-4. Click "Import" to confirm.
-
-### Fund Your Wallet
+## Fund Your Wallet
 
 **Step 1: Purchasing ETH**
 

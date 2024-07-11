@@ -3,7 +3,7 @@
 Welcome to the Swan Chain Mainnet! Concluding the legacy of our successful "Planet" testnet series — Lagrange Mars, Swan Jupiter, Swan Saturn, and Proxima Tesnets, this new chapter of Swan Chain introduces a new era with enhanced functionalities in AI, Data, and more rewards for computing providers, dApp developers, and AI enthusiasts.
 
 {% hint style="info" %}
-_**Please read the "**_[_**Getting Started Guide**_](getting-started-guide.md)_**" before you begin exploring the Swan Chain Mainnet.**_
+_**Please read the "**_[_**Getting Started Guide**_](swan-credit-token.md)_**" before you begin exploring the Swan Chain Mainnet.**_
 {% endhint %}
 
 ***

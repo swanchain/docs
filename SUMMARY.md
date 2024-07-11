@@ -64,11 +64,11 @@
 ## Swan Chain
 
 * [Swan Chain Mainnet](swan-chain/swan-chain-mainnet/README.md)
-  * [Getting Started Guide](swan-chain/swan-chain-mainnet/getting-started-guide.md)
+  * [Network Information](swan-chain/swan-chain-mainnet/network-information.md)
+  * [Swan Credit Token](swan-chain/swan-chain-mainnet/swan-credit-token.md)
   * [Swan Chain Mission](swan-chain/swan-chain-mainnet/swan-chain-mission.md)
   * [Computing Provider Campaign](swan-chain/swan-chain-mainnet/computing-provider-campaign.md)
   * [GALXE Campaign](swan-chain/swan-chain-mainnet/galxe-campaign.md)
-  * [FAQs](swan-chain/swan-chain-mainnet/faqs.md)
 * [Atom Accelerator Race](swan-chain/atom-accelerator-race/README.md)
   * [Before You Get Started](swan-chain/atom-accelerator-race/before-you-get-started/README.md)
     * [Set Up MetaMask](swan-chain/atom-accelerator-race/before-you-get-started/set-up-metamask.md)
