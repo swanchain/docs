@@ -38,9 +38,9 @@ Fog Computing Providers (FCPs) extend cloud capabilities to the edge of the netw
 
 **Links:**
 
-* [FCP Deployment Guide](../../../swan-provider/cp-computing-provider/fcp-fog-computing-provider/computing-provider-setup.md)
-* [FCP Token Operations Guide](../../../swan-provider/cp-computing-provider/fcp-fog-computing-provider/fcp-token-operations-guide.md)
-* [FCP Event Details](../../../swan-provider/cp-computing-provider/fcp-fog-computing-provider/)
+* [FCP Deployment Guide](../../../swan-provider/computing-provider-cp/fog-computing-provider-fcp/computing-provider-setup.md)
+* [FCP Token Operations Guide](../../../swan-provider/computing-provider-cp/fog-computing-provider-fcp/fcp-token-operations-guide.md)
+* [FCP Event Details](../../../swan-provider/computing-provider-cp/fog-computing-provider-fcp/)
 
 ### Edge Computing Provider (ECP)
 
@@ -59,7 +59,7 @@ Edge Computing Providers (ECPs) are integral to the Swan Chain ecosystem, specia
 
 **Links:**
 
-* [ECP Deployment Guide](../../../swan-provider/cp-computing-provider/ecp-edge-computing-provider/ecp-setup.md)
+* [ECP Deployment Guide](../../../swan-provider/computing-provider-cp/edge-computing-provider-ecp/ecp-setup.md)
 * [ECP Event Details](edge-computing-provider-ecp.md)
 
 ### Market Provider (MP)
