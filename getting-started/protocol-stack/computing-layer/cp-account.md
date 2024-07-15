@@ -1,4 +1,4 @@
-# CP Account
+# Computing Provider(CP) Account
 
 ### Overview
 

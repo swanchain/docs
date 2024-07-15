@@ -2,7 +2,7 @@
 description: Computing Provider Protocol Introduction
 ---
 
-# CP Protocol
+# Computing Provider Protocol
 
 The CP Protocol (Computing Provider Protocol) is specifically designed for computing providers (CPs) in the Swan network, aiming to standardize and protocolize the management and invocation of computing resources. A CP can be any third-party individual or organization that provides scalable cloud computing, storage, platform, and application services for enterprises to access on demand.
 

@@ -1,4 +1,4 @@
-# CP (Computing Provider)
+# Computing Provider (CP)
 
 A Computing Provider (CP) is a third-party individual or organization that offers scalable computing resources, which businesses can access on demand over Swan network. These resources include cloud-based compute, storage, platform, and application services.
 

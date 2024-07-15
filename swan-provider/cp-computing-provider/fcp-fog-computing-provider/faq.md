@@ -10,7 +10,7 @@ Check the dashboard here : [https://orchestrator.swanchain.io/provider-status](h
 
 Tutorials&#x20;
 
-* [Deploy your ECP](../edge-computing-provider-ecp/ecp-setup.md)
+* [Deploy your ECP](../ecp-edge-computing-provider/ecp-setup.md)
 * [Depoy your FCP](computing-provider-setup.md)
 
 #### Q: How can I know if the status of the computing provider is normal?

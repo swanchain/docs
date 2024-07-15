@@ -1,4 +1,4 @@
-# ECP (Edge Computing Provider)
+# Edge Computing Provider (ECP)
 
 ## Edge Computing Provider (ECP)
 
