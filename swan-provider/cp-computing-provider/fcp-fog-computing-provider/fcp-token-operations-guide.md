@@ -8,7 +8,7 @@ This guide provides detailed instructions on how to manage token-related operati
 
 #### 1.1 Obtaining SETH for Gas Fees
 
-FCP requires SETH as transaction gas fees. Follow these steps to get `SETH`:
+FCP requires `SETH` as transaction gas fees. Follow these steps to get `SETH`:
 
 * Visit Swan Chain's official bridge website: [bridge.swanchain.io](https://bridge.swanchain.io)
 * Cross-chain your `ETH` to Swan Chain to get `SETH`.
