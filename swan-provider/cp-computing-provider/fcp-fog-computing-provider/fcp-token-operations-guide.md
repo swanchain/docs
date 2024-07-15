@@ -87,6 +87,6 @@ FCP requires `SwanC` (Swan Credit Token) as collateral. Follow these steps to ob
 * Always ensure you have enough `SETH` for gas fees.
 * Maintain sufficient `SwanC` collateral to continuously receive and complete tasks.
 * Stay updated with platform announcements to be aware of the latest changes in collateral and reward policies.
-* If you encounter any issues, join the official Discord community for support or open a ticket for 1-on-1 assistance.
+* If you encounter any issues, join the official [Discord](https://discord.com/invite/swanchain) community for support or open a ticket for 1-on-1 assistance.
 
 ***
