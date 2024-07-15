@@ -52,5 +52,5 @@ Here is the new Swan Explorer: [https://mainnet-explorer.swanchain.io](https://m
 
 ## Series of Events in Campaign
 
-1. [**Computing Provider Program**](computing-provider-campaign.md)**:** Boost our computational resources with diverse providers from fog to edge computing.&#x20;
+1. [**Computing Provider Program**](swan-provider-campaign/)**:** Boost our computational resources with diverse providers from fog to edge computing.&#x20;
 2. **Social Engagement Mission:** Participate in interactive social challenges on [Swan Galxe Campaign](galxe-campaign.md) and [Swan Mainnet Mission](swan-chain-mission.md) to earn massive rewards.
