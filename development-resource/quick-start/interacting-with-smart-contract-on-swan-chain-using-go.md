@@ -11,7 +11,7 @@
 
 <pre><code>package main
 // Shared RPC URL
-<strong>const rpcURL = "https://saturn-rpc.swanchain.io" // Replace with your testnet's RPC URL
+<strong>const rpcURL = "https://mainnet-rpc01.swanchain.io" // Replace with your testnet's RPC URL
 </strong></code></pre>
 
 #### 2.Connecting to a Swan Chain RPC Using Go
@@ -61,7 +61,7 @@ func TestGetAccountBalance(t *testing.T) {
 
    client, err := ethclient.DialContext(ctx, rpcURL)
    if err != nil {
-      t.Fatalf("Failed to connect to the testnet: %v", err)
+      t.Fatalf("Failed to connect to the mainnet: %v", err)
    }
    defer client.Close()
 
