@@ -8,20 +8,20 @@ This guide provides detailed instructions on how to manage token-related operati
 
 #### 1.1 Obtaining SETH for Gas Fees
 
-FCP requires SETH as transaction gas fees. Follow these steps to get SETH:
+FCP requires SETH as transaction gas fees. Follow these steps to get `SETH`:
 
 * Visit Swan Chain's official bridge website: [bridge.swanchain.io](https://bridge.swanchain.io)
-* Cross-chain your ETH to Swan Chain to get SETH.
-* It is recommended to prepare enough SETH to account for fluctuations in network gas fees.
+* Cross-chain your `ETH` to Swan Chain to get `SETH`.
+* It is recommended to prepare enough `SETH` to account for fluctuations in network gas fees.
 
 #### 1.2 Obtaining SwanC for Collateral
 
-FCP requires SwanC (Swan Credit Token) as collateral. Follow these steps to obtain SwanC:
+FCP requires `SwanC` (Swan Credit Token) as collateral. Follow these steps to obtain `SwanC`:
 
 * Visit Swan Chain's faucet website: [faucet.swanchain.io](https://faucet.swanchain.io)
-* You can claim 24 SwanC per transaction.
+* You can claim 24 `SwanC` per transaction.
 * Multiple claims are allowed, but each claim requires a gas fee.
-* It is recommended that you apply for as many SwanCs as possible at one time to ensure you have enough collateral for tasks.
+* It is recommended that you apply for as many `SwanC` as possible at one time to ensure you have enough collateral for tasks.
 
 ### 2. Collateral Management
 
@@ -29,20 +29,23 @@ FCP requires SwanC (Swan Credit Token) as collateral. Follow these steps to obta
 
 **2.1 Collateral Requirements**
 
-* Each task requires 5 SwanC as collateral.
+* Each task requires 5 `SwanC` as collateral.
 * Collateral must be associated with the corresponding FCP account address.
 * It is recommended to maintain enough collateral to ensure you can always receive tasks.
 
 **2.2 Adding Collateral**
 
 * Visit the FCP deployment document for detailed steps: [Collateral Setup Guide](computing-provider-setup.md#collateral-swanc-for-fcp)
-* Enter the amount of SwanC you wish to add as collateral (at least 5 SwanC).
+* Enter the amount of `SwanC` you wish to add as collateral (at least 5 `SwanC`).
 
 **2.3 Withdrawing Collateral**
 
-* Visit the FCP FAQ for detailed steps on withdrawing collateral: [Withdrawal Guide](computing-provider-setup.md#withdraw-swanc-from-fcp)
-* Enter the amount of SwanC you wish to withdraw.
-* Note: Withdrawals may be affected by network congestion and could take some time.
+* Visit the FCP [FAQ ](https://docs.swanchain.io/swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq)for detailed steps on withdrawing collateral: [Withdrawal Guide](computing-provider-setup.md#withdraw-swanc-from-fcp)
+* Enter the amount of `SwanC` you wish to withdraw.
+
+> **Note:**&#x20;
+>
+> Withdrawals may be affected by network congestion and could take some time.
 
 **2.4 Collateral Release**
 
@@ -81,8 +84,8 @@ FCP requires SwanC (Swan Credit Token) as collateral. Follow these steps to obta
 
 ### 4. Important Notes
 
-* Always ensure you have enough SETH for gas fees.
-* Maintain sufficient SwanC collateral to continuously receive and complete tasks.
+* Always ensure you have enough `SETH` for gas fees.
+* Maintain sufficient `SwanC` collateral to continuously receive and complete tasks.
 * Stay updated with platform announcements to be aware of the latest changes in collateral and reward policies.
 * If you encounter any issues, join the official Discord community for support or open a ticket for 1-on-1 assistance.
 
