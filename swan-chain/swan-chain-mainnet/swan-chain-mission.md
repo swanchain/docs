@@ -1,18 +1,24 @@
 # Swan Chain Mission
 
+<figure><img src="https://cdn-images-1.medium.com/max/1600/1*K39qQRuy6p3WSOSh62XA8Q.png" alt=""><figcaption></figcaption></figure>
+
 We are thrilled to unveil the Swan Chain Mission, a campaign designed to reward and engage our incredible community that has been instrumental in driving the growth of Swan Chain. The Swan Chain Mission marks a significant milestone in our journey and it is our way of giving back to the community that has supported us from the beginning.
 
 We allocate 20% of the total token supply for past, ongoing, and future airdrops. The Token Generation Event (TGE) is scheduled to occur in Q3.
 
-_Read the full tokenomics here:_ [_Protocol Stack — Token_](https://docs.swanchain.io/getting-started/protocol-stack/token)
+Join us at: [https://mission.swanchain.io/](https://mission.swanchain.io/)
+
+Time: From July 17, 2024, until the end of August
 
 <figure><img src="https://cdn-images-1.medium.com/max/1600/0*vR0MWOdOvb_fEIwS" alt=""><figcaption></figcaption></figure>
+
+_Read the full tokenomics here:_ [_Protocol Stack — Token_](https://docs.swanchain.io/getting-started/protocol-stack/token)
 
 ## What is Swan Mission Point?
 
 Earn Mission Point by participating in tasks within the Swan Chain Mission through simple social activities. You can also earn points by inviting friends and playing the Daily Combo game. These points will determine your $SWAN airdrop allocation during the TGE.
 
-Time: Starting from July 15 2024
+<figure><img src="https://cdn-images-1.medium.com/max/1600/1*Zk0Y110i_WAuWprW1rKErQ.png" alt="" width="563"><figcaption></figcaption></figure>
 
 You can earn points in three ways:
 
@@ -21,6 +27,8 @@ You can earn points in three ways:
 3. **Invite Friends:** Earn points every time someone you invite signs up and completes social media tasks. You’ll receive 10% of the total points they earn. There’s no limit to how many friends you can refer, so the more friends you invite, the more points you can accumulate!
 
 ## Detailed instructions:
+
+<figure><img src="https://cdn-images-1.medium.com/max/1600/1*g4QKU_P2axmPpMssPS4S0Q.png" alt=""><figcaption></figcaption></figure>
 
 1. **Connect Wallet & Social Account:** Follow the event instructions to connect your wallet and social account. This will allow you to track your progress and receive rewards.
 2. **Complete Tasks:** Navigate to the “Available Tasks” section to find tasks you can complete to earn points. Read the instructions for each task carefully and complete them accordingly. Once finished, the task will move to the “Task Pending Verification” section.
@@ -33,6 +41,8 @@ You can earn points in three ways:
 * 0 correct blocks = 0 points.
 
 Daily points will be reset every 24 hours at 23:59 EST.
+
+<figure><img src="https://cdn-images-1.medium.com/max/1600/1*LqYZS2rVTh473-p4LRGldg.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Referral
 
