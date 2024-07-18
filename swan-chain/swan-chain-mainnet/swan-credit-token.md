@@ -36,6 +36,10 @@ Go to[ Bridge](https://bridge.swanchain.io/), enter the amount of ETH you wish t
 
 2. Click "Send Me Swan Credit Token" to claim Swan Credits. These credits can be used to pay Computing Providers when deploying an application in Lagrange.
 
+{% hint style="warning" %}
+Each wallet can claim up to **25** tokens at a time. If your wallet balance exceeds **250** tokens, you won’t be able to claim any more tokens.
+{% endhint %}
+
 {% hint style="info" %}
 Please note: It's important to clarify that "Swan Credit Token" is only for testing space deployment on the mainnet and has no connection to rewards of Atom Accelerator Race, SWAN Credits.
 {% endhint %}
