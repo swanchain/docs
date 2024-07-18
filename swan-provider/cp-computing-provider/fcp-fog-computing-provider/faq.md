@@ -196,6 +196,8 @@ $ redis-cli
 > config set stop-writes-on-bgsave-error no
 ```
 
+
+
 #### Q: **How do I withdraw collateral from FCP?**
 
 To withdraw collateral from FCP, use the following command:
@@ -203,3 +205,64 @@ To withdraw collateral from FCP, use the following command:
 ```bash
 computing-provider --repo <YOUR_CP_PATH> collateral withdraw --fcp --owner <YOUR_OWNER_WALLET_ADDRESS> --account <YOUR_CP_ACCOUNT> <AMOUNT>
 ```
+
+
+
+#### Q: How to Upgrade Resource-Exporter in FCP
+
+**A:**
+
+**Step 1:** Stop the computing-provider service.
+
+**Step 2:** Delete the current `resource-exporter` component:
+
+```sh
+kubectl delete ds -n kube-system resource-exporter-ds
+```
+
+**Step 3:** Reinstall the `resource-exporter` by using the following command:
+
+```sh
+cat <<EOF | kubectl apply -f -
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  namespace: kube-system
+  name: resource-exporter-ds
+  labels:
+    app: resource-exporter
+spec:
+  selector:
+    matchLabels:
+      app: resource-exporter
+  template:
+    metadata:
+      labels:
+        app: resource-exporter
+    spec:
+      containers:
+      - name: resource-exporter
+        image: filswan/resource-exporter:v11.2.8
+        imagePullPolicy: IfNotPresent
+EOF
+```
+
+**Step 4:** Check the version of the `resource-exporter`:
+
+```sh
+kubectl describe po -n kube-system resource-exporter-ds | grep "Image:"
+```
+
+It should display:
+
+```
+Image:          filswan/resource-exporter:v11.2.8
+```
+
+Ensure the `resource-exporter` is running by executing:
+
+```sh
+kubectl get po -n kube-system
+```
+
+**Step 5:** Start the computing-provider with the latest version.

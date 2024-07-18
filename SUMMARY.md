@@ -49,6 +49,7 @@
     * [ECP FAQ](swan-provider/cp-computing-provider/ecp-edge-computing-provider/ecp-faq.md)
   * [Fog Computing Provider(FCP)](swan-provider/cp-computing-provider/fcp-fog-computing-provider/README.md)
     * [FCP Setup](swan-provider/cp-computing-provider/fcp-fog-computing-provider/computing-provider-setup.md)
+    * [Migrating FCP to Swan Mainnet](swan-provider/computing-provider-cp/fog-computing-provider-fcp/migrating-fcp-to-swan-mainnet.md)
     * [FCP Token Operations Guide](swan-provider/cp-computing-provider/fcp-fog-computing-provider/fcp-token-operations-guide.md)
     * [FCP FAQ](swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq.md)
 * [MP (Market Provider)](swan-provider/mp-market-provider/README.md)
