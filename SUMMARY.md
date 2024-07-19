@@ -104,3 +104,8 @@
   * [Before You Get Started](swan-chain/swan-jupiter-testnet/before-you-get-started.md)
   * [Network Early Adopter](swan-chain/swan-jupiter-testnet/network-early-adopter.md)
   * [FAQ](swan-chain/swan-jupiter-testnet/faq.md)
+
+## RESOURCE
+
+* [Links](resource/links.md)
+* [Brand Kit](resource/brand-kit.md)
