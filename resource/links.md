@@ -4,7 +4,7 @@
 
 Swan Chain: [https://www.swanchain.io](https://www.swanchain.io)
 
-Lagrange DAO: [https://lagrange.computer/](https://lagrange.computer/)
+Lagrange: [https://lagrange.computer/](https://lagrange.computer/)
 
 
 
