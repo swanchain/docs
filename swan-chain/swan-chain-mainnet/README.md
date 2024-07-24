@@ -21,7 +21,13 @@ Swan Chain has launched its native bridge on the network. Here's how it works:
 * Deposit: Transfer ETH from Ethereum to sETH on Swan Chain
 * Withdraw: Transfer sETH from Swan Chain to ETH on Ethereum.&#x20;
 
-Users can access the Bridge here: [https://bridge.swanchain.io/](https://bridge.swanchain.io/)
+Users can access Swan Chain's Official Bridge here: [https://bridge.swanchain.io/](https://bridge.swanchain.io/)
+
+Swan Chain's third-party bridges:
+
+[https://superbridge.app/swan-chain](https://superbridge.app/swan-chain)
+
+[https://cometbridge.app/?original=Ethereum\&target=Swan\&symbol=ETH](https://cometbridge.app/?original=Ethereum\&target=Swan\&symbol=ETH)
 
 ### **Orchestrator**
 
