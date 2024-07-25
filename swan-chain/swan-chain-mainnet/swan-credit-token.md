@@ -8,11 +8,11 @@
 
 **Payment to Computing Providers:**
 
-* In addition to gas fees, you must pay Computing Providers in SWAN Credits to utilize their computing resources to power your Space (Application).
+* In addition to gas fees, you must pay Computing Providers in `SwanC` (Swan Credit Token)  to utilize their computing resources to power your Space (Application).
 
 **Collateral (For Computing Providers Only):**
 
-* Fog Computing Providers (FCPs) must deposit a minimum of 0.001 sETH per task as collateral. Ensure you meet this requirement to receive task assignments.
+* Fog Computing Providers (FCPs) must deposit a minimum of 5 `SwanC` (Swan Credit Token) per task as collateral. Ensure you meet this requirement to receive task assignments.
 
 ## Fund Your Wallet
 
