@@ -52,13 +52,13 @@
     * [Migrating FCP to Swan Mainnet](swan-provider/computing-provider-cp/fog-computing-provider-fcp/migrating-fcp-to-swan-mainnet.md)
     * [FCP Token Operations Guide](swan-provider/cp-computing-provider/fcp-fog-computing-provider/fcp-token-operations-guide.md)
     * [FCP FAQ](swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq.md)
-* [MP (Market Provider)](swan-provider/mp-market-provider/README.md)
-  * [Orchestrator](swan-provider/mp-market-provider/orchestrator/README.md)
-    * [Connect to Orchestrator](swan-provider/mp-market-provider/orchestrator/connect-to-orchestrator.md)
-  * [ZK Engine](swan-provider/mp-market-provider/zk-engine/README.md)
-    * [Contribute zk-UBI-task](swan-provider/mp-market-provider/zk-engine/contribute-zk-ubi-task/README.md)
-      * [How to Contribute](swan-provider/mp-market-provider/zk-engine/contribute-zk-ubi-task/how-to-contribute.md)
-      * [Example](swan-provider/mp-market-provider/zk-engine/contribute-zk-ubi-task/example.md)
+* [Market Provider(MP )](swan-provider/market-provider-mp/README.md)
+  * [Orchestrator](swan-provider/market-provider-mp/orchestrator/README.md)
+    * [Connect to Orchestrator](swan-provider/market-provider-mp/orchestrator/connect-to-orchestrator.md)
+  * [ZK Engine](swan-provider/market-provider-mp/zk-engine/README.md)
+    * [Contribute zk-UBI-task](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/README.md)
+      * [How to Contribute](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/how-to-contribute.md)
+      * [Example](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/example.md)
 
 ## Use Case
 
