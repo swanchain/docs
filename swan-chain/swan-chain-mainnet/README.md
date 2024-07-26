@@ -25,6 +25,8 @@ Users can access Swan Chain's Official Bridge here: [https://bridge.swanchain.io
 
 Swan Chain's third-party bridges:
 
+[https://owlto.finance/?to=Swan](https://owlto.finance/?to=Swan)
+
 [https://superbridge.app/swan-chain](https://superbridge.app/swan-chain)
 
 [https://cometbridge.app/?original=Ethereum\&target=Swan\&symbol=ETH](https://cometbridge.app/?original=Ethereum\&target=Swan\&symbol=ETH)

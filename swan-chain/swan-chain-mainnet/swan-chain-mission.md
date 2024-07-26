@@ -46,7 +46,7 @@ Daily points will be reset every 24 hours at 23:59 EST.
 
 ## Referral
 
-The Swan Chain Mission also includes a referral task. By inviting friends to join Swan’s journey, you earn points each time they complete social media tasks. You receive 10% of the total points they earn, and your friends also get a 20% point boost. There’s no limit to how many people you can refer.
+The Swan Chain Mission also includes a referral task. By inviting friends to join Swan’s journey, you earn points each time they complete social media tasks. You receive 10% of the total points they earn from social tasks, and your friends also get a 20% point boost. There’s no limit to how many people you can refer.
 
 To share an invite code, simply copy the referral link or share it directly on Twitter/X.
 
