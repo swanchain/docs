@@ -26,7 +26,7 @@ Funding your network account is required to use the network. All transactions, i
 
 Go to[ Bridge](https://bridge.swanchain.io/), enter the amount of ETH you wish to bridge, and click on the "Deposit" button.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (176).png" alt=""><figcaption></figcaption></figure>
 
 **Step 3: Claiming Swan Credits**
 

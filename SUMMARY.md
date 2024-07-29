@@ -56,6 +56,7 @@
   * [Orchestrator](swan-provider/market-provider-mp/orchestrator/README.md)
     * [Connect to Orchestrator](swan-provider/market-provider-mp/orchestrator/connect-to-orchestrator.md)
   * [ZK Engine](swan-provider/market-provider-mp/zk-engine/README.md)
+    * [Sequencer](swan-provider/market-provider-mp/zk-engine/sequencer.md)
     * [Contribute zk-UBI-task](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/README.md)
       * [How to Contribute](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/how-to-contribute.md)
       * [Example](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/example.md)
