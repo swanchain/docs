@@ -95,18 +95,12 @@ computing-provider collateral add --ecp --from <YOUR_WALLET_ADDRESS>  <AMOUNT>
 > **Note:** A minimum of 100 `SWANC` collateral is currently required to receive a ZK task.
 
 * Deposit `SwanETH` to Sequencer account
-  *   Deposit `SwanETH` for Sequencer account
 
-      ```bash
-      computing-provider sequencer add --from <YOUR_WALLET_ADDRESS>  <amount>
-      ```
-  *   Withdraw `SwanETH` for Sequencer account
+```
+computing-provider sequencer add --from <YOUR_WALLET_ADDRESS>  <amount>
+```
 
-      ```bash
-      computing-provider sequencer withdraw --owner <YOUR_OWNER_WALLET_ADDRESS>  <amount>
-      ```
-
-**Note:** Currently one zk-task requires 0.00001 SwanETH,
+**Note:** Currently one zk-task requires _0.00001 SwanETH_,
 
 ### Start ECP service
 
