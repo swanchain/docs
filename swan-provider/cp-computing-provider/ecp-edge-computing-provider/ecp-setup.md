@@ -92,12 +92,6 @@ Output:
 computing-provider collateral add --ecp --from <YOUR_WALLET_ADDRESS>  <AMOUNT>   
 ```
 
-* Withdraw `SWANC` for ECP
-
-```bash
-computing-provider collateral withdraw --ecp --owner <YOUR_WALLET_ADDRESS> --account <YOUR_CP_ACCOUNT> <amount>
-```
-
 > **Note:** A minimum of 100 `SWANC` collateral is currently required to receive a ZK task.
 
 * Deposit `SwanETH` to Sequencer account
@@ -148,7 +142,7 @@ We **strongly recommend** enabling the Sequencer feature (enabled by default). T
 ```
 [UBI]
 EnableSequencer = true             # Submit the proof to Sequencer service(default: true)
-AutoChainProof = false             # when sequencer doesn't have enough funds or the service is unavailable, automatically submit proof to the Swan chain 
+AutoChainProof = true              # when sequencer doesn't have enough funds or the service is unavailable, automatically submit proof to the Swan chain 
 
 ```
 
