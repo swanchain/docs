@@ -2,7 +2,7 @@
 description: Get started with Swan Chain
 ---
 
-# QuickStarts
+# Quick Start
 
 ## Swan Chain Mainnet Base Info
 
@@ -10,7 +10,7 @@ description: Get started with Swan Chain
 * New RPC URL:[ https://mainnet-rpc01.swanchain.io](https://mainnet-rpc01.swanchain.io)
 * Chain ID: 254
 * Currency Symbol: sETH
-* Block Explorer URL: [https://mainnet-explorer.swanchain.io](https://mainnet-explorer.swanchain.io)
+* Block Explorer URL: [https://swanscan.io](https://swanscan.io/)
 
 ## Swan Chain Proxima Testnet Base Info
 

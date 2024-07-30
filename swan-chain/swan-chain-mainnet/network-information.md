@@ -2,7 +2,12 @@
 
 ## Network Information
 
-<table><thead><tr><th width="282"></th><th></th></tr></thead><tbody><tr><td>Network Name</td><td>Swan Chain</td></tr><tr><td>RPC URL</td><td><a href="https://mainnet-rpc01.swanchain.io">https://mainnet-rpc01.swanchain.io</a></td></tr><tr><td>Chain ID</td><td>254</td></tr><tr><td>Currency Symbol</td><td>sETH</td></tr><tr><td>Block Explorer URL</td><td><a href="https://mainnet-explorer.swanchain.io">https://mainnet-explorer.swanchain.io</a></td></tr></tbody></table>
+<table><thead><tr><th width="282"></th><th></th></tr></thead><tbody><tr><td>Network Name</td><td>Swan Chain</td></tr><tr><td>RPC URL</td><td><a href="https://mainnet-rpc01.swanchain.io">https://mainnet-rpc01.swanchain.io</a></td></tr><tr><td>Chain ID</td><td>254</td></tr><tr><td>Currency Symbol</td><td>sETH</td></tr><tr><td>Block Explorer URL</td><td><a href="https://swanscan.io/">https://swanscan.io</a></td></tr></tbody></table>
+
+{% hint style="info" %}
+If the above Block Explorer fails, please try using this one:\
+[https://mainnet-explorer.swanchain.io](https://mainnet-explorer.swanchain.io)
+{% endhint %}
 
 ## Set Up Metamask
 
@@ -16,7 +21,7 @@
 * New RPC URL:[ https://mainnet-rpc01.swanchain.io](https://mainnet-rpc01.swanchain.io)
 * Chain ID: 254
 * Currency Symbol: sETH
-* Block Explorer URL: [https://mainnet-explorer.swanchain.io](https://mainnet-explorer.swanchain.io)
+* Block Explorer URL: [https://swanscan.io](https://swanscan.io/)
 
 <figure><img src="https://lh7-us.googleusercontent.com/docsz/AD_4nXcqP5AL9QXr18ymM644YJywG-0b3Q1x9pSSrmoKOriyfgAzPRpRcVGs6OPG54lrYmd-MfhJz9hYZ8VRRM6DoRHIZ96J-RKw4ZgYb26cqjCk5zGsnkFnzhMtoPPS3dUatOhNhDtWbE8cyK94Vp-NCHEXf7_x?key=PP4_jHREiRWUOtX6TLIS5g" alt=""><figcaption></figcaption></figure>
 
