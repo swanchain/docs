@@ -65,6 +65,7 @@
     * [Contribute zk-UBI-task](swan-provider/market-provider-mp/web3-zk-computing-market/contribute-zk-ubi-task/README.md)
       * [How to Contribute](swan-provider/market-provider-mp/web3-zk-computing-market/contribute-zk-ubi-task/how-to-contribute.md)
     * [Example](swan-provider/market-provider-mp/web3-zk-computing-market/example.md)
+  * [Customized Market Provider](swan-provider/market-provider-mp/customized-market-provider.md)
 
 ## Tools and Applications
 
