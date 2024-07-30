@@ -82,7 +82,7 @@ Step 2: Execute the following commands:
 
 ```bash
 docker rm -f resource-exporter
-docker rmi filswan/hardware-exporter:v2.0
+docker rmi filswan/resource-exporter:v11.2.8
 ```
 
 Step 3: Restart the computing-provider process.
