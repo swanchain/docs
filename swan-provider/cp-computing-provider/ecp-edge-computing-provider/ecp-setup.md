@@ -3,8 +3,6 @@
 > Source link: [https://github.com/swanchain/go-computing-provider/blob/releases/ubi/README.md](https://github.com/swanchain/go-computing-provider/blob/releases/ubi/README.md)\
 > **Please refer to the above link for up-to-date information.**
 
-
-
 **ECP (Edge Computing Provider)** specializes in processing data at the source of data generation, using minimal latency setups ideal for real-time applications. This provider handles specific, localized tasks directly on devices at the network’s edge, such as IoT devices.
 
 At the current stage, ECP supports the generation of **ZK-Snark proof of Filecoin network**, and more ZK proof types will be gradually endorsed, such as Aleo, Scroll, starkNet, etc
@@ -92,15 +90,27 @@ Output:
 computing-provider collateral add --ecp --from <YOUR_WALLET_ADDRESS>  <AMOUNT>   
 ```
 
+> If you want to withdraw `SWANC` from ECP
+>
+> ```bash
+> computing-provider collateral withdraw --ecp --owner <YOUR_WALLET_ADDRESS> --account <YOUR_CP_ACCOUNT> <amount>
+> ```
+
 > **Note:** A minimum of 100 `SWANC` collateral is currently required to receive a ZK task.
 
-* Deposit `SwanETH` to Sequencer account
+*   Deposit `SwanETH` to Sequencer Account
 
-```
-computing-provider sequencer add --from <YOUR_WALLET_ADDRESS>  <amount>
-```
+    ```bash
+    computing-provider sequencer add --from <YOUR_WALLET_ADDRESS>  <amount>
+    ```
 
-**Note:** Currently one zk-task requires _0.00001 SwanETH_,
+> If you want to Withdraw `SwanETH` from Sequencer Account
+>
+> ```bash
+> computing-provider sequencer withdraw --owner <YOUR_OWNER_WALLET_ADDRESS>  <amount>
+> ```
+
+> **Note:** Currently one zk-task requires 0.00001 SwanETH,
 
 ### Start ECP service
 
@@ -136,7 +146,7 @@ We **strongly recommend** enabling the Sequencer feature (enabled by default). T
 ```
 [UBI]
 EnableSequencer = true             # Submit the proof to Sequencer service(default: true)
-AutoChainProof = true              # when sequencer doesn't have enough funds or the service is unavailable, automatically submit proof to the Swan chain 
+AutoChainProof = false             # when sequencer doesn't have enough funds or the service is unavailable, automatically submit proof to the Swan chain 
 
 ```
 
@@ -155,4 +165,3 @@ export RUST_GPU_TOOLS_CUSTOM_GPU="GeForce RTX 4090:16384"
         
 nohup ./computing-provider ubi daemon >> cp.log 2>&1 &
 ```
-

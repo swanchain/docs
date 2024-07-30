@@ -14,7 +14,7 @@
 * [Install the Hardware resource-exporter](computing-provider-setup.md#install-the-hardware-resource-exporter)
 * [Build and config the Computing Provider](computing-provider-setup.md#build-and-config-the-computing-provider)
 * [Install AI Inference Dependency(Optional)](computing-provider-setup.md#optional-install-ai-inference-dependency)
-* [Config and Receive UBI Tasks(Optional)](computing-provider-setup.md#optional-config-and-receive-ubi-tasks)
+* [Config and Receive UBI Tasks(Optional)](computing-provider-setup.md#optional-config-and-receive-zk-tasks)
 * [Start the Computing Provider](computing-provider-setup.md#start-the-computing-provider)
 * [CLI of Computing Provider](computing-provider-setup.md#cli-of-computing-provider)
 
@@ -289,12 +289,14 @@ spec:
   template:
     metadata:
       labels:
-        app: resource-exporter
+       app: resource-exporter
     spec:
       containers:
       - name: resource-exporter
         image: filswan/resource-exporter:v11.2.8
         imagePullPolicy: IfNotPresent
+        securityContext:
+          privileged: true
 EOF
 ```
 
@@ -344,43 +346,43 @@ make install
 
     Edit the necessary configuration files according to your deployment requirements.
 
-    ````
-     ```
-    [API]
-    Port = 8085                                    # The port number that the web server listens on
-    MultiAddress = "/ip4/<public_ip>/tcp/<port>"   # The multiAddress for libp2p
-    Domain = ""                                    # The domain name
-    NodeName = ""                                  # The computing-provider node name
-    WalletWhiteList = ""                           # CP only accepts user addresses from this whitelist for space deployment
-    WalletBlackList = ""                           # CP reject user addresses from this blacklist for space deployment
+    ```toml
+       [API]
+       Port = 8085                                    # The port number that the web server listens on
+       MultiAddress = "/ip4/<public_ip>/tcp/<port>"   # The multiAddress for libp2p
+       Domain = ""                                    # The domain name
+       NodeName = ""                                  # The computing-provider node name
+       WalletWhiteList = ""                           # CP only accepts user addresses from this whitelist for space deployment
+       WalletBlackList = ""                           # CP reject user addresses from this blacklist for space deployment
 
-    [UBI]
-    UbiEnginePk = "0xB5aeb540B4895cd024c1625E146684940A849ED9"              # UBI Engine's public key, CP only accept the task from this UBI engine
+       [UBI]
+       UbiEnginePk = "0xB5aeb540B4895cd024c1625E146684940A849ED9"              # UBI Engine's public key, CP only accept the task from this UBI engine
+       EnableSequencer = true                                                  # Submit the proof to Sequencer service(default: true)
+       AutoChainProof = true                                                   # When Sequencer doesn't have enough funds or the service is unavailable, automatically submit proof to the Swan chain 
+       SequencerUrl = "http://sequencer.swanchain.io"                          # Sequencer service's API address
 
-    [LOG]
-    CrtFile = "/YOUR_DOMAIN_NAME_CRT_PATH/server.crt"                       # Your domain name SSL .crt file path
-    KeyFile = "/YOUR_DOMAIN_NAME_KEY_PATH/server.key"                       # Your domain name SSL .key file path
+       [LOG]
+       CrtFile = "/YOUR_DOMAIN_NAME_CRT_PATH/server.crt"                       # Your domain name SSL .crt file path
+       KeyFile = "/YOUR_DOMAIN_NAME_KEY_PATH/server.key"                       # Your domain name SSL .key file path
 
-    [HUB]
-    ServerUrl = "https://orchestrator-mainnet-api.swanchain.io"             # The Orchestrator's API address
-    AccessToken = ""                                               	       # The Orchestrator's access token, Acquired from "https://orchestrator.swanchain.io", and switch to the `mainnet network` and use the owner address
-    BalanceThreshold= 10                                                    # The cp’s collateral balance threshold
-    OrchestratorPk = "0x4B98086A20f3C19530AF32D21F85Bc6399358e20"           # Orchestrator's public key, CP only accept the task from this Orchestrator
-    VerifySign = true                                                       # Verify that the task signature is from Orchestrator
+       [HUB]
+       BalanceThreshold= 10                                                    # The cp’s collateral balance threshold
+       OrchestratorPk = "0x4B98086A20f3C19530AF32D21F85Bc6399358e20"           # Orchestrator's public key, CP only accept the task from this Orchestrator
+       VerifySign = true                                                       # Verify that the task signature is from Orchestrator
 
-    [MCS]
-    ApiKey = ""                                   # Acquired from "https://www.multichain.storage" -> setting -> Create API Key
-    BucketName = ""                               # Acquired from "https://www.multichain.storage" -> bucket -> Add Bucket
-    Network = "polygon.mainnet"                   # polygon.mainnet for mainnet, polygon.mumbai for testnet
+       [MCS]
+       ApiKey = ""                                   # Acquired from "https://www.multichain.storage" -> setting -> Create API Key
+       BucketName = ""                               # Acquired from "https://www.multichain.storage" -> bucket -> Add Bucket
+       Network = "polygon.mainnet"                   # polygon.mainnet for mainnet, polygon.mumbai for testnet
 
-    [Registry]
-    ServerAddress = ""                            # The docker container image registry address, if only a single node, you can ignore
-    UserName = ""                                 # The login username, if only a single node, you can ignore
-    Password = ""                                 # The login password, if only a single node, you can ignore
+       [Registry]
+       ServerAddress = ""                            # The docker container image registry address, if only a single node, you can ignore
+       UserName = ""                                 # The login username, if only a single node, you can ignore
+       Password = ""                                 # The login password, if only a single node, you can ignore
 
-    [RPC]
-    SWAN_CHAIN_RPC = "https://mainnet-rpc01.swanchain.io"     # Swan chain RPC
-    ````
+       [RPC]
+       SWAN_CHAIN_RPC = "https://mainnet-rpc01.swanchain.io"     # Swan chain RPC
+    ```
 
 **Note:**
 
@@ -445,7 +447,7 @@ Transaction hash: 0xb8fd9cc9bfac2b2890230b4f14999b9d449e050339b252273379ab11fac1
 
 **Note:** Currently one AI task requires 5 `SWANC`. Please deposit enough collaterals for the tasks
 
-### Withdraw  `SWANC` from FCP
+### Withdraw `SWANC` from FCP
 
 ```bash
  computing-provider collateral withdraw --fcp --owner <YOUR_WALLET_ADDRESS> --account <YOUR_CP_ACCOUNT> <amount>
@@ -473,7 +475,9 @@ export CP_PATH=<YOUR_CP_PATH>
 ./install.sh
 ```
 
-### \[**OPTIONAL**] Config and Receive UBI Tasks
+### \[**OPTIONAL**] Config and Receive ZK Tasks
+
+This section mainly introduces how to enable the function of receiving ZK tasks on FCP, which is equivalent to running an ECP. This function is optional. Once enabled, FCP can earn double benefits simultaneously, but it will also consume certain resources.
 
 #### **Step 1: Prerequisites:** Perform Filecoin Commit2 (fil-c2) ZK tasks.
 
@@ -499,36 +503,48 @@ export CP_PATH=<YOUR_CP_PATH>
 * Adjust the value of `RUST_GPU_TOOLS_CUSTOM_GPU` based on the GPU used by the CP's Kubernetes cluster for fil-c2 tasks.
 * For more device choices, please refer to this page:[https://github.com/filecoin-project/bellperson](https://github.com/filecoin-project/bellperson)
 
-#### Step 2: Collateral `SWANC` for receiving ZK Task
+#### Step 2: Collateral `SWANC` for ZK tasks
 
 ```bash
 computing-provider collateral add --ecp --from <YOUR_WALLET_ADDRESS>  <amount>
 ```
 
-**Note:** Currently one zk-task requires 0.0005 SWANC.
+> If you want to withdraw the collateral `SWANC`:
+>
+> ```bash
+> computing-provider collateral withdraw --ecp --owner <YOUR_WALLET_ADDRESS> --account <YOUR_CP_ACCOUNT> <amount>
+> ```
 
-Example output:
+> **Note:** A minimum of 100 `SWANC` collateral is required to receive a ZK task.
 
-```
-0x7791f48931DB81668854921fA70bFf0eB85B8211
-```
-
-#### Step 3: Add the type of ZK task
+#### Step 3: Change the `tasktypes`
 
 ```bash
 computing-provider account changeTaskTypes --ownerAddress <YOUR_OWNER_WALLET_ADDRESS> 1,2,3,4
 ```
 
-**Note:** `--task-types` Supports 4 task types:
+> **Note:** `--task-types` Supports 4 task types:
+>
+> * `1`: FIL-C2-512M
+> * `2`: Aleo
+> * `3`: AI
+> * `4`: FIL-C2-32G
 
-* `1`: FIL-C2-512M
-* `2`: Aleo
-* `3`: AI
-* `4`: FIL-C2-32G
+> If you need to run FCP and ECP at the same time, you need to set it to `1,2,3,4`
 
-If you need to run FCP and ECP at the same time, you need to set it to `1,2,3,4`
+#### Step 4: Deposit `SwanETH` for Sequencer Account
 
-#### **Step 4: Account Management**
+```bash
+computing-provider sequencer add --from <YOUR_WALLET_ADDRESS>  <amount>
+```
+
+> If you want to Withdraw SwanETH from Sequencer Account
+>
+> ```bash
+> computing-provider sequencer withdraw --owner <YOUR_OWNER_WALLET_ADDRESS>  <amount>
+> ```
+
+#### **Step 5: Account Management**
 
 Use `computing-provider account` subcommands to update CP details:
 
@@ -547,7 +563,7 @@ COMMANDS:
    changeWorkerAddress       Update workerAddress of CP
    changeBeneficiaryAddress  Update beneficiaryAddress of CP
    changeTaskTypes           Update taskTypes of CP (1:Fil-C2-512M, 2:Aleo, 3: AI, 4:Fil-C2-32G), separated by commas
-   help, h                   Shows a list of commands or help for one command
+   help, h                   Show a list of commands or help for one command
 
 OPTIONS:
    --help, -h  show help
@@ -564,11 +580,18 @@ computing-provider ubi list --show-failed
 Example output:
 
 ```
-TASK ID TASK TYPE       ZK TYPE         TRANSACTION HASH                                                        STATUS  REWARD  CREATE TIME         
-2       CPU             fil-c2-512M     0xb06b3a8c2b2b96b564777a3866e27ce7c61631f77e5de3196e93eb916b0d2575      success 2.0     2024-01-20 03:30:30
-33      CPU             fil-c2-512M     0x7567435e83a4a019a6356da8cf33e64a071f2d3355fce5289b9c17cf0144f282      success 2.0     2024-01-18 15:58:21
-13      CPU             fil-c2-512M     0x7b3081314891aad3788c84935c67f9be0a8acc6b4fc77c5aa6fdfda728877fde      success 2.0     2024-01-20 04:27:40
-238     CPU             fil-c2-512M     0xb8eb1f7b3cfc8210fa5546adc528f230241110e5cc9b4900725a9da28895aad9      success 2.0     2024-01-18 17:08:21
+TASK ID	TASK CONTRACT                             	TASK TYPE	ZK TYPE    	STATUS   	REWARD	SEQUENCER	CREATE TIME
+40416  	0x3DB2568e8De50e767221117bB491cbe1e2CB4FF5	CPU      	fil-c2-512M	rewarded 	1.00  	YES      	2024-07-29 09:57:14
+40418  	                                          	CPU      	fil-c2-512M	verified 	0.00  	YES      	2024-07-29 10:07:12
+40425  	                                          	CPU      	fil-c2-512M	verified 	0.00  	YES      	2024-07-29 10:17:08
+40427  	                                          	CPU      	fil-c2-512M	verified 	0.00  	YES      	2024-07-29 10:27:08
+40436  	0x71c5C4eBEfD9349236a8244a1734fB1470CAAe1f	CPU      	fil-c2-512M	verified 	0.00  	NO       	2024-07-29 10:37:08
+40444  	                                          	CPU      	fil-c2-512M	verified 	0.00  	YES      	2024-07-29 10:47:08
+40450  	                                          	CPU      	fil-c2-512M	verified 	0.00  	YES      	2024-07-29 10:57:08
+40446  	0x13717662F88dc7fE629fA3B5DD78733FdDcdB970	CPU      	fil-c2-512M	verified 	0.00  	NO       	2024-07-29 11:07:12
+40462  	0x42183ab24a9Ac691bB8948E6cE60f506741811e4	CPU      	fil-c2-512M	verified 	0.00  	NO       	2024-07-29 11:17:08
+40468  	0xE09fDFBBD86650139C29A9818E3FF2612f48a740	CPU      	fil-c2-512M	verified 	0.00  	NO       	2024-07-29 11:27:08
+40467  	0x4C7003F3B794e806480eb5b9E1aeedF9AFc3b978	CPU      	fil-c2-512M	verified 	0.00  	NO       	2024-07-29 11:37:09
 ```
 
 ### Restart the Computing Provider
