@@ -1,7 +1,5 @@
 # Customized Market Provider
 
-## Customized Market Provider
-
 ### Introduction
 
 SwanChain provides a flexible framework that allows you to develop your own market provider. By building your own smart contracts and markets based on SwanChain's computing layer, you can customize and optimize your market provider to meet specific needs and requirements.
@@ -40,4 +38,4 @@ Once your market provider is fully developed and tested, you can launch it on th
 
 Developing your own market provider on SwanChain offers the flexibility to customize and optimize market operations to meet specific needs. By following the guidelines and leveraging SwanChain's robust framework, you can build a successful market provider that enhances the capabilities of the decentralized computing ecosystem.
 
-For more detailed information and guidance, refer to the official SwanChain documentation linked above.
+For more detailed information and guidance, refer to the official SwanChain documentation linked above or ask help in [discord](https://discord.com/invite/swanchain) and [telegram](https://t.me/swan\_chain/1)
