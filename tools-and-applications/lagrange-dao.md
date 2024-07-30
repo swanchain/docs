@@ -6,6 +6,10 @@ description: Web3 HuggingFace
 
 [LagrangeDao](https://lagrangedao.org) is a decentralized Web3 platform for natural language processing (NLP) development and deployment, built on Swan Chain. It aims to provide a more cost-effective, secure, and interoperable alternative to centralized cloud services like AWS.&#x20;
 
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc51WhVt0u064TrimhzOhZ4OTspF_qAIanSJzyodELHzcugOBQZz4nvgN4QkSM8vS5gh3BlGsrmLj0f32TQms1pQDzDAYJgDvsjktzQLUldYrpCYGtynALtyjtppOobLMFLyWVUf55zOsx0HR5QwwHGh6Qu?key=Q5864mz9cz0YmHEPYYSbWA" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
 _Learn more about Lagrange in_[ _its documentation_](https://docs.lagrangedao.org/)_._
 {% endhint %}

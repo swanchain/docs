@@ -6,6 +6,8 @@
 _Learn more about MCS in_[ _its documentation_](https://docs.filswan.com/multichain.storage/overview)_._
 {% endhint %}
 
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ### Why Choose Multi-Chain Storage? <a href="#id-7e7d" id="id-7e7d"></a>
 
 Multi-Chain Storage offers several advantages over traditional cloud services, such as:
