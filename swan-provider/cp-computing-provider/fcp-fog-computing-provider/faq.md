@@ -238,12 +238,14 @@ spec:
   template:
     metadata:
       labels:
-        app: resource-exporter
+       app: resource-exporter
     spec:
       containers:
       - name: resource-exporter
         image: filswan/resource-exporter:v11.2.8
         imagePullPolicy: IfNotPresent
+        securityContext:
+          privileged: true
 EOF
 ```
 
