@@ -19,7 +19,7 @@ FCP requires `SETH` as transaction gas fees. Follow these steps to get `SETH`:
 FCP requires `SwanC` (Swan Credit Token) as collateral. Follow these steps to obtain `SwanC`:
 
 * Visit Swan Chain's faucet website: [faucet.swanchain.io](https://faucet.swanchain.io)
-* You can claim 24 `SwanC` per transaction.
+* You can claim 25 `SwanC` per transaction.
 * Multiple claims are allowed, but each claim requires a gas fee.
 * It is recommended that you apply for as many `SwanC` as possible at one time to ensure you have enough collateral for tasks.
 
