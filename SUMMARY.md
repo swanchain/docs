@@ -58,11 +58,11 @@
   * [AI/ML Orchestrator](swan-provider/market-provider-mp/orchestrator/README.md)
     * [Decentralized AI Marketplace](swan-provider/market-provider-mp/ai-ml-orchestrator/decentralized-ai-marketplace.md)
     * [Connect to Orchestrator](swan-provider/market-provider-mp/orchestrator/connect-to-orchestrator.md)
-  * [ZK Auction Engine](swan-provider/market-provider-mp/zk-engine/README.md)
-    * [Sequencer](swan-provider/market-provider-mp/zk-engine/sequencer.md)
-    * [Contribute zk-UBI-task](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/README.md)
-      * [How to Contribute](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/how-to-contribute.md)
-      * [Example](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/example.md)
+  * [Web3 ZK Computing Market](swan-provider/market-provider-mp/web3-zk-computing-market/README.md)
+    * [Sequencer](swan-provider/market-provider-mp/web3-zk-computing-market/sequencer.md)
+    * [Contribute zk-UBI-task](swan-provider/market-provider-mp/web3-zk-computing-market/contribute-zk-ubi-task/README.md)
+      * [How to Contribute](swan-provider/market-provider-mp/web3-zk-computing-market/contribute-zk-ubi-task/how-to-contribute.md)
+      * [Example](swan-provider/market-provider-mp/web3-zk-computing-market/contribute-zk-ubi-task/example.md)
 
 ## Use Case
 

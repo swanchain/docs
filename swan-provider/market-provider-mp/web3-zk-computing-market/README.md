@@ -1,15 +1,10 @@
-# ZK Auction Engine
+# Web3 ZK Computing Market
 
 ### 1. Introduction
 
-The Swan Chain is composed of various providers that enable scalable computing resources and efficient job allocation. Two key types of providers are:
+The **ZK Computing Market** is a crucial component of the Swan Chain ecosystem, serving as the primary Market Provider (MP) for Zero-Knowledge (ZK) computations. One of its sub-components, the **ZK Sequencer**, plays a pivotal role in processing tasks and proofs.
 
-1. [Computing Provider (CP)](../../cp-computing-provider/): Offers computing resources like cloud-based computing, storage, platform, and application services.
-2. [Market Provider (MP)](../): Facilitates job distribution through an auction engine and handles payments, connecting job requesters with providers.
-
-The **ZK Engine** is a crucial component of the Swan Chain ecosystem, serving as the primary Market Provider (MP) for Zero-Knowledge (ZK) computations. One of its sub-components, the **ZK Sequencer**, plays a pivotal role in processing tasks and proofs.
-
-### 2.  ZK Engine Components
+### 2.  ZK Engine Compone
 
 **1. Functions**
 
