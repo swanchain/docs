@@ -4,11 +4,7 @@
 
 We are thrilled to unveil the Swan Chain Mission, a campaign designed to reward and engage our incredible community that has been instrumental in driving the growth of Swan Chain. The Swan Chain Mission marks a significant milestone in our journey and it is our way of giving back to the community that has supported us from the beginning.
 
-We allocate 20% of the total token supply for past, ongoing, and future airdrops. The Token Generation Event (TGE) is scheduled to occur in Q3.
-
 Join us at: [https://mission.swanchain.io/](https://mission.swanchain.io/)
-
-Time: From July 17, 2024, until the end of August
 
 <figure><img src="https://cdn-images-1.medium.com/max/1600/0*vR0MWOdOvb_fEIwS" alt=""><figcaption></figcaption></figure>
 
