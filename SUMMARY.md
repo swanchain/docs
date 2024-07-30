@@ -52,6 +52,8 @@
     * [Migrating FCP to Swan Mainnet](swan-provider/computing-provider-cp/fog-computing-provider-fcp/migrating-fcp-to-swan-mainnet.md)
     * [FCP Token Operations Guide](swan-provider/cp-computing-provider/fcp-fog-computing-provider/fcp-token-operations-guide.md)
     * [FCP FAQ](swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq.md)
+* [Storage Provider](swan-provider/storage-provider/README.md)
+  * [Multichain Storage](swan-provider/storage-provider/multichain-storage.md)
 * [Market Provider(MP )](swan-provider/market-provider-mp/README.md)
   * [AI/ML Orchestrator](swan-provider/market-provider-mp/orchestrator/README.md)
     * [Decentralized AI Marketplace](swan-provider/market-provider-mp/ai-ml-orchestrator/decentralized-ai-marketplace.md)
