@@ -1,4 +1,4 @@
-# Computing Provider(CP) Account
+# Computing Provider  Account
 
 ### Overview
 
@@ -32,6 +32,28 @@ To ensure the security of the CP Account, the roles are categorised into:
 * **BeneficiaryChanged**: Beneficiary change event, notifying external systems of changes in the beneficiary address.
 * **TaskTypesChanged**: Task type change event, notifying external systems of changes in task types.
 * **CPAccountDeployed**: CPAccount deployment event, notifying external systems of the creation and registration of the CPAccount.
+
+**Token Flow Diagram**
+
+<figure><img src="../../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
+
+
+
+#### Workflow
+
+1. **Registration**:
+   * A new CP deploys the `CPAccount` contract with the required parameters.
+   * The CP is registered with the Contract Registry.
+2. **Task Assignment and Execution**:
+   * Tasks are assigned to the CP by the AI or ZK engines.
+   * CP locks the required collateral before starting task execution.
+   * Upon task completion, the CP is rewarded, and collateral is released.
+3. **Collateral Management**:
+   * Collateral is locked before task execution and released upon successful completion.
+   * In case of task failure, collateral is slashed as a penalty.
+4. **Deposits and Withdrawals**:
+   * CPs can deposit tokens into their accounts to maintain sufficient balance for collateral.
+   * Withdrawal requests can be made and confirmed after a delay period.
 
 ### Source Code
 
