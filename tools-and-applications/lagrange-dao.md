@@ -4,7 +4,9 @@ description: Web3 HuggingFace
 
 # Lagrange Computer
 
-[Lagrange Computer](https://lagrange.computer) is a decentralized Web3 platform for natural language processing (NLP) development and deployment, built on Swan Chain. It aims to provide a more cost-effective, secure, and interoperable alternative to centralized cloud services like AWS.&#x20;
+[Lagrange Computer](https://lagrange.computer) is a decentralized Web3 platform for natural language processing (NLP) development and deployment, built on Swan Chain computing network. It aims to provide a more cost-effective, secure, and interoperable alternative to centralized cloud services like AWS.&#x20;
+
+Lagrange Computer serves as a decentralized version of Hugging Face, leveraging the decentralized computing resources from Swan Chain and utilizing multichain.storage as the decentralized storage layer to ensure the persistence of important data.
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -14,11 +16,12 @@ description: Web3 HuggingFace
 _Learn more about Lagrange in_[ _its documentation_](https://docs.lagrangedao.org/)_._
 {% endhint %}
 
-[Lagrange](https://lagrangedao.org/?utm\_source=medium\&utm\_medium=social\&utm\_campaign=general) leverages the advantages of [Swan Chain](https://swanchain.io/?utm\_source=medium\&utm\_medium=social\&utm\_campaign=general), such as:
+[Lagrange](https://lagrange.computer) leverages the advantages of [Swan Chain](https://swanchain.io/?utm\_source=medium\&utm\_medium=social\&utm\_campaign=general), such as:
 
-* **70% cheaper than AWS**: Lagrange reduces the cost of NLP development and deployment by 70% compared to AWS, by using the decentralized computing network of Swan Chain, which offers lower and more stable prices than the centralized cloud services.
-* **Decentralized storage of the code and data:** Lagrange ensures the security and privacy of the NLP code and data, by storing them on the decentralized storage network of Swan Chain, which uses encryption and sharding techniques to protect them from unauthorized access and manipulation.
-* **Cross-chain interoperability**: Lagrange enables the integration and interaction of the NLP applications and services with other blockchains and platforms, such as Ethereum, IPFS, and Filecoin, by using the cross-chain bridge of Swan Chain, which allows for the seamless transfer of assets and data across different chains.
+* **Cost-Effective:** By utilizing decentralized resources, Lagrange Computer reduces operational costs compared to traditional cloud services.
+* **Security:** Ensures data integrity and security through decentralized storage and processing.
+* **Interoperability:** Compatible with various blockchain networks and computing providers, enhancing flexibility and scalability.
+* **Efficiency:** Facilitates efficient NLP model training and deployment using distributed computing power.
 
 Let’s explore some of the [Spaces](https://docs.lagrangedao.org/lagrange-dao/spaces/use-case) built by Lagrange community across categories like AI, gaming, blockchain, and tools.
 
