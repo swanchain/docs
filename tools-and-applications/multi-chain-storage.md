@@ -1,6 +1,6 @@
 # Multi-Chain Storage
 
-[Multi-Chain Storage](https://docs.filswan.com/multichain.storage/overview), or MCS, developed by the Swan Network, is a new kind of storage service that works with different blockchain networks. It transcends traditional cloud storage by using smart contracts for enhanced security, reminiscent of an [S3 storage gateway](https://aws.amazon.com/storagegateway/file/s3/) but with the added benefit of decentralization.
+[Multi-Chain Storage](https://multichain.storage), or MCS, developed by the Swan Network, is a new kind of storage service that works with different blockchain networks. It transcends traditional cloud storage by using smart contracts for enhanced security, reminiscent of an [S3 storage gateway](https://aws.amazon.com/storagegateway/file/s3/) but with the added benefit of decentralization.
 
 {% hint style="info" %}
 _Learn more about MCS in_[ _its documentation_](https://docs.filswan.com/multichain.storage/overview)_._
@@ -25,3 +25,5 @@ Multi-Chain Storage can store any type of file that can be hosted on a website, 
 * PDFs, documents, spreadsheets, and other office files
 * JSON, XML, CSV, and other data formats
 * HTML, CSS, JavaScript, and other web development languages
+
+Try it here: [https://multichain.storage](https://multichain.storage)
