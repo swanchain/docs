@@ -68,7 +68,7 @@
 
 ## Tools and Applications
 
-* [Lagrange Computer](tools-and-applications/lagrange-computer.md)
+* [Lagrange Computer](tools-and-applications/lagrange-dao.md)
 * [Multi-Chain Storage](tools-and-applications/multi-chain-storage.md)
 
 ## Swan Chain
