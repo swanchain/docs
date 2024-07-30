@@ -44,7 +44,7 @@ July 29, 2024, 00:00 (EST) - Sep 15, 2024, 23:59 (EST)
 
     * ECPs must join within the first 7 days of the event.
     * ECPs must remain active for at least 80% of the event duration
-    * ECPs must complete a minimum of 100 ZK tasks during the event.
+    * ECPs must complete a minimum of 1,000 ZK tasks during the event.
 5. **Minimum Performance Threshold:**
    * To ensure quality contributions, ECPs must complete a minimum of 1,000 ZK tasks during the event to be eligible for rewards.
 6. **Reward Cap:**
