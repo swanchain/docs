@@ -53,13 +53,14 @@
     * [FCP Token Operations Guide](swan-provider/cp-computing-provider/fcp-fog-computing-provider/fcp-token-operations-guide.md)
     * [FCP FAQ](swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq.md)
 * [Market Provider(MP )](swan-provider/market-provider-mp/README.md)
-  * [AI/ML Orchestrator](swan-provider/market-provider-mp/ai-ml-orchestrator/README.md)
-    * [Connect to Orchestrator](swan-provider/market-provider-mp/ai-ml-orchestrator/connect-to-orchestrator.md)
-  * [ZK Auction Engine](swan-provider/market-provider-mp/zk-auction-engine/README.md)
-    * [Sequencer](swan-provider/market-provider-mp/zk-auction-engine/sequencer.md)
-    * [Contribute zk-UBI-task](swan-provider/market-provider-mp/zk-auction-engine/contribute-zk-ubi-task/README.md)
-      * [How to Contribute](swan-provider/market-provider-mp/zk-auction-engine/contribute-zk-ubi-task/how-to-contribute.md)
-      * [Example](swan-provider/market-provider-mp/zk-auction-engine/contribute-zk-ubi-task/example.md)
+  * [AI/ML Orchestrator](swan-provider/market-provider-mp/orchestrator/README.md)
+    * [Decentralized AI Marketplace](swan-provider/market-provider-mp/ai-ml-orchestrator/decentralized-ai-marketplace.md)
+    * [Connect to Orchestrator](swan-provider/market-provider-mp/orchestrator/connect-to-orchestrator.md)
+  * [ZK Auction Engine](swan-provider/market-provider-mp/zk-engine/README.md)
+    * [Sequencer](swan-provider/market-provider-mp/zk-engine/sequencer.md)
+    * [Contribute zk-UBI-task](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/README.md)
+      * [How to Contribute](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/how-to-contribute.md)
+      * [Example](swan-provider/market-provider-mp/zk-engine/contribute-zk-ubi-task/example.md)
 
 ## Use Case
 

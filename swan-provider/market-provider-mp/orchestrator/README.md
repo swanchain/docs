@@ -1,4 +1,4 @@
-# Orchestrator
+# AI/ML Orchestrator
 
 The orchestrator within the Swan Chain ecosystem serves as a critical component, designed to efficiently manage and distribute computing tasks across its decentralized network. This sophisticated system plays a pivotal role in ensuring that the computational resources available within the Swan Chain are utilized optimally, facilitating seamless operation and interaction among various stakeholders. Below is an overview of the orchestrator's functionalities, architecture, and its significance in the Swan Chain ecosystem.
 
