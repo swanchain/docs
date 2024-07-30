@@ -53,8 +53,8 @@
     * [Migrating FCP to Swan Mainnet](swan-provider/computing-provider-cp/fog-computing-provider-fcp/migrating-fcp-to-swan-mainnet.md)
     * [FCP Token Operations Guide](swan-provider/cp-computing-provider/fcp-fog-computing-provider/fcp-token-operations-guide.md)
     * [FCP FAQ](swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq.md)
-* [Storage Provider (SP)](swan-provider/storage-provider-sp/README.md)
-  * [Storage Auction System](swan-provider/storage-provider-sp/storage-auction-system.md)
+* [Storage Provider (SP)](swan-provider/storage-provider/README.md)
+  * [Storage Auction System](swan-provider/storage-provider/storage-auction-system.md)
 * [Market Provider(MP )](swan-provider/market-provider-mp/README.md)
   * [AI/ML Orchestrator](swan-provider/market-provider-mp/orchestrator/README.md)
     * [Decentralized AI Marketplace](swan-provider/market-provider-mp/ai-ml-orchestrator/decentralized-ai-marketplace.md)
@@ -68,7 +68,7 @@
 
 ## Tools and Applications
 
-* [Lagrange Dao](tools-and-applications/lagrange-dao.md)
+* [Lagrange Computer](tools-and-applications/lagrange-computer.md)
 * [Multi-Chain Storage](tools-and-applications/multi-chain-storage.md)
 
 ## Swan Chain

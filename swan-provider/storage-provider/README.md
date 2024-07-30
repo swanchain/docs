@@ -2,7 +2,7 @@
 description: IPFS+Filecoin Storage Layer
 ---
 
-# Storage Provider
+# Storage Provider (SP)
 
 ### **Introduction**
 
