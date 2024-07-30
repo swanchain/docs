@@ -6,7 +6,7 @@ ECPs will be responsible for completing Zero-Knowledge (ZK) tasks, contributing 
 
 ### **Duration:**&#x20;
 
-July 29, 2024, 00:00 (EST) - September 8, 2024, 23:59 (EST)
+July 29, 2024, 00:00 (EST) - Sep 15, 2024, 23:59 (EST)
 
 ### ECP Requirements:
 
