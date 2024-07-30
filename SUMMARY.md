@@ -21,6 +21,7 @@
   * [Computing Layer](getting-started/protocol-stack/computing-layer/README.md)
     * [Computing Provider Protocol](getting-started/protocol-stack/computing-layer/computing-provider-protocol.md)
     * [Computing Provider  Account](getting-started/protocol-stack/computing-layer/computing-provider-account.md)
+    * [Layer3 Computing Protocol](getting-started/protocol-stack/computing-layer/layer3-computing-protocol.md)
   * [CDN Layer](getting-started/protocol-stack/cdn-layer.md)
   * [Tokenomics](getting-started/protocol-stack/token/README.md)
     * [Swan Provider Income](getting-started/protocol-stack/token/swan-provider-income.md)
@@ -59,10 +60,11 @@
     * [Decentralized AI Marketplace](swan-provider/market-provider-mp/ai-ml-orchestrator/decentralized-ai-marketplace.md)
     * [Connect to Orchestrator](swan-provider/market-provider-mp/orchestrator/connect-to-orchestrator.md)
   * [Web3 ZK Computing Market](swan-provider/market-provider-mp/web3-zk-computing-market/README.md)
+    * [ZK Auction Engine](swan-provider/market-provider-mp/web3-zk-computing-market/zk-auction-engine.md)
     * [Sequencer](swan-provider/market-provider-mp/web3-zk-computing-market/sequencer.md)
     * [Contribute zk-UBI-task](swan-provider/market-provider-mp/web3-zk-computing-market/contribute-zk-ubi-task/README.md)
       * [How to Contribute](swan-provider/market-provider-mp/web3-zk-computing-market/contribute-zk-ubi-task/how-to-contribute.md)
-      * [Example](swan-provider/market-provider-mp/web3-zk-computing-market/contribute-zk-ubi-task/example.md)
+    * [Example](swan-provider/market-provider-mp/web3-zk-computing-market/example.md)
 
 ## Use Case
 

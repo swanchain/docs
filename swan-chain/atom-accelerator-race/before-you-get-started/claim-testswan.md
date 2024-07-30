@@ -9,4 +9,4 @@ J**oin the** [**Swan official Discord**](https://discord.com/invite/swanchain) a
 
 `0x91B25A65b295F0405552A4bbB77879ab5e38166c`
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
