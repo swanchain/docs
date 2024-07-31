@@ -103,31 +103,37 @@ Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`
 
     ```json
     {
-    	"id":518906,
-    	"name":"1000-0-7-518906",
-    	"type": 1,
-    	"source_type":1,
-    	"input_param":"https://286cb2c989.acl.swanipfs.com/ipfs/QmTgoX6LkzZTsTjSjXvujzgJEHBLTEg3KMUadQGnyTrNFG",
-    	"resource":{"cpu":"1","memory":"3.00 GiB","storage":"10.00 GiB"},
-    	"contract_addr": "0x5126be41b93be38C541eB0EB7f6b3407dfDf5544",
-    	"signature": "Signing_nodeid_and_contractaddr_with_ownerAddress"
+
+    "id": 26384,
+    "name": "1000-0-7-26381",
+    "type": 1,
+    "resource_type": 0,
+    "deadline": 2000000,
+    "check_code": "check_code-demo",
+    "input_param": "https://286cb2c989.acl.swanipfs.com/ipfs/QmTgoX6LkzZTsTjSjXvujzgJEHBLTEg3KMUadQGnyTrNFG",
+    "verify_param": "https://286cb2c989.acl.swanipfs.com/ipfs/QmTgoX6LkzZTsTjSjXvujzgJEHBLTEg3KMUadQGnyTrNFG.verify",
+    "resource":{"cpu":"10","memory":"5.00 GiB","storage":"10.00 GiB"}
+    "signature":"Signing_cpAccountAddress_and_id_with_ownerAddress"
+
     }
 
     ```
 5.  Submit the `ubi-task` using the following command(using your public IP and port ):
 
     ```bash
-    curl -k --location --request POST 'https://<public_IP>:<port>/api/v1/computing/cp/ubi' \
+    curl --location --request POST 'http://<public_IP>:<port>/api/v1/computing/cp/ubi' \
     --header 'Content-Type: application/json' \
     --data-raw '{
-        "id":518906,
-    	"name":"1000-0-7-518906",
-    	"type": 1,
-    	"source_type": 0,
-    	"input_param":"https://286cb2c989.acl.swanipfs.com/ipfs/QmTgoX6LkzZTsTjSjXvujzgJEHBLTEg3KMUadQGnyTrNFG",
-    	"resource":{"cpu":"1","memory":"3.00 GiB","storage":"10.00 GiB"},
-    	"contract_addr": "0x5126be41b93be38C541eB0EB7f6b3407dfDf5544",
-    	"signature": "Signing_nodeid_and_contractaddr_with_ownerAddress"
+        "id": 26384,
+        "name": "1000-0-7-26381",
+        "type": 1,
+        "resource_type": 0,
+        "deadline": 2000000,
+        "check_code": "check_code-demo",
+        "input_param": "https://286cb2c989.acl.swanipfs.com/ipfs/QmTgoX6LkzZTsTjSjXvujzgJEHBLTEg3KMUadQGnyTrNFG",
+        "verify_param": "https://286cb2c989.acl.swanipfs.com/ipfs/QmTgoX6LkzZTsTjSjXvujzgJEHBLTEg3KMUadQGnyTrNFG.verify",
+        "resource":{"cpu":"10","memory":"5.00 GiB","storage":"10.00 GiB"}
+        "signature":"Signing_cpAccountAddress_and_id_with_ownerAddress"
     }'
     ```
 6.  After running ubi-task, check if the task status is success:
