@@ -71,6 +71,7 @@
 
 * [Lagrange Computer](tools-and-applications/lagrange-dao.md)
 * [Multi-Chain Storage](tools-and-applications/multi-chain-storage.md)
+* [Nebula Block Cloud](tools-and-applications/nebula-block-cloud.md)
 * [Ecosystem Projects](tools-and-applications/ecosystem-projects.md)
 
 ## Swan Chain
