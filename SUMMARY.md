@@ -53,7 +53,24 @@
     * [Migrating FCP to Swan Mainnet](computing-provider/computing-provider-cp/fog-computing-provider-fcp/migrating-fcp-to-swan-mainnet.md)
     * [FCP Token Operations Guide](computing-provider/computing-provider-cp/fog-computing-provider-fcp/fcp-token-operations-guide.md)
     * [FCP FAQ](computing-provider/computing-provider-cp/fog-computing-provider-fcp/faq.md)
+## Storage Provider
 
+* [Storage Provider Overview](storage-provider/storage-provider-overview/README.md)
+  * [Storage Auction System](storage-provider/storage-provider-overview/storage-auction-system.md)
+
+## Market Provider
+
+* [Introduction](market-provider/introduction.md)
+* [AI/ML Orchestrator](market-provider/ai-ml-orchestrator/README.md)
+  * [Decentralized AI Marketplace](market-provider/ai-ml-orchestrator/decentralized-ai-marketplace.md)
+  * [Connect to Orchestrator](market-provider/ai-ml-orchestrator/connect-to-orchestrator.md)
+* [Web3 ZK Computing Market](market-provider/web3-zk-computing-market/README.md)
+  * [ZK Auction Engine](market-provider/web3-zk-computing-market/zk-auction-engine.md)
+  * [Sequencer](market-provider/web3-zk-computing-market/sequencer.md)
+  * [Contribute zk-UBI-task](market-provider/web3-zk-computing-market/contribute-zk-ubi-task/README.md)
+    * [How to Contribute](market-provider/web3-zk-computing-market/contribute-zk-ubi-task/how-to-contribute.md)
+  * [Example](market-provider/web3-zk-computing-market/example.md)
+* [Customized Market Provider](market-provider/customized-market-provider.md)
 ## Tools and Applications
 
 * [Lagrange Computer](tools-and-applications/lagrange-dao.md)
@@ -106,21 +123,4 @@
 * [Links](resource/links.md)
 * [Brand Kit](resource/brand-kit.md)
 
-## Storage Provider
 
-* [Storage Provider Overview](storage-provider/storage-provider-overview/README.md)
-  * [Storage Auction System](storage-provider/storage-provider-overview/storage-auction-system.md)
-
-## Market Provider
-
-* [Introduction](market-provider/introduction.md)
-* [AI/ML Orchestrator](market-provider/ai-ml-orchestrator/README.md)
-  * [Decentralized AI Marketplace](market-provider/ai-ml-orchestrator/decentralized-ai-marketplace.md)
-  * [Connect to Orchestrator](market-provider/ai-ml-orchestrator/connect-to-orchestrator.md)
-* [Web3 ZK Computing Market](market-provider/web3-zk-computing-market/README.md)
-  * [ZK Auction Engine](market-provider/web3-zk-computing-market/zk-auction-engine.md)
-  * [Sequencer](market-provider/web3-zk-computing-market/sequencer.md)
-  * [Contribute zk-UBI-task](market-provider/web3-zk-computing-market/contribute-zk-ubi-task/README.md)
-    * [How to Contribute](market-provider/web3-zk-computing-market/contribute-zk-ubi-task/how-to-contribute.md)
-  * [Example](market-provider/web3-zk-computing-market/example.md)
-* [Customized Market Provider](market-provider/customized-market-provider.md)
