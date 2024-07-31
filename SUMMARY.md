@@ -39,7 +39,7 @@
 * [Quick Start](get-started/quick-start/README.md)
   * [Deploying Your First Smart Contract with Remix](get-started/quick-start/deploying-your-first-smart-contract-with-remix.md)
   * [Interacting with Smart Contract on Swan Chain Using Go](get-started/quick-start/interacting-with-smart-contract-on-swan-chain-using-go.md)
-  * [Build a Basic Web Application](get-started/quick-start/build-a-basic-web-application.md)
+  * [Build a Basic Web Application](get-started/quick-start/build-a-serverless-web-application.md)
 * [Swan Node](get-started/swan-node.md)
 
 ## Computing Provider
