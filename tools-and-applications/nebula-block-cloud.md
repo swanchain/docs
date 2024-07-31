@@ -12,7 +12,7 @@ In addition to its core offerings in cloud computing, Nebula Block is deeply inv
 
 **1. Cloud Computing Solutions:**
 
-* **Swan Cloud:** A comprehensive cloud platform designed to provide secure, scalable, and efficient computing resources for academic and commercial applications. Ideal for institutions requiring robust infrastructure to support data-intensive tasks.
+* **Swan Network:** Utilizing Swan Chain computing resources, this service addresses the global needs for computing, storage, and AI, providing a robust infrastructure for a wide range of applications across the globe.
 
 **2. Blockchain Infrastructure Services:**
 
