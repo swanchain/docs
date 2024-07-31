@@ -2,7 +2,7 @@
 
 [Commit 2](https://docs.filecoin.io/storage-providers/architecture/sealing-pipeline#commit-2) (C2) is an intensive computational step in Filecoin's sector sealing pipeline requiring generation of a [zk-SNARK](https://docs.filecoin.io/reference/general/glossary#zero-knowledge-succinct-non-interactive-argument-of-knowledge-zk-snark) proof to validate storage commitment.
 
-Swan's ZK-UBI mechanism incorporates such heavy workloads into an incentive design that allows [Computing Provider](../../../../../computing-provider/computing-provider-cp/fog-computing-provider-fcp/computing-provider-setup.md) within Swan ecosystem to accelerate proofs while earning ZK-UBI rewards.
+Swan's ZK-UBI mechanism incorporates such heavy workloads into an incentive design that allows [Computing Provider](../../../../../computing-provider/fog-computing-provider-fcp/computing-provider-setup.md) within Swan ecosystem to accelerate proofs while earning ZK-UBI rewards.
 
 **Key Points about C2**
 

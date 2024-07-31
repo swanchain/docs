@@ -19,7 +19,7 @@ July 15 00:00 - September 15 23:59 (EST)
 
 ### **How to participate**
 
-* Participants will be required to deploy a FCP following the [documentation](../../../computing-provider/computing-provider-cp/fog-computing-provider-fcp/computing-provider-setup.md) and [FCP Token Operations Guide](../../../computing-provider/computing-provider-cp/fog-computing-provider-fcp/fcp-token-operations-guide.md).
+* Participants will be required to deploy a FCP following the [documentation](../../../computing-provider/fog-computing-provider-fcp/computing-provider-setup.md) and [FCP Token Operations Guide](../../../computing-provider/fog-computing-provider-fcp/fcp-token-operations-guide.md).
 * The longer their GPUs and CPUs are utilized, and the higher their uptime, the more credits they'll earn.
 * **Boost:** Using high-density GPUs such as Nvidia H100s, A100s, or top consumer models can yield a substantial 3-10x acceleration in reward calculations.
 * **High-density GPU Boost Details:**
