@@ -19,7 +19,7 @@ July 29, 2024, 00:00 (EST) - Sep 15, 2024, 23:59 (EST)
 
 ### How to Participate:
 
-1. Deploy an ECP according to the [provided instructions](../../../swan-provider/cp-computing-provider/ecp-edge-computing-provider/ecp-setup.md) and documentation.
+1. Deploy an ECP according to the [provided instructions](../../../computing-provider/computing-provider-cp/edge-computing-provider-ecp/ecp-setup.md) and documentation.
 2. Complete ZK tasks to earn credits based on performance.
 
 ### Event Rules and Rewards:

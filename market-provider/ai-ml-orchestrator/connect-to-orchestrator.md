@@ -4,7 +4,7 @@
 
 * **SwanETH**
   * Ensure that you have sufficient SwanETH for collateral.&#x20;
-  * You can obtain SwanETH following this [guide](../../../swan-chain/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md) and [bridge](../../../swan-chain/swan-saturn-testnet/before-you-get-started/bridge-tokens.md) them from Sepolia to Swan Saturn Chain
+  * You can obtain SwanETH following this [guide](../../swan-chain/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md) and [bridge](../../swan-chain/swan-saturn-testnet/before-you-get-started/bridge-tokens.md) them from Sepolia to Swan Saturn Chain
 * **Obtain Filecoin V28 Parameters (optional)**
   * To complete UBI tasks, you need to have the Filecoin V28 parameters.&#x20;
   * Make sure you have the parameters corresponding to 512M and 32G sectors, as these cater to different task requirements.
@@ -13,7 +13,7 @@ Ensure that you have completed all these preparations before connecting to the O
 
 **Step 1: Setup Your Computing Provider**
 
-Follow this [guide](../../cp-computing-provider/fcp-fog-computing-provider/computing-provider-setup.md) to deploy your Computing Provider and make sure you have the latest version installed.
+Follow this [guide](../../computing-provider/computing-provider-cp/fog-computing-provider-fcp/computing-provider-setup.md) to deploy your Computing Provider and make sure you have the latest version installed.
 
 {% embed url="https://github.com/swanchain/go-computing-provider" %}
 
@@ -45,9 +45,9 @@ computing-provider collateral info
 
 **Option 2:** Log in to Dashboard > Profile > CP Collateral Check
 
-<figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
 
 **Congratulations!**&#x20;
 

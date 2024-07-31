@@ -2,11 +2,11 @@
 description: IPFS+Filecoin Storage Layer
 ---
 
-# Storage Provider (SP)
+# Storage Provider Overview
 
 ### **Introduction**
 
-**Swan Provider** enables hardware owners to make profits on their spare computing resources by releasing them to tenants.
+**Swan Storage** **Provider** enables hardware owners to make profits on their spare computing resources by releasing them to tenants.
 
 The service Swan provides helps storage providers connect to the Web3 service market, making the Web3 service offering ultimately easier.
 

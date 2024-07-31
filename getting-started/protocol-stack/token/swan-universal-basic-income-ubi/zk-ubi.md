@@ -22,4 +22,4 @@ The ZK-UBI (Zero-Knowledge Universal Basic Income) on Swan Chain is an innovativ
 
 <figure><img src="../../../../.gitbook/assets/image (158) (1).png" alt=""><figcaption><p> ZK-UBI reward Dashboard</p></figcaption></figure>
 
-To get started as a ZK-UBI contributor, click [here](../../../../swan-provider/market-provider-mp/web3-zk-computing-market/contribute-zk-ubi-task/).&#x20;
+To get started as a ZK-UBI contributor, click [here](../../../../market-provider/web3-zk-computing-market/contribute-zk-ubi-task/).&#x20;
