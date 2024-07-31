@@ -4,7 +4,7 @@
 
 The **ZK Computing Market** is a crucial component of the Swan Chain ecosystem, serving as the primary Market Provider (MP) for Zero-Knowledge (ZK) computations. One of its sub-components, the **ZK Sequencer**, plays a pivotal role in processing tasks and proofs.
 
-### 2.  ZK Engine Compone
+### 2.  ZK Engine Component
 
 **1. Functions**
 
