@@ -26,3 +26,7 @@ description: Get started with Swan Chain
 * ChainID: 2024
 * Explorer: [https://saturn-explorer.swanchain.io](https://saturn-explorer.swanchain.io/)
 * Chainlist: [https://chainlist.org/chain/2024](https://chainlist.org/chain/2024)
+
+I am a
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Computing Resource User</td><td></td></tr><tr><td></td><td>Blockchain Developer</td><td></td></tr><tr><td></td><td>Computing Provider</td><td></td></tr><tr><td></td><td>Storage Provider</td><td></td></tr></tbody></table>

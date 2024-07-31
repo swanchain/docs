@@ -34,25 +34,24 @@
         * [Filecoin Commit 2 (C2) with ZK-UBI](getting-started/protocol-stack/token/swan-universal-basic-income-ubi/zk-ubi-pool/filecoin-commit-2-c2-with-zk-ubi.md)
   * [Glossary](getting-started/protocol-stack/glossary.md)
 
-## Development Resource
+## Get Started
 
-* [Quick Start](development-resource/quick-start/README.md)
-  * [Deploying Your First Smart Contract with Remix](development-resource/quick-start/deploying-your-first-smart-contract-with-remix.md)
-  * [Interacting with Smart Contract on Swan Chain Using Go](development-resource/quick-start/interacting-with-smart-contract-on-swan-chain-using-go.md)
-* [Swan SDK](development-resource/swan-sdk.md)
-* [Swan Node](development-resource/swan-node.md)
+* [Quick Start](get-started/quick-start/README.md)
+  * [Deploying Your First Smart Contract with Remix](get-started/quick-start/deploying-your-first-smart-contract-with-remix.md)
+  * [Interacting with Smart Contract on Swan Chain Using Go](get-started/quick-start/interacting-with-smart-contract-on-swan-chain-using-go.md)
+* [Swan Node](get-started/swan-node.md)
 
 ## Computing Provider
 
 * [Introduction](computing-provider/computing-provider-cp.md)
-* [Edge Computing Provider (ECP)](computing-provider/edge-computing-provider-ecp/README.md)
-  * [ECP Setup](computing-provider/edge-computing-provider-ecp/ecp-setup.md)
-  * [ECP FAQ](computing-provider/edge-computing-provider-ecp/ecp-faq.md)
 * [Fog Computing Provider(FCP)](computing-provider/fog-computing-provider-fcp/README.md)
   * [FCP Setup](computing-provider/fog-computing-provider-fcp/computing-provider-setup.md)
   * [Migrating FCP to Swan Mainnet](computing-provider/fog-computing-provider-fcp/migrating-fcp-to-swan-mainnet.md)
   * [FCP Token Operations Guide](computing-provider/fog-computing-provider-fcp/fcp-token-operations-guide.md)
   * [FCP FAQ](computing-provider/fog-computing-provider-fcp/faq.md)
+* [Edge Computing Provider (ECP)](computing-provider/edge-computing-provider-ecp/README.md)
+  * [ECP Setup](computing-provider/edge-computing-provider-ecp/ecp-setup.md)
+  * [ECP FAQ](computing-provider/edge-computing-provider-ecp/ecp-faq.md)
 
 ## Storage Provider
 
@@ -78,6 +77,7 @@
 * [Lagrange Computer](tools-and-applications/lagrange-dao.md)
 * [Multi-Chain Storage](tools-and-applications/multi-chain-storage.md)
 * [Nebula Block Cloud](tools-and-applications/nebula-block-cloud.md)
+* [Swan SDK](tools-and-applications/swan-sdk.md)
 * [Ecosystem Projects](tools-and-applications/ecosystem-projects.md)
 
 ## Swan Chain
