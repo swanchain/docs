@@ -43,8 +43,7 @@ For more information, users can visit the website: [https://orchestrator.swancha
 
 ### **Faucet**
 
-Users can claim free SWAN Credit Token from the faucet under the following conditions: Each wallet can claim 24 tokens every 24 hours. If your wallet balance exceeds 240 tokens, you won't be able to claim any more tokens. \
-
+Users can claim free SWAN Credit Token from the faucet under the following conditions: Each wallet can claim up to **25** tokens at a time. If your wallet balance exceeds **250** tokens, you won’t be able to claim any more tokens.
 
 Two ways to receive SWAN Credit Token, you can claim them from the faucet or earn them by participating in a computing provider job. Visit the following website to start claiming tokens: [https://faucet.swanchain.io/](https://faucet.swanchain.io/).\
 \
