@@ -41,7 +41,12 @@
   * [Interacting with Smart Contract on Swan Chain Using Go](get-started/quick-start/interacting-with-smart-contract-on-swan-chain-using-go.md)
   * [Setting Up Your Swan  Environment](get-started/quick-start/setting-up-your-swan-environment.md)
   * [Build a Basic Web Application](get-started/quick-start/build-a-serverless-web-application.md)
-  * [Store and Retrieve a File with Swan Storage](get-started/quick-start/store-and-retrieve-a-file-with-swan-storage.md)
+  * [Store and Retrieve a File with Swan Storage](get-started/quick-start/store-and-retrieve-a-file-with-swan-storage/README.md)
+    * [1. Set up the python-MCS-SDK](get-started/quick-start/store-and-retrieve-a-file-with-swan-storage/1.-set-up-the-python-mcs-sdk.md)
+    * [2.Create and Manage Buckets](get-started/quick-start/store-and-retrieve-a-file-with-swan-storage/2.create-and-manage-buckets.md)
+    * [3.Upload Files and Folders](get-started/quick-start/store-and-retrieve-a-file-with-swan-storage/3.upload-files-and-folders.md)
+    * [4.Retrieve and Download Files](get-started/quick-start/store-and-retrieve-a-file-with-swan-storage/4.retrieve-and-download-files.md)
+    * [5.Delete Files and Buckets](get-started/quick-start/store-and-retrieve-a-file-with-swan-storage/5.delete-files-and-buckets.md)
 * [Swan Node](get-started/swan-node.md)
 
 ## Computing Provider
