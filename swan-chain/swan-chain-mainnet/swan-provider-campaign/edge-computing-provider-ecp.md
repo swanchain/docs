@@ -31,21 +31,28 @@ July 29, 2024, 00:00 (EST) - Sep 15, 2024, 23:59 (EST)
 3. **Performance-based Rewards (298,000 SWAN):**
    * Rewards will be distributed based on the number of successfully completed ZK tasks and overall contribution to the network.
    * The more time an ECP is online and the more tasks it completes, the higher its reward will be.
-4.  **Early Participant Rewards (22,000 SWAN):**
 
-    Early participants will be rewarded based on a tiered system:
+{% hint style="info" %}
+ECPs can join at any time to be eligible for **Performance-Based Rewards.**
+{% endhint %}
 
-    * First 50 ECPs: 100 SWAN each (Total: 5,000 SWAN)
-    * Next 100 ECPs: 50 SWAN each (Total: 5,000 SWAN)
-    * Next 200 ECPs: 30 SWAN each (Total: 6,000 SWAN)
-    * Next 300 ECPs: 20 SWAN each (Total: 6,000 SWAN)
+4. **Early Participant Rewards (22,000 SWAN):**
 
-    To be eligible for early participant rewards:
+Early participants will be rewarded based on a tiered system:
 
-    * ECPs must join within the first 7 days of the event.
-    * ECPs must remain active for at least 80% of the event duration
-    * ECPs must complete a minimum of 1,000 ZK tasks during the event.
+* First 50 ECPs: 100 SWAN each (Total: 5,000 SWAN)
+* Next 100 ECPs: 50 SWAN each (Total: 5,000 SWAN)
+* Next 200 ECPs: 30 SWAN each (Total: 6,000 SWAN)
+* Next 300 ECPs: 20 SWAN each (Total: 6,000 SWAN)
+
+{% hint style="info" %}
+To qualify for **Early Participant Rewards**, you must join within the first **3 weeks** of the event, by August 18.
+{% endhint %}
+
 5. **Minimum Performance Threshold:**
-   * To ensure quality contributions, ECPs must complete a minimum of 1,000 ZK tasks during the event to be eligible for rewards.
+
+* ECPs must complete a minimum of 1,000 ZK tasks during the event period, which runs from July 29, 2024, 00:00 (EST) to September 15, 2024, 23:59 (EST).
+
 6. **Reward Cap:**
-   * To promote fair distribution, a cap of 5,000 SWAN tokens per individual ECP will be implemented.
+
+* To promote fair distribution, a cap of 5,000 SWAN tokens per individual ECP will be implemented.
