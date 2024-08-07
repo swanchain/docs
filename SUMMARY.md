@@ -99,6 +99,7 @@
     * [Edge Computing Provider (ECP)](swan-chain/swan-chain-mainnet/swan-provider-campaign/edge-computing-provider-ecp.md)
     * [Market Provider (MP)](swan-chain/swan-chain-mainnet/swan-provider-campaign/market-provider-mp.md)
   * [GALXE Campaign](swan-chain/swan-chain-mainnet/galxe-campaign.md)
+  * [Free Tier and Special Credit Programs](swan-chain/swan-chain-mainnet/free-tier-and-special-credit-programs.md)
 * [Atom Accelerator Race](swan-chain/atom-accelerator-race/README.md)
   * [Before You Get Started](swan-chain/atom-accelerator-race/before-you-get-started/README.md)
     * [Set Up MetaMask](swan-chain/atom-accelerator-race/before-you-get-started/set-up-metamask.md)
