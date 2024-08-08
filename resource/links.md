@@ -1,10 +1,22 @@
 # Links
 
-**Website**
+**Swan Chain**
 
 Swan Chain: [https://www.swanchain.io](https://www.swanchain.io)
 
-Lagrange: [https://lagrange.computer/](https://lagrange.computer/)
+Github: [https://github.com/filswan](https://github.com/filswan)
+
+Linktree: [https://linktr.ee/swan\_chain](https://linktr.ee/swan\_chain)
+
+
+
+**Lagrange**
+
+Lagrange Website: [https://lagrangedao.org/main](https://lagrangedao.org/main)
+
+Lagrange Twitter: [https://twitter.com/lagrangedao](https://twitter.com/lagrangedao)
+
+Lagrange Docs: [https://docs.lagrangedao.org/](https://docs.lagrangedao.org/)
 
 
 
@@ -16,6 +28,10 @@ Telegram: [https://t.me/swan\_chain/](https://t.me/swan\_chain/)
 
 Discord: [https://discord.gg/swanchain](https://discord.gg/swanchain)
 
+Medium: [https://swanchain.medium.com/](https://swanchain.medium.com/)
+
+Youtube: [https://www.youtube.com/@swan\_chain](https://www.youtube.com/@swan\_chain)
+
 LinkedIn: [https://www.linkedin.com/company/swancloud](https://www.linkedin.com/company/swancloud)
 
 
@@ -23,3 +39,12 @@ LinkedIn: [https://www.linkedin.com/company/swancloud](https://www.linkedin.com/
 **Web3**
 
 Galxe: [https://app.galxe.com/quest/filswan](https://app.galxe.com/quest/filswan)
+
+Intract: [https://www.intract.io/project/swan-chain](https://www.intract.io/project/swan-chain)
+
+
+
+
+
+
+
