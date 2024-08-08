@@ -12,7 +12,7 @@ Linktree: [https://linktr.ee/swan\_chain](https://linktr.ee/swan\_chain)
 
 **Lagrange**
 
-Lagrange Website: [https://lagrangedao.org/main](https://lagrangedao.org/main)
+Lagrange Website: [https://lagrange.computer](https://lagrange.computer/)
 
 Lagrange Twitter: [https://twitter.com/lagrangedao](https://twitter.com/lagrangedao)
 
