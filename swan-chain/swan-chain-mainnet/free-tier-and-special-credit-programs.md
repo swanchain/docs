@@ -34,10 +34,10 @@ Swan Chain is committed to empowering developers, startups, and established AI c
 * **Usage**: Extensive compute power for AI model training, large-scale data storage, and high bandwidth for AI applications.
 * **Approval Process**: Applications are reviewed within 5-7 business days. Decisions will be communicated via email.
 
-## **Swan Activate**
-
-To maximize the benefits of these credits, users must spend all allocated credits within one week. Additional credits can be requested by contacting the Swan Chain team.
-
 ## **Application Process**
 
 To apply for any of these programs, please fill out the application form [here](https://docs.google.com/forms/d/e/1FAIpQLSf8dHYXEMv\_Tw8P2axvuV56I9TotnJP4W76R3vkW38lsukuKw/viewform). The Swan Chain team will review your application and respond within the specified time frames based on the program tier.
+
+_\*\*\*Note that for **Swan Activate**_: To encourage users to fully utilize Swan resources and share feedback, we’re offering a special incentive. If you use all your credits within one week, simply notify the Swan team with your account details, and we’ll provide additional credits.
+
+These programs are designed to provide the best and highly innovative resources to help you innovate and excel. Can’t wait to see all of you come and build with SwanChain!
