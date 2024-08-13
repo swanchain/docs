@@ -55,10 +55,11 @@
 * [Fog Computing Provider(FCP)](computing-provider/fog-computing-provider-fcp/README.md)
   * [FCP Setup](computing-provider/fog-computing-provider-fcp/computing-provider-setup.md)
   * [Migrating FCP to Swan Mainnet](computing-provider/fog-computing-provider-fcp/migrating-fcp-to-swan-mainnet.md)
-  * [FCP Token Operations Guide](computing-provider/fog-computing-provider-fcp/fcp-token-operations-guide.md)
+  * [FCP Funding Operations Guide](computing-provider/fog-computing-provider-fcp/fcp-token-operations-guide.md)
   * [FCP FAQ](computing-provider/fog-computing-provider-fcp/faq.md)
 * [Edge Computing Provider (ECP)](computing-provider/edge-computing-provider-ecp/README.md)
   * [ECP Setup](computing-provider/edge-computing-provider-ecp/ecp-setup.md)
+  * [ECP Funding Operations Guide](computing-provider/edge-computing-provider-ecp/ecp-funding-operations-guide.md)
   * [ECP FAQ](computing-provider/edge-computing-provider-ecp/ecp-faq.md)
 
 ## Storage Provider
