@@ -6,12 +6,12 @@
 
 ### Account Overview
 
-* **CP Account (Computing Provider Account)**: An independent on-chain account for CP operations and fund management. FCP and ECP have the same account structure.
+* **CP Account (Computing Provider Account)**: An independent on-chain contract account for CP operations and fund management. FCP and ECP have the same account structure.
   * **Owner Address**: Hold the highest authority to manage the CP account.
   * **Beneficiary Address**: Receives rewards for ZK tasks.
   * **Worker Address**: Used for submitting proofs.
 * **Collateral Account**: ECP's staking account in the collateral contract (SwanC).
-  * **Escrow Account**: A temporary account for storing ECP's collateral, ensuring that ECP can receive ZK tasks.
+  * **Escrow Account**: A account for storing ECP's collateral in collateral contarct, ensuring that ECP can receive ZK tasks.
 * **Sequencer Account**: ECP's account in the sequencer contract, used to pay for gas fees required when submitting ZK proofs.
 
 ### Table of Content:
