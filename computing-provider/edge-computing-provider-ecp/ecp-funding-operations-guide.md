@@ -47,7 +47,7 @@ SETH is required for transaction gas fees. Follow these steps:
 
 A minimum of 100 SwanC (Swan Credit Token) is required as collateral. To obtain SwanC:
 
-1. Visit Swan Chain's faucet website: [faucet.swanchain.io](https://faucet.swanchain.io/)
+1. Visit Swan Chain's faucet website: [https://faucet.swanchain.io](https://faucet.swanchain.io/)
 2. Claim 25 SwanC per transaction
 3. Multiple claims are allowed, but each claim incurs a gas fee
 4. It's recommended to claim as much SwanC as possible in one go to ensure sufficient collateral for tasks
