@@ -35,7 +35,6 @@ Harness cutting-edge AI models to generate content and boost your creative proje
 * [**Stable Diffusion**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Stable-Diffusion-Base-LoRA/app): Transform text descriptions into stunning AI-generated images.
 * [**Text-to-Speech**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Text-to-Speech/app): Convert written text into natural-sounding speech effortlessly.
 * [**ComfyUI**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/ComfyUI/app): Streamline AI image generation with an intuitive graphical interface.
-* [**Llama2-13B-LLM-Chat LDL**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Llama2-13B-LLM-Chat/app)**:** Explore Meta’s latest large language models (LLM), which has wide applications and great influence.
 * [**Llama3-8B-LLM-Chat**](https://lagrangedao.org/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Llama3-8B-LLM-Chat/app)**:** Meta’s Llama 3, the next iteration of the open-access Llama family.
 
 #### **Gaming Spaces**&#x20;
