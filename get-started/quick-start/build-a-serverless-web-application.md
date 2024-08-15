@@ -28,9 +28,11 @@ Task is created through Swan Orchestrator to send appication deployment order to
 
 ```python
 result = orchestrator.create_task(
-    app_repo_image='Tetris',
+    app_repo_image='Llama3-8B-LLM-Chat',
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>',
+    hardware_id=13，
+    duration=172800
 )
 task_uuid = result['id']
 ```
@@ -225,11 +227,11 @@ print(result_url)
 Sample output:
 
 ```
-['https://m477nntm4f.dev2.crosschain.computer', 'https://aiuro3tlza.cp.filezoo.com.cn']
+[https://jpz44b3hmq.computing.filezoo.com.cn]
 ```
 
 If the job status becomes `Running`, the application can be accessed by the real url through web browser.
 
 Sample screenshot:
 
-<figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/llama3.png" alt=""><figcaption></figcaption></figure>
