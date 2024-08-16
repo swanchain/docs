@@ -32,7 +32,8 @@ result = orchestrator.create_task(
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>',
     hardware_id=13，
-    duration=172800
+    duration=172800,
+    auto_pay=True
 )
 task_uuid = result['id']
 ```
