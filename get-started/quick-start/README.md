@@ -8,7 +8,7 @@ description: Get started with Swan Chain
 Mainnet
 -------
 
-<table><thead><tr><th width="258">Network Name</th><th width="259">Swan Chain Mainnet</th><th>Ethereum Mainnet</th></tr></thead><tbody><tr><td>RPC URL</td><td><a href="https://mainnet-rpc01.swanchain.io">https://mainnet-rpc01.swanchain.io</a></td><td><a href="https://mainnet.infura.io/v3/">https://mainnet.infura.io/v3/</a></td></tr><tr><td>Chain ID</td><td>254</td><td>1</td></tr><tr><td>Currency Symbol</td><td>ETH</td><td>ETH</td></tr><tr><td>Block Explorer URL (Optional)</td><td><a href="https://swanscan.io/">https://swanscan.io</a></td><td><a href="https://etherscan.io/">https://etherscan.io</a></td></tr></tbody></table>
+<table><thead><tr><th width="258">Network Name</th><th width="259">Swan Chain Mainnet</th><th>Ethereum Mainnet</th></tr></thead><tbody><tr><td>RPC URL</td><td><a href="https://mainnet-rpc01.swanchain.io">https://mainnet-rpc01.swanchain.io</a></td><td><a href="https://mainnet.infura.io/v3/">https://mainnet.infura.io/v3/</a></td></tr><tr><td>Chain ID</td><td>254</td><td>1</td></tr><tr><td>Currency Symbol</td><td>ETH</td><td>ETH</td></tr><tr><td>Block Explorer URL (Optional)</td><td><a href="https://swanscan.io/">https://swanscan.io</a></td><td><a href="https://etherscan.io/">https://etherscan.io</a></td></tr><tr><td>Chainlist</td><td><a href="https://chainlist.org/chain/254">https://chainlist.org/chain/254</a></td><td><a href="https://chainlist.org/chain/1">https://chainlist.org/chain/1</a></td></tr></tbody></table>
 
 ## Testnet
 
@@ -18,23 +18,9 @@ Mainnet
 | Chain ID           | 20241133                                                                         | 2024                                                                           |
 | Currency Symbol    | ETH                                                                              | ETH                                                                            |
 | Block Explorer URL | [https://proxima-explorer.swanchain.io/](https://proxima-explorer.swanchain.io/) | [https://saturn-explorer.swanchain.io/](https://saturn-explorer.swanchain.io/) |
+| Chainlist          | [https://chainlist.org/chain/20241133](https://chainlist.org/chain/20241133)     | [https://chainlist.org/chain/2024](https://chainlist.org/chain/2024)           |
 
 
-
-Swan Chain Proxima Testnet Base Info
-
-* Network Name: Swan Chain Proxima
-* New RPC URL:[ ](https://mainnet-rpc01.swanchain.io)[https://rpc-proxima.swanchain.io](https://rpc-proxima.swanchain.io)
-* Chain ID: 20241133
-* Currency Symbol: ETH
-* Block Explorer URL: [https://proxima-explorer.swanchain.io/](https://proxima-explorer.swanchain.io/)
-
-## Swan Chain Saturn Testnet Base Info
-
-* RPC: [https://saturn-rpc.swanchain.io](https://saturn-rpc.swanchain.io)&#x20;
-* ChainID: 2024
-* Explorer: [https://saturn-explorer.swanchain.io](https://saturn-explorer.swanchain.io/)
-* Chainlist: [https://chainlist.org/chain/2024](https://chainlist.org/chain/2024)
 
 **I want to become a** ....
 
