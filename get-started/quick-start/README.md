@@ -14,7 +14,7 @@ Mainnet
 
 | Network Name       | Proxima  Sepolia                                                                 | Saturn Sepolia                                                                 |
 | ------------------ | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| RPC URL            | [ttps://rpc-proxima.swanchain.io](https://rpc-proxima.swanchain.io)              | [ttps://rpc-proxima.swanchain.io](https://rpc-proxima.swanchain.io)            |
+| RPC URL            | [https://rpc-proxima.swanchain.io](https://rpc-proxima.swanchain.io)             | [https://rpc-saturn.swanchain.io](https://rpc-saturn.swanchain.io)             |
 | Chain ID           | 20241133                                                                         | 2024                                                                           |
 | Currency Symbol    | ETH                                                                              | ETH                                                                            |
 | Block Explorer URL | [https://proxima-explorer.swanchain.io/](https://proxima-explorer.swanchain.io/) | [https://saturn-explorer.swanchain.io/](https://saturn-explorer.swanchain.io/) |
