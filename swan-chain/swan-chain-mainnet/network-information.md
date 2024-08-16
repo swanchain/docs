@@ -20,7 +20,7 @@ If the above Block Explorer fails, please try using this one:\
 * Network Name: Swan Chain Mainnet
 * New RPC URL:[ https://mainnet-rpc01.swanchain.io](https://mainnet-rpc01.swanchain.io)
 * Chain ID: 254
-* Currency Symbol: sETH
+* Currency Symbol: ETH
 * Block Explorer URL: [https://swanscan.io](https://swanscan.io/)
 
 <figure><img src="https://lh7-us.googleusercontent.com/docsz/AD_4nXcqP5AL9QXr18ymM644YJywG-0b3Q1x9pSSrmoKOriyfgAzPRpRcVGs6OPG54lrYmd-MfhJz9hYZ8VRRM6DoRHIZ96J-RKw4ZgYb26cqjCk5zGsnkFnzhMtoPPS3dUatOhNhDtWbE8cyK94Vp-NCHEXf7_x?key=PP4_jHREiRWUOtX6TLIS5g" alt=""><figcaption></figcaption></figure>
