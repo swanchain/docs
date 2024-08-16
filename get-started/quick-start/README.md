@@ -4,15 +4,24 @@ description: Get started with Swan Chain
 
 # Quick Start
 
-## Swan Chain Mainnet Base Info
+\
+Mainnet
+-------
 
-* Network Name: Swan Chain Mainnet
-* New RPC URL:[ https://mainnet-rpc01.swanchain.io](https://mainnet-rpc01.swanchain.io)
-* Chain ID: 254
-* Currency Symbol: ETH
-* Block Explorer URL: [https://swanscan.io](https://swanscan.io/)
+<table><thead><tr><th width="258">Network Name</th><th width="259">Swan Chain Mainnet</th><th>Ethereum Mainnet</th></tr></thead><tbody><tr><td>RPC URL</td><td><a href="https://mainnet-rpc01.swanchain.io">https://mainnet-rpc01.swanchain.io</a></td><td><a href="https://mainnet.infura.io/v3/">https://mainnet.infura.io/v3/</a></td></tr><tr><td>Chain ID</td><td>254</td><td>1</td></tr><tr><td>Currency Symbol</td><td>ETH</td><td>ETH</td></tr><tr><td>Block Explorer URL (Optional)</td><td><a href="https://swanscan.io/">https://swanscan.io</a></td><td><a href="https://etherscan.io/">https://etherscan.io</a></td></tr></tbody></table>
 
-## Swan Chain Proxima Testnet Base Info
+## Testnet
+
+| Network Name       | Proxima  Sepolia                                                                 | Saturn Sepolia                                                                 |
+| ------------------ | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| RPC URL            | [ttps://rpc-proxima.swanchain.io](https://rpc-proxima.swanchain.io)              | [ttps://rpc-proxima.swanchain.io](https://rpc-proxima.swanchain.io)            |
+| Chain ID           | 20241133                                                                         | 2024                                                                           |
+| Currency Symbol    | ETH                                                                              | ETH                                                                            |
+| Block Explorer URL | [https://proxima-explorer.swanchain.io/](https://proxima-explorer.swanchain.io/) | [https://saturn-explorer.swanchain.io/](https://saturn-explorer.swanchain.io/) |
+
+
+
+Swan Chain Proxima Testnet Base Info
 
 * Network Name: Swan Chain Proxima
 * New RPC URL:[ ](https://mainnet-rpc01.swanchain.io)[https://rpc-proxima.swanchain.io](https://rpc-proxima.swanchain.io)
