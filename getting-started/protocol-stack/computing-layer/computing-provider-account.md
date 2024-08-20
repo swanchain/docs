@@ -21,7 +21,7 @@ The contract account provides a range of functions, including ownership manageme
 To ensure the security of the CP Account, the roles are categorised into:
 
 * **Owner**: Manages the CP Account and has permission to change account information such as multi-addresses, worker address, and beneficiary address. The private key of the owner's address does not need to be present on the server for security reasons.
-* **Worker**: This address is used for submitting task results and needs to be funded with a certain amount of sETH to pay for gas fees.
+* **Worker**: This address is used for submitting task results and needs to be funded with a certain amount of ETH to pay for gas fees.
 * **Beneficiary**: This address receives all earnings from the CP Account and is solely used for receiving funds. For security purposes, the private key of the beneficiary's address should not be stored on the server to maintain isolation.
 
 #### Event Mechanism

@@ -17,7 +17,7 @@
 ### Table of Content:
 
 * [Initial Setup](ecp-funding-operations-guide.md#id-1.-initial-setup)
-  * [Obtaining SETH for Gas Fees ](ecp-funding-operations-guide.md#id-1.1-obtaining-seth-for-gas-fees)
+  * [Obtaining ETH for Gas Fees ](ecp-funding-operations-guide.md#id-1.1-obtaining-eth-for-gas-fees)
   * [Obtaining SwanC for Collateral](ecp-funding-operations-guide.md#id-1.2-obtaining-swanc-for-collateral)
 * [Account Setup](ecp-funding-operations-guide.md#id-2.-account-setup)
 * [Configuring Sequencer (Recommended)](ecp-funding-operations-guide.md#id-3.-configuring-sequencer-recommended)
@@ -35,13 +35,13 @@
 
 ### 1. Initial Setup
 
-#### 1.1 Obtaining SETH for Gas Fees
+#### 1.1 Obtaining ETH for Gas Fees
 
-SETH is required for transaction gas fees. Follow these steps:
+ETH is required for transaction gas fees. Follow these steps:
 
 1. Visit Swan Chain's official bridge website:[ https://bridge.swanchain.io](https://bridge.swanchain.io)
-2. Cross-chain your ETH to Swan Chain to obtain SETH
-3. Prepare sufficient SETH to account for potential fluctuations in network gas fees
+2. Cross-chain your ETH to Swan Chain to obtain ETH
+3. Prepare sufficient ETH to account for potential fluctuations in network gas fees
 
 #### 1.2 Obtaining SwanC for Collateral
 
@@ -77,7 +77,7 @@ _Note: ECPs can submit proofs in two ways:_
 
 #### 3.2 Funding the Sequencer Account
 
-When using the sequencer, pre-fund the CP's sequencer account with SETH. Each task requires 0.00001 ETH as gas:
+When using the sequencer, pre-fund the CP's sequencer account with ETH on Swan Chain. Each task requires 0.00001 ETH as gas:
 
 ```
 computing-provider sequencer add --from <WALLET_ADDRESS> --account <CP_ACCOUNT> <Amount>

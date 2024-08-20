@@ -18,8 +18,8 @@ After completing the entire “Planet” Testnet series, we will launch the main
 
 Swan Chain has launched its native bridge on the network. Here's how it works:
 
-* Deposit: Transfer ETH from Ethereum to sETH on Swan Chain
-* Withdraw: Transfer sETH from Swan Chain to ETH on Ethereum.&#x20;
+* Deposit: Transfer ETH from Ethereum to ETH on Swan Chain
+* Withdraw: Transfer ETH from Swan Chain to ETH on Ethereum.&#x20;
 
 Users can access Swan Chain's Official Bridge here: [https://bridge.swanchain.io/](https://bridge.swanchain.io/)
 

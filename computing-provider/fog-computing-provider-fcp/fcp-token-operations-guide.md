@@ -6,13 +6,13 @@ This guide provides detailed instructions on how to manage token-related operati
 
 ### 1. Preparation
 
-#### 1.1 Obtaining SETH for Gas Fees
+#### 1.1 Obtaining ETH for Gas Fees
 
-FCP requires `SETH` as transaction gas fees. Follow these steps to get `SETH`:
+FCP requires `ETH` as transaction gas fees. Follow these steps to get `ETH`:
 
 * Visit Swan Chain's official bridge website: [bridge.swanchain.io](https://bridge.swanchain.io)
-* Cross-chain your `ETH` to Swan Chain to get `SETH`.
-* It is recommended to prepare enough `SETH` to account for fluctuations in network gas fees.
+* Cross-chain your `ETH` to Swan Chain to get `Swan ETH`.
+* It is recommended to prepare enough `ETH` to account for fluctuations in network gas fees.
 
 #### 1.2 Obtaining SwanC for Collateral
 
@@ -84,7 +84,7 @@ FCP requires `SwanC` (Swan Credit Token) as collateral. Follow these steps to ob
 
 ### 4. Important Notes
 
-* Always ensure you have enough `SETH` for gas fees.
+* Always ensure you have enough `ETH` for gas fees.
 * Maintain sufficient `SwanC` collateral to continuously receive and complete tasks.
 * Stay updated with platform announcements to be aware of the latest changes in collateral and reward policies.
 * If you encounter any issues, join the official [Discord](https://discord.com/invite/swanchain) community for support or open a ticket for 1-on-1 assistance.

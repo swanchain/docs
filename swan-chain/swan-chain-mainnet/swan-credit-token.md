@@ -4,7 +4,7 @@
 
 **Gas Fees:**
 
-* Gas fees are transaction fees required to execute a transaction. These vary by blockchain. For Swan Chain transactions, sETH is required.
+* Gas fees are transaction fees required to execute a transaction. These vary by blockchain. For Swan Chain transactions, ETH is required.
 
 **Payment to Computing Providers:**
 

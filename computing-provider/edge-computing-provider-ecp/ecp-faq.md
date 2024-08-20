@@ -67,7 +67,7 @@ out:
 **A:** These are three different types of accounts used in the system for security and separation of concerns:
 
 * `ownerAddress`: This is the owner account of the CP account. The owner has permission to change account information such as the multi-address, worker address, and beneficiary address. In most situations, the private key of the `ownerAddress` does not need to be present on the server for security reasons.
-* `workerAddress`: This is the actual working address used for submitting proofs (`submitProof`). It needs to be funded with a certain amount of sETH to pay for gas fees when submitting proofs.
+* `workerAddress`: This is the actual working address used for submitting proofs (`submitProof`). It needs to be funded with a certain amount of ETH to pay for gas fees when submitting proofs.
 * `beneficiaryAddress`: This is the address where all earnings from the CP account will be sent. It is solely used for receiving funds. For security purposes, the private key of the `beneficiaryAddress` should not be stored on the server to maintain isolation.
 
 By separating these accounts, the system ensures that only the necessary `workerAddress` private key is present on the server, while the more sensitive `ownerAddress` and `beneficiaryAddress` private keys are kept separate, enhancing the overall security of the system.
