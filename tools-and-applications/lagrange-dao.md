@@ -2,11 +2,11 @@
 description: Web3 HuggingFace
 ---
 
-# Lagrange Computer
+# Lagrange
 
-[Lagrange Computer](https://lagrange.computer) is a decentralized Web3 platform for natural language processing (NLP) development and deployment, built on Swan Chain computing network. It aims to provide a more cost-effective, secure, and interoperable alternative to centralized cloud services like AWS.&#x20;
+[Lagrange](https://lagrange.computer) is a decentralized Web3 platform for natural language processing (NLP) development and deployment, built on Swan Chain computing network. It aims to provide a more cost-effective, secure, and interoperable alternative to centralized cloud services like AWS.&#x20;
 
-Lagrange Computer serves as a decentralized version of Hugging Face, leveraging the decentralized computing resources from Swan Chain and utilizing multichain.storage as the decentralized storage layer to ensure the persistence of important data.
+Lagrange serves as a decentralized version of Hugging Face, leveraging the decentralized computing resources from Swan Chain and utilizing multichain.storage as the decentralized storage layer to ensure the persistence of important data.
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -18,7 +18,7 @@ _Learn more about Lagrange in_[ _its documentation_](https://docs.lagrangedao.or
 
 [Lagrange](https://lagrange.computer) leverages the advantages of [Swan Chain](https://swanchain.io/), such as:
 
-* **Cost-Effective:** By utilizing decentralized resources, Lagrange Computer reduces operational costs compared to traditional cloud services.
+* **Cost-Effective:** By utilizing decentralized resources, Lagrange reduces operational costs compared to traditional cloud services.
 * **Security:** Ensures data integrity and security through decentralized storage and processing.
 * **Interoperability:** Compatible with various blockchain networks and computing providers, enhancing flexibility and scalability.
 * **Efficiency:** Facilitates efficient NLP model training and deployment using distributed computing power.
