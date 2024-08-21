@@ -39,7 +39,7 @@
 * [Quick Start](get-started/quick-start/README.md)
   * [Deploying Your First Smart Contract with Remix](get-started/quick-start/deploying-your-first-smart-contract-with-remix.md)
   * [Interacting with Smart Contract on Swan Chain Using Go](get-started/quick-start/interacting-with-smart-contract-on-swan-chain-using-go.md)
-  * [Setting Up Your Swan  Environment](get-started/quick-start/setting-up-your-swan-environment.md)
+  * [Setting Up Your Swan Environment](get-started/quick-start/setting-up-your-swan-environment.md)
   * [Build a Basic Web Application](get-started/quick-start/build-a-serverless-web-application.md)
   * [Deploy deep learning container images](get-started/quick-start/deploy-deep-learning-container-images.md)
   * [Store and Retrieve a File with Swan Storage](get-started/quick-start/store-and-retrieve-a-file-with-swan-storage/README.md)
@@ -84,7 +84,7 @@
 
 ## Tools and Applications
 
-* [Lagrange Computer](tools-and-applications/lagrange-dao.md)
+* [Lagrange](tools-and-applications/lagrange-dao.md)
 * [Multi-Chain Storage](tools-and-applications/multi-chain-storage.md)
 * [Swan SDK](tools-and-applications/swan-sdk.md)
 * [Nebula Block Cloud](tools-and-applications/nebula-block-cloud.md)
