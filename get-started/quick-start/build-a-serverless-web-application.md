@@ -28,7 +28,8 @@ Here, we deploy a ChainNode application with a free configuration and a one-day 
 result = swan_orchestrator.create_task(
     repo_uri='https://github.com/swanchain/awesome-swanchain/tree/main/ChainNode',
     wallet_address='<WALLET_ADDRESS>',
-    private_key='<PRIVATE_KEY>'
+    private_key='<PRIVATE_KEY>',
+    auto_pay=True
 )
 task_uuid = result['id']
 ```
