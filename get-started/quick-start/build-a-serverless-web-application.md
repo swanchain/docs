@@ -5,7 +5,7 @@ In this tutorial, you will learn how to deploy a simple web application on the d
 **Prerequisites**:
 
 * A Swan API Key: If you do not have one, follow the [Setting Up Your Swan Environment](../quick-start/setting-up-your-swan-environment.md) tutorial.
-* Python (version 3.8 or later) and `web3.py` (version 6.15 or later) installed in your environment.
+* Python (version 3.8 or later) and `pip install web3>=6.15` (version 6.15 or later) installed in your environment.
 
 #### 1. Log in to Orchestrator via SDK
 

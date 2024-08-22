@@ -29,4 +29,4 @@ You can install the Swan SDK using one of the following methods:
   git clone https://github.com/swanchain/python-swan-sdk.git
   ```
 
-**Note**: Ensure that `web3.py` version 6.15 or later is installed to avoid potential errors.
+**Note**: Ensure that `web3.py` version 6.15 or later is installed to avoid potential errors. (```bash pip install web3>=6.15```)
