@@ -34,16 +34,16 @@ Here’s a basic example to help you get started with the Swan SDK:
 import os
 import swan
 
-orchestrator = swan.resource(api_key='<SWAN_API_KEY>', service_name='Orchestrator')
+swan_orchestrator = swan.resource(api_key='<SWAN_API_KEY>', service_name='Orchestrator')
 
-result = orchestrator.create_task(
+result = swan_orchestrator.create_task(
     app_repo_image='hello-world',
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>',
 )
 task_uuid = result['id']
 # Get task info
-task_info = orchestrator.get_deployment_info(task_uuid=task_uuid)
+task_info = swan_orchestrator.get_deployment_info(task_uuid=task_uuid)
 print(task_info)
 ```
 

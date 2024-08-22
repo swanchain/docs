@@ -76,7 +76,7 @@ if you see the deployment information like this, your environment is set up corr
 ```
 **Optional**: You can now run this code to check the status of your deployment.
 ```Python
-result_url = orchestrator.get_real_url(task_uuid)
+result_url = swan_orchestrator.get_real_url(task_uuid)
     print(result_url)
 ```
 you can click the url to see the result.
