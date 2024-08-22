@@ -1,22 +1,32 @@
-# Setting Up Your Swan  Environment
+### 1. Setting Up Your Swan Environment
 
-In this part, you will set up your SWAN account and development environment. This will allow you to interact with your SWAN account and Orchestrator backends.
+In this tutorial, you will set up your SWAN account and development environment, allowing you to interact with your SWAN account and the Orchestrator backend.
 
-### Steps:
+#### Steps:
 
-*   Get API Key
+* **Obtain an API Key**:
+    * Open the [SWAN dashboard](https://orchestrator.swanchain.io/provider-status).
+    * Connect your wallet using your preferred tool.
+    * Retrieve your API Key:
+        - After signing in, click on the profile icon and select "Show API Key".
 
-    * Open [SWAN dashboard](https://orchestrator.swanchain.io/provider-status)
-    * Connect Wallet. Use your preferred tool to login in your wallet.
-    * Get API Key. After signed in, click on the profile icon, choose "Show API-Key".
+        <figure><img src="../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
 
-    <figure><img src="../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
+        - Click "New API Key" to generate a new key, which will appear in the list.
 
-    * Click "New API Key", you will see an API Key shown in the list.
+        <figure><img src="../../.gitbook/assets/login-api-key-2.png" alt=""><figcaption></figcaption></figure>
 
+#### Install Swan SDK
 
+You can install the Swan SDK using one of the following methods:
 
-    <figure><img src="../../.gitbook/assets/login-api-key-2.png" alt=""><figcaption></figcaption></figure>
-* Install SDK ([Swan SDK GitHub Repo](https://github.com/swanchain/python-swan-sdk/tree/main))
-  * Install via PyPI: `pip install swan-sdk`
-  * Or clone from GitHub: `git clone https://github.com/swanchain/python-swan-sdk.git`
+- **Via PyPI**:
+  ```bash
+  pip install swan-sdk
+  ```
+- **From GitHub**:
+  ```bash
+  git clone https://github.com/swanchain/python-swan-sdk.git
+  ```
+
+**Note**: Ensure that `web3.py` version 6.15 or later is installed to avoid potential errors.
