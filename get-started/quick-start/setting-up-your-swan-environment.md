@@ -40,6 +40,7 @@ You can test your environment by running the following code snippet:
 
 ```python
 import swan
+import json
 swan_orchestrator = swan.resource(api_key="<your_api_key>", network='mainnet', service_name='Orchestrator')
 result = swan_orchestrator.create_task(
     app_repo_image='hello_world',
@@ -48,7 +49,7 @@ result = swan_orchestrator.create_task(
 )
 task_uuid = result['id']
 task_info = swan_orchestrator.get_deployment_info(task_uuid=task_uuid)
-print(task_info)
+print(json.dumps(task_info, indent=2))
 ```
 if you see the deployment information like this, your environment is set up correctly:
 ```json

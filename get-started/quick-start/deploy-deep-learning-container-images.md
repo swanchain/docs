@@ -16,6 +16,7 @@ Before starting, ensure you have completed the following tutorials:
 
 ```python
 import swan
+import json
 swan_orchestrator = swan.resource(api_key="<your_api_key>", network='mainnet', service_name='Orchestrator')
 ```
 
@@ -51,7 +52,7 @@ After obtaining the task UUID, track the deployment result using the Orchestrato
 
 ```python
 task_info = swan_orchestrator.get_deployment_info(task_uuid=task_uuid)
-print(task_info)
+print(json.dumps(task_info, indent=2))
 ```
 
 <details>

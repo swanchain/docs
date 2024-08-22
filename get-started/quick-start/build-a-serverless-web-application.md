@@ -15,6 +15,7 @@ To use `swan-sdk`, log in to Orchestrator with your API Key. (Wallet login is no
 
 ```python
 import swan
+import json
 swan_orchestrator = swan.resource(api_key="<your_api_key>", network='mainnet', service_name='Orchestrator')
 ```
 
@@ -41,7 +42,7 @@ After obtaining the task UUID from the previous step, you can track the deployme
 
 ```python
 task_info = swan_orchestrator.get_deployment_info(task_uuid=task_uuid)
-print(task_info)
+print(json.dumps(task_info, indent=2))
 ```
 
 <details>
