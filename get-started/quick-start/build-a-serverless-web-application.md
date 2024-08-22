@@ -22,6 +22,8 @@ A task is created through Swan Orchestrator to send deployment orders to the dis
 
 Here, we deploy a ChainNode application with a free configuration and a one-day duration (these settings are the default).
 
+**Notes**: Even it's a free configuration, you still need to have sufficient ETH in your wallet to pay for the gas fee. Click [swan bridge](https://superbridge.app/swan-chain) to bridge the ETH.
+
 ```python
 result = swan_orchestrator.create_task(
     app_repo_image='ChainNode',

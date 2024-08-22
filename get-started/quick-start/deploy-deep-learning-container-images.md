@@ -28,6 +28,8 @@ A task is created through Swan Orchestrator to deploy the application on the dis
   print(json.dumps(available_hardware, indent=2))
   ```
 - The `auto_pay` parameter is set to `True`, meaning the SDK will automatically deduct SwanCreditToken from your wallet address. Ensure you have sufficient ETH for gas and SwanCreditToken in your wallet.
+- [Bridge to get the gas](https://superbridge.app/swan-chain)
+- [Faucet to get the SwanCreditToken](https://faucet.swanchain.io/)
 
 ```python
 result = swan_orchestrator.create_task(
