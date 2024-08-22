@@ -18,7 +18,7 @@ swan_orchestrator = swan.resource(api_key="<your_api_key>", network='mainnet', s
 
 #### 2. Create a Task
 
-A task is created through Swan Orchestrator to send deployment orders to the distributed computing provider network. In this simplified example, the `auto_pay` option is enabled by default. 
+A task is created through Swan Orchestrator to send deployment orders to the distributed computing provider network. 
 
 Here, we deploy a ChainNode application with a free configuration and a one-day duration (these settings are the default).
 

@@ -22,7 +22,7 @@ swan_orchestrator = swan.resource(api_key="<your_api_key>", network='mainnet', s
 A task is created through Swan Orchestrator to deploy the application on the distributed computing provider network.
 
 **Notes**:
-- Here, `hardware_id` is set to 13, which corresponds to GPU hardware type (NVIDIA 3080). To check the hardware ID for other hardware types, use:
+- **Optional**: Here, `hardware_id` is set to 13, which corresponds to GPU hardware type (NVIDIA 3080). To check the hardware ID for other hardware types, use:
   ```python
   available_hardware = orchestrator.get_hardware_config()
   print(json.dumps(available_hardware, indent=2))
