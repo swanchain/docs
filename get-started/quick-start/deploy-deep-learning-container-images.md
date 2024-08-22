@@ -2,6 +2,8 @@
 
 In this tutorial, you will learn how to deploy a Llama3 application with just a few lines of code.
 
+**Note** : [Click here to see the full demo code](https://github.com/swanchain/python-swan-sdk/blob/main/examples/ex2_modelapp.py)
+
 **Prerequisites**:
 
 Before starting, ensure you have completed the following tutorials:

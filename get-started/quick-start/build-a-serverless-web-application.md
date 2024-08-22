@@ -6,7 +6,9 @@ In this tutorial, you will learn how to deploy a simple web application on the d
 
 * A Swan API Key: If you do not have one, follow the [Setting Up Your Swan Environment](../quick-start/setting-up-your-swan-environment.md) tutorial.
 * Python (version 3.8 or later) and `pip install web3>=6.15` (version 6.15 or later) installed in your environment.
+* **Optional** A repo containing the application code. For this tutorial, we will use the ChainNode application from the [SwanChain Official GitHub repository](https://github.com/swanchain/awesome-swanchain/tree/main/ChainNode)
 
+**Note** : [Click here to see the full demo code](https://github.com/swanchain/python-swan-sdk/blob/main/examples/ex1_webapp.py)
 #### 1. Log in to Orchestrator via SDK
 
 To use `swan-sdk`, log in to Orchestrator with your API Key. (Wallet login is not supported.)
@@ -270,7 +272,7 @@ print(result_url)
 Sample output:
 
 ```
-[https://ds4556zqav.pvm.nebulablock.com']
+['https://1cesbzlmow.cp.altafser.com', 'https://7h8g16arc1.1.3242.cn', 'https://v20bdns36f.1.3242.cn']
 ```
 
 Once the job status is `Running`, you can access the application via the URL in your web browser.
