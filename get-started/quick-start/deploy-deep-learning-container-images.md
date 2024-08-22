@@ -33,7 +33,7 @@ A task is created through Swan Orchestrator to deploy the application on the dis
 
 ```python
 result = swan_orchestrator.create_task(
-    app_repo_image='Llama3-8B-LLM-Chat',
+    repo_uri='https://github.com/swanchain/awesome-swanchain/tree/main/Llama3-8B-LLM-Chat',
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>',
     hardware_id=13,

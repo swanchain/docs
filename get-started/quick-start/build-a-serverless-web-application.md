@@ -26,7 +26,7 @@ Here, we deploy a ChainNode application with a free configuration and a one-day 
 
 ```python
 result = swan_orchestrator.create_task(
-    app_repo_image='ChainNode',
+    repo_uri='https://github.com/swanchain/awesome-swanchain/tree/main/ChainNode',
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>'
 )
