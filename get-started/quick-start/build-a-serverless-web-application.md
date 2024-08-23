@@ -1,4 +1,4 @@
-### 2. Build a Serverless Web Application which can called by APIs
+### 2. Build a Basic Serverless Web Application which can called by APIs
 
 In this tutorial, you will learn how to deploy a Serverless Web Application which can called by APIs using Swan SDK.
 
@@ -6,7 +6,7 @@ In this tutorial, you will learn how to deploy a Serverless Web Application whic
 
 * A Swan API Key: If you do not have one, follow the [Setting Up Your Swan Environment](../quick-start/setting-up-your-swan-environment.md) tutorial.
 * Python (version 3.8 or later) and `pip install web3>=6.15` (version 6.15 or later) installed in your environment.
-* **Optional** A repo containing the application code. For this tutorial, we will use a script build by Swan[SwanChain Official GitHub repository](https://github.com/swanchain/awesome-swanchain/tree/main/serverless-api)
+* **Optional** A repo containing the application code. For this tutorial, we will use a script build by Swan [SwanChain Official GitHub repository](https://github.com/swanchain/awesome-swanchain/tree/main/serverless-api)
 
 [//]: # (**Note** : [Click here to see the full demo code]&#40;https://github.com/swanchain/python-swan-sdk/blob/main/examples/ex3_webapp.py&#41;)
 #### 1. Log in to Orchestrator via SDK
