@@ -73,24 +73,22 @@ if you see the deployment information like this, your environment is set up corr
 ```json
 
 {
-   "data":{
-      "computing_providers":[
-        ...
-      ],
-      "jobs":[
-         ...
-      ],
-      "task":{
-         ...
-            },
-            "space":{
-               ...
-               },
-     ...
-      }
-   },
-   "message":"fetch task info for task_uuid='dfb9c94a-dcb1-4b92-a54b-046ea7d745cc' successfully",
-   "status":"success"
+  "data":{
+    "computing_providers":[
+      ...
+    ],
+    "jobs":[
+      ...
+    ],
+    "task":{
+      ...
+    },
+    "space":{
+      ...
+    }
+  },
+  "message":"fetch task info for task_uuid='dfb9c94a-dcb1-4b92-a54b-046ea7d745cc' successfully",
+  "status":"success"
 }
 ```
 ### Check Status(Optional)
