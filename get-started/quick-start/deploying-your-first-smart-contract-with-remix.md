@@ -47,7 +47,7 @@ Remix automatically compiles the contract when saved. Ensure there are no compil
 
 **7.Initiate Deployment:** Click "Deploy" and confirm the MetaMask transaction.
 
-<figure><img src="https://lh7-us.googleusercontent.com/r6Rtz_opxsWjqfjo9gXDefnvUXo0uPxgXuMgr8GuwdhCCMfERoV8A66FS6j5Kn0VUeSqsyUzLiT51Jp60MLv8OPsNaUuBt5GoucS-EdaU2o6HZRhJc5-aYEizH0SMgwGoSzOs-3a-e6QC4We0A5PEAk" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
 
 **8.Interact With Your Contract:**
 
@@ -70,5 +70,3 @@ Click the blue "readMessage" button to read the on-chain message.
 <figure><img src="https://lh7-us.googleusercontent.com/Og4j16JQNEGhVqxe0p_t9B4prneNgTh_SxOr0g3hOU8q_uZ_7eUxCYIf6nj1LSGxQ4_Is3p_lE3IVGV7qLarKK9c9xZo93LBdep6PmKfsy_MHzJrB5o8XBfnw5e1A__F55nqaKJ-_VCsRyZmO-IGqG0" alt=""><figcaption></figcaption></figure>
 
 Now you've successfully deployed and interacted with your first smart contract using Remix and MetaMask.
-
-{% embed url="https://www.youtube.com/watch?time_continue=15&v=pwDs_il-2U0&embeds_referring_euri=https%3A%2F%2Fcdn.iframe.ly%2F&source_ve_path=Mjg2NjMsMjg2NjY&feature=emb_logo" %}

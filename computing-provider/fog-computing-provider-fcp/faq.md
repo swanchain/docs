@@ -4,7 +4,7 @@
 
 **A:**
 
-The latest version is [v0.6.2](https://github.com/swanchain/go-computing-provider/blob/release-v0.6.2/README.md)
+The latest version is [v0.6.4](https://github.com/swanchain/go-computing-provider/blob/release-v0.6.4/README.md)
 
 Check the dashboard here : [https://orchestrator.swanchain.io/provider-status](https://orchestrator.swanchain.io/provider-status)
 
@@ -248,7 +248,7 @@ spec:
     spec:
       containers:
       - name: resource-exporter
-        image: filswan/resource-exporter:v11.2.8
+        image: filswan/resource-exporter:v11.2.9
         imagePullPolicy: IfNotPresent
         securityContext:
           privileged: true
@@ -264,7 +264,7 @@ kubectl describe po -n kube-system resource-exporter-ds | grep "Image:"
 It should display:
 
 ```
-Image:          filswan/resource-exporter:v11.2.8
+Image:          filswan/resource-exporter:v11.2.9
 ```
 
 Ensure the `resource-exporter` is running by executing:
