@@ -26,6 +26,8 @@ Main-net too costly? Just want to do initial testing? No problem! Swan Testnet i
 #### Install Swan SDK
 
 You can install the Swan SDK using one of the following methods:
+###### **Note**: Make sure you are installing the latest version of the SDK, Current version is: [![PyPI version](https://img.shields.io/pypi/v/swan-sdk)](https://pypi.org/project/swan-sdk/)
+
 
 - **Via PyPI (Recommended)**:
   ```bash
