@@ -20,7 +20,7 @@ Main-net too costly? Just want to do initial testing? No problem! Swan Testnet i
             <figure><img src="../../.gitbook/assets/login-api-key-2.png" alt=""><figcaption></figcaption></figure>
 
         - Go to [Bridge](https://superbridge.app/swan-chain) to get gas
-            <figure><img src="../../.gitbook/assets/bridge-test.png" alt=""><figcaption></figcaption></figure>
+            <figure><img src="../../.gitbook/assets/Bridge-test.png" alt=""><figcaption></figcaption></figure>
         - Go to our [discord channel](https://discord.com/invite/swanchain) to get the SwanToken for testnet
 
 #### Install Swan SDK
