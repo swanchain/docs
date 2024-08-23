@@ -8,7 +8,7 @@ In this tutorial, you will learn how to deploy a Serverless Web Application whic
 * Python (version 3.8 or later) and `pip install web3>=6.15` (version 6.15 or later) installed in your environment.
 * **Optional** A repo containing the application code. For this tutorial, we will use the ChainNode application from the [SwanChain Official GitHub repository](https://github.com/swanchain/awesome-swanchain/tree/main/ChainNode)
 
-**Note** : [Click here to see the full demo code](https://github.com/swanchain/python-swan-sdk/blob/main/examples/ex3_webapp.py)
+[//]: # (**Note** : [Click here to see the full demo code]&#40;https://github.com/swanchain/python-swan-sdk/blob/main/examples/ex3_webapp.py&#41;)
 #### 1. Log in to Orchestrator via SDK
 
 To use `swan-sdk`, log in to Orchestrator with your API Key. (Wallet login is not supported.)
