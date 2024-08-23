@@ -2,24 +2,20 @@
 
 Welcome to the Swan Chain Mainnet! Concluding the legacy of our successful "Planet" testnet series — Lagrange Mars, Swan Jupiter, Swan Saturn, and Proxima Tesnets, this new chapter of Swan Chain introduces a new era with enhanced functionalities in AI, Data, and more rewards for computing providers, dApp developers, and AI enthusiasts.
 
-{% hint style="info" %}
-_**Please read the "**_[_**Getting Started Guide**_](swan-credit-token.md)_**" before you begin exploring the Swan Chain Mainnet.**_
-{% endhint %}
-
 ***
 
 ## Technical Feature Updates
 
 After completing the entire “Planet” Testnet series, we will launch the mainnet. This is an important step in realizing our vision of becoming a toolset for AI Blockchain. We have updated the mainnet with several new features, including:
 
-<figure><img src="../../.gitbook/assets/MicrosoftTeams-image (8).png" alt=""><figcaption><p>Swan Chain Mainnet Technical Updates </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MicrosoftTeams-image (8).png" alt=""><figcaption><p>Swan Chain Mainnet Technical Updates</p></figcaption></figure>
 
 ### **Bridge**
 
 Swan Chain has launched its native bridge on the network. Here's how it works:
 
 * Deposit: Transfer ETH from Ethereum to ETH on Swan Chain
-* Withdraw: Transfer ETH from Swan Chain to ETH on Ethereum.&#x20;
+* Withdraw: Transfer ETH from Swan Chain to ETH on Ethereum.
 
 Users can access Swan Chain's Official Bridge here: [https://bridge.swanchain.io/](https://bridge.swanchain.io/)
 
@@ -41,7 +37,7 @@ If you have participated in Swan Chain as a Computing Provider, you may already 
 * A map showing the number of Computing Providers worldwide
 * Statistics on the number of active Providers
 
-For more information, users can visit the website: [https://orchestrator.swanchain.io/provider-status](https://orchestrator.swanchain.io/provider-status)&#x20;
+For more information, users can visit the website: [https://orchestrator.swanchain.io/provider-status](https://orchestrator.swanchain.io/provider-status)
 
 ### **Faucet**
 
@@ -53,13 +49,13 @@ Note: The test token for the mainnet (SWAN Credit) is not connected to the rewar
 
 ### **Explorer**
 
-In the mainnet phase, we will update the UI/UX of the old explorer website to a new, more user-friendly design. The new site will offer faster and more accurate updates, making it easier for users, developers, and computing providers to track Swan Chain's on-chain metric.&#x20;
+In the mainnet phase, we will update the UI/UX of the old explorer website to a new, more user-friendly design. The new site will offer faster and more accurate updates, making it easier for users, developers, and computing providers to track Swan Chain's on-chain metric.
 
-Here is the new Swan Explorer: [https://mainnet-explorer.swanchain.io](https://mainnet-explorer.swanchain.io) or [https://swanscan.io/ ](https://swanscan.io/)
+Here is the new Swan Explorer: [https://mainnet-explorer.swanchain.io](https://mainnet-explorer.swanchain.io) or [https://swanscan.io/](https://swanscan.io/)
 
 ***
 
 ## Series of Events in Campaign
 
-1. [**Computing Provider Program**](swan-provider-campaign/)**:** Boost our computational resources with diverse providers from fog to edge computing.&#x20;
+1. [**Computing Provider Program**](swan-provider-campaign/)**:** Boost our computational resources with diverse providers from fog to edge computing.
 2. **Social Engagement Mission:** Participate in interactive social challenges on [Swan Galxe Campaign](galxe-campaign.md) and [Swan Mainnet Mission](swan-chain-mission.md) to earn massive rewards.
