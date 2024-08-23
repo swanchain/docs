@@ -60,8 +60,6 @@ out:
 }
 ```
 
-
-
 #### **Q: What are `ownerAddress`, `workerAddress`, and `beneficiaryAddress`?**
 
 **A:** These are three different types of accounts used in the system for security and separation of concerns:
@@ -74,7 +72,7 @@ By separating these accounts, the system ensures that only the necessary `worker
 
 #### **Q: How do I update the resource-exporter in ECP?**
 
-**A:**&#x20;
+**A:**
 
 Step 1: Stop the computing-provider process.
 
@@ -82,7 +80,7 @@ Step 2: Execute the following commands:
 
 ```bash
 docker rm -f resource-exporter
-docker rmi filswan/resource-exporter:v11.2.8
+docker rmi filswan/resource-exporter:v11.2.9
 ```
 
 Step 3: Restart the computing-provider process.

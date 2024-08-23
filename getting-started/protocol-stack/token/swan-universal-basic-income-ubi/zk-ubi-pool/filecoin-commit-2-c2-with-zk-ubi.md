@@ -11,12 +11,12 @@ Swan's ZK-UBI mechanism incorporates such heavy workloads into an incentive desi
 
 **Receiving ZK-Tasks**
 
-Computing providers on Swan can following this [guide](broken-reference) to configure themselves to receive and process outsourced Filecoin C2 sector sealing tasks.
+Computing providers on Swan can following [this guide ](../../../../../computing-provider/edge-computing-provider-ecp/ecp-setup.md)to configure themselves to receive and process outsourced Filecoin C2 sector sealing tasks.
 
 Once set up, suitable C2 tasks get automatically assigned based on provider declared capacity.
 
 **Contributing ZK-proof Workloads**
 
-For Storage Providers interested in contributing tasks to this pool, please refer to this page: Contribute to ZK-UBI Task
+For Storage Providers interested in contributing tasks to this pool, please refer to this page: [Contribute to ZK-UBI Task](../../../../../market-provider/web3-zk-computing-market/contribute-zk-ubi-task/)
 
 If you have an independent zero-knowledge proof system that requires robust computational support from the Swan Network, you can directly apply for our DevGrant [here](https://github.com/swanchain/devgrants/issues/new/choose).\

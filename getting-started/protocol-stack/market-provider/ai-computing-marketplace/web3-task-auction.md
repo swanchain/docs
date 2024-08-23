@@ -18,5 +18,3 @@ The use of blockchain technology in a Web3 computing and storage bid market prov
 4. Lower transaction fees: Since there are no intermediaries involved, the transaction fees on a Web3 computing and storage bid market are typically lower than those of traditional marketplaces.
 
 Swan bidding market is built on the Filecoin blockchain. Swan provides a platform where users can rent computing power to complete tasks, such as rendering 3D graphics or machine learning algorithms. Users can also rent storage space to store their data. Swan uses a decentralized network of nodes to provide these services, and users can earn cryptocurrency by renting out their computing or storage resources. Swan also provides a matchmaking system that connects users with the computing and storage resources they need.
-
-To get started with Orchestrator, click [here](broken-reference).&#x20;

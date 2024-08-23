@@ -2,9 +2,11 @@
 
 **Prerequisites :**
 
-* **SwanETH**
-  * Ensure that you have sufficient SwanETH for collateral.&#x20;
-  * You can obtain SwanETH following this [guide](../../swan-chain/swan-saturn-testnet/before-you-get-started/claim-faucet-tokens.md) and [bridge](../../swan-chain/swan-saturn-testnet/before-you-get-started/bridge-tokens.md) them from Sepolia to Swan Saturn Chain
+* **ETH**
+  * Ensure that you have sufficient ETH for gas fee.&#x20;
+    * You can bridge ETH from Etherum to Swan Chain by visiting [https://bridge.swanchain.io](https://bridge.swanchain.io/).
+  * Ensure that you have sufficient Swan Credit Token (SWANC) for collateral.
+    * You can obtain SWANC by following this [guide](../../swan-chain/swan-chain-mainnet/swan-credit-token.md).
 * **Obtain Filecoin V28 Parameters (optional)**
   * To complete UBI tasks, you need to have the Filecoin V28 parameters.&#x20;
   * Make sure you have the parameters corresponding to 512M and 32G sectors, as these cater to different task requirements.
@@ -17,20 +19,15 @@ Follow this [guide](../../computing-provider/fog-computing-provider-fcp/computin
 
 {% embed url="https://github.com/swanchain/go-computing-provider" %}
 
-**Step 2: Deposit SwanETH Tokens as Collateral**
+**Step 2: Deposit SWANC Tokens as Collateral**
 
-To connect to the Orchestrator, a minimum of **0.01 SwanETH** tokens must be deposited as collateral for each task. Use the following command to deposit tokens into the contract:
-
-```bash
-# Collateral deposit command
-computing-provider collateral add [Wallet Address] [Amount]
+```
+ computing-provider collateral add --fcp --from <YOUR_WALLET_ADDRESS>  <amount>
 ```
 
-_Example: Deposit 1 SwanETH token as collateral_
+**Note:** Currently one AI task requires 5 `SWANC`. Please deposit enough collaterals for the tasks
 
-```bash
-computing-provider collateral add 0xFbc1d3...2373 1
-```
+
 
 **Step 3: Real-Time Monitoring**
 
@@ -51,4 +48,4 @@ computing-provider collateral info
 
 **Congratulations!**&#x20;
 
-Your nodes are now ready to receive task assignments. You can check the status of your nodes [here](https://cp-test.swanchain.io/provider-status).
+Your nodes are now ready to receive task assignments. You can check the status of your nodes [here](https://orchestrator.swanchain.io/provider-status).
