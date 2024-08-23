@@ -40,6 +40,7 @@
   * [Deploying Your First Smart Contract with Remix](get-started/quick-start/deploying-your-first-smart-contract-with-remix.md)
   * [Interacting with Smart Contract on Swan Chain Using Go](get-started/quick-start/interacting-with-smart-contract-on-swan-chain-using-go.md)
   * [Setting Up Your Swan Environment](get-started/quick-start/setting-up-your-swan-environment.md)
+    * [Setting Up Swan Testnet Environment](get-started/quick-start/setting-up-swan-testnet-environment.md)
   * [Build a Basic Web Application](get-started/quick-start/build-a-serverless-web-application.md)
   * [Deploy deep learning container images](get-started/quick-start/deploy-deep-learning-container-images.md)
   * [Build a Simple DApp with Swan SDK](get-started/quick-start/build-a-simple-web-application.md)

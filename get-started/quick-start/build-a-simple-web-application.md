@@ -39,6 +39,7 @@ task_uuid = result['id']
 #### 3. Review the Deployment Result
 
 After obtaining the task UUID from the previous step, you can track the deployment result using the Orchestrator interface `get_deployment_info`:
+- **Note**: (You should copy the task uuid from the previous code response and comment out the previous code, otherwise, you will create a new deployment.)
 
 ```python
 task_info = swan_orchestrator.get_deployment_info(task_uuid=task_uuid)
@@ -76,7 +77,6 @@ print(json.dumps(task_info, indent=2))
 #### 4. Access the Deployed Application
 
 Retrieve the deployed application's URL:
-- **Note**: (You should copy the task uuid from the previous code response and comment out the previous code, otherwise, you will create a new deployment.)
 
 ```python
 result_url = swan_orchestrator.get_real_url(task_uuid)
