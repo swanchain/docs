@@ -1,6 +1,6 @@
-### 2. Build a serverless Web Application which can called by APIs
+### 4. Build a simple web application
 
-In this tutorial, you will learn how to deploy a serverless Web Application which can called by APIs using Swan SDK.
+In this tutorial, you will learn how to deploy a simple web application on the distributed computing provider network using Swan SDK. At the end of this tutorial, you will have a Chain Node Frontend application running on the Swan network.
 
 **Prerequisites**:
 
@@ -21,7 +21,7 @@ swan_orchestrator = swan.resource(api_key="<your_api_key>", network='mainnet', s
 
 #### 2. Create a Task
 
-A task is created through Swan Orchestrator to send deployment orders to the distributed computing provider network. 
+A task is created through Swan Orchestrator to send deployment orders to the distributed computing provider network.
 
 Here, we deploy a ChainNode application with a free configuration and a one-hour duration (these settings are the default).
 
@@ -29,7 +29,7 @@ Here, we deploy a ChainNode application with a free configuration and a one-hour
 
 ```python
 result = swan_orchestrator.create_task(
-    repo_uri='https://github.com/swanchain/awesome-swanchain/tree/main/serverless-api',
+    repo_uri='https://github.com/swanchain/awesome-swanchain/tree/main/ChainNode',
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>',
     auto_pay=True
@@ -263,8 +263,7 @@ print(json.dumps(task_info, indent=2))
 
 #### 4. Access the Deployed Application
 
-Retrieve the deployed application's URL 
-- **Note**: (You should copy the task uuid from the previous code response and comment out the previous code, otherwise, you will create a new deployment.):
+Retrieve the deployed application's URL:
 
 ```python
 result_url = swan_orchestrator.get_real_url(task_uuid)
@@ -274,35 +273,11 @@ print(result_url)
 Sample output:
 
 ```
-['https://mklief9bkq.dev2.crosschain.computer', 'https://epz3zdkwuv.pvm.nebulablock.com', 'https://ug9rrs2dzn.cp.filezoo.com.cn']
+['https://1cesbzlmow.cp.altafser.com', 'https://7h8g16arc1.1.3242.cn', 'https://v20bdns36f.1.3242.cn']
 ```
 
-Once the job status is `Running`, you can try call the api in the [api doc](https://github.com/swanchain/awesome-swanchain/blob/main/serverless-api/Readme.md).
-Or try the curl below (change the result url to the one you get):
-- Test the connection:
-```Bash
-curl --location '{{result_url}}' 
-```
-- Post a new item:
-```Bash
-curl --location '{{result_url}}/items/' \
---header 'Content-Type: application/json' \
---data '{
-    "id":1,
-    "name":"test",
-    "description": "test description",
-    "price":6.75,
-    "tax":0.5
+Once the job status is `Running`, you can access the application via the URL in your web browser.
 
-}'
-```
+Sample screenshot:
 
-- Get all items:
-```Bash
-curl --location '{{result_url}}/items'
-```
-
-- Get a specific item:
-```Bash
-curl --location '{{result_url}}/items/1'
-```
+<figure><img src="../../.gitbook/assets/Chainnode.png" alt=""><figcaption></figcaption></figure>

@@ -24,16 +24,34 @@ In this tutorial, you will set up your SWAN account and development environment,
 
 You can install the Swan SDK using one of the following methods:
 
-- **Via PyPI**:
+- **Via PyPI (Recommended)**:
   ```bash
   pip install swan-sdk
   ```
 - **From GitHub**:
-  ```bash
-  git clone https://github.com/swanchain/python-swan-sdk.git
-  ```
+  - Clone the repository:
+    ```bash
+    git clone https://github.com/swanchain/python-swan-sdk.git
+    ```
+  - Create and activate a virtual environment (optional):
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+  - Install the requirements:
+    ```bash
+    pip install -r requirements.txt
+    ```
+  - Install the SDK:
+    ```bash
+    pip install .
+    ```
+    or if you want to change the source code:
+    ```bash
+    pip install -e .
+    ```
 
-**Note**: Ensure that `web3.py` version 6.15 or later is installed to avoid potential errors. (```bash pip install web3>=6.15```)
+**Note**: Ensure that `web3.py` version 6.15 or later is installed to avoid potential errors. (```pip install web3>=6.15```)
 
 #### Test Your Environment
 You can test your environment by running the following code snippet:
@@ -43,7 +61,7 @@ import swan
 import json
 swan_orchestrator = swan.resource(api_key="<your_api_key>", network='mainnet', service_name='Orchestrator')
 result = swan_orchestrator.create_task(
-    app_repo_image='hello_world',
+    app_repo_image='hello_world', # This "app_repo_image" is a special name-repo mapping made by Swan, it's DEMO ONLY
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>'
 )
@@ -75,9 +93,12 @@ if you see the deployment information like this, your environment is set up corr
    "status":"success"
 }
 ```
-**Optional**: You can now run this code to check the status of your deployment.
-```Python
+### Check Status(Optional)
+You can now run this code to check the status of your deployment.
+- **Note**: You should copy the task uuid from the previous code response and comment out the previous code, otherwise, you will create a new deployment.
+```python
 result_url = swan_orchestrator.get_real_url(task_uuid)
 print(result_url)
 ```
-you can click the url to see the result.
+you can click the url to see the result, It will be something like this:
+<figure><img src="../../.gitbook/assets/hello_world.png" alt=""><figcaption></figcaption></figure>
