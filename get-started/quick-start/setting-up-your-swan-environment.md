@@ -51,8 +51,7 @@ You can install the Swan SDK using one of the following methods:
     pip install -e .
     ```
 
-**Note**: Ensure that `web3.py` version 6.15 or later is installed to avoid potential errors. (```pip install web3>=6.15```)
-
+**Note**: Ensure that `web3.py` version is between 6.15 and 7.10 to avoid potential errors. (```pip install web3>=6.15,<7.10```)
 #### Test Your Environment
 You can test your environment by running the following code snippet:
 
