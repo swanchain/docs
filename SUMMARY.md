@@ -88,7 +88,9 @@
 
 * [Lagrange](tools-and-applications/lagrange-dao.md)
 * [Multi-Chain Storage](tools-and-applications/multi-chain-storage.md)
-* [Swan SDK](tools-and-applications/swan-sdk.md)
+* [Swan SDK](tools-and-applications/swan-sdk/README.md)
+  * [Quickstart](tools-and-applications/swan-sdk/1-quick-start.md)
+  * [A Sample Tutorial](tools-and-applications/swan-sdk/2-a-sample-tutorial.md)
 * [Nebula Block Cloud](tools-and-applications/nebula-block-cloud.md)
 * [Ecosystem Projects](tools-and-applications/ecosystem-projects.md)
 
