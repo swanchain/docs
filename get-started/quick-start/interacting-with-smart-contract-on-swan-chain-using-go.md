@@ -11,7 +11,7 @@
 
 <pre><code>package main
 // Shared RPC URL
-<strong>const rpcURL = "https://mainnet-rpc01.swanchain.io" // Replace with your testnet's RPC URL
+<strong>const rpcURL = "https://mainnet-rpc.swanchain.org" // Replace with your testnet's RPC URL
 </strong></code></pre>
 
 #### 2.Connecting to a Swan Chain RPC Using Go

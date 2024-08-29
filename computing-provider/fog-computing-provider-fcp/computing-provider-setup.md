@@ -381,7 +381,7 @@ make install
        Password = ""                                 # The login password, if only a single node, you can ignore
 
        [RPC]
-       SWAN_CHAIN_RPC = "https://mainnet-rpc01.swanchain.io"     # Swan chain RPC
+       SWAN_CHAIN_RPC = "https://mainnet-rpc.swanchain.org"     # Swan chain RPC
     ```
 
 **Note:**
