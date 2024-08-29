@@ -7,7 +7,7 @@ For more detailed samples, consult [SDK Samples](https://github.com/swanchain/py
 
 Orchestrator allows you to create task to run application instances to the powerful distributed computing providers network.
 
-## Fetch available instance resources
+### Fetch available instance resources
 
 Before using Orchestrator to deploy task, it is necessary to know which instance resources are available. Through `get_instance_resources` you can get a list of available instance resources including their `region` information.
 
@@ -55,7 +55,7 @@ Sample output:
 ```
 
 
-## Create and deploy a task
+### Create and deploy a task
 
 Deploy a simple application with Swan SDK:
 
@@ -91,7 +91,7 @@ A sample output:
 
 It shows that this task has three applications. Open the URL in the web browser you will view the application's information if it is running correctly.
 
-## Check information of an existing task
+### Check information of an existing task
 
 With Orchestrator, you can check information for an existing task to follow up or view task deployment.
 
@@ -106,7 +106,7 @@ task_deployment_info = swan_orchestrator.get_deployment_info(<task_uuid>)
 print(json.dumps(task_deployment_info, indent=2))
 ```
 
-## Access application instances of an existing task
+### Access application instances of an existing task
 
 With Orchestrator, you can easily get the deployed application instances for an existing task.
 
@@ -121,7 +121,7 @@ app_urls = swan_orchestrator.get_real_url(<task_uuid>)
 print(app_urls)
 ```
 
-## Renew an existing task
+### Renew an existing task
 
 If you have already submitted payment for the renewal of a task, you can use the `tx_hash` with `renew_task` to extend the task.
 
@@ -145,7 +145,7 @@ else:
     print(f"Unable to renew {<task_uuid>}")
 ```
 
-## Terminate an existing task
+### Terminate an existing task
 
 You can also early terminate an existing task and its application instances. By terminating task, you will stop all the related running application instances and thus you will get refund of the remaining task duration.
 
