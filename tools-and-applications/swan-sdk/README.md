@@ -1,3 +1,7 @@
+---
+description: Get started with Swan SDK
+---
+
 # Swan SDK
 
 ## Overview
