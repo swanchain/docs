@@ -6,14 +6,17 @@ The Swan Provider Campaign is designed to incentivize participants to contribute
 
 ### Duration
 
-July 15, 00:00 (EST) - September 15, 23:59 (EST)
+July 15, 00:00 (EST) - September 29, 23:59 (EST)
 
 ### Prize Pool Distribution
 
-* **Total Prize Pool:** 800,000 SWAN tokens
-  * **Edge Computing Provider (ECP):** 40% of the total prize pool, starting from July 29
-  * **Fog Computing Provider (FCP):** 50% of the total prize pool, starting from July 15
-  * **Market Provider (MP):** 10% of the total prize pool, starting from July 15
+* **Total Prize Pool:** 100,000 SWAN tokens
+  * **Edge Computing Provider (ECP):**&#x20;
+    * 420,000 SWAN, July 29 - Sep 29&#x20;
+  * **Fog Computing Provider (FCP):**&#x20;
+    * 500,000 SWAN, July 15 - Sep 29&#x20;
+  * **Market Provider (MP):**&#x20;
+    * 80,000 SWAN, July 29 - Sep 15
 
 ## Role of the Challenge
 

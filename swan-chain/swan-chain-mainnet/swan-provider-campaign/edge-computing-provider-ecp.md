@@ -6,7 +6,7 @@ ECPs will be responsible for completing Zero-Knowledge (ZK) tasks, contributing 
 
 ### **Duration:**&#x20;
 
-July 29, 2024, 00:00 (EST) - Sep 15, 2024, 23:59 (EST)
+July 29, 2024, 00:00 (EST) - Sep 29, 2024, 23:59 (EST)
 
 ### ECP Requirements:
 
@@ -21,14 +21,15 @@ July 29, 2024, 00:00 (EST) - Sep 15, 2024, 23:59 (EST)
 
 1. Deploy an ECP according to the [provided instructions](../../../computing-provider/edge-computing-provider-ecp/ecp-setup.md) and documentation.
 2. Complete ZK tasks to earn credits based on performance.
+3. Check the ECP leaderboard here: [https://provider.swanchain.io/campaign/ecp](https://provider.swanchain.io/campaign/ecp)
 
 ### Event Rules and Rewards:
 
-1. **Total Reward Pool:** 320,000 SWAN tokens
+1. **Total Reward Pool:** 420,000 SWAN tokens
 2. **Reward Distribution:**
-   * Performance-based rewards: 298,000 SWAN
+   * Performance-based rewards: 398,000 SWAN
    * Early Participant rewards: 22,000 SWAN
-3. **Performance-based Rewards (298,000 SWAN):**
+3. **Performance-based Rewards (398,000 SWAN):**
    * Rewards will be distributed based on the number of successfully completed ZK tasks and overall contribution to the network.
    * The more time an ECP is online and the more tasks it completes, the higher its reward will be.
 
@@ -51,7 +52,7 @@ To qualify for **Early Participant Rewards**, you must join within the first **3
 
 5. **Minimum Performance Threshold:**
 
-* ECPs must complete a minimum of 1,000 ZK tasks during the event period, which runs from July 29, 2024, 00:00 (EST) to September 15, 2024, 23:59 (EST).
+* ECPs must complete a minimum of 1,000 ZK tasks during the event period, which runs from July 29, 2024, 00:00 (EST) to September 29, 2024, 23:59 (EST).
 
 6. **Reward Cap:**
 
