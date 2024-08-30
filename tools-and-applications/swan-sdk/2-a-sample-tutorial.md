@@ -3,7 +3,7 @@
 
 For more detailed samples, consult [SDK Samples](https://github.com/swanchain/python-sdk-docs-samples).
 
-For detailed description of functions, please check [Key Functions]([./docs/key_functions.md](https://github.com/swanchain/python-swan-sdk/blob/main/docs/key_functions.md)).
+For detailed description of functions, please check [Key Functions](https://github.com/swanchain/python-swan-sdk/blob/main/docs/key_functions.md).
 
 ## Orchestrator
 
