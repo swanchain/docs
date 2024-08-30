@@ -25,16 +25,16 @@ July 15 00:00 - September 29 23:59 (EST)
 * **Boost:** Using high-density GPUs such as Nvidia H100s, A100s, or top consumer models can yield a substantial 3-10x acceleration in reward calculations.
   * **High-density GPU Boost Details:**
     * RTX 4090: 3X
-      * H100: 5X
-      * A100: 4X
-      * A800: 3X
-      * A4000: 4X
-      * A10: 4X
-      * A6000: 4X
-      * H800: 6X
-      * L40: 7X
-      * L40S: 8X
-      * H200: 10X
+    * H100: 5X
+    * A100: 4X
+    * A800: 3X
+    * A4000: 4X
+    * A10: 4X
+    * A6000: 4X
+    * H800: 6X
+    * L40: 7X
+    * L40S: 8X
+    * H200: 10X
 
 {% hint style="info" %}
 Note: The enhancement factor amplifies your contribution by the same factor but doesn't directly translate to a 3-10x increase in SWAN tokens rewards.
