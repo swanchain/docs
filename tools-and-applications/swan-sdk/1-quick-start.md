@@ -49,9 +49,11 @@ Now that you have an `Orchestrator` service, you can create and deploy instance 
 
 ```python
 result = swan_orchestrator.create_task(
-    app_repo_image='hello_world',
+    repo_uri='https://github.com/swanchain/awesome-swanchain/tree/main/hello_world',
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>',
+    instance_type='C1ae.small',
+    auto_pay=True
 )
 task_uuid = result['task_uuid']
 ```
