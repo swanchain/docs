@@ -6,7 +6,7 @@ description: Get started with Swan Chain
 
 ## Welcome to the Swan Chain Docs
 
-<table data-view="cards"><thead><tr><th align="center"></th><th></th></tr></thead><tbody><tr><td align="center">📄 <strong>Guides</strong></td><td>Get started with a simple guide such as <a href="start-here/quick-start/deploying-your-first-smart-contract-with-remix.md">deploying a contract</a></td></tr><tr><td align="center"> <strong>🌐 Network reference</strong></td><td>View details about the Swan Chain mainnet such as various important addresses <a href="broken-reference">here</a>. </td></tr><tr><td align="center"><strong>🌟 Core concepts</strong></td><td>Learn about core concepts such as "What is Swan Chain" <a href="core-concepts/">here</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>📄 <strong>Guides</strong></td><td>Get started with a simple guide such as <a href="start-here/quick-start/deploying-your-first-smart-contract-with-remix.md">deploying a contract</a></td></tr><tr><td> <strong>🌐 Network reference</strong></td><td>View details about the Swan Chain mainnet such as various important addresses <a href="broken-reference">here</a>. </td></tr><tr><td><strong>🌟 Core concepts</strong></td><td>Learn about core concepts such as "What is Swan Chain" <a href="core-concepts/">here</a></td></tr></tbody></table>
 
 ## **I want to become a** ....
 
