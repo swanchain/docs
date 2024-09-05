@@ -100,7 +100,7 @@ $$
 
 _Where:_
 
-* ( I\_{bonus}(R) ) = Bonus income based on reputation ( R )
+* $$I_{\text{bonus}}(R)$$= Bonus income based on reputation ( R )
 
 ***
 
