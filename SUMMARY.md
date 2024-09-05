@@ -20,6 +20,7 @@
   * [Set Up Your Wallet](network-reference/readme/set-up-your-wallet.md)
   * [Bridge Token](network-reference/readme/bridge-token.md)
 * [Contract Addresses](network-reference/contract-addresses.md)
+* [Fees](network-reference/fees.md)
 
 ## Core Concepts
 
