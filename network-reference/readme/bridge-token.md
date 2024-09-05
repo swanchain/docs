@@ -10,7 +10,7 @@ Funding your network account is required to use the network. All transactions, i
 
 Go to[ Bridge](https://bridge.swanchain.io/), enter the amount of ETH you wish to bridge, and click on the "Deposit" button.
 
-<figure><img src="https://docs.swanchain.io/~gitbook/image?url=https%3A%2F%2F3478205236-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FcvUWH8GhRCqvKwuN0BGF%252Fuploads%252Fy2TXC9WGwWXhqcrLjBDj%252Fimage.png%3Falt%3Dmedia%26token%3De84ba6c1-5614-4f7e-9a8c-9deaf56f1968&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=feeb8fa6&#x26;sv=1" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (189).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Swan Chain's third-party bridges:
@@ -23,3 +23,5 @@ Swan Chain's third-party bridges:
 
 [https://cometbridge.app/?original=Ethereum\&target=Swan\&symbol=ETH](https://cometbridge.app/?original=Ethereum\&target=Swan\&symbol=ETH)
 {% endhint %}
+
+`L1 bridge address`:  0x9C041e883BE0e3201524e7BA6f7A53B367b5CFb0
