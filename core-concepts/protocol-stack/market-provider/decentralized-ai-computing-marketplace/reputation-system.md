@@ -1,63 +1,613 @@
-# Reputation System
+# Reputation Scoring System Design Document
 
-The Lagrange reputation system is designed to assess and quantify the trustworthiness and reliability of individual computing providers in the Lagrange computing network. It helps the bidding engine make informed decisions when assigning tasks to providers and promotes accountability within the network. Such a reputation system considers the recent performance, behavior, and feedback received by the providers to establish their reputation scores in a dynamic way.
+## 1. Overview
 
-In this system, each computing provider is assigned a reputation score between 0 and 100 that reflects their past performance and interactions within the network. The reputation score can be based on various factors, including success rate, reachability, and region. Higher reputation scores generally indicate more reliable and trustworthy providers, increasing the likelihood that they will receive tasks they can be rewarded for completing. Likewise, providers with lower reputation scores may need to improve their performance to attract more users and enhance their reputation.
+This document outlines the design for a reputation scoring system for Compute Providers (CPs). The system evaluates CPs
+based on various performance metrics to ensure high-quality service delivery.The system is divided into two main blocks: system data analysis and customer feedback
 
-## Scoring Computing Providers
 
-The scoring method takes into account various factors to assign scores to computing providers. These factors include:
+Flow Chart:
+<figure><img src="../../.gitbook/assets/new_reputation.png" alt=""><figcaption></figcaption></figure>
 
-1. Reliability and Uptime: Providers that consistently maintain high availability and uptime, minimizing downtime and interruptions, are considered more reliable.
-2. Task Completion Rate: Providers that consistently complete assigned tasks and return a valid and excellent result can increase their success rate, further increasing their overall score.
-3. Region: The region score of a provider aims to reflect the relative scarcity or abundance of providers in a specific region and adjusts the score accordingly. By assigning a higher region score to providers in regions with fewer competitors, the scoring system incentivizes the establishment and growth of computing infrastructure in underserved or less populated areas.
+## 2. Models
 
-## The Score Equation
+    1. Sampling System
+        1.1. Distribution system
+        1.2. Probe System
+        1.3. Job Settlement System
+    2. Reputation Scoring System
+    3. Request Refund System
+    4. User Review System
+
+### 2.1 Sampling System
+
+- Sampling system is a system that randomly selects tasks from our sampling pool. It will run each hour and select a
+  random task from the sampling pool. The task will be sent to all the online CP for execution.
+- Sampling task pool is an officially maintained pool of basic sampling checking tasks, which contains officially
+  certified tasks that can be deployed normally, including and not limited to GPU, CPU, AI GPU, ZK and other tasks.
+
+### 2.1.1 Distribution System
+
+- Distribution System is the system used to send the sampling tasks to the eligible cp's, each time the Sampling System
+  picks a job, it will be handed over to the Distribution System to send the task to the eligible CP's (directly to the
+  CP's through the API, there is no contractual information) and the task will be The details of the job are recorded in
+  the database for subsequent analysis
+- **Note**： If a task cannot be sent due to whitelisting/blacklisting, no points are deducted or added.
+
+### 2.1.2 Probe System
+
+- After the Distribution System sends the task to all eligible CPs, the Probe System probes the results returned by the
+  CPs every 10 seconds and records the results in the database for analysis by the Reputation Scoring System.
+
+### 2.1.3 Job Settlement System
+
+- All cp's who fulfill the “Job Completion” (see below) criteria will receive a bonus for the corresponding time, which
+  will be settled on a daily basis, with all Sampling Job earnings for that day being settled at 11:55pm (EST) every
+  day.
+
+### 2.2 Reputation Scoring System
+
+- The Reputation Scoring System is responsible for calculating the reputation score of each CP based on various
+  performance metrics (see below). The total reputation score is used to select bidders for jobs in a way that balances
+  fairness with performance incentives.
+
+## 2. Components and Scoring
+
+The total reputation score is composed of the following components:
+
+### Current Version Composition:
+
+| Component        | Weight | Description                                        |
+|------------------|--------|----------------------------------------------------|
+| Machine Uptime   | 10%    | Availability of the CP based on continuous pinging |
+| Join Time        | 20%    | Longevity of the CP in the system                  |
+| System Job Score | 50%    | Performance on controlled, system-initiated jobs   |
+| User Job Score   | 20%    | Success rate of user-initiated jobs                |
+
+### Future Version Composition (After User Review and User Request Refund System Implementation):
+
+| Component                 | Weight | Description                                        |
+|---------------------------|--------|----------------------------------------------------|
+| Machine Uptime            | 10%    | Availability of the CP based on continuous pinging |
+| Join Time                 | 10%    | Longevity of the CP in the system                  |
+| User Review Score         | 10%    | Feedback provided by users on finished jobs        |
+| User Request Refund Score | 25%    | Impact of confirmed user claims on jobs            |
+| System Job Score          | 30%    | Performance on controlled, system-initiated jobs   |
+| User Job Score            | 15%    | Success rate of user-initiated jobs                |
+
+### Rationale for Component Selection and Weighting
+
+The reputation scoring system comprises six key components, each chosen for its unique contribution to assessing Compute
+Provider (CP) performance. The weighting of each component reflects its relative importance in the overall evaluation.
+
+1. Machine Uptime (10%):
+    - Measures basic reliability
+    - Critical but not the sole indicator of performance
+    - Low weight as it's a minimum expectation
+
+2. Join Time (10%):
+    - Reflects CP experience and commitment
+    - Balances new entrants vs. established CPs
+    - Low weight to avoid overly penalizing new, high-performing CPs
+
+3. User Review Score (10%):
+    - Captures user satisfaction
+    - Provides qualitative performance insights
+    - Lower weight due to potential subjectivity
+
+4. User Claim Score (25%):
+    - Indicates serious issues affecting users
+    - High weight due to direct impact on service quality
+    - Balances user feedback with objective measures
+
+5. System Job Score (30%):
+    - Offers controlled, objective performance measurement
+    - Highest weight due to standardized evaluation across all CPs
+    - Reflects core CP capabilities
+
+6. User Job Score (15%):
+    - Measures real-world performance
+    - Complements system jobs with diverse, practical scenarios
+    - Moderate weight balances importance with potential variability
+
+This balanced approach ensures a comprehensive evaluation of CP performance, considering both objective metrics and user
+experiences. The weightings prioritize factors directly impacting service quality and reliability, while still
+accounting for longevity and user satisfaction.
+
+### 2.1 Scoring Strategies
+
+#### Machine Uptime (100 points max)
+
+- Score = Availability percentage (e.g., 99.9% uptime = 99.9 points)
+
+#### Join Time (100 points max)
+
+- Score = (CP's join time / Oldest CP's join time) * 100
+
+#### System Job Score (100 points max)
+
+- Initial score: 50
+- For each successful job: +10 points
+- For each failed job: -20 points
+- Score is capped at 100 points and cannot go below 0
+
+#### User Job Score (100 points max)
+
+- Score = (Successfully completed jobs / Total number of jobs) * 100
+
+### 2.2 Total Reputation Score Calculation
+
+The total reputation score is calculated as follows:
+
+Total Score = SUM(contribution percentage * score of the category component)
+
+#### Example Calculations
+
+1. Example CP with average performance:
+    - Machine Uptime: 99.5 points
+    - Join Time: 70 points (joined 70% as long ago as the oldest CP)
+    - System Job Score: 80 points
+    - User Job Score: 95 points
+
+   Total Score = (99.5 * 0.10) + (70 * 0.20) + (80 * 0.50) + (95 * 0.20) = 82.95
+
+2. Example CP with excellent performance:
+    - Machine Uptime: 99.9 points
+    - Join Time: 100 points (oldest CP)
+    - System Job Score: 100 points
+    - User Job Score: 99 points
+
+   Total Score = (99.9 * 0.10) + (100 * 0.20) + (100 * 0.50) + (99 * 0.20) = 99.79
+
+3. Example CP with poor performance:
+    - Machine Uptime: 95 points
+    - Join Time: 30 points (relatively new CP)
+    - System Job Score: 60 points
+    - User Job Score: 80 points
+
+   Total Score = (95 * 0.10) + (30 * 0.20) + (60 * 0.50) + (80 * 0.20) = 61.5
+
+## 3. Application of Reputation Scores in Bidder Selection
+
+The total reputation score is used to select bidders for jobs in a way that balances fairness with performance
+incentives. Here's how the process works:
+
+### 3.1 Bidder Selection Process
+
+1. Collect Reputation Scores: Gather the reputation scores of all bidders for a job.
+2. Normalize Scores: Convert the scores into probabilities by dividing each score by the sum of all scores.
+3. Create Cumulative Distribution: Form a cumulative distribution from these probabilities.
+4. Random Selection: Generate a random number and use it to select a bidder based on the cumulative distribution.
+
+This method gives bidders with higher reputation scores a greater chance of being selected, while still allowing
+lower-scored bidders an opportunity to win bids.
+
+### 3.2 Example
+
+Let's say we have four bidders with the following reputation scores:
+
+- Bidder A: 85
+- Bidder B: 92
+- Bidder C: 78
+- Bidder D: 88
+
+Step 1: Collect Reputation Scores
+[85, 92, 78, 88]
+
+Step 2: Normalize Scores
+Total sum = 85 + 92 + 78 + 88 = 343
+Probabilities:
+
+- A: 85/343 ≈ 0.2478
+- B: 92/343 ≈ 0.2682
+- C: 78/343 ≈ 0.2274
+- D: 88/343 ≈ 0.2566
+
+Step 3: Create Cumulative Distribution
+
+- A: 0.2478
+- B: 0.2478 + 0.2682 = 0.5160
+- C: 0.5160 + 0.2274 = 0.7434
+- D: 0.7434 + 0.2566 = 1.0000
+
+Step 4: Random Selection
+If the random number generated is 0.6, we would select Bidder C, as 0.6 falls between 0.5160 and 0.7434 in the
+cumulative distribution.
+
+### 3.3 Advantages of This Approach
+
+1. Performance Incentive: Higher-rated bidders have a better chance of being selected, encouraging CPs to maintain good
+   performance.
+2. Fairness: Lower-rated bidders still have a chance to win bids, allowing for potential improvement and preventing
+   monopolization by top-rated CPs.
+3. Randomization: The element of randomness helps distribute jobs across a range of CPs, promoting system resilience and
+   diversity.
+
+This selection method ensures that reputation scores have a meaningful impact on job distribution while maintaining a
+dynamic and fair marketplace for all Compute Providers.
+
+## 4. Monitoring and Reporting
+
+- Implement a Grafana dashboard to show the trend of the total score and all component scores
+- The dashboard will display historical data and allow for trend analysis of CP performance over time
+
+## 5. Implementation Details
+
+### 5.1 Machine Uptime Monitoring
+
+- Implement a continuous pinging system to monitor CP availability
+- Update uptime scores in real-time or at regular intervals (e.g., hourly)
+
+### 5.2 Join Time Tracking
+
+- Store the initial join timestamp for each CP
+- Update join time scores daily, considering the current oldest CP as the benchmark
+
+Flow Chart:
+
+```mermaid
+graph TD
+    A[Start] --> B[Retrieve all CPs]
+    B --> C[Find oldest CP join time]
+    C --> D[For each CP]
+    D --> E[Calculate join time duration]
+    E --> F[Calculate score relative to oldest CP]
+    F --> G[Update Join Time score]
+    G --> H{All CPs processed?}
+    H -->|No| D
+    H -->|Yes| I[End]
+```
+
+### 5.3 System Job Score Design
+
+The System Job Score is a critical component of the CP reputation system, designed to evaluate CP performance based on
+controlled, system-initiated jobs. This score provides an objective measure of CP reliability and capability.
+
+#### 5.3.1 Scoring Mechanism
+
+- The score ranges from 0 to 100 points.
+- Each CP starts with an initial score of 50 points.
+- Points are added for successful jobs and deducted for failed jobs.
+- The score is updated after each system job completion.
+
+#### 5.3.2 Job Outcome Scoring
+
+1. Successful Job: +10 points
+2. Failed Job: -20 points
+
+#### 5.3.3 Score Calculation
+
+After each job:
 
 ```
-Overall Reputation Score = Base Score + 65 * Weekly Score + 25 * Monthly Score + 10 * Region Score
+New Score = Previous Score + Points from job outcome
 ```
 
-**Base Score:** The initial, and thus base, score that everyone will start with assuming the other weighted factors are unitialized and/or 0.
+The score is capped at a minimum of 0 and a maximum of 100 points.
 
-**Weekly Score:** Reflects the provider's performance on a weekly basis. Given the highest weighting to emphasize recent performance. Notice that this score can be negative if recent performance is very poor!
+#### 5.3.4 Job Complexity Factors
 
-**Monthly Score:** Reflects the provider's performance on a monthly basis. This score can also be negative if a provider behaves poorly during the period.
+To provide a more nuanced evaluation, we'll introduce job complexity factors:
 
-**Region Score:** Takes into account the provider's location and the number of competitors in that region.
+1. Basic Jobs: Standard difficulty, default point values apply.
+2. Complex Jobs: Higher difficulty, 1.5x point values (+15 for success, -30 for failure).
+3. Critical Jobs: Highest difficulty or importance, 2x point values (+20 for success, -40 for failure).
 
-Overall, a provider's reputation score will still be capped between 0 and 100.
+#### 5.3.5 Time-based Performance Evaluation
 
-## How is Weekly and Monthly Scores Calculated?
+Implement a time-based evaluation to give more weight to recent performance:
 
-#### Monthly example:
+1. Calculate a short-term score (last 7 days).
+2. Calculate a medium-term score (last 30 days).
+3. Calculate a long-term score (all-time).
 
-```
-Monthly Score = 50 * Monthly reachability + 50 * Monthly success rate
-```
-
-The equation for a weekly score is the same except that the time period of which reachability and success rate are calculated will obviously differ.
-
-### Reachability:
+The final System Job Score is a weighted average of these three scores:
 
 ```
-(# of succesful requests - # of failed requests) / total # of requests made to provider by server
+Final Score = (Short-term * 0.5) + (Medium-term * 0.3) + (Long-term * 0.2)
 ```
 
-The Lagrange server will periodically send a ping to each provider. If the provider receives the ping and the server receives a response back, then the request will be saved as a success. Otherwise, the request will be saved as failed.
+#### 5.3.6 Minimum Job Threshold
 
-### Success Rate:
+- Require a minimum of 10 completed system jobs before including this score in the total reputation calculation.
+- For CPs with fewer than 10 jobs, use the system average for this component.
+
+#### 5.3.7 Performance Trend Analysis
+
+Implement a trend analysis to identify improving or declining performance:
+
+1. Calculate the rate of change in score over the last 30 days.
+2. Categorize CPs as "Improving," "Stable," or "Declining" based on this trend.
+3. Use this information for internal monitoring and potentially for CP feedback.
+
+#### 5.3.8 Job Distribution and Fairness
+
+To ensure fair evaluation:
+
+1. Distribute an equal number of jobs to all CPs daily.
+2. Ensure a mix of basic, complex, and critical jobs for each CP over time.
+3. Randomize job assignment to prevent gaming of the system.
+
+#### 5.3.9 Score Recovery Mechanism
+
+Implement a gradual score recovery to allow CPs to improve their standing:
+
+- If a CP maintains a 100% success rate for 7 consecutive days, add a bonus of 5 points to their score (up to the
+  maximum of 100).
+
+#### 5.3.10 Updated Flow Chart
+
+```mermaid
+graph TD
+    A[Start] --> B[Retrieve CP's current score]
+    B --> C[Execute system job]
+    C --> D{Job successful?}
+    D -->|Yes| E[Determine job complexity]
+    D -->|No| F[Determine job complexity]
+    E --> G[Calculate positive points]
+    F --> H[Calculate negative points]
+    G --> I[Update score]
+    H --> I
+    I --> J[Apply score caps]
+    J --> K[Update short/medium/long-term scores]
+    K --> L[Calculate final weighted score]
+    L --> M{Minimum job threshold met?}
+    M -->|Yes| N[Use calculated score]
+    M -->|No| O[Use system average]
+    N --> P[Update System Job Score]
+    O --> P
+    P --> Q[Perform trend analysis]
+    Q --> R[Check for score recovery bonus]
+    R --> S[End]
+```
+
+#### 5.3.11 Integration with Total Reputation Score
+
+The System Job Score contributes 30% to the total reputation score in the future version composition, as previously
+defined.
+
+#### 5.3.12 Example Calculation
+
+Let's consider a CP with the following recent performance:
+
+- Short-term score (7 days): 85 points
+- Medium-term score (30 days): 75 points
+- Long-term score (all-time): 70 points
+
+Final System Job Score = (85 * 0.5) + (75 * 0.3) + (70 * 0.2)
+= 42.5 + 22.5 + 14
+= 79 points
+
+This score would then contribute to 30% of the CP's total reputation score.
+
+### 5.4 User Job Tracking
+
+- Implement a system to track all user-initiated jobs and their outcomes
+- Update user job scores daily based on the latest success rates
+
+Flow Chart:
+
+```mermaid
+graph TD
+    A[Start] --> B[Retrieve all user jobs for each CP]
+    B --> C[For each CP]
+    C --> D[Count total jobs]
+    D --> E[Count successful jobs]
+    E --> F[Calculate success rate]
+    F --> G[Update User Job score]
+    G --> H{All CPs processed?}
+    H -->|No| C
+    H -->|Yes| I[End]
+```
+
+# Future Works
+
+## 1. User Review Score Design
+
+The User Review Score aims to incorporate user feedback on completed jobs, providing a measure of user satisfaction with
+the Compute Provider's (CP) service.
+
+### 1.1 Scoring Mechanism
+
+- Users can rate completed jobs on a scale of 1 to 5 stars.
+- Each rating contributes to a rolling average of the CP's performance.
+- The score is normalized to a 0-100 scale.
+
+### 1.2 Calculation
+
+1. Calculate the average rating:
+   ```
+   Average Rating = Sum of all ratings / Number of ratings
+   ```
+
+2. Normalize to 0-100 scale:
+   ```
+   User Review Score = (Average Rating / 5) * 100
+   ```
+
+### 1.3 Weighting and Decay
+
+- More recent reviews have a higher weight to reflect current performance.
+- Implement a time decay factor: reviews older than 30 days have 50% weight, older than 90 days have 25% weight.
+
+### 1.4 Minimum Reviews Threshold
+
+- Require a minimum of 5 reviews before including this score in the total reputation calculation.
+- For CPs with fewer than 5 reviews, use the system average for this component.
+
+Flow Chart:
+
+```mermaid
+graph TD
+    A[Start] --> B[Retrieve all reviews for CP]
+    B --> C{Number of reviews >= 5?}
+    C -->|Yes| D[Calculate weighted average rating]
+    C -->|No| E[Use system average]
+    D --> F[Normalize to 0-100 scale]
+    E --> F
+    F --> G[Update User Review Score]
+    G --> H[End]
+```
+
+### 1.5 User Weighting System
+
+To address the issue of users who consistently provide the lowest job reviews, we'll implement a user weighting system:
+
+1. Track each user's review history.
+2. Identify users who consistently give the lowest ratings.
+3. Gradually reduce the weight of their reviews in the overall score calculation.
+
+#### 1.5.1 Consistent Low Rating Identification
+
+- Define "lowest rating" as 1 star out of 5.
+- Track the percentage of 1-star ratings for each user.
+- If a user's percentage of 1-star ratings exceeds a threshold (e.g., 80%) over a significant number of reviews (e.g.,
+  10+), flag them for weight reduction.
+
+#### 1.5.2 Weight Reduction Mechanism
+
+- Start all users with a weight of 1.0 (100% influence).
+- For flagged users, reduce their weight using the following formula:
+  ```
+  User Weight = max(0.2, 1 - (Percentage of 1-star ratings - Threshold))
+  ```
+  This ensures their weight never goes below 0.2 (20% influence).
+
+#### 1.5.3 Weight Recovery
+
+- If a flagged user starts providing more balanced ratings, gradually increase their weight.
+- For every 5 consecutive ratings that are not 1-star, increase their weight by 0.1, up to a maximum of 1.0.
+
+#### 1.5.4 Integration into Score Calculation
+
+When calculating the average rating for a CP, use the weighted average:
 
 ```
-(# of completed tasks - # of failed/incomplete tasks) / total # of tasks assigned to provider
+Weighted Average Rating = Sum(Rating * User Weight) / Sum(User Weights)
 ```
 
-This equation provides a quantitative measure of a provider's performance and success in completing assigned tasks. Clearly, higher success rate indicates a higher level of reliability, efficiency, and effectiveness in task completion. On the other hand, a lower success rate may indicate room for improvement or potential issues in fulfilling assigned tasks.
+Then proceed with the normalization to the 0-100 scale as before.
 
-## How is Region Score Calculated?
+### 1.6 Updated Flow Chart
+
+```mermaid
+graph TD
+    A[Start] --> B[Retrieve all reviews for CP]
+    B --> C{Number of reviews >= 5?}
+    C -->|Yes| D[Calculate user weights]
+    C -->|No| E[Use system average]
+    D --> F[Calculate weighted average rating]
+    F --> G[Normalize to 0-100 scale]
+    E --> G
+    G --> H[Update User Review Score]
+    H --> I[End]
+    D --> J[For each user]
+    J --> K{User flagged for low ratings?}
+    K -->|Yes| L[Apply weight reduction]
+    K -->|No| M[Use default weight]
+    L --> N[Check for weight recovery]
+    M --> N
+    N --> O{All users processed?}
+    O -->|No| J
+    O -->|Yes| F
+```
+
+This full user review design addresses the concern about users who consistently give the lowest job reviews. By
+implementing this weighting system, we ensure that while all feedback is considered, the impact of potentially unfair or
+overly critical reviews is mitigated. This approach maintains the value of user feedback while protecting Compute
+Providers from undue negative impact from a small number of extremely critical users.
+
+## 2. User Claim Score Design
+
+The User Claim Score reflects the reliability of the CP based on valid claims made by users for issues with completed
+jobs.
+
+### 2.1 Scoring Mechanism
+
+- Start with a perfect score of 100.
+- Deduct points for each valid claim based on severity.
+- Implement a recovery mechanism to allow scores to improve over time.
+
+### 2.2 Claim Severity and Point Deduction
+
+1. Minor issues: -5 points (e.g., slight delay, minor quality issues)
+2. Moderate issues: -10 points (e.g., significant delay, moderate quality issues)
+3. Severe issues: -20 points (e.g., job failure, major quality issues)
+
+### 2.3 Score Recovery
+
+- Implement a gradual score recovery:
+    - Add 1 point every 7 days without a new claim, up to the maximum of 100.
+
+### 2.4 Calculation
+
+1. For each new claim:
+   ```
+   Current Score = Previous Score - Points based on severity
+   ```
+
+2. Weekly score recovery:
+   ```
+   Current Score = Min(Previous Score + 1, 100)
+   ```
+
+### 2.5 Claim Verification Process
+
+- Implement a claim review process to verify the validity of user claims before applying score deductions.
+- Involve both automated checks and manual review for complex cases.
+
+Flow Chart:
+
+```mermaid
+graph TD
+    A[Start] --> B[Retrieve CP's current score]
+    B --> C{New claim received?}
+    C -->|Yes| D[Verify claim]
+    C -->|No| E[Apply weekly recovery]
+    D --> F{Claim valid?}
+    F -->|Yes| G[Determine severity]
+    F -->|No| E
+    G --> H[Apply score deduction]
+    H --> I[Update User Claim Score]
+    E --> I
+    I --> J[End]
+```
+
+## 3. Integration with Total Reputation Score
+
+### 3.1 Updated Future Version Composition
+
+| Component         | Weight | Description                                        |
+|-------------------|--------|----------------------------------------------------|
+| Machine Uptime    | 10%    | Availability of the CP based on continuous pinging |
+| Join Time         | 10%    | Longevity of the CP in the system                  |
+| User Review Score | 10%    | Feedback provided by users on finished jobs        |
+| User Claim Score  | 25%    | Impact of confirmed user claims on jobs            |
+| System Job Score  | 30%    | Performance on controlled, system-initiated jobs   |
+| User Job Score    | 15%    | Success rate of user-initiated jobs                |
+
+### 3.2 Updated Total Score Calculation
+
+The total reputation score calculation remains the same, but now includes the new components:
 
 ```
-Region Score = 1 - ( # of providers in the region / total # of providers ) 
+Total Score = (Machine Uptime * 0.10) + (Join Time * 0.10) + (User Review Score * 0.10) + 
+              (User Claim Score * 0.25) + (System Job Score * 0.30) + (User Job Score * 0.15)
 ```
 
-So, if for example 20% of providers globally reside in North America, then a provider in this region would get a region score of `1 - 0.2 = 0.8`. Once again, by assigning a higher region score to providers in regions with limited competition, the scoring system addresses potential imbalances in service distribution and also promotes regional growth.
+### 3.3 Example Calculation with New Components
+
+Let's consider a CP with the following scores:
+
+- Machine Uptime: 99.5 points
+- Join Time: 80 points
+- User Review Score: 90 points
+- User Claim Score: 95 points
+- System Job Score: 85 points
+- User Job Score: 92 points
+
+Total Score = (99.5 * 0.10) + (80 * 0.10) + (90 * 0.10) + (95 * 0.25) + (85 * 0.30) + (92 * 0.15)
+= 9.95 + 8 + 9 + 23.75 + 25.5 + 13.8
+= 90 points
+
+This CP would be considered to have excellent overall performance.
