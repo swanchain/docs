@@ -7,7 +7,7 @@ based on various performance metrics to ensure high-quality service delivery.The
 
 
 Flow Chart:
-<figure><img src="/.gitbook/assets/new_reputation.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/reputation.png" alt=""><figcaption></figcaption></figure>
 
 ## 2. Models
 
