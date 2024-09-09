@@ -7,7 +7,7 @@ based on various performance metrics to ensure high-quality service delivery.The
 
 
 Flow Chart:
-<figure><img src="../../../.gitbook/assets/new_reputation.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/new_reputation.png" alt=""><figcaption></figcaption></figure>
 
 ## 2. Models
 
@@ -244,19 +244,7 @@ dynamic and fair marketplace for all Compute Providers.
 - Update join time scores daily, considering the current oldest CP as the benchmark
 
 Flow Chart:
-
-```mermaid
-graph TD
-    A[Start] --> B[Retrieve all CPs]
-    B --> C[Find oldest CP join time]
-    C --> D[For each CP]
-    D --> E[Calculate join time duration]
-    E --> F[Calculate score relative to oldest CP]
-    F --> G[Update Join Time score]
-    G --> H{All CPs processed?}
-    H -->|No| D
-    H -->|Yes| I[End]
-```
+<figure><img src="/.gitbook/assets/reputation_join_time.png" alt=""><figcaption></figcaption></figure>
 
 ### 5.3 System Job Score Design
 
@@ -337,29 +325,7 @@ Implement a gradual score recovery to allow CPs to improve their standing:
 
 #### 5.3.10 Updated Flow Chart
 
-```mermaid
-graph TD
-    A[Start] --> B[Retrieve CP's current score]
-    B --> C[Execute system job]
-    C --> D{Job successful?}
-    D -->|Yes| E[Determine job complexity]
-    D -->|No| F[Determine job complexity]
-    E --> G[Calculate positive points]
-    F --> H[Calculate negative points]
-    G --> I[Update score]
-    H --> I
-    I --> J[Apply score caps]
-    J --> K[Update short/medium/long-term scores]
-    K --> L[Calculate final weighted score]
-    L --> M{Minimum job threshold met?}
-    M -->|Yes| N[Use calculated score]
-    M -->|No| O[Use system average]
-    N --> P[Update System Job Score]
-    O --> P
-    P --> Q[Perform trend analysis]
-    Q --> R[Check for score recovery bonus]
-    R --> S[End]
-```
+<figure><img src="/.gitbook/assets/reputation_flow_chart.png" alt=""><figcaption></figcaption></figure>
 
 #### 5.3.11 Integration with Total Reputation Score
 
@@ -387,18 +353,7 @@ This score would then contribute to 30% of the CP's total reputation score.
 
 Flow Chart:
 
-```mermaid
-graph TD
-    A[Start] --> B[Retrieve all user jobs for each CP]
-    B --> C[For each CP]
-    C --> D[Count total jobs]
-    D --> E[Count successful jobs]
-    E --> F[Calculate success rate]
-    F --> G[Update User Job score]
-    G --> H{All CPs processed?}
-    H -->|No| C
-    H -->|Yes| I[End]
-```
+<figure><img src="/.gitbook/assets/reputation_user_job.png" alt=""><figcaption></figcaption></figure>
 
 # Future Works
 
@@ -437,17 +392,7 @@ the Compute Provider's (CP) service.
 
 Flow Chart:
 
-```mermaid
-graph TD
-    A[Start] --> B[Retrieve all reviews for CP]
-    B --> C{Number of reviews >= 5?}
-    C -->|Yes| D[Calculate weighted average rating]
-    C -->|No| E[Use system average]
-    D --> F[Normalize to 0-100 scale]
-    E --> F
-    F --> G[Update User Review Score]
-    G --> H[End]
-```
+<figure><img src="/.gitbook/assets/reputation_minimum_reviews.png" alt=""><figcaption></figcaption></figure>
 
 ### 1.5 User Weighting System
 
@@ -490,27 +435,7 @@ Then proceed with the normalization to the 0-100 scale as before.
 
 ### 1.6 Updated Flow Chart
 
-```mermaid
-graph TD
-    A[Start] --> B[Retrieve all reviews for CP]
-    B --> C{Number of reviews >= 5?}
-    C -->|Yes| D[Calculate user weights]
-    C -->|No| E[Use system average]
-    D --> F[Calculate weighted average rating]
-    F --> G[Normalize to 0-100 scale]
-    E --> G
-    G --> H[Update User Review Score]
-    H --> I[End]
-    D --> J[For each user]
-    J --> K{User flagged for low ratings?}
-    K -->|Yes| L[Apply weight reduction]
-    K -->|No| M[Use default weight]
-    L --> N[Check for weight recovery]
-    M --> N
-    N --> O{All users processed?}
-    O -->|No| J
-    O -->|Yes| F
-```
+<figure><img src="/.gitbook/assets/reputation_1.6.png" alt=""><figcaption></figcaption></figure>
 
 This full user review design addresses the concern about users who consistently give the lowest job reviews. By
 implementing this weighting system, we ensure that while all feedback is considered, the impact of potentially unfair or
@@ -557,21 +482,7 @@ jobs.
 - Involve both automated checks and manual review for complex cases.
 
 Flow Chart:
-
-```mermaid
-graph TD
-    A[Start] --> B[Retrieve CP's current score]
-    B --> C{New claim received?}
-    C -->|Yes| D[Verify claim]
-    C -->|No| E[Apply weekly recovery]
-    D --> F{Claim valid?}
-    F -->|Yes| G[Determine severity]
-    F -->|No| E
-    G --> H[Apply score deduction]
-    H --> I[Update User Claim Score]
-    E --> I
-    I --> J[End]
-```
+<figure><img src="/.gitbook/assets/reputation_verify.png" alt=""><figcaption></figcaption></figure>
 
 ## 3. Integration with Total Reputation Score
 
