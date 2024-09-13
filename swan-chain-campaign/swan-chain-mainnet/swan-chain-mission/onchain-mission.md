@@ -18,7 +18,11 @@ Participants will earn Onchain XP simply by holding funds on Swan Chain. The mor
 
 * XP earning rate: 50 XPs/day per ETH holding
 * XP will be counted and updated every 5 minutes
-* For users that already have ETH on Swan Chain, you will need to make another bridging transaction with any amount of ETH to let the system recognize your existing fund
+
+**Important note:**
+
+* For users that haven’t had ETH on Swan Chain, you will need to **use the suggested bridges listed on** [**mission.swanchain.io**](https://mission.swanchain.io/) **to start earning XP**.
+* For users that already have ETH on Swan Chain, you will need to **make a** **transfer with any amount of ETH to any address on Swan Chain** to let the system recognize your existing fund.
 
 #### 2. Computing Provider (CP) Tasks
 
