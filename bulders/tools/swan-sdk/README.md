@@ -6,9 +6,7 @@ description: Get started with Swan SDK
 
 ## Overview
 
-The Swan SDK is a Python toolkit designed to simplify interactions with the Swan Chain Network Resource. It provides a streamlined interface for creating and managing computational tasks, retrieving hardware information, processing payments, and monitoring task statuses.
-
-## Quick Example
+The Swan SDK is a toolkit designed to simplify interactions with the Swan Chain Network Resource. It provides a streamlined interface for creating and managing computational tasks, retrieving hardware information, processing payments, and monitoring task statuses.
 
 ### Chain Node Web Application
 
@@ -16,6 +14,8 @@ In this example, you will deploy a simple web application on the distributed com
 
 #### Create Task and Deploy Application Instances
 
+{% tabs %}
+{% tab title="Python" %}
 ```python
 import swan
 import json
@@ -46,6 +46,34 @@ print(json.dumps(task_info, indent=2))
 result_url = swan_orchestrator.get_real_url(task_uuid)
 print(result_url)
 ```
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+import "github.com/swanchain/go-swan-sdk"
+
+task, err := client.CreateTask(&CreateTaskReq{
+    PrivateKey:   "<PRIVATE_KEY>",
+    RepoUri:      "https://github.com/swanchain/awesome-swanchain/tree/main/ChainNode",
+    Duration:     2 * time.Hour,
+    InstanceType: "C1ae.small", 
+})
+
+taskUUID := task.Task.UUID
+
+// Get task deployment info
+resp, err := client.TaskInfo(taskUUID)
+
+//Get application instances URL
+appUrls, err := client.GetRealUrl(taskUUID)
+if err != nil {
+	log.Fatalln(err)
+}
+log.Printf("%v", appUrls)
+
+```
+{% endtab %}
+{% endtabs %}
 
 Sample URL output:
 
@@ -61,6 +89,15 @@ Screenshot:
 
 ## Documentation and Support
 
-For comprehensive guides and support, visit the [Swan SDK GitHub page](https://github.com/swanchain/python-swan-sdk). The repository includes detailed documentation, usage examples, and community support resources.
+More resources about swan SDK can be found here:
+
+* [Swan Console platform](https://console.swanchain.io)
+* [Deploying with Swan SDK](https://docs.swanchain.io/start-here/readme/deploying-with-swan-sdk)
+* [Python-swan-sdk](https://github.com/swanchain/python-swan-sdk)
+* [Go-swan-sdk](https://github.com/swanchain/go-swan-sdk)
+* [Python-swan-sdk-samples](https://github.com/swanchain/python-swan-sdk)
+* [Go-swan-sdk-samples](https://github.com/swanchain/go-swan-sdk-samples)
+
+
 
 ***

@@ -88,8 +88,10 @@
   * [Lagrange](bulders/tools/lagrange-dao.md)
   * [Multi-Chain Storage](bulders/tools/multi-chain-storage.md)
   * [Swan SDK](bulders/tools/swan-sdk/README.md)
-    * [Quickstart](bulders/tools/swan-sdk/1-quick-start.md)
-    * [A Sample Tutorial](bulders/tools/swan-sdk/2-a-sample-tutorial.md)
+    * [Python Swan SDK](bulders/tools/swan-sdk/1-quick-start/README.md)
+      * [A Sample Tutorial](bulders/tools/swan-sdk/1-quick-start/2-a-sample-tutorial.md)
+    * [Go Swan SDK](bulders/tools/swan-sdk/go-swan-sdk/README.md)
+      * [A Sample Tutorial](bulders/tools/swan-sdk/go-swan-sdk/a-sample-tutorial.md)
   * [Nebula Block Cloud](bulders/tools/nebula-block-cloud.md)
   * [Ecosystem Projects](bulders/tools/ecosystem-projects.md)
 

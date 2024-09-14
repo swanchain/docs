@@ -3,7 +3,7 @@
 The Swan SDK is a Python toolkit designed to simplify interactions with the Swan Chain Network Resource. It provides a streamlined interface for creating and managing computational tasks, retrieving hardware information, processing payments, and monitoring task statuses.
 
 {% hint style="info" %}
-_**For more sample tutorial, please refer to**_ [_**Swan SDK.**_](../../bulders/tools/swan-sdk/)
+_**For more sample tutorial, please refer to**_ [_**Python SDK Docs Samples**_](https://github.com/swanchain/python-sdk-docs-samples)
 {% endhint %}
 
 ### Installation <a href="#installation" id="installation"></a>
