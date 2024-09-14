@@ -36,8 +36,17 @@ go get -u github.com/swanchain/go-swan-sdk
 To use `go-swan-sdk`, you must first import it, and you can create and deploy instance applications quickly.
 
 ```go
-import "github.com/swanchain/go-swan-sdk"
+import (
+	"log"
+	"time"
+	
+	"github.com/swanchain/go-swan-sdk"
+)
 
+client, err := swan.NewAPIClient(apiKey)
+if err != nil {
+	log.Fatalf("failed to init swan client, error: %v \n", err)
+}
 task, err := client.CreateTask(&CreateTaskReq{
     PrivateKey:   "<PRIVATE_KEY>",
     RepoUri:      "https://github.com/swanchain/awesome-swanchain/tree/main/hello_world",
@@ -56,6 +65,4 @@ if err != nil {
 	log.Fatalln(err)
 }
 log.Printf("app urls: %v", appUrls)
-
 ```
-

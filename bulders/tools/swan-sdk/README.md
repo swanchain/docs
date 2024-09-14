@@ -70,7 +70,6 @@ if err != nil {
 	log.Fatalln(err)
 }
 log.Printf("%v", appUrls)
-
 ```
 {% endtab %}
 {% endtabs %}
