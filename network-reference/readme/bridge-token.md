@@ -24,4 +24,4 @@ Swan Chain's third-party bridges:
 [https://cometbridge.app/?original=Ethereum\&target=Swan\&symbol=ETH](https://cometbridge.app/?original=Ethereum\&target=Swan\&symbol=ETH)
 {% endhint %}
 
-`L1 bridge address`:  0x9C041e883BE0e3201524e7BA6f7A53B367b5CFb0
+**L1 Bridge Address**: `0xed7525946A09056C6AaE29941b8323017382050e`
