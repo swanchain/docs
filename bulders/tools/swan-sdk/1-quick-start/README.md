@@ -1,12 +1,10 @@
-
-# Quickstart
+# Python Swan SDK
 
 This guide details the steps needed to install or update the SWAN SDK for Python. The SDK is a comprehensive toolkit designed to facilitate seamless interactions with the SwanChain API.
 
 ## Installation
 
 To use Swan SDK, you first need to install it and its dependencies. Before installing Swan SDK, install Python 3.8 or later and web3.py(==6.15.1).
-
 
 Install the latest Swan SDK release via **pip**:
 
@@ -22,18 +20,13 @@ cd python-swan-sdk
 pip install .
 ```
 
-## Get Orchestrator API Key
+## Get Swan API Key
 
-To use `swan-sdk`, an Orchestrator API key is required. 
+To use `swan-sdk`, an Swan API key is required. Steps to get an API Key:
 
-Steps to get an API Key:
-
-- Go to [Orchestrator Dashboard](https://orchestrator.swanchain.io/provider-status), switch network to Mainnet.
-- Login through MetaMask.
-- Click the user icon on the top right.
-- Click 'Show API-Key' -> 'New API Key'
-- Store your API Key safely, do not share with others.
-
+* Go to [Swan Console](https://console.swanchain.io/), switch network to [Swan Chain Mainnet](https://docs.swanchain.io/network-reference/readme).
+* Login with your wallet.
+* Click `API Keys` -> `Generate API Key`
 
 ## Using Swan
 

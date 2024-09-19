@@ -8,14 +8,11 @@ _**For more sample tutorial, please refer to**_ [_**Python Swan SDK Samples**_](
 
 ### Get Swan API Key <a href="#get-orchestrator-api-key" id="get-orchestrator-api-key"></a>
 
-To use `swan-sdk`, an Swan API key is required.
+To use `swan-sdk`, an Swan API key is required. Steps to get an API Key:
 
-Steps to get an API Key:
-
-* Go to [Orchestrator Dashboard](https://orchestrator.swanchain.io/provider-status), switch network to Mainnet.
-* Login with your Wallet.
-* Click the user icon on the top right.
-* Click `Show API-Key` -> `New API Key`
+* Go to [Swan Console](https://console.swanchain.io/), switch network to [Swan Chain Mainnet](https://docs.swanchain.io/network-reference/readme).
+* Login with your wallet.
+* Click `API Keys` -> `Generate API Key`
 
 ## Quick Start <a href="#installation" id="installation"></a>
 
@@ -82,6 +79,8 @@ print(app_urls)
 
 `go-swan-sdk` requires [Go](https://go.dev/) version [1.21](https://go.dev/doc/devel/release#go1.21.0) or above.
 
+**Using go-swan-sdk**
+
 With [Go's module support](https://go.dev/wiki/Modules#how-to-use-modules), `go [build|run|test]` automatically fetches the necessary dependencies when you add `import`in your project:
 
 ```go
@@ -94,7 +93,7 @@ To update the SDK use `go get -u` to retrieve the latest version of the SDK:
 go get -u github.com/swanchain/go-swan-sdk
 ```
 
-### Using Go Swan SDK <a href="#quickstart" id="quickstart"></a>
+### Quickstart <a href="#quickstart" id="quickstart"></a>
 
 To use `go-swan-sdk`, you must first import it, and you can create and deploy instance applications quickly.
 
@@ -134,6 +133,7 @@ func main() {
 	}
 	log.Printf("app urls: %v \n", appUrls)
 }
+
 ```
 {% endtab %}
 {% endtabs %}
