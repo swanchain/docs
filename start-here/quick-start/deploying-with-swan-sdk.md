@@ -145,5 +145,5 @@ More resources about swan SDK can be found here:
 * [Swan Console platform](https://console.swanchain.io/)
 * [Python-swan-sdk](../../bulders/tools/swan-sdk/1-quick-start/)
 * [Go-swan-sdk](../../bulders/tools/swan-sdk/go-swan-sdk/)
-* [Python-swan-sdk-samples](https://github.com/swanchain/python-swan-sdk)
+* [Python-swan-sdk-samples](https://github.com/swanchain/python-sdk-docs-samples)
 * [Go-swan-sdk-samples](https://github.com/swanchain/go-swan-sdk-samples)
