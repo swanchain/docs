@@ -44,6 +44,7 @@
     * [Computing Provider Account](core-concepts/protocol-stack/computing-layer/computing-provider-account.md)
     * [Layer3 Computing Protocol](core-concepts/protocol-stack/computing-layer/layer3-computing-protocol.md)
     * [Reputation System](core-concepts/protocol-stack/computing-layer/reputation-system.md)
+    * [Dynamic Pricing](core-concepts/protocol-stack/computing-layer/dynamic-pricing.md)
   * [CDN Layer](core-concepts/protocol-stack/cdn-layer.md)
   * [Tokenomics](core-concepts/protocol-stack/token/README.md)
     * [Swan Provider Income](core-concepts/protocol-stack/token/swan-provider-income.md)
