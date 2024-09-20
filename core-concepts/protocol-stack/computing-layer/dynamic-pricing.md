@@ -4,6 +4,9 @@
 
 In the fast-paced world of cloud computing and AI, the demand for GPU resources fluctuates rapidly. Our new dynamic pricing strategy aims to optimize resource allocation by implementing a quadratic demand model. This approach ensures that prices respond more aggressively to high demand, promoting efficient resource utilization and improved accessibility for all users.
 
+### Abstract Workflow
+![dynamic_pricing_overview.png](imgs/dynamic_pricing_overview.png)
+
 ## 2. Why a Quadratic Demand Model?
 
 ### Advantages of Quadratic Pricing:
@@ -41,9 +44,6 @@ Where:
 - w2 = 0.65 (weight for current availability)
 
 This quadratic formula ensures that the demand factor grows more rapidly as demand increases, with a maximum value of 5.0.
-
-### Abstract Workflow
-![dynamic_pricing_overview.png](imgs/dynamic_pricing_overview.png)
 
 ## 4. Base Price Determination
 
