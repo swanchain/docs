@@ -154,35 +154,35 @@ Else:
 ### Scenario 1: Low Demand
 - Historical Usage: Low (H = 0.2)
 - Current Availability: 45% resources occupied (C = 0.083)
-
+```
 Weighted Sum = 0.35 * 0.2 + 0.65 * 0.083 = 0.124
 Demand Factor = 1 + 4 * (0.124)^2 = 1.061
 For a base price of $10/hour: New Price = 1.061 * $10 = $10.61/hour
-
+```
 ### Scenario 2: Moderate Demand
 - Historical Usage: Average (H = 0.5)
 - Current Availability: 70% resources occupied (C = 0.5)
-
+```
 Weighted Sum = 0.35 * 0.5 + 0.65 * 0.5 = 0.5
 Demand Factor = 1 + 4 * (0.5)^2 = 2.0
 For a base price of $10/hour: New Price = 2.0 * $10 = $20/hour
-
+```
 ### Scenario 3: High Demand
 - Historical Usage: High (H = 0.8)
 - Current Availability: 90% resources occupied (C = 0.833)
-
+```
 Weighted Sum = 0.35 * 0.8 + 0.65 * 0.833 = 0.821
 Demand Factor = 1 + 4 * (0.821)^2 = 3.697
 For a base price of $10/hour: New Price = 3.697 * $10 = $36.97/hour
-
+```
 ### Scenario 4: Peak Demand
 - Historical Usage: Very High (H = 1.0)
 - Current Availability: 100% resources occupied (C = 1.0)
-
+```
 Weighted Sum = 0.35 * 1.0 + 0.65 * 1.0 = 1.0
 Demand Factor = 1 + 4 * (1.0)^2 = 5.0
 For a base price of $10/hour: New Price = 5.0 * $10 = $50/hour
-
+```
 ## 8. Conclusion
 
 This comprehensive dynamic pricing strategy ensures that our prices reflect both the most common price points among our Computing Providers and the current market demand. By using a frequency-weighted average of CP prices, we establish a fair baseline that represents the consensus pricing in our provider ecosystem. The subsequent application of our quadratic dynamic pricing model then allows us to respond effectively to changes in demand, ensuring efficient resource allocation and maximizing value for all stakeholders in our computing ecosystem. This approach not only captures market trends in resource pricing but also adapts quickly to shifts in user demand, creating a responsive and efficient pricing mechanism.
