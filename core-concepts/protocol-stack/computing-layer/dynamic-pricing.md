@@ -42,9 +42,90 @@ Where:
 
 This quadratic formula ensures that the demand factor grows more rapidly as demand increases, with a maximum value of 5.0.
 
-## 4. Components of the Demand Factor
+### Abstract Workflow
 
-### 4.1 Historical Resource Usage (H)
+```mermaid
+graph TD
+    A[CP1 Prices] --> E[Weighted Arithmetic Mean Calculation]
+    B[CP2 Prices] --> E
+    C[CP3 Prices] --> E
+    D[CP4 Prices] --> E
+    E --> F[Base Price for Each Resource Type]
+    F --> G[Composite Base Price for Hardware Configurations]
+    H[Historical Usage Data] --> I[Calculate Historical Usage Factor H]
+    J[Current Resource Availability] --> K[Calculate Current Availability Factor C]
+    G --> L[Apply Quadratic Dynamic Pricing Formula]
+    I --> L
+    K --> L
+    L --> M[Final Price]
+```
+
+## 4. Base Price Determination
+
+Before applying our dynamic pricing model, we first establish a base price for each type of computing resource. This base price is derived from the prices set by our various Computing Providers (CPs).
+
+### 4.1 Computing Provider Pricing
+
+Each CP sets their own prices for different hardware resources, including:
+- CPU (price per core per hour)
+- GPU (price per GPU per hour)
+- Memory (price per GB per hour)
+- Storage (price per GB per hour)
+
+### 4.2 Weighted Arithmetic Mean Calculation
+
+For each type of resource, we calculate a Weighted Arithmetic Mean (WAM) across the available resource from all CPs. This WAM becomes our base price for that resource.
+
+The formula for WAM is:
+
+```
+WAM = (Σ (Price_i * Weight_i)) / (Σ Weight_i)
+```
+
+Where:
+- Price_i is a unique price point set by one or more CPs
+- Weight_i is the number of CPs that have set their price to Price_i
+
+This approach ensures that our base price is more heavily influenced by the most common price points among our CPs.
+
+#### Let's look at how different CP prices affect the base price for memory:
+```
+CP1: $0.010 per GB per hour
+CP2: $0.010 per GB per hour
+CP3: $0.012 per GB per hour
+CP4: $0.010 per GB per hour
+CP5: $0.015 per GB per hour
+CP6: $0.012 per GB per hour
+```
+
+Grouping by unique prices:
+```
+$0.010: Weight = 3 (set by CP1, CP2, CP4)
+$0.012: Weight = 2 (set by CP3, CP6)
+$0.015: Weight = 1 (set by CP5)
+```
+
+WAM Calculation:
+```
+WAM = (0.010*3 + 0.012*2 + 0.015*1) / (3 + 2 + 1)
+    = 0.069 / 6
+    = $0.0115 per GB per hour
+```
+
+This WAM of $0.0115 would then be used as the base price for memory in our dynamic pricing calculations.
+
+### 4.3 Composite Base Price
+
+For each hardware configuration we offer, we calculate a composite base price by summing the WAM prices of its components:
+
+```
+Base Price = (CPU_WAM * #cores) + (GPU_WAM * #GPUs) + (Memory_WAM * #GB) + (Storage_WAM * #GB)
+```
+
+
+## 5. Components of the Demand Factor
+
+### 5.1 Historical Resource Usage (H)
 
 We analyze the past 30 days of usage data, focusing on patterns in daily and weekly usage.
 
@@ -53,7 +134,7 @@ Calculation:
 H = (Current Hour Avg Usage - Overall Avg Usage) / (Max Usage - Overall Avg Usage)
 ```
 
-### 4.2 Current Resource Availability (C)
+### 5.2 Current Resource Availability (C)
 
 This factor considers the current occupation rate of resources, but only starts contributing when more than 40% of resources are occupied.
 
@@ -65,10 +146,10 @@ Else:
     C = ((Occupied Resources / Total Resources) - 0.4) / 0.6
 ```
 
-## 5. Price Model
+## 6. Price Model
 ![dynamic_pricing_chart.png](imgs/dynamic_pricing_chart.png)
 
-## 6. Example Scenarios
+## 7. Example Scenarios
 
 ### Scenario 1: Low Demand
 - Historical Usage: Low (H = 0.2)
@@ -102,8 +183,6 @@ Weighted Sum = 0.35 * 1.0 + 0.65 * 1.0 = 1.0
 Demand Factor = 1 + 4 * (1.0)^2 = 5.0
 For a base price of $10/hour: New Price = 5.0 * $10 = $50/hour
 
-## 7. Conclusion
+## 8. Conclusion
 
-Our quadratic dynamic pricing strategy represents a significant advancement in resource allocation efficiency. By implementing a model that responds more aggressively to high demand, we ensure that our pricing accurately reflects the real-time value of our computing resources. This approach not only optimizes resource utilization but also provides clearer price signals to our users, allowing them to make more informed decisions about their resource usage.
-
-As we roll out this new pricing model, we remain committed to transparency and fairness. Our goal is to create a balanced ecosystem where all users have access to the resources they need, when they need them. We will continually monitor and refine this system to ensure it meets the evolving needs of our diverse user base and maintains our position at the forefront of cloud computing technology.
+This comprehensive dynamic pricing strategy ensures that our prices reflect both the most common price points among our Computing Providers and the current market demand. By using a frequency-weighted average of CP prices, we establish a fair baseline that represents the consensus pricing in our provider ecosystem. The subsequent application of our quadratic dynamic pricing model then allows us to respond effectively to changes in demand, ensuring efficient resource allocation and maximizing value for all stakeholders in our computing ecosystem. This approach not only captures market trends in resource pricing but also adapts quickly to shifts in user demand, creating a responsive and efficient pricing mechanism.
