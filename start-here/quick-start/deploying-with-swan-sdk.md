@@ -18,7 +18,7 @@ To use `swan-sdk`, an Swan API key is required. Steps to get an API Key:
 
 {% tabs %}
 {% tab title="Python" %}
-### Installation <a href="#quickstart" id="quickstart"></a>
+#### Installation <a href="#quickstart" id="quickstart"></a>
 
 To use Python Swan SDK, you first need to install it and its dependencies. Before installing Swan SDK, install Python 3.8 or later and web3.py(==6.15.1).
 
@@ -36,7 +36,7 @@ cd python-swan-sdk
 pip install .
 ```
 
-### Using Python Swan SDK <a href="#quickstart" id="quickstart"></a>
+#### Using Python Swan SDK <a href="#quickstart" id="quickstart"></a>
 
 To use Python Swan SDK, you must first import it and indicate which service you're going to use:
 
@@ -73,7 +73,7 @@ print(app_urls)
 {% endtab %}
 
 {% tab title="Go" %}
-### Installation <a href="#quickstart" id="quickstart"></a>
+#### Installation <a href="#quickstart" id="quickstart"></a>
 
 **Go Version**
 
@@ -93,7 +93,7 @@ To update the SDK use `go get -u` to retrieve the latest version of the SDK:
 go get -u github.com/swanchain/go-swan-sdk
 ```
 
-### Quickstart <a href="#quickstart" id="quickstart"></a>
+#### Quickstart <a href="#quickstart" id="quickstart"></a>
 
 To use `go-swan-sdk`, you must first import it, and you can create and deploy instance applications quickly.
 

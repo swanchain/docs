@@ -14,6 +14,8 @@
     * [5.Delete Files and Buckets](start-here/quick-start/store-and-retrieve-a-file-with-swan-storage/5.delete-files-and-buckets.md)
 * [Swan Node](start-here/swan-node.md)
 
+## Computing Provider
+
 ## NETWORK REFERENCE
 
 * [Network Info](network-reference/readme/README.md)
@@ -81,7 +83,7 @@
   * [Edge Computing Provider (ECP)](bulders/computing-provider/edge-computing-provider-ecp/README.md)
     * [ECP Setup](bulders/computing-provider/edge-computing-provider-ecp/ecp-setup.md)
     * [ECP Funding Operations Guide](bulders/computing-provider/edge-computing-provider-ecp/ecp-funding-operations-guide.md)
-    * [ECP FAQ](bulders/computing-provider/edge-computing-provider-ecp/ecp-faq.md)
+    * [ECP FAQ](computing-provider/edge-computing-provider-ecp/ecp-faq.md)
 * [Storage Provider](bulders/storage-provider/README.md)
   * [Introduction](bulders/storage-provider/storage-provider-overview.md)
   * [Storage Auction System](bulders/storage-provider/storage-auction-system.md)
