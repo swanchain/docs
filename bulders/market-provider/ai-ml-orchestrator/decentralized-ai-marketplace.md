@@ -24,7 +24,7 @@ In summary, the Decentralized Auction Marketplace offers a secure and efficient 
 
 ## Auction Engine
 
-The auction engine is a critical component of the LagrangeDAO system. It manages the bidding process for tasks, ensuring that tasks are assigned to the most suitable computing providers. Here's a breakdown of its key functionalities:
+The auction engine is a critical component of the Lagrange system. It manages the bidding process for tasks, ensuring that tasks are assigned to the most suitable computing providers. Here's a breakdown of its key functionalities:
 
 1. **Load Provider Pool**: The auction engine initially loads all active computing providers into a pool. These providers are potential bidders for tasks.
 2. **Place Bid**: When a task is open for bidding, the auction engine allows a computing provider (bidder) to place a bid on the task. The bid is only successful if the task is currently accepting bids, the bidder has not already placed a bid, and the bidder's collateral is sufficient.
@@ -33,7 +33,7 @@ The auction engine is a critical component of the LagrangeDAO system. It manages
 5. **Run Bidding Process**: For each task that is open for bidding, the auction engine runs the bidding process. It allows the selected bidders to place their bids on the task.
 6. **List Tasks Available for Bidding**: The auction engine can provide a list of all tasks that are currently open for bidding.
 
-The auction engine is designed to be fair and efficient, ensuring that tasks are distributed evenly among computing providers and that the bidding process is competitive. It plays a crucial role in the operation of the LagrangeDAO network.
+The auction engine is designed to be fair and efficient, ensuring that tasks are distributed evenly among computing providers and that the bidding process is competitive. It plays a crucial role in the operation of the Lagrange network.
 
 &#x20;The data structure for each task in the platform includes:
 
