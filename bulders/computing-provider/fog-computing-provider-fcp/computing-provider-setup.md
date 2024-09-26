@@ -14,6 +14,7 @@
 * [Install the Hardware resource-exporter](computing-provider-setup.md#install-the-hardware-resource-exporter)
 * [Build and config the Computing Provider](computing-provider-setup.md#build-and-config-the-computing-provider)
 * [Install AI Inference Dependency(Optional)](computing-provider-setup.md#optional-install-ai-inference-dependency)
+* [Install Node-Port Dependency (Optional)](computing-provider-setup.md#optional-install-node-port-dependency)
 * [Config and Receive UBI Tasks(Optional)](computing-provider-setup.md#optional-config-and-receive-zk-tasks)
 * [Start the Computing Provider](computing-provider-setup.md#start-the-computing-provider)
 * [CLI of Computing Provider](computing-provider-setup.md#cli-of-computing-provider)
@@ -293,7 +294,7 @@ spec:
     spec:
       containers:
       - name: resource-exporter
-        image: filswan/resource-exporter:v11.2.8
+        image: filswan/resource-exporter:v11.2.9
         imagePullPolicy: IfNotPresent
         securityContext:
           privileged: true
@@ -313,7 +314,7 @@ If you have installed it correctly, you can see the result shown in the figure b
 ```bash
 git clone https://github.com/swanchain/go-computing-provider.git
 cd go-computing-provider
-git checkout mainnet
+git checkout releases
 ```
 
 Then build the Computing provider on the **Swan Mainnet** by following the below steps:
@@ -381,7 +382,7 @@ make install
        Password = ""                                 # The login password, if only a single node, you can ignore
 
        [RPC]
-       SWAN_CHAIN_RPC = "https://mainnet-rpc.swanchain.org"     # Swan chain RPC
+       SWAN_CHAIN_RPC = "https://mainnet-rpc01.swanchain.io"     # Swan chain RPC
     ```
 
 **Note:**
@@ -474,6 +475,85 @@ It is necessary for the Computing Provider to deploy the AI inference endpoint. 
 export CP_PATH=<YOUR_CP_PATH>
 ./install.sh
 ```
+
+### \[**OPTIONAL**] Install Node-Port Dependency
+
+* Install Resource Isolation service on the k8s cluster In order to view the actual available resources of the container, you need to install a resource isolation service on the cluster.
+  *   For Ubuntu 20.04:
+
+      ```
+      kubectl apply -f https://raw.githubusercontent.com/swanchain/go-computing-provider/refs/heads/releases/resource-isolation-20.04.yaml
+      ```
+  *   For Ubuntu 22.04 and higher.
+
+      * Edit `/etc/default/grub` and modify it to the following content:
+
+      ```bash
+         GRUB_CMDLINE_LINUX_DEFAULT="quiet splash systemd.unified_cgroup_hierarchy=0"
+      ```
+
+      * Update grub configuration
+
+      ```
+      update-grub
+      ```
+
+      * Reboot the system
+
+      ```bash
+         reboot now
+      ```
+
+      * Install resource-isolation service on k8s
+
+      ```
+        kubectl apply -f https://raw.githubusercontent.com/swanchain/go-computing-provider/refs/heads/releases/resource-isolation.yaml
+      ```
+*   Install network policies
+
+    * Generate Network Policy (location at $CP\_PATH/network-policy.yaml )
+
+    ```bash
+    computing-provider network generate
+    ```
+
+    * Deploy Network Policy
+
+    ```bash
+    kubectl apply -f $CP_PATH/network-policy.yaml
+    ```
+
+    * Confirm that all of the network policy are running with the following command.
+
+    ```
+    # kubectl get gnp
+    NAME                    CREATED AT
+    global-01kls78xh7dk4n   2024-09-25T04:00:59Z
+    global-ao9kq72mjc0sl3   2024-09-25T04:00:59Z
+    global-e59cad59af9c65   2024-09-25T04:00:59Z
+    global-pd6sdo8cjd61yd   2024-09-25T04:00:59Z
+    global-pod1namespace1   2024-09-25T04:01:00Z
+    global-s92ms87dl3j6do   2024-09-25T04:01:00Z
+
+    # kubectl get globalnetworksets
+    NAME                    CREATED AT
+    netset-2300e518e9ad45   2024-09-25T04:00:59Z
+    ```
+
+    **Note:** The nodes for deploying CP need to open ports in the range of `30000-32767`
+* Change the `tasktypes`
+
+```bash
+computing-provider account changeTaskTypes --ownerAddress <YOUR_OWNER_WALLET_ADDRESS> 5
+```
+
+> **Note:** `--task-types` Supports 4 task types:
+>
+> * `1`: FIL-C2-512M
+> * `2`: Aleo
+> * `3`: AI
+> * `4`: FIL-C2-32G
+> * `5`: NodePort
 
 ### \[**OPTIONAL**] Config and Receive ZK Tasks
 
@@ -611,16 +691,16 @@ nohup computing-provider run >> cp.log 2>&1 &
 computing-provider task list 
 ```
 
-* Retrieve detailed information for a specific task using `task_uuid`
+* Retrieve detailed information for a specific task using `job_uuid`
 
 ```
-computing-provider task get [task_uuid]
+computing-provider task get [job_uuid]
 ```
 
-* Delete task by `task_uuid`
+* Delete task by `job_uuid`
 
 ```
-computing-provider task delete [task_uuid]
+computing-provider task delete [job_uuid]
 ```
 
 ### Getting Help
