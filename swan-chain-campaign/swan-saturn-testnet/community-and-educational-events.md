@@ -36,27 +36,27 @@ Swan's Community and Educational Events are a vital component of the Swan Chain 
 
 ## **Zealy**
 
-#### 1. DURATION:&#x20;
+**1. DURATION:**
 
 22nd January 2024, 10:00 (EST) -  22nd March 2024, 23:59 (EST)
 
-**2. RULES/TERMS:**
+#### 2. RULES/TERMS:
 
-* Follow Swan communities, daily interact with [Swan social media](https://linktr.ee/swan\_chain).
+* Follow Swan communities, daily interact with[ Swan social media](https://linktr.ee/swan\_chain).
 * Attend webinars, participate in AMAs, and engage in contests (content creation, quiz competitions).
 * Participants earn XP for completing tasks; more tasks lead to more XP.
-* Top 1-30 receive OG Elite, Top 31-100 receive OG Platinum.
+* Top 1-30 receive Zealy Elite, Top 31-100 receive Zealy Platinum.
 
-**3. HOW TO JOIN:**
+#### 3. HOW TO JOIN:
 
-* Join [Swan community on Zealy](https://zealy.io/c/swan/questboard)
+* Join[ Swan community on Zealy](https://zealy.io/c/swan/questboard)
 
-**4. REWARD STRUCTURE (100,000 SWAN):**
+#### 4. REWARD STRUCTURE (100,000 SWAN):
 
 Winners are the top 100 on the Leaderboard.
 
-* Top 1-30: Get OG Elite (1,000 SWAN/each)
-* Top 31-100: Get OG Platinum (500 SWAN/each)
+* Top 1-30: Get Zealy Elite (1,500 SWAN/each)
+* Top 31-100: Get Zealy Platinum (785 SWAN/each)
 
 
 
