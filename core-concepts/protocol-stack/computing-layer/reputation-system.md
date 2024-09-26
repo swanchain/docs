@@ -129,7 +129,7 @@ accounting for longevity and user satisfaction.
 #### User Request Refund Score (100 points max)
 
 - Score = [(Successfully completed jobs - Approved refund jobs) / Successfully completed jobs] * 100
-
+ 
 #### User Job Score (100 points max)
 
 - Score = (Successfully completed jobs / Total number of jobs) * 100
