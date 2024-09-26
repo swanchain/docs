@@ -3,11 +3,14 @@
 ## 1. Overview
 
 This document outlines the design for a reputation scoring system for Compute Providers (CPs). The system evaluates CPs
-based on various performance metrics to ensure high-quality service delivery.The system is divided into two main blocks: system data analysis and customer feedback
+based on various performance metrics to ensure high-quality service delivery.The system is divided into two main blocks:
+system data analysis and customer feedback
 
+- This is current composition, and in the future, we are planning add User Review Score to the
+  reputation scoring system, at that time, the percentage of each component will be adjusted accordingly.
+- Current Reputation Score Composition:
 
-Flow Chart:
-<figure><img src="/.gitbook/assets/reputation.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/Current_Reputation_Score_Composition.png" alt=""><figcaption></figcaption></figure>
 
 ## 2. Models
 
@@ -28,11 +31,13 @@ Flow Chart:
 
 ### 2.1.1 Distribution System
 
-- Distribution System is the system used to send the sampling tasks to the eligible cp's, each time the Sampling System
-  picks a job, it will be handed over to the Distribution System to send the task to the eligible CP's (directly to the
-  CP's through the API, there is no contractual information) and the task will be The details of the job are recorded in
-  the database for subsequent analysis
-- **Note**： If a task cannot be sent due to whitelisting/blacklisting, no points are deducted or added.
+- The Distribution System is responsible for distributing sampling tasks to the computing provider. Each time the
+  Sampling System selects a job, it is transferred to the Distribution System for distribution to the computing
+  provider. The tasks are distributed directly to the computing provider. The details of each job are recorded for
+  subsequent analysis.
+- **Note:**
+    - If a task is unable to be distributed due to whitelisting or blacklisting, no points are deducted or added.
+    - If the gas fee is too high, the assignment will be delayed
 
 ### 2.1.2 Probe System
 
@@ -41,9 +46,9 @@ Flow Chart:
 
 ### 2.1.3 Job Settlement System
 
-- All cp's who fulfill the “Job Completion” (see below) criteria will receive a bonus for the corresponding time, which
-  will be settled on a daily basis, with all Sampling Job earnings for that day being settled at 11:55pm (EST) every
-  day.
+- All cp's who meet the criteria for “Job Completion” (see below) will receive a bonus for the appropriate amount of
+  time, which will be billed on a per-job basis, with each job completion bonus being paid directly to the cp upon
+  completion of the job
 
 ### 2.2 Reputation Scoring System
 
@@ -57,23 +62,13 @@ The total reputation score is composed of the following components:
 
 ### Current Version Composition:
 
-| Component        | Weight | Description                                        |
-|------------------|--------|----------------------------------------------------|
-| Machine Uptime   | 10%    | Availability of the CP based on continuous pinging |
-| Join Time        | 20%    | Longevity of the CP in the system                  |
-| System Job Score | 50%    | Performance on controlled, system-initiated jobs   |
-| User Job Score   | 20%    | Success rate of user-initiated jobs                |
-
-### Future Version Composition (After User Review and User Request Refund System Implementation):
-
 | Component                 | Weight | Description                                        |
 |---------------------------|--------|----------------------------------------------------|
 | Machine Uptime            | 10%    | Availability of the CP based on continuous pinging |
 | Join Time                 | 10%    | Longevity of the CP in the system                  |
-| User Review Score         | 10%    | Feedback provided by users on finished jobs        |
-| User Request Refund Score | 25%    | Impact of confirmed user claims on jobs            |
-| System Job Score          | 30%    | Performance on controlled, system-initiated jobs   |
+| System Job Score          | 35%    | Performance on controlled, system-initiated jobs   |
 | User Job Score            | 15%    | Success rate of user-initiated jobs                |
+| User Request Refund Score | 30%    | Impact of confirmed user claims on jobs            |
 
 ### Rationale for Component Selection and Weighting
 
@@ -130,6 +125,10 @@ accounting for longevity and user satisfaction.
 - For each successful job: +10 points
 - For each failed job: -20 points
 - Score is capped at 100 points and cannot go below 0
+
+#### User Request Refund Score (100 points max)
+
+- Score = [(Successfully completed jobs - Approved refund jobs) / Successfully completed jobs] * 100
 
 #### User Job Score (100 points max)
 
@@ -273,15 +272,7 @@ New Score = Previous Score + Points from job outcome
 
 The score is capped at a minimum of 0 and a maximum of 100 points.
 
-#### 5.3.4 Job Complexity Factors
-
-To provide a more nuanced evaluation, we'll introduce job complexity factors:
-
-1. Basic Jobs: Standard difficulty, default point values apply.
-2. Complex Jobs: Higher difficulty, 1.5x point values (+15 for success, -30 for failure).
-3. Critical Jobs: Highest difficulty or importance, 2x point values (+20 for success, -40 for failure).
-
-#### 5.3.5 Time-based Performance Evaluation
+#### 5.3.4 Time-based Performance Evaluation
 
 Implement a time-based evaluation to give more weight to recent performance:
 
@@ -295,12 +286,12 @@ The final System Job Score is a weighted average of these three scores:
 Final Score = (Short-term * 0.5) + (Medium-term * 0.3) + (Long-term * 0.2)
 ```
 
-#### 5.3.6 Minimum Job Threshold
+#### 5.3.5 Minimum Job Threshold
 
 - Require a minimum of 10 completed system jobs before including this score in the total reputation calculation.
 - For CPs with fewer than 10 jobs, use the system average for this component.
 
-#### 5.3.7 Performance Trend Analysis
+#### 5.3.6 Performance Trend Analysis
 
 Implement a trend analysis to identify improving or declining performance:
 
@@ -308,7 +299,7 @@ Implement a trend analysis to identify improving or declining performance:
 2. Categorize CPs as "Improving," "Stable," or "Declining" based on this trend.
 3. Use this information for internal monitoring and potentially for CP feedback.
 
-#### 5.3.8 Job Distribution and Fairness
+#### 5.3.7 Job Distribution and Fairness
 
 To ensure fair evaluation:
 
@@ -316,23 +307,23 @@ To ensure fair evaluation:
 2. Ensure a mix of basic, complex, and critical jobs for each CP over time.
 3. Randomize job assignment to prevent gaming of the system.
 
-#### 5.3.9 Score Recovery Mechanism
+#### 5.3.8 Score Recovery Mechanism
 
 Implement a gradual score recovery to allow CPs to improve their standing:
 
 - If a CP maintains a 100% success rate for 7 consecutive days, add a bonus of 5 points to their score (up to the
   maximum of 100).
 
-#### 5.3.10 Updated Flow Chart
+#### 5.3.9 Updated Flow Chart
 
 <figure><img src="/.gitbook/assets/reputation_flow_chart.png" alt=""><figcaption></figcaption></figure>
 
-#### 5.3.11 Integration with Total Reputation Score
+#### 5.3.10 Integration with Total Reputation Score
 
 The System Job Score contributes 30% to the total reputation score in the future version composition, as previously
 defined.
 
-#### 5.3.12 Example Calculation
+#### 5.3.11 Example Calculation
 
 Let's consider a CP with the following recent performance:
 
@@ -442,48 +433,29 @@ implementing this weighting system, we ensure that while all feedback is conside
 overly critical reviews is mitigated. This approach maintains the value of user feedback while protecting Compute
 Providers from undue negative impact from a small number of extremely critical users.
 
-## 2. User Claim Score Design
+## 2. User Request Review Score Design
 
-The User Claim Score reflects the reliability of the CP based on valid claims made by users for issues with completed
+The User Request Review Score reflects the reliability of the CP based on valid claims made by users for issues with completed
 jobs.
 
 ### 2.1 Scoring Mechanism
 
 - Start with a perfect score of 100.
-- Deduct points for each valid claim based on severity.
-- Implement a recovery mechanism to allow scores to improve over time.
+- Score based on ratio of number of Request Review to number of completions.
+- As more tasks are completed, the score will increase
 
-### 2.2 Claim Severity and Point Deduction
-
-1. Minor issues: -5 points (e.g., slight delay, minor quality issues)
-2. Moderate issues: -10 points (e.g., significant delay, moderate quality issues)
-3. Severe issues: -20 points (e.g., job failure, major quality issues)
-
-### 2.3 Score Recovery
-
-- Implement a gradual score recovery:
-    - Add 1 point every 7 days without a new claim, up to the maximum of 100.
-
-### 2.4 Calculation
+### 2.2 Calculation
 
 1. For each new claim:
    ```
-   Current Score = Previous Score - Points based on severity
+    Score = [(Successfully completed jobs - Approved refund jobs) / Successfully completed jobs] * 100
    ```
 
-2. Weekly score recovery:
-   ```
-   Current Score = Min(Previous Score + 1, 100)
-   ```
-
-### 2.5 Claim Verification Process
+### 2.3 Request Review Verification Process
 
 - Implement a claim review process to verify the validity of user claims before applying score deductions.
-- Involve both automated checks and manual review for complex cases.
-
-Flow Chart:
-<figure><img src="/.gitbook/assets/reputation_verify.png" alt=""><figcaption></figcaption></figure>
-
+- Manual review for each case.
+- 
 ## 3. Integration with Total Reputation Score
 
 ### 3.1 Updated Future Version Composition
