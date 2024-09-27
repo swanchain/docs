@@ -2,7 +2,7 @@
 
 ## BULDERS
 
-* [dApp Developer](README.md)
+* [DApp Developer](README.md)
   * [Deploying Your First Smart Contract with Remix](bulders/dapp-developer/deploying-your-first-smart-contract-with-remix.md)
   * [Interacting with Smart Contract on Swan Chain Using Go](bulders/dapp-developer/interacting-with-smart-contract-on-swan-chain-using-go.md)
 * [App Developer](bulders/app-developer/README.md)
