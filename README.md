@@ -1,8 +1,8 @@
-# Quick Start
+# Welcome to the Swan Chain Docs
 
-## Welcome to the Swan Chain Docs
 
-Welcome to the **Swan Chain Docs**, your centralized resource for all technical documentation and information about the **Swan Chain ecosystem**. Here, you’ll find everything you need to explore and leverage the power of decentralized cloud computing using Swan Chain.&#x20;
+
+Welcome to the **Swan Chain Docs**, your centralized resource for all technical documentation and information about the **Swan Chain ecosystem**. Here, you’ll find everything you need to explore and leverage the power of decentralized cloud computing using Swan Chain.
 
 For more details on Swan Chain's governance, community, and vision, visit the [**Swan Chain Governance**](https://github.com/swanchain/governance).
 
