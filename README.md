@@ -1,4 +1,4 @@
-# Welcome to the Swan Chain Docs
+# Getting Started
 
 
 
