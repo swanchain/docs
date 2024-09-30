@@ -20,8 +20,8 @@ $$
 
 _Where:_
 
-* ( P\_{win}(R) ) = Probability of winning a job based on reputation ( R )
-* ( \lambda ) = Rate parameter (determined by the system)
+* $$P_{win}(R)$$ = Probability of winning a job based on reputation ($$R$$)
+* $$\lambda$$ = Rate parameter (determined by the system)
 
 ***
 
@@ -39,10 +39,10 @@ $$
 
 _Where:_
 
-* ( J\_{total}(x) ) = Total number of jobs at time ( x )
-* ( L\_{initial} ) = Carrying capacity for initial jobs (maximum number of jobs without incentives)
-* ( k\_{initial} ) = Growth rate for initial jobs
-* ( x\_{0\_{initial\}} ) = Midpoint of the growth curve, where growth is fastest
+* $$J_{total}(x)$$ = Total number of jobs at time ($$x$$)
+* $$L_{initial}$$= Carrying capacity for initial jobs (maximum number of jobs without incentives)
+* $$k_{initial}$$ = Growth rate for initial jobs
+* $$x_{0_{initial}}$$= Midpoint of the growth curve, where growth is fastest
 
 ***
 
@@ -60,9 +60,9 @@ $$
 
 _Where:_
 
-* ( I\_{base}(j) ) = Income from job ( j )
-* ( P\_j ) = Price bid for job ( j )
-* ( N\_j ) = Number of instances of job ( j ) executed
+* $$I_{base}(j)$$ = Income from job  ($$j$$)
+* $$P_j$$= Price bid for job ($$j$$)
+* $$N_j$$ = Number of instances of job ($$j$$)executed
 
 ***
 
@@ -80,9 +80,9 @@ $$
 
 _Where:_
 
-* ( I\_{UBI} ) = UBI income
-* ( U ) = Average UBI income
-* ( I\_{total\_jobs} ) = Total income from all jobs
+* $$I_{UBI}$$ = UBI income
+* $$U$$ = Average UBI income
+* $$I_{total_jobs}$$ = Total income from all jobs
 
 ***
 
