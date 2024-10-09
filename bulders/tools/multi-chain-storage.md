@@ -6,7 +6,7 @@
 _Learn more about MCS in_[ _its documentation_](https://docs.filswan.com/multichain.storage/overview)_._
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Why Choose Multi-Chain Storage? <a href="#id-7e7d" id="id-7e7d"></a>
 

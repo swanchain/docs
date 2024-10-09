@@ -85,7 +85,7 @@
     * [Swan Provider Income](core-concepts/protocol-stack/token/swan-provider-income.md)
     * [Governance](core-concepts/protocol-stack/token/governance/README.md)
       * [Treasure DAO](core-concepts/protocol-stack/token/governance/treasure-dao.md)
-    * [Universal Basic Income (UBI)](core-concepts/protocol-stack/token/swan-universal-basic-income-ubi/README.md)
+    * [UBIand Paid Job Compensation for CP](core-concepts/protocol-stack/token/swan-universal-basic-income-ubi/README.md)
       * [Mechanism](core-concepts/protocol-stack/token/swan-universal-basic-income-ubi/mechanism.md)
       * [ZK-UBI](core-concepts/protocol-stack/token/swan-universal-basic-income-ubi/zk-ubi.md)
       * [ZK-UBI Pool](core-concepts/protocol-stack/token/swan-universal-basic-income-ubi/zk-ubi-pool/README.md)

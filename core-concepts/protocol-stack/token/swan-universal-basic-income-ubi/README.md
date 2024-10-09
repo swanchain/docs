@@ -1,159 +1,212 @@
 ---
 description: >-
-  Universal Basic Income (UBI) Token Allocation for Computing Providers in Swan
-  Chain
+  Universal Basic Income (UBI) and Paid Job Compensation for Computing Providers
+  (CP) in Swan Chain
 ---
 
-# Universal Basic Income (UBI)
+# UBIand Paid Job Compensation for CP
 
-## **Abstract**
+### **Abstract**
 
-This document presents the design and implementation of a Universal Basic Income (UBI) token allocation mechanism for computing providers in the Swan Chain network. The allocation model is intended to incentivize network growth over a span of ten years and beyond, particularly during the initial phases before widespread user adoption of paid tasks. We detail the mathematical formula, the underlying algorithm, include specific parameter values, provide a visual representation of the allocation curve, and discuss the impact of this design on the network's sustainability and scalability.
+This document presents the design and implementation of a compensation mechanism for computing providers (CPs) in the Swan Chain network, combining Universal Basic Income (UBI) token allocation and market-priced paid jobs. The allocation model incentivizes network growth over a span of ten years and beyond, particularly during the initial phases before widespread user adoption of paid tasks. We detail the mathematical formula, the underlying algorithm—including how resource usage rates determine UBI distribution—and discuss the impact of this design on the network's sustainability and scalability. Notably, CPs receive income from both UBI and paid jobs, with UBI decreasing as paid job engagement increases, reflecting an adaptive compensation system aligned with network activity.
 
 ***
 
 ### **Introduction**
 
-Swan Chain is a decentralized network that connects computing providers with users requiring computational resources. To foster early network growth and incentivize computing providers to join and contribute resources, a UBI token allocation mechanism has been designed. This mechanism ensures a fair and gradual distribution of tokens to providers, supporting the network's expansion until it reaches a critical mass of user-paid tasks.
+Swan Chain is a decentralized network that connects computing providers with users requiring computational resources. To foster early network growth and incentivize CPs to join and contribute resources, a dual compensation mechanism has been designed:
+
+1. **Universal Basic Income (UBI)**: Provides CPs with a predictable token income when their resources are underutilized.
+2. **Paid Jobs**: Offers market-priced compensation for computational tasks requested by users.
+
+This mechanism ensures a fair and gradual distribution of tokens to providers, supporting the network's expansion until it reaches a critical mass of user-paid tasks. Importantly, the UBI distribution rate is influenced by the resource usage rate, and CPs earn market-based compensation when engaged in paid jobs.
 
 ***
 
 ### **Background**
 
-In decentralized networks, bootstrapping initial participation is crucial. Computing providers are less likely to join a network without immediate incentives, especially when user demand is low. The UBI token allocation serves as an initial reward system, encouraging providers to contribute resources by offering them a predictable token income. This strategy aims to balance supply and demand, stabilizing the network as it grows.
+In decentralized networks, bootstrapping initial participation is crucial. Computing providers may be hesitant to join a network without immediate incentives, especially when user demand is low. The combined UBI and paid job compensation system serves as a balanced reward mechanism:
+
+* **UBI**: Encourages providers to contribute resources by offering a baseline income during periods of low demand.
+* **Paid Jobs**: Motivates CPs to engage in user-requested tasks, earning income based on market rates.
+
+This strategy aims to balance supply and demand, stabilizing the network as it grows and transitions towards a mature, user-driven ecosystem.
 
 ***
 
-### **Token Allocation Formula and Algorithm**
+## **Compensation Model**
 
 #### **Mathematical Model**
 
-The token allocation to computing providers is modeled using a gamma-like function:
+The total daily income $$I(x)$$for a computing provider on day $$( x )$$ comprises two components:
+
+1. **UBI Income** $$y_{\text{UBI}}(x)$$
+2. **Paid Job Income** $$( y_{\text{Paid}}(x) )$$
+
+The UBI income is modeled using a gamma-like function adjusted by the resource usage rate $$u(x)$$:
 
 $$
-y(x) = A \cdot x^{B} \cdot e^{-C x}
+y_{\text{UBI}}(x) = A \cdot x^{B} \cdot e^{-C x} \cdot (1 - u(x))
 $$
 
 Where:
 
-* $$y(x)$$ is the number of tokens allocated on day ( $$x$$ ).
-* $$A$$ is the scaling factor determining the initial token allocation.
-* $$B$$ is the growth rate exponent.
-* $$C$$ is the decay rate constant.
-* $$x$$ represents the day number, starting from 1.
+* $$A = 42,000$$ (Scaling factor)
+* $$B = 0.1860$$ (Growth rate exponent)
+* $$C = 0.0017$$ (Decay rate constant)
+* $$x$$ is the day number, starting from 1
+* $$u(x)$$ is the **resource usage rate** on day$$( x )$$ (ranging from 0 to 1)
 
-#### **Specific Parameters**
+The paid job income depends on the market demand and the resource utilization:
 
-For the Swan Chain UBI mechanism, the following parameters have been selected based on network modeling and forecasting:
+$$
+y_{\text{Paid}}(x) = P_{\text{market}}(x) \cdot u(x)
+$$
 
-* **Scaling Factor (**$$A$$**):42,000**
-* **Growth Rate Exponent (**$$B$$**): 0.1860**
-* **Decay Rate Constant (**$$C$$**): 0.0017**
+Where:
 
-These parameters shape the token distribution curve over time, ensuring an initial increase in token allocation to incentivize early participation, followed by a gradual decrease to maintain long-term sustainability.
+* $$P_{\text{market}}(x)$$ is the market price for computational resources on day $$( x )$$
+* $$u(x)$$ represents the proportion of a CP's resources utilized by paid jobs
 
-#### **Algorithm Implementation**
+#### **Total Income**
 
-The algorithm for token allocation proceeds as follows:
+The total daily income for a CP is:
 
-1. **Initialization**: Set day $$x = 1$$.
-2. **Compute Daily Allocation**: $$y(x) = 42,000 \times x^{0.1860} \times e^{-0.0017 x}$$
-3. **Distribute Tokens**: Allocate ( $$y(x)$$) tokens to computing providers proportionally based on their contributed resources.
-4. **Increment Day**: Increase $$x$$ by 1.
-5. **Repeat**: Continue the process for each subsequent day.
+$$
+I(x) = y_{\text{UBI}}(x) + y_{\text{Paid}}(x)
+$$
 
-This algorithm ensures a smooth token distribution that initially increases to incentivize early participation and gradually decreases to maintain long-term sustainability.
+Substituting the expressions for $$y_{\text{UBI}}(x)$$ and $$y_{\text{Paid}}(x)$$
+
+$$
+I(x) = A \cdot x^{B} \cdot e^{-C x} \cdot (1 - u(x)) + P_{\text{market}}(x) \cdot u(x)
+$$
+
+#### **Resource Usage Rate Impact**
+
+* **When** $$u(x) = 0$$:
+  * CP receives full UBI allocation.
+  * No income from paid jobs.
+* **When** $$u(x) = 1$$:
+  * All resources are utilized by paid jobs.
+  * CP receives full income from paid jobs.
+  * No UBI allocation.
+* **Intermediate Values**:
+  * CP's income is a combination of UBI and paid job compensation, proportional to resource utilization.
 
 ***
 
-### **Visualization of the Allocation Curve**
+## **Algorithm Implementation**
 
-#### **Plot Description**
+The compensation mechanism proceeds as follows:
 
-The allocation curve represents the number of tokens allocated to computing providers each day over an extended period. The curve is generated using the formula:
+1. **Initialization**: Set day $$(x = 1)$$.
+2. **Determine Resource Usage Rate**: Calculate $$u(x)$$ based on the CP's resource utilization by paid jobs.
+3. **Compute UBI Income**:
 
-$$y(x) = 42,000 \times x^{0.1860} \times e^{-0.0017 x}$$
+$$
+y_{\text{UBI}}(x) = 42,000 \times x^{0.1860} \times e^{-0.0017 x} \times (1 - u(x))
+$$
 
-<figure><img src="../../../../.gitbook/assets/image (190).png" alt=""><figcaption></figcaption></figure>
+4. **Compute Paid Job Income**:
 
-**Key Features of the Curve:**
+$$
+y_{\text{Paid}}(x) = P_{\text{market}}(x) \times u(x)
+$$
 
-* **Initial Increase**: The curve rises from day 1, reflecting the increasing token allocation to encourage early participation.
-* **Peak Allocation**: The maximum token allocation occurs around a specific day, after which the allocation begins to decrease.
-* **Gradual Decay**: Following the peak, the curve demonstrates a gradual decline in daily token allocation, aligning with the anticipated growth in user-paid tasks.
+5. **Calculate Total Income**:
 
-#### **Data Points Illustration**
+$$
+I(x) = y_{\text{UBI}}(x) + y_{\text{Paid}}(x)
+$$
 
-Below is a table of computed token allocations for selected days:
+6. **Distribute Income**: Allocate $$I(x)$$ to CPs based on their resource contributions and utilization.
+7. **Increment Day**: Increase $$x$$ by 1.
+8. **Repeat**: Continue the process for each subsequent day.
 
-| **Day (**$$x$$**)** | **Daily Token Allocation (**$$y(x)$$**)** |
-| ------------------- | ----------------------------------------- |
-| 1                   | 41,928                                    |
-| 60                  | 81,224                                    |
-| 120                 | 83,441                                    |
-| 180                 | 81,252                                    |
-| 240                 | 77,406                                    |
-| 300                 | 72,862                                    |
-| 360                 | 68,066                                    |
-| 420                 | 63,253                                    |
-| 480                 | 58,556                                    |
-| 540                 | 54,049                                    |
-| 600                 | 49,774                                    |
-| 660                 | 45,751                                    |
-| 720                 | 41,989                                    |
-| 780                 | 38,486                                    |
-| 840                 | 35,236                                    |
-| 900                 | 32,230                                    |
-| 960                 | 29,456                                    |
-| 1,020               | 26,901                                    |
-| 1,080               | 24,552                                    |
-| 1,140               | 22,396                                    |
+This algorithm ensures that CPs are incentivized to contribute resources to the network, receiving UBI when their resources are underutilized and earning market-based compensation when engaged in paid jobs.
 
-#### **Interpretation**
+***
 
-* **Early Days**: High token allocations incentivize providers to join the network early.
-* **Mid-Term**: Token allocations gradually decrease but remain substantial, supporting continued participation.
-* **Long-Term**: Allocations continue to decrease, encouraging reliance on user-paid tasks as the primary incentive.
+## **Visualization of Income Over Time**
+
+#### **Scenarios**
+
+We consider three scenarios to illustrate how CPs' income evolves over time:
+
+1. **No Paid Jobs** $$u(x) = 0$$ : CPs receive income solely from UBI.
+2. **Low Paid Job Demand** $$u(x) = 0.1$$: CPs primarily earn UBI income with a small contribution from paid jobs.
+3. **Increasing Paid Job Demand**: Resource usage rate $$u(x)$$ increases over time, shifting CPs' income from UBI to paid jobs.
+
+<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### **Interpretation of the Plots**
+
+**1. Total Income Over 720 Days**
+
+* **Scenario 1:** $$u(x) = 0$$
+  * CPs receive income solely from UBI.
+  * The total income decreases gradually over time due to the decay in the UBI function.
+* **Scenario 2:** $$u(x) = 0.1$$
+  * CPs receive slightly less UBI income than in Scenario 1 due to the 10% resource usage.
+  * Paid job income contributes minimally, resulting in a slightly lower total income.
+* **Scenario 3:** $$Increasing u(x)$$
+  * Initially, total income is similar to Scenario 1.
+  * As $$u(x)$$ increases, paid job income increases while UBI income decreases.
+  * Total income remains relatively stable or increases slightly, demonstrating that paid job income offsets the reduction in UBI.
+
+**2. Income Components for Scenario 3**
+
+* **UBI Income**:
+  * Decreases over time as resource usage rate $$u(x)$$ increases.
+  * Reflects the transition from reliance on UBI to paid jobs.
+* **Paid Job Income**:
+  * Increases over time with the increase in $$u(x)$$ .
+  * Compensates for the decrease in UBI income.
+* **Total Income Stability**:
+  * The sum of UBI and paid job income maintains income stability for CPs.
+
+**3. Resource Usage Rate** $$u(x)$$ **for Scenario 3**
+
+* Shows a smooth increase from 0 to 0.8 over 720 days.
+* Reflects the gradual adoption of paid tasks in the network.
 
 ***
 
 ### **Impact of the Design**
 
-#### **Incentivizing Early Participation**
+#### **Incentivizing Optimal Resource Utilization**
 
-* **Growth Phase**: The initial increase in token allocation encourages computing providers to join early, fostering rapid network growth.
-* **Peak Allocation**: The model reaches a peak allocation before user-paid tasks become prevalent, ensuring providers are adequately rewarded during the network's formative stages.
+* **Adaptive Compensation**: CPs are motivated to engage in paid jobs as they become available, earning higher income through market rates.
+* **Resource Availability**: UBI ensures that CPs keep their resources available to the network, even during periods of low demand.
 
 #### **Sustainable Long-Term Distribution**
 
-* **Gradual Decay**: The exponential decay component ensures that token allocation decreases over time, aligning with the anticipated increase in user-paid tasks.
-* **Preventing Oversaturation**: By reducing token allocation over time, the model prevents token oversupply, maintaining the token's value and economic balance within the network.
-
-#### **Mathematical Justification**
-
-*   **Convergence of Total Allocation**: The integral of  $$y(x)$$from day 1 to infinity converges to a finite value, ensuring that the total token supply remains controlled.
-
-    $$\int_{1}^{\infty} y(x) , dx \approx 74,317,411 \text{ tokens}$$
-* **Flexibility in Parameters**: Adjusting $$A$$, $$B$$, and $$C$$allows the network to fine-tune the allocation model in response to network growth rates and market conditions.
+* **Transition to Market-Based Economy**: As the network matures and paid job demand increases, CPs naturally shift from UBI reliance to market compensation.
+* **Controlled Token Issuance**: The decreasing UBI allocation over time prevents token oversupply, maintaining economic stability.
 
 #### **Economic Implications**
 
-* **Token Value Stability**: Controlled token issuance helps maintain token scarcity, supporting its value in the marketplace.
-* **Encouraging Resource Contribution**: Providers receive predictable rewards, encouraging sustained participation and resource availability.
+* **Income Stability**: CPs benefit from a combination of UBI and paid job income, smoothing income fluctuations.
+* **Market Alignment**: Compensation reflects real-time network demand, promoting efficient resource allocation.
 
 ***
 
 ### **Conclusion**
 
-The UBI token allocation model for Swan Chain computing providers is a strategic approach to stimulate early network growth and ensure long-term sustainability. By employing a gamma-like function with specific parameters, the model provides a fair and controlled distribution of tokens that adapts over time. This design balances the immediate need to incentivize providers with the long-term goal of a self-sustaining network driven by user-paid tasks.
+The combined UBI and paid job compensation model for Swan Chain computing providers effectively balances incentives, supporting early network growth while promoting efficient resource utilization. By dynamically adjusting CPs' income based on resource usage rates and market demand, the model ensures sustainable network development and economic stability as the network transitions to a mature, user-driven ecosystem.
 
 ***
 
 ### **Future Work**
 
-* **Monitoring and Adjustment**: Continual monitoring of network performance and token economics will inform potential adjustments to the allocation parameters.
-* **User Adoption Strategies**: Complementing the UBI model with initiatives to increase user demand for computing tasks will further strengthen the network.
-* **Integration with Market Dynamics**: Exploring mechanisms to integrate token allocation with market signals can enhance responsiveness to changing conditions.
+* **Dynamic Market Pricing**: Implement real-time market pricing mechanisms for paid jobs to reflect supply and demand accurately.
+* **Adaptive UBI Parameters**: Explore methods to adjust UBI parameters ( A ), ( B ), and ( C ) based on network growth metrics.
+* **Enhanced Monitoring Tools**: Develop systems to track resource usage and job completion accurately, ensuring fair compensation.
 
 ***
 
@@ -161,23 +214,96 @@ The UBI token allocation model for Swan Chain computing providers is a strategic
 
 #### **Sample Calculations**
 
-*   **Day 1 Allocation**:
+**Scenario 1: No Paid Jobs** $$u(x) = 0$$
 
-    $$y(1) = 42,000 \times 1^{0.1860} \times e^{-0.0017 \times 1} \approx 41,928 \text{ tokens}$$
-*   **Day 365 Allocation**:
+**Day 1**:
 
-    $$y(365) = 42,000 \times 365^{0.1860} \times e^{-0.0017 \times 365} \approx 67,663 \text{ tokens}$$
-*   **Day 730 Allocation**:
+* UBI Income:
 
-    $$y(730) = 42,000 \times 730^{0.1860} \times e^{-0.0017 \times 730} \approx 41,387 \text{ tokens}$$
+$$
+y_{\text{UBI}}(1) = 42,000 \times 1^{0.1860} \times e^{-0.0017 \times 1} \times (1 - 0) \approx 41,928.93 \text{ tokens}
+$$
 
-#### **Total Allocation Over Time**
+* Paid Job Income:
 
-The total token allocation over an extended period can be calculated using the definite integral:
+$$
+y_{\text{Paid}}(1) = 50,000 \times 0 = 0 \text{ tokens}
+$$
 
-$$\text{Total Allocation} = \int_{1}^{\infty} y(x) , dx \approx 74,317,411 \text{ tokens}$$
+* Total Income:
 
-This ensures the total token supply remains within planned limits, preventing inflation and maintaining economic stability.
+$$
+I(1) = 41,928.93 + 0 = 41,928.93 \text{ tokens}
+$$
+
+**Scenario 2: Low Paid Job Demand** $$u(x) = 0.1$$
+
+**Day 1**:
+
+* UBI Income:
+
+$$
+y_{\text{UBI}}(1) = 42,000 \times 1^{0.1860} \times e^{-0.0017 \times 1} \times (1 - 0.1) \approx 37,736.04 \text{ tokens}
+$$
+
+* Paid Job Income:
+
+$$
+y_{\text{Paid}}(1) = 50,000 \times 0.1 = 5,000 \text{ tokens}
+$$
+
+* Total Income:
+
+$$
+I(1) = 37,736.04 + 5,000 = 42,736.04 \text{ tokens}
+$$
+
+**Scenario 3: Increasing Paid Job Demand**
+
+**Day 360:** $$u(360) = 0.4$$
+
+* UBI Income:
+
+$$
+y_{\text{UBI}}(360) = 42,000 \times 360^{0.1860} \times e^{-0.0017 \times 360} \times (1 - 0.4) \approx 13,898.99 \text{ tokens}
+$$
+
+* Paid Job Income:
+
+$$
+y_{\text{Paid}}(360) = 50,000 \times 0.4 = 20,000 \text{ tokens}
+$$
+
+* Total Income:
+
+$$
+I(360) = 13,898.99 + 20,000 = 33,898.99 \text{ tokens}
+$$
+
+**Day 720** $$u(720) = 0.8$$
+
+* UBI Income:
+
+$$
+y_{\text{UBI}}(720) = 42,000 \times 720^{0.1860} \times e^{-0.0017 \times 720} \times (1 - 0.8) \approx 2,477.66 \text{ tokens}
+$$
+
+* Paid Job Income:
+
+$$
+y_{\text{Paid}}(720) = 50,000 \times 0.8 = 40,000 \text{ tokens}
+$$
+
+* Total Income:
+
+$$
+I(720) = 2,477.66 + 40,000 = 42,477.66 \text{ tokens}
+$$
+
+#### **Observations**
+
+* **Income Stability**: Despite the decrease in UBI income, total income remains stable or increases due to higher paid job compensation.
+* **Incentive Alignment**: CPs are incentivized to participate in paid jobs without experiencing significant income loss during transitions.
 
 ***
 
@@ -191,29 +317,4 @@ This ensures the total token supply remains within planned limits, preventing in
 
 ### **Disclaimer**
 
-This document is intended for informational purposes to outline the UBI token allocation mechanism within the Swan Chain network. The parameters and models presented are subject to change based on ongoing network analysis and market conditions.
-
-***
-
-## **Appendix B: Mathematical Derivations**
-
-### **Definite Integral to Infinity**
-
-To ensure the total token allocation remains finite, we compute the definite integral of $$y(x)$$from day 1 to infinity:
-
-$$
-\int_{1}^{\infty} y(x) , dx = \int_{1}^{\infty} 42,000 \cdot x^{0.1860} \cdot e^{-0.0017 x} , dx
-$$
-
-Using the properties of the gamma function, we find:
-
-$$\int_{1}^{\infty} y(x) , dx = \frac{A}{C^{B + 1}} \cdot \Gamma(B + 1, C)$$
-
-Where:
-
-* $$\Gamma(B + 1, C)$$is the upper incomplete gamma function.
-
-Computing this integral numerically yields approximately 74,317,411 tokens, confirming the convergence of the total allocation.
-
-***
-
+This document is intended for informational purposes to outline the UBI and paid job compensation mechanism within the Swan Chain network. The parameters and models presented are subject to change based on ongoing network analysis and market conditions.

@@ -8,7 +8,7 @@ description: Web3 HuggingFace
 
 Lagrange serves as a decentralized version of Hugging Face, leveraging the decentralized computing resources from Swan Chain and utilizing multichain.storage as the decentralized storage layer to ensure the persistence of important data.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc51WhVt0u064TrimhzOhZ4OTspF_qAIanSJzyodELHzcugOBQZz4nvgN4QkSM8vS5gh3BlGsrmLj0f32TQms1pQDzDAYJgDvsjktzQLUldYrpCYGtynALtyjtppOobLMFLyWVUf55zOsx0HR5QwwHGh6Qu?key=Q5864mz9cz0YmHEPYYSbWA" alt=""><figcaption></figcaption></figure>
 
