@@ -33,7 +33,7 @@ The Layer3 Computing Protocol aims to aggregate computing jobs submission with r
 
 **3. Role of the Sequencer**
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Step 1:** CPs submit proofs of completed tasks to the Sequencer.
 * **Step 2:** Sequencer validates the received proofs.

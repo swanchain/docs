@@ -4,7 +4,7 @@ description: >-
   (CP) in Swan Chain
 ---
 
-# UBIand Paid Job Compensation for CP
+# UBI and Paid Job Compensation for CP
 
 ### **Abstract**
 
@@ -51,8 +51,8 @@ $$
 
 Where:
 
-* $$A = 42,000$$ (Scaling factor)
-* $$B = 0.1860$$ (Growth rate exponent)
+* $$A = 20,000$$ (Scaling factor)
+* $$B = 0.3100$$ (Growth rate exponent)
 * $$C = 0.0017$$ (Decay rate constant)
 * $$x$$ is the day number, starting from 1
 * $$u(x)$$ is the **resource usage rate** on day$$( x )$$ (ranging from 0 to 1)
@@ -105,7 +105,7 @@ The compensation mechanism proceeds as follows:
 3. **Compute UBI Income**:
 
 $$
-y_{\text{UBI}}(x) = 42,000 \times x^{0.1860} \times e^{-0.0017 x} \times (1 - u(x))
+y_{\text{UBI}}(x) = 200,000 \times x^{0.3100} \times e^{-0.0017 x} \times (1 - u(x))
 $$
 
 4. **Compute Paid Job Income**:
@@ -142,8 +142,6 @@ We consider three scenarios to illustrate how CPs' income evolves over time:
 
 <figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-
-
 ### **Interpretation of the Plots**
 
 **1. Total Income Over 720 Days**
@@ -174,6 +172,66 @@ We consider three scenarios to illustrate how CPs' income evolves over time:
 
 * Shows a smooth increase from 0 to 0.8 over 720 days.
 * Reflects the gradual adoption of paid tasks in the network.
+
+### **Data Points Illustration**
+
+Below is a table of computed token allocations for selected days:
+
+| Day (x) | Daily Production y(x) |
+| ------- | --------------------- |
+| 1       | 19,966.03             |
+| 30      | 54,549.22             |
+| 60      | 64,262.68             |
+| 90      | 69,246.55             |
+| 120     | 71,941.60             |
+| 150     | 73,261.06             |
+| 180     | 73,666.56             |
+| 210     | 73,430.22             |
+| 240     | 72,728.28             |
+| 270     | 71,682.24             |
+| 300     | 70,379.70             |
+| 330     | 68,885.86             |
+| 360     | 67,250.50             |
+| 390     | 65,512.29             |
+| 420     | 63,701.70             |
+| 450     | 61,843.01             |
+| 480     | 59,955.70             |
+| 510     | 58,055.51             |
+| 540     | 56,155.17             |
+| 570     | 54,265.01             |
+| 600     | 52,393.39             |
+| 630     | 50,547.09             |
+| 660     | 48,731.55             |
+| 690     | 46,951.10             |
+| 720     | 45,209.18             |
+
+| Day | Cumulative Production |
+| --- | --------------------- |
+| 1   | 19,966.03             |
+| 30  | 1,261,976.56          |
+| 60  | 3,062,143.25          |
+| 90  | 5,072,341.49          |
+| 120 | 7,194,431.61          |
+| 150 | 9,375,212.61          |
+| 180 | 11,581,013.65         |
+| 210 | 13,788,817.87         |
+| 240 | 15,982,188.47         |
+| 270 | 18,149,084.82         |
+| 300 | 20,280,565.34         |
+| 330 | 22,369,958.88         |
+| 360 | 24,412,305.58         |
+| 390 | 26,403,963.32         |
+| 420 | 28,342,321.28         |
+| 450 | 30,225,585.83         |
+| 480 | 32,052,616.78         |
+| 510 | 33,822,799.99         |
+| 540 | 35,535,946.61         |
+| 570 | 37,192,212.48         |
+| 600 | 38,792,032.93         |
+| 630 | 40,336,069.55         |
+| 660 | 41,825,166.37         |
+| 690 | 43,260,313.71         |
+| 720 | 44,642,617.97         |
 
 ***
 
@@ -210,100 +268,56 @@ The combined UBI and paid job compensation model for Swan Chain computing provid
 
 ***
 
-### **Appendix**
+## **Appendix**
 
-#### **Sample Calculations**
+### Sample Calculations
 
-**Scenario 1: No Paid Jobs** $$u(x) = 0$$
+**Scenario 1: No Paid Jobs**
 
-**Day 1**:
+**Day 1:**
 
-* UBI Income:
+* **UBI Income:**\
+  $$y_{\text{UBI}}(1) = 20000 \times 1^{0.31} \times e^{-0.0017 \times 1} \approx 19,965.90 \, \text{tokens}$$
+* **Paid Job Income:**\
+  $$0 \, \text{tokens}$$ (No paid job demand)
+* **Total Income:**\
+  $$I(1) = 19,965.90 + 0 = 19,965.90 \, \text{tokens}$$
 
-$$
-y_{\text{UBI}}(1) = 42,000 \times 1^{0.1860} \times e^{-0.0017 \times 1} \times (1 - 0) \approx 41,928.93 \text{ tokens}
-$$
+**Scenario 2: Low Paid Job Demand**
 
-* Paid Job Income:
+**Day 1:**
 
-$$
-y_{\text{Paid}}(1) = 50,000 \times 0 = 0 \text{ tokens}
-$$
-
-* Total Income:
-
-$$
-I(1) = 41,928.93 + 0 = 41,928.93 \text{ tokens}
-$$
-
-**Scenario 2: Low Paid Job Demand** $$u(x) = 0.1$$
-
-**Day 1**:
-
-* UBI Income:
-
-$$
-y_{\text{UBI}}(1) = 42,000 \times 1^{0.1860} \times e^{-0.0017 \times 1} \times (1 - 0.1) \approx 37,736.04 \text{ tokens}
-$$
-
-* Paid Job Income:
-
-$$
-y_{\text{Paid}}(1) = 50,000 \times 0.1 = 5,000 \text{ tokens}
-$$
-
-* Total Income:
-
-$$
-I(1) = 37,736.04 + 5,000 = 42,736.04 \text{ tokens}
-$$
+* **UBI Income:**\
+  $$y_{\text{UBI}}(1) = 20000 \times 1^{0.31} \times e^{-0.0017 \times 1} \approx 19,965.90 \, \text{tokens}$$
+* **Paid Job Income:**\
+  $$y_{\text{Paid}}(1) = 50000 \times 0.1 = 5,000 \, \text{tokens}$$
+* **Total Income:**\
+  $$I(1) = 19,965.90 + 5,000 = 24,965.90 \, \text{tokens}$$
 
 **Scenario 3: Increasing Paid Job Demand**
 
-**Day 360:** $$u(360) = 0.4$$
+**Day 360:**
 
-* UBI Income:
+* **UBI Income:**\
+  $$y_{\text{UBI}}(360) = 20000 \times 360^{0.31} \times e^{-0.0017 \times 360} \approx 13,898.99 \, \text{tokens}$$
+* **Paid Job Income:**\
+  $$y_{\text{Paid}}(360) = 50000 \times 0.4 = 20,000 \, \text{tokens}$$
+* **Total Income:**\
+  $$I(360) = 13,898.99 + 20,000 = 33,898.99 \, \text{tokens}$$
 
-$$
-y_{\text{UBI}}(360) = 42,000 \times 360^{0.1860} \times e^{-0.0017 \times 360} \times (1 - 0.4) \approx 13,898.99 \text{ tokens}
-$$
+**Day 720:**
 
-* Paid Job Income:
+* **UBI Income:**\
+  $$y_{\text{UBI}}(720) = 20000 \times 720^{0.31} \times e^{-0.0017 \times 720} \times (1 - 0.8) \approx 2,477.66 \, \text{tokens}$$
+* **Paid Job Income:**\
+  $$y_{\text{Paid}}(720) = 50000 \times 0.8 = 40,000 \, \text{tokens}$$
+* **Total Income:**\
+  $$I(720) = 2,477.66 + 40,000 = 42,477.66 \, \text{tokens}$$
 
-$$
-y_{\text{Paid}}(360) = 50,000 \times 0.4 = 20,000 \text{ tokens}
-$$
+#### Observations
 
-* Total Income:
-
-$$
-I(360) = 13,898.99 + 20,000 = 33,898.99 \text{ tokens}
-$$
-
-**Day 720** $$u(720) = 0.8$$
-
-* UBI Income:
-
-$$
-y_{\text{UBI}}(720) = 42,000 \times 720^{0.1860} \times e^{-0.0017 \times 720} \times (1 - 0.8) \approx 2,477.66 \text{ tokens}
-$$
-
-* Paid Job Income:
-
-$$
-y_{\text{Paid}}(720) = 50,000 \times 0.8 = 40,000 \text{ tokens}
-$$
-
-* Total Income:
-
-$$
-I(720) = 2,477.66 + 40,000 = 42,477.66 \text{ tokens}
-$$
-
-#### **Observations**
-
-* **Income Stability**: Despite the decrease in UBI income, total income remains stable or increases due to higher paid job compensation.
-* **Incentive Alignment**: CPs are incentivized to participate in paid jobs without experiencing significant income loss during transitions.
+* **Income Stability:** Despite the decrease in UBI income over time, total income remains stable or increases due to higher compensation from paid jobs.
+* **Incentive Alignment:** Community participants (CPs) are incentivized to participate in paid jobs without experiencing significant income loss during transitions from UBI reliance to paid employment.
 
 ***
 
