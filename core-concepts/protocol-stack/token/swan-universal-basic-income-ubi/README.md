@@ -105,7 +105,7 @@ The compensation mechanism proceeds as follows:
 3. **Compute UBI Income**:
 
 $$
-y_{\text{UBI}}(x) = 200,000 \times x^{0.3100} \times e^{-0.0017 x} \times (1 - u(x))
+y_{\text{UBI}}(x) = 20,000 \times x^{0.3100} \times e^{-0.0017 x} \times (1 - u(x))
 $$
 
 4. **Compute Paid Job Income**:
