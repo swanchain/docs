@@ -64,7 +64,7 @@ Then you can follow up task deployment information and the URL for running appli
 ```python
 # Get task deployment info
 task_deployment_info = swan_orchestrator.get_deployment_info(task_uuid=task_uuid)
-print(json.dumps(task_deployment_info, indent=2))
+print(task_deployment_info)
 
 # Get application instances URL
 app_urls = swan_orchestrator.get_real_url(task_uuid)
