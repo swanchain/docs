@@ -82,13 +82,13 @@
 * [CDN Layer](core-concepts/cdn-layer.md)
 * [Tokenomics](core-concepts/token/README.md)
   * [Swan Provider Income](core-concepts/token/swan-provider-income.md)
-  * [Governance](core-concepts/token/governance/README.md)
-    * [Treasure DAO](core-concepts/token/governance/treasure-dao.md)
-  * [UBI and Paid Job Compensation for CP](core-concepts/token/swan-universal-basic-income-ubi/README.md)
+  * [UBI Allocation Curve](core-concepts/token/swan-universal-basic-income-ubi/README.md)
     * [Mechanism](core-concepts/token/swan-universal-basic-income-ubi/mechanism.md)
     * [ZK-UBI](core-concepts/token/swan-universal-basic-income-ubi/zk-ubi.md)
     * [ZK-UBI Pool](core-concepts/token/swan-universal-basic-income-ubi/zk-ubi-pool/README.md)
       * [Filecoin Commit 2 (C2) with ZK-UBI](core-concepts/token/swan-universal-basic-income-ubi/zk-ubi-pool/filecoin-commit-2-c2-with-zk-ubi.md)
+  * [Governance](core-concepts/token/governance/README.md)
+    * [Treasure DAO](core-concepts/token/governance/treasure-dao.md)
 * [Glossary](core-concepts/glossary.md)
 
 ## Swan Chain Campaign
