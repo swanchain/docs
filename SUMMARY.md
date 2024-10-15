@@ -87,6 +87,7 @@
     * [ZK-UBI](core-concepts/token/swan-universal-basic-income-ubi/zk-ubi.md)
     * [ZK-UBI Pool](core-concepts/token/swan-universal-basic-income-ubi/zk-ubi-pool/README.md)
       * [Filecoin Commit 2 (C2) with ZK-UBI](core-concepts/token/swan-universal-basic-income-ubi/zk-ubi-pool/filecoin-commit-2-c2-with-zk-ubi.md)
+  * [Computing Provider Collateral](core-concepts/token/computing-provider-collateral.md)
   * [Governance](core-concepts/token/governance/README.md)
     * [Treasure DAO](core-concepts/token/governance/treasure-dao.md)
 * [Glossary](core-concepts/glossary.md)
