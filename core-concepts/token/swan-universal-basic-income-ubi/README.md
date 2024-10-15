@@ -4,7 +4,7 @@ description: >-
   (CP) in Swan Chain
 ---
 
-# UBI and Paid Job Compensation for CP
+# UBI Allocation Curve
 
 ### **Abstract**
 
@@ -36,14 +36,18 @@ This strategy aims to balance supply and demand, stabilizing the network as it g
 
 ## **Compensation Model**
 
-#### **Mathematical Model**
+### **Mathematical Model**
+
+$$
+I(x) = A \cdot x^{B} \cdot e^{-C x} \cdot (1 - u(x)) + P_{\text{market}}(x) \cdot u(x)
+$$
 
 The total daily income $$I(x)$$for a computing provider on day $$( x )$$ comprises two components:
 
 1. **UBI Income** $$y_{\text{UBI}}(x)$$
-2. **Paid Job Income** $$( y_{\text{Paid}}(x) )$$
+2. **Paid Job Income** $$y_{\text{Paid}}(x)$$
 
-The UBI income is modeled using a gamma-like function adjusted by the resource usage rate $$u(x)$$:
+The **UBI income** is modeled using a gamma-like function adjusted by the resource usage rate $$u(x)$$:
 
 $$
 y_{\text{UBI}}(x) = A \cdot x^{B} \cdot e^{-C x} \cdot (1 - u(x))
@@ -57,7 +61,7 @@ Where:
 * $$x$$ is the day number, starting from 1
 * $$u(x)$$ is the **resource usage rate** on day$$( x )$$ (ranging from 0 to 1)
 
-The paid job income depends on the market demand and the resource utilization:
+The **paid job income** depends on the market demand and the resource utilization:
 
 $$
 y_{\text{Paid}}(x) = P_{\text{market}}(x) \cdot u(x)
@@ -66,9 +70,52 @@ $$
 Where:
 
 * $$P_{\text{market}}(x)$$ is the market price for computational resources on day $$( x )$$
-* $$u(x)$$ represents the proportion of a CP's resources utilized by paid jobs
+* $$u(x)$$ represents the proportion of a CP's resources utilized by paid job
 
-#### **Total Income**
+#### Defining $$u(x)$$
+
+**(1) Calculate the total duration of real GPU orders across the network**
+
+$$
+T_{\text{day}} = \sum\limits_{i}Task_{\text{ECP},i}(GPU_k) \times f_k + \sum\limits_{j}Task_{\text{FCP},j}(GPU_k) \times f_k
+$$
+
+Where:
+
+* $$Task_{\text{FCP},i}(GPU_k)$$ represents the time that the $$i$$-th FCP task uses $$GPU_k$$.
+* $$Task_{\text{ECP},j}(GPU_k)$$ represents the time that the $$j$$-th ECP task uses $$GPU_k$$.
+* $$f_k$$ is the revenue growth factor.
+
+**（2）Calculate the total available usage time for all GPUs in the network**
+
+$$
+T_{\text{total}} = \sum\limits_k N(GPU_k) \times 24 \times f_k
+$$
+
+Where:
+
+* $$N(GPU_k)$$ is the number of $$GPU_k$$.
+
+**(3) Calculate** $$u(x)$$
+
+$$
+u(x) = \frac{T_{\text{day}}}{T_{\text{total}}}
+$$
+
+#### Defining Market Price $$P_{\text{market}}(x)$$
+
+$$P_{\text{market}}(x)$$ represents the cost in Swan Tokens when all GPUs in the CP are fully utilized:
+
+$$
+P_{\text{market}}(x) = \sum\limits_k N(GPU_k) \times Price(GPU_k) \times 24
+$$
+
+Where:
+
+* $$N(GPU_k)$$ is the number of $$GPU_k$$.
+* $$Price(GPU_k)$$ is the price of $$GPU_k$$.
+
+### **Total Income**
 
 The total daily income for a CP is:
 
@@ -94,7 +141,68 @@ $$
 * **Intermediate Values**:
   * CP's income is a combination of UBI and paid job compensation, proportional to resource utilization.
 
+### Individual CP's Income
+
+To calculate the UBI for a single CP, we consider both the resource usage and completion rates of tasks. UBI allocation is conditional on sufficient resource contribution and performance metrics:
+
+**(1) UBI Workload Calculation**
+
+* Calculate the daily completion rate of a single ECP zk-task: $$P_{\text{ECP}}$$
+* Calculate the completion rate of a single FCP sampling task: $$P_{\text{FCP}}$$
+* Number of GPUs $$N_{\text{CP}}(GPU_k)$$ and GPU types.
+* Calculate the total UBI workload:
+
+$$
+UBI_{\text{total}} = UBI_{\text{ECP}} + UBI_{\text{FCP}}
+$$
+
+$$
+UBI_{\text{ECP}} = \sum\limits_i \left( \sum\limits_k N_{\text{ECP},i}(GPU_k) \times f_k \right) \times P_{\text{ECP},i}
+$$
+
+$$
+UBI_{\text{FCP}} = \sum\limits_j \left( \sum\limits_k N_{\text{FCP},j}(GPU_k) \times f_k \right) \times P_{\text{FCP},j}
+$$
+
+**(2) Calculating the UBI for a single CP**:
+
+As an ECP:
+
+$$
+UBI_{\text{ECP},i}(x) = \frac{\sum\limits_k N_{\text{ECP},i}(GPU_k) \times f_k \times P_{\text{ECP},i}}{UBI_{\text{ECP}} + UBI_{\text{FCP}}} \times I(x)
+$$
+
+As an FCP:
+
+$$
+UBI_{\text{FCP},i}(x) = \frac{\sum\limits_k N_{\text{FCP},i}(GPU_k) \times f_k \times P_{\text{FCP},i}}{UBI_{\text{ECP}} + UBI_{\text{FCP}}} \times I(x)
+$$
+
+
+
 ***
+
+### Conditions for CP to Receive UBI
+
+A CP must meet certain conditions to qualify for UBI:
+
+**Sufficient Collateral**:
+
+$$
+Collateral_{\text{CP}} = \sum\limits_k N_{\text{CP}}(GPU_k) \times C_{\text{base}} \times f_k
+$$
+
+Where:
+
+* $$N_{\text{CP}}(GPU_k)$$ is the number of GPUs held by CP.
+* $$C_{\text{base}}$$ is the base collateral.
+
+You can refer to the Collateral Details [here](broken-reference).
+
+1. **Completion of Basic Test Tasks:**
+   * FCP: Sampling task
+   * ECP: ZK task
+2. GPU count and type are also factored into the UBI eligibility.
 
 ## **Algorithm Implementation**
 
@@ -138,9 +246,9 @@ We consider three scenarios to illustrate how CPs' income evolves over time:
 2. **Low Paid Job Demand** $$u(x) = 0.1$$: CPs primarily earn UBI income with a small contribution from paid jobs.
 3. **Increasing Paid Job Demand**: Resource usage rate $$u(x)$$ increases over time, shifting CPs' income from UBI to paid jobs.
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### **Interpretation of the Plots**
 
