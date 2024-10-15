@@ -64,7 +64,7 @@ $$
 
 Where:
 
-* $$P_{\text{market}}(x)$$ is the market price for computational resources on day $$( x )$$
+* $$P_{\text{market}}(x)$$ is the total market value for computational resources on day $$( x )$$
 * $$u(x)$$ represents the proportion of a CP's resources utilized by paid job
 
 #### Defining $$u(x)$$
