@@ -10,10 +10,6 @@ description: >-
 
 * [Introduction](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#introduction)
 * [Compensation Model](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#compensation-model)
-  * [Mathematical Model](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#mathematical-model)
-  * [Total Income](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#total-income)
-  * [Individual CP's Income](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#individual-cps-income)
-  * [Conditions for CP to Receive UBI](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#conditions-for-cp-to-receive-ubi)
 * [Algorithm Implementation](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#algorithm-implementation)
 * [Visualization of Income Over Time](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#visualization-of-income-over-time)
   * [Interpretation of the Plots](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#interpretation-of-the-plots)
@@ -36,8 +32,6 @@ This mechanism ensures a fair and gradual distribution of tokens to providers, s
 ***
 
 ## **Compensation Model**
-
-### **Mathematical Model**
 
 $$
 I(x) = A \cdot x^{B} \cdot e^{-C x} \cdot (1 - u(x)) + P_{\text{market}}(x) \cdot u(x)
@@ -116,95 +110,6 @@ Where:
 * $$N(GPU_k)$$ is the number of $$GPU_k$$.
 * $$Price(GPU_k)$$ is the price of $$GPU_k$$.
 
-### **Total Income**
-
-The total daily income for a CP is:
-
-$$
-I(x) = y_{\text{UBI}}(x) + y_{\text{Paid}}(x)
-$$
-
-Substituting the expressions for $$y_{\text{UBI}}(x)$$ and $$y_{\text{Paid}}(x)$$
-
-$$
-I(x) = A \cdot x^{B} \cdot e^{-C x} \cdot (1 - u(x)) + P_{\text{market}}(x) \cdot u(x)
-$$
-
-#### **Resource Usage Rate Impact**
-
-* **When** $$u(x) = 0$$:
-  * CP receives full UBI allocation.
-  * No income from paid jobs.
-* **When** $$u(x) = 1$$:
-  * All resources are utilized by paid jobs.
-  * CP receives full income from paid jobs.
-  * No UBI allocation.
-* **Intermediate Values**:
-  * CP's income is a combination of UBI and paid job compensation, proportional to resource utilization.
-
-### Individual CP's Income
-
-To calculate the UBI for a single CP, we consider both the resource usage and completion rates of tasks. UBI allocation is conditional on sufficient resource contribution and performance metrics:
-
-**(1) UBI Workload Calculation**
-
-* Calculate the daily completion rate of a single ECP zk-task: $$P_{\text{ECP}}$$
-* Calculate the completion rate of a single FCP sampling task: $$P_{\text{FCP}}$$
-* Number of GPUs $$N_{\text{CP}}(GPU_k)$$ and GPU types.
-* Calculate the total UBI workload:
-
-$$
-UBI_{\text{total}} = UBI_{\text{ECP}} + UBI_{\text{FCP}}
-$$
-
-$$
-UBI_{\text{ECP}} = \sum\limits_i \left( \sum\limits_k N_{\text{ECP},i}(GPU_k) \times f_k \right) \times P_{\text{ECP},i}
-$$
-
-$$
-UBI_{\text{FCP}} = \sum\limits_j \left( \sum\limits_k N_{\text{FCP},j}(GPU_k) \times f_k \right) \times P_{\text{FCP},j}
-$$
-
-**(2) Calculating the UBI for a single CP**:
-
-As an ECP:
-
-$$
-UBI_{\text{ECP},i}(x) = \frac{\sum\limits_k N_{\text{ECP},i}(GPU_k) \times f_k \times P_{\text{ECP},i}}{UBI_{\text{ECP}} + UBI_{\text{FCP}}} \times I(x)
-$$
-
-As an FCP:
-
-$$
-UBI_{\text{FCP},i}(x) = \frac{\sum\limits_k N_{\text{FCP},i}(GPU_k) \times f_k \times P_{\text{FCP},i}}{UBI_{\text{ECP}} + UBI_{\text{FCP}}} \times I(x)
-$$
-
-
-
-***
-
-### Conditions for CP to Receive UBI
-
-A CP must meet certain conditions to qualify for UBI:
-
-**Sufficient Collateral**:
-
-$$
-Collateral_{\text{CP}} = \sum\limits_k N_{\text{CP}}(GPU_k) \times C_{\text{base}} \times f_k
-$$
-
-Where:
-
-* $$N_{\text{CP}}(GPU_k)$$ is the number of GPUs held by CP.
-* $$C_{\text{base}}$$ is the base collateral.
-
-You can refer to the Collateral Details [here](broken-reference).
-
-1. **Completion of Basic Test Tasks:**
-   * FCP: Sampling task
-   * ECP: ZK task
-2. GPU count and type are also factored into the UBI eligibility.
-
 ## **Algorithm Implementation**
 
 The compensation mechanism proceeds as follows:
@@ -247,9 +152,9 @@ We consider three scenarios to illustrate how CPs' income evolves over time:
 2. **Low Paid Job Demand** $$u(x) = 0.1$$: CPs primarily earn UBI income with a small contribution from paid jobs.
 3. **Increasing Paid Job Demand**: Resource usage rate $$u(x)$$ increases over time, shifting CPs' income from UBI to paid jobs.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### **Interpretation of the Plots**
 

@@ -1,200 +1,98 @@
-# Swan Provider Income
+# Computing Provider Income
 
-#### **1. Introduction**
+Swan Chain is a decentralized network that connects computing providers with users requiring computational resources. To foster early network growth and incentivize CPs to join and contribute resources, a dual compensation mechanism has been designed:
 
-In the Swan decentralized computing ecosystem, providers earn income by executing jobs. Their income is influenced by various factors, including the number of jobs they execute, their reputation, and the Universal Basic Income (UBI) mechanism. This document outlines the mathematical model governing provider income in the Swan system.
+1. **Universal Basic Income (UBI)**: Provides CPs with a predictable token income when their resources are underutilized.
+2. **Paid Jobs**: Offers market-priced compensation for computational tasks requested by users.
+
+This mechanism ensures a fair and gradual distribution of tokens to providers, supporting the network's expansion until it reaches a critical mass of user-paid tasks. Importantly, the UBI distribution rate is influenced by the resource usage rate, and CPs earn market-based compensation when engaged in paid jobs.
+
+### **Total Income**
+
+The total daily income for a CP is:
+
+$$
+I(x) = y_{\text{UBI}}(x) + y_{\text{Paid}}(x)
+$$
+
+Substituting the expressions for $$y_{\text{UBI}}(x)$$ and $$y_{\text{Paid}}(x)$$
+
+$$
+I(x) = A \cdot x^{B} \cdot e^{-C x} \cdot (1 - u(x)) + P_{\text{market}}(x) \cdot u(x)
+$$
+
+#### **Resource Usage Rate Impact**
+
+* **When** $$u(x) = 0$$:
+  * CP receives full UBI allocation.
+  * No income from paid jobs.
+* **When** $$u(x) = 1$$:
+  * All resources are utilized by paid jobs.
+  * CP receives full income from paid jobs.
+  * No UBI allocation.
+* **Intermediate Values**:
+  * CP's income is a combination of UBI and paid job compensation, proportional to resource utilization.
+
+### Individual CP's Income
+
+To calculate the UBI for a single CP, we consider both the resource usage and completion rates of tasks. UBI allocation is conditional on sufficient resource contribution and performance metrics:
+
+**(1) UBI Workload Calculation**
+
+* Calculate the daily completion rate of a single ECP zk-task: $$P_{\text{ECP}}$$
+* Calculate the completion rate of a single FCP sampling task: $$P_{\text{FCP}}$$
+* Number of GPUs $$N_{\text{CP}}(GPU_k)$$ and GPU types.
+* Calculate the total UBI workload:
+
+$$
+UBI_{\text{total}} = UBI_{\text{ECP}} + UBI_{\text{FCP}}
+$$
+
+$$
+UBI_{\text{ECP}} = \sum\limits_i \left( \sum\limits_k N_{\text{ECP},i}(GPU_k) \times f_k \right) \times P_{\text{ECP},i}
+$$
+
+$$
+UBI_{\text{FCP}} = \sum\limits_j \left( \sum\limits_k N_{\text{FCP},j}(GPU_k) \times f_k \right) \times P_{\text{FCP},j}
+$$
+
+**(2) Calculating the UBI for a single CP**:
+
+As an ECP:
+
+$$
+UBI_{\text{ECP},i}(x) = \frac{\sum\limits_k N_{\text{ECP},i}(GPU_k) \times f_k \times P_{\text{ECP},i}}{UBI_{\text{ECP}} + UBI_{\text{FCP}}} \times I(x)
+$$
+
+As an FCP:
+
+$$
+UBI_{\text{FCP},i}(x) = \frac{\sum\limits_k N_{\text{FCP},i}(GPU_k) \times f_k \times P_{\text{FCP},i}}{UBI_{\text{ECP}} + UBI_{\text{FCP}}} \times I(x)
+$$
+
+
 
 ***
 
-#### **2. Job Allocation to Nodes**
+### Conditions for CP to Receive UBI
 
-Job distribution in the Swan system is done through an auction mechanism. However, the likelihood of a provider winning a job is influenced by their reputation. The job distribution engine follows a lambda distribution based on reputation scores.
+A CP must meet certain conditions to qualify for UBI:
 
-**Equation:**&#x20;
-
-
+1. **Sufficient Collateral**:
 
 $$
-P_{win}(R) = \lambda \times e^{-\lambda R}
+Collateral_{\text{CP}} = \sum\limits_k N_{\text{CP}}(GPU_k) \times C_{\text{base}} \times f_k
 $$
 
-_Where:_
+Where:
 
-* $$P_{win}(R)$$ = Probability of winning a job based on reputation ($$R$$)
-* $$\lambda$$ = Rate parameter (determined by the system)
+* $$N_{\text{CP}}(GPU_k)$$ is the number of GPUs held by CP.
+* $$C_{\text{base}}$$ is the base collateral.
 
-***
+2. **Completion of Basic Test Tasks:**
 
-#### **3. Total Jobs in the System**
+* FCP: Sampling task
+* ECP: ZK task
 
-The total number of jobs in the system grows according to the logistic growth curve:
+3. GPU count and type are also factored into the UBI eligibility.
 
-**Equation:**&#x20;
-
-
-
-$$
-J_{total}(x) = \frac{L_{initial}}{1 + e^{-k_{initial} \times (x - x_{0_{initial}})}}
-$$
-
-_Where:_
-
-* $$J_{total}(x)$$ = Total number of jobs at time ($$x$$)
-* $$L_{initial}$$= Carrying capacity for initial jobs (maximum number of jobs without incentives)
-* $$k_{initial}$$ = Growth rate for initial jobs
-* $$x_{0_{initial}}$$= Midpoint of the growth curve, where growth is fastest
-
-***
-
-#### **4. Base Income from Jobs**
-
-Providers earn a base income from executing jobs. This income is determined by the auction mechanism, where providers bid for jobs.
-
-**Equation:**&#x20;
-
-
-
-$$
-I_{base}(j) = P_j \times N_j
-$$
-
-_Where:_
-
-* $$I_{base}(j)$$ = Income from job  ($$j$$)
-* $$P_j$$= Price bid for job ($$j$$)
-* $$N_j$$ = Number of instances of job ($$j$$)executed
-
-***
-
-#### **5. Universal Basic Income (UBI)**
-
-Qualified providers receive a UBI. However, if a node has job income, the UBI is reduced by that amount. If the job income exceeds the average UBI, the UBI becomes zero.
-
-**Equation:**&#x20;
-
-
-
-$$
-I_{UBI} = U - min(I_{total_jobs}, U)
-$$
-
-_Where:_
-
-* $$I_{UBI}$$ = UBI income
-* $$U$$ = Average UBI income
-* $$I_{total_jobs}$$ = Total income from all jobs
-
-***
-
-#### **6. Bonus from Reputation**
-
-Providers with higher reputations can earn more due to a higher likelihood of winning bids in the auction system.
-
-**Equation:**&#x20;
-
-
-
-$$
-I_{bonus}(R) = \lambda \times e^{-\lambda R}
-$$
-
-_Where:_
-
-* $$I_{\text{bonus}}(R)$$= Bonus income based on reputation ( R )
-
-***
-
-#### **7. Total Provider Income**
-
-The total income for a provider is the sum of the base income from jobs, the UBI, and any bonuses from reputation.
-
-**Equation:**&#x20;
-
-
-
-$$
-I_{total} = I_{base} + I_{UBI} + I_{bonus}
-$$
-
-***
-
-#### **8. Conclusion**
-
-The Swan provider income model ensures a balanced distribution of income, rewarding providers for their service quality (reputation) and ensuring a safety net through the UBI. This comprehensive approach ensures the sustainability and attractiveness of the Swan ecosystem for potential providers.
-
-***
-
-#### **Code Simulation and Plot**
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Parameters
-lambda_parameter = 5.0
-L_initial = 200
-k_initial = 0.2
-x_0_initial = 25
-U = 800
-P_j = 100  # Price bid for job
-
-# Equations
-P_win = lambda R: lambda_parameter * np.exp(-lambda_parameter * R)
-J_total = lambda x: L_initial / (1 + np.exp(-k_initial * (x - x_0_initial)))
-jobs_won = lambda R, total_jobs: np.round(P_win(R) * total_jobs).astype(int)
-I_base = lambda jobs_won: P_j * jobs_won
-I_UBI = lambda I_base: U - min(I_base, U)
-I_total = lambda I_base, I_UBI: I_base + I_UBI
-
-# Simulation
-x = np.linspace(0, 20, 100)
-R = 0.5  # Assuming a constant reputation score for simplicity
-total_jobs = np.round(J_total(x)).astype(int)
-jobs_won_by_provider = jobs_won(R, total_jobs)
-base_income = I_base(jobs_won_by_provider)
-ubi_income = [I_UBI(i) for i in base_income]
-total_income = I_total(base_income, ubi_income)
-
-# Plot
-plt.figure(figsize=(15, 10))
-
-# Plotting Total Jobs and Jobs Won by Provider
-plt.subplot(2, 1, 1)
-plt.plot(x, total_jobs, label="Total Jobs")
-plt.plot(x, jobs_won_by_provider, label="Jobs Won by Provider", linestyle='--')
-plt.xlabel("Time")
-plt.ylabel("Jobs")
-plt.title("Job Metrics Over Time")
-plt.legend()
-plt.grid(True)
-
-# Annotate y-values for integer x-values
-for i in range(0, len(x), 5):  # Adjusted the loop to iterate over the length of x with a step of 5
-    plt.annotate(f"{total_jobs[i]}", (x[i], total_jobs[i]), textcoords="offset points", xytext=(0,5), ha='center')
-    plt.annotate(f"{jobs_won_by_provider[i]}", (x[i], jobs_won_by_provider[i]), textcoords="offset points", xytext=(0,5), ha='center')
-
-# Plotting UBI Income, Base Income, and Total Income
-plt.subplot(2, 1, 2)
-plt.plot(x, total_income, label="Total Income", linestyle='-')
-plt.plot(x, ubi_income, label="UBI Income", linestyle='-.')
-plt.plot(x, base_income, label="Base Income", linestyle='-.')
-plt.xlabel("Time")
-plt.ylabel("Income")
-plt.title("Income Metrics Over Time")
-plt.legend()
-plt.grid(True)
-
-# Annotate y-values for integer x-values
-for i in range(0, len(x), 5):  # Adjusted the loop to iterate over the length of x with a step of 5
-    plt.annotate(f"{total_income[i]}", (x[i], total_income[i]), textcoords="offset points", xytext=(0,5), ha='center')
-    plt.annotate(f"{ubi_income[i]}", (x[i], ubi_income[i]), textcoords="offset points", xytext=(0,5), ha='center')
-    plt.annotate(f"{base_income[i]}", (x[i], base_income[i]), textcoords="offset points", xytext=(0,5), ha='center')
-
-plt.tight_layout()
-plt.show()
-
-```
-
-This code simulates the provider income over time based on the equations provided. Adjust the parameters as needed to fit the specific requirements of the Swan system.
-
-<figure><img src="../../../.gitbook/assets/image (147).png" alt=""><figcaption></figcaption></figure>
