@@ -9,7 +9,10 @@ This mechanism ensures a fair and gradual distribution of tokens to providers, s
 
 ### **Total Income**
 
-The total daily income for a CP is:
+The total daily income $$I(x)$$for a computing provider on day $$( x )$$ comprises two components:&#x20;
+
+* **UBI Income** $$y_{\text{UBI}}(x)$$
+* **Paid Job Income** $$y_{\text{Paid}}(x)$$
 
 $$
 I(x) = y_{\text{UBI}}(x) + y_{\text{Paid}}(x)
@@ -88,6 +91,7 @@ Where:
 
 * $$N_{\text{CP}}(GPU_k)$$ is the number of GPUs held by CP.
 * $$C_{\text{base}}$$ is the base collateral.
+* $$f_k$$ is the revenue growth factor
 
 2. **Completion of Basic Test Tasks:**
 
