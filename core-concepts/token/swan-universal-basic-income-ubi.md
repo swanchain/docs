@@ -97,7 +97,7 @@ $$
 u(x) = \frac{T_{\text{day}}}{T_{\text{total}}}
 $$
 
-#### Defining Market Price $$P_{\text{market}}(x)$$
+#### Defining Total Market Value $$P_{\text{market}}(x)$$
 
 $$P_{\text{market}}(x)$$ represents the cost in Swan Tokens when all GPUs in the CP are fully utilized:
 
