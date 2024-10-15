@@ -1,53 +1,37 @@
 ---
-description: Sampling and validation based reputation scoring
+description: AVS-based Computing Provider Reputation
 ---
 
 # Reputation System
 
-### 1. Overview
+**1. Overview of AVS in Swan Chain Reputation**
 
-This document outlines the design for a reputation scoring system for Compute Providers (CPs). The system evaluates CPs based on various performance metrics to ensure high-quality service delivery.The system is divided into two main blocks: system data analysis and customer feedback
+Swan Chain's reputation system is built on **AVSs**, which provide decentralized and verifiable data for evaluating the performance and reliability of CPs. The system combines **automated data analysis** and **user feedback** to assess providers across various metrics such as uptime, job completion rates, user claims, and system jobs. The integration of **AVS-based services** ensures the trustless execution of reputation scoring, using blockchain’s inherent properties of transparency, security, and immutability.
 
-* This is current composition, and in the future, we are planning add User Review Score to the reputation scoring system, at that time, the percentage of each component will be adjusted accordingly.
-* Current Reputation Score Composition:
+***
 
-<figure><img src="../../../.gitbook/assets/Current_Reputation_Score_Composition.png" alt=""><figcaption></figcaption></figure>
+#### &#x20;**Key Components of the AVS-Based Reputation System**
 
-### 2. Models
+The **AVS-based Computing Provider Reputation System** is composed of multiple layers, each responsible for evaluating different aspects of a CP’s performance:
 
-```
-1. Sampling System
-    1.1. Distribution system
-    1.2. Probe System
-    1.3. Job Settlement System
-2. Reputation Scoring System
-3. Request Refund System
-4. User Review System
-```
+**1.1 Sampling System (AVS-Based)**
 
-#### 2.1 Sampling System
+The sampling system, powered by **AVSs**, selects random tasks from a verified pool of jobs (e.g., GPU, CPU, ZK jobs). These jobs are sent to CPs for execution, and the system tracks the results in real-time.
 
-* Sampling system is a system that randomly selects tasks from our sampling pool. It will run each hour and select a random task from the sampling pool. The task will be sent to all the online CP for execution.
-* Sampling task pool is an officially maintained pool of basic sampling checking tasks, which contains officially certified tasks that can be deployed normally, including and not limited to GPU, CPU, AI GPU, ZK and other tasks.
+* **AVS Data Availability:** Data from these jobs is stored on decentralized data availability layers, ensuring that all performance metrics are verifiable and tamper-proof.
+* **Distribution System:** The system distributes tasks to CPs, and AVS ensures transparency by maintaining records of job assignments and completions.
 
-#### 2.1.1 Distribution System
+**2.1 Probe System (AVS Monitoring)**
 
-* The Distribution System is responsible for distributing sampling tasks to the computing provider. Each time the Sampling System selects a job, it is transferred to the Distribution System for distribution to the computing provider. The tasks are distributed directly to the computing provider. The details of each job are recorded for subsequent analysis.
-* **Note:**
-  * If a task is unable to be distributed due to whitelisting or blacklisting, no points are deducted or added.
-  * If the gas fee is too high, the assignment will be delayed
+The **Probe System** regularly checks the performance of CPs using AVS-based tools. Every few seconds, the system validates the completion and accuracy of tasks performed by the providers.
 
-#### 2.1.2 Probe System
+* **AVS Validation:** Probes ensure that results are validated on-chain, utilizing AVS capabilities for data verification. The system ensures no tampering or manipulation of job results.
 
-* After the Distribution System sends the task to all eligible CPs, the Probe System probes the results returned by the CPs every 10 seconds and records the results in the database for analysis by the Reputation Scoring System.
+**2.2 Job Settlement System (AVS-Backed Payments)**
 
-#### 2.1.3 Job Settlement System
+Once tasks are completed, the job settlement system determines whether CPs should be paid based on AVS-verified job outcomes.
 
-* All cp's who meet the criteria for “Job Completion” (see below) will receive a bonus for the appropriate amount of time, which will be billed on a per-job basis, with each job completion bonus being paid directly to the cp upon completion of the job
-
-#### 2.2 Reputation Scoring System
-
-* The Reputation Scoring System is responsible for calculating the reputation score of each CP based on various performance metrics (see below). The total reputation score is used to select bidders for jobs in a way that balances fairness with performance incentives.
+* **AVS for Automatic Payments:** Payments are made automatically via smart contracts on the Swan Chain network. The reputation score of a CP directly influences the settlement process, and incomplete jobs lead to collateral slashing.
 
 ### 2. Components and Scoring
 
@@ -219,7 +203,7 @@ This selection method ensures that reputation scores have a meaningful impact on
 
 Flow Chart:
 
-<figure><img src="../../../.gitbook/assets/reputation_join_time.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/reputation_join_time.png" alt=""><figcaption></figcaption></figure>
 
 #### 5.3 System Job Score Design
 
@@ -290,7 +274,7 @@ Implement a gradual score recovery to allow CPs to improve their standing:
 
 **5.3.9 Updated Flow Chart**
 
-<figure><img src="../../../.gitbook/assets/reputation_flow_chart.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/reputation_flow_chart.png" alt=""><figcaption></figcaption></figure>
 
 **5.3.10 Integration with Total Reputation Score**
 
@@ -315,7 +299,7 @@ This score would then contribute to 30% of the CP's total reputation score.
 
 Flow Chart:
 
-<figure><img src="../../../.gitbook/assets/reputation_user_job.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/reputation_user_job.png" alt=""><figcaption></figcaption></figure>
 
 ## Future Works
 
@@ -354,7 +338,7 @@ The User Review Score aims to incorporate user feedback on completed jobs, provi
 
 Flow Chart:
 
-<figure><img src="../../../.gitbook/assets/reputation_minimum_reviews.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/reputation_minimum_reviews.png" alt=""><figcaption></figcaption></figure>
 
 #### 1.5 User Weighting System
 
@@ -398,7 +382,7 @@ Then proceed with the normalization to the 0-100 scale as before.
 
 #### 1.6 Updated Flow Chart
 
-<figure><img src="../../../.gitbook/assets/reputation_1.6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/reputation_1.6.png" alt=""><figcaption></figcaption></figure>
 
 This full user review design addresses the concern about users who consistently give the lowest job reviews. By implementing this weighting system, we ensure that while all feedback is considered, the impact of potentially unfair or overly critical reviews is mitigated. This approach maintains the value of user feedback while protecting Compute Providers from undue negative impact from a small number of extremely critical users.
 
