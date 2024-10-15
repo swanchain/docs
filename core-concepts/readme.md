@@ -35,8 +35,6 @@ Swan Chain is steadfast in its mission to redefine the development, deployment, 
 
 #### Roadmap
 
-<figure><img src="../.gitbook/assets/roadmap_20240925.png" alt=""><figcaption></figcaption></figure>
-
 {% embed url="https://gist.github.com/flyworker/9822afc8d7ca236694926bf373008cdc#file-swanroadmap-md" %}
 
 ## Protocol Stack
