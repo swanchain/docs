@@ -4,7 +4,7 @@ description: AVS-based Computing Provider Reputation
 
 # Reputation System
 
-**1. Overview of AVS in Swan Chain Reputation**
+**1. Overview**&#x20;
 
 Swan Chain's reputation system is built on **AVSs**, which provide decentralized and verifiable data for evaluating the performance and reliability of CPs. The system combines **automated data analysis** and **user feedback** to assess providers across various metrics such as uptime, job completion rates, user claims, and system jobs. The integration of **AVS-based services** ensures the trustless execution of reputation scoring, using blockchain’s inherent properties of transparency, security, and immutability.
 
