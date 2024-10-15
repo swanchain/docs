@@ -6,11 +6,23 @@ description: >-
 
 # UBI Allocation Curve
 
-### **Abstract**
+### **Table of Contents**
 
-This document presents the design and implementation of a compensation mechanism for computing providers (CPs) in the Swan Chain network, combining Universal Basic Income (UBI) token allocation and market-priced paid jobs. The allocation model incentivizes network growth over a span of ten years and beyond, particularly during the initial phases before widespread user adoption of paid tasks. We detail the mathematical formula, the underlying algorithm—including how resource usage rates determine UBI distribution—and discuss the impact of this design on the network's sustainability and scalability. Notably, CPs receive income from both UBI and paid jobs, with UBI decreasing as paid job engagement increases, reflecting an adaptive compensation system aligned with network activity.
-
-***
+* [Introduction](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#introduction)
+* [Compensation Model](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#compensation-model)
+  * [Mathematical Model](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#mathematical-model)
+  * [Total Income](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#total-income)
+  * [Individual CP's Income](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#individual-cps-income)
+  * [Conditions for CP to Receive UBI](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#conditions-for-cp-to-receive-ubi)
+* [Algorithm Implementation](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#algorithm-implementation)
+* [Visualization of Income Over Time](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#visualization-of-income-over-time)
+  * [Interpretation of the Plots](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#interpretation-of-the-plots)
+  * [Data Points Illustration](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#data-points-illustration)
+  * [Impact of the Design](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#impact-of-the-design)
+  * [Conclusion](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#conclusion)
+  * [Future Work](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#future-work)
+* [Appendix](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#appendix)
+  * [Sample Calculations](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#sample-calculations)
 
 ### **Introduction**
 
@@ -20,17 +32,6 @@ Swan Chain is a decentralized network that connects computing providers with use
 2. **Paid Jobs**: Offers market-priced compensation for computational tasks requested by users.
 
 This mechanism ensures a fair and gradual distribution of tokens to providers, supporting the network's expansion until it reaches a critical mass of user-paid tasks. Importantly, the UBI distribution rate is influenced by the resource usage rate, and CPs earn market-based compensation when engaged in paid jobs.
-
-***
-
-### **Background**
-
-In decentralized networks, bootstrapping initial participation is crucial. Computing providers may be hesitant to join a network without immediate incentives, especially when user demand is low. The combined UBI and paid job compensation system serves as a balanced reward mechanism:
-
-* **UBI**: Encourages providers to contribute resources by offering a baseline income during periods of low demand.
-* **Paid Jobs**: Motivates CPs to engage in user-requested tasks, earning income based on market rates.
-
-This strategy aims to balance supply and demand, stabilizing the network as it grows and transitions towards a mature, user-driven ecosystem.
 
 ***
 
@@ -285,61 +286,39 @@ We consider three scenarios to illustrate how CPs' income evolves over time:
 
 Below is a table of computed token allocations for selected days:
 
-| Day (x) | Daily Production y(x) |
-| ------- | --------------------- |
-| 1       | 19,966.03             |
-| 30      | 54,549.22             |
-| 60      | 64,262.68             |
-| 90      | 69,246.55             |
-| 120     | 71,941.60             |
-| 150     | 73,261.06             |
-| 180     | 73,666.56             |
-| 210     | 73,430.22             |
-| 240     | 72,728.28             |
-| 270     | 71,682.24             |
-| 300     | 70,379.70             |
-| 330     | 68,885.86             |
-| 360     | 67,250.50             |
-| 390     | 65,512.29             |
-| 420     | 63,701.70             |
-| 450     | 61,843.01             |
-| 480     | 59,955.70             |
-| 510     | 58,055.51             |
-| 540     | 56,155.17             |
-| 570     | 54,265.01             |
-| 600     | 52,393.39             |
-| 630     | 50,547.09             |
-| 660     | 48,731.55             |
-| 690     | 46,951.10             |
-| 720     | 45,209.18             |
+| Day | Daily UBI (y) | Cumulative UBI |
+| --- | ------------- | -------------- |
+| 1   | 19,966.03     | 19,966.03      |
+| 30  | 54,549.22     | 1,261,976.56   |
+| 60  | 64,262.68     | 3,062,143.25   |
+| 90  | 69,246.55     | 5,072,341.49   |
+| 120 | 71,941.60     | 7,194,431.61   |
+| 150 | 73,261.06     | 9,375,212.61   |
+| 180 | 73,666.56     | 11,581,013.65  |
+| 210 | 73,430.22     | 13,788,817.87  |
+| 240 | 72,728.28     | 15,982,188.47  |
+| 270 | 71,682.24     | 18,149,084.82  |
+| 300 | 70,379.70     | 20,280,565.34  |
+| 330 | 68,885.86     | 22,369,958.88  |
+| 360 | 67,250.50     | 24,412,305.58  |
+| 390 | 65,512.29     | 26,403,963.32  |
+| 420 | 63,701.70     | 28,342,321.28  |
+| 450 | 61,843.01     | 30,225,585.83  |
+| 480 | 59,955.70     | 32,052,616.78  |
+| 510 | 58,055.51     | 33,822,799.99  |
+| 540 | 56,155.17     | 35,535,946.61  |
+| 570 | 54,265.01     | 37,192,212.48  |
+| 600 | 52,393.39     | 38,792,032.93  |
+| 630 | 50,547.09     | 40,336,069.55  |
+| 660 | 48,731.55     | 41,825,166.37  |
+| 690 | 46,951.10     | 43,260,313.71  |
+| 720 | 45,209.18     | 44,642,617.97  |
 
-| Day | Cumulative Production |
-| --- | --------------------- |
-| 1   | 19,966.03             |
-| 30  | 1,261,976.56          |
-| 60  | 3,062,143.25          |
-| 90  | 5,072,341.49          |
-| 120 | 7,194,431.61          |
-| 150 | 9,375,212.61          |
-| 180 | 11,581,013.65         |
-| 210 | 13,788,817.87         |
-| 240 | 15,982,188.47         |
-| 270 | 18,149,084.82         |
-| 300 | 20,280,565.34         |
-| 330 | 22,369,958.88         |
-| 360 | 24,412,305.58         |
-| 390 | 26,403,963.32         |
-| 420 | 28,342,321.28         |
-| 450 | 30,225,585.83         |
-| 480 | 32,052,616.78         |
-| 510 | 33,822,799.99         |
-| 540 | 35,535,946.61         |
-| 570 | 37,192,212.48         |
-| 600 | 38,792,032.93         |
-| 630 | 40,336,069.55         |
-| 660 | 41,825,166.37         |
-| 690 | 43,260,313.71         |
-| 720 | 44,642,617.97         |
+Note: The "Cumulative UBI" column represents the definite integral of y(x) from day 1 to the specified day.
+
+{% hint style="warning" %}
+This table shows simulated data for UBI distribution calculated under the condition of U(x) = 0. The actual UBI release will dynamically change based on the network CP resource utilization rate.
+{% endhint %}
 
 ***
 
@@ -428,15 +407,3 @@ The combined UBI and paid job compensation model for Swan Chain computing provid
 * **Incentive Alignment:** Community participants (CPs) are incentivized to participate in paid jobs without experiencing significant income loss during transitions from UBI reliance to paid employment.
 
 ***
-
-### **References**
-
-* **Gamma Function and Applications**: Details on the mathematical properties of the gamma function used in the allocation formula.
-* **Decentralized Network Incentive Models**: Studies on incentive mechanisms in blockchain and decentralized networks.
-* **Token Economics**: Literature on designing token economies for sustainability and growth.
-
-***
-
-### **Disclaimer**
-
-This document is intended for informational purposes to outline the UBI and paid job compensation mechanism within the Swan Chain network. The parameters and models presented are subject to change based on ongoing network analysis and market conditions.

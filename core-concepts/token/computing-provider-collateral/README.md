@@ -8,7 +8,9 @@ In the Swan Chain network, Computing Providers (CPs) contribute their computatio
 
 The collateral amount for each CP is determined by an inverse correlation model based on the total computing power contributed by the CP to the network. The formula for calculating the collateral amount is:
 
-y = (k / global\_computing\_units) + b
+$$
+y = \frac{k}{\text{global\_computing\_units}} + b
+$$
 
 Where:
 
