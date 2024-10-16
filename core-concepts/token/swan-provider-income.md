@@ -44,7 +44,7 @@ To calculate the UBI for a single CP, we consider both the resource usage and co
 
 * Calculate the daily completion rate of a single ECP zk-task: $$P_{\text{ECP}}$$
 * Calculate the completion rate of a single FCP sampling task: $$P_{\text{FCP}}$$
-* Number of GPUs $$N_{\text{CP}}(GPU_k)$$ and GPU types.
+* Number of GPUs: $$N_{\text{CP}}(GPU_k)$$ and GPU types.
 * Calculate the total UBI workload:
 
 $$
@@ -52,11 +52,11 @@ UBI_{\text{total}} = UBI_{\text{ECP}} + UBI_{\text{FCP}}
 $$
 
 $$
-UBI_{\text{ECP}} = \sum\limits_i \left( \sum\limits_k N_{\text{ECP},i}(GPU_k) \times f_k \right) \times P_{\text{ECP},i}
+UBI_{ECP}=\sum\limits_i (\sum\limits_k N_{ECP,i}(GPU_k) \times f_k) \times P_{ECP,i} )
 $$
 
 $$
-UBI_{\text{FCP}} = \sum\limits_j \left( \sum\limits_k N_{\text{FCP},j}(GPU_k) \times f_k \right) \times P_{\text{FCP},j}
+UBI_{FCP}=\sum\limits_j (\sum\limits_k N_{FCP,j}(GPU_k) \times f_k) \times P_{FCP,j} *W_{FCP}
 $$
 
 **(2) Calculating the UBI for a single CP**:
@@ -70,7 +70,7 @@ $$
 As an FCP:
 
 $$
-UBI_{\text{FCP},i}(x) = \frac{\sum\limits_k N_{\text{FCP},i}(GPU_k) \times f_k \times P_{\text{FCP},i}}{UBI_{\text{ECP}} + UBI_{\text{FCP}}} \times I(x)
+UBI_{FCP,i}(x)= \frac{\sum\limits_k N_{FCP,i}(GPU_k) \times f_k) \times P_{FCP,i} \times W_{FCP} }{UBI_{ECP}+UBI_{FCP}} \times I(x)
 $$
 
 
@@ -84,14 +84,19 @@ A CP must meet certain conditions to qualify for UBI:
 1. **Sufficient Collateral**:
 
 $$
-Collateral_{\text{CP}} = \sum\limits_k N_{\text{CP}}(GPU_k) \times C_{\text{base}} \times f_k
+Collateral_{ECP}= \sum\limits_k N_{ECP}(GPU_k) \times C_{base} \times f_k
+$$
+
+$$
+Collateral_{FCP}= \sum\limits_k N_{FCP}(GPU_k) \times C_{base} \times f_k  \times W_{FCP}
 $$
 
 Where:
 
-* $$N_{\text{CP}}(GPU_k)$$ is the number of GPUs held by CP.
-* $$C_{\text{base}}$$ is the base collateral.
-* $$f_k$$ is the revenue growth factor
+* $$N_{ECP}(GPU_k$$ represents the number of ECP for $$GPU_k$$
+* $$C_{\text{base}}$$ is the base collateral, with an initial value of 3500 (this value will be dynamically adjusted based on the daily computing units of the entire network; for specific adjustment rules, check [here](computing-provider-collateral/collateral-requirement-and-earning-multiplier.md).)
+* $$N_{\text{FCP}}(\text{GPU}_k)$$represents the number of $$\text{GPU}_k$$ _in FCP_
+* &#x20;$$N_{\text{ECP}}(\text{GPU}_k)$$ represents the number of $$\text{GPU}_k$$ in ECP.&#x20;
 
 2. **Completion of Basic Test Tasks:**
 

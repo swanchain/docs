@@ -14,7 +14,7 @@ The Web3 ZK Computing Market is a Market Provider specifically designed for Zero
 
 * [**ZK Auction Engine**](web3-zk-computing-market/zk-auction-engine.md): Manages the bidding and allocation of ZK computation tasks
 * [**Sequencer**](web3-zk-computing-market/sequencer.md): Plays a crucial role in processing ZK tasks and proofs efficiently
-* [**zk-UBI-task**](web3-zk-computing-market/contribute-zk-ubi-task/): Supports specific tasks related to [Universal Basic Income](../../core-concepts/token/swan-universal-basic-income-ubi.md) concepts using zero-knowledge proofs
+* [**zk-UBI-task**](web3-zk-computing-market/contribute-zk-ubi-task/): Supports specific tasks related to [Universal Basic Income](../../core-concepts/token/swan-universal-basic-income-ubi/) concepts using zero-knowledge proofs
 
 Read more about the ZK Computing Market [here](https://docs.swanchain.io/bulders/market-provider/web3-zk-computing-market).
 

@@ -72,24 +72,26 @@ Where:
 **(1) Calculate the total duration of real GPU orders across the network**
 
 $$
-T_{\text{day}} = \sum\limits_{i}Task_{\text{ECP},i}(GPU_k) \times f_k + \sum\limits_{j}Task_{\text{FCP},j}(GPU_k) \times f_k
+T_{day}= \sum\limits_{i}Task_{ECP,i}(GPU_k)  \times  f_k + \sum\limits_{j}Task_{FCP,j}(GPU_k)  \times  f_k  \times W_{FCP}
 $$
 
 Where:
 
 * $$Task_{\text{FCP},i}(GPU_k)$$ represents the time that the $$i$$-th FCP task uses $$GPU_k$$.
 * $$Task_{\text{ECP},j}(GPU_k)$$ represents the time that the $$j$$-th ECP task uses $$GPU_k$$.
-* $$f_k$$ is the revenue growth factor.
+* &#x20;$$f_k$$ represents the earnings growth factor
+* $$W_{FCP}$$ represents the FCP resource bonus ratio, currently set at a constant value of 1.2
 
 **（2）Calculate the total available usage time for all GPUs in the network**
 
 $$
-T_{\text{total}} = \sum\limits_k N(GPU_k) \times 24 \times f_k
+T_{total} =  \sum\limits_k N_{ECP}(GPU_k) \times 24   \times f_k +  \sum\limits_k N_{FCP}(GPU_k) \times 24   \times f_k * W_{FCP}
 $$
 
 Where:
 
-* $$N(GPU_k)$$ is the number of $$GPU_k$$.
+* $$N_{\text{FCP}}(\text{GPU}_k)$$represents the number of $$\text{GPU}_k$$ _in FCP_
+* &#x20;$$N_{\text{ECP}}(\text{GPU}_k)$$ represents the number of $$\text{GPU}_k$$ in ECP.&#x20;
 
 **(3) Calculate** $$u(x)$$
 
@@ -102,13 +104,15 @@ $$
 $$P_{\text{market}}(x)$$ represents the cost in Swan Tokens when all GPUs in the CP are fully utilized:
 
 $$
-P_{\text{market}}(x) = \sum\limits_k N(GPU_k) \times Price(GPU_k) \times 24
+P_{market}{(x)} =  \sum\limits_k N_{ECP}(GPU_k)   \times Price({GPU_k})  \times 24 +  \sum\limits_k N_{FCP}(GPU_k)  \times W_{FCP} \times Price({GPU_k})  \times 24
 $$
 
 Where:
 
-* $$N(GPU_k)$$ is the number of $$GPU_k$$.
 * $$Price(GPU_k)$$ is the price of $$GPU_k$$.
+* $$W_{FCP}$$ represents the FCP resource bonus ratio, currently set at a constant value of 1.2
+* $$N_{\text{FCP}}(\text{GPU}_k)$$represents the number of $$\text{GPU}_k$$ _in FCP_
+* &#x20;$$N_{\text{ECP}}(\text{GPU}_k)$$ represents the number of $$\text{GPU}_k$$ in ECP.&#x20;
 
 ## **Algorithm Implementation**
 
@@ -152,9 +156,9 @@ We consider three scenarios to illustrate how CPs' income evolves over time:
 2. **Low Paid Job Demand** $$u(x) = 0.1$$: CPs primarily earn UBI income with a small contribution from paid jobs.
 3. **Increasing Paid Job Demand**: Resource usage rate $$u(x)$$ increases over time, shifting CPs' income from UBI to paid jobs.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### **Interpretation of the Plots**
 

@@ -6,7 +6,7 @@ description: A Full Toolset AI Blockchain
 
 [Swan Chain](https://www.swanchain.io) (formerly FilSwan), initiated in 2021, is a full toolset AI blockchain infrastructure designed to accelerate AI adoption. Utilizing OP superchain technology, [Swan Chain](https://www.swanchain.io/) merges Web3 with AI, offering comprehensive solutions across storage, computing, bandwidth, and payments. Through [Lagrange](https://lagrange.computer/), it enables efficient AI model deployment while reducing computing costs by up to 70% and monetizing idle computing resources.
 
-SwanChain's innovative approach introduces a [Universal Basic Income (UBI) ](token/swan-universal-basic-income-ubi.md)model for Computing Providers within its ZK market, ensuring stable income and incentivizing continuous contributions.
+SwanChain's innovative approach introduces a [Universal Basic Income (UBI) ](token/swan-universal-basic-income-ubi/)model for Computing Providers within its ZK market, ensuring stable income and incentivizing continuous contributions.
 
 #### Core Objectives and Motivation
 
