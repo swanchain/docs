@@ -44,7 +44,7 @@ To calculate the UBI for a single CP, we consider both the resource usage and co
 
 * Calculate the daily completion rate of a single ECP zk-task: $$P_{\text{ECP}}$$
 * Calculate the completion rate of a single FCP sampling task: $$P_{\text{FCP}}$$
-* Number of GPUs: $$N_{\text{CP}}(GPU_k)$$ and GPU types.
+* Number of GPUs: $$N_{\text{ECP}}(GPU_k)$$ and GPU types.&#x20;
 * Calculate the total UBI workload:
 
 $$
@@ -93,8 +93,8 @@ $$
 
 Where:
 
-* $$N_{ECP}(GPU_k$$ represents the number of ECP for $$GPU_k$$
-* $$C_{\text{base}}$$ is the base collateral, with an initial value of 3500 (this value will be dynamically adjusted based on the daily computing units of the entire network; for specific adjustment rules, check [here](computing-provider-collateral/collateral-requirement-and-earning-multiplier.md).)
+* $$N_{ECP}(GPU_k)$$ represents the number of ECP for $$GPU_k$$
+* $$C_{\text{base}}$$ is the base collateral, with an initial value of 3500 (this value will be dynamically adjusted based on the daily computing units of the entire network; for specific adjustment rules, check [here](computing-provider-collateral/collateral-requirement-and-earning-multiplier.md))
 * $$N_{\text{FCP}}(\text{GPU}_k)$$represents the number of $$\text{GPU}_k$$ _in FCP_
 * &#x20;$$N_{\text{ECP}}(\text{GPU}_k)$$ represents the number of $$\text{GPU}_k$$ in ECP.&#x20;
 
