@@ -38,7 +38,6 @@ The values provided in the table below are for reference only. These figures may
 | RTX 4080                    | 2.4                    | 8,400                                          | 840                                                          |
 | RTX A5000                   | 2.4                    | 8,400                                          | 840                                                          |
 | QUADRO P2000                | 2.3                    | 8,050                                          | 805                                                          |
-| RTX 3090 Ti                 | 2.3                    | 8,050                                          | 805                                                          |
 | RTX 4070 SUPER              | 2.2                    | 7,700                                          | 770                                                          |
 | A30                         | 2.2                    | 7,700                                          | 770                                                          |
 | Q RTX 8000                  | 2.2                    | 7,700                                          | 770                                                          |
