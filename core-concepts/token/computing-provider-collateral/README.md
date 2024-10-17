@@ -20,7 +20,7 @@ $$
 \begin{cases}CU_0 = 3000 \\C_{total} = 10,000,000 \\b=200\end{cases}
 $$
 
-Where:$$\begin{cases}CU_0 = 3000 \C_{total} = 10,000,000 \b=200\end{cases}$$
+Where:
 
 * $$W_{FCP}$$ represents the FCP resource bonus ratio, currently set at a constant value of 1.2
 * $$N_{\text{FCP}}(\text{GPU}_k)$$represents the number of $$\text{GPU}_k$$ _in FCP_
