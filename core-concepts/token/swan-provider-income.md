@@ -105,3 +105,8 @@ Where:
 
 3. GPU count and type are also factored into the UBI eligibility.
 
+#### Exit Mechanism:
+
+* CPs can exit by adjusting the setting of accepting tasks through their `TaskType`  (ECP: 1, 2, 4; FCP: 3, 5).&#x20;
+* CPs can request to withdraw their collateral, but this requires a 7-day confirmation period to ensure settlement before the withdrawal is finalized (first `requestWithdraw`, followed by `confirmRequest` after 7 days).
+
