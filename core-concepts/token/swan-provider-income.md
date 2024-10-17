@@ -36,7 +36,7 @@ $$
 * **Intermediate Values**:
   * CP's income is a combination of UBI and paid job compensation, proportional to resource utilization.
 
-### Individual CP's Income
+### Individual CP's UBI
 
 To calculate the UBI for a single CP, we consider both the resource usage and completion rates of tasks. UBI allocation is conditional on sufficient resource contribution and performance metrics:
 
@@ -52,7 +52,7 @@ UBI_{\text{total}} = UBI_{\text{ECP}} + UBI_{\text{FCP}}
 $$
 
 $$
-UBI_{ECP}=\sum\limits_i (\sum\limits_k N_{ECP,i}(GPU_k) \times f_k) \times P_{ECP,i} )
+UBI_{ECP}=\sum\limits_i (\sum\limits_k N_{ECP,i}(GPU_k) \times f_k) \times P_{ECP,i}
 $$
 
 $$
@@ -64,13 +64,13 @@ $$
 As an ECP:
 
 $$
-UBI_{\text{ECP},i}(x) = \frac{\sum\limits_k N_{\text{ECP},i}(GPU_k) \times f_k \times P_{\text{ECP},i}}{UBI_{\text{ECP}} + UBI_{\text{FCP}}} \times I(x)
+UBI_{\text{ECP},i}(x) = \frac{\sum\limits_k N_{\text{ECP},i}(GPU_k) \times f_k \times P_{\text{ECP},i}}{UBI_{\text{ECP}} + UBI_{\text{FCP}}} \times y_{\text{UBI}}(x)
 $$
 
 As an FCP:
 
 $$
-UBI_{FCP,i}(x)= \frac{\sum\limits_k N_{FCP,i}(GPU_k) \times f_k) \times P_{FCP,i} \times W_{FCP} }{UBI_{ECP}+UBI_{FCP}} \times I(x)
+UBI_{FCP,i}(x)= \frac{\sum\limits_k N_{FCP,i}(GPU_k) \times f_k) \times P_{FCP,i} \times W_{FCP} }{UBI_{ECP}+UBI_{FCP}} \times y_{\text{UBI}}(x)
 $$
 
 
