@@ -9,15 +9,23 @@ In the Swan Chain network, Computing Providers (CPs) contribute their computatio
 The collateral amount for each CP is determined by an inverse correlation model based on the total computing power contributed by the CP to the network. The formula for calculating the collateral amount is:
 
 $$
-y = \frac{k}{\text{global\_computing\_units}} + b
+C_{base} =  \frac{C_{total}}{CU_{total}}  + b
 $$
 
-Where:
+$$
+CU_{total} =\max ( \sum\limits_k N_{ECP}(GPU_k)  \times f_k +  \sum\limits_k N_{FCP}(GPU_k)    \times f_k * W_{FCP}, CU_0)
+$$
 
-* **y**: Collateral amount in Swan tokens
-* **k**: Inverse correlation constant, representing the strength of the inverse relationship
-* **global\_computing\_units**: Total computing power units contributed by the CP
-* **b**: Baseline collateral amount, ensuring a minimum level of collateral
+$$
+\begin{cases}CU_0 = 3000 \\C_{total} = 10,000,000 \\b=200\end{cases}
+$$
+
+Where:$$\begin{cases}CU_0 = 3000 \C_{total} = 10,000,000 \b=200\end{cases}$$
+
+* $$W_{FCP}$$ represents the FCP resource bonus ratio, currently set at a constant value of 1.2
+* $$N_{\text{FCP}}(\text{GPU}_k)$$represents the number of $$\text{GPU}_k$$ _in FCP_
+* &#x20;$$N_{\text{ECP}}(\text{GPU}_k)$$ represents the number of $$\text{GPU}_k$$ in ECP.&#x20;
+* $$f_k$$ represents the earnings growth factor
 
 The formula indicates that the collateral requirement decreases as the total computing power contributed by the CP increases. This is designed to encourage CPs to contribute more computing power, reducing their collateral burden as they scale up their participation.
 
