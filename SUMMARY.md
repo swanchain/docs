@@ -14,6 +14,8 @@
     * [3.Upload Files and Folders](bulders/app-developer/store-and-retrieve-a-file-with-swan-storage/3.upload-files-and-folders.md)
     * [4.Retrieve and Download Files](bulders/app-developer/store-and-retrieve-a-file-with-swan-storage/4.retrieve-and-download-files.md)
     * [5.Delete Files and Buckets](bulders/app-developer/store-and-retrieve-a-file-with-swan-storage/5.delete-files-and-buckets.md)
+  * [Building and Pushing Docker Images](bulders/app-developer/building-and-pushing-docker-images.md)
+  * [Creating Deployment Files with LDL](bulders/app-developer/creating-deployment-files-with-ldl.md)
 * [Node Operator](bulders/swan-node.md)
 * [Market Provider](bulders/market-provider/README.md)
   * [AI/ML Orchestrator](bulders/market-provider/ai-ml-orchestrator/README.md)

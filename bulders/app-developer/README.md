@@ -25,6 +25,21 @@ Explore Swan SDK deployment [here](deploying-with-swan-sdk.md).
 
 Discover Swan Storage capabilities [here](store-and-retrieve-a-file-with-swan-storage/).
 
+**Building and Pushing Docker Images**
+
+* Learn how to create Docker images for your applications.
+* Explore the process of pushing your Docker images to repositories.&#x20;
+
+Get started with Docker [here](building-and-pushing-docker-images.md).
+
+#### Creating Deployment Files with LDL
+
+* The basics of LDL and its relationship to YAML
+* How to create `deploy.yaml` files for your Swan Chain projects
+* Key components of an LDL file: version, services, profiles, and deployment
+
+Dive into LDL and deployment files [here](creating-deployment-files-with-ldl.md).
+
 ***
 
 These guides will empower you to harness the full potential of Swan Chain's ecosystem for your applications, from efficient computation management to secure, decentralized file storage.
