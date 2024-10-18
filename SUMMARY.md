@@ -7,7 +7,7 @@
   * [Deploying Your First Smart Contract with Remix](bulders/dapp-developer/deploying-your-first-smart-contract-with-remix.md)
   * [Interacting with Smart Contract on Swan Chain Using Go](bulders/dapp-developer/interacting-with-smart-contract-on-swan-chain-using-go.md)
 * [App Developer](bulders/app-developer/README.md)
-  * [Building and Pushing Docker Images](bulders/app-developer/building-and-pushing-docker-images.md)
+  * [Create Your Dockerfile and Prepare for Deployment](bulders/app-developer/create-your-dockerfile-and-prepare-for-deployment.md)
   * [Creating Deployment Files with LDL](bulders/app-developer/creating-deployment-files-with-ldl.md)
   * [Deploying with Swan SDK](bulders/app-developer/deploying-with-swan-sdk.md)
   * [Store and Retrieve a File with Swan Storage](bulders/app-developer/store-and-retrieve-a-file-with-swan-storage/README.md)

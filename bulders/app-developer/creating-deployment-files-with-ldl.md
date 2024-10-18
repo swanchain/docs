@@ -16,15 +16,15 @@ Configuration files may end in `.yml` or `.yaml`.A complete deployment has the f
 
 ### **networking**
 
-Networking - allowing connectivity to and between workloads - can be configured via the Lagrange Definition Language(LDL) file for a deployment. By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed.
+Networking - allowing connectivity to and between workloads - can be configured via the LDL file for a deployment. By default, workloads in a deployment group are isolated - nothing else is allowed to connect to them. This restriction can be relaxed.
 
-### version <a href="#version" id="version"></a>
+### version
 
-Indicates the version of the Lagrange configuration file. Currently only `"2.0"` one is accepted.
+Indicates the version of the configuration file. Currently only `"2.0"` one is accepted.
 
-### services <a href="#services" id="services"></a>
+### services
 
-The top-level `services` entry contains a map of workloads to be run on the Lagrange deployment. Each key is a service name; values are a map containing the following keys:
+The top-level `services` entry contains a map of workloads to be run on the deployment. Each key is a service name; values are a map containing the following keys:
 
 | Name         | Required | Meaning                                                                                                                                                       |
 | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -127,11 +127,11 @@ services:
         dir: "/easy-diffusion/models/stable-diffusion"
 ```
 
-### profiles <a href="#profiles" id="profiles"></a>
+### profiles
 
 The `profiles` section contains named compute and placement profiles to be used in the deployment.
 
-### deployment <a href="#deployment" id="deployment"></a>
+### deployment
 
 The `deployment` section defines how to deploy the services. It is a mapping of service name to deployment configuration.
 
@@ -166,7 +166,7 @@ deployment:
       count: 1
 ```
 
-Check out [here](https://lagrangedao.org/spaces/0x7E0c07e66CD480CDa94dEaaeEB5a84Fa9F8215e6/miner-bomb-bomb/files) to interact with the sample Space.
+Check out [here](https://lagrangedao.org/spaces/0x7E0c07e66CD480CDa94dEaaeEB5a84Fa9F8215e6/miner-bomb-bomb/files) to interact with the sample.
 
 **Here is another sample `deploy.yaml`:**
 
@@ -216,4 +216,4 @@ deployment:
       count: 1
 ```
 
-Check out [here](https://lagrangedao.org/spaces/0x7E0c07e66CD480CDa94dEaaeEB5a84Fa9F8215e6/CodiMD-Test/files) to interact with the sample Space.
+Check out [here](https://lagrangedao.org/spaces/0x7E0c07e66CD480CDa94dEaaeEB5a84Fa9F8215e6/CodiMD-Test/files) to interact with the sample.

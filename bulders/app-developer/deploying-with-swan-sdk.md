@@ -8,7 +8,7 @@ _**For more sample tutorial, please refer to**_ [_**Python Swan SDK Samples**_](
 
 ### Get Swan API Key <a href="#get-orchestrator-api-key" id="get-orchestrator-api-key"></a>
 
-To use `swan-sdk`, an Swan API key is required. Steps to get an API Key:
+To use `swan-sdk`, a Swan API key is required. Steps to get an API Key:
 
 * Go to [Swan Console](https://console.swanchain.io/), switch network to [Swan Chain Mainnet](https://docs.swanchain.io/network-reference/readme).
 * Login with your wallet.
@@ -50,7 +50,7 @@ Now that you have an `Orchestrator` service, you can create and deploy instance 
 
 ```python
 result = swan_orchestrator.create_task(
-    repo_uri='https://github.com/swanchain/awesome-swanchain/tree/main/hello_world',
+    repo_uri='https://github.com/swanchain/awesome-swanchain/tree/main/hello_world', # Or your own repo URI
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>',
     instance_type='C1ae.small',
