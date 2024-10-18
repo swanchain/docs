@@ -2,7 +2,7 @@
 
 Lagrange Definition Language (LDL) is essentially a YAML-based configuration language used for defining deployment requirements in Swan Chain. Similar to how Dockerfiles are used to define container builds, LDL files (deploy.yaml) are used to specify how your application should be deployed and run on the Swan Chain network.
 
-## Lagrange Definition Language (LDL)&#x20;
+## Lagrange Definition Language (LDL)
 
 LDL is a human-friendly data standard for declaring deployment attributes. The LDL file is a "form" to request resources from the Network. LDL is compatible with the YAML standard and similar to Docker Compose files.
 
@@ -96,16 +96,9 @@ The `as` value governs the default `proto` value as follows:
 
 `expose.to` is a list of clients to accept connections from. Each item is a map with one or more of the following entries:
 
-| Name      | Value                        | Default | Description                                               |
-| --------- | ---------------------------- | ------- | --------------------------------------------------------- |
-| `service` | A service in this deployment | ​       | Allow the given service to connect                        |
-| `global`  | `true` or `false`            | `false` | If true, allow connections from outside of the datacenter |
-
-If no service is given and `global` is true, any client can connect from anywhere (web servers typically want this).
-
-If a service name is given and `global` is `false`, only the services in the current datacenter can connect. If a service name is given and `global` is `true`, services in other datacenters for this deployment can connect.
-
-If `global` is `false` then a service name must be given.
+| Name      | Value                        | Default | Description                        |
+| --------- | ---------------------------- | ------- | ---------------------------------- |
+| `service` | A service in this deployment | ​       | Allow the given service to connect |
 
 **service.model**
 
@@ -146,7 +139,7 @@ deployment:
       count: 1
 ```
 
-This says that the instances of the `web` service should be deployed to a datacenter matching the `westcoast` datacenter profile. Each instance will have the resources defined in the `web` compute profile available to it.
+This says that the instances of the `minesweeper` service should be deployed to a [Computing Provider](../../computing-provider/) within Lagrange.
 
 **The final `deploy.yaml` should look like this:**
 
@@ -166,7 +159,7 @@ deployment:
       count: 1
 ```
 
-Check out [here](https://lagrangedao.org/spaces/0x7E0c07e66CD480CDa94dEaaeEB5a84Fa9F8215e6/miner-bomb-bomb/files) to interact with the sample.
+Check out [here](https://lagrange.computer/spaces/0x7E0c07e66CD480CDa94dEaaeEB5a84Fa9F8215e6/miner-bomb-bomb/files) to interact with the sample.
 
 **Here is another sample `deploy.yaml`:**
 
@@ -216,4 +209,4 @@ deployment:
       count: 1
 ```
 
-Check out [here](https://lagrangedao.org/spaces/0x7E0c07e66CD480CDa94dEaaeEB5a84Fa9F8215e6/CodiMD-Test/files) to interact with the sample.
+Check out [here](https://lagrange.computer/spaces/0x7E0c07e66CD480CDa94dEaaeEB5a84Fa9F8215e6/CodiMD-Test/files) to interact with the sample.
