@@ -146,7 +146,7 @@ deployment:
       count: 1
 ```
 
-This says that the 20 instances of the `web` service should be deployed to a datacenter matching the `westcoast` datacenter profile. Each instance will have the resources defined in the `web` compute profile available to it.
+This says that the instances of the `web` service should be deployed to a datacenter matching the `westcoast` datacenter profile. Each instance will have the resources defined in the `web` compute profile available to it.
 
 **The final `deploy.yaml` should look like this:**
 
