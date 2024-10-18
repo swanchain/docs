@@ -15,7 +15,7 @@ Deployable Dockerfile. And if you're a pro, you will learn how to create a deplo
 ## Part 1: Build Your Own Docker Images Based on Our Template
 
 > Note: You can skip this part if you already have your Docker image with your application and move
-> to [Deploy-with-swan-sdk](deploying-with-swan-sdk.md)
+> to [Deploy with swan sdk](deploying-with-swan-sdk.md)
 
 Building your Docker image is the first step in deploying custom applications on the Swan Chain network. Here's how you
 can do it:
@@ -56,7 +56,7 @@ git push -u origin main
 ```
 
 👏 And congratulations! You are now ready to deploy your application on the Swan Chain network via SwanSDK by
-following [Deploy-with-swan-sdk](deploying-with-swan-sdk.md)
+following [deploy with swan sdk](deploying-with-swan-sdk.md)
 
 ---
 
@@ -134,6 +134,6 @@ git remote add origin <your-another-github-repo>
 git push -u origin main
 ```
 
-With the above steps, you have successfully created your own Docker image and deployment file with LDL. You can now deploy
+With the above steps, you have successfully created your own Docker image and deployment file with LDL. You can now [deploy your app with swan sdk](deploying-with-swan-sdk.md)
 
 LDL is a powerful tool that allows you to customize your deployment settings. You can learn more about LDL [here](creating-deployment-files-with-ldl.md)
