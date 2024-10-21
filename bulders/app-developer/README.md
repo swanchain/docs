@@ -38,7 +38,7 @@ Get started with Docker [here](broken-reference).
 * How to create `deploy.yaml` files for your Swan Chain projects
 * Key components of an LDL file: version, services, profiles, and deployment
 
-Dive into LDL and deployment files [here](create-your-dockerfile-and-prepare-for-deployment/creating-deployment-files-with-ldl.md).
+Dive into LDL and deployment files [here](building-docker-images-and-deployment-file-with-ldl/creating-deployment-files-with-ldl.md).
 
 ***
 

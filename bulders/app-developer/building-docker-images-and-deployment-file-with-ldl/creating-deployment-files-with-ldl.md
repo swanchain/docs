@@ -1,4 +1,4 @@
-# Creating Deployment Files with LDL
+# Lagrange Definition Language(LDL)
 
 Lagrange Definition Language (LDL) is essentially a YAML-based configuration language used for defining deployment requirements in Swan Chain. Similar to how Dockerfiles are used to define container builds, LDL files (deploy.yaml) are used to specify how your application should be deployed and run on the Swan Chain network.
 
