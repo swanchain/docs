@@ -40,7 +40,7 @@ curl -fsSL https://raw.githubusercontent.com/swanchain/go-computing-provider/rel
 * Download `computing-provider`
 
 ```bash
-wget https://github.com/swanchain/go-computing-provider/releases/download/v0.6.5/computing-provider
+wget https://github.com/swanchain/go-computing-provider/releases/download/v0.7.0/computing-provider
 ```
 
 * Initialize ECP repo
@@ -49,7 +49,7 @@ wget https://github.com/swanchain/go-computing-provider/releases/download/v0.6.5
  ./computing-provider init --multi-address=/ip4/<YOUR_PUBLIC_IP>/tcp/<YOUR_PORT> --node-name=<YOUR_NODE_NAME>
 ```
 
-* Generate a new wallet address and deposit the `ETH`, refer [here](https://docs.swanchain.io/swan-mainnet/getting-started-guide):
+* Generate a new wallet address and deposit the `SwanETH`, refer [here](https://docs.swanchain.io/swan-mainnet/getting-started-guide):
 
 ```bash
 ./computing-provider wallet new
@@ -82,35 +82,33 @@ Output:
                     --task-types 1,2,4
 ```
 
-**Note:** `--task-types`: Supports 4 task types (1: Fil-C2-512M, 2: Aleo, 3: AI, 4: Fil-C2-32G), separated by commas. For ECP, it needs to be set to 1,2,4.
+**Note:** `--task-types`: Supports 4 task types (1: Fil-C2-512M, 2: Mining, 3: AI, 4: Fil-C2-32G, 5: NodePort), separated by commas. For ECP, it needs to be set to 1,2,4.
 
-* Collateral `SWANC` for ECP
+* Collateral `SWANU` for ECP
 
 ```bash
 computing-provider collateral add --ecp --from <YOUR_WALLET_ADDRESS>  <AMOUNT>   
 ```
 
-> If you want to withdraw `SWANC` from ECP
+> If you want to withdraw `SWANU` from ECP
 >
 > ```bash
 > computing-provider collateral withdraw --ecp --owner <YOUR_WALLET_ADDRESS> --account <YOUR_CP_ACCOUNT> <amount>
 > ```
 
-> **Note:** A minimum of 100 `SWANC` collateral is currently required to receive a ZK task.
-
-*   Deposit `ETH` to Sequencer Account
+*   Deposit `SwanETH` to Sequencer Account
 
     ```bash
     computing-provider sequencer add --from <YOUR_WALLET_ADDRESS>  <amount>
     ```
 
-> If you want to Withdraw `ETH` from Sequencer Account
+> If you want to Withdraw `SwanETH` from Sequencer Account
 >
 > ```bash
 > computing-provider sequencer withdraw --owner <YOUR_OWNER_WALLET_ADDRESS>  <amount>
 > ```
 
-> **Note:** Currently one zk-task requires 0.00001 ETH,
+> **Note:** Currently one zk-task requires 0.0000005 SwanETH,
 
 ### Start ECP service
 
@@ -133,9 +131,9 @@ nohup ./computing-provider ubi daemon >> cp.log 2>&1 &
 
 #### Why need Sequencer?
 
-In past tests, we discovered that due to the frequent interactions required by ECP (Edge Computing Provider) to submit proofs to the blockchain, ECP incurs significant gas costs. To reduce these gas costs, the Sequencer has emerged as a Layer 3 solution.
+In past tests, we discovered that due to the frequent interactions required by ECP (Ethereum Compliance Proof) to submit proofs to the blockchain, ECP incurs significant gas costs. To reduce these gas costs, the Sequencer has emerged as a Layer 3 solution.
 
-The ECP can submit proofs to the Sequencer service, which will then package and submit all proofs from the entire network over a period of time (**currently 24 hours**) in a single transaction. This way, ECP only needs to pay a minimal gas fee to the Sequencer (currently, **a single proof requires 0.00001 ETH**). For more detailed information, see [here](https://docs.swanchain.io/swan-provider/market-provider-mp/zk-engine/sequencer).
+The ECP can submit proofs to the Sequencer service, which will then package and submit all proofs from the entire network over a period of time (**currently 24 hours**) in a single transaction. This way, ECP only needs to pay a minimal gas fee to the Sequencer (currently, **a single proof requires 0.0000005 SwanETH**). For more detailed information, see [here](https://docs.swanchain.io/swan-provider/market-provider-mp/zk-engine/sequencer).
 
 #### How to Set it?
 
@@ -150,7 +148,7 @@ AutoChainProof = false             # when sequencer doesn't have enough funds or
 
 ```
 
-* Deposit ETH into the Sequencer account.
+* Deposit SwanETH into the Sequencer account.
 
 ```
 computing-provider sequencer add --from <YOUR_WALLET_ADDRESS>  <amount>
