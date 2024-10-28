@@ -14,7 +14,6 @@ The values provided in the table below are for reference only. These figures may
 | H100 SXM                    | 28                     | 98,000                                         | 9,800                                                        |
 | A100-SXM4-80GB              | 13.6                   | 47,600                                         | 4,760                                                        |
 | A100-PCIE-80GB              | 12                     | 42,000                                         | 4,200                                                        |
-| A100 80GB PCIe              | 9                      | 31,500                                         | 3,150                                                        |
 | Titan RTX                   | 8                      | 28,000                                         | 2,800                                                        |
 | A10G                        | 8                      | 28,000                                         | 2,800                                                        |
 | A800 PCIE                   | 7.3                    | 25,550                                         | 2,555                                                        |
