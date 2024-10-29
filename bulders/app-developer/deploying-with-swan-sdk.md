@@ -53,7 +53,7 @@ result = swan_orchestrator.create_task(
     repo_uri='https://github.com/swanchain/awesome-swanchain/tree/main/hello_world', # Or your own repo URI
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>',
-    instance_type='C1ae.small',
+    instance_type='C1ae.medium',
     auto_pay=True
 )
 task_uuid = result['task_uuid']
@@ -115,7 +115,7 @@ func main() {
 		PrivateKey:   "<PRIVATE_KEY>",
 		RepoUri:      "https://github.com/swanchain/awesome-swanchain/tree/main/hello_world",
 		Duration:     2 * time.Hour,
-		InstanceType: "C1ae.small",
+		InstanceType: "C1ae.medium",
 	})
 	taskUUID := task.Task.UUID
 
