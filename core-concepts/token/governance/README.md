@@ -18,7 +18,7 @@ The SWAN DAO Governance is the backbone of the SWAN network, ensuring that decis
    * **Feedback Channels**: Multiple channels (forums, chats, town halls) are available for community members to voice their opinions, concerns, and feedback.
    * **Educational Initiatives**: The DAO organizes workshops and webinars to educate members about governance processes, ensuring informed decision-making.
 5. **Treasury Management**:
-   * **Allocation**: The SWAN DAO oversees the network's treasury, strategically allocating funds for various initiatives, including staking rewards, investments, community building, Network Tasks, and Creator Rewards.
+   * **Allocation**: The SWAN DAO oversees the network's treasury, strategically allocating funds for various initiatives, including collateral rewards, investments, community building, Network Tasks, and Creator Rewards.
    * **Budget Oversight**: Regular audits and reviews ensure that funds are being used judiciously and in line with the community's interests.
    * **Investment Strategy**: A portion of the treasury is invested in promising projects or assets, aiming to grow the treasury's value over time.
    * **Compensation**: The DAO manages compensation for job creators, especially when the UBI rate exceeds the target. This ensures a balance between incentivizing job creation and providing UBI.

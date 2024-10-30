@@ -2,7 +2,7 @@
 
 ### Introduction
 
-**ECP (Edge Computing Provider)** is a crucial component in the Swan Chain ecosystem and is responsible for executing Zero-Knowledge (ZK) computation tasks. The Sequencer is an optimization component aggregating proofs submitted by multiple ECPs, processing them in batches to reduce gas fees and improve overall efficiency.&#x20;
+**ECP (Edge Computing Provider)** is a crucial component in the Swan Chain ecosystem and is responsible for executing Zero-Knowledge (ZK) computation tasks. The Sequencer is an optimization component aggregating proofs submitted by multiple ECPs, processing them in batches to reduce gas fees and improve overall efficiency.
 
 ### Account Overview
 
@@ -10,28 +10,28 @@
   * **Owner Address**: Hold the highest authority to manage the CP account.
   * **Beneficiary Address**: Receives rewards for ZK tasks.
   * **Worker Address**: Used for submitting proofs.
-* **Collateral Account**: ECP's staking account in the collateral contract (SwanC).
+* **Collateral Account**: ECP's collateral account in the collateral contract (SwanC).
   * **Escrow Account**: A account for storing ECP's collateral in collateral contarct, ensuring that ECP can receive ZK tasks.
 * **Sequencer Account**: ECP's account in the sequencer contract, used to pay for gas fees required when submitting ZK proofs.
 
 ### Table of Content:
 
 * [Initial Setup](ecp-funding-operations-guide.md#id-1.-initial-setup)
-  * [Obtaining ETH for Gas Fees ](ecp-funding-operations-guide.md#id-1.1-obtaining-eth-for-gas-fees)
+  * [Obtaining ETH for Gas Fees](ecp-funding-operations-guide.md#id-1.1-obtaining-eth-for-gas-fees)
   * [Obtaining SwanC for Collateral](ecp-funding-operations-guide.md#id-1.2-obtaining-swanc-for-collateral)
 * [Account Setup](ecp-funding-operations-guide.md#id-2.-account-setup)
 * [Configuring Sequencer (Recommended)](ecp-funding-operations-guide.md#id-3.-configuring-sequencer-recommended)
-  * [Enabling Sequencer Functionality ](ecp-funding-operations-guide.md#id-3.1-enabling-sequencer-functionality)
+  * [Enabling Sequencer Functionality](ecp-funding-operations-guide.md#id-3.1-enabling-sequencer-functionality)
   * [Funding the Sequencer Account](ecp-funding-operations-guide.md#id-3.2-funding-the-sequencer-account)
 * [Task Execution and Rewards](ecp-funding-operations-guide.md#id-4.-task-execution-and-rewards)
-  * [Task Types and Rewards ](ecp-funding-operations-guide.md#id-4.1-task-types-and-rewards)
-  * [Reward Distribution ](ecp-funding-operations-guide.md#id-4.2-reward-distribution)
-  * [Viewing Rewards ](ecp-funding-operations-guide.md#id-4.3-viewing-rewards)
+  * [Task Types and Rewards](ecp-funding-operations-guide.md#id-4.1-task-types-and-rewards)
+  * [Reward Distribution](ecp-funding-operations-guide.md#id-4.2-reward-distribution)
+  * [Viewing Rewards](ecp-funding-operations-guide.md#id-4.3-viewing-rewards)
   * [Slash Mechanism](ecp-funding-operations-guide.md#id-4.4-slash-mechanism)
 * [Exit Procedure](ecp-funding-operations-guide.md#id-5.-exit-procedure)
-  * [Stop Receiving New Tasks ](ecp-funding-operations-guide.md#id-5.1-stop-receiving-new-tasks)
-  * [Data Backup ](ecp-funding-operations-guide.md#id-5.2-data-backup)
-  * [Withdrawal Process ](ecp-funding-operations-guide.md#id-5.3-withdrawal-process)
+  * [Stop Receiving New Tasks](ecp-funding-operations-guide.md#id-5.1-stop-receiving-new-tasks)
+  * [Data Backup](ecp-funding-operations-guide.md#id-5.2-data-backup)
+  * [Withdrawal Process](ecp-funding-operations-guide.md#id-5.3-withdrawal-process)
 
 ### 1. Initial Setup
 
@@ -54,7 +54,7 @@ A minimum of 100 SwanC (Swan Credit Token) is required as collateral. To obtain 
 
 ### 2. Account Setup
 
-Staking SwanC to the Collateral Account: Use the following command:
+Depositing  SwanC to the Collateral Account: Use the following command:
 
 ```
 computing-provider collateral add --ecp --from <WALLET_ADDRESS> --account <CP_ACCOUNT> <Amount>
@@ -103,7 +103,7 @@ Rewards are distributed during the next settlement cycle after 24 hours, typical
 
 Check the transaction list of the beneficiary account on the blockchain explorer: [https://swanscan.io](https://swanscan.io).
 
-Alternatively, you can use the CP command to view rewards:&#x20;
+Alternatively, you can use the CP command to view rewards:
 
 ```
 computing-provider ubi list
@@ -169,4 +169,4 @@ computing-provider collateral withdraw-confirm --owner=<OWNER_ADDRESS> --account
 
 _**Note:** Escrow account balance may fluctuate due to periodic settlements. It's advisable to wait 24 hours after changing `taskTypes` before requesting the withdrawal. Confirmation can only be made 48 hours after the initial request. Funds will be withdrawn to the CP's `ownerAddress` upon confirmation._
 
-\
+\\

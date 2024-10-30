@@ -13,7 +13,7 @@
 * **zk-proof (Zero-Knowledge Proof):** A cryptographic technique used on Swan Chain that allows a party to prove possession of certain information without revealing the information itself, enhancing privacy and security.
 * **Treasure DAO:** The decentralized autonomous organization on Swan Chain tasked with managing funds and allocations for UBI, network tasks, and creative incentives.
 * **Committee:** A group within Swan Chain, likely comprising stakeholders like token holders and developers, responsible for decision-making regarding fund management and network governance.
-* **Staking Reward:** Incentives provided to participants who lock their tokens as a form of security or investment in Swan Chain, supporting its operations.
+* **Collateral Reward:** Incentives provided to participants who lock their tokens as a form of security or investment in Swan Chain, supporting its operations.
 * **Target UBI Rate:** The desired proportion of providers receiving UBI within Swan Chain. If exceeded, additional network tasks may be generated to balance the system.
 * **Average Job Duration:** The typical length of time a task or job takes to be completed by a provider on Swan Chain.
 * **Job Price:** The amount of compensation set for the completion of a specific task within Swan Chain.

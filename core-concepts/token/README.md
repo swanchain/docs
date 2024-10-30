@@ -49,5 +49,5 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 
 #### Governance Participation
 
-* **Staking Requirement:** Community members must stake tokens to participate in governance decisions.
+* **Collateral Requirement:** Community members must stake tokens to participate in governance decisions.
 * **Governance Rewards:** Active participants may receive rewards, such as 1% of the DAO Treasury, to incentivize involvement and wise decision-making.
