@@ -24,10 +24,9 @@
   * [Enabling Sequencer Functionality](ecp-funding-operations-guide.md#id-3.1-enabling-sequencer-functionality)
   * [Funding the Sequencer Account](ecp-funding-operations-guide.md#id-3.2-funding-the-sequencer-account)
 * [Task Execution and Rewards](ecp-funding-operations-guide.md#id-4.-task-execution-and-rewards)
-  * [Task Types and Rewards](ecp-funding-operations-guide.md#id-4.1-task-types-and-rewards)
-  * [Reward Distribution](ecp-funding-operations-guide.md#id-4.2-reward-distribution)
-  * [Viewing Rewards](ecp-funding-operations-guide.md#id-4.3-viewing-rewards)
-  * [Slash Mechanism](ecp-funding-operations-guide.md#id-4.4-slash-mechanism)
+  * [Reward Distribution](ecp-funding-operations-guide.md#id-4.1-reward-distribution)
+  * [Viewing UBI tasks](ecp-funding-operations-guide.md#id-4.2-viewing-ubi-tasks)
+  * [Slash Mechanism](ecp-funding-operations-guide.md#id-4.3-slash-mechanism)
 * [Exit Procedure](ecp-funding-operations-guide.md#id-5.-exit-procedure)
   * [Stop Receiving New Tasks](ecp-funding-operations-guide.md#id-5.1-stop-receiving-new-tasks)
   * [Data Backup](ecp-funding-operations-guide.md#id-5.2-data-backup)
@@ -43,18 +42,32 @@ ETH is required for transaction gas fees. Follow these steps:
 2. Cross-chain your ETH to Swan Chain to obtain ETH
 3. Prepare sufficient ETH to account for potential fluctuations in network gas fees
 
-#### 1.2 Obtaining SwanC for Collateral
+#### 1.2 Obtaining SWANU for Collateral
 
-A minimum of 100 SwanC (Swan Credit Token) is required as collateral. To obtain SwanC:
+ECP requires `SWANU` (Swan Compute Unit) as collateral.&#x20;
 
-1. Visit Swan Chain's faucet website: [https://faucet.swanchain.io](https://faucet.swanchain.io/)
-2. Claim 25 SwanC per transaction
-3. Multiple claims are allowed, but each claim incurs a gas fee
-4. It's recommended to claim as much SwanC as possible in one go to ensure sufficient collateral for tasks
+* **Token**: SWANU  Contract: 0x39cBBeaF88a91404618d45a16e0977Adab4d1Af1
+* **Existing Providers**:
+  * Automatic SWANU collateral deposit based on GPU specifications
+  * Required upgrade to [Computing Provider v0.7.0](https://github.com/swanchain/go-computing-provider/releases/tag/v0.7.0)
+  * Status verification via `computing-provider info` command
+* **New Providers**: Submit application through official form for SWANU allocation here:[https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link](https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link)
 
-### 2. Account Setup
+#### 1.3 Collateral Requirements
 
-Depositing  SwanC to the Collateral Account: Use the following command:
+* Collateral amounts dynamically adjust based on network computing power.&#x20;
+  * Review our[ comprehensive collateral documentation](https://docs.swanchain.io/core-concepts/token/computing-provider-collateral/collateral-requirement-and-earning-multiplier) for detailed information
+* Monitor the [Swan dashboard](https://provider.swanchain.io/overview) for computing units and base collateral trends(upcoming feature)
+* Maintain sufficient collateral to ensure continuous task eligibility
+
+> **During CP UBI-0 stage:**
+>
+> * Collateral will be directly deposited to corresponding escrow account. **No manual deposit required.**
+> * Funds locked for UBI qualification and order acceptance. **No withdrawal option available**
+
+### 2. Account Setup <a href="#id-2.-account-setup" id="id-2.-account-setup"></a>
+
+Depositing SWANU to the Collateral Account: Use the following command:
 
 ```
 computing-provider collateral add --ecp --from <WALLET_ADDRESS> --account <CP_ACCOUNT> <Amount>
@@ -87,23 +100,17 @@ _**Note**: The sequencer periodically processes tasks and deducts from the seque
 
 ### 4. Task Execution and Rewards
 
-#### 4.1 Task Types and Rewards
+#### 4.1 Reward Distribution
 
-* fil-512M-CPU: 5 SwanC/task, 5-minute completion time
-* fil-512M-GPU: 10 SwanC/task, 5-minute completion time
-* fil-32G-GPU: 15 SwanC/task, 20-minute completion time
+Rewards are distributed during the next settlement cycle after 24 hours following the [CP UBI-0](../../../swan-chain-campaign/swan-cp-ubi-0.md) event rules, typically within 48 hours of task proof submission, to the beneficiary account.
 
-_**Note**: Each task must be completed and submitted within the specified time._
+Read [swan-provider-income.md](../../../core-concepts/token/swan-provider-income.md "mention") to learn more.
 
-#### 4.2 Reward Distribution
-
-Rewards are distributed during the next settlement cycle after 24 hours, typically within 48 hours of task proof submission, to the beneficiary account.
-
-#### 4.3 Viewing Rewards
+#### 4.2 Viewing UBI tasks
 
 Check the transaction list of the beneficiary account on the blockchain explorer: [https://swanscan.io](https://swanscan.io).
 
-Alternatively, you can use the CP command to view rewards:
+Alternatively, you can use the CP command to view UBI tasks:
 
 ```
 computing-provider ubi list
@@ -112,20 +119,20 @@ computing-provider ubi list
 The result will look like this:
 
 ```
-TASK ID TASK CONTRACT                             TASK TYPE ZK TYPE    STATUS  REWARD SEQUENCER CREATE TIME         
-724273 0xe4402f76D37Fb708650a5a8357e411ADfd0ac874 GPU      fil-c2-512M rewarded 2.00  YES      2024-07-29 11:19:57
-724286 0xe4402f76D37Fb708650a5a8357e411ADfd0ac874 GPU      fil-c2-512M rewarded 2.00  YES      2024-07-29 11:42:17
-735375 0xe4402f76D37Fb708650a5a8357e411ADfd0ac874 GPU      fil-c2-32G  rewarded 15.0  YES      2024-07-29 12:04:01
-735382 0xe4402f76D37Fb708650a5a8357e411ADfd0ac874 GPU      fil-c2-32G  rewarded 15.0  YES      2024-07-29 12:57:50
-735390 0xe4402f76D37Fb708650a5a8357e411ADfd0ac874 GPU      fil-c2-32G  rewarded 15.0  YES      2024-07-29 13:27:50
-735381 0xe4402f76D37Fb708650a5a8357e411ADfd0ac874 GPU      fil-c2-32G  rewarded 15.0  YES      2024-07-29 13:57:50
-735376 0xe4402f76D37Fb708650a5a8357e411ADfd0ac874 GPU      fil-c2-32G  rewarded 15.0  YES      2024-07-29 14:27:50
-735380 0xe4402f76D37Fb708650a5a8357e411ADfd0ac874 GPU      fil-c2-32G  rewarded 15.0  YES      2024-07-29 14:57:50
+TASK ID  TASK CONTRACT                               TASK TYPE  ZK TYPE      STATUS    REWARD  SEQUENCER  CREATE TIME         
+1081868  0x23AC299fA44aa7Df2ddDFE09cDB0331DD1945043  GPU        fil-c2-32G   verified  0.00    YES        2024-11-03 10:40:31  
+1081072  0x23AC299fA44aa7Df2ddDFE09cDB0331DD1945043  GPU        fil-c2-32G   verified  0.00    YES        2024-11-03 11:10:30  
+1081749  0x23AC299fA44aa7Df2ddDFE09cDB0331DD1945043  GPU        fil-c2-32G   verified  0.00    YES        2024-11-03 11:40:33  
+1081904  0x23AC299fA44aa7Df2ddDFE09cDB0331DD1945043  GPU        fil-c2-32G   verified  0.00    YES        2024-11-03 12:10:34  
+1081748  0x23AC299fA44aa7Df2ddDFE09cDB0331DD1945043  GPU        fil-c2-32G   verified  0.00    YES        2024-11-03 13:10:26  
+1081562  0x23AC299fA44aa7Df2ddDFE09cDB0331DD1945043  GPU        fil-c2-32G   verified  0.00    YES        2024-11-03 13:40:29  
+1081980  0x008E2334B34737D42128d13Ee50A78322663d7a7  GPU        fil-c2-32G   verified  0.00    YES        2024-11-03 14:10:31  
+1081861  0x008E2334B34737D42128d13Ee50A78322663d7a7  GPU        fil-c2-32G   received  0.00    YES        2024-11-03 14:40:27  
 ```
 
-#### 4.4 Slash Mechanism
+#### 4.3 Slash Mechanism
 
-If a task proof fails validation (late submission, invalid proof, etc.), 5 SwanC will be deducted during the periodic settlement.
+If a task proof fails validation (late submission, invalid proof, etc.), 5 SWANU will be deducted during the periodic settlement.
 
 ### 5. Exit Procedure
 
@@ -168,5 +175,3 @@ computing-provider collateral withdraw-confirm --owner=<OWNER_ADDRESS> --account
 ```
 
 _**Note:** Escrow account balance may fluctuate due to periodic settlements. It's advisable to wait 24 hours after changing `taskTypes` before requesting the withdrawal. Confirmation can only be made 48 hours after the initial request. Funds will be withdrawn to the CP's `ownerAddress` upon confirmation._
-
-\\
