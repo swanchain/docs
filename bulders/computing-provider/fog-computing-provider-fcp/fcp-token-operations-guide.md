@@ -1,4 +1,4 @@
-# FCP Token Operations Guide
+# FCP Funding Operations Guide
 
 ## Introduction
 
@@ -14,45 +14,32 @@ FCP requires `ETH` as transaction gas fees. Follow these steps to get `ETH`:
 * Cross-chain your `ETH` to Swan Chain to get `Swan ETH`.
 * It is recommended to prepare enough `ETH` to account for fluctuations in network gas fees.
 
-#### 1.2 Obtaining SwanC for Collateral
+#### 1.2 Obtaining  SWANU  for Collateral
 
-FCP requires `SwanC` (Swan Credit Token) as collateral. Follow these steps to obtain `SwanC`:
+FCP requires `SWANU` (Swan Compute Unit) as collateral.&#x20;
 
-* Visit Swan Chain's faucet website: [faucet.swanchain.io](https://faucet.swanchain.io)
-* You can claim 25 `SwanC` per transaction.
-* Multiple claims are allowed, but each claim requires a gas fee.
-* It is recommended that you apply for as many `SwanC` as possible at one time to ensure you have enough collateral for tasks.
+* **Token**: SWANU  Contract: 0x39cBBeaF88a91404618d45a16e0977Adab4d1Af1
+* **Existing Providers**:
+  * Automatic SWANU collateral deposit based on GPU specifications
+  * Required upgrade to [Computing Provider v0.7.0](https://github.com/swanchain/go-computing-provider/releases/tag/v0.7.0)
+  * Status verification via `computing-provider info` command
+* **New Providers**: Submit application through official form for SWANU allocation here:[https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link](https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link)
 
 ### 2. Collateral Management
 
-#### 2. Collateral Management
+#### 2.1 Collateral Requirements
 
-**2.1 Collateral Requirements**
+* Collateral amounts dynamically adjust based on network computing power.&#x20;
+  * Review our[ comprehensive collateral documentation](https://docs.swanchain.io/core-concepts/token/computing-provider-collateral/collateral-requirement-and-earning-multiplier) for detailed information
+* Monitor the [Swan dashboard](https://provider.swanchain.io/overview) for computing units and base collateral trends(upcoming feature)
+* Maintain sufficient collateral to ensure continuous task eligibility
 
-* Each task requires 5 `SwanC` as collateral.
-* Collateral must be associated with the corresponding FCP account address.
-* It is recommended to maintain enough collateral to ensure you can always receive tasks.
-
-**2.2 Adding Collateral**
-
-* Visit the FCP deployment document for detailed steps: [Collateral Setup Guide](computing-provider-setup.md#collateral-swanc-for-fcp)
-* Enter the amount of `SwanC` you wish to add as collateral (at least 5 `SwanC`).
-
-**2.3 Withdrawing Collateral**
-
-* Visit the FCP [FAQ ](https://docs.swanchain.io/swan-provider/cp-computing-provider/fcp-fog-computing-provider/faq)for detailed steps on withdrawing collateral: [Withdrawal Guide](computing-provider-setup.md#withdraw-swanc-from-fcp)
-* Enter the amount of `SwanC` you wish to withdraw.
-
-> **Note:**&#x20;
+> **During CP UBI-0 stage:**
 >
-> Withdrawals may be affected by network congestion and could take some time.
+> * Collateral will be directly deposited to corresponding escrow account. **No manual deposit required.**
+> * Funds locked for UBI qualification and order acceptance. **No withdrawal option available**
 
-**2.4 Collateral Release**
-
-* Collateral for each task will be released after the task is completed and confirmed to have no disputes.
-* Due to network gas fluctuations, there may be delays in the release of collateral.
-
-**2.5 Slash Collateral (coming soon)**
+**2.2 Slash Collateral**&#x20;
 
 * Collateral may be forfeited under the following circumstances:
   * User complaints or appeals:
@@ -68,13 +55,13 @@ FCP requires `SwanC` (Swan Credit Token) as collateral. Follow these steps to ob
       * The platform will slash the corresponding collateral (equal to the task collateral amount).
       * The task reward will also be forfeited.
 
-### 3. Reward Mechanism&#x20;
+### 3. Reward Mechanism
 
 #### 3.1 Task Completion Reward
 
 * FCPs can earn rewards after completing tasks.
 * Users are billed hourly based on the resources provided by the FCP.
-* Different configurations have different pricing.
+* Different configurations have different pricing, check the price [here](https://docs.lagrangedao.org/spaces/space-settings/space-hardware).
 
 #### 3.2 Revenue Distribution (coming soon)
 
@@ -84,9 +71,23 @@ FCP requires `SwanC` (Swan Credit Token) as collateral. Follow these steps to ob
 
 ### 4. Important Notes
 
-* Always ensure you have enough `ETH` for gas fees.
-* Maintain sufficient `SwanC` collateral to continuously receive and complete tasks.
-* Stay updated with platform announcements to be aware of the latest changes in collateral and reward policies.
-* If you encounter any issues, join the official [Discord](https://discord.com/invite/swanchain) community for support or open a ticket for 1-on-1 assistance.
+#### Critical Requirements
+
+* Maintain stable beneficiary address during UBI-0 program
+* Do not transfer SWANU tokens unnecessarily
+* Keep sufficient ETH for gas fees
+
+#### Best Practices
+
+* Regular monitoring of collateral requirements
+* Maintain high task completion rates
+* Ensure consistent resource availability
+* Monitor dashboard for performance metrics
+
+#### Anti-Gaming Protection
+
+* Do not use UBI earnings for artificial task creation
+* Manipulation attempts will reduce bench task success rates
+* Focus on legitimate service provision
 
 ***

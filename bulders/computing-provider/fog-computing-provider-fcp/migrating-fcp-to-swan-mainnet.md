@@ -8,7 +8,7 @@ description: Now all CPs can migrate to the mainnet to participate in Swan Mainn
 
 ### First-time Deployment
 
-If you are deploying for the first time, you can follow the instructions in the latest version: [Swan Chain Computing Provider v0.6.1](https://github.com/swanchain/go-computing-provider/blob/v0.6.1/README.md)
+If you are deploying for the first time, you can follow the instructions in the latest version: [Swan Chain Computing Provider v0.7.0](https://github.com/swanchain/go-computing-provider/releases/tag/v0.7.0)
 
 ### Migration from Proxima to Mainnet
 
