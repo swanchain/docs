@@ -52,11 +52,11 @@ UBI_{\text{total}} = UBI_{\text{ECP}} + UBI_{\text{FCP}}
 $$
 
 $$
-UBI_{ECP}=\sum\limits_i (\sum\limits_k N_{ECP,i}(GPU_k) \times f_k) \times P_{ECP,i}
+UBI_{ECP}=\sum\limits_i (\sum\limits_k N_{ECP,i}(GPU_k) \times f_k)
 $$
 
 $$
-UBI_{FCP}=\sum\limits_j (\sum\limits_k N_{FCP,j}(GPU_k) \times f_k) \times P_{FCP,j} *W_{FCP}
+UBI_{FCP}=\sum\limits_j (\sum\limits_k N_{FCP,j}(GPU_k) \times f_k) *W_{FCP}
 $$
 
 **(2) Calculating the UBI for a single CP**:
