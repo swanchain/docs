@@ -96,6 +96,7 @@
 
 ## Swan Chain Campaign
 
+* [Swan CP UBI-0](swan-chain-campaign/swan-cp-ubi-0.md)
 * [Swan Chain Mainnet](swan-chain-campaign/swan-chain-mainnet/README.md)
   * [Network Information](swan-chain-campaign/swan-chain-mainnet/network-information.md)
   * [Swan Credit Token](swan-chain-campaign/swan-chain-mainnet/swan-credit-token.md)
