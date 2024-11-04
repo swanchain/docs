@@ -82,6 +82,10 @@ Where:
 * &#x20;$$f_k$$ represents the earnings growth factor
 * $$W_{FCP}$$ represents the FCP resource bonus ratio, currently set at a constant value of 1.2
 
+{% hint style="info" %}
+**NOTE:** The value of $$W_{FCP}$$, 1.2, means that if the same configuration of servers is deployed for FCP, it will generate 20% more earnings than ECP.
+{% endhint %}
+
 **（2）Calculate the total available usage time for all GPUs in the network**
 
 $$

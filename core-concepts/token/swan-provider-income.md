@@ -97,6 +97,11 @@ Where:
 * $$C_{\text{base}}$$ is the base collateral, with an initial value of 3500 (this value will be dynamically adjusted based on the daily computing units of the entire network; for specific adjustment rules, check [here](computing-provider-collateral/collateral-requirement-and-earning-multiplier.md))
 * $$N_{\text{FCP}}(\text{GPU}_k)$$represents the number of $$\text{GPU}_k$$ _in FCP_
 * &#x20;$$N_{\text{ECP}}(\text{GPU}_k)$$ represents the number of $$\text{GPU}_k$$ in ECP.&#x20;
+* $$W_{FCP}$$ represents the FCP resource bonus ratio, currently set at a constant value of 1.2
+
+{% hint style="info" %}
+**NOTE:** The value of $$W_{FCP}$$, 1.2, means that if the same configuration of servers is deployed for FCP, it will generate 20% more earnings than ECP.
+{% endhint %}
 
 2. **Completion of Basic Test Tasks:**
 
