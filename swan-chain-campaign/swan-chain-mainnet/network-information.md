@@ -4,7 +4,7 @@
 
 <table><thead><tr><th width="282"></th><th></th></tr></thead><tbody><tr><td>Network Name</td><td>Swan Chain</td></tr><tr><td>Chain ID</td><td>254</td></tr><tr><td>Currency Symbol</td><td>ETH</td></tr><tr><td>Block Explorer URL</td><td><a href="https://swanscan.io/">https://swanscan.io</a></td></tr></tbody></table>
 
-<table><thead><tr><th width="767">RPC List</th></tr></thead><tbody><tr><td><a href="https://mainnet-rpc.swanchain.org">https://mainnet-rpc.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-01.swanchain.org">https://mainnet-rpc-01.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-02.swanchain.org</a></td></tr></tbody></table>
+<table><thead><tr><th width="767">RPC List</th></tr></thead><tbody><tr><td><a href="https://mainnet-rpc.swanchain.org">https://mainnet-rpc.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-01.swanchain.org">https://mainnet-rpc-01.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-02.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-03.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-04.swanchain.org</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 If the above Block Explorer fails, please try using this one:\
