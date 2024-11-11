@@ -14,6 +14,70 @@ Tutorials&#x20;
 * [Deploy your ECP](../edge-computing-provider-ecp/ecp-setup.md)
 * [Depoy your FCP](computing-provider-setup.md)
 
+
+
+**Q: How can I verify whether the FCP environment is installed successfully?**
+
+```
+curl -k https://<PUBLIC_IP>:<PORT>/api/v1/computing/cp
+```
+
+out:
+
+```
+
+{
+    "node_id": "04f4af161995c1cc0f8a4c1dd316a64b809c879e1cc7",
+    "region": "North Carolina-US",
+    "cluster_info": [
+        {
+            "machine_id": "4c4c4544-0046-3510-8058-b1c04f504433",
+            "cpu_name": "AMD",
+            "cpu": {
+                "total": "192",
+                "used": "16",
+                "free": "176"
+            },
+            "memory": {
+                "total": "2003 GiB",
+                "used": "62 GiB",
+                "free": "1822 GiB"
+            },
+            "gpu": {
+                "driver_version": "535.104.05",
+                "cuda_version": "12020",
+                "attached_gpus": 1,
+                "details": [
+                    {
+                        "product_name": "NVIDIA 3080",
+                        "status": "available",
+                        "fb_memory_usage": {
+                            "total": "10240 MiB",
+                            "used": "235 MiB",
+                            "free": "10004 MiB"
+                        },
+                        "bar1_memory_usage": {
+                            "total": "256 MiB",
+                            "used": "2 MiB",
+                            "free": "253 MiB"
+                        }
+                    }
+                ]
+            },
+            "storage": {
+                "total": "877 GiB",
+                "used": "456 GiB",
+                "free": "376 GiB"
+            }
+        }
+    ],
+    "multi_address": "/ip4/provider.cp.cn/tcp/9085",
+    "node_name": "fcp-001"
+}
+```
+
+
+
 #### Q: How can I know if the status of the computing provider is normal?
 
 **A**:&#x20;
@@ -52,57 +116,41 @@ After running this command, wait for 3-5 minutes, and then execute&#x20;
 
 Find the hosts corresponding to the name `ing-minesweeper` and ensure that the domain can be accessed in a browser to confirm its normal status.
 
-#### Q: My node has been running for so long, yet the uptime is 0%.
 
-**A**:
 
-1\. Run the following command:
-
-{% hint style="info" %}
-_**Ensure that****  ****`<YOUR_MULTI_ADDRESS_IP>`**** ****is the Public IP.**_
-{% endhint %}
-
-```bash
-curl -k https://<YOUR_MULTI_ADDRESS_IP>:<PORT>/api/v1/computing/host/info
-```
-
-2\. Compare the returned result with the example provided below. If they are different, you should review your port mappings.
-
-Example result:
-
-```json
-{"status":"success","code":"","data":{"swan_miner_version":"","operating_system":"linux","architecture":"amd64","cpu_cores":48}}
-```
-
-3\. If your port mappings are correct and the result matches the example, then proceed to check the configuration file of the computing provider.&#x20;
-
-Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`.
-
-#### Q: How can I verify if my Computing Provider is set up to receive UBI tasks?
+**Q: How can I verify if my Computing Provider is set up to receive UBI tasks?**
 
 **A**:
 
 1.  Replace the UbiEnginePk in the **`$CP_PATH/config.toml`** file with the `ownerAddress`:
 
-    ```toml
+    Copy
+
+    ```
     [UBI]
     UbiEnginePk ="0xxxxx"
     ```
 2. Restart `computing-provider`.
 3.  Generate the signature using the following command:
 
-    ```bash
+    Copy
+
+    ```
     computing-provider wallet sign <ownerAddress> <nodeid+contract_addr>
     ```
 
     For example, if nodeid is abcd and task contract\_addr is 11:
 
-    ```bash
+    Copy
+
+    ```
     computing-provider wallet sign <ownerAddress> abcd11
     ```
 4.  Prepare raw data for the ubi-task test task:
 
-    ```json
+    Copy
+
+    ```
     {
 
     "id": 26384,
@@ -117,11 +165,12 @@ Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`
     "signature":"Signing_cpAccountAddress_and_id_with_ownerAddress"
 
     }
-
     ```
 5.  Submit the `ubi-task` using the following command(using your public IP and port ):
 
-    ```bash
+    Copy
+
+    ```
     curl --location --request POST 'http://<public_IP>:<port>/api/v1/computing/cp/ubi' \
     --header 'Content-Type: application/json' \
     --data-raw '{
@@ -139,11 +188,12 @@ Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`
     ```
 6.  After running ubi-task, check if the task status is success:
 
-    ```bash
+    Copy
+
+    ```
     computing-provider ubi list
     ```
-7. If the test is successful, restore the `UbiEnginePk` in the `config.toml` file to its original value
-
+7. If the test is successful, restore the `UbiEnginePk` in the `config.toml` file to its original value\
 
 
 #### Q: Which ports need to be mapped?&#x20;
@@ -156,9 +206,13 @@ Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`
 
 3\. Additionally, you need to map port 80 of your internal IP to port 80 of your public IP, as well as port 443 of your internal IP to port 443 of your public IP.
 
+####
+
 #### Q: Where should I create the API key?
 
 **A**: you must use the API of [https://multichain.storage,](https://multichain.storage,) and login in it using Polygon mainnet wallet.
+
+####
 
 #### Q: What are the requirements for SSL certificates needed in CP?&#x20;
 
@@ -166,21 +220,31 @@ Ensure that the `MultiAddress` is set exactly as `"/ip4/<public_ip>/tcp/<port>"`
 
 Otherwise, the application won't be displayed correctly on the Space App page.
 
+####
+
 #### **Q: Is it possible to use a port other than 80 and 443 in the wildcard domain(\*.exmaple.com)?**
 
 **A**: No, it is not possible.
+
+####
 
 #### Q: Is the "`pod"` used for communication, and "`Calico`" is used to manage this communication within the cluster?&#x20;
 
 **A**: Both are used for intra-cluster communication. You can use one of these approaches.
 
+####
+
 #### Q: If someone didn't apply for early bird, can they still join and run the computing provider tasks?
 
 **A**: Of course, they can also follow the [instruction](broken-reference) to set up a Computing Provider.
 
+####
+
 #### Q: Can I move my computing provider to a new one while maintaining my previous server? Will this reset my uptime?
 
 **A**: Yes, you need to move  `.swan_node` to the new server. The uptime will not be reset.
+
+####
 
 #### **Q: How can I migrate my CP (Computing Provider) to a new environment?**
 
@@ -192,7 +256,9 @@ Otherwise, the application won't be displayed correctly on the Space App page.
 
 By following these steps, you'll successfully migrate your CP to the new environment, ensuring that it operates smoothly in the new environment.
 
-**Q: How can I resolve the error “(error) MISCONF Redis is configured to save RDB snapshots” seen in the FCP logs?**
+
+
+**Q: How can I resolve the error `(error) MISCONF Redis is configured to save RDB snapshots`seen in the FCP logs?**
 
 **A:** MISCONF Redis is configured to save RDB snapshots but is currently not able to persist on disk, Commands that may modify the data set are disabled.&#x20;
 
