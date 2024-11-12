@@ -34,7 +34,7 @@ The auto bidding system is a reputation-based system. When users sign up as a st
 
 In the auto-bidding system, users are free from hassles like choosing storage providers. The system selects providers automatically while ensuring fairness. When a user sends out a deal to the auto bidding pool, the storage provider will be assigned the deal based on their reputation score. The higher score you have, the more likely they will win a bid.
 
-The FileSwan bidding system is a matching platform that enables convenient transactions between users and providers. In the era of decentralized storage, Swan ensures a quick pair of users and storage providers for the sake of time-efficient storage and backup services regardless of data scales.
+The Swan bidding system is a matching platform that enables convenient transactions between users and providers. In the era of decentralized storage, Swan ensures a quick pair of users and storage providers for the sake of time-efficient storage and backup services regardless of data scales.
 
 The Swan bidding system increases the earnings of real data storage. It additionally reduces the leverage difficulty to attract more novice users.
 
@@ -48,7 +48,7 @@ In order to batch send deals, we have created a conception called “tasks”. A
 
 **Swan Storage Provider**
 
-The Swan Provider runs on the same node as the lotus miner nodes run, and assists lotus miners to process deals. In order to better share the information with the Flilswan client, [authentication](https://github.com/filswan/gitbook/blob/main/run-swan-provider/broken-reference/README.md) from the Filswan platform is required.
+The Swan Provider runs on the same node as the lotus miner nodes run, and assists lotus miners to process deals. In order to better share the information with the Flilswan client, [authentication](https://github.com/filswan/gitbook/blob/main/run-swan-provider/broken-reference/README.md) from the Swan platform is required.
 
 Swan provider also keeps your status up to date. With the Swan platform, your client can get your shared information about the file sealing life cycle.
 

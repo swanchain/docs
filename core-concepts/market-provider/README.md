@@ -19,7 +19,7 @@ A Market Provider (MP) in the Swan network is a crucial entity that offers vario
 
 **Existing Market Providers:**
 
-1. [**FilSwan Storage Market**](storage-market.md):
+1. [**Swan Storage Market**](../../bulders/storage-provider/):
    * Specializes in decentralized storage solutions, managing large datasets and ensuring data integrity and availability.
 2. [**Orchestrator AI Market**](decentralized-ai-computing-marketplace/):
    * Focuses on AI tasks, providing the necessary infrastructure for training and deploying AI models.
