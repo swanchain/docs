@@ -20,40 +20,26 @@ import swan
 swan_orchestrator = swan.resource(api_key='<SWAN_API_KEY>', service_name='Orchestrator')
 
 available_resources = swan_orchestrator.get_instance_resources()
-print(json.dumps(available_resources, indent=2, ensure_ascii=False))
+print(available_resources)
 ```
 
 Sample output:
 
 ```
-[
-  {
-    "hardware_id": 0,
-    "instance_type": "C1ae.small",
-    "description": "CPU only · 2 vCPU · 2 GiB",
-    "type": "CPU",
-    "region": [
-      "North Carolina-US",
-      "Quebec-CA"
-    ],
-    "price": "0.0",
-    "status": "available"
-  },
-  //...
-  {
-    "hardware_id": 12,
-    "instance_type": "G1ae.small",
-    "description": "Nvidia 3080 · 4 vCPU · 8 GiB",
-    "type": "GPU",
-    "region": [
-      "North Carolina-US",
-      "Quebec-CA"
-    ],
-    "price": "10.0",
-    "status": "available"
-  },
-  //...
-]
+[InstanceResource({
+  "hardware_id": 0,
+  "instance_type": "C1ae.small",
+  "description": "CPU only \u00b7 2 vCPU \u00b7 2 GiB",
+  "type": "CPU",
+  "region": [
+    "Quebec-CA",
+    "North Carolina-US"
+  ],
+  "price": "1.2",
+  "status": "available",
+  "snapshot_id": 1731441600,
+  "expiry_time": 1731442218
+}), ...]
 ```
 
 
@@ -77,7 +63,7 @@ result = swan_orchestrator.create_task(
 task_uuid = result['task_uuid']
 # Get task deployment info
 task_deployment_info = swan_orchestrator.get_deployment_info(task_uuid=task_uuid)
-print(json.dumps(task_deployment_info, indent=2))
+print(task_deployment_info)
 ```
 
 It may take up to 5 minutes to get the deployment result:
@@ -107,7 +93,7 @@ swan_orchestrator = swan.resource(api_key='<SWAN_API_KEY>', service_name='Orches
 
 # Get an existing task deployment info
 task_deployment_info = swan_orchestrator.get_deployment_info(<task_uuid>)
-print(json.dumps(task_deployment_info, indent=2))
+print(task_deployment_info)
 ```
 
 ### Access application instances of an existing task
@@ -142,11 +128,7 @@ renew_result = swan_orchestrator.renew_task(
     private_key=<PRIVATE_KEY>,
     instance_type=<instance_type> 
 )
-
-if renew_result and renew_result['status'] == 'success':
-    print(f"successfully renewed {<task_uuid>}")
-else:
-    print(f"Unable to renew {<task_uuid>}")
+print(renew_result)
 ```
 
 ### Terminate an existing task
