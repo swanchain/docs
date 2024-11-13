@@ -70,7 +70,7 @@ $$
 As an FCP:
 
 $$
-UBI_{FCP,i}(x)= \frac{\sum\limits_k N_{FCP,i}(GPU_k) \times f_k) \times P_{FCP,i} \times W_{FCP} }{UBI_{ECP}+UBI_{FCP}} \times y_{\text{UBI}}(x)
+UBI_{FCP,i}(x)= \frac{\sum\limits_k N_{FCP,i}(GPU_k) \times f_k \times P_{FCP,i} \times W_{FCP} }{UBI_{ECP}+UBI_{FCP}} \times y_{\text{UBI}}(x)
 $$
 
 
