@@ -4,9 +4,9 @@ description: A Full Toolset AI Blockchain
 
 # Introduction to Swan Chain
 
-[Swan Chain](https://www.swanchain.io) (formerly FilSwan), initiated in 2021, is a full toolset AI blockchain infrastructure designed to accelerate AI adoption. Utilizing OP superchain technology, [Swan Chain](https://www.swanchain.io/) merges Web3 with AI, offering comprehensive solutions across storage, computing, bandwidth, and payments. Through [Lagrange](https://lagrange.computer/), it enables efficient AI model deployment while reducing computing costs by up to 70% and monetizing idle computing resources.
+SwanChain, initiated in 2021, is the first AI Super Chain dedicated to decentralized AI computing and development. Leveraging OP Super chain technology, Swan Chain integrates Web3 and AI by providing a comprehensive ecosystem that spans computing, storage, and AI applications. This includes specialized marketplaces for computing, storage, and AI agent applications, enabling seamless development, deployment, and scaling of AI models.
 
-SwanChain's innovative approach introduces a [Universal Basic Income (UBI) ](token/swan-universal-basic-income-ubi/)model for Computing Providers within its ZK market, ensuring stable income and incentivizing continuous contributions.
+SwanChain harnesses underutilized computing power from a global network of community data centers, reducing costs by up to 70% and creating new opportunities to monetize idle resources. Its **AI Agent Market** and advanced toolsets, including inference and development tools, establish SwanChain as a premier AI cloud blockchain. By unifying decentralized infrastructure and AI innovation, SwanChain accelerates the adoption of AI, making development accessible, cost-efficient, and scalable. SwanChain’s mission is to redefine decentralized computing and drive innovation at the intersection of blockchain and artificial intelligence.
 
 #### Core Objectives and Motivation
 
@@ -22,10 +22,6 @@ Swan Chain incorporates state-of-the-art technologies to materialize its ambitio
 * **Kubernetes and Blockchain Integration**: Utilizing Kubernetes for container orchestration alongside blockchain for securing transactions and automating processes, Swan Chain establishes a highly efficient, scalable, and secure infrastructure for decentralized computing.
 * **Global Data Center Connectivity**: By orchestrating data centers globally, Swan Chain accesses an expansive pool of computational resources, ensuring utmost availability and redundancy for its services.
 * **Zero-Knowledge (ZK) Proofs**: Emphasizing security and privacy, Swan Chain adopts ZK proofs for the benchmarking of computing providers and facilitating privacy-preserving transactions within its ecosystem.
-
-#### Financial Innovations and ZK Market Development
-
-Swan Chain significantly enhances AI computing payment systems through smart contract implementation, notably reducing fees for micro-payments as a Layer 2 solution and ensuring efficient computing task validation. Moreover, Swan Chain pioneers the development of a ZK computing market, bolstering the AI ecosystem with a robust framework for computing benchmarking and validation. This ZK market not only supports the AI computing demands but also underpins the UBI model by providing a sustainable income source for computing providers.
 
 #### Vision and Future Outlook
 
