@@ -16,13 +16,13 @@ services:
       - sshkey=<YOUR-LOCAL-SSH-KEY>
       - username=swantouser
     expose:
-        - port: 22
-        - port: 30002
-        - port: 30003
-        - port: 30004
-        - port: 30005
-        - port: 30006
-        - port: 30007
+      - port: 22
+      - port: 30002
+      - port: 30003
+      - port: 30004
+      - port: 30005
+      - port: 30006
+      - port: 30007
 deployment:
   vm:
     lagrange:
@@ -45,7 +45,8 @@ available_instances = swan_orchestrator.get_instance_resources()
 print(available_instances)
 ```
 
-In the output of available resources list, choose a `cp_account_address` in `ssh_ready` list of the instance type you want (such as `C1ae.small`):
+In the output of available resources list, choose a `cp_account_address` in `ssh_ready` list of the instance type you
+want (such as `C1ae.small`):
 
 ```
 [InstanceResource({
