@@ -66,7 +66,7 @@ task_deployment_info = swan_orchestrator.get_deployment_info(task_uuid=task_uuid
 print(task_deployment_info)
 ```
 
-It may take up to 5 minutes to get the deployment result:
+It may take several minutes to get the deployment result:
 
 ```python
 # Get application instances URL
