@@ -51,6 +51,9 @@
       * [A Sample Tutorial](bulders/tools/swan-sdk/go-swan-sdk/a-sample-tutorial.md)
   * [Nebula Block Cloud](bulders/tools/nebula-block-cloud.md)
   * [Ecosystem Projects](bulders/tools/ecosystem-projects.md)
+  * [Swan Console](bulders/tools/swan-console/README.md)
+    * [Getting Started](bulders/tools/swan-console/getting-started.md)
+    * [Mining Task Example](bulders/tools/swan-console/mining-task-example.md)
 
 ## NETWORK REFERENCE
 
