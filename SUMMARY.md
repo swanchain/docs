@@ -18,6 +18,7 @@
     * [5.Delete Files and Buckets](bulders/app-developer/store-and-retrieve-a-file-with-swan-storage/5.delete-files-and-buckets.md)
 * [Node Operator](bulders/swan-node.md)
 * [Market Provider](bulders/market-provider/README.md)
+  * [Storage Market](bulders/market-provider/storage-market.md)
   * [AI/ML Orchestrator](bulders/market-provider/ai-ml-orchestrator/README.md)
     * [Decentralized AI Marketplace](bulders/market-provider/ai-ml-orchestrator/decentralized-ai-marketplace.md)
     * [Connect to Orchestrator](bulders/market-provider/ai-ml-orchestrator/connect-to-orchestrator.md)
@@ -52,6 +53,9 @@
       * [A Sample Tutorial](bulders/tools/swan-sdk/go-swan-sdk/a-sample-tutorial.md)
   * [Nebula Block Cloud](bulders/tools/nebula-block-cloud.md)
   * [Ecosystem Projects](bulders/tools/ecosystem-projects.md)
+  * [Swan Console](bulders/tools/swan-console/README.md)
+    * [Getting Started](bulders/tools/swan-console/getting-started.md)
+    * [Mining Task Example](bulders/tools/swan-console/mining-task-example.md)
 
 ## NETWORK REFERENCE
 
@@ -70,7 +74,6 @@
 * [Service Discovery](core-concepts/service-discovery.md)
 * [Market Provider](core-concepts/market-provider/README.md)
   * [Storage Market](core-concepts/market-provider/storage-market.md)
-  * [Data Marketplace](core-concepts/market-provider/data-marketplace.md)
   * [AI Computing Marketplace](core-concepts/market-provider/decentralized-ai-computing-marketplace/README.md)
     * [Orchestrator](core-concepts/market-provider/decentralized-ai-computing-marketplace/web3-task-auction.md)
     * [Auction Engine](core-concepts/market-provider/decentralized-ai-computing-marketplace/auction-engine.md)
@@ -98,7 +101,7 @@
 
 ## Swan Chain Campaign
 
-* [Swan CP UBI-0](swan-chain-campaign/swan-cp-ubi-0.md)
+* [Swan CP UBI](swan-chain-campaign/swan-cp-ubi.md)
 * [Swan Chain Mainnet](swan-chain-campaign/swan-chain-mainnet/README.md)
   * [Network Information](swan-chain-campaign/swan-chain-mainnet/network-information.md)
   * [Swan Credit Token](swan-chain-campaign/swan-chain-mainnet/swan-credit-token.md)

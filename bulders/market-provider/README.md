@@ -2,13 +2,19 @@
 
 Market Providers (MPs) are crucial components in the Swan Chain ecosystem, facilitating the allocation of computing resources and managing transactions between job requesters and providers. This overview introduces you to the concept of Market Providers and MPs available in the Swan Chain network.
 
-### 1. AI/ML Orchestrator
+### 1. Storage Market
+
+Swan Storage Market simplifies and optimizes the process of finding and utilizing decentralized storage on Filecoin. It addresses key challenges faced by users, such as lack of information on service quality, limited matching functionality, and high costs for beginners.
+
+Read more about the Storage Market [here](storage-market.md).
+
+### 2. AI/ML Orchestrator
 
 The AI/ML Orchestrator is a specialized Market Provider focused on artificial intelligence and machine learning tasks. It efficiently manages and distributes AI/ML computing jobs across the decentralized network, ensuring optimal utilization of computational resources.&#x20;
 
 Read more about the Orchestrator [here](ai-ml-orchestrator/).
 
-### 2. Web3 ZK Computing Market
+### 3. Web3 ZK Computing Market
 
 The Web3 ZK Computing Market is a Market Provider specifically designed for Zero-Knowledge (ZK) computations within the Swan Chain ecosystem. Key components includes:
 
@@ -18,7 +24,7 @@ The Web3 ZK Computing Market is a Market Provider specifically designed for Zero
 
 Read more about the ZK Computing Market [here](https://docs.swanchain.io/bulders/market-provider/web3-zk-computing-market).
 
-### 3. Customized Market Provider
+### 4. Customized Market Provider
 
 Swan Chain offers a flexible framework that enables developers to create their own customized Market Providers. This allows for:
 

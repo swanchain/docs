@@ -24,5 +24,6 @@ The ECP (Edge Computing Provider) status indicates the current operational state
 * **Online**: Has an ECP taskType, query is successful, sufficient collateral, and not rejecting tasks (Normal operation).
 * **Offline**: Has an ECP taskType, but query is unsuccessful.
 * **NSC (Not Sufficient Collateral)**: Has an ECP taskType, but insufficient collateral.
+* **NSR (No sufficient resource):** Has an ECP taskType, but lacks the necessary resources (e.g., CPU, memory, or storage) to perform tasks.
 * **Declined**: Has an ECP taskType, but rejecting tasks (due to insufficient resources or sequencer).
 * **Inconsistent**: Local information does not match on-chain information (e.g., CP account, multiaddress, nodeID).

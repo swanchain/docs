@@ -2,13 +2,12 @@
 
 ## Network Information
 
-<table><thead><tr><th width="282"></th><th></th></tr></thead><tbody><tr><td>Network Name</td><td>Swan Chain</td></tr><tr><td>Chain ID</td><td>254</td></tr><tr><td>Currency Symbol</td><td>ETH</td></tr><tr><td>Block Explorer URL</td><td><a href="https://swanscan.io/">https://swanscan.io</a></td></tr></tbody></table>
+<table><thead><tr><th width="282"></th><th></th></tr></thead><tbody><tr><td><strong>Network Name</strong></td><td>Swan Chain</td></tr><tr><td><strong>Chain ID</strong></td><td>254</td></tr><tr><td><strong>Currency Symbol</strong></td><td>ETH</td></tr><tr><td><strong>Block Explorer URL</strong></td><td><a href="https://swanscan.io/">https://swanscan.io</a><br>（If it fails,try <a href="https://mainnet-explorer.swanchain.io/">https://mainnet-explorer.swanchain.io</a>)</td></tr></tbody></table>
 
-<table><thead><tr><th width="767">RPC List</th></tr></thead><tbody><tr><td><a href="https://mainnet-rpc.swanchain.org">https://mainnet-rpc.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-01.swanchain.org">https://mainnet-rpc-01.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-02.swanchain.org</a></td></tr></tbody></table>
+<table><thead><tr><th width="767">RPC List</th></tr></thead><tbody><tr><td><a href="https://mainnet-rpc.swanchain.org">https://mainnet-rpc.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-01.swanchain.org">https://mainnet-rpc-01.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-02.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-03.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-04.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc01.swanchain.io">https://mainnet-rpc01.swanchain.io</a></td></tr></tbody></table>
 
 {% hint style="info" %}
-If the above Block Explorer fails, please try using this one:\
-[https://mainnet-explorer.swanchain.io](https://mainnet-explorer.swanchain.io)
+**Important:** If you experience any issues with any of these RPCs, please switch to another one immediately.
 {% endhint %}
 
 ## Set Up Metamask
