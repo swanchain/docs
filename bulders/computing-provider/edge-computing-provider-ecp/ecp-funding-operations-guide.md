@@ -49,7 +49,7 @@ ECP requires `SWANU` (Swan Compute Unit) as collateral.&#x20;
 * **Token**: SWANU  Contract: 0x39cBBeaF88a91404618d45a16e0977Adab4d1Af1
 * **Existing Providers**:
   * Automatic SWANU collateral deposit based on GPU specifications
-  * Required upgrade to [Computing Provider v0.7.0](https://github.com/swanchain/go-computing-provider/releases/tag/v0.7.0)
+  * Required upgrade to [Computing Provider v0.7.1](https://github.com/swanchain/go-computing-provider/releases/tag/v0.7.1)
   * Status verification via `computing-provider info` command
 * **New Providers**: Submit application through official form for SWANU allocation here:[https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link](https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link)
 
@@ -90,7 +90,7 @@ _Note: ECPs can submit proofs in two ways:_
 
 #### 3.2 Funding the Sequencer Account
 
-When using the sequencer, pre-fund the CP's sequencer account with ETH on Swan Chain. Each task requires 0.00001 ETH as gas:
+When using the sequencer, pre-fund the CP's sequencer account with ETH on Swan Chain. Currently, the gas is decided by the [Dynamic Pricing Strategy](https://docs.swanchain.io/bulders/market-provider/web3-zk-computing-market/sequencer). For more detailed information, see [here](https://docs.swanchain.io/swan-provider/market-provider-mp/zk-engine/sequencer).
 
 ```
 computing-provider sequencer add --from <WALLET_ADDRESS> --account <CP_ACCOUNT> <Amount>
@@ -102,7 +102,7 @@ _**Note**: The sequencer periodically processes tasks and deducts from the seque
 
 #### 4.1 Reward Distribution
 
-Rewards are distributed during the next settlement cycle after 24 hours following the [CP UBI-0](../../../swan-chain-campaign/swan-cp-ubi-0.md) event rules, typically within 48 hours of task proof submission, to the beneficiary account.
+Rewards are distributed during the next settlement cycle after 24 hours following the [CP UBI-0](../../../swan-chain-campaign/swan-cp-ubi.md) event rules, typically within 48 hours of task proof submission, to the beneficiary account.
 
 Read [swan-provider-income.md](../../../core-concepts/token/swan-provider-income.md "mention") to learn more.
 

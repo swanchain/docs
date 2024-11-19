@@ -40,7 +40,7 @@ curl -fsSL https://raw.githubusercontent.com/swanchain/go-computing-provider/rel
 * Download `computing-provider`
 
 ```bash
-wget https://github.com/swanchain/go-computing-provider/releases/download/v0.7.0/computing-provider
+wget https://github.com/swanchain/go-computing-provider/releases/download/v0.7.1/computing-provider
 ```
 
 * Initialize ECP repo
@@ -82,7 +82,7 @@ Output:
                     --task-types 1,2,4
 ```
 
-**Note:** `--task-types`: Supports 4 task types (1: Fil-C2-512M, 2: Mining, 3: AI, 4: Fil-C2-32G, 5: NodePort), separated by commas. For ECP, it needs to be set to 1,2,4.
+**Note:** `--task-types`: Supports 5 task types (1: Fil-C2, 2: Mining, 3: AI, 4: Inference, 5: NodePort), separated by commas. For ECP, it needs to be set to 1,2,4.
 
 * Collateral `SWANU` for ECP
 
@@ -108,7 +108,52 @@ computing-provider collateral add --ecp --from <YOUR_WALLET_ADDRESS>  <AMOUNT>
 > computing-provider sequencer withdraw --owner <YOUR_OWNER_WALLET_ADDRESS>  <amount>
 > ```
 
-> **Note:** Currently one zk-task requires 0.0000005 SwanETH,
+> **Note:** the gas cost is decided by the [**Dynamic Pricing Strategy**](https://docs.swanchain.io/bulders/market-provider/web3-zk-computing-market/sequencer)
+
+### Config resource price
+
+**Pricing:** Indicating acceptance of smart pricing orders, which may include orders priced lower than self-determined pricing. default "true"
+
+Configure it in the `$CP_PATH/price.toml`:
+
+```
+[API]
+Pricing = "true"   
+```
+
+1. Generate the pricing config with default values(Located at `$CP_PATH/price.toml`):
+
+```
+computing-provider --repo <YOUR_CP_PATH> price generate
+```
+
+2. Customize your resource prices, adjust resource prices based on how many swans are configured per hour
+
+```
+vi $CP_PATH/price.toml
+```
+
+example:
+
+```
+TARGET_CPU="0.2"            # SWAN/thread-hour
+TARGET_MEMORY="0.1"         # SWAN/GB-hour
+TARGET_HD_EPHEMERAL="0.005" # SWAN/GB-hour
+TARGET_GPU_DEFAULT="1.6"    # SWAN/Default GPU unit a hour
+TARGET_GPU_3080=""          # SWAN/3080 GPU unit a hour
+```
+
+3. View the configured price information:
+
+```
+computing-provider --repo <YOUR_CP_PATH> price view
+```
+
+CP Hardware Price Info:\
+TARGET\_CPU: 0.2 SWAN/thread-hour\
+TARGET\_MEMORY: 0.1 SWAN/GB-hour\
+TARGET\_HD\_EPHEMERAL: 0.005 SWAN/GB-hour\
+TARGET\_GPU\_DEFAULT: 1.6 SWAN/Default GPU unit a hour TARGET\_GPU\_3080: SWAN/GPU unit a hour
 
 ### Start ECP service
 
@@ -133,7 +178,7 @@ nohup ./computing-provider ubi daemon >> cp.log 2>&1 &
 
 In past tests, we discovered that due to the frequent interactions required by ECP (Ethereum Compliance Proof) to submit proofs to the blockchain, ECP incurs significant gas costs. To reduce these gas costs, the Sequencer has emerged as a Layer 3 solution.
 
-The ECP can submit proofs to the Sequencer service, which will then package and submit all proofs from the entire network over a period of time (**currently 24 hours**) in a single transaction. This way, ECP only needs to pay a minimal gas fee to the Sequencer (currently, **a single proof requires 0.0000005 SwanETH**). For more detailed information, see [here](https://docs.swanchain.io/swan-provider/market-provider-mp/zk-engine/sequencer).
+The ECP can submit proofs to the Sequencer service, which will then package and submit all proofs from the entire network over a period of time (**currently 24 hours**) in a single transaction. This way, ECP only needs to pay a minimal gas fee to the Sequencer (currently, the gas is decided by the [Dynamic Pricing Strategy](https://docs.swanchain.io/bulders/market-provider/web3-zk-computing-market/sequencer)). For more detailed information, see [here](https://docs.swanchain.io/swan-provider/market-provider-mp/zk-engine/sequencer).
 
 #### How to Set it?
 

@@ -35,7 +35,7 @@ FCPs contribute to network functionality by:
   * Automatic SWANU collateral deposit based on GPU specifications
   * Required upgrade to [Computing Provider v0.7.1](https://github.com/swanchain/go-computing-provider/releases/tag/v0.7.1)
   * Status verification via `computing-provider info` command
-* **New Providers**: Submit application through the official form for SWANU allocation here:[https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link](https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link)
+* **New Providers**: Submit application through official form for SWANU allocation here:[https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link](https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link)
 
 ### 2. Provider Setup
 
