@@ -46,6 +46,8 @@
   * [Swan SDK](bulders/tools/swan-sdk/README.md)
     * [Python Swan SDK](bulders/tools/swan-sdk/1-quick-start/README.md)
       * [A Sample Tutorial](bulders/tools/swan-sdk/1-quick-start/2-a-sample-tutorial.md)
+      * [Special Case: Create ssh login instance](bulders/tools/swan-sdk/1-quick-start/3-special-cese-create-ssh-login-instance.md)
+      * [Parameter Introduction](bulders/tools/swan-sdk/1-quick-start/4-parameter-introduction.md)
     * [Go Swan SDK](bulders/tools/swan-sdk/go-swan-sdk/README.md)
       * [A Sample Tutorial](bulders/tools/swan-sdk/go-swan-sdk/a-sample-tutorial.md)
   * [Nebula Block Cloud](bulders/tools/nebula-block-cloud.md)
