@@ -40,7 +40,7 @@ result = swan_orchestrator.create_task(
 task_uuid = result['task_uuid']
 instance_type = result['instance_type']
 task_info = swan_orchestrator.get_deployment_info(task_uuid=task_uuid)
-print(json.dumps(task_info, indent=2))
+print(json.dumps(task_info.to_dict(), indent=2))
 
 ### get real url (if no url, please wait for a while, then check again)
 result_url = swan_orchestrator.get_real_url(task_uuid)
@@ -94,7 +94,7 @@ More resources about swan SDK can be found here:
 * [Deploying with Swan SDK](https://docs.swanchain.io/start-here/readme/deploying-with-swan-sdk)
 * [Python-swan-sdk](https://github.com/swanchain/python-swan-sdk)
 * [Go-swan-sdk](https://github.com/swanchain/go-swan-sdk)
-* [Python-swan-sdk-samples](https://github.com/swanchain/python-swan-sdk)
+* [Python-swan-sdk-samples](https://github.com/swanchain/python-sdk-docs-samples)
 * [Go-swan-sdk-samples](https://github.com/swanchain/go-swan-sdk-samples)
 
 

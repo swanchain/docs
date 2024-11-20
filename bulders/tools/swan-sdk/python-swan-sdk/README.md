@@ -124,9 +124,7 @@ swan_orchestrator = swan.resource(api_key='<SWAN_API_KEY>', service_name='Orches
 renew_result = swan_orchestrator.renew_task(
     task_uuid=<task_uuid>, 
     duration=3600, # Optional: default 3600 seconds (1 hour)
-    auto_pay=True, 
-    private_key=<PRIVATE_KEY>,
-    instance_type=<instance_type> 
+    private_key=<PRIVATE_KEY>
 )
 print(renew_result)
 ```

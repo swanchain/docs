@@ -20,7 +20,7 @@ To use `swan-sdk`, a Swan API key is required. Steps to get an API Key:
 {% tab title="Python" %}
 #### Installation <a href="#quickstart" id="quickstart"></a>
 
-To use Python Swan SDK, you first need to install it and its dependencies. Before installing Swan SDK, install Python 3.8 or later and web3.py(==6.15.1).
+To use Python Swan SDK, you first need to install it and its dependencies. Before installing Swan SDK, install Python 3.8 or later and web3.py(==6.20.3).
 
 Install the latest Swan SDK release via **pip**:
 
@@ -53,8 +53,7 @@ result = swan_orchestrator.create_task(
     repo_uri='https://github.com/swanchain/awesome-swanchain/tree/main/hello_world', # Or your own repo URI
     wallet_address='<WALLET_ADDRESS>',
     private_key='<PRIVATE_KEY>',
-    instance_type='C1ae.medium',
-    auto_pay=True
+    instance_type='C1ae.medium'
 )
 task_uuid = result['task_uuid']
 ```
