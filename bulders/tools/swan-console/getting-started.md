@@ -38,13 +38,34 @@ Swan Chain Console features two distinct balance types:
 * Used for all operational costs
 * Subject to transfer restrictions
 * Required for deploying mining tasks
-* **Important**: The system automatically deducts fees every 24 hours and transfers them directly to the Computing Provider’s beneficiary address
+
+**Important**: The system automatically deducts fees every 24 hours and transfers them directly to the Computing Provider’s beneficiary address
 
 **Locked Balance**
 
 * A portion of your Escrow Balance that ensures the application can run for at least 12 hours
 * Will be released after the application is closed or terminated
-* **Note**: Before deploying any mining task, your Escrow Balance must have sufficient funds to cover the initial 12-hour locked period
+
+**Note**: Before deploying any mining task, your Escrow Balance must have sufficient funds to cover the initial 12-hour locked period
+
+### Critical Account Operations
+
+#### Daily Settlement Process
+
+* Settlement occurs at UTC 00:00 daily
+* System automatically deducts fees from Escrow Balance
+* Fees are transferred to corresponding Computing Provider's beneficiary address
+
+**Important**: Insufficient balance will trigger automatic task termination
+
+#### Low Balance Protection
+
+* System actively monitors Escrow Balance levels
+* When the balance insufficient for current deployment costs:
+  * All running tasks will be automatically terminated
+  * System prevents new task deployments
+
+**Critical**: Maintain sufficient Escrow Balance to avoid service interruption
 
 ### Balance Management Steps <a href="#ba4f" id="ba4f"></a>
 
@@ -60,22 +81,33 @@ To use the platform, you must transfer SWANU from your external wallet to your A
 
 **2. Withdrawal Process**
 
-**CRITICAL NOTE:** The withdrawal process involves two steps and includes a mandatory waiting period.
+**CRITICAL NOTE:** Withdrawals follow a strict two-step process with mandatory waiting period and specific restrictions.
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:700/0*5yVg-76xPLHGexhe" alt="" height="330" width="700"><figcaption></figcaption></figure>
 
-**Step 1: Escrow to Available Balance**
+1. **Escrow to Available Balance**
 
-* Click the arrow icon (right to left) between balance accounts
-* **IMPORTANT:** A 7-day processing period required
-* **CRUCIAL:** You must confirm the first withdrawal transaction within the “ Transfer” section after processing
+* Step 1: Request Withdrawal
+  * Click the arrow icon (right to left) to transfer from Escrow to Available Balance
+  * Status will show as "requested" in the "Transfer" section
+* Step 2: Confirm Withdrawal (after 7 days)
+  * After 7-day waiting period, confirm the transfer in "Transfer" section
+  * Once successful, funds will appear in Available Balance
 
-<figure><img src="https://miro.medium.com/v2/resize:fit:700/1*n4tkbtMlu4XTaxBpV6Q8cA.png" alt="" height="362" width="700"><figcaption></figcaption></figure>
+<figure><img src="https://miro.medium.com/v2/resize:fit:700/1*n4tkbtMlu4XTaxBpV6Q8cA.png" alt=""><figcaption></figcaption></figure>
 
-**Step 2: Available Balance to Wallet**
+2. **Available Balance to Wallet**
 
-* Only proceed after completing Step 1
-* Click the “Withdraw” button in the Available Balance card
+* Simply click the "Withdraw" button in Available Balance card to withdraw to wallet
 * Monitor transaction status in withdrawal history
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:700/1*NUx8UWjJ2RKvaGz3BHaEBA.png" alt="" height="198" width="700"><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+**Important Withdrawal Rules:**
+
+* Only one active withdrawal request is permitted per account
+* New withdrawal requests automatically invalidate previous ones
+* Recommended: Stop all tasks 24 hours before requesting withdrawal
+* Ensure sufficient balance for final settlements
+{% endhint %}
