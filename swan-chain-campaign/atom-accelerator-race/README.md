@@ -31,7 +31,7 @@ Credits are earned by participating in various campaign events and can be used t
 {% embed url="https://docs.swanchain.io/swan-testnet/atom-accelerator-race/before-you-get-started/set-up-metamask" %}
 
 {% hint style="info" %}
-By bridging tokens, you'll not only cover your gas fees for participating on the Proxima Testnet but also boost your on-chain transactions. This increased activity qualifies you for a potential share of the lucrative [On-Chain Interaction Race**'**](https://docs.swanchain.io/swan-testnet/atom-accelerator-race/on-chain-interaction-race)s prize pool.
+By bridging tokens, you'll not only cover your gas fees for participating on the Proxima Testnet but also boost your on-chain transactions. This increased activity qualifies you for a potential share of the lucrative [On-Chain Interaction Rac&#x65;**'**](https://docs.swanchain.io/swan-testnet/atom-accelerator-race/on-chain-interaction-race)s prize pool.
 {% endhint %}
 
 {% embed url="https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens" %}

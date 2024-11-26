@@ -12,14 +12,16 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 
 * **Total Supply:** 1,000,000,000 Swan Tokens
 
-<figure><img src="../../.gitbook/assets/image (174).png" alt=""><figcaption><p>Swan Tokenomics</p></figcaption></figure>
+
+
+<figure><img src="../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Token Allocation and Distribution Breakdown
 
-#### 1. Investors (20%)
+#### 1. Early Purchasers (20%)
 
 * **Purpose:** To fund the initial development and expansion phases of SwanChain.
-* **Details:** Investors provide essential capital for foundational buildout and scaling operations. This funding supports technical development, operational infrastructure, and initial market strategies.
+* **Details:** Early Purchasers provide essential capital for foundational buildout and scaling operations. This funding supports technical development, operational infrastructure, and initial market strategies.
 
 #### 2. DAO Treasury (20%)
 

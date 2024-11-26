@@ -14,11 +14,11 @@ Swan Chain is committed to empowering developers, startups, and established AI c
 * **Usage**: Access to basic computing, storage, and bandwidth services to build and deploy projects on Swan Chain.
 * **Approval Process**: Immediate access upon account creation. Start building on Swan Chain without delay.
 
-2. Incubator and Investor Program
+2. Incubator and Early Purchasers Program
 
 * **Utilization**: Access to H100 for more than 50 hours
-* **Description**: Targeted at Web3 startups, this program offers advanced resources for projects looking to scale rapidly. Ideal for those backed by incubators or investors, it provides enhanced computing and storage capacity to support growth.
-* **Eligibility**: Startups incubated by recognized incubators or funded by investors
+* **Description**: Targeted at Web3 startups, this program offers advanced resources for projects looking to scale rapidly. Ideal for those backed by incubators or Early Purchasers, it provides enhanced computing and storage capacity to support growth.
+* **Eligibility**: Startups incubated by recognized incubators or funded by Early Purchasers
 * **Credits**: Up to 10,000 Swan credits
 * **Service Validity Period**: 1 year
 * **Usage**: Enhanced access to compute, storage, and bandwidth resources, enabling robust development and deployment.
@@ -36,7 +36,7 @@ Swan Chain is committed to empowering developers, startups, and established AI c
 
 ## **Application Process**
 
-To apply for any of these programs, please fill out the application form [here](https://docs.google.com/forms/d/e/1FAIpQLSf8dHYXEMv\_Tw8P2axvuV56I9TotnJP4W76R3vkW38lsukuKw/viewform). The Swan Chain team will review your application and respond within the specified time frames based on the program tier.
+To apply for any of these programs, please fill out the application form [here](https://docs.google.com/forms/d/e/1FAIpQLSf8dHYXEMv_Tw8P2axvuV56I9TotnJP4W76R3vkW38lsukuKw/viewform). The Swan Chain team will review your application and respond within the specified time frames based on the program tier.
 
 _\*\*\*Note that for **Swan Activate**_: To encourage users to fully utilize Swan resources and share feedback, we’re offering a special incentive. If you use all your credits within one week, simply notify the Swan team with your account details, and we’ll provide additional credits.
 

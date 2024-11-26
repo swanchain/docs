@@ -51,7 +51,7 @@ Remember, active participation is key! The more you engage, the greater your cha
 {% embed url="https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/before-you-get-started/set-up-metamask" %}
 
 {% hint style="info" %}
-By bridging tokens, you'll not only cover your gas fees for participating on Swan Saturn Chain but also boost your on-chain transactions. This increased activity qualifies you for a potential share of the lucrative [**Transaction Drive Program**](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/transaction-drive-program)**'**s prize pool.
+By bridging tokens, you'll not only cover your gas fees for participating on Swan Saturn Chain but also boost your on-chain transactions. This increased activity qualifies you for a potential share of the lucrative [**Transaction Drive Program**](https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/transaction-drive-program)**'**&#x73; prize pool.
 {% endhint %}
 
 {% embed url="https://docs.swanchain.io/swan-testnet/swan-saturn-testnet/before-you-get-started/bridge-tokens" %}
