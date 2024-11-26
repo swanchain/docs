@@ -108,6 +108,7 @@
   * [Swan Chain Mission](swan-chain-campaign/swan-chain-mainnet/swan-chain-mission/README.md)
     * [Social Mission](swan-chain-campaign/swan-chain-mainnet/swan-chain-mission/social-mission.md)
     * [Onchain Mission](swan-chain-campaign/swan-chain-mainnet/swan-chain-mission/onchain-mission.md)
+    * [Mission: Celestial Bloom](swan-chain-campaign/swan-chain-mainnet/swan-chain-mission/mission-celestial-bloom.md)
   * [Swan Provider Campaign](swan-chain-campaign/swan-chain-mainnet/swan-provider-campaign/README.md)
     * [Fog Computing Provider (FCP)](swan-chain-campaign/swan-chain-mainnet/swan-provider-campaign/fog-computing-provider-fcp.md)
     * [Edge Computing Provider (ECP)](swan-chain-campaign/swan-chain-mainnet/swan-provider-campaign/edge-computing-provider-ecp.md)

@@ -1,13 +1,5 @@
 # Onchain Mission
 
-Welcome to the new phase of the Swan Chain Mission, where we shift from a focus on Social Missions to Onchain Missions. In this phase, participants will have the opportunity to earn Onchain XP, which will directly determine their allocation of $SWAN tokens. This phase will reward participants for their active onchain contributions to the Swan Chain ecosystem.
-
-Join now: [https://mission.swanchain.io/](https://mission.swanchain.io/)
-
-Mission duration: 6 weeks, starting from 3:00 UTC on September 12
-
-<figure><img src="../../../.gitbook/assets/Introducing the Swan Chain Mission_ Onchain 2.png" alt=""><figcaption></figcaption></figure>
-
 ### Onchain XP
 
 Onchain XP is the new key metric for earning $SWAN tokens. Unlike the previous Social Mission, which was based on Social Points, this phase prioritizes onchain actions and contributions. Participants can earn Onchain XP in a variety of ways, including:

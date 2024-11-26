@@ -2,7 +2,7 @@
 
 ## What is Swan Mission Point?
 
-Earn Mission Point by participating in tasks within the Swan Chain Mission through simple social activities. You can also earn points by inviting friends and playing the Daily Combo game. These points will determine your $SWAN airdrop allocation during the TGE.
+Earn Mission Point by participating in tasks within the Swan Chain Mission through simple social activities. You can also earn points by inviting friends and playing the Daily Combo game.
 
 <figure><img src="https://cdn-images-1.medium.com/max/1600/1*Zk0Y110i_WAuWprW1rKErQ.png" alt="" width="563"><figcaption></figcaption></figure>
 
