@@ -82,7 +82,8 @@ Output:
                     --task-types 1,2,4
 ```
 
-**Note:** `--task-types`: Supports 5 task types (1: Fil-C2, 2: Mining, 3: AI, 4: Inference, 5: NodePort), separated by commas. For ECP, it needs to be set to 1,2,4.
+**Note:** `--task-types`: Supports 5 task types, separated by commas. For ECP, it needs to be set to 1,2,4.\
+&#xNAN;_&#x4D;ore details:_ [_https://github.com/swanchain/go-computing-provider/blob/releases/ubi/README.md#install-ecp-and-init-cp-account_](https://github.com/swanchain/go-computing-provider/blob/releases/ubi/README.md#install-ecp-and-init-cp-account)
 
 * Collateral `SWANU` for ECP
 

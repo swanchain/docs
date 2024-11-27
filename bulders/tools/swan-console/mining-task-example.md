@@ -1,14 +1,14 @@
-# Mining Task Example
+# Blockchain GPU Task Example
 
-In this section, we will use Swan Console to launch an example Mining deployment on the Swan Network. You can follow the same process for any other tasks.
+In this section, we will use Swan Console to launch an example Blockchain GPU tasks deployment on the Swan Network. You can follow the same process for any other tasks.
 
 ### 1. Accessing the Marketplace <a href="#id-01f0" id="id-01f0"></a>
 
-The Swan Chain marketplace provides access to various mining pools. To begin:
+The Swan Chain marketplace provides access to various Blockchain GPU tasks pools. To begin:
 
 * Select “Marketplace” from the left panel
 * Navigate to the Mining section
-* View all supported mining tasks
+* View all supported Blockchain GPU tasks
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:700/1*dOQb-tlz_4bk9ALO8bvF1g.png" alt="" height="327" width="700"><figcaption></figcaption></figure>
 
@@ -24,7 +24,7 @@ Using f2pool as an example:
 
 ### 3.1 Pre-deployment Preparation <a href="#id-57d6" id="id-57d6"></a>
 
-Before proceeding with deployment, you’ll notice a section containing environment variables. These variables are crucial for your mining operation — they contain the connection details and authentication information needed to connect to the mining pool.
+Before proceeding with deployment, you’ll notice a section containing environment variables. These variables are crucial for your deploy operation — they contain the connection details and authentication information needed to connect to the Blockchain GPU tasks pool.
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:700/1*qY6qoGSI2oKXlSPnZYjIIw.png" alt="" height="478" width="700"><figcaption></figcaption></figure>
 
@@ -39,13 +39,13 @@ Before proceeding with deployment, you’ll notice a section containing environm
 
 * MINER\_URL: stratum+ssl://aleo-asia.f2pool.com:4420
 * ACCOUNTNAME: Your registered F2pool account name
-* WORKERNAME: A unique identifier for this mining worker
+* WORKERNAME: A unique identifier for this worker
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:700/0*7GAJelNTO-Nd6BYn" alt="" height="188" width="700"><figcaption></figcaption></figure>
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:700/0*qKqzcRCvdOBdGtyA" alt="" height="225" width="700"><figcaption></figcaption></figure>
 
-**Critical Note**: Even minor typing errors in these variables can prevent successful connection to the mining pool. For detailed information about Aleo mining on F2pool, consult the[ official documentation](https://f2pool.io/mining/guides/how-to-mine-aleo/).
+**Critical Note**: Even minor typing errors in these variables can prevent successful connection to the mining pool. For detailed information about Aleo task on F2pool, consult the[ official documentation](https://f2pool.io/mining/guides/how-to-mine-aleo/).
 
 **3.2.2 Iron Fish (IRON)**
 
@@ -65,11 +65,11 @@ Available MINER\_URL Options:
 * Europe: stratum+ssl://ironssl-euro.f2pool.com:1510
 * Asia: stratum+ssl://ironssl-asia.f2pool.com:1510
 
-For complete Iron mining instructions, visit[ F2pool’s Iron Fish guide](https://f2pool.io/mining/guides/how-to-mine-iron-fish/).
+For complete Iron task instructions, visit[ F2pool’s Iron Fish guide](https://f2pool.io/mining/guides/how-to-mine-iron-fish/).
 
 ### 3.3 Provider Selection <a href="#a831" id="a831"></a>
 
-After setting up your environment variables, you’ll need to choose the hardware specifications for your mining operation.
+After setting up your environment variables, you’ll need to choose the hardware specifications for your deploy operation.
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:700/0*zc0_x7GTIc6XlZa6" alt="" height="398" width="700"><figcaption></figcaption></figure>
 
@@ -91,13 +91,13 @@ Swan Chain offers two distinct approaches for selecting a Computing Provider (CP
 ### 4. Final Deployment <a href="#ab5d" id="ab5d"></a>
 
 * Review all configurations thoroughly
-* Click “Deploy Now” to initiate the mining task
+* Click “Deploy Now” to initiate the Blockchain GPU task
 
 **Note:** If you see the “Not sufficient balance” notification, please follow the “Managing your SWANU accounts” steps to transfer SWANU.
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:700/0*DuZLFLjsRD5tXhUm" alt="" height="232" width="700"><figcaption></figcaption></figure>
 
-Once you’ve deployed your mining task, give it 3–5 minutes, then head over to your F2pool dashboard. If you see hashrate and mining data showing up, congrats! Your mining task is up and running.
+Once you’ve deployed your Blockchain GPU task, give it 3–5 minutes, then head over to your F2pool dashboard. If you see hashrate and Blockchain GPU task data showing up, congrats! Your Blockchain GPU task is up and running.
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:700/0*bcefwN3rs3-wMm3W" alt="" height="319" width="700"><figcaption></figcaption></figure>
 
@@ -107,7 +107,7 @@ Through the Swan Console, you can:
 
 * Monitor deployment status in real time
 * View detailed performance metrics
-* Terminate mining tasks if needed
+* Terminate Blockchain GPU tasks if needed
 
 ### 5.1 **Deployment Dashboard Overview** <a href="#id-71f9" id="id-71f9"></a>
 

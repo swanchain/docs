@@ -13,7 +13,7 @@
 The Marketplace transforms decentralized application deployment into a streamlined experience, enabling:
 
 * One-click deployment of various applications
-* Currently featuring mining pool services (Aleo and Iron)
+* Currently featuring Blockchain GPU tasks pool services (Aleo and Iron)
 * Automated resource allocation and management
 * Real-time monitoring and control
 
@@ -50,6 +50,6 @@ A complete toolkit for developers to build and integrate with Swan Chain:
 This guide will cover the following topics:
 
 * [How to Get Started](../../../)
-* [Mining Deployments Example](mining-task-example.md)
+* [Blockchain GPU tasks Deployments Example](mining-task-example.md)
 * [Manage Instances](mining-task-example.md#id-71f9)
 

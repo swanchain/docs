@@ -1,10 +1,12 @@
-# Custom Mining Pools
+# Custom Blockchain GPU Task Pools
 
-In this section, we will guide you through the process of setting up custom mining pools on Swan Chain. This feature allows you to deploy your preferred mining pool configurations with the same seamless experience as our official pools.
+In this section, we will guide you through the process of setting up custom Blockchain GPU task pools on Swan Chain. This feature allows you to deploy your preferred Blockchain GPU task pool configurations with the same seamless experience as our official pools.
+
+
 
 ### 1. Accessing the Marketplace <a href="#id-01f0" id="id-01f0"></a>
 
-The Swan Chain marketplace provides access to various mining pools. To begin:
+The Swan Chain marketplace provides access to various Blockchain GPU task pools. To begin:
 
 * Select “Marketplace” from the left panel
 * Navigate to the Mining section
@@ -22,7 +24,7 @@ The Swan Chain marketplace provides access to various mining pools. To begin:
 
 #### Docker Image Setup
 
-1. In the Docker Image/OS field, enter your mining container's Docker image
+1. In the Docker Image/OS field, enter your Blockchain GPU task container's Docker image
 2. Configure essential environment variables, which typically include:
 
 ```
@@ -31,7 +33,7 @@ ACCOUNTNAME: [Your registered pool account name]
 WORKERNAME: [A unique identifier for this worker]
 ```
 
-> **Important**: Ensure your Docker image is properly configured and tested before deployment. Incorrect configurations may result in mining interruptions.
+> **Important**: Ensure your Docker image is properly configured and tested before deployment. Incorrect configurations may result in Blockchain GPU task interruptions.
 
 
 
@@ -39,7 +41,7 @@ WORKERNAME: [A unique identifier for this worker]
 
 ## 3. Provider Selection <a href="#a831" id="a831"></a>
 
-After setting up your environment variables, you’ll need to choose the hardware specifications for your mining operation.
+After setting up your environment variables, you’ll need to choose the hardware specifications for your deploy operation.
 
 <figure><img src="https://docs.swanchain.io/~gitbook/image?url=https%3A%2F%2Fmiro.medium.com%2Fv2%2Fresize%3Afit%3A700%2F0*zc0_x7GTIc6XlZa6&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=58e63629&#x26;sv=1" alt=""><figcaption></figcaption></figure>
 
@@ -61,7 +63,7 @@ Swan Chain offers two distinct approaches for selecting a Computing Provider (CP
 ### 4. Final Deployment <a href="#ab5d" id="ab5d"></a>
 
 * Review all configurations thoroughly
-* Click “Deploy Now” to initiate the mining task
+* Click “Deploy Now” to initiate the Blockchain GPU task
 
 **Note:** If you see the “Not sufficient balance” notification, please follow [this guide](getting-started.md) to manage your accounts and transfer SWANU.
 
@@ -69,11 +71,11 @@ Swan Chain offers two distinct approaches for selecting a Computing Provider (CP
 
 ***
 
-### Contributing to Official Mining Pools
+### Contributing to Official Blockchain GPU task Pools
 
-Want to see your Docker configuration added to our official mining pools? We welcome community contributions!
+Want to see your Docker configuration added to our official Blockchain GPU task pools? We welcome community contributions!
 
 1. Visit our GitHub repository: [awesome-swanchain](https://github.com/swanchain/awesome-swanchain/tree/main)
 2. Follow the contribution guidelines
-3. Submit a Pull Request with your mining pool configuration
+3. Submit a Pull Request with your Blockchain GPU task pool configuration
 

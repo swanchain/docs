@@ -11,7 +11,7 @@ Swan Chain's Universal Basic Income (UBI) program serves as a cornerstone of our
 ECPs play a crucial role in maintaining network integrity through:
 
 * Daily Zero-Knowledge (ZK) validation tasks
-* Mining operation
+* GPU task deployment operation
 * Network performance maintenance
 * Collateral management
 
@@ -35,7 +35,7 @@ FCPs contribute to network functionality by:
   * Automatic SWANU collateral deposit based on GPU specifications
   * Required upgrade to [Computing Provider v0.7.1](https://github.com/swanchain/go-computing-provider/releases/tag/v0.7.1)
   * Status verification via `computing-provider info` command
-* **New Providers**: Submit application through official form for SWANU allocation here:[https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link](https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link)
+* **New Providers**: Submit application through official form for SWANU allocation here:[https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link](https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf_link)
 
 ### 2. Provider Setup
 
@@ -43,7 +43,7 @@ FCPs contribute to network functionality by:
 
 1. Follow [ECP documentation](https://docs.swanchain.io/bulders/computing-provider/edge-computing-provider-ecp/ecp-setup)
 2. Configure ZK validation systems
-3. Prepare for mining capabilities (upcoming)
+3. Prepare for GPU task capabilities (upcoming)
 
 #### FCP Setup
 
@@ -90,7 +90,7 @@ Providers earn SWANU tokens through:
   * Market-driven compensation for:
     * User-requested computational tasks
     * Application deployments (FCP)
-    * Mining operations (ECP)
+    * GPU task deployment (ECP)
 
 **Token Conversion**:
 
@@ -119,7 +119,7 @@ The system includes robust anti-gaming protections:
 
 #### Support Channels
 
-* [Telegram CP commuity](https://t.me/swan\_chain)
+* [Telegram CP commuity](https://t.me/swan_chain)
 * [Discord CP channels](https://discord.gg/swanchain)
 
 This documentation will be updated as new features and optimizations are introduced to the Swan Chain network.

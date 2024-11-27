@@ -4,7 +4,7 @@
 
 * A crypto wallet (MetaMask recommended)
 * SWANU tokens
-* A mining pool account (e.g., F2Pool for Aleo mining in this guide)
+* A  pool account (e.g., F2Pool for Aleo Blockchain GPU task in this guide)
 
 ### 1. Obtaining SWANU Tokens <a href="#id-5d1c" id="id-5d1c"></a>
 
@@ -37,7 +37,7 @@ Swan Chain Console features two distinct balance types:
 
 * Used for all operational costs
 * Subject to transfer restrictions
-* Required for deploying mining tasks
+* Required for deploying Blockchain GPU tasks
 
 **Important**: The system automatically deducts fees every 24 hours and transfers them directly to the Computing Provider’s beneficiary address
 
@@ -46,7 +46,7 @@ Swan Chain Console features two distinct balance types:
 * A portion of your Escrow Balance that ensures the application can run for at least 12 hours
 * Will be released after the application is closed or terminated
 
-**Note**: Before deploying any mining task, your Escrow Balance must have sufficient funds to cover the initial 12-hour locked period
+**Note**: Before deploying any Blockchain GPU task, your Escrow Balance must have sufficient funds to cover the initial 12-hour locked period
 
 ### Critical Account Operations
 
