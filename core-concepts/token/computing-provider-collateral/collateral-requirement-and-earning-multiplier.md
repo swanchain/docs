@@ -1,6 +1,6 @@
 # Collateral Requirement and Earning Multiplier
 
-The base collateral requirement is **3500 $SWAN**. Different GPU models contribute differently to the network and thus have varying earning multipliers and Collateral Requirements Per Card (in $SWAN).&#x20;
+The base collateral requirement is **3533 $SWAN**. Different GPU models contribute differently to the network and thus have varying earning multipliers and Collateral Requirements Per Card (in $SWAN).&#x20;
 
 {% hint style="info" %}
 The values provided in the table below are for reference only. These figures may change in real-time based on current GPU prices and market conditions.
