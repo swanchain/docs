@@ -16,6 +16,8 @@ docker run -d \
   nebulablock/swan-node-mainnet
 ```
 
+**Tip**: Looking to speed up your node initialization? Check out our[ Snapshots guide](swan-node-snapshots.md) for a faster synchronization method that can significantly reduce your initial setup time.
+
 This command will start a new container in detached mode, mapping the container's port 8545 to the host's port 8545 and persisting data in the `/opt/swan` directory.
 
 ### Environment Variables
@@ -34,3 +36,4 @@ The image uses a volume at `/opt/swan` to persist data between container restart
 ### Ports
 
 The image exposes port 8545 for RPC connections. This port can be mapped to a host port using the `-p` flag when running the container, as shown in the example command above.
+
