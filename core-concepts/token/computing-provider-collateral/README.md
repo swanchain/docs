@@ -27,7 +27,27 @@ Where:
 * &#x20;$$N_{\text{ECP}}(\text{GPU}_k)$$ represents the number of $$\text{GPU}_k$$ in ECP.&#x20;
 * $$f_k$$ represents the earnings growth factor
 
-The formula indicates that the collateral requirement decreases as the total computing power contributed by the CP increases. This is designed to encourage CPs to contribute more computing power, reducing their collateral burden as they scale up their participation.
+Currently, the computing units $$CU_{\text{total}}$$ in the network are capped at (CU\_0 = 3000). If the computing units remain at or below (3000), the base collateral remains constant at:
+
+$$
+C_{\text{base}} = \frac{10,000,000}{3000} + 200 = 3533
+$$
+
+Example: If $$CU_{\text{total}}$$ **increases to 6000**
+
+1. Substitute $$CU_{\text{total}}$$ = 6000 into the formula:
+
+$$
+C_{\text{base}} = \frac{10,000,000}{6000} + 200
+$$
+
+2. Perform the calculation:
+
+$$
+C_{\text{base}} = 1666.67 + 200 = 1866.67
+$$
+
+So, if the computing units (CU) exceed 3000, the base collateral amount will start to decrease. In the example where CU is 6000, the base collateral amount is 1867, which is lower than the 3533 calculated earlier when CU was 3000.
 
 #### **Revenue Sharing and APR Calculation**
 
