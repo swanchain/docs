@@ -17,7 +17,7 @@ CU_{total} =\max ( \sum\limits_k N_{ECP}(GPU_k)  \times f_k +  \sum\limits_k N_{
 $$
 
 $$
-\begin{cases}CU_0 = 3000 \\C_{total} = 10,000,000 \\b=200\end{cases}
+\begin{cases}CU_0 = 3000 \\C_{total} =  \text{Circulating supply of SWAN} \times 20\%  \\b=200\end{cases}
 $$
 
 Where:
