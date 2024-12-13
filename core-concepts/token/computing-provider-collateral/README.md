@@ -63,6 +63,15 @@ The **Annual Percentage Rate (APR)** for the CPs is calculated separately for bo
 
 The **total APR** includes both the operator APR and collateral APR, providing a complete picture of the financial returns for CPs participating in the Swan Chain network.
 
+#### **Slashing Mechanism**
+
+To maintain network performance and accountability, CPs are subject to a precise slashing mechanism that penalizes inefficient or unreliable computing services. For each failed task, CPs face graduated penalties:
+
+* Edge Computing Providers (ECP) lose 0.025% of their current full collateral amount per failed task (approximately 0.88 SWAN for a 3080 GPU), with around 48 tasks processed daily.
+* Fog Computing Providers (FCP) lose 0.1% of their current full collateral amount per failed task (approximately 3.533 SWAN for a 3080 GPU), with around 14 tasks processed daily.
+
+If a CP's collateral amount falls below the required threshold, they become ineligible to receive Universal Basic Income (UBI) tasks. To mitigate the risk of unexpected task exclusion, CPs are advised to maintain a buffer in their collateral amount.
+
 #### **Impact of Collateral Model**
 
 The negative correlation between collateral and computing power has several benefits:
@@ -70,3 +79,5 @@ The negative correlation between collateral and computing power has several bene
 1. **Incentivizing Scale**: CPs are encouraged to scale up their contributions to the network, as increasing their computing power reduces their collateral requirements.
 2. **Risk Mitigation**: Collateral serves as a safeguard, ensuring that CPs have a financial stake in the network's success and discouraging malicious behavior.
 3. **Economic Participation**: By allowing CPs to share in both operator and collateral revenue, the model promotes balanced economic participation, where CPs are rewarded not only for their computational contributions but also for their financial commitment.
+
+####
