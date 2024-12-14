@@ -6,7 +6,7 @@ description: A Full Toolset AI Blockchain
 
 ## SWAN Token（Mainnet）
 
-<table data-header-hidden><thead><tr><th width="200"></th><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Contract Address</strong></td><td><strong>Layer</strong></td><td><strong>Address</strong></td><td><strong>link</strong></td></tr><tr><td>Swan Token</td><td>L1 （ETH Mainnet）</td><td>0x43e3De6745fad70127d7935198311386449fD9dd</td><td><a href="https://etherscan.io/token/0x43e3de6745fad70127d7935198311386449fd9dd">https://etherscan.io/token/0x43e3de6745fad70127d7935198311386449fd9dd</a></td></tr><tr><td>Swan Token（Bridged）</td><td>L2 （Swan Chain）</td><td>0xBb4eC1b56cB624863298740Fd264ef2f910d5564</td><td><a href="https://swanscan.io/address/0xBb4eC1b56cB624863298740Fd264ef2f910d5564">https://swanscan.io/address/0xBb4eC1b56cB624863298740Fd264ef2f910d5564</a></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="200"></th><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Contract Address</strong></td><td><strong>Layer</strong></td><td><strong>Address</strong></td><td><strong>link</strong></td></tr><tr><td>Swan Token</td><td>L1 （ETH Mainnet）</td><td><code>0x43e3De6745fad70127d7935198311386449fD9d</code>d</td><td><a href="https://etherscan.io/token/0x43e3de6745fad70127d7935198311386449fd9dd">https://etherscan.io/token/0x43e3de6745fad70127d7935198311386449fd9dd</a></td></tr><tr><td>Swan Token（Bridged）</td><td>L2 （Swan Chain）</td><td><code>0xBb4eC1b56cB624863298740Fd264ef2f910d5564</code></td><td><a href="https://swanscan.io/address/0xBb4eC1b56cB624863298740Fd264ef2f910d5564">https://swanscan.io/address/0xBb4eC1b56cB624863298740Fd264ef2f910d5564</a></td></tr></tbody></table>
 
 ## Mainnet
 
