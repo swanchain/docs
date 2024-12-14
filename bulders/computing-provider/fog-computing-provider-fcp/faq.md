@@ -4,8 +4,7 @@
 
 **A:**
 
-The latest version is v0.7.1: [https://github.com/swanchain/go-computing-provider/tree/releases\
-](https://github.com/swanchain/go-computing-provider/tree/releases)
+The latest version is v1.0.0: [https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.0](https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.0)
 
 Check the dashboard here : [https://orchestrator.swanchain.io/provider-status](https://orchestrator.swanchain.io/provider-status)
 
@@ -92,7 +91,7 @@ VerifySign = false
 Run the following command:
 
 {% hint style="info" %}
-_**\*Note: Please replace**** ****`<YOUR_MULTI_ADDRESS_IP>:<PORT>`**** ****with your actual multi-address IP and port.**_
+_**\*Note: Please replace****&#x20;****`<YOUR_MULTI_ADDRESS_IP>:<PORT>`****&#x20;****with your actual multi-address IP and port.**_
 {% endhint %}
 
 ```

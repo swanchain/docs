@@ -42,16 +42,9 @@ ETH is required for transaction gas fees. Follow these steps:
 2. Cross-chain your ETH to Swan Chain to obtain ETH
 3. Prepare sufficient ETH to account for potential fluctuations in network gas fees
 
-#### 1.2 Obtaining SWANU for Collateral
+#### 1.2 Obtaining SWAN for Collateral
 
-ECP requires `SWANU` (Swan Compute Unit) as collateral.&#x20;
-
-* **Token**: SWANU  Contract: 0x39cBBeaF88a91404618d45a16e0977Adab4d1Af1
-* **Existing Providers**:
-  * Automatic SWANU collateral deposit based on GPU specifications
-  * Required upgrade to [Computing Provider v0.7.1](https://github.com/swanchain/go-computing-provider/releases/tag/v0.7.1)
-  * Status verification via `computing-provider info` command
-* **New Providers**: Submit application through official form for SWANU allocation here:[https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link](https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link)
+ECP requires SWAN as collateral, you can buy from CEXs after TGE.
 
 #### 1.3 Collateral Requirements
 
