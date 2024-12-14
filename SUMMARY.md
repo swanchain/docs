@@ -105,7 +105,7 @@
 * [Swan CP UBI](swan-chain-campaign/swan-cp-ubi.md)
 * [Swan Chain Mainnet](swan-chain-campaign/swan-chain-mainnet/README.md)
   * [Network Information](swan-chain-campaign/swan-chain-mainnet/network-information.md)
-  * [Swan Credit Token](swan-chain-campaign/swan-chain-mainnet/swan-credit-token.md)
+  * [Swan Token](swan-chain-campaign/swan-chain-mainnet/swan-credit-token.md)
   * [Swan Chain Mission](swan-chain-campaign/swan-chain-mainnet/swan-chain-mission/README.md)
     * [Social Mission](swan-chain-campaign/swan-chain-mainnet/swan-chain-mission/social-mission.md)
     * [Onchain Mission](swan-chain-campaign/swan-chain-mainnet/swan-chain-mission/onchain-mission.md)

@@ -1,4 +1,4 @@
-# Swan Credit Token
+# Swan Token
 
 ## What You Need
 
@@ -8,17 +8,18 @@
 
 **Payment to Computing Providers:**
 
-* In addition to gas fees, you must pay Computing Providers in `SwanC` (Swan Credit Token)  to utilize their computing resources to power your Space (Application).
+* In addition to gas fees, you must pay Computing Providers in SWAN to utilize their computing resources to power your Space (Application).
 
-**Collateral (For Computing Providers Only):**
+**Collateral :**
 
-* Fog Computing Providers (FCPs) must deposit a minimum of 5 `SwanC` (Swan Credit Token) per task as collateral. Ensure you meet this requirement to receive task assignments.
+* Computing Providers (including FCPs and ECPs) must deposit a certain amount of SWAN as collateral. Ensure you meet this requirement to receive task assignments.&#x20;
+* Check details [here](../../core-concepts/token/computing-provider-collateral/collateral-requirement-and-earning-multiplier.md).
 
 ## Fund Your Wallet
 
 **Step 1: Purchasing ETH**
 
-Fund your wallet with ETH from any Decentralized Exchange (DEX) or Centralized Exchange (CEX).&#x20;
+Fund your wallet with ETH from any Decentralized Exchange (DEX) or Centralized Exchange (CEX).
 
 Funding your network account is required to use the network. All transactions, including claiming Swan Credit tokens and deploying Spaces, charge a transaction fee. Ensure you have sufficient ETH to cover these costs.
 
@@ -28,18 +29,6 @@ Go to[ Bridge](https://bridge.swanchain.io/), enter the amount of ETH you wish t
 
 <figure><img src="../../.gitbook/assets/image (176).png" alt=""><figcaption></figcaption></figure>
 
-**Step 3: Claiming Swan Credits**
+**Step 3: Purchase SWAN Token**
 
-1. Visit the [faucet page](https://faucet.swanchain.io/) and connect your wallet address.
-
-<figure><img src="https://lh7-us.googleusercontent.com/docsz/AD_4nXfCUdtwVfvRsRfCyjt-OCtNzQk2PjbBKacqZ46Xgu0JhzearM7u_HkRWZcAs7YRQcK7m4avS_mlQDsnsuq1FKadeAuKuusBKZ3n_bcmPNk8e4lAA6m-kWy-o2eteamQd4TPcdZvAELsDqiBLu1e_yobUWY?key=PP4_jHREiRWUOtX6TLIS5g" alt=""><figcaption></figcaption></figure>
-
-2. Click "Send Me Swan Credit Token" to claim Swan Credits. These credits can be used to pay Computing Providers when deploying an application in Lagrange.
-
-{% hint style="warning" %}
-Each wallet can claim up to **25** tokens at a time. If your wallet balance exceeds **250** tokens, you won’t be able to claim any more tokens.
-{% endhint %}
-
-{% hint style="info" %}
-Please note: It's important to clarify that "Swan Credit Token" is only for testing space deployment on the mainnet and has no connection to rewards of Atom Accelerator Race, SWAN Credits.
-{% endhint %}
+After the TGE, you can purchase SWAN token on CEXs.
