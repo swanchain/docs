@@ -22,31 +22,42 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 
 * **Purpose:** To fund the initial development and expansion phases of SwanChain.
 * **Details:** Early Purchasers provide essential capital for foundational buildout and scaling operations. This funding supports technical development, operational infrastructure, and initial market strategies.
-* 1.80% unlocked at TGE.
+* **Unlock Schedule:**
+  * 1.8% unlocked at TGE (Token Generation Event).
+  * 18.2% unlocked after a 6-month cliff.
+  * Remaining tokens distributed linearly over 4–8 quarters.
 
 #### 2. DAO Treasury (20%)
 
 * **Purpose:** To manage investments, cover legal costs, and other financial necessities.
 * **Details:** The DAO Treasury is critical for financial management and operational expenditures. It is funded by contributions from market providers and is used for strategic investments and covering essential expenses such as legal fees.
-* 2% unlocked at TGE.
+* **Unlock Schedule:**
+  * 2% unlocked at TGE .
+  * Remaining tokens distributed linearly over 32  quarters.
 
 #### 3. Ecosystem Fund (25%)
 
 * **Purpose:** To support ecosystem growth through grants, projects, and other initiatives.
 * **Details:** This fund is crucial for nurturing innovation within the SwanChain ecosystem, providing financial support to developers, startups, and community projects that contribute to the network’s enhancement.
-* 4% unlocked at TGE.
+* **Unlock Schedule:**
+  * 4% unlocked at TGE.
+  * Remaining tokens distributed linearly over 16 quarters.
 
 #### 4. Core Contributors (15%)
 
 * **Purpose:** To reward and retain the developers and team members who are integral to the development and maintenance of SwanChain.
 * **Details:** This allocation ensures that the developers and personnel central to SwanChain’s operations are motivated and retained, facilitating ongoing innovation and network maintenance.
-* 0% unlocked at TGE.
+* **Unlock Schedule:**
+  * 0% unlocked at TGE.
+  * 20% unlocked after a 6-month cliff.
+  * Remaining tokens distributed linearly over 12 quarters.
 
 #### 5. Airdrops (20%)
 
 * **Purpose:** To incentivize broad network participation and engagement.
 * **Details:** Airdrops distribute Swan tokens widely across the community to stimulate network activity and growth, enhancing user adoption and community vibrancy. 10% of the total supply has been reserved for computing providers over the years. The annual airdrop rate cannot exceed 10% of the current circulation supply.
 * 2% unlocked at TGE.
+* Remaining tokens distributed linearly over 40 quarters.
 
 ### Token Flow Diagram
 
