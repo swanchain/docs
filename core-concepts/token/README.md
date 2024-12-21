@@ -24,8 +24,7 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 * **Details:** Early Purchasers provide essential capital for foundational buildout and scaling operations. This funding supports technical development, operational infrastructure, and initial market strategies.
 * **Unlock Schedule:**
   * 1.8% unlocked at TGE (Token Generation Event).
-  * 18.2% unlocked after a 6-month cliff.
-  * Remaining tokens distributed linearly over 4–8 quarters.
+  * Remaining tokens distributed linearly over 4–8 quarters after a 6-month cliff.
 
 #### 2. DAO Treasury (20%)
 
@@ -49,8 +48,7 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 * **Details:** This allocation ensures that the developers and personnel central to SwanChain’s operations are motivated and retained, facilitating ongoing innovation and network maintenance.
 * **Unlock Schedule:**
   * 0% unlocked at TGE.
-  * 20% unlocked after a 6-month cliff.
-  * Remaining tokens distributed linearly over 12 quarters.
+  * Remaining tokens distributed linearly over 12 quarters after a 6-month cliff.
 
 #### 5. Airdrops (20%)
 
