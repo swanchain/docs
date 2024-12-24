@@ -32,7 +32,7 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 * **Details:** The DAO Treasury is critical for financial management and operational expenditures. It is funded by contributions from market providers and is used for strategic investments and covering essential expenses such as legal fees.
 * **Unlock Schedule:**
   * 2% unlocked at TGE .
-  * Remaining tokens distributed linearly over 32  quarters.
+  * Remaining tokens distributed linearly over 40  quarters.
 
 #### 3. Ecosystem Fund (25%)
 
@@ -55,7 +55,7 @@ SwanChain introduces a comprehensive tokenomics structure designed to support it
 * **Purpose:** To incentivize broad network participation and engagement.
 * **Details:** Airdrops distribute Swan tokens widely across the community to stimulate network activity and growth, enhancing user adoption and community vibrancy. 10% of the total supply has been reserved for computing providers over the years. The annual airdrop rate cannot exceed 10% of the current circulation supply.
 * 2% unlocked at TGE.
-* Remaining tokens distributed linearly over 40 quarters.
+* Remaining tokens distributed linearly over 32 quarters.
 
 ### Token Flow Diagram
 
