@@ -8,11 +8,11 @@ description: Now all CPs can migrate to the mainnet to participate in Swan Mainn
 
 ### First-time Deployment
 
-If you are deploying for the first time, you can follow the instructions in the latest version: [Swan Chain Computing Provider v0.7.0](https://github.com/swanchain/go-computing-provider/releases/tag/v0.7.0)
+If you are deploying for the first time, you can follow the instructions in the latest version: Swan Chain Computing Provider v01.0.0: [https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.0](https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.0)
 
 ### Migration from Proxima to Mainnet
 
-1. **Update `resource-exporter` to the latest version `v11.2.8`**: Follow the instructions in this issue: [Update Resource Exporter to v11.2.8](https://github.com/swanchain/go-computing-provider/issues/14).
+1. **Update `resource-exporter` to the latest version `v11.3.0`**: Follow the instructions in this issue: [Update Resource Exporter to v11.3.0.](https://github.com/swanchain/go-computing-provider/issues/14)
 2.  **Specify a new CP\_PATH**:
 
     ```bash
@@ -29,7 +29,7 @@ If you are deploying for the first time, you can follow the instructions in the 
     computing-provider -v
     ```
 
-    Ensure it shows `version 0.6.1+mainnet`.
+    Ensure it shows `version 1.0.0+mainnet`.
 5.  **Initialize CP repo and update configuration**: Refer to [Initialize CP Repo and Update Configuration](https://github.com/swanchain/go-computing-provider/tree/v0.6.1?tab=readme-ov-file#initialize-cp-repo-and-update-configuration)
 
     Note:

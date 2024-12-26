@@ -16,7 +16,11 @@ FCP requires `ETH` as transaction gas fees. Follow these steps to get `ETH`:
 
 #### 1.2 Obtaining  SWAN  for Collateral
 
-FCP requires `SWAN` as collateral, you can buy it from CEXs.
+FCP requires SWAN as collateral, you can buy it from CEXs.
+
+SWAN is currently listed on [Gate.io](https://www.gate.io/trade/SWAN_USDT), [MEXC](https://www.mexc.com/exchange/SWAN_USDT), and [LBank](https://www.lbank.com/trade/swan_usdt).&#x20;
+
+Contract Address: 0xBb4eC1b56cB624863298740Fd264ef2f910d5564
 
 ### 2. Collateral Management
 
@@ -27,16 +31,11 @@ FCP requires `SWAN` as collateral, you can buy it from CEXs.
 * Monitor the [Swan dashboard](https://provider.swanchain.io/overview) for computing units and base collateral trends(upcoming feature)
 * Maintain sufficient collateral to ensure continuous task eligibility
 
-> **During CP UBI-0 stage:**
->
-> * Collateral will be directly deposited to corresponding escrow account. **No manual deposit required.**
-> * Funds locked for UBI qualification and order acceptance. **No withdrawal option available**
-
 **2.2 Slash Collateral**&#x20;
 
 * Collateral may be forfeited under the following circumstances:
   * User complaints or appeals:
-    * Can be submitted during or after the task.
+    * It can be submitted during or after the task.
     * Evidence must be provided (e.g., screenshots, log files, etc.).
     * Reasons for complaints/appeals may include but are not limited to:
       * Task completion does not meet expectations.
@@ -61,26 +60,5 @@ FCP requires `SWAN` as collateral, you can buy it from CEXs.
 * The revenue distribution for each deployment is as follows:
   * The platform takes a 5% service fee.
   * The remaining 95% is divided among up to three FCPs (task processors).
-
-### 4. Important Notes
-
-#### Critical Requirements
-
-* Maintain stable beneficiary address during UBI-0 program
-* Do not transfer SWANU tokens unnecessarily
-* Keep sufficient ETH for gas fees
-
-#### Best Practices
-
-* Regular monitoring of collateral requirements
-* Maintain high task completion rates
-* Ensure consistent resource availability
-* Monitor dashboard for performance metrics
-
-#### Anti-Gaming Protection
-
-* Do not use UBI earnings for artificial task creation
-* Manipulation attempts will reduce bench task success rates
-* Focus on legitimate service provision
 
 ***

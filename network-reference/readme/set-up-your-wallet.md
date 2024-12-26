@@ -13,10 +13,11 @@
 #### **Step 2: Import Tokens** <a href="#step-2-import-tokens" id="step-2-import-tokens"></a>
 
 1. In Metamask, click on "Import tokens" at the bottom of the Tokens tab.
-2. Enter the token contract address for SWAN Credit Token:
+2. Enter the token contract address for SWAN Token:
 
-`0xAF90ac6428775E1Be06BAFA932c2d80119a7bd02`
+**0xBb4eC1b56cB624863298740Fd264ef2f910d5564**
 
-1. The token symbols and decimals should autofill. If not, check the block explorer.
-2. Click "Import" to confirm.[\
+The token symbols and decimals should autofill. If not, check the block explorer.
+
+3. Click "Import" to confirm.[\
    ](https://docs.swanchain.io/swan-chain/swan-chain-mainnet/swan-credit-token)

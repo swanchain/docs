@@ -44,7 +44,11 @@ ETH is required for transaction gas fees. Follow these steps:
 
 #### 1.2 Obtaining SWAN for Collateral
 
-ECP requires SWAN as collateral, you can buy from CEXs after TGE.
+ECP requires SWAN as collateral. You can purchase SWAN from centralized exchanges (CEXs).&#x20;
+
+SWAN is currently listed on [Gate.io](https://www.gate.io/trade/SWAN_USDT), [MEXC](https://www.mexc.com/exchange/SWAN_USDT), and [LBank](https://www.lbank.com/trade/swan_usdt).&#x20;
+
+Contract Address: 0xBb4eC1b56cB624863298740Fd264ef2f910d5564
 
 #### 1.3 Collateral Requirements
 
@@ -52,11 +56,6 @@ ECP requires SWAN as collateral, you can buy from CEXs after TGE.
   * Review our[ comprehensive collateral documentation](https://docs.swanchain.io/core-concepts/token/computing-provider-collateral/collateral-requirement-and-earning-multiplier) for detailed information
 * Monitor the [Swan dashboard](https://provider.swanchain.io/overview) for computing units and base collateral trends(upcoming feature)
 * Maintain sufficient collateral to ensure continuous task eligibility
-
-> **During CP UBI-0 stage:**
->
-> * Collateral will be directly deposited to corresponding escrow account. **No manual deposit required.**
-> * Funds locked for UBI qualification and order acceptance. **No withdrawal option available**
 
 ### 2. Account Setup <a href="#id-2.-account-setup" id="id-2.-account-setup"></a>
 
@@ -158,13 +157,13 @@ computing-provider sequencer withdraw --owner=<OWNER_ADDRESS> <AMOUNT>
 * Initiate withdrawal request:
 
 ```
-computing-provider collateral withdraw-request --owner=<OWNER_ADDRESS> --account=<CP_ACCOUNT> <AMOUNT>
+computing-provider collateral withdraw-request --owner=<OWNER_ADDRESS> --account=<CP_ACCOUNT> --ecp <AMOUNT>
 ```
 
-* Confirm withdrawal after 48 hours:
+* Confirm withdrawal after 7 days:
 
 ```
-computing-provider collateral withdraw-confirm --owner=<OWNER_ADDRESS> --account=<CP_ACCOUNT>
+computing-provider collateral withdraw-confirm --owner=<OWNER_ADDRESS> --account=<CP_ACCOUNT> --ecp
 ```
 
-_**Note:** Escrow account balance may fluctuate due to periodic settlements. It's advisable to wait 24 hours after changing `taskTypes` before requesting the withdrawal. Confirmation can only be made 48 hours after the initial request. Funds will be withdrawn to the CP's `ownerAddress` upon confirmation._
+_**Note:** Escrow account balance may fluctuate due to periodic settlements. It's advisable to wait 24 hours after changing `taskTypes` before requesting the withdrawal. Confirmation can only be made 7 days after the initial request. Funds will be withdrawn to the CP's `ownerAddress` upon confirmation._

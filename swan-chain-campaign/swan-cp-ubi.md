@@ -30,12 +30,21 @@ FCPs contribute to network functionality by:
 
 ### 1. Token Acquisition
 
-* **Token**: SWANU (Contract: 0x39cBBeaF88a91404618d45a16e0977Adab4d1Af1)
-* **Existing Providers**:
-  * Automatic SWANU collateral deposit based on GPU specifications
-  * Required upgrade to [Computing Provider v0.7.1](https://github.com/swanchain/go-computing-provider/releases/tag/v0.7.1)
-  * Status verification via `computing-provider info` command
-* **New Providers**: Submit application through official form for SWANU allocation here:[https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H\_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf\_link](https://docs.google.com/forms/d/e/1FAIpQLSdnd8H4ab1eBr0D4e2QBLvBRj6H_xo7C8gW8ItewvHJRzYVVg/viewform?usp=sf_link)
+#### 1.1 Obtaining ETH for Gas Fees
+
+ETH is required for transaction gas fees. Follow these steps:
+
+1. Visit Swan Chain's official bridge website:[ https://bridge.swanchain.io](https://bridge.swanchain.io)
+2. Cross-chain your ETH to Swan Chain to obtain ETH
+3. Prepare sufficient ETH to account for potential fluctuations in network gas fees
+
+#### 1.2 Obtaining SWAN for Collateral
+
+CP requires SWAN as collateral. You can purchase SWAN from centralized exchanges (CEXs).&#x20;
+
+SWAN is currently listed on [Gate.io](https://www.gate.io/trade/SWAN_USDT), [MEXC](https://www.mexc.com/exchange/SWAN_USDT), and [LBank](https://www.lbank.com/trade/swan_usdt).&#x20;
+
+Contract Address: 0xBb4eC1b56cB624863298740Fd264ef2f910d5564
 
 ### 2. Provider Setup
 
