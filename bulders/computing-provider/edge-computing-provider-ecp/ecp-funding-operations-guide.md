@@ -124,7 +124,13 @@ TASK ID  TASK CONTRACT                               TASK TYPE  ZK T
 
 #### 4.3 Slash Mechanism
 
-If a task proof fails validation (late submission, invalid proof, etc.), 5 SWANU will be deducted during the periodic settlement.
+To maintain network performance and accountability, CPs are subject to a precise slashing mechanism that penalizes inefficient or unreliable computing services. For each failed task, CPs face graduated penalties:
+
+* Edge Computing Providers (ECP) lose 0.025% of their current full collateral amount per failed task (approximately 0.88 SWAN for a 3080 GPU), with around 48 tasks processed daily.
+
+If a CP's collateral amount falls below the required threshold, they become ineligible to receive Universal Basic Income (UBI) tasks. To mitigate the risk of unexpected task exclusion, CPs are advised to maintain a buffer in their collateral amount.
+
+More details about Slash Collateral, check here: [https://docs.swanchain.io/core-concepts/token/computing-provider-collateral#slashing-mechanism](https://docs.swanchain.io/core-concepts/token/computing-provider-collateral#slashing-mechanism)
 
 ### 5. Exit Procedure
 

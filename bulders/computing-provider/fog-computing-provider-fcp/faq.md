@@ -4,7 +4,7 @@
 
 **A:**
 
-The latest version is v1.0.0: [https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.0](https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.0)
+The latest version is v1.0.1: [h](https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.0)[https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.1](https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.1)
 
 Check the dashboard here : [https://orchestrator.swanchain.io/provider-status](https://orchestrator.swanchain.io/provider-status)
 
@@ -194,6 +194,77 @@ Find the hosts corresponding to the name `ing-minesweeper` and ensure that the d
     ```
 7. If the test is successful, restore the `UbiEnginePk` in the `config.toml` file to its original value\
 
+
+#### Q: How to upgrade resource-exporter in FCP
+
+**A**:&#x20;
+
+1. Stop the computing-provider service.
+2. Delete component `resource-exporter` and `filswan/resource-exporter` local image
+
+```
+kubectl delete ds -n kube-system resource-exporter-ds
+
+docker rmi -f filswan/resource-exporter:v11.3.0
+```
+
+3. Reinstall `resource-exporter` by the command:
+
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+ namespace: kube-system
+ name: resource-exporter-ds
+ labels:
+   app: resource-exporter
+spec:
+ selector:
+   matchLabels:
+     app: resource-exporter
+ template:
+   metadata:
+     labels:
+       app: resource-exporter
+   spec:
+     containers:
+     - name: resource-exporter
+       image: filswan/resource-exporter:v11.3.1
+       imagePullPolicy: IfNotPresent
+EOF
+```
+
+4. Check the `resource-exporter` version:
+
+```
+kubectl describe po -n kube-system resource-exporter-ds |grep "Image:"
+```
+
+It should be:
+
+```
+Image:          filswan/resource-exporter:v11.3.1
+```
+
+and ensure it is running by `kubectl get po -n kube-system`
+
+<figure><img src="../../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
+
+5. Start `computing-provider` with v1.0.1: [https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.1](https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.1)
+
+#### Q: How to upgrade resource-exporter in ECP
+
+**A**:&#x20;
+
+1. Delete container `resource-exporter` and `filswan/resource-exporter` local image
+
+```
+docker rm -f resource-exporter
+docker rmi -f filswan/resource-exporter:v11.3.0
+```
+
+2. CP will automatically pull the image and run the resource-exporter container
 
 #### Q: Which ports need to be mapped?&#x20;
 

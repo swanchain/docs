@@ -46,7 +46,7 @@ curl -fsSL https://raw.githubusercontent.com/swanchain/go-computing-provider/rel
 * Download `computing-provider`
 
 ```bash
-wget https://github.com/swanchain/go-computing-provider/releases/download/v1.0.0/computing-provider
+wget https://github.com/swanchain/go-computing-provider/releases/download/v1.0.1/computing-provider
 ```
 
 * Initialize ECP repo

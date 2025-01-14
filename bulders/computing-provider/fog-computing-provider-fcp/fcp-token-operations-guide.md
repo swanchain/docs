@@ -33,19 +33,13 @@ Contract Address: 0xBb4eC1b56cB624863298740Fd264ef2f910d5564
 
 **2.2 Slash Collateral**&#x20;
 
-* Collateral may be forfeited under the following circumstances:
-  * User complaints or appeals:
-    * It can be submitted during or after the task.
-    * Evidence must be provided (e.g., screenshots, log files, etc.).
-    * Reasons for complaints/appeals may include but are not limited to:
-      * Task completion does not meet expectations.
-      * Service quality issues.
-      * Other violations of service agreements.
-  * Handling process:
-    * The platform will review the complaint/appeal upon receipt.
-    * If FCP is found to be at fault:
-      * The platform will slash the corresponding collateral (equal to the task collateral amount).
-      * The task reward will also be forfeited.
+To maintain network performance and accountability, CPs are subject to a precise slashing mechanism that penalizes inefficient or unreliable computing services. For each failed task, CPs face graduated penalties:
+
+* Fog Computing Providers (FCP) lose 0.1% of their current full collateral amount per failed task (approximately 3.533 SWAN for a 3080 GPU), with around 14 tasks processed daily.
+
+If a CP's collateral amount falls below the required threshold, they become ineligible to receive Universal Basic Income (UBI) tasks. To mitigate the risk of unexpected task exclusion, CPs are advised to maintain a buffer in their collateral amount.
+
+More details about Slash Collateral, check here: [https://docs.swanchain.io/core-concepts/token/computing-provider-collateral#slashing-mechanism](https://docs.swanchain.io/core-concepts/token/computing-provider-collateral#slashing-mechanism)
 
 ### 3. Reward Mechanism
 
