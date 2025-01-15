@@ -27,6 +27,12 @@ Let’s explore some of the [Spaces](https://lagrange.computer/spaces) built by 
 
 ### **Awesome Spaces**
 
+#### AI Agent
+
+Explore the capabilities of AI agents using Lagrange technology for advanced machine learning applications
+
+* [**Eliza-SwanChain**](https://lagrange.computer/spaces/0x231fe9090f4d45413474BDE53a1a0A3Bd5C0ef03/Eliza-swanchain/app)**:** An AI agent using Eliza framework that can answer all questions related to Swan Chain
+
 #### **AI and Creative Spaces**
 
 Harness cutting-edge AI models to generate content and boost your creative projects.
