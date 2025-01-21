@@ -93,6 +93,67 @@ Verify that the resource-exporter is functioning correctly by monitoring its log
 docker logs -f resource-exporter
 ```
 
+#### **Q: How to verify if ECP is running properly?**
+
+* **Step 1: Check Collateral**:
+
+```
+computing-provider --repo info
+```
+
+[![image](https://private-user-images.githubusercontent.com/102578774/403743479-92e14ebd-cb46-4b3e-98f7-aa50ad544f0c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNjU4NDUsIm5iZiI6MTczNzM2NTU0NSwicGF0aCI6Ii8xMDI1Nzg3NzQvNDAzNzQzNDc5LTkyZTE0ZWJkLWNiNDYtNGIzZS05OGY3LWFhNTBhZDU0NGYwYy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQwOTMyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04ZmE5N2MyYzU0MTZiN2ViZmQ2ZDM4NTNiNmUxYmU2MWFlMWQyMDcyYzhlMDFmZTE5MTQ3MzEzZTU4M2VhMjA1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.3Fa97VNSN0WgnTFigMG0RbFtWEGOx_xmvisfuTnIkJM)](https://private-user-images.githubusercontent.com/102578774/403743479-92e14ebd-cb46-4b3e-98f7-aa50ad544f0c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNjU4NDUsIm5iZiI6MTczNzM2NTU0NSwicGF0aCI6Ii8xMDI1Nzg3NzQvNDAzNzQzNDc5LTkyZTE0ZWJkLWNiNDYtNGIzZS05OGY3LWFhNTBhZDU0NGYwYy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQwOTMyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04ZmE5N2MyYzU0MTZiN2ViZmQ2ZDM4NTNiNmUxYmU2MWFlMWQyMDcyYzhlMDFmZTE5MTQ3MzEzZTU4M2VhMjA1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.3Fa97VNSN0WgnTFigMG0RbFtWEGOx_xmvisfuTnIkJM)
+
+Ensure that the sum of `Collateral` and `Escrow` under the `ECP Balance` is greater than the calculated collateral amount for proper staking.
+
+* **Step 2:Check Versions**:
+  * **CP Version**:
+
+```
+computing-provider -v
+```
+
+Verify the CP version by checking the commit number in the official [go-computing-provider](https://github.com/swanchain/go-computing-provider) repository to confirm if your version is up-to-date or the recommended stable version.
+
+* **Resource-Exporter Version**:
+
+```
+kubectl get daemonset resource-exporter-ds -n kube-system -o yaml | grep image:
+```
+
+Verify the version of `resource-exporter` by checking the required version in the [official repository](https://github.com/swanchain/go-computing-provider/tree/releases?tab=readme-ov-file#Install-the-Hardware-resource-exporter).
+
+* **Step 3: Check Resource Endpoint**:
+
+```
+curl http://<cp-ip>:<port>/api/v1/computing/cp
+```
+
+> **Note**: Replace `<cp-ip>` and `<port>` with the corresponding information from your `CP_REPO` configuration file, where `MultiAddress = "/ip4/<ip>/tcp/<port>"`.
+
+* **Step 4: Self-check by submitting a job**:
+
+```
+curl --location --request POST 'http://<cp-ip>:<port>/api/v1/computing/cp/ubi' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": 26384,
+    "name": "1000-0-7-26381",
+    "type": 1,
+    "resource_type": 0,
+    "deadline": 2000000,
+    "check_code": "check_code-demo",
+    "input_param": "https://286cb2c989.acl.swanipfs.com/ipfs/QmTgoX6LkzZTsTjSjXvujzgJEHBLTEg3KMUadQGnyTrNFG",
+    "verify_param": "https://286cb2c989.acl.swanipfs.com/ipfs/QmTgoX6LkzZTsTjSjXvujzgJEHBLTEg3KMUadQGnyTrNFG.verify",
+    "resource":{"cpu":"10","memory":"5.00 GiB","storage":"10.00 GiB"}
+    "signature":"Signing_cpAccountAddress_and_id_with_ownerAddress"
+}'
+```
+
+* **Dashboard Status Check**:\
+  In the [Provider Dashboard](https://provider.swanchain.io/), locate your CP using the `cpAccount`. Check that the status is `Online`, and ensure collateral is sufficient (as shown in the example). If so, your CP is running properly.
+
+[![image](https://private-user-images.githubusercontent.com/102578774/403743659-087a96f3-a1c3-4607-b802-b343a51246e6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNjU4NDUsIm5iZiI6MTczNzM2NTU0NSwicGF0aCI6Ii8xMDI1Nzg3NzQvNDAzNzQzNjU5LTA4N2E5NmYzLWExYzMtNDYwNy1iODAyLWIzNDNhNTEyNDZlNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQwOTMyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05ZjZkZWU2NjM4Mjc2NDg0NmU4OWFjYjM4N2Y3YzBmMzM1NGM2MGMxMThhNzA5NDhhNGVjNWNmZjVjZjMyN2NhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Op8W10YxMo1lnZ-x1-NFKcQZ-dnSlFFEF1obDO4Z-k8)](https://private-user-images.githubusercontent.com/102578774/403743659-087a96f3-a1c3-4607-b802-b343a51246e6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNjU4NDUsIm5iZiI6MTczNzM2NTU0NSwicGF0aCI6Ii8xMDI1Nzg3NzQvNDAzNzQzNjU5LTA4N2E5NmYzLWExYzMtNDYwNy1iODAyLWIzNDNhNTEyNDZlNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQwOTMyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05ZjZkZWU2NjM4Mjc2NDg0NmU4OWFjYjM4N2Y3YzBmMzM1NGM2MGMxMThhNzA5NDhhNGVjNWNmZjVjZjMyN2NhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Op8W10YxMo1lnZ-x1-NFKcQZ-dnSlFFEF1obDO4Z-k8)
+
 #### **Q: How do I withdraw collateral from ECP?**
 
 To withdraw collateral from ECP, use the following command:

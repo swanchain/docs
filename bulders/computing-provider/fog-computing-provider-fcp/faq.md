@@ -4,7 +4,7 @@
 
 **A:**
 
-The latest version is v1.0.1: [h](https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.0)[https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.1](https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.1)
+The latest version is v1.0.2: [https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.2](https://github.com/swanchain/go-computing-provider/releases/tag/v1.0.2)
 
 Check the dashboard here : [https://orchestrator.swanchain.io/provider-status](https://orchestrator.swanchain.io/provider-status)
 
@@ -74,6 +74,64 @@ out:
     "node_name": "fcp-001"
 }
 ```
+
+#### &#x20;**Q: How to verify if FCP is running properly?**
+
+* **Step 1: Check Collateral**:
+
+```
+computing-provider --repo info
+```
+
+[![image](https://private-user-images.githubusercontent.com/102578774/403743114-61fb8bc2-71cd-4dc1-bcf0-fb9fd073d4b0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNjU4NDUsIm5iZiI6MTczNzM2NTU0NSwicGF0aCI6Ii8xMDI1Nzg3NzQvNDAzNzQzMTE0LTYxZmI4YmMyLTcxY2QtNGRjMS1iY2YwLWZiOWZkMDczZDRiMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQwOTMyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNGViYWNjNjZmOGZlMzk5ZWFlMWI2YTdjOWIzODY5MzcxODFjMDgyMWM2N2FhODAxYmY2ODZmNTA2MTUyZjYwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.pZv0WwUht5iaNj_u9_mYh8v7w3o9KUIVeAzJKdF6llI)](https://private-user-images.githubusercontent.com/102578774/403743114-61fb8bc2-71cd-4dc1-bcf0-fb9fd073d4b0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNjU4NDUsIm5iZiI6MTczNzM2NTU0NSwicGF0aCI6Ii8xMDI1Nzg3NzQvNDAzNzQzMTE0LTYxZmI4YmMyLTcxY2QtNGRjMS1iY2YwLWZiOWZkMDczZDRiMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQwOTMyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNGViYWNjNjZmOGZlMzk5ZWFlMWI2YTdjOWIzODY5MzcxODFjMDgyMWM2N2FhODAxYmY2ODZmNTA2MTUyZjYwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.pZv0WwUht5iaNj_u9_mYh8v7w3o9KUIVeAzJKdF6llI)
+
+Ensure that the sum of `Collateral` and `Escrow` under the `FCP Balance` is greater than the calculated collateral amount for proper staking.
+
+* **Step 2: Check Versions**:
+  * **CP Version**:
+
+```
+computing-provider -v
+```
+
+Verify the CP version by checking the commit number in the official [go-computing-provider](https://github.com/swanchain/go-computing-provider) repository to confirm if your version is up-to-date or the recommended stable version.
+
+* **Resource-Exporter Version**:
+
+```
+kubectl get daemonset resource-exporter-ds -n kube-system -o yaml | grep image:
+```
+
+Verify the version of `resource-exporter` by checking the required version in the [official repository](https://github.com/swanchain/go-computing-provider/tree/releases?tab=readme-ov-file#Install-the-Hardware-resource-exporter).
+
+* **Step 3: Check Resource Endpoint**:
+
+```
+curl -k https://<cp-ip>:<port>/api/v1/computing/cp
+```
+
+> **Note**: Replace `<cp-ip>` and `<port>` with the corresponding information from your `CP_REPO` configuration file, where `MultiAddress = "/ip4/<ip>/tcp/<port>"`.
+
+* **Step 4: Self-check by submitting a job**:
+
+```
+curl -k --location --request POST 'https://<cp-ip>:<port>/api/v1/computing/lagrange/jobs' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"uuid": "5641877b-dc94-469a-bb3b-ecab6d10f7dd",
+"name": "Job-5641877b-dc94-469a-bb3b-ecab6d10f7dd",
+"status": "Submitted",
+"duration": 900,
+"job_source_uri": "https://api.lagrangedao.org/spaces/51d6abbb-f928-43e4-91fd-79e93e2b276f",
+"storage_source": "lagrange",
+"task_uuid": "92cd5595-9789-4af3-9100-7c7e4aacb456"
+}'
+```
+
+* **Step 5: Dashboard Status Check**:\
+  In the [Provider Dashboard](https://provider.swanchain.io/), locate your CP using the `cpAccount`. Check that the status is `Online`, and ensure collateral is sufficient (as shown in the example). If so, your CP is running properly.
+
+[![image](https://private-user-images.githubusercontent.com/102578774/403743342-47049468-d9bb-4aac-8870-6dafa84a3866.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNjU4NDUsIm5iZiI6MTczNzM2NTU0NSwicGF0aCI6Ii8xMDI1Nzg3NzQvNDAzNzQzMzQyLTQ3MDQ5NDY4LWQ5YmItNGFhYy04ODcwLTZkYWZhODRhMzg2Ni5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQwOTMyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lNjIxYjQ4MjE4NWU0MWRlNjQ5ZDY4MGM0MTg3MmI4NGVmMzc4ZWNlNWYwMDE5OWI1NzU3MGMxMDRlOWZkYTQ5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.EcB2kTi8-iSWx_ots34RfO3JT8fvL99TI1zmMGtAptA)](https://private-user-images.githubusercontent.com/102578774/403743342-47049468-d9bb-4aac-8870-6dafa84a3866.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNjU4NDUsIm5iZiI6MTczNzM2NTU0NSwicGF0aCI6Ii8xMDI1Nzg3NzQvNDAzNzQzMzQyLTQ3MDQ5NDY4LWQ5YmItNGFhYy04ODcwLTZkYWZhODRhMzg2Ni5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQwOTMyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lNjIxYjQ4MjE4NWU0MWRlNjQ5ZDY4MGM0MTg3MmI4NGVmMzc4ZWNlNWYwMDE5OWI1NzU3MGMxMDRlOWZkYTQ5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.EcB2kTi8-iSWx_ots34RfO3JT8fvL99TI1zmMGtAptA)
 
 
 
