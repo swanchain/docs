@@ -7,12 +7,6 @@
 
 At the current stage, ECP supports the generation of **ZK-Snark proof of Filecoin network**, and more ZK proof types will be gradually endorsed, such as Aleo, Scroll, starkNet, etc
 
-## Edge Computing Provider(ECP)
-
-**ECP (Edge Computing Provider)** specializes in processing data at the source of data generation, using minimal latency setups ideal for real-time applications. This provider handles specific, localized tasks directly on devices at the network’s edge, such as IoT devices.
-
-At the current stage, ECP supports the generation of **FIL-C2** and **Aleo Proof**. More ZK proof types will be gradually endorsed, such as Scroll, starkNet, etc
-
 ### Prerequisites
 
 * Need to map the ECP service port of the intranet to the public network, the default port is`9085`:
@@ -46,7 +40,7 @@ curl -fsSL https://raw.githubusercontent.com/swanchain/go-computing-provider/rel
 * Download `computing-provider`
 
 ```bash
-wget https://github.com/swanchain/go-computing-provider/releases/download/v1.0.1/computing-provider
+wget https://github.com/swanchain/go-computing-provider/releases/download/v1.0.2/computing-provider
 ```
 
 * Initialize ECP repo
@@ -247,5 +241,5 @@ computing-provider sequencer add --from <YOUR_WALLET_ADDRESS>  <amount>
 export FIL_PROOFS_PARAMETER_CACHE=$PARENT_PATH
 export RUST_GPU_TOOLS_CUSTOM_GPU="GeForce RTX 4090:16384"
         
-nohup ./computing-provider ubi daemon >> cp.log 2>&1 &
+nohup ./computing-provider ubi daemon >> cp.log 2>&1 & 
 ```
