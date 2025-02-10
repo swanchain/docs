@@ -112,6 +112,8 @@ Where:
 
 #### Exit Mechanism:
 
-* CPs can exit by adjusting the setting of accepting tasks through their `TaskType`  (ECP: 1, 2, 4; FCP: 3, 5).&#x20;
+* CP Exit Mechanism If a CP wishes to exit, they must set `taskType` = 100.
+  * The CP will no longer receive any tasks and will not incur any collateral deductions.
+  * The CP will no longer appear on [the current dashboard list.](https://provider.swanchain.io/overview)
 * CPs can request to withdraw their collateral, but this requires a 7-day confirmation period to ensure settlement before the withdrawal is finalized (first `requestWithdraw`, followed by `confirmRequest` after 7 days).
 
