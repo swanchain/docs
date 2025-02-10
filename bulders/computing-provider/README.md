@@ -18,3 +18,70 @@ A CP account has three different wallet addresses to ensure security and separat
 * `beneficiaryAddress`: This is the address where all earnings from the CP account will be sent. It is solely used for receiving funds. For security purposes, the private key of the `beneficiaryAddress` should not be stored on the server to maintain isolation.
 
 By separating these address, the system ensures that only the necessary `workerAddress` private key is present on the server, while the more sensitive `ownerAddress` and `beneficiaryAddress` private keys are kept separate, enhancing the overall security of the system.
+
+## **Exit Procedure for a Computing Provider (CP)**
+
+If a CP wishes to exit and stop providing computing services, two steps are required:
+
+### **Step 1**
+
+Set the `taskTypes` to exit status (taskTypes = 100). The specific command is:
+
+Execute the following command:
+
+```
+computing-provider --repo <YOUR_CP_REPO> account changeTaskTypes --ownerAddress <YOUR_OWNER_ADDRESS> 100
+```
+
+### **Step 2**
+
+Withdraw collateral from both **Collateral and Escrow accounts.** The amount in the **Collateral account** can be directly withdrawn, while the amount in the **Escrow account** requires 7 days to complete the withdrawal. The process is as follows:
+
+#### **For an ECP:**
+
+To withdraw from the **Collateral account:**
+
+```
+computing-provider --repo <YOUR_CP_REPO> collateral withdraw --ecp --owner <YOUR_WALLET_ADDRESS> --account <YOUR_CP_ACCOUNT> <amount>
+```
+
+To withdraw from the **Escrow account:**
+
+Submit withdrawal request:
+
+```
+computing-provider --repo <YOUR_CP_REPO> collateral withdraw-request --ecp --owner <YOUR_OWNER_ADDRESS> <AMOUNT>
+```
+
+Confirm withdrawal (after 7-day waiting period):
+
+```
+computing-provider --repo <YOUR_CP_REPO> collateral withdraw-confirm --ecp --owner <YOUR_OWNER_ADDRESS>
+```
+
+#### For an FCP:
+
+To withdraw from the **Collateral account:**
+
+```
+computing-provider --repo <YOUR_CP_REPO> collateral withdraw --fcp --owner <YOUR_WALLET_ADDRESS> --account <YOUR_CP_ACCOUNT> <amount>
+```
+
+To withdraw from the **Escrow account:**
+
+Submit withdrawal request:
+
+```
+computing-provider --repo <YOUR_CP_REPO> collateral withdraw-request --fcp --owner <YOUR_OWNER_ADDRESS> <AMOUNT>
+```
+
+Confirm withdrawal (after 7-day waiting period):
+
+```
+computing-provider --repo <YOUR_CP_REPO> collateral withdraw-confirm --fcp --owner <YOUR_OWNER_ADDRESS>
+```
+
+### **Notes**
+
+* It’s recommended to perform Step 2 (withdrawing from Escrow) 24 hours after completing Step 1, as the engine periodically settles CP accounts. This includes actions like locking collaterals, slashing collaterals, sending UBI rewards, etc., all of which may impact the success rate of your withdrawal.
+* After completing Step 1, the CP will no longer receive any tasks, including UBI tasks and regular AI tasks.
