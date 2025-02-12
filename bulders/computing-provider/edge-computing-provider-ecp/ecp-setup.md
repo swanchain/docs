@@ -40,7 +40,7 @@ curl -fsSL https://raw.githubusercontent.com/swanchain/go-computing-provider/rel
 * Download `computing-provider`
 
 ```bash
-wget https://github.com/swanchain/go-computing-provider/releases/download/v1.0.2/computing-provider
+wget https://github.com/swanchain/go-computing-provider/releases/download/v1.1.1/computing-provider
 ```
 
 * Initialize ECP repo
@@ -82,7 +82,7 @@ Output:
                     --task-types 1,2,4
 ```
 
-**Note:** `--task-types`: Supports 5 task types (1: Fil-C2, 2: Mining, 3: AI, 4: Inference, 5: NodePort), separated by commas. For ECP, it needs to be set to 1,2,4.
+**Note:** `--task-types`: Supports 5 task types (1: Fil-C2, 2: Mining, 3: AI, 4: Inference, 5: NodePort, 100: Exit), separated by commas. For ECP, it needs to be set to 1,2,4.
 
 * Collateral `SWAN` for ECP
 
@@ -241,5 +241,5 @@ computing-provider sequencer add --from <YOUR_WALLET_ADDRESS>  <amount>
 export FIL_PROOFS_PARAMETER_CACHE=$PARENT_PATH
 export RUST_GPU_TOOLS_CUSTOM_GPU="GeForce RTX 4090:16384"
         
-nohup ./computing-provider ubi daemon >> cp.log 2>&1 & 
+nohup ./computing-provider ubi daemon >> cp.log 2>&1 &
 ```

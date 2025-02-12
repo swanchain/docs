@@ -1,6 +1,6 @@
 # ECP FAQ
 
-#### Q: How can I verify whether the ECP environment is installed successfully?
+### Q: How can I verify whether the ECP environment is installed successfully?
 
 ```bash
 curl http://<PUBLIC_IP>:<PORT>/api/v1/computing/cp
@@ -60,7 +60,9 @@ out:
 }
 ```
 
-#### **Q: What are `ownerAddress`, `workerAddress`, and `beneficiaryAddress`?**
+
+
+### **Q: What are `ownerAddress`, `workerAddress`, and `beneficiaryAddress`?**
 
 **A:** These are three different types of accounts used in the system for security and separation of concerns:
 
@@ -70,30 +72,24 @@ out:
 
 By separating these accounts, the system ensures that only the necessary `workerAddress` private key is present on the server, while the more sensitive `ownerAddress` and `beneficiaryAddress` private keys are kept separate, enhancing the overall security of the system.
 
-#### **Q: How do I update the resource-exporter in ECP?**
 
-**A:**
 
-Step 1: Stop the computing-provider process.
+### Q: How to upgrade resource-exporter in ECP
 
-Step 2: Execute the following commands:
+**A**:
 
-```bash
+1. Delete container `resource-exporter` and `filswan/resource-exporter` local image
+
+```
 docker rm -f resource-exporter
-docker rmi filswan/resource-exporter:v11.2.9
+docker rmi -f filswan/resource-exporter:v11.3.2
 ```
 
-Step 3: Restart the computing-provider process.
+2. CP will automatically pull the image and run the resource-exporter container
 
-Step 4: Check resource-exporter logs:
 
-Verify that the resource-exporter is functioning correctly by monitoring its logs:
 
-```bash
-docker logs -f resource-exporter
-```
-
-#### **Q: How to verify if ECP is running properly?**
+### **Q: How to verify if ECP is running properly?**
 
 * **Step 1: Check Collateral**:
 
@@ -154,7 +150,9 @@ curl --location --request POST 'http://<cp-ip>:<port>/api/v1/computing/cp/ubi' \
 
 [![image](https://private-user-images.githubusercontent.com/102578774/403743659-087a96f3-a1c3-4607-b802-b343a51246e6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNjU4NDUsIm5iZiI6MTczNzM2NTU0NSwicGF0aCI6Ii8xMDI1Nzg3NzQvNDAzNzQzNjU5LTA4N2E5NmYzLWExYzMtNDYwNy1iODAyLWIzNDNhNTEyNDZlNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQwOTMyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05ZjZkZWU2NjM4Mjc2NDg0NmU4OWFjYjM4N2Y3YzBmMzM1NGM2MGMxMThhNzA5NDhhNGVjNWNmZjVjZjMyN2NhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Op8W10YxMo1lnZ-x1-NFKcQZ-dnSlFFEF1obDO4Z-k8)](https://private-user-images.githubusercontent.com/102578774/403743659-087a96f3-a1c3-4607-b802-b343a51246e6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzczNjU4NDUsIm5iZiI6MTczNzM2NTU0NSwicGF0aCI6Ii8xMDI1Nzg3NzQvNDAzNzQzNjU5LTA4N2E5NmYzLWExYzMtNDYwNy1iODAyLWIzNDNhNTEyNDZlNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDEyMFQwOTMyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05ZjZkZWU2NjM4Mjc2NDg0NmU4OWFjYjM4N2Y3YzBmMzM1NGM2MGMxMThhNzA5NDhhNGVjNWNmZjVjZjMyN2NhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Op8W10YxMo1lnZ-x1-NFKcQZ-dnSlFFEF1obDO4Z-k8)
 
-#### **Q: How do I withdraw collateral from ECP?**
+
+
+### **Q: How do I withdraw collateral from ECP?**
 
 To withdraw collateral from ECP, use the following command:
 
