@@ -94,7 +94,7 @@ $$
 Where:
 
 * $$N_{ECP}(GPU_k)$$ represents the number of ECP for $$GPU_k$$
-* $$C_{\text{base}}$$ is the base collateral, with an initial value of 3500 (this value will be dynamically adjusted based on the daily computing units of the entire network; for specific adjustment rules, check [here](computing-provider-collateral/collateral-requirement-and-earning-multiplier.md))
+* $$C_{\text{base}}$$ is the base collateral, with an initial value of 3533 (this value will be dynamically adjusted based on the daily computing units of the entire network; for specific adjustment rules, check [here](computing-provider-collateral/collateral-requirement-and-earning-multiplier.md))
 * $$N_{\text{FCP}}(\text{GPU}_k)$$represents the number of $$\text{GPU}_k$$ _in FCP_
 * &#x20;$$N_{\text{ECP}}(\text{GPU}_k)$$ represents the number of $$\text{GPU}_k$$ in ECP.&#x20;
 * $$W_{FCP}$$ represents the FCP resource bonus ratio, currently set at a constant value of 1.2
