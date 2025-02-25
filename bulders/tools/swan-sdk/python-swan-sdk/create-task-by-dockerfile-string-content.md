@@ -94,7 +94,6 @@ The Dockerfile string should follow standard Dockerfile syntax:
 ```dockerfile
 FROM <base-image>
 WORKDIR <working-directory>
-COPY <source> <destination>
 RUN <command>
 EXPOSE <port>
 CMD ["executable", "param1", "param2"]
