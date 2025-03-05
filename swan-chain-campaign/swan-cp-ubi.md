@@ -129,6 +129,6 @@ The system includes robust anti-gaming protections:
 #### Support Channels
 
 * [Telegram CP commuity](https://t.me/swan_chain)
-* [Discord CP channels](https://discord.gg/swanchain)
+* [Discord CP channels](https://discord.gg/DM5xBUnvt9)
 
 This documentation will be updated as new features and optimizations are introduced to the Swan Chain network.

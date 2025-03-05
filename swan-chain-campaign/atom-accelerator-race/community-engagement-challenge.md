@@ -69,7 +69,7 @@ Get rewarded for fostering a thriving community by engaging with tweets! Members
 
 #### **3. HOW TO JOIN:**
 
-* Join [Swan Network Discord](https://discord.com/invite/swanchain)&#x20;
+* Join Swan Network Discord: [https://discord.gg/DM5xBUnvt9](https://discord.gg/DM5xBUnvt9)
 * Go to [Engage channel](https://discord.com/channels/867879887871672331/1230092612543709184) and complete tasks
 
 #### **4. REWARD STRUCTURE:**
@@ -122,7 +122,7 @@ May 8th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 #### **3. HOW TO JOIN:**
 
 * Read information about SWAN on [official docs](https://docs.swanchain.io/swan-testnet/atom-accelerator-race) or social media.
-* Go to [SWAN Telegram](https://t.me/swan\_chain) every Wednesday and Friday at 10:00 AM (EST).&#x20;
+* Go to [SWAN Telegram](https://t.me/swan_chain) every Wednesday and Friday at 10:00 AM (EST).&#x20;
 
 #### **4. REWARD STRUCTURE:**
 
@@ -145,8 +145,8 @@ April 29th , 00:00 (EST) - June 29th, 2024, 23:59 (EST)
 * Follow SWAN social media for the latest updates regarding events.
 
 1. [Discord AMA channel](https://discord.com/channels/867879887871672331/1140939603063345242)
-2. [SWAN Twitter Official](https://twitter.com/swan\_chain)
-3. [SWAN Telegram Official](https://t.me/swan\_chain)
+2. [SWAN Twitter Official](https://twitter.com/swan_chain)
+3. [SWAN Telegram Official](https://t.me/swan_chain)
 
 #### **4. REWARD STRUCTURE:**
 
