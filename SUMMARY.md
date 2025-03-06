@@ -40,6 +40,7 @@
     * [ECP Setup](bulders/computing-provider/edge-computing-provider-ecp/ecp-setup.md)
     * [ECP Funding Operations Guide](bulders/computing-provider/edge-computing-provider-ecp/ecp-funding-operations-guide.md)
     * [ECP FAQ](computing-provider/edge-computing-provider-ecp/ecp-faq.md)
+  * [FAQ](bulders/computing-provider/faq.md)
 * [Storage Provider](bulders/storage-provider/README.md)
   * [Storage Auction System](bulders/storage-provider/storage-auction-system.md)
 * [Developer Tools](bulders/tools/README.md)
