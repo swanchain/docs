@@ -95,7 +95,7 @@
   * [UBI Allocation Curve](core-concepts/token/swan-universal-basic-income-ubi/README.md)
   * [Computing Provider Income](core-concepts/token/swan-provider-income.md)
   * [Computing Provider Collateral](core-concepts/token/computing-provider-collateral/README.md)
-    * [Collateral Requirement and Earning Multiplier](core-concepts/token/computing-provider-collateral/collateral-requirement-and-earning-multiplier.md)
+    * [Collateral Requirement and Computing Unit](core-concepts/token/computing-provider-collateral/collateral-requirement-and-earning-multiplier.md)
     * [DePIN Oracle](core-concepts/token/computing-provider-collateral/depin-oracle.md)
   * [Governance](core-concepts/token/governance/README.md)
     * [Treasure DAO](core-concepts/token/governance/treasure-dao.md)
