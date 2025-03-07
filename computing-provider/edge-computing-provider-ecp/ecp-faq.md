@@ -113,7 +113,7 @@ Verify the CP version by checking the commit number in the official [go-computin
 * **Resource-Exporter Version**:
 
 ```
-kubectl get daemonset resource-exporter-ds -n kube-system -o yaml | grep image:
+docker inspect resource-exporter |grep filswan/resource-exporter
 ```
 
 Verify the version of `resource-exporter` by checking the required version in the [official repository](https://github.com/swanchain/go-computing-provider/tree/releases?tab=readme-ov-file#Install-the-Hardware-resource-exporter).
