@@ -197,7 +197,7 @@ We consider three scenarios to illustrate how CPs' income evolves over time:
 
 ### **Data Points Illustration**
 
-Below is a table of computed token allocations for selected days:
+Below is a example table of computed token allocations for selected days(assume $$u(x)$$=0):
 
 | Day | Daily UBI (y) | Cumulative UBI |
 | --- | ------------- | -------------- |
