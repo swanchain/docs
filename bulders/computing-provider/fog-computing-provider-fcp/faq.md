@@ -321,7 +321,7 @@ and ensure it is running by `kubectl get po -n kube-system`
 
 <figure><img src="../../../.gitbook/assets/image (199).png" alt=""><figcaption></figcaption></figure>
 
-5. Start `computing-provider` with v1.1.1: [https://github.com/swanchain/go-computing-provider/releases/tag/v1.1.1](https://github.com/swanchain/go-computing-provider/releases/tag/v1.1.1)
+5. Start `computing-provider`
 
 
 
