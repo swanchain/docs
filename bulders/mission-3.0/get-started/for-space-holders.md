@@ -4,7 +4,7 @@
 
 ### 1.1 Creating a Space
 
-Step 1: Log in with your admin wallet → Go to "Dashboard".
+Step 1: Log in [app.missionhub.io](https://app.missionhub.io/) with your admin wallet → Go to "Dashboard".
 
 Step 2: Click "Create Organization" → Fill in:
 
