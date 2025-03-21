@@ -43,7 +43,7 @@ If the above RPC fails, please try using this RPC: [https://rpc-proxima-tp.nebul
 
 1.Click on **Import tokens** at the bottom of the **Tokens** tab.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 2.Enter token contract addresses:
 

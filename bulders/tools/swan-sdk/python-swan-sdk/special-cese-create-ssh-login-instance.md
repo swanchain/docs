@@ -1,4 +1,4 @@
-# Guide to deploy SSH Application
+# Special Case: Create ssh login instance
 
 ## SSH repo
 
@@ -45,8 +45,7 @@ available_instances = swan_orchestrator.get_instance_resources()
 print(available_instances)
 ```
 
-In the output of available resources list, choose a `cp_account_address` in `ssh_ready` list of the instance type you
-want (such as `C1ae.small`):
+In the output of available resources list, choose a `cp_account_address` in `ssh_ready` list of the instance type you want (such as `C1ae.small`):
 
 ```
 [InstanceResource({

@@ -19,7 +19,7 @@ The **ZK Computing Market** is a crucial component of the Swan Chain ecosystem, 
 
 ### 3. Workflow
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 1. Task Assignment and Pooling:
    * The ZK Engine aggregates various ZK tasks (such as FIL-C2-512M, FIL-C2-32G, ALEO, etc.) into the ZK Tasks Pool.

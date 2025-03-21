@@ -10,9 +10,9 @@ To engage in Swan Chain Proxima Testnet, you will require **SwanETH** tokens, wh
 
 2\. Enter your address and click **Start Mining**
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 3\. Keep the process running continuously to accumulate more Sepolia ETH over time.
 

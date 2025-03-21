@@ -58,7 +58,10 @@
   * [Multi-Chain Storage](bulders/tools/multi-chain-storage.md)
   * [Nebula Block Cloud](bulders/tools/nebula-block-cloud.md)
   * [Ecosystem Projects](bulders/tools/ecosystem-projects.md)
-* [Mission 3.0](bulders/mission-3.0.md)
+* [Mission 3.0](bulders/mission-3.0/README.md)
+  * [Get Started](bulders/mission-3.0/get-started/README.md)
+    * [For Users](bulders/mission-3.0/get-started/for-users.md)
+    * [For Space Holders](bulders/mission-3.0/get-started/for-space-holders.md)
 
 ## NETWORK REFERENCE
 
