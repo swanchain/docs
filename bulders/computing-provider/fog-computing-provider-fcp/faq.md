@@ -122,7 +122,7 @@ curl -k --location --request POST 'https://<cp-ip>:<port>/api/v1/computing/lagra
 "name": "Job-5641877b-dc94-469a-bb3b-ecab6d10f7dd",
 "status": "Submitted",
 "duration": 900,
-"job_source_uri": "https://api.lagrangedao.org/spaces/51d6abbb-f928-43e4-91fd-79e93e2b276f",
+"job_source_uri": "https://api.lagrange.computer/spaces/97e1a802-0f80-4806-9b3f-8d8dce173e21",
 "storage_source": "lagrange",
 "task_uuid": "92cd5595-9789-4af3-9100-7c7e4aacb456"
 }'
