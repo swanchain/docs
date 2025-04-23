@@ -55,7 +55,7 @@
     * [Blockchain GPU Task Example](bulders/tools/swan-console/mining-task-example.md)
     * [Custom Blockchain GPU Task Pools](bulders/tools/swan-console/custom-blockchain-gpu-task-pools.md)
   * [Lagrange](bulders/tools/lagrange-dao.md)
-  * [Multi-Chain Storage](bulders/tools/multi-chain-storage.md)
+  * [Swan IPFS Storage](bulders/tools/multi-chain-storage.md)
   * [Nebula Block Cloud](bulders/tools/nebula-block-cloud.md)
   * [Ecosystem Projects](bulders/tools/ecosystem-projects.md)
 * [Mission 3.0](bulders/mission-3.0/README.md)
