@@ -6,7 +6,7 @@ Swan Chain: [https://www.swanchain.io](https://www.swanchain.io)
 
 Github: [https://github.com/swanchain](https://github.com/swanchain)
 
-Linktree: [https://linktr.ee/swan\_chain](https://linktr.ee/swan_chain)
+Linktree: [https://linktr.ee/swanchain\_official](https://linktr.ee/swanchain_official)
 
 Business Partnership:  business@swanchain.io
 
