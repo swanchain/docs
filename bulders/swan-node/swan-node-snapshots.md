@@ -48,7 +48,7 @@ wget https://6ba96e4b2881.acl.swanipfs.com/ipfs/QmUgXvTLggufGisAYgjTEBt3AoJANRFj
 You'll then need to untar the downloaded snapshot and place the `$SWAN_NODE_DATA/data/geth/` subfolder
 
 ```
-tar -zxvf swanchain_snapshot_2024_11_29_height_2845579.tar.gz -C $SWAN_NODE_DATA/data/geth/
+tar -zxvf ​swanchain_snapshot_2025_02_17_height_4226078.tar.gz -C $SWAN_NODE_DATA/data/geth/
 ```
 
 #### Start Swan node
