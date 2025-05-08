@@ -39,7 +39,7 @@ docker run --rm -v $SWAN_NODE_DATA:/opt/swan swanchain254/swan-node-mainnet:late
 #### Download the snapshot and untar it
 
 * Swan Mainnet Snapshot:
-  * [swanchain\_snapshot\_2024\_11\_29\_height\_2845579.tar.gz](https://6ba96e4b2881.acl.swanipfs.com/ipfs/QmUgXvTLggufGisAYgjTEBt3AoJANRFjWdSfCQrpC9gsti)
+  * [swanchain\_snapshot\_2025\_02\_17\_height\_4226078.tar.gz](https://6ba96e4b2881.acl.swanipfs.com/ipfs/QmPmWtiABBmZP5rtV9sX36K8Y8gA74udXKnqqy5KgKqi5z)
 
 ```
 wget https://6ba96e4b2881.acl.swanipfs.com/ipfs/QmUgXvTLggufGisAYgjTEBt3AoJANRFjWdSfCQrpC9gsti -O swanchain_snapshot_2024_11_29_height_2845579.tar.gz
