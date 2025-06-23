@@ -12,7 +12,7 @@ If you are deploying for the first time, you can follow the instructions in the 
 
 ### Migration from Proxima to Mainnet
 
-1. **Update `resource-exporter` to the latest version `v11.3.0`**: Follow the instructions in this issue: [Update Resource Exporter to v11.3.0.](https://github.com/swanchain/go-computing-provider/issues/14)
+1. **Update `resource-exporter` to the latest version `v12.0.0`**: Follow the instructions in this issue: [Update Resource Exporter to v11.3.0.](https://github.com/swanchain/go-computing-provider/issues/14)
 2.  **Specify a new CP\_PATH**:
 
     ```bash
