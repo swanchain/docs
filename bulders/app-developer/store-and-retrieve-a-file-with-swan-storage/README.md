@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[Multi-Chain Storage (MCS)](https://docs.filswan.com/multichain.storage/overview) is the core component of Swan Chain's decentralized storage solution. MCS integrates multiple blockchain networks to provide a secure, efficient, and scalable storage service. It leverages smart contracts for enhanced security, ensures data redundancy through decentralized storage on IPFS and the Filecoin network, and offers a user-friendly interface for seamless interaction with the storage system.&#x20;
+[Swan IPFS Storage](https://swanipfs.com/)(formerly Multichain Storage) is the core component of Swan Chain's decentralized storage solution. MCS integrates multiple blockchain networks to provide a secure, efficient, and scalable storage service. It leverages smart contracts for enhanced security, ensures data redundancy through decentralized storage on IPFS and the Filecoin network, and offers a user-friendly interface for seamless interaction with the storage system.&#x20;
 
 This guide will walk you through the steps to install and configure the MCS SDK, create and manage storage buckets, upload and download files, and maintain your storage environment.
 
