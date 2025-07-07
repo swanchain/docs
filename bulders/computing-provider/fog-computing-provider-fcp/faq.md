@@ -339,7 +339,7 @@ and ensure it is running by `kubectl get po -n kube-system`
 
 ### Q: Where should I create the API key?
 
-**A**: you must use the API of [https://multichain.storage,](https://multichain.storage,) and login in it using Polygon mainnet wallet.
+**A**: you must use the API of [https://swanipfs.com/](https://swanipfs.com/), and login in it using Polygon mainnet wallet.
 
 ####
 
