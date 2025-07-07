@@ -399,8 +399,8 @@ make install
        VerifySign = true                                                       # Verify that the task signature is from Orchestrator
 
        [MCS]
-       ApiKey = ""                                   # Acquired from "https://www.multichain.storage" -> setting -> Create API Key
-       BucketName = ""                               # Acquired from "https://www.multichain.storage" -> bucket -> Add Bucket
+       ApiKey = ""                                   # Acquired from "https://swanipfs.com/" -> setting -> Create API Key
+       BucketName = ""                               # Acquired from "https://swanipfs.com/" -> bucket -> Add Bucket
        Network = "polygon.mainnet"                   # polygon.mainnet for mainnet, polygon.mumbai for testnet
 
        [Registry]
