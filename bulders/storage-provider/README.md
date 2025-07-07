@@ -6,7 +6,7 @@
 
 The service Swan provides helps storage providers connect to the Web3 service market, making the Web3 service offering ultimately easier.
 
-MultiChain.storage (MCS) is a web3 version of S3 storage gateway built with IPFS and Filecoin technology for accelerating the mass adoption of decentralized storage by multiple blockchain networks.
+Swan IPFS Storage is a web3 version of S3 storage gateway built with IPFS and Filecoin technology for accelerating the mass adoption of decentralized storage by multiple blockchain networks.
 
 ### High-Level Design
 
