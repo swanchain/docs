@@ -12,15 +12,15 @@ Lagrange(lagrange.computer) is a cutting-edge Web3 platform for natural language
 
 Learn more about Lagrange in its [documentation](https://docs.lagrangedao.org/).
 
-### SWAN IPFS Storage
+### Swan IPFS Storage
 
-Developed by the Swan Network, Multi-Chain Storage (MCS) is a revolutionary storage service compatible with various blockchain networks. Key features include:
+Developed by the Swan Network, Swan IPFS Storage is a revolutionary storage service compatible with various blockchain networks. Key features include:
 
 * Smart contract integration for improved security
 * Decentralized architecture
 * Cross-chain compatibility
 
-Explore MCS capabilities in its [documentation](https://docs.filswan.com/multichain.storage/overview).
+Explore Swan IPFS Storage capabilities [here](https://swanipfs.com/).
 
 ### Swan SDK
 
