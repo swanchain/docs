@@ -12,7 +12,7 @@ Lagrange(lagrange.computer) is a cutting-edge Web3 platform for natural language
 
 Learn more about Lagrange in its [documentation](https://docs.lagrangedao.org/).
 
-### Multi-Chain Storage (MCS)
+### SWAN IPFS Storage
 
 Developed by the Swan Network, Multi-Chain Storage (MCS) is a revolutionary storage service compatible with various blockchain networks. Key features include:
 
@@ -55,7 +55,7 @@ Ready to build on Swan Mainnet? Here are some next steps:
 
 1. Set up your development environment using the [Swan SDK](swan-sdk/)
 2. Explore [Lagrange](lagrange-dao.md) for NLP-focused applications
-3. Leverage [MCS](multi-chain-storage.md) for decentralized storage solutions
+3. Leverage [SWAN IPFS Storage](multi-chain-storage.md) for decentralized storage solutions
 4. Connect with the community and other builders in the [ecosystem](ecosystem-projects.md)
 
 Happy building on Swan Mainnet!
