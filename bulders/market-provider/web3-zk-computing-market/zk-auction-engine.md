@@ -13,7 +13,7 @@ The **ZK Computing Market** is a crucial component of the Swan Chain ecosystem, 
 
 **2. ZK Sequencer**
 
-* **Proof Management:** The Sequencer verifies and batches proofs into blobs, storing them in the Multi-Chain Storage (MCS) and creating unique identifiers (CIDs). **This step minimizes gas costs for the network**.
+* **Proof Management:** The Sequencer verifies and batches proofs into blobs, storing them in the Swan IPFS Storage and creating unique identifiers (CIDs). **This step minimizes gas costs for the network**.
 * **Collateral Management:** It ensures CPs have sufficient collateral and handles batch settlement of tasks, including reward distribution, slashing, and gas payments.
 * **Data Integrity:** The Sequencer ensures the integrity of task data, checking for modifications and confirming the authenticity of proofs. It also manages the CID creation process and records it on the Swan Chain.
 
@@ -40,7 +40,7 @@ The **ZK Computing Market** is a crucial component of the Swan Chain ecosystem, 
    * Slashing: If the proof is invalid or collateral is insufficient, the Slash Engine applies penalties, potentially deducting funds from the ECP's CP Account.
 6. Sequencer Operations:
    * For proofs submitted via the Sequencer, the Sequencer aggregates the proofs into blobs.
-   * These blobs are stored in the Multi-Chain Storage (MCS), which optimizes gas costs and ensures data integrity.
+   * These blobs are stored in the Swan IPFS Storage, which optimizes gas costs and ensures data integrity.
 7. Swan Chain Integration:
    * The Sequencer or direct submission mechanisms create an AggregateTask entry on the Swan Chain, which records the aggregated proofs and associated data.
    * The Swan Chain manages collateral, GAS fees, rewards, and slashing information, maintaining transparency and accountability.
@@ -62,7 +62,7 @@ The **ZK Computing Market** is a crucial component of the Swan Chain ecosystem, 
 * TaskRegister Contract:
   * Handles task registration and tracking
 
-#### 2. MCS (MultiChain.Storage)&#x20;
+#### 2. Swan IPFS Storage&#x20;
 
 * Stores aggregated task data as blobs
 * Generates unique CIDs for each stored blob
@@ -70,5 +70,5 @@ The **ZK Computing Market** is a crucial component of the Swan Chain ecosystem, 
 
 #### 3.  Filecoin Network
 
-* Acts as a backup storage solution for MCS data
+* Acts as a backup storage solution for Swan IPFS Storage data
 * Ensures long-term data availability and redundancy
