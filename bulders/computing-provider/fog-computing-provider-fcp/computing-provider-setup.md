@@ -306,19 +306,40 @@ spec:
     spec:
       containers:
         - name: resource-exporter
-          image: swanhub/resource-exporter:v12.0.0
+          image: swanhub/resource-exporter:v13.0.0
           imagePullPolicy: IfNotPresent
           securityContext:
-            privileged: true
+            # Privileged is often required when accessing host paths like /sys and /proc
+            privileged: true 
           volumeMounts:
+            # Existing binding
             - name: machine-id
               mountPath: /etc/machine-id
               readOnly: true
+            # New binding for /proc
+            - name: host-proc
+              mountPath: /host/proc
+              readOnly: true
+            # New binding for /sys
+            - name: host-sys
+              mountPath: /host/sys
+              readOnly: true
       volumes:
+        # Existing volume for /etc/machine-id
         - name: machine-id
           hostPath:
             path: /etc/machine-id
             type: File
+        # Volume for /proc (mapped to /host/proc)
+        - name: host-proc
+          hostPath:
+            path: /proc
+            type: Directory
+        # Volume for /sys (mapped to /host/sys)
+        - name: host-sys
+          hostPath:
+            path: /sys
+            type: Directory
 EOF
 ```
 
