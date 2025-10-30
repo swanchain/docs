@@ -306,7 +306,7 @@ spec:
     spec:
       containers:
         - name: resource-exporter
-          image: swanhub/resource-exporter:v13.0.0
+          image: swanhub/resource-exporter:v13.0.1
           imagePullPolicy: IfNotPresent
           securityContext:
             # Privileged is often required when accessing host paths like /sys and /proc
