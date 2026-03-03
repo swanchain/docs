@@ -11,6 +11,14 @@ Before diving into development, make sure you:
 
 ### What You Can Do with Swan Chain
 
+#### **AI Inference with Swan Inference API**
+
+* Access **42+ AI models** (LLM, image, audio, embedding, multimodal) via an **OpenAI-compatible API**
+* Drop-in replacement — use any existing OpenAI SDK by changing the base URL to `https://inference.swanchain.io/v1`
+* Supports streaming, embeddings, image generation, and audio transcription
+
+Get started with Swan Inference [here](swan-inference-api.md).
+
 #### **Deploying with Swan SDK**
 
 * The Swan SDK simplifies interactions with the Swan Chain Network Resource.
