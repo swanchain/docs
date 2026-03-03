@@ -6,7 +6,13 @@ description: Decentralized Computing Power Renting Network
 
 <figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Computing Workflow</p></figcaption></figure>
 
-Swan's Computing Layer is a crucial component of its decentralized cloud computing ecosystem. It's designed to facilitate the execution of computing tasks across a network of providers, ensuring efficiency, reliability, and security. Here's an introduction to the key aspects of the Swan Computing Layer:
+Swan's Computing Layer is a crucial component of its decentralized cloud computing ecosystem. It's designed to facilitate the execution of computing tasks across a network of providers, ensuring efficiency, reliability, and security. The Computing Layer supports diverse workloads including **AI model training**, **ZK proof generation**, and — with the introduction of [Swan 2.0](../swan-2.0-inference-cloud.md) — **real-time AI inference** through the [Inference Marketplace](../market-provider/inference-marketplace.md).
+
+{% hint style="info" %}
+**Swan 2.0 Update**: The Computing Layer now supports dual token payments. Consumers can pay with **stablecoins (USDC/USDT)** for inference workloads, while providers earn both stablecoin revenue and **SWAN token** rewards based on their [Contribution Score](../token/swan-provider-income.md#swan-2.0-market-driven-income).
+{% endhint %}
+
+Here's an introduction to the key aspects of the Swan Computing Layer:
 
 <figure><img src="../../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
 

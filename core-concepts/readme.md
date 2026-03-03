@@ -23,9 +23,22 @@ Swan Chain incorporates state-of-the-art technologies to materialize its ambitio
 * **Global Data Center Connectivity**: By orchestrating data centers globally, Swan Chain accesses an expansive pool of computational resources, ensuring utmost availability and redundancy for its services.
 * **Zero-Knowledge (ZK) Proofs**: Emphasizing security and privacy, Swan Chain adopts ZK proofs for the benchmarking of computing providers and facilitating privacy-preserving transactions within its ecosystem.
 
+#### Swan 2.0: Inference Cloud
+
+Swan Chain is evolving into a **market-driven AI inference marketplace** with [Swan 2.0](swan-2.0-inference-cloud.md). Building on the network bootstrapped by UBI, Swan 2.0 introduces:
+
+* **Decentralized AI Inference**: An [Inference Marketplace](market-provider/inference-marketplace.md) connecting consumers with GPU providers through a WebSocket-based coordination layer and an OpenAI-compatible API (`/v1/chat/completions`, `/v1/embeddings`, etc.)
+* **Dual Token Payments**: Consumers can pay with **stablecoins (USDC/USDT)** while providers earn both stablecoin revenue from inference requests and **SWAN token** rewards from contribution-based incentives
+* **Contribution-Based Rewards**: A merit-based scoring system replacing UBI, where providers earn proportionally to inference volume, token throughput, uptime, quality, and model diversity
+* **Unified Computing Provider Role**: ECP and FCP roles merge into a single Computing Provider (CP) classification, evaluated equally on contribution metrics
+
+{% hint style="info" %}
+**Try Swan Inference**: [https://inference.swanchain.io](https://inference.swanchain.io) — 42+ AI models available via a single API key.
+{% endhint %}
+
 #### Vision and Future Outlook
 
-Swan Chain is steadfast in its mission to redefine the development, deployment, and scaling of AI and Web3 projects. By offering accessible, secure, and high-performance computing resources, coupled with innovative payment solutions and a ZK computing market, Swan Chain addresses the extant challenges faced by developers and businesses. The platform's dedication to a sustainable and equitable ecosystem, highlighted by its UBI model, paves the way for how decentralized networks can prioritize community welfare and participation.
+Swan Chain is steadfast in its mission to redefine the development, deployment, and scaling of AI and Web3 projects. By offering accessible, secure, and high-performance computing resources, coupled with innovative payment solutions and a ZK computing market, Swan Chain addresses the extant challenges faced by developers and businesses. The platform's dedication to a sustainable and equitable ecosystem, highlighted by its UBI model and the evolution toward market-driven economics in Swan 2.0, paves the way for how decentralized networks can prioritize community welfare and participation.
 
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>Layer1, Layer2,Layer3</p></figcaption></figure>
 

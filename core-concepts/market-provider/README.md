@@ -25,6 +25,8 @@ A Market Provider (MP) in the Swan network is a crucial entity that offers vario
    * Focuses on AI tasks, providing the necessary infrastructure for training and deploying AI models.
 3. [**ZK-UBI ZK Proofing Market**](indexing-and-caching-marketplace/):
    * Handles Zero-Knowledge (ZK) proofs, supporting privacy-preserving computations and decentralized identity solutions.
+4. [**Inference Marketplace**](inference-marketplace.md) (Swan 2.0):
+   * Provides real-time AI inference through an OpenAI-compatible API, connecting consumers with GPU providers via WebSocket for low-latency model serving across 42+ AI models. Supports dual token payments (stablecoins + SWAN).
 
 #### Advantages of Being a Market Provider:
 

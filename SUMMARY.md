@@ -74,6 +74,7 @@
 ## Core Concepts
 
 * [Introduction to Swan Chain](core-concepts/readme.md)
+* [Swan 2.0: Inference Cloud](core-concepts/swan-2.0-inference-cloud.md)
 * [Consensus Layer](core-concepts/cross-chain-contracts.md)
 * [Peer-to-peer (P2P) Network](core-concepts/peer-to-peer-p2p-network.md)
 * [Payment Channels](core-concepts/payment-channels.md)
@@ -84,6 +85,7 @@
     * [Orchestrator](core-concepts/market-provider/decentralized-ai-computing-marketplace/web3-task-auction.md)
     * [Auction Engine](core-concepts/market-provider/decentralized-ai-computing-marketplace/auction-engine.md)
     * [Bidding Task State Machine](core-concepts/market-provider/decentralized-ai-computing-marketplace/bidding-task-state-machine.md)
+  * [Inference Marketplace](core-concepts/market-provider/inference-marketplace.md)
   * [ZK Proof Marketplace](core-concepts/market-provider/indexing-and-caching-marketplace/README.md)
     * [ZK Task](core-concepts/market-provider/indexing-and-caching-marketplace/zk-ubi.md)
     * [ZK Pool](core-concepts/market-provider/indexing-and-caching-marketplace/zk-ubi-pool.md)

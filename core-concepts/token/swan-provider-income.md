@@ -117,3 +117,127 @@ Where:
   * The CP will no longer appear on [the current dashboard list.](https://provider.swanchain.io/overview)
 * CPs can request to withdraw their collateral, but this requires a 7-day confirmation period to ensure settlement before the withdrawal is finalized (first `requestWithdraw`, followed by `confirmRequest` after 7 days).
 
+***
+
+## Swan 2.0: Market-Driven Income <a href="#swan-2.0-market-driven-income" id="swan-2.0-market-driven-income"></a>
+
+{% hint style="info" %}
+The UBI model described above served as the **bootstrap phase** (Swan 1.0) that built the initial provider network. Swan 2.0 introduces contribution-based rewards that complement and gradually replace UBI. See [SIP-002](https://github.com/swanchain/governance/discussions/16) for the full proposal.
+{% endhint %}
+
+With the launch of the [Inference Cloud](../swan-2.0-inference-cloud.md), Computing Provider income transitions from UBI-only to a dual-income model where providers earn based on actual work performed.
+
+### Dual Income Streams
+
+Under Swan 2.0, providers earn through two complementary channels:
+
+1. **Inference Revenue (Stablecoins)** — Direct payment in USDC for serving inference requests through the [Inference Marketplace](../market-provider/inference-marketplace.md)
+2. **Contribution Rewards (SWAN Tokens)** — Daily SWAN token rewards allocated proportionally based on contribution score
+
+When paid inference requests generate protocol revenue, the split is:
+
+| Recipient | Share |
+|-----------|-------|
+| Provider | 70% (paid in request currency) |
+| Protocol Treasury | 20% |
+| SWAN Buyback & Burn | 10% |
+
+### Contribution Score
+
+Each provider receives a daily Contribution Score that determines their share of the SWAN token reward pool:
+
+$$
+\text{Contribution\_Score} = W_{inf} \times \text{norm}(\text{inferences}) + W_{tok} \times \text{norm}(\text{tokens}) + W_{up} \times \text{uptime} + W_{qual} \times \text{quality} + W_{div} \times \text{diversity}
+$$
+
+Where the weights are:
+
+| Component | Weight | Description |
+|-----------|--------|-------------|
+| $$W_{inf}$$ | 0.30 | Inference volume — number of requests processed |
+| $$W_{tok}$$ | 0.25 | Token throughput — total input + output tokens |
+| $$W_{up}$$ | 0.20 | Uptime — 30-day uptime percentage |
+| $$W_{qual}$$ | 0.15 | Quality — success rate adjusted by latency |
+| $$W_{div}$$ | 0.10 | Model diversity — number of distinct models served |
+
+And the component scores are:
+
+$$
+\text{norm}(x) = \frac{x}{\max(x_{\text{all providers}})}
+$$
+
+$$
+\text{uptime\_score} = \frac{\text{uptime}_{30d}}{100}
+$$
+
+$$
+\text{quality\_score} = \text{success\_rate} \times (1 - \text{norm}(\text{avg\_latency}))
+$$
+
+$$
+\text{diversity\_score} = \frac{\text{models\_served}}{\text{max\_models\_in\_catalog}}
+$$
+
+### Minimum Contribution Thresholds
+
+To prevent reward fragmentation and gaming:
+
+| Threshold | Requirement | Effect if Not Met |
+|-----------|-------------|-------------------|
+| Minimum Uptime | 80% over 7 days | Excluded from contribution pool |
+| Minimum Inferences | 100/week | Reduced to 50% contribution weight |
+| Minimum Success Rate | 90% | Reduced to 75% contribution weight |
+| Minimum Online Hours | 120 hours/week | Pro-rated availability bonus |
+
+### 3-Phase Transition
+
+The transition from UBI to contribution-based rewards follows an accelerated 3-month timeline:
+
+**Phase 1: Hybrid Mode (Month 1)**
+
+$$
+\text{Daily\_Reward} = \text{UBI\_Base} \times 0.75 \times (1 - u) + \frac{\text{Score}_i}{\sum \text{Scores}} \times \text{Contribution\_Pool}
+$$
+
+Where the Contribution Pool is 25% of the current daily UBI allocation.
+
+**Phase 2: Contribution-Weighted UBI (Month 2)**
+
+$$
+\text{Daily\_Reward} = \text{UBI\_Base} \times 0.50 \times \text{availability} + \frac{\text{Score}_i}{\sum \text{Scores}} \times \text{Contribution\_Pool}
+$$
+
+Where the Contribution Pool increases to 50% and availability requires maintaining 95%+ uptime.
+
+**Phase 3: Pure Contribution Mode (Month 3+)**
+
+$$
+\text{Daily\_Reward} = \frac{\text{Score}_i}{\sum \text{Scores}} \times \text{Reward\_Pool} + \text{Availability\_Bonus}
+$$
+
+Where the Availability Bonus (10% of the daily pool) incentivizes standby capacity, weighted by hardware tier:
+
+| Hardware Tier | Multiplier |
+|---------------|-----------|
+| RTX 3090 / A4000 | 1.0x |
+| RTX 4090 / A5000 / A6000 | 1.5x |
+| A100 | 2.5x |
+| H100 | 4.0x |
+
+### Payout Structure
+
+| Component | Allocation |
+|-----------|------------|
+| Liquid SWAN | 80% |
+| Locked SWAN (3-month vesting) | 20% |
+
+### Unified Computing Provider (CP) Role
+
+Under Swan 2.0, the legacy ECP and FCP roles merge into a single **Computing Provider (CP)** classification. All providers are evaluated equally based on contribution metrics, regardless of their previous role.
+
+**Migration path for existing providers:**
+
+1. ECPs and FCPs running inference tasks are automatically converted to unified CP role
+2. Providers not running inference have a 30-day grace period to onboard to Swan Inference or migrate staked SWAN to SwanFi
+3. Hardware requirements: ≥ 24 GB VRAM recommended; ≥ 48 GB VRAM for priority task routing
+

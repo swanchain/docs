@@ -80,4 +80,54 @@ The negative correlation between collateral and computing power has several bene
 2. **Risk Mitigation**: Collateral serves as a safeguard, ensuring that CPs have a financial stake in the network's success and discouraging malicious behavior.
 3. **Economic Participation**: By allowing CPs to share in both operator and collateral revenue, the model promotes balanced economic participation, where CPs are rewarded not only for their computational contributions but also for their financial commitment.
 
-####
+***
+
+#### Swan 2.0: Updated Collateral Model <a href="#swan-2.0-collateral" id="swan-2.0-collateral"></a>
+
+{% hint style="info" %}
+The collateral model above applies to the legacy UBI system (Swan 1.0). Swan 2.0 introduces additional collateral options and updated tiers for the [Inference Cloud](../../swan-2.0-inference-cloud.md). See [SIP-002](https://github.com/swanchain/governance/discussions/16) for the full proposal.
+{% endhint %}
+
+**Stablecoin Collateral (New in Swan 2.0)**
+
+Swan 2.0 introduces **stablecoin collateral** via the `ProviderCollateral` smart contract. Providers can deposit USDC or USDT on-chain as an alternative to SWAN token collateral:
+
+- **Supported tokens**: USDC, USDT
+- **Supported chains**: Swan Chain (mainnet), Base, Ethereum (configurable)
+- **Deposit method**: Provider sends tokens to the contract and submits the `tx_hash` for on-chain verification
+- **Refund waiting period**: 7 days from request to withdrawal
+
+Providers can also use **USD (off-chain)** via Stripe, PayPal, or bank transfer, with admin confirmation.
+
+Collateral status follows the lifecycle: `pending → confirmed → refund_requested → refunded`
+
+**Updated Collateral Tiers (SIP-002)**
+
+Under the unified Computing Provider (CP) model, collateral requirements are based on hardware tier:
+
+| Hardware Tier | Minimum SWAN Collateral | Slashing Conditions |
+|---------------|------------------------|---------------------|
+| RTX 3090 / A4000 | 5,000 SWAN | Uptime < 50% for 7 days |
+| RTX 4090 / A5000 / A6000 | 10,000 SWAN | Repeated failed requests (> 20% failure rate) |
+| A100 | 25,000 SWAN | Malicious behavior or gaming detected |
+| H100 | 50,000 SWAN | Unauthorized hardware changes |
+
+{% hint style="warning" %}
+These SIP-002 collateral tiers are a draft proposal subject to governance approval. The legacy collateral formula ($$C_{base}$$ = 3533 SWAN) continues to apply until SIP-002 is ratified.
+{% endhint %}
+
+**Benchmark-Based Slashing (Swan 2.0)**
+
+In addition to the existing task-failure slashing, Swan 2.0 introduces benchmark-based slashing for inference providers:
+
+- The benchmark worker runs every **24 hours**, testing math accuracy, code generation, and response latency
+- Providers must pass all thresholds (≥ 50% math, ≥ 50% code, ≤ 5000ms latency)
+- **Consecutive failures** trigger slashing: configurable percentage (default **10%**) of collateral per consecutive failure
+- Providers that fall below the minimum collateral threshold are suspended from receiving inference requests
+
+**Smart Contracts**
+
+| Contract | Network | Address |
+|----------|---------|---------|
+| **ProviderCollateral (USDC)** | Swan Chain Mainnet | `0x557f306f917009cf83c32b8b32a79202e79948e5` |
+| **SWAN Token** | Swan Chain Mainnet | `0xAF90ac6428775E1Be06BAFA932c2d80119a7bd02` |
