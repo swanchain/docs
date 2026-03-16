@@ -21,7 +21,7 @@ Swan 2.0 replaces UBI with inference revenue per [SIP-003](https://github.com/sw
 | **Provider Rewards** | Flat UBI sampling | 95% inference revenue (stablecoins) |
 | **Payment** | SWAN tokens only | Stablecoins (USDC/USDT) + Pay-with-SWAN (20% discount) |
 | **Provider Roles** | Separate ECP and FCP | Unified Computing Provider (CP) |
-| **Collateral** | SWAN tokens only | SWAN tokens |
+| **Collateral** | SWAN tokens only | SWAN tokens or Stripe (credit card) |
 | **Work Verification** | Random sampling tasks | Periodic benchmarks (math, code, latency) |
 | **Workloads** | Training, ZK proofs | AI inference (LLM, image, audio, embedding, multimodal) |
 | **Hardware Requirements** | None (any GPU earned UBI) | Tiered: min 8GB VRAM, legacy GPUs rejected |
@@ -200,7 +200,7 @@ Each phase transition requires a governance vote with a 7-day voting period. Rev
 
 ### Benchmarks
 
-The benchmark worker runs periodically (default: every 24 hours) to verify provider quality:
+The benchmark worker runs periodically (default: every 24 hours) to verify provider quality. Benchmark results expire after **30 days** — providers that miss benchmarks for 30+ days lose qualification and must re-benchmark to resume receiving traffic.
 
 | Test | Pass Threshold |
 |------|---------------|
@@ -215,8 +215,13 @@ The benchmark worker runs periodically (default: every 24 hours) to verify provi
 | Benchmark failure (1st) | Warning + 24h suspension from task routing |
 | Consecutive failure (2nd) | 10% collateral slashed |
 | Consecutive failure (3rd) | 30% collateral slashed + network removal |
+| Benchmark results expired (> 30 days) | Loses qualification until re-benchmarked |
 | Inference success rate < 80% | Deprioritized in request routing |
 | Uptime < 90% (30-day rolling) | Deprioritized in request routing |
+
+{% hint style="info" %}
+**New Provider Grace Period:** Providers registered within the last 7 days are exempt from uptime and success-rate deprioritization. This gives new providers time to build history without being penalized for insufficient data. Benchmark requirements and probation still apply during the grace period.
+{% endhint %}
 
 ### Health Monitoring
 
@@ -235,19 +240,33 @@ Providers are ranked by a performance-based leaderboard using availability metri
 
 To receive inference traffic and earn revenue, providers must meet minimum hardware requirements:
 
-| Tier | Min VRAM | Example GPUs | Models | Status |
-|------|----------|-------------|--------|--------|
+| Tier | Min VRAM | Example Hardware | Models | Status |
+|------|----------|-----------------|--------|--------|
 | **S** | 38GB+ | L40S, A100, H100 | 70B premium models | Recruiting new providers |
 | **A** | 24GB | RTX 4090, 3090, A6000 | 24B–32B agent models | Activate idle inventory |
 | **B** | 12GB | RTX 4070 Ti, 3080 Ti | 8B–12B free tier | Some current providers |
 | **C** | 8GB | RTX 3070, 4060 | Embedding, Whisper | Lowest qualifying tier |
+| **macOS** | 16GB+ unified | Apple Silicon M1/M2/M3/M4 | 8B–12B via Ollama | Entry-level providers |
 | Rejected | < 8GB or legacy | TESLA P4, GTX 1050 Ti | None | No rewards |
 
 Legacy GPUs (TESLA P4, GTX 1050 Ti) served the network well during the ZK-task era but cannot serve AI inference workloads at acceptable quality.
 
+{% hint style="info" %}
+**macOS Support:** Apple Silicon Macs can serve as providers using Ollama as the inference backend. While datacenter GPUs offer higher throughput, Macs are a low-friction entry point for new providers — no Docker, NVIDIA drivers, or Linux required.
+{% endhint %}
+
 ### Requirements
 
+**Linux (NVIDIA GPU):**
 - GPU meeting at least Tier C requirements (≥ 8GB VRAM)
+- Docker 24.0+ with NVIDIA Container Toolkit
+- Inference server: SGLang (recommended), vLLM, or Ollama
+
+**macOS (Apple Silicon):**
+- Apple Silicon Mac (M1/M2/M3/M4) with 16GB+ unified memory
+- Ollama installed (`brew install ollama`)
+
+**Both platforms:**
 - Swan's `computing-provider` agent installed
 - No public IP, domain, or SSL setup required — providers connect via WebSocket behind NAT/firewall
 - Pass initial inference benchmark (math, code, latency)
@@ -255,15 +274,24 @@ Legacy GPUs (TESLA P4, GTX 1050 Ti) served the network well during the ZK-task e
 
 ### Registration Flow
 
-1. Sign up at the Swan Inference dashboard and get a provider API key (`sk-prov-*`)
-2. Install the `computing-provider` agent on your GPU machine
-3. Deposit collateral (SWAN tokens)
-4. Pass the initial benchmark verification
-5. Begin receiving inference requests and earning stablecoin revenue
+1. **Sign up** at the [Swan Inference dashboard](https://inference.swanchain.io/provider-signup) and get a provider API key (`sk-prov-*`)
+2. **Start a model server** — SGLang/vLLM (Linux) or Ollama (macOS)
+3. **Install and run** the `computing-provider` agent — the setup wizard auto-discovers your models
+4. **Pass benchmarks** — automated quality verification runs within minutes of connecting
+5. **Admin approval** — most providers are approved within 24 hours
+6. **Deposit collateral** via Stripe (credit card) or SWAN tokens on-chain
+7. **Start earning** — receive inference requests with a 7-day grace period for full traffic priority
 
 ### Collateral
 
-Providers must deposit SWAN token collateral to become active on the network. See [Computing Provider Collateral](token/computing-provider-collateral/) for details on collateral amounts and the 7-day refund waiting period.
+Providers must deposit collateral to become active on the network. Two deposit methods are available:
+
+| Method | Currency | Processing | Refund |
+|--------|----------|-----------|--------|
+| **Stripe** | Credit/debit card (USD) | Instant | Refunded to original card (7-day waiting period) |
+| **On-chain** | SWAN tokens | Requires gas (SwanETH) | Returned to wallet (7-day waiting period) |
+
+See [Computing Provider Collateral](token/computing-provider-collateral/) for details on collateral amounts and the refund waiting period.
 
 ## On-Chain Settlement
 
