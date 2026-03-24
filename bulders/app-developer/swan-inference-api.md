@@ -112,6 +112,49 @@ That's it — any library or tool that supports the OpenAI API format works with
 
 ***
 
+## Try Without an API Key
+
+Swan Inference offers a **public playground** that lets you try AI inference without signing up.
+
+```bash
+curl https://inference.swanchain.io/v1/playground/chat \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "MadeAgents/Hammer2.1-0.5b",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+```
+
+No `Authorization` header required. To list available playground models:
+
+```bash
+curl https://inference.swanchain.io/v1/playground/models
+```
+
+| Limit | Value |
+|-------|-------|
+| Requests per hour | 5 per IP |
+| Max output tokens | 100 |
+| Streaming | Not supported |
+
+{% hint style="info" %}
+For full access to all models with higher limits, [sign up](https://inference.swanchain.io/signup) for a free account.
+{% endhint %}
+
+### Subscription Plan
+
+For heavy users, Swan Inference offers a **Pro plan at $6/month** with unlimited open-source model access:
+
+| Feature | Pay-As-You-Go | Pro ($6/month) |
+|---------|---------------|----------------|
+| Open-source models | Pay per token | Included |
+| Premium models | Pay per token | Pay per token |
+| Requests/day | Unlimited | 1,500 |
+| Tokens/week | Unlimited | 40M |
+| Payment | Credit balance | Stripe or crypto (USDC/USDT/SWAN) |
+
+***
+
 ## Authentication
 
 All API requests require an API key passed in the `Authorization` header:

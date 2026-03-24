@@ -179,6 +179,30 @@ The provider dashboard provides:
 - **Collateral status** and on-chain deposit tracking
 - **Wallet verification** via MetaMask for secure payouts
 
+## Subscription Plan
+
+Swan Inference offers a **Pro subscription** alongside the existing pay-as-you-go credit model.
+
+### Pro Plan — $6/month
+
+| Feature | Pay-As-You-Go | Pro Subscription |
+|---------|---------------|------------------|
+| Price | No fee, deposit credits | $6/month |
+| Open-source models | Pay per token | Included (40M tokens/week, 1,500 req/day) |
+| Premium models | Pay per token | Pay per token (from credit balance) |
+| Images | Pay per image | 75/day included |
+| Payment | Stripe or crypto | Stripe (recurring) or crypto prepay |
+
+Subscriptions can be paid with stablecoins (USDC/USDT) or SWAN token. SWAN payments receive a 10% discount.
+
+### Provider Earnings Under Subscription
+
+Providers earn the same per-token rate for subscription requests as pay-as-you-go. Total provider payouts from subscription requests are capped at the subscription revenue pool ($6 x subscriber count per month). If provider costs exceed the pool, payouts are pro-rated proportionally across providers based on their contribution.
+
+## Public Playground
+
+The platform includes a public playground at [inference.swanchain.io/playground](https://inference.swanchain.io/playground) that allows anyone to try AI inference without an API key. The playground is rate-limited to 5 requests per hour per IP, with a restricted model selection and limited token output. This provides a zero-friction entry point for new users to evaluate the platform before signing up.
+
 ## Comparison with AI Computing Marketplace
 
 | Feature | AI Computing Marketplace | Inference Marketplace |
