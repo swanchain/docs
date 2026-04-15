@@ -48,11 +48,13 @@ Inference requests are paid per token, deducted from your account balance in rea
 
 <figure><img src="../../.gitbook/assets/inference-how-to/deposit.png" alt="Deposit credits via Stripe or crypto"><figcaption>Add funds via Stripe card payment or crypto deposit.</figcaption></figure>
 
-### Pay with SWAN for 20% off
+### 20% bonus when depositing SWAN
 
-Depositing SWAN tokens on Swan Mainnet gives you a **20% bonus in credits**. When combined with Swan's already-lower base prices, that's roughly 50–66% below going direct to Anthropic or Google for comparable models. Flip the **Pay with: SWAN** toggle on the [pricing page](https://inference.swanchain.io/pricing) to see the effective rate across every model.
+Depositing SWAN tokens on Swan Mainnet credits your account with a **20% bonus on top of the USD value** — $100 of SWAN becomes $120 of credits. Your account balance is a single USD-denominated pool regardless of how it was funded, so there's nothing special to toggle at request time; you simply get more credits per dollar when you deposit SWAN.
 
-<figure><img src="../../.gitbook/assets/inference-how-to/swan-toggle.png" alt="Pay-with-SWAN toggle on pricing page"><figcaption>Flip the Pay-with toggle to SWAN and prices drop 20% across every model.</figcaption></figure>
+Combined with Swan's already-lower per-token pricing, the deposit bonus pushes effective rates roughly 50–66% below going direct to Anthropic or Google for comparable models. Flip the **Pay with: SWAN** toggle on the [pricing page](https://inference.swanchain.io/pricing) to see the effective rate across every model.
+
+<figure><img src="../../.gitbook/assets/inference-how-to/swan-toggle.png" alt="Pay-with-SWAN toggle on pricing page"><figcaption>Flip the Pay-with toggle to SWAN to preview the effective rate after the 20% deposit bonus.</figcaption></figure>
 
 Usage is deducted from your balance per request. View balance, usage, and the transaction ledger under **Billing** in the dashboard.
 
@@ -117,23 +119,6 @@ console.log(response.choices[0].message.content);
 ```
 
 Streaming, embeddings, image generation, and audio transcription all work identically to OpenAI. See [OpenAI-Compatible API](README.md#openai-compatible-api) for the full endpoint list.
-
-### Pay with SWAN at request time
-
-To pay for a specific request with SWAN tokens instead of USD credits, add the `X-Swan-Payment: SWAN` header:
-
-```bash
-curl https://inference.swanchain.io/v1/chat/completions \
-  -H "Authorization: Bearer sk-swan-YOUR-KEY" \
-  -H "X-Swan-Payment: SWAN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "zai-org/GLM-4.7-Flash",
-    "messages": [{"role": "user", "content": "Hello!"}]
-  }'
-```
-
-The request draws from your SWAN balance at the 20%-discounted rate; the provider still receives 95% of the revenue in their preferred payout currency.
 
 ## Next steps
 

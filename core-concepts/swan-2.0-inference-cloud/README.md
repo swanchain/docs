@@ -144,21 +144,21 @@ Open-source models are priced 50–66% below comparable centralized providers vi
 
 ## Payment & Revenue Split
 
-### Dual Payment Options
+### Dual Deposit Options
 
-Swan 2.0 accepts both stablecoins and SWAN as payment. Users who pay with SWAN receive a **20% discount**, creating organic buy pressure.
+Swan 2.0 accepts both stablecoins and SWAN as deposits into a single USD-denominated prepaid balance. SWAN deposits receive a **20% bonus in credits** at deposit time, creating organic buy pressure for the token.
 
-| Payment Method | Discount | Example (1M Tier B output tokens) |
-|---------------|----------|-----------------------------------|
-| USDC/USDT | 0% (base price) | $0.03 |
-| SWAN | 20% discount | $0.024 (saves $0.006) |
+| Deposit Method | Bonus | Example (depositing $100) |
+|---------------|-------|-----------------------|
+| USDC/USDT (Stripe or crypto) | 0% | $100 of credits |
+| SWAN on Swan Mainnet | +20% | $120 of credits |
 
 **Pay-with-SWAN flow:**
 
-1. Consumer sends an inference request with `payment: "SWAN"`
-2. SWAN amount is calculated from base USD price minus 20% discount
-3. SWAN is deducted from the user's prepaid balance
-4. Provider receives 95% in their preferred currency (USDC or SWAN)
+1. Consumer deposits SWAN tokens to their per-user deposit address on Swan Mainnet
+2. Balance is credited in USD at the current SWAN/USD rate plus a 20% bonus
+3. Subsequent inference requests draw from this unified USD balance
+4. Providers receive 95% of the per-request fee in their preferred payout currency (USDC or SWAN)
 5. 5% goes to the Growth Fund
 
 ### Provider-First Revenue Split (95/5)
