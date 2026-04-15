@@ -14,20 +14,9 @@ Looking to earn by providing GPU resources instead? See the provider onboarding 
 
 The fastest way to see Swan Inference in action: open the [playground](https://inference.swanchain.io/playground), pick a model, and send a message. No account, no API key, no credit card.
 
-<figure><img src="../../.gitbook/assets/inference-how-to/playground.png" alt="Swan Inference playground"><figcaption>Playground — runs GLM 4.7 Flash for anonymous visitors, rate-limited to 5 requests per hour per IP.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/inference-how-to/playground.png" alt="Swan Inference playground"><figcaption>Playground — runs GLM 4.7 Flash for anonymous visitors, rate-limited per IP.</figcaption></figure>
 
-Prefer the command line? There's an unauthenticated endpoint behind the playground UI:
-
-```bash
-curl https://inference.swanchain.io/v1/playground/chat \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "zai-org/GLM-4.7-Flash",
-    "messages": [{"role": "user", "content": "Say hello in 5 words."}]
-  }'
-```
-
-Limits: GLM 4.7 Flash only, 100 output tokens, no streaming, 5 requests per hour per IP. Good enough to kick the tires — sign up below for the full API.
+Ready for more? Sign up below to get an API key and start integrating.
 
 ## 1. Sign up and get your API key
 
