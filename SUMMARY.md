@@ -76,7 +76,8 @@
 ## Core Concepts
 
 * [Introduction to Swan Chain](core-concepts/readme.md)
-* [Swan 2.0: Inference Cloud](core-concepts/swan-2.0-inference-cloud.md)
+* [Swan 2.0: Inference Cloud](core-concepts/swan-2.0-inference-cloud/README.md)
+  * [How to Use](core-concepts/swan-2.0-inference-cloud/how-to-use.md)
 * [Consensus Layer](core-concepts/cross-chain-contracts.md)
 * [Peer-to-peer (P2P) Network](core-concepts/peer-to-peer-p2p-network.md)
 * [Payment Channels](core-concepts/payment-channels.md)

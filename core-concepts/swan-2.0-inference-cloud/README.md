@@ -11,6 +11,8 @@ Swan 2.0 marks Swan Chain's evolution from a UBI-subsidized computing network in
 {% hint style="info" %}
 **Try Swan Inference**: [https://inference.swanchain.io](https://inference.swanchain.io)
 
+**New here?** See [How to Use Swan Inference](how-to-use.md) for a step-by-step guide, or jump to [live pricing comparison](https://inference.swanchain.io/pricing) against Anthropic, Google, and OpenRouter.
+
 Swan 2.0 replaces UBI with inference revenue per [SIP-003](https://github.com/swanchain/governance/discussions/21). UBI tapers to zero over 3 months. See also [SIP-002](https://github.com/swanchain/governance/discussions/16) for the original transition proposal.
 {% endhint %}
 
@@ -101,45 +103,33 @@ curl https://inference.swanchain.io/v1/chat/completions \
   }'
 ```
 
-## Tiered Model Catalog
+## Model Catalog
 
-Swan Inference organizes models into hardware-based tiers with per-token pricing set at 50–66% below comparable centralized providers.
+Swan Inference serves two categories of models with different economics. The live catalog at [inference.swanchain.io/models](https://inference.swanchain.io/models) is the source of truth for current availability and pricing.
 
-### Tier S: Premium (70B)
+### Frontier Gateway
 
-| Model | Params | Input /M tok | Output /M tok | Min VRAM |
-|-------|--------|-------------|---------------|----------|
-| Sapphira L3.3-70B | 70B | $0.20 | $0.30 | 38GB |
-| Nevoria 70B | 70B | $0.20 | $0.30 | 38GB |
-| Euryale v2.3 70B | 70B | $0.20 | $0.30 | 38GB |
+Closed frontier models (Claude, Gemini) proxied at a consistent discount to direct API pricing. These run on the upstream provider's infrastructure — Swan acts as an aggregator, passing on cost savings through bulk agreements and SWAN token incentives.
 
-### Tier A: Agent & Advanced (24B–32B)
+| Example | Direct pricing | Swan pricing | Savings |
+|---------|---------------|-------------|---------|
+| Claude Opus 4.6 | $5.00 / $25.00 per 1M tokens | $4.00 / $20.00 | ~20% |
+| Gemini 2.5 Flash | $0.30 / $2.50 per 1M tokens | $0.18 / $1.50 | ~40% |
 
-| Model | Params | Input /M tok | Output /M tok | Min VRAM |
-|-------|--------|-------------|---------------|----------|
-| Qwen3 32B | 32B | $0.08 | $0.12 | 18GB |
-| Devstral 24B | 24B | $0.06 | $0.10 | 14GB |
-| Mistral Small 3.2 24B | 24B | $0.06 | $0.10 | 14GB |
+With Pay-with-SWAN, the discount stacks to 50–66% below going direct. See the [pricing comparison](https://inference.swanchain.io/pricing) for the live side-by-side.
 
-### Tier B: Free & Growth (8B–12B)
+### Open-Source on Decentralized GPUs
 
-| Model | Params | Input /M tok | Output /M tok | Min VRAM |
-|-------|--------|-------------|---------------|----------|
-| Violet Lotus 12B | 12B | $0.02 | $0.04 | 7GB |
-| Stheno 8B | 8B | $0.01 | $0.03 | 5GB |
-| Qwen3 8B | 8B | $0.01 | $0.03 | 5GB |
-| Llama 4 Scout 17B | 17B MoE | $0.03 | $0.05 | 12GB |
+Open-source models served by Swan's decentralized provider network. This is where Swan's economics structurally beat centralized providers — any qualifying GPU owner (datacenter to consumer hardware) can become a provider and share in inference revenue.
 
-### Tier C: Utility Models
+| Example | Params | Swan pricing | Hardware tier |
+|---------|--------|-------------|--------------|
+| Qwen3 Coder 30B | 30B MoE | $0.05 / $0.10 per 1M tokens | A (24GB) |
+| GLM 4.7 Flash | — | $0.05 / $0.36 per 1M tokens | A (24GB) |
+| Sapphira L3.3 70B | 70B | $0.20 / $0.30 per 1M tokens | S (38GB+) |
+| Whisper Large v3 | — | $0.003 per minute | C (8GB+) |
 
-| Model | Type | Pricing | Unit | Min VRAM |
-|-------|------|---------|------|----------|
-| Whisper Large v3 | Audio | $0.003 | per minute | 4GB |
-| BGE / E5 Large | Embedding | $0.005 | per M tokens | 2GB |
-| FLUX.1 Schnell | Image Gen | $0.003 | per image | 12GB |
-| SDXL | Image Gen | $0.002 | per image | 8GB |
-
-Model availability is shown in real time at [inference.swanchain.io/models](https://inference.swanchain.io/models).
+Open-source models are priced 50–66% below comparable centralized providers via the hardware tier system. See [Hardware Tiers](#hardware-tiers) under Provider Onboarding for the full VRAM-to-model mapping.
 
 ### Free Tier
 
