@@ -181,6 +181,64 @@ Config files land in `~/.swan/computing/`:
 Consumer keys (`sk-swan-*`) and provider keys (`sk-prov-*`) are different. The `computing-provider` agent only accepts `sk-prov-*` keys.
 {% endhint %}
 
+### Configuration reference
+
+The wizard writes sensible defaults, but if it failed to discover your model server, you run a non-standard port, or you want to serve multiple models, edit these files directly.
+
+**Provider config (`~/.swan/computing/config.toml`)**
+
+```toml
+# ~/.swan/computing/config.toml
+
+[API]
+Port = 8085
+MultiAddress = "/ip4/<PUBLIC_IP>/tcp/<PORT>"
+NodeName = "<YOUR_CP_Node_Name>"
+
+[RPC]
+SWAN_CHAIN_RPC = "https://rpc-proxima.swanchain.io"
+
+[Inference]
+Enable = true
+WebSocketURL = "wss://api-ws-dev.swanchain.io"
+ApiKey = "sk-prov-YOUR_API_KEY"
+Models = ["Qwen/Qwen2.5-7B-Instruct"]
+```
+
+**Model endpoints (`~/.swan/computing/models.json`)**
+
+```json
+{
+  "Qwen/Qwen2.5-7B-Instruct": {
+    "endpoint": "http://localhost:30000",
+    "gpu_memory": 16000,
+    "category": "text-generation"
+  },
+  "meta-llama/Llama-3.2-3B-Instruct": {
+    "endpoint": "http://localhost:11434",
+    "gpu_memory": 14000,
+    "category": "text-generation",
+    "local_model": "llama3.2:3b"
+  }
+}
+```
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `endpoint` | Yes | URL of your local inference server (SGLang, vLLM, Ollama) |
+| `gpu_memory` | Yes | GPU VRAM used by this model in MB |
+| `category` | Yes | Model type: `text-generation`, `image`, `embedding`, `audio` |
+| `local_model` | No | Local model name if different from the key (e.g., Ollama's `qwen2.5:7b`) |
+| `api_key` | No | API key if your model server requires authentication |
+
+The keys in `models.json` must match valid Swan Inference model IDs. Run `computing-provider models catalog` or check the [model catalog](https://inference.swanchain.io/models) for the full list.
+
+The agent watches `models.json` and hot-reloads on change — no restart needed. You can also force a reload:
+
+```bash
+curl -X POST http://localhost:8085/api/v1/computing/inference/models/reload
+```
+
 ## 4. Start the provider and pass benchmarks
 
 Run the agent:
