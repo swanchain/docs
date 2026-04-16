@@ -87,9 +87,84 @@ The wizard creates your provider account (or logs you into an existing one), aut
 computing-provider setup
 ```
 
-<figure><img src="../../.gitbook/assets/provider-how-to/provider-guide.png" alt="In-app provider guide with setup commands"><figcaption>The in-app <a href="https://inference.swanchain.io/provider-guide">Provider Guide</a> mirrors these steps with copy-paste commands for Linux and macOS.</figcaption></figure>
+A typical run looks like this (macOS + Ollama):
 
-The wizard will prompt you to sign up (or log in), then issue a `sk-prov-*` API key for your GPU node. Keep the key safe — it authenticates this provider to the network.
+```
+============================================================
+              Computing Provider Setup Wizard
+============================================================
+
+
+Step 1/5: Checking Prerequisites
+------------------------------------------------------------
+[ok] Ollama: ollama version is 0.14.1 (running)
+[!] Docker: Docker not running. Please start Docker daemon. (optional - Ollama available)
+[ok] GPU: Apple Silicon (Apple M1)
+
+Step 2/5: Initializing Configuration
+------------------------------------------------------------
+
+Node Name [demo-provider]: demo-provider
+Initialized CP repo at '/Users/swanchain/.swan/computing'.
+[ok] Configuration initialized
+
+Step 3/5: Authentication
+------------------------------------------------------------
+
+A Swan Inference account is needed to connect your provider to the network.
+Do you already have a Swan Inference account [y/N]: n
+
+Create a new Swan Inference account
+Email: demo-provider@example.com
+Password:
+
+Creating account...
+[ok] Account created!
+
+Set up your provider profile
+Provider Name [demo-provider]:
+
+Wallet Address (optional, press Enter to skip):
+-> Skipped - you can add a wallet later to start earning rewards
+
+Registering your provider...
+[ok] Provider registered!
+-> Provider ID: 84bca13d-d056-4826-a1ca-ac4d43597a9c
+-> Status: pending (your provider will be reviewed before it can earn rewards)
+
+[!] SAVE THIS API KEY - it connects your machine to Swan Inference and is only shown once.
+
+  API Key: sk-prov-535a****fb47
+
+Step 4/5: Discovering Model Servers
+------------------------------------------------------------
+[ok] Found ollama at localhost:11434
+  * qwen3:8b
+
+Matching with Swan Inference models...
+[ok]   qwen3:8b -> Qwen/Qwen3-8B (100%)
+
+Step 5/5: Finalizing Setup
+------------------------------------------------------------
+
+Select models to enable:
+
+  1) Qwen/Qwen3-8B - ollama @ http://localhost:11434  ~16GB  (local: qwen3:8b)
+Enter selections (e.g., 1,3,4) or press Enter for all [all]:
+[ok] Updated config.toml
+[ok] Created models.json
+
+============================================================
+                      Setup Complete!
+============================================================
+
+What to do next:
+  * Start your provider:  computing-provider run
+  * Monitor in browser:   computing-provider dashboard
+  * Check connection:     computing-provider inference status
+```
+
+**Save the `sk-prov-*` key** — it's shown once and authenticates this provider to the network.
 
 If you already have a `sk-prov-*` key (for example, from the web signup at [inference.swanchain.io/provider-signup](https://inference.swanchain.io/provider-signup)), pass it directly:
 
