@@ -7,7 +7,7 @@ description: Step-by-step guide to using Swan 2.0 Inference Cloud as a consumer
 This guide walks through using Swan Inference as a developer consuming AI models — starting with a no-signup trial, then creating an account, topping up, and making real API requests.
 
 {% hint style="info" %}
-Looking to earn by providing GPU resources instead? See the provider onboarding section in [Swan 2.0: Inference Cloud](README.md#provider-onboarding).
+Looking to earn by providing GPU resources instead? See [Become a Provider](become-a-provider.md) for the step-by-step setup guide.
 {% endhint %}
 
 ## 0. Try it now — no signup
@@ -112,7 +112,7 @@ Streaming, embeddings, image generation, and audio transcription all work identi
 ## Next steps
 
 - **[Inference Marketplace](../market-provider/inference-marketplace.md)** — deeper on how pricing, routing, and settlement work
-- **[Provider onboarding](README.md#provider-onboarding)** — want to earn by sharing GPU resources instead?
+- **[Become a Provider](become-a-provider.md)** — want to earn by sharing GPU resources instead?
 - **[API reference](https://inference.swanchain.io/docs)** — full list of endpoints, parameters, and error codes
 
 Questions? Reach the team on [Discord](https://discord.gg/swanchain) or open an issue on [GitHub](https://github.com/swanchain).
