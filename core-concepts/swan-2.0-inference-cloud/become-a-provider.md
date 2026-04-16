@@ -123,16 +123,15 @@ computing-provider inference status
 You'll move through these stages automatically:
 
 ```
-Connect ──▶ Benchmark ──▶ Approval ──▶ Collateral ──▶ Active
-(instant)   (automatic)   (< 24 hrs)   (see step 5)    (earning)
+Connect ──▶ Collateral ──▶ Approval ──▶ Active
+(instant)   (see step 5)   (< 24 hrs)    (earning)
 ```
 
 | Stage | What happens | Typical duration |
 |-------|-------------|-----------------|
-| **Connect** | Agent opens a WebSocket to Swan Inference and registers your models | Instant |
-| **Benchmark** | Automated math / code / latency checks verify inference quality | Minutes |
-| **Approval** | Admin reviews your provider record | < 24 hours |
+| **Connect** | Agent opens a WebSocket to Swan Inference, registers your models, and auto-runs math / code / latency benchmarks | Instant |
 | **Collateral** | Deposit via Stripe or on-chain SWAN (step 5) | Instant |
+| **Approval** | Admin reviews your benchmark results and collateral | < 24 hours |
 | **Active** | Traffic starts flowing — you earn per-request revenue | Ongoing |
 
 <figure><img src="../../.gitbook/assets/provider-how-to/provider-status.png" alt="Provider activation stages shown in the dashboard"><figcaption>The My Provider tab visualizes the activation flow: Start → Connect → Deposit Collateral → Approved → Active & Earning.</figcaption></figure>
