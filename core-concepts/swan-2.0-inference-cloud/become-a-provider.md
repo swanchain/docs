@@ -4,7 +4,7 @@ description: Step-by-step guide to becoming a GPU Computing Provider on Swan 2.0
 
 # Become a Provider
 
-This guide walks through turning your GPU into an AI inference endpoint on Swan Chain — from signing up for a provider account, to installing the `computing-provider` agent, to earning stablecoin revenue from real inference traffic.
+This guide walks through turning your GPU into an AI inference endpoint on Swan Chain — from starting a local model server, to installing the `computing-provider` agent, to earning stablecoin revenue from real inference traffic.
 
 {% hint style="info" %}
 Looking to **consume** models instead of provide? See [How to Use Swan Inference](how-to-use.md).
@@ -27,23 +27,9 @@ You'll also need:
 
 - **Go 1.22+** to build the `computing-provider` agent
 - **Docker 24.0+ with the NVIDIA Container Toolkit** (Linux only)
-- A funded wallet or credit card for collateral (step 6)
+- A funded wallet or credit card for collateral (step 5)
 
-## 1. Sign up and get your provider API key
-
-Create a provider account at [inference.swanchain.io/provider-signup](https://inference.swanchain.io/provider-signup). You'll need an email, password, and the wallet address you want rewards paid to (the **beneficiary address**).
-
-<figure><img src="../../.gitbook/assets/provider-how-to/provider-signup.png" alt="Provider signup form"><figcaption>Sign up as a provider — supply a display name and beneficiary wallet address.</figcaption></figure>
-
-After signup, copy your provider API key (`sk-prov-*`) from the dashboard. **Save it immediately** — it's shown once and authenticates your GPU node to the network.
-
-<figure><img src="../../.gitbook/assets/provider-how-to/provider-api-key.png" alt="Provider API key in dashboard"><figcaption>Your provider API key appears under the Provider section of the dashboard.</figcaption></figure>
-
-{% hint style="info" %}
-Consumer keys (`sk-swan-*`) and provider keys (`sk-prov-*`) are different. The `computing-provider` agent only accepts `sk-prov-*` keys.
-{% endhint %}
-
-## 2. Start a model server
+## 1. Start a model server
 
 Your GPU needs an OpenAI-compatible inference server running locally. Swan Inference will route requests to it via the `computing-provider` agent.
 
@@ -78,7 +64,7 @@ Verify it's healthy: `curl http://localhost:11434/api/tags`.
 The quickstart uses Qwen 2.5 7B as an example, but earnings scale with real token traffic. Browse the [model catalog](https://inference.swanchain.io/models) to find in-demand models with less provider competition.
 {% endhint %}
 
-## 3. Install the computing-provider agent
+## 2. Install the computing-provider agent
 
 Clone and build from source (mainnet):
 
@@ -93,9 +79,9 @@ computing-provider --version
 
 Full install details including the NVIDIA Container Toolkit setup are in the [`computing-provider` README](https://github.com/swanchain/computing-provider#readme).
 
-## 4. Run the setup wizard
+## 3. Run the setup wizard
 
-The wizard auto-discovers your running model server, logs you in, and writes `config.toml` and `models.json`:
+The wizard creates your provider account (or logs you into an existing one), auto-discovers your running model server, and writes `config.toml` and `models.json`:
 
 ```bash
 computing-provider setup
@@ -103,7 +89,9 @@ computing-provider setup
 
 <figure><img src="../../.gitbook/assets/provider-how-to/provider-guide.png" alt="In-app provider guide with setup commands"><figcaption>The in-app <a href="https://inference.swanchain.io/provider-guide">Provider Guide</a> mirrors these steps with copy-paste commands for Linux and macOS.</figcaption></figure>
 
-If you already have a `sk-prov-*` key, pass it directly:
+The wizard will prompt you to sign up (or log in), then issue a `sk-prov-*` API key for your GPU node. Keep the key safe — it authenticates this provider to the network.
+
+If you already have a `sk-prov-*` key (for example, from the web signup at [inference.swanchain.io/provider-signup](https://inference.swanchain.io/provider-signup)), pass it directly:
 
 ```bash
 computing-provider setup --api-key=sk-prov-xxxxxxxxxxxx
@@ -114,7 +102,11 @@ Config files land in `~/.swan/computing/`:
 - `config.toml` — WebSocket URL, API key, node name
 - `models.json` — mapping from Swan Inference model IDs to your local endpoints
 
-## 5. Start the provider and pass benchmarks
+{% hint style="info" %}
+Consumer keys (`sk-swan-*`) and provider keys (`sk-prov-*`) are different. The `computing-provider` agent only accepts `sk-prov-*` keys.
+{% endhint %}
+
+## 4. Start the provider and pass benchmarks
 
 Run the agent:
 
@@ -132,7 +124,7 @@ You'll move through these stages automatically:
 
 ```
 Connect ──▶ Benchmark ──▶ Approval ──▶ Collateral ──▶ Active
-(instant)   (automatic)   (< 24 hrs)   (see step 6)    (earning)
+(instant)   (automatic)   (< 24 hrs)   (see step 5)    (earning)
 ```
 
 | Stage | What happens | Typical duration |
@@ -140,12 +132,12 @@ Connect ──▶ Benchmark ──▶ Approval ──▶ Collateral ──▶ Ac
 | **Connect** | Agent opens a WebSocket to Swan Inference and registers your models | Instant |
 | **Benchmark** | Automated math / code / latency checks verify inference quality | Minutes |
 | **Approval** | Admin reviews your provider record | < 24 hours |
-| **Collateral** | Deposit via Stripe or on-chain SWAN (step 6) | Instant |
+| **Collateral** | Deposit via Stripe or on-chain SWAN (step 5) | Instant |
 | **Active** | Traffic starts flowing — you earn per-request revenue | Ongoing |
 
 <figure><img src="../../.gitbook/assets/provider-how-to/provider-status.png" alt="Provider activation stages shown in the dashboard"><figcaption>The My Provider tab visualizes the activation flow: Start → Connect → Deposit Collateral → Approved → Active & Earning.</figcaption></figure>
 
-## 6. Deposit collateral
+## 5. Deposit collateral
 
 Once approved, deposit collateral to unlock full traffic routing. Two options:
 
@@ -166,7 +158,7 @@ computing-provider inference deposit --check
 
 Collateral amounts scale with hardware tier and earning multiplier. See [Computing Provider Collateral](../token/computing-provider-collateral/) for the full table.
 
-## 7. Monitor earnings and uptime
+## 6. Monitor earnings and uptime
 
 The Provider dashboard at [inference.swanchain.io/dashboard](https://inference.swanchain.io/dashboard) shows live earnings, request counts, and benchmark history.
 
