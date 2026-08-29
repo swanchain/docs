@@ -231,7 +231,7 @@ Models = ["Qwen/Qwen2.5-7B-Instruct"]                    # must match keys in mo
 | `local_model` | No | Local model name if different from the key (e.g., Ollama's `qwen2.5:7b`) |
 | `api_key` | No | API key if your model server requires authentication |
 | `context_length` | Recommended | The context window your backend **really** serves. Auto-detected from `max_model_len` on vLLM/SGLang only; set it explicitly for Ollama, llama.cpp or any proxy — see the [Context-Window Integrity notice](provider-context-window-faq.md) |
-| `format`, `quantization` | No | Weight format (`fp16`, `awq`, `gptq`, `gguf`) and quantization detail (`q4_k_m`, `w4a16`, …), shown to consumers on the model page |
+| `format`, `quantization` | Recommended | Weight format (`fp16`, `awq`, `gptq`, `gguf`) and quantization detail (`q4_k_m`, `w4a16`, …). Consumers see these on the model page next to your 30-day uptime and typical time-to-first-token, and can pin requests to your offering by provider ID — so declaring them honestly is how you win explicit traffic |
 
 The keys in `models.json` must match valid Swan Inference model IDs **exactly**, including the organisation prefix (`meta-llama/Llama-3.2-3B`, not `llama-3.2-3b`). Run `computing-provider models catalog` or check the [model catalog](https://inference.swanchain.io/models) for the full list.
 

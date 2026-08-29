@@ -49,7 +49,7 @@ Usage is deducted from your balance per request. View balance, usage, and the tr
 
 ### Or subscribe to the Token Plan
 
-If you mostly use open-source models, the **Pro plan** ($6/month, billed monthly by card) includes **40M tokens per week and 1,500 requests per day on standard-tier models**, plus 75 images/day. Premium-tier models (Claude, Gemini Pro, …) stay pay-as-you-go from your credit balance, as does anything beyond the allowance. Subscribe from the [pricing page](https://inference.swanchain.io/pricing); a model's tier is shown on its catalog page.
+If you mostly use open-source models, the **Pro plan** ($6/month, billed monthly by card) includes **40M tokens per week and 1,500 requests per day on standard-tier models**, plus 75 images/day. Premium-tier models (Claude, Gemini Pro, …) stay pay-as-you-go from your credit balance, as does anything beyond the allowance and any request where you [choose the provider yourself](#5-optional-choose-the-provider). Subscribe from the [pricing page](https://inference.swanchain.io/pricing); a model's tier is shown on its catalog page.
 
 ## 3. Browse models
 
@@ -112,6 +112,12 @@ console.log(response.choices[0].message.content);
 ```
 
 Streaming, embeddings, image generation, and audio transcription all work identically to OpenAI. See the [API reference](../../bulders/app-developer/swan-inference-api.md) for every endpoint, the response headers that tell you which provider served you, and the limits.
+
+## 5. Optional: choose the provider
+
+Every model page lists the providers currently serving it, with each one's price, context window, quantization, 30-day uptime and typical time-to-first-token. To send a request to a specific one, add `X-Swan-Provider: <provider-id>`; add `X-Swan-Allow-Fallbacks: false` if you would rather the request fail than be served by someone else. The response tells you who served it and how it was billed (`X-Swan-Route-Mode`, `X-Swan-Fallback-Reason`, `X-Swan-Billing-Type`).
+
+Two things to know: choosing a provider is **always pay-as-you-go from your credit balance** — it is not covered by a Token Plan, so keep some credit on the account — and it stays pay-as-you-go even if your provider is offline and a fallback serves the request. Details in the [API reference](../../bulders/app-developer/swan-inference-api.md#choosing-a-provider).
 
 ## Next steps
 

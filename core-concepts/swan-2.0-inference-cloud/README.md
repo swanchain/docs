@@ -209,12 +209,18 @@ Under Swan 1.0 most daily UBI went to registered hardware that served nothing. [
 | **Provider collateral** | 35,000 SWAN on Swan Chain is one of the accepted collateral forms |
 | **Governance** | Vote on protocol parameters, pricing policy and incentive changes through SIPs |
 
-## In development
+## Choosing a provider
 
-The following are being built and tested and are **not yet available on the production API**. They will be announced on the [pricing page](https://inference.swanchain.io/pricing) FAQ and in this documentation when live:
+By default the router picks the provider for you. You can also choose one yourself:
 
-* **Per-request provider selection** — pin a request to a specific provider (`X-Swan-Provider`), optionally refusing fallbacks, with a receipt in the response saying who served it, why a fallback happened, and how it was billed. Explicit selection will always be pay-as-you-go.
-* **Per-offering transparency** — each provider's offering of a model will show its own price source, quantization, 30-day uptime and typical time-to-first-token, and each model will state the context window it can *guarantee* across online providers versus the maximum any provider reports.
+* **`X-Swan-Provider: <provider-id>`** pins the request to that provider. Provider IDs, and each provider's price, context window, quantization, 30-day uptime and typical time-to-first-token for the model, are on the model page and in `GET /api/v1/models/<model-id>/providers`.
+* **`X-Swan-Allow-Fallbacks: false`** makes the request fail instead of being served by someone else if your provider is unavailable. The default is `true`: the platform falls back and tells you so.
+
+Every response then carries a **receipt**: `X-Swan-Route-Mode` (`auto` or `explicit`), `X-Swan-Requested-Provider`, `X-Swan-Fallback-Reason` (`requested_provider_unavailable` or `requested_provider_failed`), `X-Swan-Billing-Type`, and the context window you were actually given (`X-Swan-Context-Source`, `X-Swan-Context-Length`).
+
+**Explicit selection is always pay-as-you-go**, billed from your credit balance at the catalog price — even for Token Plan subscribers, and even when a fallback ends up serving the request. A plan prices the pooled, platform-routed route; picking the offering yourself is outside it. Full details: [Choosing a provider](../../bulders/app-developer/swan-inference-api.md#choosing-a-provider) in the API reference.
+
+Each model also states what context it can **guarantee** across the providers currently online (`guaranteed_context_length`, with a basis of `reported`, `partial`, `unknown` or `no_online_providers`) next to the **maximum** any provider reports — so a long-context request can be sized against a promise rather than a catalog number.
 
 ## Learn more
 
