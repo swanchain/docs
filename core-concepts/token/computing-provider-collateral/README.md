@@ -33,8 +33,7 @@ The live table is served by `GET /api/v1/provider/collateral/contract` and print
 
 Every penalty record carries a **48-hour appeal window**, visible in the provider dashboard. Serving a small model or a small context window honestly is never penalised — only misrepresentation is. See [Quality assurance](../../swan-2.0-inference-cloud/README.md#quality-assurance) and the [Context-Window Integrity notice](../../swan-2.0-inference-cloud/provider-context-window-faq.md).
 
-## Swan 1.0: CU-based collateral
- (archived)
+## Swan 1.0: CU-based collateral (archived)
 
 {% hint style="warning" %}
 **Archived.** The Computing-Unit formula below applied to Swan 1.0 (ECP/FCP) providers and is kept so they can understand and withdraw their existing deposits. It does not apply to Swan 2.0 providers — see the current rules above.
