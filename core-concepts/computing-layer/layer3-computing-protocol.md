@@ -4,6 +4,10 @@ description: A Layer3 designed for high performance AI computing
 
 # Layer3 Computing Protocol
 
+{% hint style="warning" %}
+**Swan 1.0 — archived.** This page describes the task-auction network that preceded the Inference Cloud and is kept for reference. It does not apply to Swan 2.0 providers or consumers — see [Swan 2.0: Inference Cloud](../swan-2.0-inference-cloud/README.md).
+{% endhint %}
+
 **Introduction**
 
 The Layer3 Computing Protocol aims to aggregate computing jobs submission with reduced gas fees, ensuring efficient data management and scalability. This protocol utilizes IPLD for data storage, generates unique CIDs, and employs a Sequencer for batching and submitting tasks to Swan Chain.

@@ -1,5 +1,9 @@
 # Dynamic Pricing
 
+{% hint style="warning" %}
+**Swan 1.0 — archived.** This page describes the task-auction network that preceded the Inference Cloud and is kept for reference. It does not apply to Swan 2.0 providers or consumers — see [Swan 2.0: Inference Cloud](../swan-2.0-inference-cloud/README.md).
+{% endhint %}
+
 ## 1. Introduction
 
 In the fast-paced world of cloud computing and AI, the demand for GPU resources fluctuates rapidly. Our new dynamic pricing strategy aims to optimize resource allocation by implementing a quadratic demand model. This approach ensures that prices respond more aggressively to high demand, promoting efficient resource utilization and improved accessibility for all users.
