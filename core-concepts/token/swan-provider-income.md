@@ -125,7 +125,7 @@ Where:
 The UBI model described above served as the **bootstrap phase** (Swan 1.0) that built the initial provider network. Swan 2.0 introduces contribution-based rewards that complement and gradually replace UBI. See [SIP-002](https://github.com/swanchain/governance/discussions/16) for the full proposal.
 {% endhint %}
 
-With the launch of the [Inference Cloud](../swan-2.0-inference-cloud.md), Computing Provider income transitions from UBI-only to a dual-income model where providers earn based on actual work performed.
+With the launch of the [Inference Cloud](../swan-2.0-inference-cloud/README.md), Computing Provider income transitions from UBI-only to a dual-income model where providers earn based on actual work performed.
 
 ### Dual Income Streams
 

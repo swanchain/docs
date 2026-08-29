@@ -4,7 +4,7 @@ description: Decentralized AI Inference Marketplace for Real-Time Model Serving
 
 # Inference Marketplace
 
-The Inference Marketplace is Swan Chain's decentralized platform for AI model serving, introduced as part of [Swan 2.0](../swan-2.0-inference-cloud.md). Unlike the existing [AI Computing Marketplace](decentralized-ai-computing-marketplace/) which handles training workloads through task auctions, the Inference Marketplace provides **real-time, low-latency AI inference** through persistent WebSocket connections and an OpenAI-compatible API.
+The Inference Marketplace is Swan Chain's decentralized platform for AI model serving, introduced as part of [Swan 2.0](../swan-2.0-inference-cloud/README.md). Unlike the existing [AI Computing Marketplace](decentralized-ai-computing-marketplace/) which handles training workloads through task auctions, the Inference Marketplace provides **real-time, low-latency AI inference** through persistent WebSocket connections and an OpenAI-compatible API.
 
 ## How It Works
 
@@ -218,6 +218,6 @@ Both marketplaces coexist within the Swan ecosystem, serving different use cases
 
 ## Learn More
 
-- **[Swan 2.0: Inference Cloud](../swan-2.0-inference-cloud.md)** — Overview of the Swan 2.0 platform
+- **[Swan 2.0: Inference Cloud](../swan-2.0-inference-cloud/README.md)** — Overview of the Swan 2.0 platform
 - **[Computing Provider Income](../token/swan-provider-income.md)** — Contribution scoring and reward distribution
 - **[Computing Provider Collateral](../token/computing-provider-collateral/)** — Collateral requirements and slashing

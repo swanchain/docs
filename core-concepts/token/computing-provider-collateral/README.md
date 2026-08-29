@@ -85,7 +85,7 @@ The negative correlation between collateral and computing power has several bene
 #### Swan 2.0: Updated Collateral Model <a href="#swan-2.0-collateral" id="swan-2.0-collateral"></a>
 
 {% hint style="info" %}
-The collateral model above applies to the legacy UBI system (Swan 1.0). Swan 2.0 introduces additional collateral options and updated tiers for the [Inference Cloud](../../swan-2.0-inference-cloud.md). See [SIP-002](https://github.com/swanchain/governance/discussions/16) for the full proposal.
+The collateral model above applies to the legacy UBI system (Swan 1.0). Swan 2.0 introduces additional collateral options and updated tiers for the [Inference Cloud](../../swan-2.0-inference-cloud/README.md). See [SIP-002](https://github.com/swanchain/governance/discussions/16) for the full proposal.
 {% endhint %}
 
 **Stablecoin Collateral (New in Swan 2.0)**

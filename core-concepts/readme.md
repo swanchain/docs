@@ -25,7 +25,7 @@ Swan Chain incorporates state-of-the-art technologies to materialize its ambitio
 
 #### Swan 2.0: Inference Cloud
 
-Swan Chain is evolving into a **market-driven AI inference marketplace** with [Swan 2.0](swan-2.0-inference-cloud.md). Building on the network bootstrapped by UBI, Swan 2.0 introduces:
+Swan Chain is evolving into a **market-driven AI inference marketplace** with [Swan 2.0](swan-2.0-inference-cloud/README.md). Building on the network bootstrapped by UBI, Swan 2.0 introduces:
 
 * **Decentralized AI Inference**: An [Inference Marketplace](market-provider/inference-marketplace.md) connecting consumers with GPU providers through a WebSocket-based coordination layer and an OpenAI-compatible API (`/v1/chat/completions`, `/v1/embeddings`, etc.)
 * **Dual Token Payments**: Consumers can pay with **stablecoins (USDC/USDT)** while providers earn both stablecoin revenue from inference requests and **SWAN token** rewards from contribution-based incentives

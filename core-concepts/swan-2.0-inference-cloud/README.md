@@ -281,7 +281,7 @@ Providers must deposit collateral to become active on the network. Two deposit m
 | **Stripe** | Credit/debit card (USD) | Instant | Refunded to original card (7-day waiting period) |
 | **On-chain** | SWAN tokens | Requires gas (SwanETH) | Returned to wallet (7-day waiting period) |
 
-See [Computing Provider Collateral](token/computing-provider-collateral/) for details on collateral amounts and the refund waiting period.
+See [Computing Provider Collateral](../token/computing-provider-collateral/README.md) for details on collateral amounts and the refund waiting period.
 
 ## On-Chain Settlement
 
@@ -302,7 +302,7 @@ This approach minimizes gas costs by settling many provider payments in a single
 | **SWAN Token** | `0xAF90ac6428775E1Be06BAFA932c2d80119a7bd02` |
 
 {% hint style="info" %}
-Swan Chain Mainnet operates on Chain ID **254** with RPC at `https://mainnet-rpc01.swanchain.io`. See [Network Info](../network-reference/readme/) for full details.
+Swan Chain Mainnet operates on Chain ID **254** with RPC at `https://mainnet-rpc01.swanchain.io`. See [Network Info](../../network-reference/readme/README.md) for full details.
 {% endhint %}
 
 ## UBI Sunset (SIP-003)
@@ -336,9 +336,9 @@ After UBI stops, SWAN token utility is:
 
 ## Learn More
 
-- **[Inference Marketplace](market-provider/inference-marketplace.md)** — How the marketplace works: pricing, routing, and settlement
-- **[Computing Provider Income](token/swan-provider-income.md)** — Contribution score formula and reward distribution
-- **[Computing Provider Collateral](token/computing-provider-collateral/)** — Collateral requirements and slashing
+- **[Inference Marketplace](../market-provider/inference-marketplace.md)** — How the marketplace works: pricing, routing, and settlement
+- **[Computing Provider Income](../token/swan-provider-income.md)** — Contribution score formula and reward distribution
+- **[Computing Provider Collateral](../token/computing-provider-collateral/README.md)** — Collateral requirements and slashing
 - **[SIP-001: FCP Subsidy Program](https://github.com/swanchain/governance/discussions/11)** — Stage 1 funding for computing providers
 - **[SIP-002: Unified CP & Contribution Rewards](https://github.com/swanchain/governance/discussions/16)** — Original transition proposal
 - **[SIP-003: Inference Cloud Economics](https://github.com/swanchain/governance/discussions/21)** — Full model catalog, 95/5 revenue split, UBI sunset, Pay-with-SWAN

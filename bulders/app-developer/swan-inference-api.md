@@ -673,6 +673,6 @@ These endpoints do not require authentication.
 
 ## Learn More
 
-- **[Swan 2.0: Inference Cloud](../../core-concepts/swan-2.0-inference-cloud.md)** — Architecture and platform overview
+- **[Swan 2.0: Inference Cloud](../../core-concepts/swan-2.0-inference-cloud/README.md)** — Architecture and platform overview
 - **[Inference Marketplace](../../core-concepts/market-provider/inference-marketplace.md)** — How the marketplace works (routing, pricing, settlement)
 - **[Model Catalog](https://inference.swanchain.io/models)** — Browse all available models with real-time availability and pricing

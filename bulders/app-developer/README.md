@@ -38,7 +38,7 @@ Discover Swan Storage capabilities [here](store-and-retrieve-a-file-with-swan-st
 * Learn how to create Docker images for your applications.
 * Explore the process of pushing your Docker images to repositories.&#x20;
 
-Get started with Docker [here](broken-reference).
+Get started with Docker [here](building-and-pushing-docker-images.md).
 
 #### Creating Deployment Files with LDL
 
