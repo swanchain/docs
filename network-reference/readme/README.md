@@ -4,6 +4,17 @@ description: A Full Toolset AI Blockchain
 
 # Network Info
 
+## Swan Inference endpoints
+
+| Purpose | Endpoint |
+|---------|----------|
+| OpenAI-compatible API (consumers) | `https://inference.swanchain.io/v1` (also `https://api.swanchain.io/v1`) |
+| Public catalog and stats | `https://inference.swanchain.io/api/v1/models`, `/api/v1/stats/network` |
+| Provider WebSocket (`computing-provider`) | `wss://inference-ws.swanchain.io` — set as `WebSocketURL`; the agent appends `/ws` itself |
+| Marketplace web app | [https://inference.swanchain.io](https://inference.swanchain.io) |
+
+**Swan Inference contracts (mainnet):** provider collateral — Ethereum `0x1dEe92Da8fc4878795418aEde112100A57286a9a` (USDC), Base `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` (USDC), Swan Chain `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` (SWAN). Live values: `GET https://inference.swanchain.io/api/v1/provider/collateral/contract`. See [Contract Addresses](../contract-addresses.md) and [Become a Provider](../../core-concepts/swan-2.0-inference-cloud/become-a-provider.md).
+
 ## SWAN Token（Mainnet）
 
 <table data-header-hidden><thead><tr><th width="200"></th><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Contract Address</strong></td><td><strong>Layer</strong></td><td><strong>Address</strong></td><td><strong>link</strong></td></tr><tr><td>Swan Token</td><td>L1 （ETH Mainnet）</td><td><code>0x43e3De6745fad70127d7935198311386449fD9dd</code></td><td><a href="https://etherscan.io/token/0x43e3de6745fad70127d7935198311386449fd9dd">https://etherscan.io/token/0x43e3de6745fad70127d7935198311386449fd9dd</a></td></tr><tr><td>Swan Token（Bridged）</td><td>L2 （Swan Chain）</td><td><code>0xBb4eC1b56cB624863298740Fd264ef2f910d5564</code></td><td><a href="https://swanscan.io/address/0xBb4eC1b56cB624863298740Fd264ef2f910d5564">https://swanscan.io/address/0xBb4eC1b56cB624863298740Fd264ef2f910d5564</a></td></tr></tbody></table>
@@ -12,7 +23,7 @@ description: A Full Toolset AI Blockchain
 
 <table data-header-hidden><thead><tr><th width="282"></th><th></th></tr></thead><tbody><tr><td><strong>Chain ID</strong></td><td>254</td></tr><tr><td><strong>Currency Symbol</strong></td><td>ETH</td></tr><tr><td><strong>Block Explorer URL</strong></td><td><a href="https://swanscan.io/">https://swanscan.io</a><br>（If it fails,try <a href="https://mainnet-explorer.swanchain.io/">https://mainnet-explorer.swanchain.io</a>)</td></tr><tr><td><strong>Chainlist</strong></td><td><a href="https://chainlist.org/chain/254">https://chainlist.org/chain/254</a></td></tr><tr><td><strong>Contract Addresses</strong></td><td>Refer to the <a href="../contract-addresses.md#mainnet">Contract Addresses pages</a></td></tr><tr><td><strong>Connect Wallet</strong></td><td>Click <a href="https://chainlist.org/chain/254">here</a> to connect your wallet to Swan Chain mainnet</td></tr></tbody></table>
 
-<table><thead><tr><th width="767">RPC List</th></tr></thead><tbody><tr><td><a href="https://mainnet-rpc.swanchain.org">https://mainnet-rpc.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-01.swanchain.org">https://mainnet-rpc-01.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-02.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-03.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-04.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc01.swanchain.io">https://mainnet-rpc01.swanchain.io</a></td></tr></tbody></table>
+<table><thead><tr><th width="767">RPC List</th></tr></thead><tbody><tr><td><a href="https://mainnet-rpc.swanchain.org">https://mainnet-rpc.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-01.swanchain.org">https://mainnet-rpc-01.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-02.swanchain.org">https://mainnet-rpc-02.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-03.swanchain.org">https://mainnet-rpc-03.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc-04.swanchain.org">https://mainnet-rpc-04.swanchain.org</a></td></tr><tr><td><a href="https://mainnet-rpc01.swanchain.io">https://mainnet-rpc01.swanchain.io</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 **Important:** If you experience any issues with any of these RPCs, please switch to another one immediately.

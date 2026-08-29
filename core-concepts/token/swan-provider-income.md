@@ -1,5 +1,11 @@
 # Computing Provider Income
 
+{% hint style="info" %}
+**How providers earn today (Swan 2.0):** per token, at the payout price published for each model — see [Income under Swan 2.0](#swan-2.0-market-driven-income) below. The UBI formulas that follow describe **Swan 1.0** and are kept for reference; UBI is being wound down under [SIP-003](https://github.com/swanchain/governance/discussions/21).
+{% endhint %}
+
+## Swan 1.0: UBI income (historical)
+
 Swan Chain is a decentralized network that connects computing providers with users requiring computational resources. To foster early network growth and incentivize CPs to join and contribute resources, a dual compensation mechanism has been designed:
 
 1. **Universal Basic Income (UBI)**: Provides CPs with a predictable token income when their resources are underutilized.
@@ -119,125 +125,44 @@ Where:
 
 ***
 
-## Swan 2.0: Market-Driven Income <a href="#swan-2.0-market-driven-income" id="swan-2.0-market-driven-income"></a>
+## Income under Swan 2.0 <a href="#swan-2.0-market-driven-income" id="swan-2.0-market-driven-income"></a>
 
-{% hint style="info" %}
-The UBI model described above served as the **bootstrap phase** (Swan 1.0) that built the initial provider network. Swan 2.0 introduces contribution-based rewards that complement and gradually replace UBI. See [SIP-002](https://github.com/swanchain/governance/discussions/16) for the full proposal.
-{% endhint %}
+Under the [Inference Cloud](../swan-2.0-inference-cloud/README.md) a provider's income is the sum of what it is paid for the requests it actually serves. There is no allocation for registered-but-idle hardware.
 
-With the launch of the [Inference Cloud](../swan-2.0-inference-cloud/README.md), Computing Provider income transitions from UBI-only to a dual-income model where providers earn based on actual work performed.
+### Per-token payout
 
-### Dual Income Streams
-
-Under Swan 2.0, providers earn through two complementary channels:
-
-1. **Inference Revenue (Stablecoins)** — Direct payment in USDC for serving inference requests through the [Inference Marketplace](../market-provider/inference-marketplace.md)
-2. **Contribution Rewards (SWAN Tokens)** — Daily SWAN token rewards allocated proportionally based on contribution score
-
-When paid inference requests generate protocol revenue, the split is:
-
-| Recipient | Share |
-|-----------|-------|
-| Provider | 70% (paid in request currency) |
-| Protocol Treasury | 20% |
-| SWAN Buyback & Burn | 10% |
-
-### Contribution Score
-
-Each provider receives a daily Contribution Score that determines their share of the SWAN token reward pool:
+Every catalog model publishes a **payout price** per 1M input and output tokens (per image for image models, per minute for audio), set by the platform alongside the consumer price. For each request:
 
 $$
-\text{Contribution\_Score} = W_{inf} \times \text{norm}(\text{inferences}) + W_{tok} \times \text{norm}(\text{tokens}) + W_{up} \times \text{uptime} + W_{qual} \times \text{quality} + W_{div} \times \text{diversity}
+\text{earning} = \frac{\text{input\_tokens} \times \text{payout\_input\_price} + \text{output\_tokens} \times \text{payout\_output\_price}}{10^6}
 $$
 
-Where the weights are:
+The platform margin is the spread between the consumer price and the payout price; there is no percentage commission. Payout prices are visible in the provider dashboard and in the public catalog (`payout_input_price`, `payout_output_price` in `GET /api/v1/models`). At the time of writing the payout is 90% of the consumer price for almost every model. Providers do not set prices; they choose which models to serve. `computing-provider inference recommend-models` ranks models by current demand against your hardware.
 
-| Component | Weight | Description |
-|-----------|--------|-------------|
-| $$W_{inf}$$ | 0.30 | Inference volume — number of requests processed |
-| $$W_{tok}$$ | 0.25 | Token throughput — total input + output tokens |
-| $$W_{up}$$ | 0.20 | Uptime — 30-day uptime percentage |
-| $$W_{qual}$$ | 0.15 | Quality — success rate adjusted by latency |
-| $$W_{div}$$ | 0.10 | Model diversity — number of distinct models served |
+### Token Plan traffic
 
-And the component scores are:
+Requests covered by a consumer's Token Plan credit the provider at the same payout price, but the month's total plan payouts are capped at the plan revenue pool (subscribers × $6). If plan usage costs more than the pool, payouts are pro-rated across providers by their share of plan tokens served. These earnings are held as *settlement pending* until month end; pay-as-you-go earnings are not.
 
-$$
-\text{norm}(x) = \frac{x}{\max(x_{\text{all providers}})}
-$$
+### What moves your income
 
-$$
-\text{uptime\_score} = \frac{\text{uptime}_{30d}}{100}
-$$
+| Factor | Effect |
+|--------|--------|
+| **Being online for models people use** | Traffic is only routed to online providers; demand is visible per model on the [network page](https://inference.swanchain.io/network) |
+| **Health** | Success rate, uptime and latency weight how much of a model's traffic you receive; degraded providers get only probe traffic |
+| **Verification trust** | Passing fingerprint/logprob/context checks raises routing weight; failures lower it and can trip a circuit breaker |
+| **Honest context window** | Declaring the window you really serve makes you eligible for the long-context requests you can handle and avoids caps |
+| **Reference-node status** | A node the platform designates as a model's reference baseline earns nothing for that model |
 
-$$
-\text{quality\_score} = \text{success\_rate} \times (1 - \text{norm}(\text{avg\_latency}))
-$$
+### Settlement and payouts
 
-$$
-\text{diversity\_score} = \frac{\text{models\_served}}{\text{max\_models\_in\_catalog}}
-$$
+* Earnings accrue per request and appear in the dashboard (daily/weekly/monthly, per model, CSV export).
+* Settlement aggregates usage into daily batches per provider and collateral chain.
+* Payout requests go to the beneficiary wallet: **minimum $10**, **flat $1 fee**, one request per chain per hour, one pending payout at a time. Earnings can also be converted into inference credit on the same account.
 
-### Minimum Contribution Thresholds
+### SWAN rewards
 
-To prevent reward fragmentation and gaming:
+Any SWAN token rewards for providers are governed by [SIP-003](https://github.com/swanchain/governance/discussions/21), which tapers the Swan 1.0 UBI allocation to zero and reserves any remaining allocation for hardware that serves real traffic. Check the [governance repository](https://github.com/swanchain/governance) for the current stage; the per-token payout above is the income every provider can count on.
 
-| Threshold | Requirement | Effect if Not Met |
-|-----------|-------------|-------------------|
-| Minimum Uptime | 80% over 7 days | Excluded from contribution pool |
-| Minimum Inferences | 100/week | Reduced to 50% contribution weight |
-| Minimum Success Rate | 90% | Reduced to 75% contribution weight |
-| Minimum Online Hours | 120 hours/week | Pro-rated availability bonus |
+### Unified Computing Provider role
 
-### 3-Phase Transition
-
-The transition from UBI to contribution-based rewards follows an accelerated 3-month timeline:
-
-**Phase 1: Hybrid Mode (Month 1)**
-
-$$
-\text{Daily\_Reward} = \text{UBI\_Base} \times 0.75 \times (1 - u) + \frac{\text{Score}_i}{\sum \text{Scores}} \times \text{Contribution\_Pool}
-$$
-
-Where the Contribution Pool is 25% of the current daily UBI allocation.
-
-**Phase 2: Contribution-Weighted UBI (Month 2)**
-
-$$
-\text{Daily\_Reward} = \text{UBI\_Base} \times 0.50 \times \text{availability} + \frac{\text{Score}_i}{\sum \text{Scores}} \times \text{Contribution\_Pool}
-$$
-
-Where the Contribution Pool increases to 50% and availability requires maintaining 95%+ uptime.
-
-**Phase 3: Pure Contribution Mode (Month 3+)**
-
-$$
-\text{Daily\_Reward} = \frac{\text{Score}_i}{\sum \text{Scores}} \times \text{Reward\_Pool} + \text{Availability\_Bonus}
-$$
-
-Where the Availability Bonus (10% of the daily pool) incentivizes standby capacity, weighted by hardware tier:
-
-| Hardware Tier | Multiplier |
-|---------------|-----------|
-| RTX 3090 / A4000 | 1.0x |
-| RTX 4090 / A5000 / A6000 | 1.5x |
-| A100 | 2.5x |
-| H100 | 4.0x |
-
-### Payout Structure
-
-| Component | Allocation |
-|-----------|------------|
-| Liquid SWAN | 80% |
-| Locked SWAN (3-month vesting) | 20% |
-
-### Unified Computing Provider (CP) Role
-
-Under Swan 2.0, the legacy ECP and FCP roles merge into a single **Computing Provider (CP)** classification. All providers are evaluated equally based on contribution metrics, regardless of their previous role.
-
-**Migration path for existing providers:**
-
-1. ECPs and FCPs running inference tasks are automatically converted to unified CP role
-2. Providers not running inference have a 30-day grace period to onboard to Swan Inference or migrate staked SWAN to SwanFi
-3. Hardware requirements: ≥ 24 GB VRAM recommended; ≥ 48 GB VRAM for priority task routing
-
+The legacy ECP and FCP roles are merged into a single Computing Provider. Operators of legacy providers can install the current [`computing-provider`](https://github.com/swanchain/computing-provider) and follow [Become a Provider](../swan-2.0-inference-cloud/become-a-provider.md); the legacy pages under [Legacy: Swan 1.0](../../swan-chain-campaign/README.md) remain for withdrawing Swan 1.0 collateral.

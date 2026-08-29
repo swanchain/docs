@@ -47,9 +47,13 @@ Combined with Swan's already-lower per-token pricing, the deposit bonus pushes e
 
 Usage is deducted from your balance per request. View balance, usage, and the transaction ledger under **Billing** in the dashboard.
 
+### Or subscribe to the Token Plan
+
+If you mostly use open-source models, the **Pro plan** ($6/month, billed monthly by card) includes **40M tokens per week and 1,500 requests per day on standard-tier models**, plus 75 images/day. Premium-tier models (Claude, Gemini Pro, …) stay pay-as-you-go from your credit balance, as does anything beyond the allowance. Subscribe from the [pricing page](https://inference.swanchain.io/pricing); a model's tier is shown on its catalog page.
+
 ## 3. Browse models
 
-The [Models page](https://inference.swanchain.io/models) lists every available model with live pricing, context length, and provider count. Click any model for details and code examples.
+The [Models page](https://inference.swanchain.io/models) lists every model with live pricing, context length, tier, and how many providers are online for it right now — a model is only callable while at least one provider is serving it. Click any model for details and code examples.
 
 <figure><img src="../../.gitbook/assets/inference-how-to/models.png" alt="Swan Inference models catalog"><figcaption>Live models catalog.</figcaption></figure>
 
@@ -107,12 +111,13 @@ const response = await client.chat.completions.create({
 console.log(response.choices[0].message.content);
 ```
 
-Streaming, embeddings, image generation, and audio transcription all work identically to OpenAI. See [OpenAI-Compatible API](README.md#openai-compatible-api) for the full endpoint list.
+Streaming, embeddings, image generation, and audio transcription all work identically to OpenAI. See the [API reference](../../bulders/app-developer/swan-inference-api.md) for every endpoint, the response headers that tell you which provider served you, and the limits.
 
 ## Next steps
 
 - **[Inference Marketplace](../market-provider/inference-marketplace.md)** — deeper on how pricing, routing, and settlement work
 - **[Become a Provider](become-a-provider.md)** — want to earn by sharing GPU resources instead?
-- **[API reference](https://inference.swanchain.io/docs)** — full list of endpoints, parameters, and error codes
+- **[API reference](../../bulders/app-developer/swan-inference-api.md)** — full list of endpoints, headers, limits and error codes
+- **[AI agent integrations](../../bulders/app-developer/claw-tools-integration.md)** — point OpenClaw, Nanobot and friends at Swan Inference
 
 Questions? Reach the team on [Discord](https://discord.gg/swanchain) or open an issue on [GitHub](https://github.com/swanchain).

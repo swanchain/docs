@@ -25,15 +25,15 @@ Swan Chain incorporates state-of-the-art technologies to materialize its ambitio
 
 #### Swan 2.0: Inference Cloud
 
-Swan Chain is evolving into a **market-driven AI inference marketplace** with [Swan 2.0](swan-2.0-inference-cloud/README.md). Building on the network bootstrapped by UBI, Swan 2.0 introduces:
+Swan Chain is evolving into a **market-driven AI inference marketplace** with [Swan 2.0](swan-2.0-inference-cloud/README.md). The network bootstrapped by UBI now runs as an inference marketplace:
 
 * **Decentralized AI Inference**: An [Inference Marketplace](market-provider/inference-marketplace.md) connecting consumers with GPU providers through a WebSocket-based coordination layer and an OpenAI-compatible API (`/v1/chat/completions`, `/v1/embeddings`, etc.)
-* **Dual Token Payments**: Consumers can pay with **stablecoins (USDC/USDT)** while providers earn both stablecoin revenue from inference requests and **SWAN token** rewards from contribution-based incentives
-* **Contribution-Based Rewards**: A merit-based scoring system replacing UBI, where providers earn proportionally to inference volume, token throughput, uptime, quality, and model diversity
+* **Pay per token, in USD**: Consumers fund a credit balance by card or crypto (USDC, USDT or SWAN — SWAN deposits earn a bonus) or subscribe to a Token Plan; providers are paid a published per-token payout price for every request they serve
+* **Earning follows real work**: The UBI model that bootstrapped the network is being retired under [SIP-003](https://github.com/swanchain/governance/discussions/21); provider income now comes from inference actually served
 * **Unified Computing Provider Role**: ECP and FCP roles merge into a single Computing Provider (CP) classification, evaluated equally on contribution metrics
 
 {% hint style="info" %}
-**Try Swan Inference**: [https://inference.swanchain.io](https://inference.swanchain.io) — 42+ AI models available via a single API key.
+**Try Swan Inference**: [https://inference.swanchain.io](https://inference.swanchain.io) — frontier and open-source models behind a single OpenAI-compatible API key. See the [live catalog](https://inference.swanchain.io/models) for what is available right now.
 {% endhint %}
 
 #### Vision and Future Outlook

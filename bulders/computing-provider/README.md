@@ -1,5 +1,9 @@
 # Computing Provider
 
+{% hint style="warning" %}
+**Running a GPU for AI inference?** This page describes the legacy **ECP/FCP** roles of Swan 1.0 and is kept for operators who need the funding and exit procedures. Current providers serve inference with the unified `computing-provider` — start at [Become a Provider](../../core-concepts/swan-2.0-inference-cloud/become-a-provider.md).
+{% endhint %}
+
 A Computing Provider (CP) is a third-party individual or organization that offers scalable computing resources, which businesses can access on demand over Swan network. These resources include cloud-based compute, storage, platform, and application services.
 
 As a resource provider, you can run a **ECP** (Edge Computing Provider) and **FCP** (Fog Computing Provider) to contribute yourcomputing resource.

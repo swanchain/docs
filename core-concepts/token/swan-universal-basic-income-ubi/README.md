@@ -6,19 +6,23 @@ description: >-
 
 # UBI Allocation Curve
 
+{% hint style="warning" %}
+**Historical.** This page documents the Swan 1.0 UBI reward model that bootstrapped the provider network. Under Swan 2.0 providers are paid per token for inference they actually serve, and UBI is being wound down under [SIP-003](https://github.com/swanchain/governance/discussions/21). See [Computing Provider Income](../swan-provider-income.md) for how providers earn today.
+{% endhint %}
+
 ### **Table of Contents**
 
-* [Introduction](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#introduction)
-* [Compensation Model](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#compensation-model)
-* [Algorithm Implementation](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#algorithm-implementation)
-* [Visualization of Income Over Time](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#visualization-of-income-over-time)
-  * [Interpretation of the Plots](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#interpretation-of-the-plots)
-  * [Data Points Illustration](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#data-points-illustration)
-  * [Impact of the Design](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#impact-of-the-design)
-  * [Conclusion](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#conclusion)
-  * [Future Work](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#future-work)
-* [Appendix](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#appendix)
-  * [Sample Calculations](https://docs.swanchain.io/core-concepts/token/swan-universal-basic-income-ubi#sample-calculations)
+* [Introduction](#introduction)
+* [Compensation Model](#compensation-model)
+* [Algorithm Implementation](#algorithm-implementation)
+* [Visualization of Income Over Time](#visualization-of-income-over-time)
+  * [Interpretation of the Plots](#interpretation-of-the-plots)
+  * [Data Points Illustration](#data-points-illustration)
+  * [Impact of the Design](#impact-of-the-design)
+  * [Conclusion](#conclusion)
+  * [Future Work](#future-work)
+* [Appendix](#appendix)
+  * [Sample Calculations](#sample-calculations)
 
 ### **Introduction**
 

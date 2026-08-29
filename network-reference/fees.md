@@ -1,6 +1,10 @@
-# Fees
+# Gas Fees
 
-## How do network fees on Swan Chain work?[​](https://docs.base.org/docs/fees#how-do-network-fees-on-base-work) <a href="#how-do-network-fees-on-base-work" id="how-do-network-fees-on-base-work"></a>
+{% hint style="info" %}
+Looking for **AI inference pricing**? That is on the [pricing page](https://inference.swanchain.io/pricing) and in the [model catalog](https://inference.swanchain.io/models); how prices work is explained in [How the Marketplace Works](../core-concepts/market-provider/inference-marketplace.md#pricing-the-two-price-model). This page is about **transaction (gas) fees on the Swan Chain L2**.
+{% endhint %}
+
+## How do network fees on Swan Chain work? <a href="#how-do-network-fees-on-base-work" id="how-do-network-fees-on-base-work"></a>
 
 Every transaction on Swan Chain consists of two costs: an L2 (execution) fee and an L1 (security) fee. The L2 fee is the cost to execute your transaction on the L2, and the L1 fee is the estimated cost to publish the transaction on the L1. Typically the L1 security fee is higher than the L2 execution fee.
 
@@ -8,7 +12,7 @@ The L1 fee will vary depending on the amount of transactions on the L1. If the t
 
 Similarly, the L2 fee can increase and decrease depending on how many transactions are being submitted to the L2. This adjustment mechanism has the same implementation as the L1.
 
-For additional details about fee calculation on Swan Chain, please refer to the [op-stack developer documentation](https://community.optimism.io/docs/developers/build/transaction-fees/).
+For additional details about fee calculation on Swan Chain, please refer to the [op-stack developer documentation](https://docs.optimism.io/stack/transactions/fees).
 
 ## How to Reduce Gas Fees on Swan Chain with MetaMask
 

@@ -1,19 +1,21 @@
 # App Developer
 
-Welcome, Web2 developers! This guide will walk you through the process of building applications on [Swan Chain Mainnet](../../swan-chain-campaign/swan-chain-mainnet/network-information.md). If you're new to the web3 world, don't worry - we'll start with the basics and gradually move to more advanced topics.
+{% hint style="info" %}
+**Calling AI models?** You do not need a wallet or any blockchain setup. Start at [For Developers](../../core-concepts/swan-2.0-inference-cloud/how-to-use.md) and the [API Reference](swan-inference-api.md). The rest of this page covers the Swan 1.0 deployment tooling (Swan SDK, Lagrange/LDL, IPFS storage) and is kept for reference.
+{% endhint %}
 
-### Getting Started
+### Getting Started with Swan Chain (L2)
 
-Before diving into development, make sure you:
+For the on-chain tooling below you will need to:
 
-* [Set up your wallet](https://docs.swanchain.io/network-reference/readme/set-up-your-wallet)
-* [Bridge tokens from Ethereum to Swan Mainnet](https://docs.swanchain.io/network-reference/readme/bridge-token)
+* [Set up your wallet](../../network-reference/readme/set-up-your-wallet.md)
+* [Bridge tokens from Ethereum to Swan Mainnet](../../network-reference/readme/bridge-token.md)
 
 ### What You Can Do with Swan Chain
 
 #### **AI Inference with Swan Inference API**
 
-* Access **42+ AI models** (LLM, image, audio, embedding, multimodal) via an **OpenAI-compatible API**
+* Access frontier and open-source models (LLM, multimodal, image, audio, embedding) via an **OpenAI-compatible API** — see the [live catalog](https://inference.swanchain.io/models)
 * Drop-in replacement — use any existing OpenAI SDK by changing the base URL to `https://inference.swanchain.io/v1`
 * Supports streaming, embeddings, image generation, and audio transcription
 
