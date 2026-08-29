@@ -503,7 +503,7 @@ Provider IDs, and what each provider offers for a model, come from the public pe
 curl "https://inference.swanchain.io/api/v1/models/zai-org%2FGLM-4.7-Flash/providers"
 ```
 
-Each offering carries `provider_id`, `provider_name`, `input_price` / `output_price` and `price_source` (`catalog` — providers do not set their own prices), `quantization` and `format` when the provider declared them, `uptime_30d` (absent when there is no evidence yet, never assumed 100%), `ttft_avg_ms` (a mean, named as such), and its context window with provenance — `context_length`, `context_source` (`reported`, `assumed`, `capped`), `reported_context_length`. The same information is on the model page under **Providers**.
+Each offering carries `provider_id`, `name`, `input_price` / `output_price` and `price_source` (`catalog` — providers do not set their own prices), `quantization` and `format` when the provider declared them, `uptime_30d` (absent when there is no evidence yet, never assumed 100%), `ttft_avg_ms` (a mean, named as such), and its context window with provenance — `context_length`, `context_source` (`reported`, `assumed`, `capped`), `reported_context_length`. The same information is on the model page under **Providers**.
 
 ```bash
 curl https://inference.swanchain.io/v1/chat/completions \
