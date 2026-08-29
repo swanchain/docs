@@ -1,5 +1,5 @@
 ---
-description: Call 42+ AI Models via an OpenAI-Compatible API
+description: Call frontier and open-source AI models through one OpenAI-compatible API
 ---
 
 # Swan Inference API
@@ -23,7 +23,7 @@ curl https://inference.swanchain.io/v1/chat/completions \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "deepseek-r1-distill-llama-70b",
+    "model": "zai-org/GLM-4.7-Flash",
     "messages": [
       {"role": "system", "content": "You are a helpful assistant."},
       {"role": "user", "content": "What is Swan Chain?"}
@@ -42,7 +42,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="deepseek-r1-distill-llama-70b",
+    model="zai-org/GLM-4.7-Flash",
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "What is Swan Chain?"},
@@ -63,7 +63,7 @@ const client = new OpenAI({
 });
 
 const response = await client.chat.completions.create({
-  model: "deepseek-r1-distill-llama-70b",
+  model: "zai-org/GLM-4.7-Flash",
   messages: [
     { role: "system", content: "You are a helpful assistant." },
     { role: "user", content: "What is Swan Chain?" },
@@ -92,7 +92,7 @@ func main() {
     resp, err := client.CreateChatCompletion(
         context.Background(),
         openai.ChatCompletionRequest{
-            Model: "deepseek-r1-distill-llama-70b",
+            Model: "zai-org/GLM-4.7-Flash",
             Messages: []openai.ChatCompletionMessage{
                 {Role: "system", Content: "You are a helpful assistant."},
                 {Role: "user", Content: "What is Swan Chain?"},
@@ -120,12 +120,12 @@ Swan Inference offers a **public playground** that lets you try AI inference wit
 curl https://inference.swanchain.io/v1/playground/chat \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "MadeAgents/Hammer2.1-0.5b",
+    "model": "zai-org/GLM-4.7-Flash",
     "messages": [{"role": "user", "content": "Hello!"}]
   }'
 ```
 
-No `Authorization` header required. To list available playground models:
+No `Authorization` header required. The playground exposes a single small model (currently `zai-org/GLM-4.7-Flash`) — list it with:
 
 ```bash
 curl https://inference.swanchain.io/v1/playground/models
@@ -141,17 +141,19 @@ curl https://inference.swanchain.io/v1/playground/models
 For full access to all models with higher limits, [sign up](https://inference.swanchain.io/signup) for a free account.
 {% endhint %}
 
-### Subscription Plan
+### Token Plan (Pro subscription)
 
-For heavy users, Swan Inference offers a **Pro plan at $6/month** with unlimited open-source model access:
+For steady users of open-source models, the **Pro plan** is a flat **$6/month** (billed monthly by card) that includes a weekly token allowance on **standard-tier** models. Everything else is pay-as-you-go from your credit balance.
 
-| Feature | Pay-As-You-Go | Pro ($6/month) |
-|---------|---------------|----------------|
-| Open-source models | Pay per token | Included |
-| Premium models | Pay per token | Pay per token |
-| Requests/day | Unlimited | 1,500 |
-| Tokens/week | Unlimited | 40M |
-| Payment | Credit balance | Stripe or crypto (USDC/USDT/SWAN) |
+| | Pay-as-you-go | Pro ($6/month) |
+|---|---|---|
+| Standard-tier models | Per token, from credit balance | Included: 40M tokens/week, 1,500 requests/day |
+| Premium-tier models (Claude, Gemini Pro, …) | Per token | Per token, from credit balance |
+| Image generation | Per image | 75 images/day included |
+| Rate limit | Per-category limits below | 50 requests/min, 8 concurrent |
+| Payment | Credit balance (card or crypto deposit) | Stripe, monthly |
+
+A model's tier is shown on its catalog page and in the `tier` field of `GET /api/v1/models`. Requests beyond the plan allowance fall back to pay-as-you-go if you have credit, otherwise they are rejected. See the [Token Plan FAQ](https://inference.swanchain.io/pricing) for current terms.
 
 ***
 
@@ -192,12 +194,12 @@ curl https://inference.swanchain.io/v1/models \
   "object": "list",
   "data": [
     {
-      "id": "deepseek-r1-distill-llama-70b",
+      "id": "zai-org/GLM-4.7-Flash",
       "object": "model",
       "owned_by": "swan-inference"
     },
     {
-      "id": "llama-3.2-3b",
+      "id": "anthropic/claude-sonnet-5",
       "object": "model",
       "owned_by": "swan-inference"
     }
@@ -205,7 +207,13 @@ curl https://inference.swanchain.io/v1/models \
 }
 ```
 
-You can also browse the full model catalog with pricing at [inference.swanchain.io/models](https://inference.swanchain.io/models).
+Model IDs are organisation-prefixed exactly as shown (`zai-org/GLM-4.7-Flash`, `openai/gpt-5.5`, `deepseek-ai/DeepSeek-V3.2`, …) and must be passed verbatim. `GET /v1/models` lists IDs only; for prices, context windows, tier and how many providers are online per model, use the public catalog endpoint — no key required:
+
+```bash
+curl "https://inference.swanchain.io/api/v1/models?page_size=100"
+```
+
+Each entry carries `input_price` and `output_price` (USD per 1M tokens), `payout_input_price` / `payout_output_price` (what providers are paid), `tier` (`standard` or `premium`), `online_providers`, and `specs.context_length`. The same data is browsable at [inference.swanchain.io/models](https://inference.swanchain.io/models).
 
 ***
 
@@ -221,7 +229,7 @@ POST /v1/chat/completions
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `model` | string | Yes | Model ID (e.g., `deepseek-r1-distill-llama-70b`) |
+| `model` | string | Yes | Model ID (e.g., `zai-org/GLM-4.7-Flash`) |
 | `messages` | array | Yes | Array of message objects with `role` and `content` |
 | `temperature` | float | No | Sampling temperature (0-2). Default: 1.0 |
 | `max_tokens` | integer | No | Maximum tokens to generate. Default: model-dependent |
@@ -238,7 +246,7 @@ curl https://inference.swanchain.io/v1/chat/completions \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "llama-3.2-3b",
+    "model": "meta-llama/Llama-3.2-3B",
     "messages": [
       {"role": "user", "content": "Explain blockchain in one sentence."}
     ],
@@ -254,7 +262,7 @@ curl https://inference.swanchain.io/v1/chat/completions \
   "id": "chatcmpl-abc123",
   "object": "chat.completion",
   "created": 1709500000,
-  "model": "llama-3.2-3b",
+  "model": "meta-llama/Llama-3.2-3B",
   "choices": [
     {
       "index": 0,
@@ -286,7 +294,7 @@ curl https://inference.swanchain.io/v1/chat/completions \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "deepseek-r1-distill-llama-70b",
+    "model": "zai-org/GLM-4.7-Flash",
     "messages": [{"role": "user", "content": "Write a haiku about GPUs."}],
     "stream": true
   }'
@@ -303,7 +311,7 @@ client = OpenAI(
 )
 
 stream = client.chat.completions.create(
-    model="deepseek-r1-distill-llama-70b",
+    model="zai-org/GLM-4.7-Flash",
     messages=[{"role": "user", "content": "Write a haiku about GPUs."}],
     stream=True,
 )
@@ -324,7 +332,7 @@ const client = new OpenAI({
 });
 
 const stream = await client.chat.completions.create({
-  model: "deepseek-r1-distill-llama-70b",
+  model: "zai-org/GLM-4.7-Flash",
   messages: [{ role: "user", content: "Write a haiku about GPUs." }],
   stream: true,
 });
@@ -372,7 +380,7 @@ curl https://inference.swanchain.io/v1/embeddings \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "bge-large-en-v1.5",
+    "model": "BAAI/bge-large-en-v1.5",
     "input": "Swan Chain is a decentralized AI computing blockchain."
   }'
 ```
@@ -389,7 +397,7 @@ curl https://inference.swanchain.io/v1/embeddings \
       "embedding": [0.0023, -0.0091, 0.0152, ...]
     }
   ],
-  "model": "bge-large-en-v1.5",
+  "model": "BAAI/bge-large-en-v1.5",
   "usage": {
     "prompt_tokens": 10,
     "total_tokens": 10
@@ -411,7 +419,7 @@ POST /v1/images/generations
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `model` | string | Yes | Image model ID (e.g., `flux-1-schnell`) |
+| `model` | string | Yes | Image model ID (e.g., `black-forest-labs/FLUX.1-schnell`) |
 | `prompt` | string | Yes | Text description of the image to generate |
 | `n` | integer | No | Number of images to generate. Default: 1 |
 | `size` | string | No | Image size (e.g., `1024x1024`) |
@@ -423,7 +431,7 @@ curl https://inference.swanchain.io/v1/images/generations \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "flux-1-schnell",
+    "model": "black-forest-labs/FLUX.1-schnell",
     "prompt": "A futuristic data center powered by blockchain, digital art style",
     "n": 1,
     "size": "1024x1024"
@@ -458,7 +466,7 @@ POST /v1/audio/transcriptions
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `file` | file | Yes | Audio file (mp3, mp4, wav, webm, etc.) |
-| `model` | string | Yes | Audio model ID (e.g., `whisper-large-v3`) |
+| `model` | string | Yes | Audio model ID (e.g., `Systran/faster-whisper-large-v3`) |
 | `language` | string | No | Language code (e.g., `en`) |
 
 **Example:**
@@ -467,7 +475,7 @@ POST /v1/audio/transcriptions
 curl https://inference.swanchain.io/v1/audio/transcriptions \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -F file="@audio.mp3" \
-  -F model="whisper-large-v3"
+  -F model="Systran/faster-whisper-large-v3"
 ```
 
 **Response:**
@@ -482,25 +490,25 @@ curl https://inference.swanchain.io/v1/audio/transcriptions \
 
 ## Supported Models
 
-Swan Inference hosts **42+ models** across five categories:
+The catalog spans five categories. It changes often — the [live catalog](https://inference.swanchain.io/models) is authoritative; the examples below are real IDs at the time of writing.
 
-| Category | Models | Pricing |
-|----------|--------|---------|
-| **LLM** | DeepSeek R1 (70B), Llama 3 (3B, 8B, 70B), Qwen 2.5, Mistral, Phi-3 | Per input/output token |
-| **Image** | FLUX.1 Schnell, Stable Diffusion XL | Per request |
-| **Audio** | Whisper Large V3 | Per request |
-| **Embedding** | BGE Large, E5 Large | Per token |
-| **Multimodal** | Llama 3.2 Vision, Qwen-VL | Per token |
+| Category | Endpoint | Examples | Priced |
+|----------|----------|----------|--------|
+| **LLM** (open-source, community GPUs) | `/v1/chat/completions` | `zai-org/GLM-4.7-Flash`, `deepseek-ai/DeepSeek-V3.2`, `Qwen/Qwen3-Coder-30B-A3B-Instruct`, `TheDrummer/Cydonia-24B-v4.3`, `meta-llama/Llama-4-Scout-17B-16E-Instruct` | Per input + output token |
+| **Frontier gateway** (multimodal) | `/v1/chat/completions` | `anthropic/claude-sonnet-5`, `anthropic/claude-opus-4-8`, `openai/gpt-5.5`, `gemini/gemini-3.5-flash`, `moonshotai/Kimi-K2.5` | Per input + output token |
+| **Image** | `/v1/images/generations` | `black-forest-labs/FLUX.1-schnell`, `stabilityai/stable-diffusion-xl-base-1.0` | Per image |
+| **Audio** | `/v1/audio/transcriptions` | `Systran/faster-whisper-large-v3` | Per minute of audio |
+| **Embedding** | `/v1/embeddings` | `BAAI/bge-large-en-v1.5` | Per token |
 
 {% hint style="info" %}
-Model availability depends on online providers. Check real-time status at [inference.swanchain.io/models](https://inference.swanchain.io/models) or call `GET /v1/models`.
+A model is only callable while at least one provider is online for it. `online_providers` in `GET /api/v1/models` and the provider count on each model page tell you that in real time; a request for a model with no provider returns `404`.
 {% endhint %}
 
 ***
 
 ## Rate Limits
 
-Requests are rate-limited per API key:
+Requests are rate-limited per API key, by model category:
 
 | Model Category | Requests per Minute |
 |----------------|-------------------|
@@ -509,7 +517,7 @@ Requests are rate-limited per API key:
 | Embedding | 500 |
 | Other | 200 |
 
-Maximum concurrent requests: **100** per API key.
+Free (zero-priced) models are limited to **10 requests/min**. Pro plan requests are limited to **50 requests/min** and **8 concurrent**. Separately, the platform caps **system-wide** concurrency at 100 in-flight requests; when that is reached you receive `503` with a `Retry-After` header rather than a per-key `429`.
 
 When rate-limited, the API returns HTTP `429 Too Many Requests` with a `Retry-After` header.
 
@@ -547,6 +555,7 @@ The API returns standard HTTP error codes with JSON error bodies:
 |-------------|---------|
 | `400` | Bad request — check your request body |
 | `401` | Unauthorized — invalid or missing API key |
+| `402` | Insufficient balance — top up credits (pay-as-you-go), or the request is outside your Token Plan |
 | `404` | Model not found or no providers available |
 | `429` | Rate limit exceeded — slow down |
 | `500` | Internal server error |
@@ -558,14 +567,19 @@ The platform automatically retries failed requests (up to 2 retries with exponen
 
 ## Response Headers
 
-Swan Inference includes helpful headers in every response:
+Every inference response says which provider served it. This is how the marketplace stays accountable — a request is never anonymous compute.
 
 | Header | Description |
 |--------|-------------|
-| `X-Request-ID` | Unique request correlation ID for tracing |
-| `X-Swan-Connection-Mode` | How the request was routed: `websocket` or `external` |
+| `X-Swan-Request-ID` | Unique request ID. Quote it when contacting support or filing an issue. (`X-Request-ID` is also set, with the same value.) |
+| `X-Swan-Provider-ID` | ID of the provider that handled the request — the same ID shown on the [network page](https://inference.swanchain.io/network) |
+| `X-Swan-Provider-Name` | That provider's display name |
+| `X-Swan-Connection-Mode` | How the provider is connected: `websocket` (the `computing-provider` agent) or `external` (a registered OpenAI-compatible endpoint) |
+| `X-Swan-Latency-Ms` | End-to-end latency measured by the platform |
+| `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset` | Rate-limit window for your key and this model category |
+| `Retry-After` | Seconds to wait, on `429` and `503` |
 
-Use `X-Request-ID` when contacting support or debugging request issues.
+Streaming responses carry the same headers on the initial response.
 
 ***
 
@@ -581,7 +595,7 @@ from langchain_openai import ChatOpenAI
 llm = ChatOpenAI(
     base_url="https://inference.swanchain.io/v1",
     api_key="sk-swan-YOUR-API-KEY",
-    model="deepseek-r1-distill-llama-70b",
+    model="zai-org/GLM-4.7-Flash",
 )
 
 response = llm.invoke("What is decentralized AI?")
@@ -596,7 +610,7 @@ from llama_index.llms.openai_like import OpenAILike
 llm = OpenAILike(
     api_base="https://inference.swanchain.io/v1",
     api_key="sk-swan-YOUR-API-KEY",
-    model="deepseek-r1-distill-llama-70b",
+    model="zai-org/GLM-4.7-Flash",
 )
 
 response = llm.complete("Explain DePIN in simple terms.")
@@ -609,7 +623,7 @@ print(response.text)
 import litellm
 
 response = litellm.completion(
-    model="openai/deepseek-r1-distill-llama-70b",
+    model="openai/zai-org/GLM-4.7-Flash",
     messages=[{"role": "user", "content": "Hello!"}],
     api_base="https://inference.swanchain.io/v1",
     api_key="sk-swan-YOUR-API-KEY",
@@ -630,7 +644,7 @@ const swan = createOpenAI({
 });
 
 const { text } = await generateText({
-  model: swan("deepseek-r1-distill-llama-70b"),
+  model: swan("zai-org/GLM-4.7-Flash"),
   prompt: "What is Swan Chain?",
 });
 
@@ -641,14 +655,16 @@ console.log(text);
 
 ## Pricing
 
-| Category | Pricing Unit | Billed In |
-|----------|-------------|-----------|
-| **LLM** | Per input token + per output token | USDC |
-| **Embedding** | Per token | USDC |
-| **Image** | Per request | USDC |
-| **Audio** | Per request | USDC |
+All prices are in **USD per 1M tokens** (per image for image models, per minute for audio) and are deducted from your credit balance. Your balance is one USD pool however you funded it — card, USDC, USDT or SWAN.
 
-View current pricing for each model at [inference.swanchain.io/models](https://inference.swanchain.io/models).
+| Category | Pricing unit |
+|----------|-------------|
+| **LLM / frontier** | Per input token + per output token |
+| **Embedding** | Per input token |
+| **Image** | Per image |
+| **Audio** | Per minute of audio |
+
+Every model publishes **two** prices: what you pay and what the serving provider is paid (`payout_*` in the catalog API). The platform keeps the spread; there is no separate percentage fee added to your bill. Current prices for each model are at [inference.swanchain.io/models](https://inference.swanchain.io/models), and the [pricing page](https://inference.swanchain.io/pricing) compares hero models against other gateways.
 
 Token usage is included in every response under the `usage` field.
 
@@ -673,6 +689,8 @@ These endpoints do not require authentication.
 
 ## Learn More
 
-- **[Swan 2.0: Inference Cloud](../../core-concepts/swan-2.0-inference-cloud.md)** — Architecture and platform overview
+- **[For Developers](../../core-concepts/swan-2.0-inference-cloud/how-to-use.md)** — signup, credits and first request, with screenshots
+- **[AI Agent Integrations](claw-tools-integration.md)** — configuring OpenClaw, Nanobot and other agents to use Swan Inference
+- **[Swan 2.0: Inference Cloud](../../core-concepts/swan-2.0-inference-cloud/README.md)** — Architecture and platform overview
 - **[Inference Marketplace](../../core-concepts/market-provider/inference-marketplace.md)** — How the marketplace works (routing, pricing, settlement)
 - **[Model Catalog](https://inference.swanchain.io/models)** — Browse all available models with real-time availability and pricing

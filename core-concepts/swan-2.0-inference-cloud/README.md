@@ -1,344 +1,226 @@
 ---
-description: Decentralized AI Inference Marketplace — Swan Chain's Next Evolution
+description: >-
+  Swan 2.0 turns Swan Chain into an AI inference marketplace: one OpenAI-compatible
+  API in front of a network of independent GPU providers, paid per token.
 ---
 
 # Swan 2.0: Inference Cloud
 
 ## Overview
 
-Swan 2.0 marks Swan Chain's evolution from a UBI-subsidized computing network into a **market-driven AI inference marketplace**. Built as the Inference Cloud, it connects AI model consumers with GPU providers through a decentralized coordination layer, enabling anyone to access AI models via a single API key — or earn stablecoin revenue by sharing their GPU resources.
+Swan Inference ([inference.swanchain.io](https://inference.swanchain.io)) is a marketplace for AI inference. Developers call a single OpenAI-compatible API and pay per token from a prepaid credit balance or a monthly Token Plan. Independent GPU providers run the open-source [`computing-provider`](https://github.com/swanchain/computing-provider) agent, connect outbound over WebSocket, and are paid a published per-token payout price for every request they serve. The platform verifies that providers serve what they claim, routes requests to healthy providers, and settles usage.
 
-{% hint style="info" %}
-**Try Swan Inference**: [https://inference.swanchain.io](https://inference.swanchain.io)
+Two audiences, two guides:
 
-**New here?** See [How to Use Swan Inference](how-to-use.md) for a step-by-step guide, or jump to [live pricing comparison](https://inference.swanchain.io/pricing) against Anthropic, Google, and OpenRouter.
+* **Developers** — [For Developers](how-to-use.md): playground, account, credits, first request. Then the [API Reference](../../bulders/app-developer/swan-inference-api.md).
+* **GPU owners** — [For GPU Providers](become-a-provider.md): model server, agent, verification, collateral, payouts.
 
-Swan 2.0 replaces UBI with inference revenue per [SIP-003](https://github.com/swanchain/governance/discussions/21). UBI tapers to zero over 3 months. See also [SIP-002](https://github.com/swanchain/governance/discussions/16) for the original transition proposal.
-{% endhint %}
+This page explains the design that both sit on.
 
-## What Changes in Swan 2.0
+## What changed from Swan 1.0
 
-| Aspect | Swan 1.0 (UBI Model) | Swan 2.0 (Inference Cloud) |
-|--------|----------------------|---------------------------|
-| **Provider Rewards** | Flat UBI sampling | 95% inference revenue (stablecoins) |
-| **Payment** | SWAN tokens only | Stablecoins (USDC/USDT) + Pay-with-SWAN (20% discount) |
-| **Provider Roles** | Separate ECP and FCP | Unified Computing Provider (CP) |
-| **Collateral** | SWAN tokens only | SWAN tokens or Stripe (credit card) |
-| **Work Verification** | Random sampling tasks | Periodic benchmarks (math, code, latency) |
-| **Workloads** | Training, ZK proofs | AI inference (LLM, image, audio, embedding, multimodal) |
-| **Hardware Requirements** | None (any GPU earned UBI) | Tiered: min 8GB VRAM, legacy GPUs rejected |
+| Aspect | Swan 1.0 | Swan 2.0 (Inference Cloud) |
+|--------|----------|---------------------------|
+| **What providers sell** | Registered hardware, sampled by UBI tasks | AI inference actually served — LLM, multimodal, image, audio, embedding |
+| **How providers are paid** | Daily UBI allocation in SWAN | Per token, at a payout price published for every model |
+| **How consumers pay** | Task auctions in SWAN | USD credits (card or crypto: USDC, USDT, SWAN) or a monthly Token Plan; one OpenAI-compatible API |
+| **Provider roles** | Separate ECP and FCP | One Computing Provider |
+| **Network requirements** | Public IP, domain, TLS | None — the agent connects outbound over WebSocket |
+| **Quality control** | Random sampling tasks | Registration and periodic benchmarks, fingerprint/logprob verification, context-window integrity checks, trust-weighted routing, collateral slashing with appeal |
+| **Collateral** | Sized by Computing Units in SWAN | Per provider account: USDC on Ethereum or Base, SWAN on Swan Chain, or card |
+| **Hardware requirements** | Any GPU | ≥ 8 GB VRAM, Ampere or newer; Apple Silicon via Ollama |
 
-## Architecture
+The Swan 1.0 material is preserved under [Legacy: Swan 1.0](../../swan-chain-campaign/README.md).
 
-Swan Inference uses a hub-and-spoke architecture where the central platform coordinates between consumers and providers:
+## How a request flows
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    External Consumers                            │
-│              (Meganova AI, LiteLLM, Direct API)                 │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                      SWAN INFERENCE                              │
-│  ┌─────────────────┐          ┌─────────────────────────────┐   │
-│  │  REST API        │          │  WebSocket Hub              │   │
-│  │  (Port 8100)     │─────────▶│  (Port 8081)                │   │
-│  │                  │          │  - Provider connections      │   │
-│  │  /api/v1/*       │          │  - Inference dispatch        │   │
-│  │  /v1/* (OpenAI)  │          │  - Load balancing            │   │
-│  │                  │          │  - Health monitoring          │   │
-│  └─────────────────┘          └─────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────┘
-                    │                         │
-                    ▼ WebSocket               ▼ HTTP (fallback)
-┌───────────────────────────────┐  ┌─────────────────────────────┐
-│      GPU Providers            │  │   External Endpoints         │
-│  (H100, A100, 4090, 3090)    │  │   (vLLM, TGI, OpenAI API)   │
-└───────────────────────────────┘  └─────────────────────────────┘
+  Developers (OpenAI SDKs, LiteLLM, agents, the web playground)
+                          │  HTTPS  https://inference.swanchain.io/v1
+                          ▼
+  ┌─────────────────────────────────────────────────────────────┐
+  │  Swan Inference                                             │
+  │  OpenAI-compatible API ─► routing ─► WebSocket hub          │
+  │  auth · rate limits · catalog · billing · verification      │
+  └─────────────────────────────────────────────────────────────┘
+          │ persistent WebSocket (outbound from provider)     │ HTTPS (fallback)
+          ▼                                                   ▼
+  GPU providers running computing-provider           Registered external endpoints
+  (SGLang / vLLM / Ollama behind NAT is fine)         (OpenAI-compatible servers)
 ```
 
-**Request Flow:**
+1. The developer sends an OpenAI-format request with a `sk-swan-*` key. Auth, validation and rate limits are applied at the edge.
+2. The router picks a provider that is online for the model and whose reported context window fits the request, weighing recent health, current load and latency; degraded providers only receive probe traffic.
+3. The request is forwarded over the provider's existing WebSocket connection (or, if no connected provider is available, to a registered external endpoint). Streamed tokens are relayed as they arrive.
+4. Usage is metered, the consumer is charged at the model's price, and the provider is credited at the model's payout price.
+5. The response carries attribution headers — `X-Swan-Provider-ID`, `X-Swan-Provider-Name`, `X-Swan-Connection-Mode`, `X-Swan-Latency-Ms`, `X-Swan-Request-ID` — so every answer is traceable to who served it. See [Response Headers](../../bulders/app-developer/swan-inference-api.md#response-headers).
 
-1. Consumer sends a request to the REST API
-2. The Hub checks for available WebSocket providers
-3. If WebSocket providers are available: route via WebSocket (primary path)
-4. If no WebSocket providers: route to External Endpoints (fallback)
-5. Response includes `X-Swan-Connection-Mode` header indicating which route was used
+Providers never need a public URL, a domain or a certificate: the agent dials `wss://inference-ws.swanchain.io` and everything flows over that connection.
 
-### Key Components
+## The API
 
-| Component | Role |
-|-----------|------|
-| **REST API** | OpenAI-compatible consumer-facing API |
-| **WebSocket Hub** | Real-time provider connections, inference dispatch, load balancing |
-| **Marketplace Service** | Model catalog, search, pricing |
-| **Payment Ledger** | Off-chain usage tracking, invoicing |
-| **Benchmark Sampler** | Periodic quality checks and scoring |
-| **Settlement Batcher** | On-chain settlement via MerkleDistributor |
-
-## OpenAI-Compatible API
-
-Swan Inference provides a drop-in replacement for OpenAI's API. Any existing OpenAI SDK or integration works with Swan Inference by changing the base URL and API key.
-
-### Supported Endpoints
-
-| Endpoint | Description |
-|----------|-------------|
-| `/v1/chat/completions` | Chat-based text generation (streaming supported) |
-| `/v1/embeddings` | Text embeddings |
-| `/v1/images/generations` | Image generation |
-| `/v1/audio/transcriptions` | Audio-to-text transcription |
-| `/v1/models` | List available models |
-
-### Example Request
+| Endpoint | Purpose |
+|----------|---------|
+| `POST /v1/chat/completions` | Chat, streaming, tools, vision, JSON mode — forwarded to the model as sent |
+| `POST /v1/completions` | Legacy text completion (compatibility shim over chat) |
+| `POST /v1/embeddings` | Text embeddings |
+| `POST /v1/images/generations` | Image generation |
+| `POST /v1/audio/transcriptions` | Speech to text |
+| `GET /v1/models` | Model IDs (no key required) |
+| `GET /api/v1/models` | Full public catalog: prices, tier, context window, online providers |
 
 ```bash
 curl https://inference.swanchain.io/v1/chat/completions \
   -H "Authorization: Bearer sk-swan-YOUR-KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "deepseek-r1-distill-llama-70b",
-    "messages": [{"role": "user", "content": "Hello!"}]
+    "model": "zai-org/GLM-4.7-Flash",
+    "messages": [{"role": "user", "content": "Explain Swan Chain in one sentence."}]
   }'
 ```
 
-## Model Catalog
+Any OpenAI SDK works by changing `base_url` to `https://inference.swanchain.io/v1`. Full details, limits and error codes: [API Reference](../../bulders/app-developer/swan-inference-api.md).
 
-Swan Inference serves two categories of models with different economics. The live catalog at [inference.swanchain.io/models](https://inference.swanchain.io/models) is the source of truth for current availability and pricing.
+## The catalog
 
-### Frontier Gateway
+The catalog is curated by the platform and is the source of truth for model IDs, prices and serving expectations. It has two kinds of models:
 
-Closed frontier models (Claude, Gemini) proxied at a consistent discount to direct API pricing. These run on the upstream provider's infrastructure — Swan acts as an aggregator, passing on cost savings through bulk agreements and SWAN token incentives.
+* **Open-source models on community GPUs** — served by independent providers running SGLang, vLLM or Ollama. Each model is advertised at a *canonical serving configuration* (precision and engine), and providers are verified against it.
+* **Frontier gateway models** — `anthropic/*`, `openai/*`, `gemini/*`, `moonshotai/*` and similar, reachable through the same API and billing.
 
-| Example | Direct pricing | Swan pricing | Savings |
-|---------|---------------|-------------|---------|
-| Claude Opus 4.6 | $5.00 / $25.00 per 1M tokens | $4.00 / $20.00 | ~20% |
-| Gemini 2.5 Flash | $0.30 / $2.50 per 1M tokens | $0.18 / $1.50 | ~40% |
+Every model carries a **tier** — `standard` or `premium` — which decides whether the Token Plan covers it, and publishes **two prices** per million tokens: what consumers pay and what the serving provider is paid. Browse it at [inference.swanchain.io/models](https://inference.swanchain.io/models) or fetch `GET /api/v1/models`. Because prices and availability change, this documentation does not reproduce the price list.
 
-With Pay-with-SWAN, the discount stacks to 50–66% below going direct. See the [pricing comparison](https://inference.swanchain.io/pricing) for the live side-by-side.
+{% hint style="info" %}
+A model is callable only while at least one provider is online for it. The catalog shows the live provider count per model, and the [network page](https://inference.swanchain.io/network) shows who is serving what right now. Providers looking for demand can use `computing-provider inference recommend-models`.
+{% endhint %}
 
-### Open-Source on Decentralized GPUs
+## Paying for inference
 
-Open-source models served by Swan's decentralized provider network. This is where Swan's economics structurally beat centralized providers — any qualifying GPU owner (datacenter to consumer hardware) can become a provider and share in inference revenue.
+**Credits (pay-as-you-go).** Your balance is one USD-denominated pool. Fund it by card through Stripe (minimum $5; card processing fees are shown before you pay) or by crypto deposit to your personal deposit address (minimum $1): **USDC on Ethereum or Base**, or **SWAN on Swan Chain**. SWAN deposits are credited at the current SWAN/USD rate **plus a 20% bonus** — $100 of SWAN becomes $120 of credits. Requests deduct from the balance in real time; the ledger is under **Billing** in the dashboard.
 
-| Example | Params | Swan pricing | Hardware tier |
-|---------|--------|-------------|--------------|
-| Qwen3 Coder 30B | 30B MoE | $0.05 / $0.10 per 1M tokens | A (24GB) |
-| GLM 4.7 Flash | — | $0.05 / $0.36 per 1M tokens | A (24GB) |
-| Sapphira L3.3 70B | 70B | $0.20 / $0.30 per 1M tokens | S (38GB+) |
-| Whisper Large v3 | — | $0.003 per minute | C (8GB+) |
+**Token Plan (Pro).** $6/month, billed monthly by card. It includes **40M tokens per week and 1,500 requests per day on standard-tier models** (and 75 images/day), at 50 requests/min and 8 concurrent. Premium-tier models, and anything beyond the allowance, are pay-as-you-go from your credit balance. See [inference.swanchain.io/pricing](https://inference.swanchain.io/pricing).
 
-Open-source models are priced 50–66% below comparable centralized providers via the hardware tier system. See [Hardware Tiers](#hardware-tiers) under Provider Onboarding for the full VRAM-to-model mapping.
+**Playground.** [inference.swanchain.io/playground](https://inference.swanchain.io/playground) runs a small model for anonymous visitors, rate-limited per IP, so you can try the service before creating an account.
 
-### Free Tier
+## Economics: the two-price model
 
-| Parameter | Specification |
-|-----------|--------------|
-| Available Models | Stheno 8B, Qwen3 8B (Tier B only) |
-| Daily Token Limit | 50,000 tokens (~25 conversations) |
-| Rate Limit | 5 requests per minute |
-| Concurrency | 1 simultaneous request |
-| Registration | API key only (free, no KYC) |
-| Upgrade Path | USDC top-up or Pay-with-SWAN |
+There is no percentage commission. For every model the platform publishes:
 
-## Payment & Revenue Split
+* an **input and output price** — what the consumer pays per 1M tokens, and
+* a **payout input and output price** — what the provider is paid per 1M tokens.
 
-### Dual Deposit Options
+The platform's margin is the spread between the two, and a payout price can never exceed the consumer price. Providers do not quote their own prices; they choose which catalog models to serve at the published payout. At the time of writing the payout is **90% of the consumer price** for almost every model in the catalog — you can check any model yourself, since both prices are returned by `GET /api/v1/models`.
 
-Swan 2.0 accepts both stablecoins and SWAN as deposits into a single USD-denominated prepaid balance. SWAN deposits receive a **20% bonus in credits** at deposit time, creating organic buy pressure for the token.
+For Token Plan traffic, providers are credited at the same payout price; the total paid out for plan requests each month is capped at the plan revenue pool and pro-rated if usage exceeds it. Details in [How the Marketplace Works](../market-provider/inference-marketplace.md).
 
-| Deposit Method | Bonus | Example (depositing $100) |
-|---------------|-------|-----------------------|
-| USDC/USDT (Stripe or crypto) | 0% | $100 of credits |
-| SWAN on Swan Mainnet | +20% | $120 of credits |
+## Quality assurance
 
-**Pay-with-SWAN flow:**
+Trust in a marketplace of anonymous GPUs has to be earned per request. The platform:
 
-1. Consumer deposits SWAN tokens to their per-user deposit address on Swan Mainnet
-2. Balance is credited in USD at the current SWAN/USD rate plus a 20% bonus
-3. Subsequent inference requests draw from this unified USD balance
-4. Providers receive 95% of the per-request fee in their preferred payout currency (USDC or SWAN)
-5. 5% goes to the Growth Fund
-
-### Provider-First Revenue Split (95/5)
-
-During the bootstrap phase, Swan adopts an aggressive provider-first model to attract quality hardware:
-
-| Recipient | Share | Purpose |
-|-----------|-------|---------|
-| **Computing Provider** | 95% | Direct payout in stablecoins (USDC/USDT) |
-| **Growth Fund** | 5% | Provider recruitment, integrations, dev tooling, liquidity |
-| Protocol Treasury | 0% | Deferred until network reaches sustainability threshold |
-
-The Growth Fund is reinvested into network expansion — provider onboarding bounties, DEX liquidity seeding, and integration grants. Spending is reported monthly with transaction hashes.
-
-### Dynamic Revenue Split Schedule
-
-As network revenue grows, the split adjusts through governance votes:
-
-| Phase | Daily Revenue | Provider | Growth Fund | Treasury |
-|-------|--------------|----------|-------------|----------|
-| **Bootstrap** | < $100 | 95% | 5% | 0% |
-| Growth | $100 – $1,000 | 90% | 5% | 5% |
-| Maturity | $1,000 – $10,000 | 85% | 3% + 2% burn | 10% |
-| Scale | > $10,000 | 80% | 2% + 3% burn | 15% |
-
-Each phase transition requires a governance vote with a 7-day voting period. Revenue thresholds are measured as a 30-day rolling average.
-
-## Quality Assurance
-
-### Benchmarks
-
-The benchmark worker runs periodically (default: every 24 hours) to verify provider quality. Benchmark results expire after **30 days** — providers that miss benchmarks for 30+ days lose qualification and must re-benchmark to resume receiving traffic.
-
-| Test | Pass Threshold |
-|------|---------------|
-| **Math Accuracy** | ≥ 50% |
-| **Code Generation** | ≥ 50% |
-| **Response Latency** | ≤ 5000ms |
-
-### Slashing Conditions
+* **Benchmarks** every provider at registration and periodically afterwards (math, code and latency tests; results expire after 30 days and must be refreshed).
+* **Verifies identity of the served model** with fingerprint challenges (hashes of registered weight files), deterministic fixed-seed comparisons, and statistical logprob comparisons against the canonical serving configuration.
+* **Checks context-window integrity** — that a provider really serves the context length it advertises, rather than truncating silently. See the [Provider Notice](provider-context-window-faq.md).
+* **Weights routing by trust and health.** Verification results and success rates feed a trust score that influences how much traffic a provider receives; repeated failures open a circuit breaker until the provider recovers.
+* **Slashes collateral** for verified misbehaviour, with a 48-hour appeal window on every penalty record. Honest small windows and modest hardware are never penalised — only misrepresentation is.
 
 | Condition | Consequence |
 |-----------|------------|
-| Benchmark failure (1st) | Warning + 24h suspension from task routing |
-| Consecutive failure (2nd) | 10% collateral slashed |
-| Consecutive failure (3rd) | 30% collateral slashed + network removal |
-| Benchmark results expired (> 30 days) | Loses qualification until re-benchmarked |
-| Inference success rate < 80% | Deprioritized in request routing |
-| Uptime < 90% (30-day rolling) | Deprioritized in request routing |
+| Benchmark failure (1st) | Warning; temporary removal from routing |
+| Consecutive benchmark failures | Collateral slash (10%, then 30% and network removal) |
+| Benchmark results older than 30 days | Loses qualification until re-benchmarked |
+| Verified model or context misrepresentation | Displayed context capped to the measured window; continued misrepresentation is slashed |
+| Low success rate or uptime | Deprioritised in routing (new providers get a 7-day grace period) |
 
-{% hint style="info" %}
-**New Provider Grace Period:** Providers registered within the last 7 days are exempt from uptime and success-rate deprioritization. This gives new providers time to build history without being penalized for insufficient data. Benchmark requirements and probation still apply during the grace period.
-{% endhint %}
+The platform publishes *what* it verifies and the *results* (trust, uptime, benchmark scores on the network page), but not the detection thresholds.
 
-### Health Monitoring
+## Becoming a provider
 
-- **Automatic health checks** with configurable thresholds for WebSocket and external endpoints
-- **Circuit breaker** to prevent cascading failures
-- **Load balancing** with health-aware routing (round-robin, least-connections, or health-aware strategies)
-- **Model warmup** to pre-load models and reduce cold-start latency
+**Hardware.** Enforced minimum: an NVIDIA GPU with **≥ 8 GB VRAM and compute capability 8.0 or newer** (Ampere onwards — RTX 3060 and up, A-series, H100), or an Apple Silicon Mac with 16 GB+ unified memory using Ollama. Older cards (Pascal/Turing, TESLA P4, GTX 10-series) are not eligible. As a guide to what you can serve well:
 
-### Provider Leaderboard
+| VRAM | Example hardware | Typical models |
+|------|-----------------|----------------|
+| 38 GB+ | L40S, A100, H100 | 70B-class models (quantized) |
+| 24 GB | RTX 4090, 3090, A6000 | 24B–32B models |
+| 12 GB | RTX 4070 Ti, 3080 Ti | 8B–12B models |
+| 8 GB | RTX 3070, 4060 | Small LLMs, embeddings, Whisper |
+| 16 GB+ unified | Apple M-series | 8B–12B via Ollama |
 
-Providers are ranked by a performance-based leaderboard using availability metrics, success rates, and latency.
+**Flow.**
 
-## Provider Onboarding
+1. **Sign up** at [inference.swanchain.io/provider-signup](https://inference.swanchain.io/provider-signup) and save your provider key (`sk-prov-*`) — it is shown once.
+2. **Start a model server** (SGLang or vLLM on Linux, Ollama on macOS) serving a catalog model.
+3. **Install `computing-provider`** and run the setup wizard; it saves the key, discovers your model server and writes `models.json`.
+4. **Connect.** The agent registers your models; the registration benchmark runs within minutes.
+5. **Deposit collateral** (below).
+6. **Activation is automatic** once collateral is verified, the GPU passes eligibility and the benchmark passes. New providers start a **24-hour probation** and must keep at least 50% uptime through it. Admin approval exists as a parallel path but is not required.
+7. **Earn** per token for every request served.
 
-### Hardware Tiers
+| Status | Can connect | Earning | Meaning |
+|--------|-------------|---------|---------|
+| `pending` | yes | no | Awaiting collateral, GPU eligibility or benchmark |
+| `under_review` | yes | no | Manual review requested |
+| `approved` | yes | no | Admin approved, awaiting collateral |
+| `activating` | yes | no | Collateral verified, activation in progress |
+| `active` | yes | **yes** | Serving and earning ("Active (Probation)" for the first 24 h) |
+| `suspended` | no | no | Suspended by admin or during a collateral refund |
+| `rejected` | no | no | Application rejected |
+| `offline` | no | no | Connection lost |
 
-To receive inference traffic and earn revenue, providers must meet minimum hardware requirements:
-
-| Tier | Min VRAM | Example Hardware | Models | Status |
-|------|----------|-----------------|--------|--------|
-| **S** | 38GB+ | L40S, A100, H100 | 70B premium models | Recruiting new providers |
-| **A** | 24GB | RTX 4090, 3090, A6000 | 24B–32B agent models | Activate idle inventory |
-| **B** | 12GB | RTX 4070 Ti, 3080 Ti | 8B–12B free tier | Some current providers |
-| **C** | 8GB | RTX 3070, 4060 | Embedding, Whisper | Lowest qualifying tier |
-| **macOS** | 16GB+ unified | Apple Silicon M1/M2/M3/M4 | 8B–12B via Ollama | Entry-level providers |
-| Rejected | < 8GB or legacy | TESLA P4, GTX 1050 Ti | None | No rewards |
-
-Legacy GPUs (TESLA P4, GTX 1050 Ti) served the network well during the ZK-task era but cannot serve AI inference workloads at acceptable quality.
-
-{% hint style="info" %}
-**macOS Support:** Apple Silicon Macs can serve as providers using Ollama as the inference backend. While datacenter GPUs offer higher throughput, Macs are a low-friction entry point for new providers — no Docker, NVIDIA drivers, or Linux required.
-{% endhint %}
-
-### Requirements
-
-**Linux (NVIDIA GPU):**
-- GPU meeting at least Tier C requirements (≥ 8GB VRAM)
-- Docker 24.0+ with NVIDIA Container Toolkit
-- Inference server: SGLang (recommended), vLLM, or Ollama
-
-**macOS (Apple Silicon):**
-- Apple Silicon Mac (M1/M2/M3/M4) with 16GB+ unified memory
-- Ollama installed (`brew install ollama`)
-
-**Both platforms:**
-- Swan's `computing-provider` agent installed
-- No public IP, domain, or SSL setup required — providers connect via WebSocket behind NAT/firewall
-- Pass initial inference benchmark (math, code, latency)
-- Maintain > 50% uptime over a trailing 7-day window
-
-### Registration Flow
-
-1. **Sign up** at the [Swan Inference dashboard](https://inference.swanchain.io/provider-signup) and get a provider API key (`sk-prov-*`)
-2. **Start a model server** — SGLang/vLLM (Linux) or Ollama (macOS)
-3. **Install and run** the `computing-provider` agent — the setup wizard auto-discovers your models
-4. **Pass benchmarks** — automated quality verification runs within minutes of connecting
-5. **Admin approval** — most providers are approved within 24 hours
-6. **Deposit collateral** via Stripe (credit card) or SWAN tokens on-chain
-7. **Start earning** — receive inference requests with a 7-day grace period for full traffic priority
+Step-by-step, with the exact config: [Become a Provider](become-a-provider.md).
 
 ### Collateral
 
-Providers must deposit collateral to become active on the network. Two deposit methods are available:
+Collateral is a refundable deposit that backs the slashing rules. Deposit on-chain to the platform's collateral contract on any supported chain, or pay by card:
 
-| Method | Currency | Processing | Refund |
-|--------|----------|-----------|--------|
-| **Stripe** | Credit/debit card (USD) | Instant | Refunded to original card (7-day waiting period) |
-| **On-chain** | SWAN tokens | Requires gas (SwanETH) | Returned to wallet (7-day waiting period) |
+| Chain | Chain ID | Token | Minimum | Collateral contract |
+|-------|----------|-------|---------|--------------------|
+| Ethereum | 1 | USDC | 20 USDC | `0x1dEe92Da8fc4878795418aEde112100A57286a9a` |
+| Base | 8453 | USDC | 20 USDC | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| Swan Chain | 254 | SWAN | 35,000 SWAN | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| Card (Stripe) | — | USD | shown at checkout | — |
 
-See [Computing Provider Collateral](token/computing-provider-collateral/) for details on collateral amounts and the refund waiting period.
+The current table is always available from `GET /api/v1/provider/collateral/contract` and from `computing-provider inference deposit`. Refunds have a **7-day waiting period**, cannot start while a payout is pending, and the provider is suspended from routing for the duration of the refund window. Detail: [Earnings and Collateral](../token/computing-provider-collateral/README.md).
 
-## On-Chain Settlement
+### Earnings and payouts
 
-Swan Inference uses a **MerkleDistributor** smart contract for gas-efficient batch settlement:
+* Earnings accrue per request at the model's payout price and are visible in the provider dashboard (daily/weekly/monthly, per model, CSV export).
+* Settlement runs in daily batches; earnings from Token Plan traffic are held until the month-end pro-rating.
+* Payouts are requested from the dashboard to your beneficiary wallet: **minimum $10**, a **flat $1 fee**, one request per chain per hour, one pending payout at a time.
+* Providers can also convert earnings directly into inference credit without an on-chain round-trip.
 
-1. The platform aggregates provider earnings into daily settlement batches
-2. A Merkle tree is computed from all provider balances
-3. The Merkle root is submitted on-chain
-4. Providers claim their earnings by submitting a Merkle proof
+## Smart contracts (Swan Chain mainnet, chain ID 254)
 
-This approach minimizes gas costs by settling many provider payments in a single on-chain transaction.
+| Contract | Address |
+|----------|---------|
+| Provider collateral (SWAN) | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| SWAN token (bridged L2) | `0xBb4eC1b56cB624863298740Fd264ef2f910d5564` |
 
-### Smart Contracts
+Collateral contracts on Ethereum and Base are listed above. Chain parameters and explorers: [Network Info](../../network-reference/readme/README.md); the full list is in [Contract Addresses](../../network-reference/contract-addresses.md).
 
-| Contract | Address (Swan Chain Mainnet) |
-|----------|----------------------------|
-| **ProviderCollateral** | `0x557f306f917009cf83c32b8b32a79202e79948e5` |
-| **SWAN Token** | `0xAF90ac6428775E1Be06BAFA932c2d80119a7bd02` |
+## UBI sunset (SIP-003)
 
-{% hint style="info" %}
-Swan Chain Mainnet operates on Chain ID **254** with RPC at `https://mainnet-rpc01.swanchain.io`. See [Network Info](../network-reference/readme/) for full details.
-{% endhint %}
+Under Swan 1.0 most daily UBI went to registered hardware that served nothing. [SIP-003](https://github.com/swanchain/governance/discussions/21) redirects incentives to GPUs that actually serve inference: provider income comes from the per-token payout, and the UBI allocation is tapered to zero on the schedule set by governance, with a safety valve for extending a reduced, contribution-weighted allocation if network revenue is not yet sustainable. The [governance repository](https://github.com/swanchain/governance) is the authority on the current stage of the taper; this documentation deliberately does not restate dates.
 
-## UBI Sunset (SIP-003)
-
-Swan 2.0 eliminates UBI entirely per [SIP-003](https://github.com/swanchain/governance/discussions/21). Providers earn solely from inference revenue (95% of fees). The taper schedule:
-
-| Period | UBI Level | SWAN/day | Notes |
-|--------|-----------|----------|-------|
-| Swan 2.0 Launch (Mar 16 – Apr 9) | 100% | 58,369 | Platform goes live, governance vote Apr 1–7 |
-| Month 1 post-vote (Apr 10 – May 9) | 50% | 29,185 | Contribution-weighted; legacy hardware earns zero |
-| Month 2 post-vote (May 10 – Jun 9) | 20% | 11,674 | Providers earn primarily from inference |
-| Month 3+ (Jun 10 onwards) | **0%** | 0 | UBI permanently off. Inference revenue only. |
-
-### Why Stop UBI
-
-Under Swan 1.0, 75% of daily UBI went to providers with 0% uptime. SIP-003 redirects all incentives toward GPUs that actually serve inference. The breakeven where inference revenue matches the best current UBI payout is just **$25/day total network revenue**.
-
-### Safety Valve
-
-If the network cannot sustain minimum viable provider economics ($50/day revenue) by Month 3, governance can vote to extend UBI at 25% (contribution-weighted only) for 3 additional months.
-
-## SWAN Token Utility
-
-After UBI stops, SWAN token utility is:
+## SWAN token utility
 
 | Utility | Description |
 |---------|-------------|
-| **Pay-with-SWAN** | 20% inference discount for consumers — creates organic buy pressure |
-| **Provider Collateral** | Required deposit to join the network |
-| **Governance** | Vote on protocol parameters, revenue splits, and phase transitions |
+| **Pay with SWAN** | Deposit SWAN on Swan Chain for a 20% credit bonus — the lowest effective price on every model |
+| **Provider collateral** | 35,000 SWAN on Swan Chain is one of the accepted collateral forms |
+| **Governance** | Vote on protocol parameters, pricing policy and incentive changes through SIPs |
 
-## Learn More
+## In development
 
-- **[Inference Marketplace](market-provider/inference-marketplace.md)** — How the marketplace works: pricing, routing, and settlement
-- **[Computing Provider Income](token/swan-provider-income.md)** — Contribution score formula and reward distribution
-- **[Computing Provider Collateral](token/computing-provider-collateral/)** — Collateral requirements and slashing
-- **[SIP-001: FCP Subsidy Program](https://github.com/swanchain/governance/discussions/11)** — Stage 1 funding for computing providers
-- **[SIP-002: Unified CP & Contribution Rewards](https://github.com/swanchain/governance/discussions/16)** — Original transition proposal
-- **[SIP-003: Inference Cloud Economics](https://github.com/swanchain/governance/discussions/21)** — Full model catalog, 95/5 revenue split, UBI sunset, Pay-with-SWAN
+The following are being built and tested and are **not yet available on the production API**. They will be announced on the [pricing page](https://inference.swanchain.io/pricing) FAQ and in this documentation when live:
+
+* **Per-request provider selection** — pin a request to a specific provider (`X-Swan-Provider`), optionally refusing fallbacks, with a receipt in the response saying who served it, why a fallback happened, and how it was billed. Explicit selection will always be pay-as-you-go.
+* **Per-offering transparency** — each provider's offering of a model will show its own price source, quantization, 30-day uptime and typical time-to-first-token, and each model will state the context window it can *guarantee* across online providers versus the maximum any provider reports.
+
+## Learn more
+
+* **[For Developers](how-to-use.md)** — signup, credits, first request
+* **[For GPU Providers](become-a-provider.md)** — full setup walkthrough
+* **[How the Marketplace Works](../market-provider/inference-marketplace.md)** — routing, billing, settlement and verification in depth
+* **[Computing Provider Income](../token/swan-provider-income.md)** and **[Earnings and Collateral](../token/computing-provider-collateral/README.md)**
+* **[Provider Notice: Context-Window Integrity](provider-context-window-faq.md)**
+* **[`computing-provider` on GitHub](https://github.com/swanchain/computing-provider)** — installation, configuration reference, troubleshooting

@@ -1,223 +1,93 @@
 ---
-description: Decentralized AI Inference Marketplace for Real-Time Model Serving
+description: How Swan Inference routes, prices, bills, verifies and settles a request
 ---
 
-# Inference Marketplace
+# How the Marketplace Works
 
-The Inference Marketplace is Swan Chain's decentralized platform for AI model serving, introduced as part of [Swan 2.0](../swan-2.0-inference-cloud.md). Unlike the existing [AI Computing Marketplace](decentralized-ai-computing-marketplace/) which handles training workloads through task auctions, the Inference Marketplace provides **real-time, low-latency AI inference** through persistent WebSocket connections and an OpenAI-compatible API.
+The Inference Marketplace is the mechanism behind [Swan 2.0: Inference Cloud](../swan-2.0-inference-cloud/README.md). This page follows a request from the API to a GPU and back, then covers pricing, billing, settlement and quality control. For the practical guides see [For Developers](../swan-2.0-inference-cloud/how-to-use.md) and [For GPU Providers](../swan-2.0-inference-cloud/become-a-provider.md).
 
-## How It Works
+## Request lifecycle
 
-### Request Lifecycle
+1. **Authenticate and validate.** A request to `https://inference.swanchain.io/v1/...` carries a consumer key (`sk-swan-*`). The body is validated (OpenAI shape, roles, `response_format`, size limits) and checked against the key's rate limits for the model's category. The raw body is kept so that fields the gateway does not model — `tools`, `seed`, `stream_options`, vendor-specific parameters — reach the model unchanged.
+2. **Admit.** The gateway estimates the prompt's token count and considers only providers whose reported context window can hold it. Where a provider has not reported a window, the catalog value is assumed — the common case today, and the reason providers are asked to [declare their real window](../swan-2.0-inference-cloud/provider-context-window-faq.md).
+3. **Select a provider.** Among providers online for the model, selection is weighted by recent health (success rate, uptime, verification trust), current load relative to capacity, and latency. Providers in a degraded state receive only a small share of probe traffic so recovery stays detectable without sending consumers into a failing node.
+4. **Dispatch.** The request travels over the provider's existing WebSocket connection; streamed chunks are relayed to the consumer as they arrive. If no connected provider is available, a registered external OpenAI-compatible endpoint can serve as fallback. Transient provider failures are retried on another provider.
+5. **Meter and bill.** Token usage from the response is recorded. The consumer is charged at the model's price (or the request is counted against their Token Plan); the provider is credited at the model's payout price.
+6. **Attribute.** The response carries `X-Swan-Provider-ID`, `X-Swan-Provider-Name`, `X-Swan-Connection-Mode`, `X-Swan-Latency-Ms` and `X-Swan-Request-ID`. Nothing served on Swan is anonymous compute.
 
-```
-Consumer                Swan Inference              Provider
-   │                         │                         │
-   │  POST /v1/chat/...      │                         │
-   │────────────────────────▶│                         │
-   │                         │  Select best provider   │
-   │                         │  (load balancing)        │
-   │                         │                         │
-   │                         │  Forward via WebSocket   │
-   │                         │────────────────────────▶│
-   │                         │                         │  Run inference
-   │                         │  Stream response         │
-   │                         │◀────────────────────────│
-   │  Stream response        │                         │
-   │◀────────────────────────│                         │
-   │                         │                         │
-   │                         │  Record usage            │
-   │                         │  (tokens, latency)       │
-```
+## Provider connection modes
 
-1. **Consumer** sends an inference request via the REST API with their API key
-2. **Swan Inference** selects the best available provider using health-aware load balancing
-3. The request is forwarded to the provider over a persistent **WebSocket** connection
-4. The provider runs inference on their GPU and streams the response back
-5. Swan Inference records usage metrics (tokens processed, latency, success/failure)
-6. Usage is aggregated for billing and settlement
+| Mode | How | Who uses it |
+|------|-----|-------------|
+| **WebSocket** (`X-Swan-Connection-Mode: websocket`) | The open-source `computing-provider` agent dials `wss://inference-ws.swanchain.io`, authenticates with a provider key or a wallet signature, registers its models and keeps the connection open. Requests, verification challenges, heartbeats and warm-ups all flow over it. No inbound port, domain or certificate. | Community GPU providers |
+| **External endpoint** (`external`) | A provider registers the URL of an OpenAI-compatible server (vLLM, SGLang, TGI, a gateway). The platform health-checks it and routes to it when no WebSocket provider is available. | Providers with existing serving infrastructure |
 
-### Provider Connection Modes
+## Pricing: the two-price model
 
-| Mode | Description | Use Case |
-|------|-------------|----------|
-| **WebSocket Provider** | GPU provider running `computing-provider` agent, connects via WebSocket | Primary path — no public IP required |
-| **External Endpoint** | Existing OpenAI-compatible server (vLLM, TGI, OpenAI API) registered with Swan | Fallback — for providers with existing infrastructure |
+Every catalog model publishes two prices, both set by the platform, both per 1M tokens (per image for image models, per minute for audio):
 
-The response includes an `X-Swan-Connection-Mode` header indicating which path was used.
+| | Who | Where to see it |
+|---|---|---|
+| **Price** (`input_price`, `output_price`) | What the consumer pays | Model page, [pricing page](https://inference.swanchain.io/pricing), `GET /api/v1/models` |
+| **Payout price** (`payout_input_price`, `payout_output_price`) | What the serving provider is paid | Provider dashboard, `GET /api/v1/models` |
 
-## Provider Registration and Collateral
+The platform margin is the spread. There is **no percentage commission** and no separate platform fee line on a bill. Two invariants are enforced whenever the catalog changes: a priced model must have a payout price, and the payout can never exceed the price. Providers choose which models to serve; they do not set prices. At the time of writing the payout is 90% of the consumer price for almost every model.
 
-### Registration Flow
+Consumer-facing prices are denominated in USD and deducted from the credit balance whatever it was funded with. Zero-priced models exist in the catalog but are rare and only callable while someone serves them; they carry a stricter shared rate limit (10 requests/min per key).
 
-1. **Sign up** at the Swan Inference dashboard
-2. **Upgrade to provider** and receive a provider API key (`sk-prov-*`)
-3. **Deposit collateral** — stablecoin (USDC/USDT on-chain) or USD (via payment gateway)
-4. **Connect** via WebSocket using the `computing-provider` agent
-5. **Pass benchmark** — initial verification (math, code, latency tests)
-6. **Begin serving** — provider becomes active and receives inference requests
+## Consumer billing
 
-### Collateral Options
+**Credits.** Consumers prepay into a USD balance by card (Stripe, minimum $5, processing fee shown before purchase) or by sending crypto to a personal deposit address (minimum $1): USDC on Ethereum (chain 1) or Base (8453), or SWAN on Swan Chain (254). SWAN deposits are credited at the live SWAN/USD rate plus a **20% bonus**. Each request reserves an estimate from the balance, then settles to the exact token usage; the balance and a double-entry ledger are visible under **Billing**.
 
-| Type | Method | Verification |
-|------|--------|-------------|
-| **Stablecoin (USDC/USDT)** | On-chain deposit to ProviderCollateral contract | Automatic on-chain tx verification |
-| **USD** | Stripe, PayPal, or bank transfer | Admin confirmation with payment reference |
+**Token Plan (Pro).** $6 per month, billed monthly by card. Included: 40M tokens/week and 1,500 requests/day on **standard-tier** models, 75 images/day, 50 requests/min, 8 concurrent. **Premium-tier** models (Claude, Gemini Pro and similar) are never covered and bill per token from the credit balance, as does any usage beyond the allowance. Plan usage is counted at admission time, so a request that would exceed the allowance falls through to pay-as-you-go if credit is available and is otherwise rejected.
 
-Collateral status follows the lifecycle: `pending → confirmed → refund_requested → refunded`
+**Playground.** Anonymous, browser-only, one small model, rate-limited per IP (5 requests/hour), non-streaming. A way to try the service, not an API.
 
-The refund waiting period is **7 days** from the time of request, ensuring all pending settlements are cleared before funds are released.
+## Provider earnings and settlement
 
-See [Computing Provider Collateral](../token/computing-provider-collateral/) for detailed collateral amounts and slashing rules.
+* Every served request credits the provider `tokens × payout price`. Reference nodes that the platform runs to baseline a model earn nothing for that model.
+* **Token Plan traffic** is credited at the same payout price, but the month's total plan payouts are capped at the plan revenue pool (subscribers × $6). If usage exceeds the pool, payouts are pro-rated across providers by contribution; these earnings are held as *settlement pending* until month end.
+* **Settlement** aggregates usage into daily batches per provider and collateral chain.
+* **Payouts** are requested from the provider dashboard to the beneficiary wallet: minimum $10, flat $1 fee, one request per chain per hour, one pending payout at a time. Earnings can alternatively be converted into inference credit on the same account.
 
-## Request Routing and Load Balancing
+## Collateral
 
-Swan Inference routes requests using configurable load balancing strategies:
+Before activation a provider deposits refundable collateral, which backs the slashing rules:
 
-| Strategy | Description |
-|----------|-------------|
-| **Health-Aware** | Routes to the provider with the best health score (default) |
-| **Round-Robin** | Distributes requests evenly across providers |
-| **Least-Connections** | Routes to the provider with the fewest active requests |
+| Chain | Chain ID | Token | Minimum | Contract |
+|-------|----------|-------|---------|----------|
+| Ethereum | 1 | USDC | 20 | `0x1dEe92Da8fc4878795418aEde112100A57286a9a` |
+| Base | 8453 | USDC | 20 | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| Swan Chain | 254 | SWAN | 35,000 | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| Card (Stripe) | — | USD | shown at checkout | — |
 
-Additional routing features:
+Live values: `GET /api/v1/provider/collateral/contract`. Refunds carry a 7-day waiting period, are blocked while a payout is pending, and suspend the provider from routing until complete. See [Earnings and Collateral](../token/computing-provider-collateral/README.md).
 
-- **Health monitoring** with automatic circuit breaker for unhealthy providers
-- **Model warmup** to pre-load models and reduce cold-start latency
-- **Retry and failover** — up to 2 retries with exponential backoff if a provider fails
-- **Rate limiting** per API key with tiered limits by model category
+## Activation and probation
 
-### Rate Limits (Default)
+A `pending` provider is activated automatically when three conditions hold: collateral verified; GPU eligible (≥ 8 GB VRAM, compute capability 8.0+); registration benchmark passed. Activation starts a 24-hour probation — at least 50% uptime through it keeps the provider `active`, otherwise it returns to `pending`. Admin approval is a parallel path, not a prerequisite. Status values are listed in the [overview](../swan-2.0-inference-cloud/README.md#becoming-a-provider).
 
-| Category | Requests/min |
-|----------|-------------|
-| LLM | 200 |
-| Image | 60 |
-| Embedding | 500 |
-| Other | 200 |
+## Verification and trust
 
-## Pricing Model
+The platform continuously checks that a provider serves the model it claims, at the serving configuration the catalog advertises:
 
-### Consumer Pricing
+| Check | What happens | What a provider needs |
+|-------|--------------|-----------------------|
+| **Benchmarks** | Math, code and latency tests at registration and periodically; results expire after 30 days | A healthy backend; SGLang or vLLM recommended |
+| **Fingerprint** | The platform names registered weight files; the agent returns their hashes | Weights on disk that match the catalog model |
+| **Deterministic** | A fixed-seed prompt compared with a reference response | Seed support in the backend |
+| **Logprob** | Statistical comparison of token log-probabilities with the canonical configuration | `logprobs` support in the backend (probed at registration) |
+| **Context-window integrity** | Truncation monitoring and recall challenges sized near the advertised window | An honestly declared `context_length` — see the [notice](../swan-2.0-inference-cloud/provider-context-window-faq.md) |
 
-Pricing varies by model category:
+Results move a **trust score** that weights routing. Repeated failures trip a circuit breaker that stops traffic until the provider recovers. Verified misrepresentation is escalated: first a notice and a cap of the displayed context to what was measured, then a collateral slash, every penalty record carrying a **48-hour appeal window**. The platform publishes what it checks and the outcomes — trust, uptime and benchmark scores appear on the [network page](https://inference.swanchain.io/network) — but not the detection thresholds.
 
-| Category | Pricing Unit | Examples |
-|----------|-------------|----------|
-| **LLM** | Per input token + per output token | Chat completions, text generation |
-| **Embedding** | Per token | Text embeddings |
-| **Image** | Per request | Image generation |
-| **Audio** | Per request | Transcription |
+## Relationship to the Swan 1.0 marketplaces
 
-Prices are listed transparently in the model catalog at [inference.swanchain.io/models](https://inference.swanchain.io/models). The default marketplace currency is **USDC**.
+The auction-based [AI Computing Marketplace](decentralized-ai-computing-marketplace/README.md), the [Storage Market](storage-market.md) and the [ZK Proof Marketplace](indexing-and-caching-marketplace/README.md) belong to Swan 1.0 and are documented under [Legacy: Swan 1.0](../../swan-chain-campaign/README.md). Swan 2.0 has one product — inference — and one provider role.
 
-### Platform Fee
+## Learn more
 
-The platform charges a **5% fee** on each transaction. This fee funds protocol operations, staking rewards, and SWAN token burns.
-
-### Revenue Distribution
-
-When a consumer pays for an inference request:
-
-| Recipient | Share | Description |
-|-----------|-------|-------------|
-| **Provider** | 70% | Paid in the request currency (USDC) |
-| **Protocol Treasury** | 20% | Funds ecosystem development |
-| **SWAN Buyback & Burn** | 10% | Deflationary mechanism |
-
-## Settlement
-
-### Off-Chain Ledger
-
-Usage is tracked in real time on an off-chain payment ledger:
-
-- Every inference request records: tokens processed, latency, model used, provider, consumer
-- Provider earnings accumulate in the ledger
-- Consumers are billed based on aggregated usage
-
-### On-Chain Settlement
-
-Settlement uses a **MerkleDistributor** smart contract for gas-efficient batch payouts:
-
-1. **Daily batches** — Provider earnings are aggregated into settlement batches
-2. **Merkle tree** — A Merkle tree is computed from all provider balances in the batch
-3. **On-chain submission** — The Merkle root is submitted to the smart contract
-4. **Provider claims** — Providers claim their earnings by submitting a Merkle proof
-
-Settlement status follows: `pending → submitted → confirmed`
-
-This approach settles many provider payments in a single on-chain transaction, minimizing gas costs.
-
-### Minimum Payout
-
-Providers must accumulate a minimum balance (default: **$50**) before a payout is triggered. This prevents dust transactions and reduces gas costs.
-
-## Provider Earnings
-
-Providers earn through two complementary streams:
-
-### 1. Inference Revenue (Stablecoins)
-
-Direct payment for serving inference requests, paid in the consumer's currency (typically USDC). This is the primary revenue stream and scales with the number of requests served.
-
-### 2. Contribution Rewards (SWAN Tokens)
-
-Daily SWAN token rewards allocated proportionally based on the provider's [Contribution Score](../token/swan-provider-income.md#swan-2.0-market-driven-income). This replaces the legacy UBI model and rewards providers for:
-
-- Inference volume (requests processed)
-- Token throughput (tokens generated)
-- Uptime and availability
-- Quality (success rate, latency)
-- Model diversity (number of models served)
-
-### Earnings Dashboard
-
-The provider dashboard provides:
-
-- **Daily/weekly/monthly** earnings views with CSV export
-- **Per-model** performance metrics (requests, success rate, tokens processed)
-- **Collateral status** and on-chain deposit tracking
-- **Wallet verification** via MetaMask for secure payouts
-
-## Subscription Plan
-
-Swan Inference offers a **Pro subscription** alongside the existing pay-as-you-go credit model.
-
-### Pro Plan — $6/month
-
-| Feature | Pay-As-You-Go | Pro Subscription |
-|---------|---------------|------------------|
-| Price | No fee, deposit credits | $6/month |
-| Open-source models | Pay per token | Included (40M tokens/week, 1,500 req/day) |
-| Premium models | Pay per token | Pay per token (from credit balance) |
-| Images | Pay per image | 75/day included |
-| Payment | Stripe or crypto | Stripe (recurring) or crypto prepay |
-
-Subscriptions can be paid with stablecoins (USDC/USDT) or SWAN token. SWAN payments receive a 10% discount.
-
-### Provider Earnings Under Subscription
-
-Providers earn the same per-token rate for subscription requests as pay-as-you-go. Total provider payouts from subscription requests are capped at the subscription revenue pool ($6 x subscriber count per month). If provider costs exceed the pool, payouts are pro-rated proportionally across providers based on their contribution.
-
-## Public Playground
-
-The platform includes a public playground at [inference.swanchain.io/playground](https://inference.swanchain.io/playground) that allows anyone to try AI inference without an API key. The playground is rate-limited to 5 requests per hour per IP, with a restricted model selection and limited token output. This provides a zero-friction entry point for new users to evaluate the platform before signing up.
-
-## Comparison with AI Computing Marketplace
-
-| Feature | AI Computing Marketplace | Inference Marketplace |
-|---------|------------------------|----------------------|
-| **Workload** | Training, batch compute | Real-time inference |
-| **Latency** | Minutes to hours | Milliseconds to seconds |
-| **Allocation** | Task auction (bidding) | Real-time routing (WebSocket) |
-| **Payment** | Per task | Per token / per request |
-| **Connection** | Job-based | Persistent WebSocket |
-| **API** | Swan SDK / Orchestrator | OpenAI-compatible REST API |
-
-Both marketplaces coexist within the Swan ecosystem, serving different use cases. The Inference Marketplace is optimized for interactive AI applications, while the AI Computing Marketplace handles batch training and compute-intensive tasks.
-
-## Learn More
-
-- **[Swan 2.0: Inference Cloud](../swan-2.0-inference-cloud.md)** — Overview of the Swan 2.0 platform
-- **[Computing Provider Income](../token/swan-provider-income.md)** — Contribution scoring and reward distribution
-- **[Computing Provider Collateral](../token/computing-provider-collateral/)** — Collateral requirements and slashing
+* **[Swan 2.0: Inference Cloud](../swan-2.0-inference-cloud/README.md)** — the overview
+* **[API Reference](../../bulders/app-developer/swan-inference-api.md)** — endpoints, headers, limits, errors
+* **[Become a Provider](../swan-2.0-inference-cloud/become-a-provider.md)** — the setup walkthrough
+* **[Computing Provider Income](../token/swan-provider-income.md)** — how earnings are computed

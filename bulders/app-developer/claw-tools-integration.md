@@ -25,15 +25,15 @@ Popular models available on Swan Inference:
 
 | Model | Category | Use Case |
 |-------|----------|----------|
-| `deepseek-r1-distill-llama-70b` | LLM | Reasoning, code generation |
+| `zai-org/GLM-4.7-Flash` | LLM | Reasoning, code generation |
 | `Qwen/Qwen2.5-7B-Instruct` | LLM | General chat, fast responses |
-| `meta-llama/Llama-3.3-70B-Instruct` | LLM | General purpose |
+| `Sao10K/L3.3-70B-Euryale-v2.3` | LLM | General purpose |
 
 ***
 
 ## Tool-Specific Setup
 
-### OpenClaw (TypeScript, 250K+ stars)
+### OpenClaw 
 
 The most popular AI assistant in the Claw family. Supports 25+ messaging platforms.
 
@@ -51,12 +51,12 @@ Edit your OpenClaw configuration to add Swan Inference as a provider:
         "baseUrl": "https://inference.swanchain.io/v1",
         "apiKey": "sk-swan-YOUR-API-KEY",
         "models": [
-          "deepseek-r1-distill-llama-70b",
+          "zai-org/GLM-4.7-Flash",
           "Qwen/Qwen2.5-7B-Instruct"
         ]
       }
     },
-    "default": "swan:deepseek-r1-distill-llama-70b"
+    "default": "swan:zai-org/GLM-4.7-Flash"
   }
 }
 ```
@@ -75,7 +75,7 @@ openclaw
 
 ***
 
-### ZeroClaw (Rust, 28K+ stars)
+### ZeroClaw (Rust)
 
 Ultra-lightweight (3.4MB binary, <10ms startup). Best for quick testing.
 
@@ -87,7 +87,7 @@ Ultra-lightweight (3.4MB binary, <10ms startup). Best for quick testing.
 name = "openai-compatible"
 base_url = "https://inference.swanchain.io/v1"
 api_key = "sk-swan-YOUR-API-KEY"
-model = "deepseek-r1-distill-llama-70b"
+model = "zai-org/GLM-4.7-Flash"
 ```
 
 {% endtab %}
@@ -96,7 +96,7 @@ model = "deepseek-r1-distill-llama-70b"
 ```bash
 zeroclaw --provider "custom:https://inference.swanchain.io/v1" \
          --api-key "sk-swan-YOUR-API-KEY" \
-         --model "deepseek-r1-distill-llama-70b"
+         --model "zai-org/GLM-4.7-Flash"
 ```
 
 {% endtab %}
@@ -104,7 +104,7 @@ zeroclaw --provider "custom:https://inference.swanchain.io/v1" \
 
 ***
 
-### PicoClaw (Go, 26K+ stars)
+### PicoClaw (Go)
 
 Lightweight Go binary (<8MB). Designed for edge and ARM devices.
 
@@ -114,12 +114,12 @@ provider:
   type: openai-compatible
   base_url: https://inference.swanchain.io/v1
   api_key: sk-swan-YOUR-API-KEY
-  model: deepseek-r1-distill-llama-70b
+  model: zai-org/GLM-4.7-Flash
 ```
 
 ***
 
-### Nanobot (Python, 32K+ stars)
+### Nanobot 
 
 Python-native, installable via pip. Best for Python developers.
 
@@ -138,7 +138,7 @@ pip install nanobot-ai
   "provider": "custom",
   "apiBase": "https://inference.swanchain.io/v1",
   "apiKey": "sk-swan-YOUR-API-KEY",
-  "model": "deepseek-r1-distill-llama-70b"
+  "model": "zai-org/GLM-4.7-Flash"
 }
 ```
 
@@ -152,7 +152,7 @@ agent = Agent(
     provider="custom",
     api_base="https://inference.swanchain.io/v1",
     api_key="sk-swan-YOUR-API-KEY",
-    model="deepseek-r1-distill-llama-70b",
+    model="zai-org/GLM-4.7-Flash",
 )
 
 response = agent.chat("Explain quantum computing in simple terms")
@@ -164,7 +164,7 @@ print(response)
 
 ***
 
-### NanoClaw (TypeScript, 25K+ stars)
+### NanoClaw (TypeScript)
 
 Container-per-session isolation. Good for multi-tenant deployments.
 
@@ -174,14 +174,14 @@ Container-per-session isolation. Good for multi-tenant deployments.
     "provider": "openai-compatible",
     "baseUrl": "https://inference.swanchain.io/v1",
     "apiKey": "sk-swan-YOUR-API-KEY",
-    "model": "deepseek-r1-distill-llama-70b"
+    "model": "zai-org/GLM-4.7-Flash"
   }
 }
 ```
 
 ***
 
-### IronClaw (Rust, 10K+ stars)
+### IronClaw (Rust)
 
 Security-focused with TEE and encrypted vault. Built by NEAR AI.
 
@@ -189,14 +189,14 @@ Security-focused with TEE and encrypted vault. Built by NEAR AI.
 export LLM_BACKEND=openai_compatible
 export LLM_BASE_URL=https://inference.swanchain.io/v1
 export API_KEY=sk-swan-YOUR-API-KEY
-export MODEL=deepseek-r1-distill-llama-70b
+export MODEL=zai-org/GLM-4.7-Flash
 
 ironclaw
 ```
 
 ***
 
-### NemoClaw (TypeScript + Python, 15K+ stars)
+### NemoClaw (TypeScript + Python)
 
 NVIDIA's reference stack with kernel sandbox and privacy router.
 
@@ -207,7 +207,7 @@ inference:
   provider: openai-compatible
   base_url: https://inference.swanchain.io/v1
   api_key: sk-swan-YOUR-API-KEY
-  model: deepseek-r1-distill-llama-70b
+  model: zai-org/GLM-4.7-Flash
 ```
 
 {% hint style="info" %}
@@ -242,7 +242,7 @@ AI_GATEWAY_BASE_URL=https://inference.swanchain.io/v1
 
 ***
 
-### NullClaw (Zig, 6.7K+ stars)
+### NullClaw 
 
 Ultra-minimal (678KB binary, 1MB RAM). For IoT and embedded devices.
 
@@ -283,13 +283,7 @@ For resource-constrained devices, use smaller models like `Qwen/Qwen2.5-7B-Instr
 
 ## Playground (No API Key)
 
-All tools can also use Swan Inference's public playground for testing without an API key:
-
-```
-Base URL: https://inference.swanchain.io/v1/playground
-```
-
-The playground is rate-limited (5 requests/hour per IP) with restricted models, but requires no signup.
+The public [playground](https://inference.swanchain.io/playground) is a **web UI and a bespoke endpoint** (`POST /v1/playground/chat`), not an OpenAI-compatible base URL — agent tools cannot be pointed at it. Use it to try a model by hand, then [sign up](https://inference.swanchain.io/signup) for a free `sk-swan-*` key; every tool on this page needs one.
 
 ## Troubleshooting
 
@@ -304,7 +298,7 @@ The playground is rate-limited (5 requests/hour per IP) with restricted models, 
 ### Rate limited (429)
 - Default rate limit is 200 requests/min for LLM models
 - Check `X-RateLimit-Remaining` header in responses
-- Consider upgrading to Pro subscription ($6/month) for higher limits
+- If you are on pay-as-you-go, the per-category rate limits in the [API reference](swan-inference-api.md#rate-limits) apply; the $6/month Pro plan includes 40M tokens/week on standard-tier models but has its own 50 requests/min limit, so it helps with cost, not burst rate
 
 ### Streaming not working
 - Ensure your tool is configured for streaming (`stream: true`)
@@ -316,3 +310,8 @@ The playground is rate-limited (5 requests/hour per IP) with restricted models, 
 - [Available Models](https://inference.swanchain.io/models)
 - [Sign Up](https://inference.swanchain.io/signup)
 - [Subscription Plans](swan-inference-api.md#subscription-plan)
+
+## See also
+
+- **[For Developers](../../core-concepts/swan-2.0-inference-cloud/how-to-use.md)** — create an account, add credits and copy your key before configuring a tool
+- **[API Reference](swan-inference-api.md)** — endpoints, headers, limits and errors

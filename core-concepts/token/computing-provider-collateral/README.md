@@ -1,5 +1,11 @@
 # Computing Provider Collateral
 
+{% hint style="info" %}
+**Current rules (Swan 2.0)** are in [Collateral under Swan 2.0](#swan-2.0-collateral) below. The Computing-Unit formula that follows applies to **Swan 1.0** providers and is kept so they can understand and withdraw their existing deposits.
+{% endhint %}
+
+## Swan 1.0: CU-based collateral (historical)
+
 #### **Introduction**
 
 In the Swan Chain network, Computing Providers (CPs) contribute their computational resources to support the network's decentralized computing infrastructure. To ensure stability and economic security, CPs are required to provide collateral in Swan tokens. This collateral acts as a financial commitment, incentivizing CPs to act in the best interest of the network while also sharing in the economic rewards generated from providing computing power.
@@ -82,52 +88,35 @@ The negative correlation between collateral and computing power has several bene
 
 ***
 
-#### Swan 2.0: Updated Collateral Model <a href="#swan-2.0-collateral" id="swan-2.0-collateral"></a>
+## Collateral under Swan 2.0 <a href="#swan-2.0-collateral" id="swan-2.0-collateral"></a>
 
-{% hint style="info" %}
-The collateral model above applies to the legacy UBI system (Swan 1.0). Swan 2.0 introduces additional collateral options and updated tiers for the [Inference Cloud](../../swan-2.0-inference-cloud.md). See [SIP-002](https://github.com/swanchain/governance/discussions/16) for the full proposal.
-{% endhint %}
+A Swan 2.0 provider account deposits **refundable collateral** before it is activated for paid traffic. The deposit backs the slashing rules: verified misrepresentation of a model or its context window can be penalised from it, always with a 48-hour appeal window. Honest providers get it back in full when they leave.
 
-**Stablecoin Collateral (New in Swan 2.0)**
+### Where and how much
 
-Swan 2.0 introduces **stablecoin collateral** via the `ProviderCollateral` smart contract. Providers can deposit USDC or USDT on-chain as an alternative to SWAN token collateral:
+| Chain | Chain ID | Token | Minimum | Collateral contract |
+|-------|----------|-------|---------|--------------------|
+| Ethereum | 1 | USDC | 20 USDC | `0x1dEe92Da8fc4878795418aEde112100A57286a9a` |
+| Base | 8453 | USDC | 20 USDC | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| Swan Chain | 254 | SWAN | 35,000 SWAN | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| Card (Stripe) | — | USD | shown at checkout | — |
 
-- **Supported tokens**: USDC, USDT
-- **Supported chains**: Swan Chain (mainnet), Base, Ethereum (configurable)
-- **Deposit method**: Provider sends tokens to the contract and submits the `tx_hash` for on-chain verification
-- **Refund waiting period**: 7 days from request to withdrawal
+The live table is served by `GET /api/v1/provider/collateral/contract` and printed by `computing-provider inference deposit`; your dashboard's **Collateral** panel shows the same values for your account. Deposit by sending the token to the collateral contract from your **owner wallet** and confirming the transaction in the dashboard (or `computing-provider inference deposit --check`), or pay by card through Stripe. On-chain deposits need a little native gas on the chosen chain.
 
-Providers can also use **USD (off-chain)** via Stripe, PayPal, or bank transfer, with admin confirmation.
+### Lifecycle
 
-Collateral status follows the lifecycle: `pending → confirmed → refund_requested → refunded`
+`pending → confirmed → refund_requested → refunded`
 
-**Updated Collateral Tiers (SIP-002)**
+* **Confirmation** is automatic once the transaction is seen on-chain (card payments confirm immediately).
+* **Activation** follows automatically when collateral is confirmed, the GPU is eligible and the registration benchmark has passed.
+* **Refund** can be requested from the dashboard at any time. The waiting period is **7 days**; a refund cannot start while a payout is pending, and the provider is suspended from routing until the refund completes. Card collateral is returned to the original card, on-chain collateral to the depositing wallet.
 
-Under the unified Computing Provider (CP) model, collateral requirements are based on hardware tier:
+### Slashing
 
-| Hardware Tier | Minimum SWAN Collateral | Slashing Conditions |
-|---------------|------------------------|---------------------|
-| RTX 3090 / A4000 | 5,000 SWAN | Uptime < 50% for 7 days |
-| RTX 4090 / A5000 / A6000 | 10,000 SWAN | Repeated failed requests (> 20% failure rate) |
-| A100 | 25,000 SWAN | Malicious behavior or gaming detected |
-| H100 | 50,000 SWAN | Unauthorized hardware changes |
+| Trigger | Consequence |
+|---------|-------------|
+| Consecutive benchmark failures | 10% of collateral, then 30% and removal from the network |
+| Verified model or context-window misrepresentation, continued after notice | Collateral penalty under the verification rules |
+| Falling below the minimum collateral | Suspended from receiving requests until topped up |
 
-{% hint style="warning" %}
-These SIP-002 collateral tiers are a draft proposal subject to governance approval. The legacy collateral formula ($$C_{base}$$ = 3533 SWAN) continues to apply until SIP-002 is ratified.
-{% endhint %}
-
-**Benchmark-Based Slashing (Swan 2.0)**
-
-In addition to the existing task-failure slashing, Swan 2.0 introduces benchmark-based slashing for inference providers:
-
-- The benchmark worker runs every **24 hours**, testing math accuracy, code generation, and response latency
-- Providers must pass all thresholds (≥ 50% math, ≥ 50% code, ≤ 5000ms latency)
-- **Consecutive failures** trigger slashing: configurable percentage (default **10%**) of collateral per consecutive failure
-- Providers that fall below the minimum collateral threshold are suspended from receiving inference requests
-
-**Smart Contracts**
-
-| Contract | Network | Address |
-|----------|---------|---------|
-| **ProviderCollateral (USDC)** | Swan Chain Mainnet | `0x557f306f917009cf83c32b8b32a79202e79948e5` |
-| **SWAN Token** | Swan Chain Mainnet | `0xAF90ac6428775E1Be06BAFA932c2d80119a7bd02` |
+Every penalty record carries a **48-hour appeal window**, visible in the provider dashboard. Serving a small model or a small context window honestly is never penalised — only misrepresentation is. See [Quality assurance](../../swan-2.0-inference-cloud/README.md#quality-assurance) and the [Context-Window Integrity notice](../../swan-2.0-inference-cloud/provider-context-window-faq.md).

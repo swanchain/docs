@@ -192,17 +192,16 @@ The wizard writes sensible defaults, but if it failed to discover your model ser
 
 [API]
 Port = 8085
-MultiAddress = "/ip4/<PUBLIC_IP>/tcp/<PORT>"
 NodeName = "<YOUR_CP_Node_Name>"
 
 [RPC]
-SWAN_CHAIN_RPC = "https://rpc-proxima.swanchain.io"
+SWAN_CHAIN_RPC = "https://mainnet-rpc01.swanchain.io"   # Swan Chain mainnet, chain ID 254
 
 [Inference]
 Enable = true
-WebSocketURL = "wss://api-ws-dev.swanchain.io"
+WebSocketURL = "wss://inference-ws.swanchain.io"          # production — do NOT use a dev/testnet endpoint
 ApiKey = "sk-prov-YOUR_API_KEY"
-Models = ["Qwen/Qwen2.5-7B-Instruct"]
+Models = ["Qwen/Qwen2.5-7B-Instruct"]                    # must match keys in models.json and catalog IDs
 ```
 
 **Model endpoints (`~/.swan/computing/models.json`)**
@@ -214,11 +213,12 @@ Models = ["Qwen/Qwen2.5-7B-Instruct"]
     "gpu_memory": 16000,
     "category": "text-generation"
   },
-  "meta-llama/Llama-3.2-3B-Instruct": {
+  "meta-llama/Llama-3.2-3B": {
     "endpoint": "http://localhost:11434",
     "gpu_memory": 14000,
     "category": "text-generation",
-    "local_model": "llama3.2:3b"
+    "local_model": "llama3.2:3b",
+    "context_length": 131072
   }
 }
 ```
@@ -230,8 +230,10 @@ Models = ["Qwen/Qwen2.5-7B-Instruct"]
 | `category` | Yes | Model type: `text-generation`, `image`, `embedding`, `audio` |
 | `local_model` | No | Local model name if different from the key (e.g., Ollama's `qwen2.5:7b`) |
 | `api_key` | No | API key if your model server requires authentication |
+| `context_length` | Recommended | The context window your backend **really** serves. Auto-detected from `max_model_len` on vLLM/SGLang only; set it explicitly for Ollama, llama.cpp or any proxy — see the [Context-Window Integrity notice](provider-context-window-faq.md) |
+| `format`, `quantization` | No | Weight format (`fp16`, `awq`, `gptq`, `gguf`) and quantization detail (`q4_k_m`, `w4a16`, …), shown to consumers on the model page |
 
-The keys in `models.json` must match valid Swan Inference model IDs. Run `computing-provider models catalog` or check the [model catalog](https://inference.swanchain.io/models) for the full list.
+The keys in `models.json` must match valid Swan Inference model IDs **exactly**, including the organisation prefix (`meta-llama/Llama-3.2-3B`, not `llama-3.2-3b`). Run `computing-provider models catalog` or check the [model catalog](https://inference.swanchain.io/models) for the full list.
 
 The agent watches `models.json` and hot-reloads on change — no restart needed. You can also force a reload:
 
@@ -256,27 +258,29 @@ computing-provider inference status
 You'll move through these stages automatically:
 
 ```
-Connect ──▶ Collateral ──▶ Approval ──▶ Active
-(instant)   (see step 5)   (< 24 hrs)    (earning)
+Connect ──▶ Deposit collateral ──▶ Active (24 h probation) ──▶ Active
+(instant)   (step 5)                (auto, once benchmark + GPU + collateral pass)
 ```
 
 | Stage | What happens | Typical duration |
 |-------|-------------|-----------------|
-| **Connect** | Agent opens a WebSocket to Swan Inference, registers your models, and auto-runs math / code / latency benchmarks | Instant |
-| **Collateral** | Deposit via Stripe or on-chain SWAN (step 5) | Instant |
-| **Approval** | Admin reviews your benchmark results and collateral | < 24 hours |
-| **Active** | Traffic starts flowing — you earn per-request revenue | Ongoing |
+| **Connect** | The agent opens a WebSocket to Swan Inference, registers your models, and the registration benchmark (math, code, latency) runs | Minutes |
+| **Collateral** | Deposit on-chain or by card (step 5) | Minutes to confirm |
+| **Activation** | Automatic once collateral is confirmed, your GPU passes eligibility (≥ 8 GB VRAM, compute capability 8.0+) and the benchmark has passed. No admin approval is required; `computing-provider inference request-approval` exists as a parallel path if you want a human to look | Immediate after the three checks |
+| **Probation** | The first 24 hours as `active`. Keep at least 50% uptime; otherwise the provider returns to `pending` and must re-benchmark | 24 hours |
 
 <figure><img src="../../.gitbook/assets/provider-how-to/provider-status.png" alt="Provider activation stages shown in the dashboard"><figcaption>The My Provider tab visualizes the activation flow: Start → Connect → Deposit Collateral → Approved → Active & Earning.</figcaption></figure>
 
 ## 5. Deposit collateral
 
-Once approved, deposit collateral to unlock full traffic routing. Two options:
+Collateral is a refundable deposit that backs the slashing rules; activation waits for it. Deposit on-chain from your owner wallet, or pay by card:
 
-| Method | Currency | Processing | Refund |
-|--------|----------|-----------|--------|
-| **Stripe** | Credit/debit card (USD) | Instant | 7-day waiting period, back to original card |
-| **On-chain** | SWAN tokens on Swan Mainnet | Requires SwanETH gas | 7-day waiting period, back to your wallet |
+| Chain | Chain ID | Token | Minimum | Collateral contract |
+|-------|----------|-------|---------|--------------------|
+| Ethereum | 1 | USDC | 20 USDC | `0x1dEe92Da8fc4878795418aEde112100A57286a9a` |
+| Base | 8453 | USDC | 20 USDC | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| Swan Chain | 254 | SWAN | 35,000 SWAN | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| Card (Stripe) | — | USD | shown at checkout | — |
 
 ```bash
 # Show instructions for your account (deposit address, minimum amount)
@@ -288,7 +292,7 @@ computing-provider inference deposit --check
 
 <figure><img src="../../.gitbook/assets/provider-how-to/deposit-collateral.png" alt="Provider collateral deposit panel"><figcaption>Provider dashboard's Collateral Deposit panel — verify your wallet, then pay the required amount via Stripe or on-chain crypto.</figcaption></figure>
 
-Collateral amounts scale with hardware tier and earning multiplier. See [Computing Provider Collateral](../token/computing-provider-collateral/) for the full table.
+Refunds have a 7-day waiting period and suspend routing until complete. Details, lifecycle and slashing rules: [Earnings and Collateral](../token/computing-provider-collateral/README.md).
 
 ## 6. Monitor earnings and uptime
 
@@ -313,6 +317,31 @@ computing-provider inference set-beneficiary 0xYourWalletAddress
 **New Provider Grace Period:** For the first 7 days after activation, uptime and success-rate deprioritization are waived. Use this window to stabilize your setup before full routing weight kicks in.
 {% endhint %}
 
+### What you earn, and how you get paid
+
+* Each request credits you `tokens × payout price` for that model. Payout prices are shown in the dashboard's model market and in the public catalog; at the time of writing they are 90% of the consumer price for almost every model. See [Computing Provider Income](../token/swan-provider-income.md).
+* Token Plan traffic is paid at the same rate but pro-rated against the plan pool at month end.
+* Request a payout to your beneficiary wallet from **Payments**: minimum $10, flat $1 fee, one request per chain per hour. Set the wallet with `computing-provider inference set-beneficiary 0x…`, or convert earnings into inference credit instead.
+
+### Provider status values
+
+| Status | Can connect | Earning | Meaning |
+|--------|-------------|---------|---------|
+| `pending` | yes | no | Awaiting collateral, GPU eligibility or benchmark |
+| `under_review` | yes | no | You requested manual review |
+| `approved` | yes | no | Admin approved, awaiting collateral |
+| `activating` | yes | no | Collateral verified, activation in progress |
+| `active` | yes | **yes** | Serving and earning; shown as "Active (Probation)" for the first 24 h |
+| `suspended` | no | no | Suspended by admin, or during a collateral refund |
+| `rejected` | no | no | Application rejected |
+| `offline` | no | no | Connection lost |
+
+`computing-provider inference status` prints your status, the step you are on, and the next action.
+
+### Staying verified
+
+After activation the platform keeps checking that you serve what you registered: periodic benchmarks (results expire after 30 days), fingerprint challenges against your weight files, fixed-seed and logprob comparisons, and context-window probes. Results move a trust score that weights how much traffic you receive; repeated failures trip a circuit breaker until you recover, and verified misrepresentation can be slashed from collateral with a 48-hour appeal. `computing-provider selfcheck` catches the quiet failures — a model advertised but not served, a context window larger than the backend really accepts, a backend rejecting requests — before they cost you traffic.
+
 ## Switching or adding models
 
 Edit `~/.swan/computing/models.json` — the agent watches this file and hot-reloads without restarting. Start additional model servers on different ports and add them all to the JSON. Full walkthrough with multi-GPU pinning is in the [`computing-provider` README](https://github.com/swanchain/computing-provider#switching-models).
@@ -324,12 +353,14 @@ Edit `~/.swan/computing/models.json` — the agent watches this file and hot-rel
 | `invalid provider API key` | Verify key starts with `sk-prov-` and check `ApiKey` in `~/.swan/computing/config.toml` |
 | `WebSocket connection failed` | Confirm outbound port 443 is open; URL must be `wss://` not `http://` |
 | Provider online but no requests | Model name mismatch — `--served-model-name` must exactly match the key in `models.json` and a model ID in the [catalog](https://inference.swanchain.io/models) |
-| `could not select device driver "nvidia"` | Install the NVIDIA Container Toolkit; see [`computing-provider` README](https://github.com/swanchain/computing-provider#install-nvidia-container-toolkit) |
+| `could not select device driver "nvidia"` | Install the NVIDIA Container Toolkit; see [`computing-provider` README](https://github.com/swanchain/computing-provider#install-nvidia-container-toolkit-linux-only) |
 | Stuck in `pending` | Provider needs collateral + passing benchmark + hardware check. Run `computing-provider inference status` to see which condition is missing |
 
 Full troubleshooting catalog: [`computing-provider` README — FAQ](https://github.com/swanchain/computing-provider#faq).
 
 ## Next steps
+
+The [`computing-provider` repository](https://github.com/swanchain/computing-provider) carries the full [configuration reference](https://github.com/swanchain/computing-provider/blob/main/docs/configuration.md), [troubleshooting guide](https://github.com/swanchain/computing-provider/blob/main/docs/troubleshooting.md), [SGLang deployment](https://github.com/swanchain/computing-provider/blob/main/docs/sglang-deployment.md) and [tuning](https://github.com/swanchain/computing-provider/blob/main/docs/sglang-best-practices.md) notes, and [Apple Silicon support](https://github.com/swanchain/computing-provider/blob/main/docs/apple-silicon-support.md).
 
 - **[Provider Onboarding](README.md#provider-onboarding)** — hardware tiers, revenue split, slashing rules
 - **[Computing Provider Income](../token/swan-provider-income.md)** — contribution score formula and reward distribution

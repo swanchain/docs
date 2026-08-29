@@ -1,5 +1,9 @@
 # Swan CP UBI
 
+{% hint style="warning" %}
+**Historical.** This page documents the Swan 1.0 UBI reward model that bootstrapped the provider network. Under Swan 2.0 providers are paid per token for inference they actually serve, and UBI is being wound down under [SIP-003](https://github.com/swanchain/governance/discussions/21). See [Computing Provider Income](../core-concepts/token/swan-provider-income.md) for how providers earn today.
+{% endhint %}
+
 ### Overview
 
 Swan Chain's Universal Basic Income (UBI) program serves as a cornerstone of our provider incentivization system, designed to reward Computing Providers (CPs) who contribute to the network's robustness and functionality.

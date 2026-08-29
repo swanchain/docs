@@ -4,9 +4,21 @@ description: SwanChain Tokenomics and Governance Framework
 
 # Tokenomics
 
+## SWAN in Swan 2.0
+
+With the [Inference Cloud](../swan-2.0-inference-cloud/README.md), SWAN's utility is:
+
+| Utility | Description |
+|---------|-------------|
+| **Pay with SWAN** | Consumers who deposit SWAN on Swan Chain (254) receive a 20% credit bonus, making it the cheapest way to buy inference |
+| **Provider collateral** | 35,000 SWAN on Swan Chain is one of the accepted collateral forms for GPU providers (USDC on Ethereum or Base, and card, are the others) |
+| **Governance** | SIPs on pricing policy, incentives and protocol parameters — see the [governance repository](https://github.com/swanchain/governance) |
+
+Provider income is paid per token served at published payout prices; the UBI allocation described in the Swan 1.0 sections is being tapered under [SIP-003](https://github.com/swanchain/governance/discussions/21).
+
 ## Overview
 
-SwanChain introduces a comprehensive tokenomics structure designed to support its ecosystem's growth, incentivize participation, and ensure operational sustainability. This document outlines the strategic allocation, governance mechanisms, planned token release schedule, and specific formulas for the Fog Computing Providers (FCP), Edge Computing Providers (ECP), and Market Providers (MP) to provide a clear understanding of how SwanChain utilizes its native tokens to drive network engagement and development.&#x20;
+SwanChain introduces a comprehensive tokenomics structure designed to support its ecosystem's growth, incentivize participation, and ensure operational sustainability. This document outlines the strategic allocation, governance mechanisms, planned token release schedule, and how the token is used in the network today. The provider-income formulas of Swan 1.0 (FCP/ECP/MP) are in [Computing Provider Income](swan-provider-income.md).&#x20;
 
 ### Total Token Supply
 

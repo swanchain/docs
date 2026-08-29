@@ -365,7 +365,7 @@ Otherwise, the application won't be displayed correctly on the Space App page.
 
 ### Q: If someone didn't apply for early bird, can they still join and run the computing provider tasks?
 
-**A**: Of course, they can also follow the [instruction](broken-reference) to set up a Computing Provider.
+**A**: Of course, they can also follow the [instruction](computing-provider-setup.md) to set up a Computing Provider.
 
 ####
 

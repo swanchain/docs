@@ -1,5 +1,9 @@
 # FAQ
 
+{% hint style="warning" %}
+**Running a GPU for AI inference?** This FAQ covers the legacy **ECP/FCP** roles of Swan 1.0 and is kept for operators who need the funding and exit procedures. Current providers serve inference with the unified `computing-provider` — start at [Become a Provider](../../core-concepts/swan-2.0-inference-cloud/become-a-provider.md).
+{% endhint %}
+
 ### **Q: What is CU?**
 
 CU, short for **Computing Unit**, is a key parameter in Swan Chain. It is a virtual unit used to measure the computing resource contributions of **Computing Providers (CPs)**. CU plays a crucial role in determining the collateral requirements for CPs.

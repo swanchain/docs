@@ -81,11 +81,15 @@ The enforcement sequence is designed so that honest providers are never hurt:
    context for your offering is **capped to your measured window**. No
    penalty — users are simply no longer promised what you don't serve.
 2. **Continued misrepresentation after notice** → collateral penalty under the
-   standard slashing rules, with the standard appeal window.
+   [slashing rules](../token/computing-provider-collateral/README.md#swan-2.0-collateral), with the 48-hour appeal window that applies to every penalty record.
 
 **Serving a small context honestly is not an offense and never will be.**
 Declaring 32k costs you nothing except long-context traffic you couldn't have
 served correctly anyway. Only misrepresentation is penalized.
+
+## How do I declare my real window?
+
+Set `context_length` on the model in `models.json` (see the [provider guide](become-a-provider.md#configuration-reference)). It is auto-detected from `max_model_len` on vLLM and SGLang only; Ollama, llama.cpp, LiteLLM and other proxies expose nothing, so set it explicitly. `computing-provider inference status` prints the window and its source (`override`, `detected`, `not reported`) per model, and `computing-provider selfcheck` flags a reported window that does not match the backend. Consumers see the provenance on each offering: a window marked *reported* came from you; one marked *assumed* is the catalog value because nothing was reported — still the common case, which is why this notice exists.
 
 ## Questions?
 
