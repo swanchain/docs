@@ -1,7 +1,7 @@
 # Legacy: Swan 1.0
 
 {% hint style="warning" %}
-Everything in this section describes **Swan 1.0** — the network before the Inference Cloud. It is kept for existing operators and for the historical record, and is **no longer maintained**: external links may be dead, programs have ended, and the economics described here (UBI, ECP/FCP roles, task auctions) have been replaced. For anything current, start at [Welcome](../README.md).
+Everything in this section describes **Swan 1.0** — the network before the Inference Cloud. It is kept for existing operators and for the historical record, and is **no longer maintained**: external links may be dead, programs have ended, UBI has stopped, and the economics described here (UBI, ECP/FCP roles, task auctions) have been replaced. For anything current, start at [Welcome](../README.md).
 {% endhint %}
 
 ## What changed

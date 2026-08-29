@@ -1,7 +1,7 @@
 # Computing Provider Income
 
 {% hint style="info" %}
-**How providers earn today (Swan 2.0):** per token, at the payout price published for each model — see [Income under Swan 2.0](#swan-2.0-market-driven-income) below. The UBI formulas that follow describe **Swan 1.0** and are kept for reference; UBI is being wound down under [SIP-003](https://github.com/swanchain/governance/discussions/21).
+**How providers earn today (Swan 2.0):** per token, at the payout price published for each model — see [Income under Swan 2.0](#swan-2.0-market-driven-income) below. The UBI formulas that follow describe **Swan 1.0** and are kept for reference; UBI has **ended** under [SIP-003](https://github.com/swanchain/governance/discussions/21).
 {% endhint %}
 
 ## Swan 1.0: UBI income (historical)
@@ -159,9 +159,9 @@ Requests covered by a consumer's Token Plan credit the provider at the same payo
 * Settlement aggregates usage into daily batches per provider and collateral chain.
 * Payout requests go to the beneficiary wallet: **minimum $10**, **flat $1 fee**, one request per chain per hour, one pending payout at a time. Earnings can also be converted into inference credit on the same account.
 
-### SWAN rewards
+### UBI has ended
 
-Any SWAN token rewards for providers are governed by [SIP-003](https://github.com/swanchain/governance/discussions/21), which tapers the Swan 1.0 UBI allocation to zero and reserves any remaining allocation for hardware that serves real traffic. Check the [governance repository](https://github.com/swanchain/governance) for the current stage; the per-token payout above is the income every provider can count on.
+The Swan 1.0 UBI allocation was tapered to zero under [SIP-003](https://github.com/swanchain/governance/discussions/21) and is off. There is no daily SWAN allocation for registered hardware; the per-token payout above is a provider's income.
 
 ### Unified Computing Provider role
 

@@ -7,7 +7,7 @@ description: >-
 # UBI Allocation Curve
 
 {% hint style="warning" %}
-**Historical.** This page documents the Swan 1.0 UBI reward model that bootstrapped the provider network. Under Swan 2.0 providers are paid per token for inference they actually serve, and UBI is being wound down under [SIP-003](https://github.com/swanchain/governance/discussions/21). See [Computing Provider Income](../swan-provider-income.md) for how providers earn today.
+**Historical.** This page documents the Swan 1.0 UBI reward model that bootstrapped the provider network. Under Swan 2.0 providers are paid per token for inference they actually serve, and UBI has **ended** under [SIP-003](https://github.com/swanchain/governance/discussions/21). See [Computing Provider Income](../swan-provider-income.md) for how providers earn today.
 {% endhint %}
 
 ### **Table of Contents**

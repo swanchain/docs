@@ -29,7 +29,7 @@ Swan Chain is evolving into a **market-driven AI inference marketplace** with [S
 
 * **Decentralized AI Inference**: An [Inference Marketplace](market-provider/inference-marketplace.md) connecting consumers with GPU providers through a WebSocket-based coordination layer and an OpenAI-compatible API (`/v1/chat/completions`, `/v1/embeddings`, etc.)
 * **Pay per token, in USD**: Consumers fund a credit balance by card or crypto (USDC, USDT or SWAN — SWAN deposits earn a bonus) or subscribe to a Token Plan; providers are paid a published per-token payout price for every request they serve
-* **Earning follows real work**: The UBI model that bootstrapped the network is being retired under [SIP-003](https://github.com/swanchain/governance/discussions/21); provider income now comes from inference actually served
+* **Earning follows real work**: The UBI model that bootstrapped the network has **ended** under [SIP-003](https://github.com/swanchain/governance/discussions/21); provider income comes solely from inference actually served
 * **Unified Computing Provider Role**: ECP and FCP roles merge into a single Computing Provider (CP) classification, evaluated equally on contribution metrics
 
 {% hint style="info" %}
