@@ -197,9 +197,9 @@ The current table is always available from `GET /api/v1/provider/collateral/cont
 
 Collateral contracts on Ethereum and Base are listed above. Chain parameters and explorers: [Network Info](../../network-reference/readme/README.md); the full list is in [Contract Addresses](../../network-reference/contract-addresses.md).
 
-## UBI sunset (SIP-003)
+## UBI has ended (SIP-003)
 
-Under Swan 1.0 most daily UBI went to registered hardware that served nothing. [SIP-003](https://github.com/swanchain/governance/discussions/21) redirects incentives to GPUs that actually serve inference: provider income comes from the per-token payout, and the UBI allocation is tapered to zero on the schedule set by governance, with a safety valve for extending a reduced, contribution-weighted allocation if network revenue is not yet sustainable. The [governance repository](https://github.com/swanchain/governance) is the authority on the current stage of the taper; this documentation deliberately does not restate dates.
+Under Swan 1.0 most daily UBI went to registered hardware that served nothing. [SIP-003](https://github.com/swanchain/governance/discussions/21) tapered the UBI allocation to zero and it is now **off**: there is no daily SWAN allocation for registered hardware, and provider income comes solely from the per-token payout on inference actually served. The Swan 1.0 UBI documentation is preserved under [Legacy: Swan 1.0](../../swan-chain-campaign/README.md) for the record.
 
 ## SWAN token utility
 
