@@ -4,6 +4,10 @@ description: Computing Provider Protocol Introduction
 
 # Computing Provider Protocol
 
+{% hint style="warning" %}
+**Swan 1.0 — archived.** This page describes the task-auction network that preceded the Inference Cloud and is kept for reference. It does not apply to Swan 2.0 providers or consumers — see [Swan 2.0: Inference Cloud](../swan-2.0-inference-cloud/README.md).
+{% endhint %}
+
 The CP Protocol (Computing Provider Protocol) is specifically designed for computing providers (CPs) in the Swan network, aiming to standardize and protocolize the management and invocation of computing resources. A CP can be any third-party individual or organization that provides scalable cloud computing, storage, platform, and application services for enterprises to access on demand.
 
 ### Main Features

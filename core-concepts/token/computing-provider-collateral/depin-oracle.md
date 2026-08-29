@@ -1,5 +1,9 @@
 # Depin Oracle
 
+{% hint style="warning" %}
+**Swan 1.0 — archived.** This page describes the task-auction network that preceded the Inference Cloud and is kept for reference. It does not apply to Swan 2.0 providers or consumers — see [Swan 2.0: Inference Cloud](../../swan-2.0-inference-cloud/README.md).
+{% endhint %}
+
 #### **Introduction**
 
 The Depin Oracle is a critical component of the Swan Chain network, providing reliable data aggregation and pricing for decentralized computing services. By collecting and processing information from various sources, the Depin Oracle ensures that participants in the Swan Chain ecosystem have access to accurate and up-to-date data, fostering a fair and efficient decentralized computing marketplace.

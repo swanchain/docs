@@ -4,6 +4,10 @@ description: Collateral, Investing, and Community Building
 
 # Treasure DAO
 
+{% hint style="warning" %}
+**Swan 1.0 — archived.** This page describes the task-auction network that preceded the Inference Cloud and is kept for reference. It does not apply to Swan 2.0 providers or consumers — see [Swan 2.0: Inference Cloud](../../swan-2.0-inference-cloud/README.md).
+{% endhint %}
+
 The SWAN Treasure DAO is a specialized decentralized autonomous organization dedicated to the strategic management and allocation of the SWAN network's treasury funds, with a particular focus on collateral rewards, community building, and investment opportunities.
 
 **Key Responsibilities:**

@@ -1,5 +1,9 @@
 # Computing Provider  Account
 
+{% hint style="warning" %}
+**Swan 1.0 — archived.** This page describes the task-auction network that preceded the Inference Cloud and is kept for reference. It does not apply to Swan 2.0 providers or consumers — see [Swan 2.0: Inference Cloud](../swan-2.0-inference-cloud/README.md).
+{% endhint %}
+
 ### Overview
 
 `CPAccount` is a smart contract account based on Swan Chain, designed for managing and registering computing providers (CP). Each computing provider that connects to Swan Chain must create a unique account. When an account is created, the `CPAccount` automatically registers with the CP Account Register Contract.

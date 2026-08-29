@@ -20,6 +20,8 @@ The ECP/FCP pages below remain the reference for **withdrawing collateral and ex
 ## In this section
 
 * [UBI Allocation Curve](../core-concepts/token/swan-universal-basic-income-ubi/README.md) — the Swan 1.0 reward model
+* [Swan 1.0 Computing Protocol](../core-concepts/computing-layer/README.md) — task workflow, CP Protocol and CPAccount contract, Layer3 job submission, AVS reputation, dynamic pricing, payment channels
+* [Swan 1.0 Collateral and Rewards](../core-concepts/token/computing-provider-collateral/collateral-requirement-and-earning-multiplier.md) — Computing Units, per-card collateral, DePIN Oracle, Treasure DAO
 * [Swan CP UBI](swan-cp-ubi.md) — the UBI program as it applied to ECP/FCP operators
 * [Legacy Computing Provider (ECP/FCP)](../bulders/computing-provider/README.md) — setup, funding and exit procedures
 * [Market Provider](../bulders/market-provider/README.md), [Storage Provider](../bulders/storage-provider/README.md) — the auction-era marketplaces

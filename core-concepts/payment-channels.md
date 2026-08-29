@@ -1,5 +1,9 @@
 # Payment Channels
 
+{% hint style="warning" %}
+**Swan 1.0 — archived.** This page describes the task-auction network that preceded the Inference Cloud and is kept for reference. It does not apply to Swan 2.0 providers or consumers — see [Swan 2.0: Inference Cloud](swan-2.0-inference-cloud/README.md).
+{% endhint %}
+
 The **Swan Chain Payment Channels** are designed to provide an efficient, low-cost, and secure mechanism for payments between **clients** and **computing providers (CPs)** within the Swan Chain ecosystem. Leveging **smart contracts**, these channels enable seamless micropayments and larger transactions without requiring every individual payment to be processed directly on-chain, reducing costs and increasing scalability.
 
 ***

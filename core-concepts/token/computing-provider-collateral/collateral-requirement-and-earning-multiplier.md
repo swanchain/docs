@@ -1,5 +1,9 @@
 # Collateral Requirement and Computing Unit
 
+{% hint style="warning" %}
+**Swan 1.0 — archived.** This page describes the task-auction network that preceded the Inference Cloud and is kept for reference. It does not apply to Swan 2.0 providers or consumers — see [Swan 2.0: Inference Cloud](../../swan-2.0-inference-cloud/README.md).
+{% endhint %}
+
 The base collateral requirement is **3533 $SWAN**. Different GPU models contribute differently to the network and thus have varying **Computing Unit (CU)** and **Collateral Requirements** Per Card (in $SWAN).&#x20;
 
 ### **About Computing Unit (CU)**&#x20;

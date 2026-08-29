@@ -4,6 +4,10 @@ description: Decentralized Computing Power Renting Network
 
 # Computing Layer
 
+{% hint style="warning" %}
+**Swan 1.0 — archived.** This page describes the task-auction network that preceded the Inference Cloud and is kept for reference. It does not apply to Swan 2.0 providers or consumers — see [Swan 2.0: Inference Cloud](../swan-2.0-inference-cloud/README.md).
+{% endhint %}
+
 <figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Computing Workflow</p></figcaption></figure>
 
 Swan's Computing Layer is a crucial component of its decentralized cloud computing ecosystem. It's designed to facilitate the execution of computing tasks across a network of providers, ensuring efficiency, reliability, and security. The Computing Layer supports diverse workloads including **AI model training**, **ZK proof generation**, and — with the introduction of [Swan 2.0](../swan-2.0-inference-cloud/README.md) — **real-time AI inference** through the [Inference Marketplace](../market-provider/inference-marketplace.md).
