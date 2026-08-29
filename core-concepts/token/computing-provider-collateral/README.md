@@ -1,10 +1,44 @@
 # Computing Provider Collateral
 
-{% hint style="info" %}
-**Current rules (Swan 2.0)** are in [Collateral under Swan 2.0](#swan-2.0-collateral) below. The Computing-Unit formula that follows applies to **Swan 1.0** providers and is kept so they can understand and withdraw their existing deposits.
-{% endhint %}
+## Collateral under Swan 2.0 <a href="#swan-2.0-collateral" id="swan-2.0-collateral"></a>
 
-## Swan 1.0: CU-based collateral (historical)
+A Swan 2.0 provider account deposits **refundable collateral** before it is activated for paid traffic. The deposit backs the slashing rules: verified misrepresentation of a model or its context window can be penalised from it, always with a 48-hour appeal window. Honest providers get it back in full when they leave.
+
+### Where and how much
+
+| Chain | Chain ID | Token | Minimum | Collateral contract |
+|-------|----------|-------|---------|--------------------|
+| Ethereum | 1 | USDC | 20 USDC | `0x1dEe92Da8fc4878795418aEde112100A57286a9a` |
+| Base | 8453 | USDC | 20 USDC | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| Swan Chain | 254 | SWAN | 35,000 SWAN | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
+| Card (Stripe) | — | USD | shown at checkout | — |
+
+The live table is served by `GET /api/v1/provider/collateral/contract` and printed by `computing-provider inference deposit`; your dashboard's **Collateral** panel shows the same values for your account. Deposit by sending the token to the collateral contract from your **owner wallet** and confirming the transaction in the dashboard (or `computing-provider inference deposit --check`), or pay by card through Stripe. On-chain deposits need a little native gas on the chosen chain.
+
+### Lifecycle
+
+`pending → confirmed → refund_requested → refunded`
+
+* **Confirmation** is automatic once the transaction is seen on-chain (card payments confirm immediately).
+* **Activation** follows automatically when collateral is confirmed, the GPU is eligible and the registration benchmark has passed.
+* **Refund** can be requested from the dashboard at any time. The waiting period is **7 days**; a refund cannot start while a payout is pending, and the provider is suspended from routing until the refund completes. Card collateral is returned to the original card, on-chain collateral to the depositing wallet.
+
+### Slashing
+
+| Trigger | Consequence |
+|---------|-------------|
+| Consecutive benchmark failures | 10% of collateral, then 30% and removal from the network |
+| Verified model or context-window misrepresentation, continued after notice | Collateral penalty under the verification rules |
+| Falling below the minimum collateral | Suspended from receiving requests until topped up |
+
+Every penalty record carries a **48-hour appeal window**, visible in the provider dashboard. Serving a small model or a small context window honestly is never penalised — only misrepresentation is. See [Quality assurance](../../swan-2.0-inference-cloud/README.md#quality-assurance) and the [Context-Window Integrity notice](../../swan-2.0-inference-cloud/provider-context-window-faq.md).
+
+## Swan 1.0: CU-based collateral
+ (archived)
+
+{% hint style="warning" %}
+**Archived.** The Computing-Unit formula below applied to Swan 1.0 (ECP/FCP) providers and is kept so they can understand and withdraw their existing deposits. It does not apply to Swan 2.0 providers — see the current rules above.
+{% endhint %}
 
 #### **Introduction**
 
@@ -87,36 +121,3 @@ The negative correlation between collateral and computing power has several bene
 3. **Economic Participation**: By allowing CPs to share in both operator and collateral revenue, the model promotes balanced economic participation, where CPs are rewarded not only for their computational contributions but also for their financial commitment.
 
 ***
-
-## Collateral under Swan 2.0 <a href="#swan-2.0-collateral" id="swan-2.0-collateral"></a>
-
-A Swan 2.0 provider account deposits **refundable collateral** before it is activated for paid traffic. The deposit backs the slashing rules: verified misrepresentation of a model or its context window can be penalised from it, always with a 48-hour appeal window. Honest providers get it back in full when they leave.
-
-### Where and how much
-
-| Chain | Chain ID | Token | Minimum | Collateral contract |
-|-------|----------|-------|---------|--------------------|
-| Ethereum | 1 | USDC | 20 USDC | `0x1dEe92Da8fc4878795418aEde112100A57286a9a` |
-| Base | 8453 | USDC | 20 USDC | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
-| Swan Chain | 254 | SWAN | 35,000 SWAN | `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` |
-| Card (Stripe) | — | USD | shown at checkout | — |
-
-The live table is served by `GET /api/v1/provider/collateral/contract` and printed by `computing-provider inference deposit`; your dashboard's **Collateral** panel shows the same values for your account. Deposit by sending the token to the collateral contract from your **owner wallet** and confirming the transaction in the dashboard (or `computing-provider inference deposit --check`), or pay by card through Stripe. On-chain deposits need a little native gas on the chosen chain.
-
-### Lifecycle
-
-`pending → confirmed → refund_requested → refunded`
-
-* **Confirmation** is automatic once the transaction is seen on-chain (card payments confirm immediately).
-* **Activation** follows automatically when collateral is confirmed, the GPU is eligible and the registration benchmark has passed.
-* **Refund** can be requested from the dashboard at any time. The waiting period is **7 days**; a refund cannot start while a payout is pending, and the provider is suspended from routing until the refund completes. Card collateral is returned to the original card, on-chain collateral to the depositing wallet.
-
-### Slashing
-
-| Trigger | Consequence |
-|---------|-------------|
-| Consecutive benchmark failures | 10% of collateral, then 30% and removal from the network |
-| Verified model or context-window misrepresentation, continued after notice | Collateral penalty under the verification rules |
-| Falling below the minimum collateral | Suspended from receiving requests until topped up |
-
-Every penalty record carries a **48-hour appeal window**, visible in the provider dashboard. Serving a small model or a small context window honestly is never penalised — only misrepresentation is. See [Quality assurance](../../swan-2.0-inference-cloud/README.md#quality-assurance) and the [Context-Window Integrity notice](../../swan-2.0-inference-cloud/provider-context-window-faq.md).
