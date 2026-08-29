@@ -42,8 +42,7 @@ The Swan 1.0 UBI allocation was tapered to zero under [SIP-003](https://github.c
 
 The legacy ECP and FCP roles are merged into a single Computing Provider. Operators of legacy providers can install the current [`computing-provider`](https://github.com/swanchain/computing-provider) and follow [Become a Provider](../swan-2.0-inference-cloud/become-a-provider.md); the legacy pages under [Legacy: Swan 1.0](../../swan-chain-campaign/README.md) remain for withdrawing Swan 1.0 collateral.
 
-## Swan 1.0: UBI income
- (archived)
+## Swan 1.0: UBI income (archived)
 
 {% hint style="warning" %}
 **Archived.** The UBI formulas below describe Swan 1.0. UBI has **ended** under [SIP-003](https://github.com/swanchain/governance/discussions/21); today's income is the per-token payout described above.
