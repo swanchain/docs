@@ -488,6 +488,64 @@ curl https://inference.swanchain.io/v1/audio/transcriptions \
 
 ***
 
+## Choosing a Provider
+
+By default Swan routes each request to the healthiest capable provider. To pick one yourself, add a request header:
+
+| Request header | Value | Effect |
+|----------------|-------|--------|
+| `X-Swan-Provider` | a provider ID | Pins the request to that provider's offering of the model |
+| `X-Swan-Allow-Fallbacks` | `true` (default) or `false` | With `false`, an unavailable or failing pinned provider produces an error instead of a fallback. Anything unparseable keeps the default. |
+
+Provider IDs, and what each provider offers for a model, come from the public per-model providers endpoint (URL-encode the `/` in the model ID):
+
+```bash
+curl "https://inference.swanchain.io/api/v1/models/zai-org%2FGLM-4.7-Flash/providers"
+```
+
+Each offering carries `provider_id`, `name`, `input_price` / `output_price` and `price_source` (`catalog` — providers do not set their own prices), `quantization` and `format` when the provider declared them, `uptime_30d` (absent when there is no evidence yet, never assumed 100%), `ttft_avg_ms` (a mean, named as such), and its context window with provenance — `context_length`, `context_source` (`reported`, `assumed`, `capped`), `reported_context_length`. The same information is on the model page under **Providers**.
+
+```bash
+curl https://inference.swanchain.io/v1/chat/completions \
+  -H "Authorization: Bearer sk-swan-YOUR-KEY" \
+  -H "X-Swan-Provider: <provider-id>" \
+  -H "X-Swan-Allow-Fallbacks: false" \
+  -H "Content-Type: application/json" \
+  -d '{"model": "zai-org/GLM-4.7-Flash", "messages": [{"role": "user", "content": "Hello"}]}'
+```
+
+### The receipt
+
+Every response — pinned or not, streaming or not — says how it was routed and billed:
+
+| Response header | Values |
+|-----------------|--------|
+| `X-Swan-Route-Mode` | `auto` or `explicit` |
+| `X-Swan-Requested-Provider` | The provider you asked for (explicit only) |
+| `X-Swan-Fallback-Reason` | Empty when your provider served it; otherwise `requested_provider_unavailable` (not online for the model) or `requested_provider_failed` (it errored and another provider served the request) |
+| `X-Swan-Billing-Type` | `pay_as_you_go` or `subscription` |
+| `X-Swan-Context-Source`, `X-Swan-Context-Length` | The context window the serving provider was admitted with, and whether it was `reported` by that provider or `assumed` from the catalog |
+
+`X-Swan-Provider-ID` still names who actually served the request, so `X-Swan-Requested-Provider` ≠ `X-Swan-Provider-ID` together with a fallback reason is exactly how a fallback shows up.
+
+### Errors
+
+| Status | code | When |
+|--------|------|------|
+| `400` | `no_fallback_available` | `X-Swan-Allow-Fallbacks: false` and the pinned provider is not online for the model, or the request cannot be served by it |
+| `502` | `no_fallback_available` | Streaming with fallbacks disabled, and the pinned provider failed after the stream was accepted |
+| `402` | insufficient balance | A pinned request with an empty credit balance — see billing below |
+
+### Billing
+
+**Explicit selection is always pay-as-you-go**, charged from your credit balance at the model's catalog price. This holds for Token Plan subscribers (the plan's weekly allowance is untouched and does not cover the request) and it holds when a fallback serves a pinned request. The receipt says so: `X-Swan-Billing-Type: pay_as_you_go`. A subscriber with an active plan but no credit therefore gets `402` on a pinned request — top up, or drop the header. Rationale and the consumer FAQ: [pricing page](https://inference.swanchain.io/pricing).
+
+### Guaranteed vs maximum context
+
+The model objects in `GET /api/v1/models` state `max_context_length` (the largest window any online provider reports, with `max_context_basis`) and `guaranteed_context_length` (the smallest known window across online providers, with `guaranteed_context_basis` ∈ `reported` | `partial` | `unknown` | `no_online_providers`). Size long-context requests against the guaranteed figure; anything above it depends on which provider you land on.
+
+***
+
 ## Supported Models
 
 The catalog spans five categories. It changes often — the [live catalog](https://inference.swanchain.io/models) is authoritative; the examples below are real IDs at the time of writing.
