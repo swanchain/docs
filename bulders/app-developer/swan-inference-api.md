@@ -514,6 +514,43 @@ curl https://inference.swanchain.io/v1/chat/completions \
   -d '{"model": "zai-org/GLM-4.7-Flash", "messages": [{"role": "user", "content": "Hello"}]}'
 ```
 
+### The `provider` object
+
+Everything the headers do — and more — is available in the request body, reachable through every OpenAI SDK via `extra_body`:
+
+```json
+{
+  "model": "zai-org/GLM-4.7-Flash",
+  "messages": [{"role": "user", "content": "Hello"}],
+  "provider": {
+    "order": ["prov-a", "prov-b"],
+    "allow_fallbacks": true,
+    "only": ["prov-a", "prov-b", "prov-c"],
+    "ignore": ["prov-x"],
+    "quantizations": ["fp8", "bf16"],
+    "data_path": "direct",
+    "sort": "latency"
+  }
+}
+```
+
+| Field | Default | Meaning |
+|-------|---------|---------|
+| `order` | — | Ordered **preference**: listed providers are tried first, in order. Unlisted providers remain eligible afterwards — `order` never excludes. |
+| `allow_fallbacks` | `true` | With `false` and named providers, it's "these or nothing": exhausting the list is an error, never a silent substitute. |
+| `only` | — | Hard whitelist — no provider outside it is ever used. |
+| `ignore` | — | Hard blacklist. |
+| `quantizations` | — | Allowed precisions: `int4 int8 fp4 mxfp4 nvfp4 fp6 fp8 mxfp8 fp16 bf16 fp32 unknown`. Matched against what the offering **declared** (the `quantization`/`format` on the providers endpoint). An offering that declared nothing is `unknown` — include it to accept undeclared providers; a declared precision that doesn't match is excluded. |
+| `data_path` | `"any"` | `"direct"` restricts routing to providers that serve the request themselves, excluding offerings that relay it to an external third-party API. Use it when your prompts must not transit anyone but the serving provider. |
+| `sort` | — | `"throughput"` or `"latency"`. Setting `sort` or `order` switches this request from balanced routing to a deterministic ranking. |
+
+Notes:
+
+- The headers are aliases (`X-Swan-Provider` ≡ `order` with one entry). You can use both surfaces, but they must agree — a conflict is a `400`, never a precedence rule.
+- **There is no price sort and no price ceiling, deliberately**: pricing is per model, not per provider, so a fallback can never change what you pay.
+- **Billing**: naming providers (`order`, `only`) makes the request explicit and pay-as-you-go, exactly like the header pin. Filters and `sort` alone don't name anyone — the request stays auto-routed and plan-eligible.
+- The `provider` object is an instruction to the gateway and is stripped before your request is forwarded.
+
 ### The receipt
 
 Every response — pinned or not, streaming or not — says how it was routed and billed:
@@ -528,6 +565,15 @@ Every response — pinned or not, streaming or not — says how it was routed an
 
 `X-Swan-Provider-ID` still names who actually served the request, so `X-Swan-Requested-Provider` ≠ `X-Swan-Provider-ID` together with a fallback reason is exactly how a fallback shows up.
 
+For the history the headers can't carry, look a request up by its `X-Swan-Request-ID`:
+
+```bash
+curl "https://inference.swanchain.io/v1/generation?id=<request-id>" \
+  -H "Authorization: Bearer sk-swan-YOUR-KEY"
+```
+
+The response repeats the receipt (route mode, requested vs serving provider, fallback reason, billing type, cost, tokens, latency) and adds `attempts`: every provider that failed before one answered, each with its error. Only the API key (or account) that made the request can retrieve it.
+
 ### Errors
 
 | Status | code | When |
@@ -535,6 +581,10 @@ Every response — pinned or not, streaming or not — says how it was routed an
 | `400` | `no_fallback_available` | `X-Swan-Allow-Fallbacks: false` and the pinned provider is not online for the model, or the request cannot be served by it |
 | `502` | `no_fallback_available` | Streaming with fallbacks disabled, and the pinned provider failed after the stream was accepted |
 | `402` | insufficient balance | A pinned request with an empty credit balance — see billing below |
+
+### Streaming and fallbacks
+
+Fallback between providers happens only **before the first content token**. Once content has started flowing, no other provider can silently continue someone else's answer: if the serving provider fails mid-stream, the stream terminates with one final well-formed event — a `chat.completion.chunk` whose choice carries `finish_reason: "error"` plus an `error` object — followed by `data: [DONE]`. The HTTP status is already `200` at that point; detect mid-stream failure by the `finish_reason`. You are billed only for tokens actually delivered.
 
 ### Billing
 
