@@ -3,7 +3,7 @@
 Swan Chain is a decentralized **AI inference cloud**. Developers call one OpenAI-compatible API and get frontier models and open-source models served by a network of independent GPU providers; providers earn per token for the requests they serve. The marketplace lives at [**inference.swanchain.io**](https://inference.swanchain.io).
 
 {% hint style="info" %}
-**Try it in a minute.** The [playground](https://inference.swanchain.io/playground) runs a live model with no account. When you are ready, [sign up](https://inference.swanchain.io/signup), copy your API key, and point any OpenAI SDK at `https://inference.swanchain.io/v1`. The [live catalog](https://inference.swanchain.io/models) shows every model with its current price, context window and how many providers are serving it right now.
+**Try it in a minute.** The [playground](https://inference.swanchain.io/playground) runs a live model with no account. When you are ready, [sign up](https://inference.swanchain.io/signup), copy your API key, and point any OpenAI SDK at `https://api.swanchain.io/v1`. The [live catalog](https://inference.swanchain.io/models) shows every model with its current price, context window and how many providers are serving it right now.
 {% endhint %}
 
 ## Start here

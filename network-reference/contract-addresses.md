@@ -8,7 +8,7 @@ description: This reference guide lists all the contract addresses for Mainnet a
 
 ## Swan Inference
 
-Contracts used by the [Inference Cloud](../core-concepts/swan-2.0-inference-cloud/README.md). Provider collateral contracts are deployed per chain; the SWAN token on Swan Chain is the bridged L2 token listed under Mainnet below. Live values: `GET https://inference.swanchain.io/api/v1/provider/collateral/contract`.
+Contracts used by the [Inference Cloud](../core-concepts/swan-2.0-inference-cloud/README.md). Provider collateral contracts are deployed per chain; the SWAN token on Swan Chain is the bridged L2 token listed under Mainnet below. Live values: `GET https://api.swanchain.io/api/v1/provider/collateral/contract`.
 
 <table><thead><tr><th width="299">Contract</th><th width="180">Chain</th><th>Address</th></tr></thead><tbody><tr><td>Provider Collateral (USDC)</td><td>Ethereum (1)</td><td>0x1dEe92Da8fc4878795418aEde112100A57286a9a</td></tr><tr><td>Provider Collateral (USDC)</td><td>Base (8453)</td><td>0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B</td></tr><tr><td>Provider Collateral (SWAN)</td><td>Swan Chain (254)</td><td>0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B</td></tr><tr><td>SWAN Token (Bridged) L2</td><td>Swan Chain (254)</td><td>0xBb4eC1b56cB624863298740Fd264ef2f910d5564</td></tr><tr><td>USDC</td><td>Ethereum (1)</td><td>0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48</td></tr><tr><td>USDC</td><td>Base (8453)</td><td>0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913</td></tr></tbody></table>
 

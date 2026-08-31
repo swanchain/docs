@@ -36,7 +36,7 @@ The Swan 1.0 material is preserved under [Legacy: Swan 1.0](../../swan-chain-cam
 
 ```
   Developers (OpenAI SDKs, LiteLLM, agents, the web playground)
-                          │  HTTPS  https://inference.swanchain.io/v1
+                          │  HTTPS  https://api.swanchain.io/v1
                           ▼
   ┌─────────────────────────────────────────────────────────────┐
   │  Swan Inference                                             │
@@ -70,7 +70,7 @@ Providers never need a public URL, a domain or a certificate: the agent dials `w
 | `GET /api/v1/models` | Full public catalog: prices, tier, context window, online providers |
 
 ```bash
-curl https://inference.swanchain.io/v1/chat/completions \
+curl https://api.swanchain.io/v1/chat/completions \
   -H "Authorization: Bearer sk-swan-YOUR-KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -79,7 +79,7 @@ curl https://inference.swanchain.io/v1/chat/completions \
   }'
 ```
 
-Any OpenAI SDK works by changing `base_url` to `https://inference.swanchain.io/v1`. Full details, limits and error codes: [API Reference](../../bulders/app-developer/swan-inference-api.md).
+Any OpenAI SDK works by changing `base_url` to `https://api.swanchain.io/v1`. Full details, limits and error codes: [API Reference](../../bulders/app-developer/swan-inference-api.md).
 
 ## The catalog
 

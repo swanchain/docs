@@ -13,7 +13,7 @@
 | Provider software (open source) | [https://github.com/swanchain/computing-provider](https://github.com/swanchain/computing-provider) |
 | Governance proposals (SIPs) | [https://github.com/swanchain/governance](https://github.com/swanchain/governance) |
 
-API base URL for OpenAI-compatible clients: `https://inference.swanchain.io/v1`. See the [API reference](../bulders/app-developer/swan-inference-api.md).
+API base URL for OpenAI-compatible clients: `https://api.swanchain.io/v1`. See the [API reference](../bulders/app-developer/swan-inference-api.md).
 
 ## Swan Chain
 

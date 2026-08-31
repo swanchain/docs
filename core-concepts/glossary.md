@@ -26,7 +26,7 @@
 * **Benchmark:** Periodic quality verification tests run by the Swan Inference platform (default: every 24 hours) to ensure provider inference quality. Tests include math accuracy, code generation, and response latency. Failing benchmarks can result in suspension or collateral slashing.
 * **MerkleDistributor:** A smart contract used for gas-efficient batch settlement of provider earnings. Provider balances are aggregated into a Merkle tree, the root is submitted on-chain, and providers claim earnings via Merkle proofs.
 * **Inference Marketplace:** The decentralized marketplace within Swan 2.0 that matches AI model consumers with GPU providers for real-time inference workloads, as opposed to the existing AI Computing Marketplace which handles training tasks via auction.
-* **Consumer API key (`sk-swan-…`):** The key a developer sends as `Authorization: Bearer` to call `https://inference.swanchain.io/v1`. Created in the dashboard under Keys.
+* **Consumer API key (`sk-swan-…`):** The key a developer sends as `Authorization: Bearer` to call `https://api.swanchain.io/v1`. Created in the dashboard under Keys.
 * **Provider API key (`sk-prov-…`):** The key a provider puts in the `computing-provider` config so the agent can register its models with Swan Inference.
 * **Token Plan (Pro):** A monthly subscription that includes a weekly token allowance on standard-tier models, billed separately from the credit balance. Requests to premium models, and any request that explicitly selects a provider, are pay-as-you-go from the balance.
 * **Two-price model:** Every catalog model publishes two prices per million tokens — what consumers pay and what providers are paid. The platform margin is the spread; there is no percentage commission.

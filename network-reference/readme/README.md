@@ -8,12 +8,12 @@ description: A Full Toolset AI Blockchain
 
 | Purpose | Endpoint |
 |---------|----------|
-| OpenAI-compatible API (consumers) | `https://inference.swanchain.io/v1` (also `https://api.swanchain.io/v1`) |
-| Public catalog and stats | `https://inference.swanchain.io/api/v1/models`, `/api/v1/stats/network` |
+| OpenAI-compatible API (consumers) | `https://api.swanchain.io/v1` |
+| Public catalog and stats | `https://api.swanchain.io/api/v1/models`, `/api/v1/stats/network` |
 | Provider WebSocket (`computing-provider`) | `wss://inference-ws.swanchain.io` — set as `WebSocketURL`; the agent appends `/ws` itself |
 | Marketplace web app | [https://inference.swanchain.io](https://inference.swanchain.io) |
 
-**Swan Inference contracts (mainnet):** provider collateral — Ethereum `0x1dEe92Da8fc4878795418aEde112100A57286a9a` (USDC), Base `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` (USDC), Swan Chain `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` (SWAN). Live values: `GET https://inference.swanchain.io/api/v1/provider/collateral/contract`. See [Contract Addresses](../contract-addresses.md) and [Become a Provider](../../core-concepts/swan-2.0-inference-cloud/become-a-provider.md).
+**Swan Inference contracts (mainnet):** provider collateral — Ethereum `0x1dEe92Da8fc4878795418aEde112100A57286a9a` (USDC), Base `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` (USDC), Swan Chain `0x7fac98B02f4Fcda9Ac49508eb2E97E4BE4fecE9B` (SWAN). Live values: `GET https://api.swanchain.io/api/v1/provider/collateral/contract`. See [Contract Addresses](../contract-addresses.md) and [Become a Provider](../../core-concepts/swan-2.0-inference-cloud/become-a-provider.md).
 
 ## SWAN Token（Mainnet）
 

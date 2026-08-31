@@ -9,7 +9,7 @@ Swan Inference is an OpenAI-compatible API, so any frontend that can point at a 
 3. A model ID. Browse [the model catalog](https://inference.swanchain.io/models), or list what is servable right now:
 
 ```bash
-curl "https://inference.swanchain.io/v1/models?available=true"
+curl "https://api.swanchain.io/v1/models?available=true"
 ```
 
 Popular choices for character chat include `BruhzWater/Sapphira-L3.3-70b-0.1`, `Steelskull/L3.3-MS-Nevoria-70b`, and `TheDrummer/Cydonia-24B-v4.3`. Copy the `id` exactly — it is case-sensitive and contains a slash.
@@ -26,7 +26,7 @@ SillyTavern runs on your own machine and talks to Swan from its local server.
 4. **Custom Endpoint (Base URL)**:
 
    ```
-   https://inference.swanchain.io/v1
+   https://api.swanchain.io/v1
    ```
 
    Include `/v1`, and nothing after it — SillyTavern appends `/chat/completions` itself.
@@ -52,7 +52,7 @@ Janitor AI runs in your browser and calls the API directly from it, using its pr
 3. **Proxy URL** — Janitor wants the *full* completions URL, unlike SillyTavern:
 
    ```
-   https://inference.swanchain.io/v1/chat/completions
+   https://api.swanchain.io/v1/chat/completions
    ```
 
 4. **API Key**: your `sk-swan-…` key.
