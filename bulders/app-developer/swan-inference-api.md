@@ -112,6 +112,10 @@ That's it — any library or tool that supports the OpenAI API format works with
 
 ***
 
+## Using a chat app instead
+
+If you just want to use Swan from an existing chat frontend rather than write code, see [SillyTavern and Janitor AI](chat-frontends.md) — both connect with a base URL and a key, no coding required.
+
 ## Try Without an API Key
 
 Swan Inference offers a **public playground** that lets you try AI inference without signing up.
