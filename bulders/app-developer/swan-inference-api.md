@@ -19,7 +19,7 @@ Sign up at [inference.swanchain.io](https://inference.swanchain.io) to get your 
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl https://inference.swanchain.io/v1/chat/completions \
+curl https://api.swanchain.io/v1/chat/completions \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -37,7 +37,7 @@ curl https://inference.swanchain.io/v1/chat/completions \
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://inference.swanchain.io/v1",
+    base_url="https://api.swanchain.io/v1",
     api_key="sk-swan-YOUR-API-KEY",
 )
 
@@ -58,7 +58,7 @@ print(response.choices[0].message.content)
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  baseURL: "https://inference.swanchain.io/v1",
+  baseURL: "https://api.swanchain.io/v1",
   apiKey: "sk-swan-YOUR-API-KEY",
 });
 
@@ -86,7 +86,7 @@ import (
 
 func main() {
     config := openai.DefaultConfig("sk-swan-YOUR-API-KEY")
-    config.BaseURL = "https://inference.swanchain.io/v1"
+    config.BaseURL = "https://api.swanchain.io/v1"
     client := openai.NewClientWithConfig(config)
 
     resp, err := client.CreateChatCompletion(
@@ -121,7 +121,7 @@ If you just want to use Swan from an existing chat frontend rather than write co
 Swan Inference offers a **public playground** that lets you try AI inference without signing up.
 
 ```bash
-curl https://inference.swanchain.io/v1/playground/chat \
+curl https://api.swanchain.io/v1/playground/chat \
   -H "Content-Type: application/json" \
   -d '{
     "model": "zai-org/GLM-4.7-Flash",
@@ -132,7 +132,7 @@ curl https://inference.swanchain.io/v1/playground/chat \
 No `Authorization` header required. The playground exposes a single small model (currently `zai-org/GLM-4.7-Flash`) — list it with:
 
 ```bash
-curl https://inference.swanchain.io/v1/playground/models
+curl https://api.swanchain.io/v1/playground/models
 ```
 
 | Limit | Value |
@@ -187,7 +187,7 @@ GET /v1/models
 ```
 
 ```bash
-curl https://inference.swanchain.io/v1/models \
+curl https://api.swanchain.io/v1/models \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY"
 ```
 
@@ -214,7 +214,7 @@ curl https://inference.swanchain.io/v1/models \
 Model IDs are organisation-prefixed exactly as shown (`zai-org/GLM-4.7-Flash`, `openai/gpt-5.5`, `deepseek-ai/DeepSeek-V3.2`, …) and must be passed verbatim. `GET /v1/models` lists IDs only; for prices, context windows, tier and how many providers are online per model, use the public catalog endpoint — no key required:
 
 ```bash
-curl "https://inference.swanchain.io/api/v1/models?page_size=100"
+curl "https://api.swanchain.io/api/v1/models?page_size=100"
 ```
 
 Each entry carries `input_price` and `output_price` (USD per 1M tokens), `payout_input_price` / `payout_output_price` (what providers are paid), `tier` (`standard` or `premium`), `online_providers`, and `specs.context_length`. The same data is browsable at [inference.swanchain.io/models](https://inference.swanchain.io/models).
@@ -246,7 +246,7 @@ POST /v1/chat/completions
 **Example — Standard Request:**
 
 ```bash
-curl https://inference.swanchain.io/v1/chat/completions \
+curl https://api.swanchain.io/v1/chat/completions \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -294,7 +294,7 @@ Enable real-time token-by-token responses by setting `stream: true`. The respons
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl https://inference.swanchain.io/v1/chat/completions \
+curl https://api.swanchain.io/v1/chat/completions \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -310,7 +310,7 @@ curl https://inference.swanchain.io/v1/chat/completions \
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://inference.swanchain.io/v1",
+    base_url="https://api.swanchain.io/v1",
     api_key="sk-swan-YOUR-API-KEY",
 )
 
@@ -331,7 +331,7 @@ for chunk in stream:
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  baseURL: "https://inference.swanchain.io/v1",
+  baseURL: "https://api.swanchain.io/v1",
   apiKey: "sk-swan-YOUR-API-KEY",
 });
 
@@ -380,7 +380,7 @@ POST /v1/embeddings
 **Example:**
 
 ```bash
-curl https://inference.swanchain.io/v1/embeddings \
+curl https://api.swanchain.io/v1/embeddings \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -431,7 +431,7 @@ POST /v1/images/generations
 **Example:**
 
 ```bash
-curl https://inference.swanchain.io/v1/images/generations \
+curl https://api.swanchain.io/v1/images/generations \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -476,7 +476,7 @@ POST /v1/audio/transcriptions
 **Example:**
 
 ```bash
-curl https://inference.swanchain.io/v1/audio/transcriptions \
+curl https://api.swanchain.io/v1/audio/transcriptions \
   -H "Authorization: Bearer sk-swan-YOUR-API-KEY" \
   -F file="@audio.mp3" \
   -F model="Systran/faster-whisper-large-v3"
@@ -504,13 +504,13 @@ By default Swan routes each request to the healthiest capable provider. To pick 
 Provider IDs, and what each provider offers for a model, come from the public per-model providers endpoint (URL-encode the `/` in the model ID):
 
 ```bash
-curl "https://inference.swanchain.io/api/v1/models/zai-org%2FGLM-4.7-Flash/providers"
+curl "https://api.swanchain.io/api/v1/models/zai-org%2FGLM-4.7-Flash/providers"
 ```
 
 Each offering carries `provider_id`, `name`, `input_price` / `output_price` and `price_source` (`catalog` — providers do not set their own prices), `quantization` and `format` when the provider declared them, `uptime_30d` (absent when there is no evidence yet, never assumed 100%), `ttft_avg_ms` (a mean, named as such), and its context window with provenance — `context_length`, `context_source` (`reported`, `assumed`, `capped`), `reported_context_length`. The same information is on the model page under **Providers**.
 
 ```bash
-curl https://inference.swanchain.io/v1/chat/completions \
+curl https://api.swanchain.io/v1/chat/completions \
   -H "Authorization: Bearer sk-swan-YOUR-KEY" \
   -H "X-Swan-Provider: <provider-id>" \
   -H "X-Swan-Allow-Fallbacks: false" \
@@ -572,7 +572,7 @@ Every response — pinned or not, streaming or not — says how it was routed an
 For the history the headers can't carry, look a request up by its `X-Swan-Request-ID`:
 
 ```bash
-curl "https://inference.swanchain.io/v1/generation?id=<request-id>" \
+curl "https://api.swanchain.io/v1/generation?id=<request-id>" \
   -H "Authorization: Bearer sk-swan-YOUR-KEY"
 ```
 
@@ -705,7 +705,7 @@ Swan Inference works with any framework that supports OpenAI-compatible APIs.
 from langchain_openai import ChatOpenAI
 
 llm = ChatOpenAI(
-    base_url="https://inference.swanchain.io/v1",
+    base_url="https://api.swanchain.io/v1",
     api_key="sk-swan-YOUR-API-KEY",
     model="zai-org/GLM-4.7-Flash",
 )
@@ -720,7 +720,7 @@ print(response.content)
 from llama_index.llms.openai_like import OpenAILike
 
 llm = OpenAILike(
-    api_base="https://inference.swanchain.io/v1",
+    api_base="https://api.swanchain.io/v1",
     api_key="sk-swan-YOUR-API-KEY",
     model="zai-org/GLM-4.7-Flash",
 )
@@ -737,7 +737,7 @@ import litellm
 response = litellm.completion(
     model="openai/zai-org/GLM-4.7-Flash",
     messages=[{"role": "user", "content": "Hello!"}],
-    api_base="https://inference.swanchain.io/v1",
+    api_base="https://api.swanchain.io/v1",
     api_key="sk-swan-YOUR-API-KEY",
 )
 
@@ -751,7 +751,7 @@ import { createOpenAI } from "@ai-sdk/openai";
 import { generateText } from "ai";
 
 const swan = createOpenAI({
-  baseURL: "https://inference.swanchain.io/v1",
+  baseURL: "https://api.swanchain.io/v1",
   apiKey: "sk-swan-YOUR-API-KEY",
 });
 

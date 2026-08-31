@@ -68,7 +68,7 @@ Swan Inference is fully OpenAI-compatible — any existing OpenAI SDK or integra
 ### curl
 
 ```bash
-curl https://inference.swanchain.io/v1/chat/completions \
+curl https://api.swanchain.io/v1/chat/completions \
   -H "Authorization: Bearer sk-swan-YOUR-KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -83,7 +83,7 @@ curl https://inference.swanchain.io/v1/chat/completions \
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://inference.swanchain.io/v1",
+    base_url="https://api.swanchain.io/v1",
     api_key="sk-swan-YOUR-KEY",
 )
 
@@ -100,7 +100,7 @@ print(response.choices[0].message.content)
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  baseURL: "https://inference.swanchain.io/v1",
+  baseURL: "https://api.swanchain.io/v1",
   apiKey: "sk-swan-YOUR-KEY",
 });
 

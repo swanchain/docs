@@ -16,7 +16,7 @@ For the on-chain tooling below you will need to:
 #### **AI Inference with Swan Inference API**
 
 * Access frontier and open-source models (LLM, multimodal, image, audio, embedding) via an **OpenAI-compatible API** — see the [live catalog](https://inference.swanchain.io/models)
-* Drop-in replacement — use any existing OpenAI SDK by changing the base URL to `https://inference.swanchain.io/v1`
+* Drop-in replacement — use any existing OpenAI SDK by changing the base URL to `https://api.swanchain.io/v1`
 * Supports streaming, embeddings, image generation, and audio transcription
 
 Get started with Swan Inference [here](swan-inference-api.md).

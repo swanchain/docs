@@ -17,7 +17,7 @@ All Claw-family tools support custom OpenAI-compatible endpoints. The core confi
 
 | Setting | Value |
 |---------|-------|
-| Base URL | `https://inference.swanchain.io/v1` |
+| Base URL | `https://api.swanchain.io/v1` |
 | API Key | `sk-swan-YOUR-API-KEY` |
 | Model | Any model from [inference.swanchain.io/models](https://inference.swanchain.io/models) |
 
@@ -48,7 +48,7 @@ Edit your OpenClaw configuration to add Swan Inference as a provider:
     "providers": {
       "swan": {
         "api": "openai-completions",
-        "baseUrl": "https://inference.swanchain.io/v1",
+        "baseUrl": "https://api.swanchain.io/v1",
         "apiKey": "sk-swan-YOUR-API-KEY",
         "models": [
           "zai-org/GLM-4.7-Flash",
@@ -65,7 +65,7 @@ Edit your OpenClaw configuration to add Swan Inference as a provider:
 {% tab title="Environment Variables" %}
 
 ```bash
-export OPENAI_API_BASE=https://inference.swanchain.io/v1
+export OPENAI_API_BASE=https://api.swanchain.io/v1
 export OPENAI_API_KEY=sk-swan-YOUR-API-KEY
 openclaw
 ```
@@ -85,7 +85,7 @@ Ultra-lightweight (3.4MB binary, <10ms startup). Best for quick testing.
 ```toml
 [provider]
 name = "openai-compatible"
-base_url = "https://inference.swanchain.io/v1"
+base_url = "https://api.swanchain.io/v1"
 api_key = "sk-swan-YOUR-API-KEY"
 model = "zai-org/GLM-4.7-Flash"
 ```
@@ -94,7 +94,7 @@ model = "zai-org/GLM-4.7-Flash"
 {% tab title="CLI" %}
 
 ```bash
-zeroclaw --provider "custom:https://inference.swanchain.io/v1" \
+zeroclaw --provider "custom:https://api.swanchain.io/v1" \
          --api-key "sk-swan-YOUR-API-KEY" \
          --model "zai-org/GLM-4.7-Flash"
 ```
@@ -112,7 +112,7 @@ Lightweight Go binary (<8MB). Designed for edge and ARM devices.
 # config.yaml
 provider:
   type: openai-compatible
-  base_url: https://inference.swanchain.io/v1
+  base_url: https://api.swanchain.io/v1
   api_key: sk-swan-YOUR-API-KEY
   model: zai-org/GLM-4.7-Flash
 ```
@@ -136,7 +136,7 @@ pip install nanobot-ai
 ```json
 {
   "provider": "custom",
-  "apiBase": "https://inference.swanchain.io/v1",
+  "apiBase": "https://api.swanchain.io/v1",
   "apiKey": "sk-swan-YOUR-API-KEY",
   "model": "zai-org/GLM-4.7-Flash"
 }
@@ -150,7 +150,7 @@ from nanobot import Agent
 
 agent = Agent(
     provider="custom",
-    api_base="https://inference.swanchain.io/v1",
+    api_base="https://api.swanchain.io/v1",
     api_key="sk-swan-YOUR-API-KEY",
     model="zai-org/GLM-4.7-Flash",
 )
@@ -172,7 +172,7 @@ Container-per-session isolation. Good for multi-tenant deployments.
 {
   "llm": {
     "provider": "openai-compatible",
-    "baseUrl": "https://inference.swanchain.io/v1",
+    "baseUrl": "https://api.swanchain.io/v1",
     "apiKey": "sk-swan-YOUR-API-KEY",
     "model": "zai-org/GLM-4.7-Flash"
   }
@@ -187,7 +187,7 @@ Security-focused with TEE and encrypted vault. Built by NEAR AI.
 
 ```bash
 export LLM_BACKEND=openai_compatible
-export LLM_BASE_URL=https://inference.swanchain.io/v1
+export LLM_BASE_URL=https://api.swanchain.io/v1
 export API_KEY=sk-swan-YOUR-API-KEY
 export MODEL=zai-org/GLM-4.7-Flash
 
@@ -205,7 +205,7 @@ Configure the inference provider in your NemoClaw deployment:
 ```yaml
 inference:
   provider: openai-compatible
-  base_url: https://inference.swanchain.io/v1
+  base_url: https://api.swanchain.io/v1
   api_key: sk-swan-YOUR-API-KEY
   model: zai-org/GLM-4.7-Flash
 ```
@@ -226,7 +226,7 @@ Runs on Cloudflare's edge network (330+ cities).
     "providers": {
       "swan": {
         "type": "openai-compatible",
-        "baseUrl": "https://inference.swanchain.io/v1",
+        "baseUrl": "https://api.swanchain.io/v1",
         "apiKey": "sk-swan-YOUR-API-KEY"
       }
     }
@@ -237,7 +237,7 @@ Runs on Cloudflare's edge network (330+ cities).
 Or set via Cloudflare AI Gateway:
 
 ```bash
-AI_GATEWAY_BASE_URL=https://inference.swanchain.io/v1
+AI_GATEWAY_BASE_URL=https://api.swanchain.io/v1
 ```
 
 ***
@@ -247,7 +247,7 @@ AI_GATEWAY_BASE_URL=https://inference.swanchain.io/v1
 Ultra-minimal (678KB binary, 1MB RAM). For IoT and embedded devices.
 
 ```bash
-nullclaw --provider "custom:https://inference.swanchain.io/v1" \
+nullclaw --provider "custom:https://api.swanchain.io/v1" \
          --api-key "sk-swan-YOUR-API-KEY" \
          --model "Qwen/Qwen2.5-7B-Instruct"
 ```
@@ -256,7 +256,7 @@ Or in config:
 
 ```toml
 [provider]
-url = "custom:https://inference.swanchain.io/v1"
+url = "custom:https://api.swanchain.io/v1"
 api_key = "sk-swan-YOUR-API-KEY"
 model = "Qwen/Qwen2.5-7B-Instruct"
 ```
@@ -288,11 +288,11 @@ The public [playground](https://inference.swanchain.io/playground) is a **web UI
 ## Troubleshooting
 
 ### Connection refused / timeout
-- Verify the base URL includes `/v1`: `https://inference.swanchain.io/v1`
+- Verify the base URL includes `/v1`: `https://api.swanchain.io/v1`
 - Check your API key starts with `sk-swan-`
 
 ### Model not found
-- List available models: `curl https://inference.swanchain.io/v1/models -H "Authorization: Bearer sk-swan-YOUR-KEY"`
+- List available models: `curl https://api.swanchain.io/v1/models -H "Authorization: Bearer sk-swan-YOUR-KEY"`
 - Model IDs are case-sensitive (e.g., `Qwen/Qwen2.5-7B-Instruct`, not `qwen2.5-7b`)
 
 ### Rate limited (429)
