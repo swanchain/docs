@@ -7,6 +7,7 @@
 * [For Developers](core-concepts/swan-2.0-inference-cloud/how-to-use.md)
   * [API Reference](bulders/app-developer/swan-inference-api.md)
   * [AI Agent Integrations](bulders/app-developer/claw-tools-integration.md)
+  * [SillyTavern and Janitor AI](bulders/app-developer/chat-frontends.md)
 * [For GPU Providers](core-concepts/swan-2.0-inference-cloud/become-a-provider.md)
   * [Provider Notice: Context-Window Integrity](core-concepts/swan-2.0-inference-cloud/provider-context-window-faq.md)
   * [Earnings and Collateral](core-concepts/token/computing-provider-collateral/README.md)
