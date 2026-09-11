@@ -298,7 +298,7 @@ The public [playground](https://inference.swanchain.io/playground) is a **web UI
 ### Rate limited (429)
 - Default rate limit is 200 requests/min for LLM models
 - Check `X-RateLimit-Remaining` header in responses
-- If you are on pay-as-you-go, the per-category rate limits in the [API reference](swan-inference-api.md#rate-limits) apply; the $6/month Pro plan includes 40M tokens/week on standard-tier models but has its own 50 requests/min limit, so it helps with cost, not burst rate
+- If you are on pay-as-you-go, the per-category rate limits in the [API reference](swan-inference-api.md#rate-limits) apply; the $6/month Pro plan includes $24 of inference/month at list prices on free- and standard-tier models but has its own 50 requests/min limit, so it helps with cost, not burst rate
 
 ### Streaming not working
 - Ensure your tool is configured for streaming (`stream: true`)

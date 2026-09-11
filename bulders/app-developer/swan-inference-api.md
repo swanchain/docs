@@ -12,7 +12,9 @@ Swan Inference provides an **OpenAI-compatible REST API** for accessing decentra
 
 ### 1. Get an API Key
 
-Sign up at [inference.swanchain.io](https://inference.swanchain.io) to get your API key. Keys use the `sk-swan-` prefix.
+Sign up at [inference.swanchain.io](https://inference.swanchain.io), **verify your email**, then create a key under **Keys** in the dashboard. Keys use the `sk-swan-` prefix.
+
+The verification step is required: an email-and-password account cannot sign in or issue keys until the link is clicked. Signing in with a wallet skips it, because a wallet-bound account authenticates by signature.
 
 ### 2. Make Your First Request
 
@@ -147,17 +149,30 @@ For full access to all models with higher limits, [sign up](https://inference.sw
 
 ### Token Plan (Pro subscription)
 
-For steady users of open-source models, the **Pro plan** is a flat **$6/month** (billed monthly by card) that includes a weekly token allowance on **standard-tier** models. Everything else is pay-as-you-go from your credit balance.
+For steady users of open-source models, the **Pro plan** is a flat **$6/month** (billed monthly by card) that includes **$24 of inference per month**, measured at list prices, on **free- and standard-tier** models. Everything else is pay-as-you-go from your credit balance.
+
+Because the allowance is denominated in value rather than tokens, it stretches further on cheaper models: $24 buys far more of a small open-source model than of a large one.
 
 | | Pay-as-you-go | Pro ($6/month) |
 |---|---|---|
-| Standard-tier models | Per token, from credit balance | Included: 40M tokens/week, 1,500 requests/day |
+| Free- and standard-tier models | Per token, from credit balance | Included, up to $24 of inference/month at list prices |
 | Premium-tier models (Claude, Gemini Pro, …) | Per token | Per token, from credit balance |
-| Image generation | Per image | 75 images/day included |
+| Requests | Per-category limits below | 1,500/day |
+| Image generation | Per image | 75/day included |
 | Rate limit | Per-category limits below | 50 requests/min, 8 concurrent |
 | Payment | Credit balance (card or crypto deposit) | Stripe, monthly |
 
-A model's tier is shown on its catalog page and in the `tier` field of `GET /api/v1/models`. Requests beyond the plan allowance fall back to pay-as-you-go if you have credit, otherwise they are rejected. See the [Token Plan FAQ](https://inference.swanchain.io/pricing) for current terms.
+A model's tier is shown on its catalog page and in the `tier` field of `GET /api/v1/models`. Requests beyond the plan allowance fall back to pay-as-you-go if you have credit, otherwise they are rejected.
+
+Plan terms are served live from `GET /api/v1/subscription/plans`, which is the authoritative source if this page and the product ever disagree. The [pricing page](https://inference.swanchain.io/pricing) shows the same figures.
+
+### Which to choose
+
+**Pay-as-you-go** suits prototyping and spiky traffic: you pay only for what you use, and no daily request ceiling applies.
+
+**Pro** suits steady, predictable usage on open-source models, where a fixed $6 is easier to reason about than a metered balance.
+
+**Enterprise** is custom-priced and exists for the requirements the self-serve tiers cannot express: higher or unmetered request limits, all model tiers, custom rate limits, priority routing, volume discounts, an SLA, and direct support. It is a conversation rather than a checkout — write to [contact@swanchain.io](mailto:contact@swanchain.io) with your expected monthly volume, latency requirements, and which models you need guaranteed availability on.
 
 ***
 
@@ -796,6 +811,26 @@ Public endpoints are available for monitoring network health:
 | `GET /api/v1/dashboard/summary` | Dashboard summary with request and capacity metrics |
 
 These endpoints do not require authentication.
+
+***
+
+## Getting Help
+
+| What you need | Where to go |
+|---|---|
+| Technical and account questions | [contact@swanchain.io](mailto:contact@swanchain.io) |
+| Enterprise pricing, SLAs, volume discounts | [contact@swanchain.io](mailto:contact@swanchain.io) |
+| Community and general discussion | [Swan Chain Discord](https://discord.com/invite/swanchain) |
+
+There is no separate partner or reseller program today. If you are building a
+platform on Swan rather than calling it from one application, write in with your
+expected monthly volume and latency requirements — terms for that are agreed
+directly rather than self-served.
+
+When reporting a problem, include the `X-Swan-Request-ID` from the response
+header. It is the correlation ID for the request, and
+`GET /v1/generation?id=<id>` returns the full routing receipt for it, including
+which provider served it and any failed attempts.
 
 ***
 
