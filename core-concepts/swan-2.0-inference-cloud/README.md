@@ -98,9 +98,11 @@ A model is callable only while at least one provider is online for it. The catal
 
 **Credits (pay-as-you-go).** Your balance is one USD-denominated pool. Fund it by card through Stripe (minimum $5; card processing fees are shown before you pay) or by crypto deposit to your personal deposit address (minimum $1): **USDC on Ethereum or Base**, or **SWAN on Swan Chain**. SWAN deposits are credited at the current SWAN/USD rate **plus a 20% bonus** — $100 of SWAN becomes $120 of credits. Requests deduct from the balance in real time; the ledger is under **Billing** in the dashboard.
 
-**Token Plan (Pro).** $6/month, billed monthly by card. It includes **40M tokens per week and 1,500 requests per day on standard-tier models** (and 75 images/day), at 50 requests/min and 8 concurrent. Premium-tier models, and anything beyond the allowance, are pay-as-you-go from your credit balance. See [inference.swanchain.io/pricing](https://inference.swanchain.io/pricing).
+**Token Plan (Pro).** $6/month, billed monthly by card. It includes **$24 of inference per month at list prices** on free- and standard-tier models, at 1,500 requests per day (and 75 images/day), 50 requests/min and 8 concurrent. The allowance is denominated in value rather than tokens, so it stretches further on cheaper models. Premium-tier models, and anything beyond the allowance, are pay-as-you-go from your credit balance. See [inference.swanchain.io/pricing](https://inference.swanchain.io/pricing).
 
 **Playground.** [inference.swanchain.io/playground](https://inference.swanchain.io/playground) runs a small model for anonymous visitors, rate-limited per IP, so you can try the service before creating an account.
+
+**Enterprise.** Custom-priced, for requirements the self-serve tiers cannot express: higher or unmetered request limits, all model tiers, custom rate limits, priority routing, volume discounts, an SLA, and direct support. Write to [contact@swanchain.io](mailto:contact@swanchain.io).
 
 ## Economics: the two-price model
 

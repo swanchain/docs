@@ -22,9 +22,11 @@ Ready for more? Sign up below to get an API key and start integrating.
 
 Create a free account at [inference.swanchain.io/signup](https://inference.swanchain.io/signup) — email and password only, no credit card required.
 
+**Verify your email before continuing.** Signing up sends a verification link, and the account cannot sign in or issue API keys until you click it. If you would rather skip this, sign in with a wallet instead: a wallet-bound account authenticates by signature, so it needs no email verification.
+
 <figure><img src="../../.gitbook/assets/inference-how-to/signup.png" alt="Swan Inference signup form"><figcaption>Sign up with email and password.</figcaption></figure>
 
-After signing up, navigate to **Keys** in the dashboard. Your API key (`sk-swan-*`) is generated automatically — copy it and keep it secret.
+Once verified, navigate to **Keys** in the dashboard. Your API key (`sk-swan-*`) is generated automatically — copy it and keep it secret.
 
 <figure><img src="../../.gitbook/assets/inference-how-to/dashboard-api-key.png" alt="Dashboard showing API key"><figcaption>Your API key appears under Keys in the dashboard.</figcaption></figure>
 
@@ -49,7 +51,7 @@ Usage is deducted from your balance per request. View balance, usage, and the tr
 
 ### Or subscribe to the Token Plan
 
-If you mostly use open-source models, the **Pro plan** ($6/month, billed monthly by card) includes **40M tokens per week and 1,500 requests per day on standard-tier models**, plus 75 images/day. Premium-tier models (Claude, Gemini Pro, …) stay pay-as-you-go from your credit balance, as does anything beyond the allowance and any request where you [choose the provider yourself](#5-optional-choose-the-provider). Subscribe from the [pricing page](https://inference.swanchain.io/pricing); a model's tier is shown on its catalog page.
+If you mostly use open-source models, the **Pro plan** ($6/month, billed monthly by card) includes **$24 of inference per month at list prices** on free- and standard-tier models, at 1,500 requests per day, plus 75 images/day. The allowance is denominated in value rather than tokens, so it goes further on cheaper models. Premium-tier models (Claude, Gemini Pro, …) stay pay-as-you-go from your credit balance, as does anything beyond the allowance and any request where you [choose the provider yourself](#5-optional-choose-the-provider). Subscribe from the [pricing page](https://inference.swanchain.io/pricing); a model's tier is shown on its catalog page.
 
 ## 3. Browse models
 
