@@ -10,7 +10,7 @@ Everything in this section describes **Swan 1.0** — the network before the Inf
 |---|---|---|
 | Two provider roles, **ECP** (ZK proofs) and **FCP** (Kubernetes tasks) | One **Computing Provider** that serves AI inference over a WebSocket connection — no public IP, domain or TLS needed | [Become a Provider](../core-concepts/swan-2.0-inference-cloud/become-a-provider.md) |
 | Providers paid mainly from **UBI** — a daily SWAN allocation sampled across registered hardware | Providers paid **per token** at a published payout price for every request they serve | [How the Marketplace Works](../core-concepts/market-provider/inference-marketplace.md) |
-| Consumers bought compute through **task auctions** (Orchestrator, Lagrange, Swan Console) | Consumers call an **OpenAI-compatible API** and pay per token from a credit balance or a Token Plan | [For Developers](../core-concepts/swan-2.0-inference-cloud/how-to-use.md) |
+| Consumers bought compute through **task auctions** (Orchestrator, Lagrange, Swan Console) | Consumers call an **OpenAI-compatible API** and pay per token from a prepaid credit balance | [For Developers](../core-concepts/swan-2.0-inference-cloud/how-to-use.md) |
 | Collateral sized by **Computing Units** (CU × 3,533 SWAN) | Collateral deposited per provider account, see the current rules | [Earnings and Collateral](../core-concepts/token/computing-provider-collateral/README.md) |
 
 ## Still running a legacy CP?

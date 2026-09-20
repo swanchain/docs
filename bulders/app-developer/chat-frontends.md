@@ -5,7 +5,7 @@ Swan Inference is an OpenAI-compatible API, so any frontend that can point at a 
 **What you need first**
 
 1. An API key from [inference.swanchain.io](https://inference.swanchain.io) → **API Keys** (`sk-swan-…`).
-2. Credit on the account, or an active Token Plan. See [pricing](https://inference.swanchain.io/pricing).
+2. Credit on the account. See [pricing](https://inference.swanchain.io/pricing).
 3. A model ID. Browse [the model catalog](https://inference.swanchain.io/models), or list what is servable right now:
 
 ```bash
@@ -70,7 +70,7 @@ Because Janitor AI sends requests from your browser, your key travels from your 
 | Symptom | Cause |
 |---|---|
 | `401` / "invalid API key" | Key is missing, mistyped, or revoked. Keys start `sk-swan-`. |
-| `402` / "insufficient balance" | No credit. Top up, or check whether your Token Plan covers this model — plans do not cover requests that name a specific provider. |
+| `402` / "insufficient balance" | No credit. Top up — every request is billed per token from the balance. |
 | `404` / "model does not exist" | Model ID wrong. It is case-sensitive and includes the org prefix (`TheDrummer/Cydonia-24B-v4.3`, not `Cydonia-24B-v4.3`). |
 | `429` | Rate limit. Wait for the window in the `Retry-After` header. |
 | `503` / "no providers" | No provider is currently serving that model. Check `?available=true` and pick another. |

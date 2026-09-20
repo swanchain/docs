@@ -7,7 +7,7 @@
 | Marketplace | [https://inference.swanchain.io](https://inference.swanchain.io) |
 | Playground (no account needed) | [https://inference.swanchain.io/playground](https://inference.swanchain.io/playground) |
 | Model catalog and prices | [https://inference.swanchain.io/models](https://inference.swanchain.io/models) |
-| Pricing and Token Plan | [https://inference.swanchain.io/pricing](https://inference.swanchain.io/pricing) |
+| Pricing and deposit bonuses | [https://inference.swanchain.io/pricing](https://inference.swanchain.io/pricing) |
 | Network status — providers, models, traffic | [https://inference.swanchain.io/network](https://inference.swanchain.io/network) |
 | Become a provider | [https://inference.swanchain.io/provider-signup](https://inference.swanchain.io/provider-signup) |
 | Provider software (open source) | [https://github.com/swanchain/computing-provider](https://github.com/swanchain/computing-provider) |

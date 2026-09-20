@@ -147,30 +147,29 @@ curl https://api.swanchain.io/v1/playground/models
 For full access to all models with higher limits, [sign up](https://inference.swanchain.io/signup) for a free account.
 {% endhint %}
 
-### Token Plan (Pro subscription)
+### Prepaid credit and deposit bonuses
 
-For steady users of open-source models, the **Pro plan** is a flat **$6/month** (billed monthly by card) that includes **$24 of inference per month**, measured at list prices, on **free- and standard-tier** models. Everything else is pay-as-you-go from your credit balance.
+There is no subscription. Every request is pay-as-you-go at the model's list price, deducted from your credit balance in real time, and the only thing that changes with commitment is how much credit a deposit buys.
 
-Because the allowance is denominated in value rather than tokens, it stretches further on cheaper models: $24 buys far more of a small open-source model than of a large one.
+Deposit enough in one go and extra credit is added immediately:
 
-| | Pay-as-you-go | Pro ($6/month) |
-|---|---|---|
-| Free- and standard-tier models | Per token, from credit balance | Included, up to $24 of inference/month at list prices |
-| Premium-tier models (Claude, Gemini Pro, …) | Per token | Per token, from credit balance |
-| Requests | Per-category limits below | 1,500/day |
-| Image generation | Per image | 75/day included |
-| Rate limit | Per-category limits below | 50 requests/min, 8 concurrent |
-| Payment | Credit balance (card or crypto deposit) | Stripe, monthly |
+| Single deposit | Bonus credit |
+|---|---|
+| $100 or more | +2% |
+| $500 or more | +4% |
+| $2,000 or more | +6% |
 
-A model's tier is shown on its catalog page and in the `tier` field of `GET /api/v1/models`. Requests beyond the plan allowance fall back to pay-as-you-go if you have credit, otherwise they are rejected.
+Depositing **SWAN on Swan Chain** earns a flat **10%** instead. The two schemes do not stack — a SWAN deposit takes the SWAN bonus.
 
-Plan terms are served live from `GET /api/v1/subscription/plans`, which is the authoritative source if this page and the product ever disagree. The [pricing page](https://inference.swanchain.io/pricing) shows the same figures.
+The schedule is served live from `GET /api/v1/subscription/deposit-bonus-tiers`, which is the authoritative source if this page and the product ever disagree. The [pricing page](https://inference.swanchain.io/pricing) shows the same figures.
+
+{% hint style="info" %}
+The monthly Token Plan (Pro) has been retired and is no longer sold. Subscriptions bought before then run to the end of the period already paid for and are not renewed.
+{% endhint %}
 
 ### Which to choose
 
-**Pay-as-you-go** suits prototyping and spiky traffic: you pay only for what you use, and no daily request ceiling applies.
-
-**Pro** suits steady, predictable usage on open-source models, where a fixed $6 is easier to reason about than a metered balance.
+**Pay-as-you-go** is the only self-serve option and it suits both prototyping and steady traffic: you pay only for what you use, with no daily request ceiling and no monthly commitment. If your usage is predictable, deposit in larger amounts and take the bonus.
 
 **Enterprise** is custom-priced and exists for the requirements the self-serve tiers cannot express: higher or unmetered request limits, all model tiers, custom rate limits, priority routing, volume discounts, an SLA, and direct support. It is a conversation rather than a checkout — write to [contact@swanchain.io](mailto:contact@swanchain.io) with your expected monthly volume, latency requirements, and which models you need guaranteed availability on.
 
@@ -599,7 +598,7 @@ The response repeats the receipt (route mode, requested vs serving provider, fal
 |--------|------|------|
 | `400` | `no_fallback_available` | `X-Swan-Allow-Fallbacks: false` and the pinned provider is not online for the model, or the request cannot be served by it |
 | `502` | `no_fallback_available` | Streaming with fallbacks disabled, and the pinned provider failed after the stream was accepted |
-| `402` | insufficient balance | A pinned request with an empty credit balance — see billing below |
+| `402` | insufficient balance | An empty credit balance — see billing below |
 
 ### Streaming and fallbacks
 
@@ -607,7 +606,7 @@ Fallback between providers happens only **before the first content token**. Once
 
 ### Billing
 
-**Explicit selection is always pay-as-you-go**, charged from your credit balance at the model's catalog price. This holds for Token Plan subscribers (the plan's weekly allowance is untouched and does not cover the request) and it holds when a fallback serves a pinned request. The receipt says so: `X-Swan-Billing-Type: pay_as_you_go`. A subscriber with an active plan but no credit therefore gets `402` on a pinned request — top up, or drop the header. Rationale and the consumer FAQ: [pricing page](https://inference.swanchain.io/pricing).
+Every request is charged from your credit balance at the model's catalog price, including a pinned one and including one where a fallback ends up serving. The receipt says so: `X-Swan-Billing-Type: pay_as_you_go`. An empty balance is a `402` — top up before retrying. Rationale and the consumer FAQ: [pricing page](https://inference.swanchain.io/pricing).
 
 ### Guaranteed vs maximum context
 
@@ -644,7 +643,7 @@ Requests are rate-limited per API key, by model category:
 | Embedding | 500 |
 | Other | 200 |
 
-Free (zero-priced) models are limited to **10 requests/min**. Pro plan requests are limited to **50 requests/min** and **8 concurrent**. Separately, the platform caps **system-wide** concurrency at 100 in-flight requests; when that is reached you receive `503` with a `Retry-After` header rather than a per-key `429`.
+Free (zero-priced) models are limited to **10 requests/min**. Separately, the platform caps **system-wide** concurrency at 100 in-flight requests; when that is reached you receive `503` with a `Retry-After` header rather than a per-key `429`.
 
 When rate-limited, the API returns HTTP `429 Too Many Requests` with a `Retry-After` header.
 
@@ -682,7 +681,7 @@ The API returns standard HTTP error codes with JSON error bodies:
 |-------------|---------|
 | `400` | Bad request — check your request body |
 | `401` | Unauthorized — invalid or missing API key |
-| `402` | Insufficient balance — top up credits (pay-as-you-go), or the request is outside your Token Plan |
+| `402` | Insufficient balance — top up credits |
 | `404` | Model not found or no providers available |
 | `429` | Rate limit exceeded — slow down |
 | `500` | Internal server error |

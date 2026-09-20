@@ -39,19 +39,19 @@ Inference requests are paid per token, deducted from your account balance in rea
 
 <figure><img src="../../.gitbook/assets/inference-how-to/deposit.png" alt="Deposit credits via Stripe or crypto"><figcaption>Add funds via Stripe card payment or crypto deposit.</figcaption></figure>
 
-### 20% bonus when depositing SWAN
+### Deposit bonuses
 
-Depositing SWAN tokens on Swan Mainnet credits your account with a **20% bonus on top of the USD value** — $100 of SWAN becomes $120 of credits. Your account balance is a single USD-denominated pool regardless of how it was funded, so there's nothing special to toggle at request time; you simply get more credits per dollar when you deposit SWAN.
+Larger deposits are credited with extra: **$100 or more → +2%**, **$500 or more → +4%**, **$2,000 or more → +6%**. Depositing **SWAN** on Swan Mainnet earns a flat **10%** instead — the two do not stack, a SWAN deposit takes the SWAN bonus.
 
-Combined with Swan's already-lower per-token pricing, the deposit bonus pushes effective rates roughly 50–66% below going direct to Anthropic or Google for comparable models. Flip the **Pay with: SWAN** toggle on the [pricing page](https://inference.swanchain.io/pricing) to see the effective rate across every model.
+Your account balance is a single USD-denominated pool regardless of how it was funded, so there is nothing to toggle at request time; you simply get more credits per dollar. The live schedule is `GET /api/v1/subscription/deposit-bonus-tiers`, and the [pricing page](https://inference.swanchain.io/pricing) shows the same figures — flip its **Pay with: SWAN** toggle to see the effective per-token rate across every model.
 
-<figure><img src="../../.gitbook/assets/inference-how-to/swan-toggle.png" alt="Pay-with-SWAN toggle on pricing page"><figcaption>Flip the Pay-with toggle to SWAN to preview the effective rate after the 20% deposit bonus.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/inference-how-to/swan-toggle.png" alt="Pay-with-SWAN toggle on pricing page"><figcaption>Flip the Pay-with toggle to SWAN to preview the effective rate after the SWAN deposit bonus.</figcaption></figure>
 
 Usage is deducted from your balance per request. View balance, usage, and the transaction ledger under **Billing** in the dashboard.
 
-### Or subscribe to the Token Plan
-
-If you mostly use open-source models, the **Pro plan** ($6/month, billed monthly by card) includes **$24 of inference per month at list prices** on free- and standard-tier models, at 1,500 requests per day, plus 75 images/day. The allowance is denominated in value rather than tokens, so it goes further on cheaper models. Premium-tier models (Claude, Gemini Pro, …) stay pay-as-you-go from your credit balance, as does anything beyond the allowance and any request where you [choose the provider yourself](#5-optional-choose-the-provider). Subscribe from the [pricing page](https://inference.swanchain.io/pricing); a model's tier is shown on its catalog page.
+{% hint style="info" %}
+There is no subscription plan. Every request is pay-as-you-go at the model's list price. The monthly Token Plan (Pro) has been retired and is no longer sold; subscriptions bought before then run to the end of the period already paid for and are not renewed.
+{% endhint %}
 
 ## 3. Browse models
 
@@ -119,7 +119,7 @@ Streaming, embeddings, image generation, and audio transcription all work identi
 
 Every model page lists the providers currently serving it, with each one's price, context window, quantization, 30-day uptime and typical time-to-first-token. To send a request to a specific one, add `X-Swan-Provider: <provider-id>`; add `X-Swan-Allow-Fallbacks: false` if you would rather the request fail than be served by someone else. The response tells you who served it and how it was billed (`X-Swan-Route-Mode`, `X-Swan-Fallback-Reason`, `X-Swan-Billing-Type`).
 
-Two things to know: choosing a provider is **always pay-as-you-go from your credit balance** — it is not covered by a Token Plan, so keep some credit on the account — and it stays pay-as-you-go even if your provider is offline and a fallback serves the request. Details in the [API reference](../../bulders/app-developer/swan-inference-api.md#choosing-a-provider).
+Pinning changes who serves the request, not how it is billed: it is charged from your credit balance at the model's catalog price, as every request is, including when your provider is offline and a fallback serves it. Details in the [API reference](../../bulders/app-developer/swan-inference-api.md#choosing-a-provider).
 
 ## Next steps
 

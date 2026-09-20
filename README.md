@@ -8,7 +8,7 @@ Swan Chain is a decentralized **AI inference cloud**. Developers call one OpenAI
 
 ## Start here
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Use AI models</strong></td><td>Playground, account, API key, credits, first request. Everything a developer needs in one page.</td><td><a href="core-concepts/swan-2.0-inference-cloud/how-to-use.md">how-to-use.md</a></td></tr><tr><td><strong>Earn with your GPU</strong></td><td>Run a model server, connect the open-source <code>computing-provider</code>, pass verification, deposit collateral, get paid per token.</td><td><a href="core-concepts/swan-2.0-inference-cloud/become-a-provider.md">become-a-provider.md</a></td></tr><tr><td><strong>API reference</strong></td><td>Every endpoint, header, limit and error code, with copy-paste examples in curl, Python, Node and Go.</td><td><a href="bulders/app-developer/swan-inference-api.md">swan-inference-api.md</a></td></tr><tr><td><strong>How the marketplace works</strong></td><td>Routing, the two-price model, settlement, verification and the Token Plan — for anyone who wants to know what happens behind a request.</td><td><a href="core-concepts/market-provider/inference-marketplace.md">inference-marketplace.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Use AI models</strong></td><td>Playground, account, API key, credits, first request. Everything a developer needs in one page.</td><td><a href="core-concepts/swan-2.0-inference-cloud/how-to-use.md">how-to-use.md</a></td></tr><tr><td><strong>Earn with your GPU</strong></td><td>Run a model server, connect the open-source <code>computing-provider</code>, pass verification, deposit collateral, get paid per token.</td><td><a href="core-concepts/swan-2.0-inference-cloud/become-a-provider.md">become-a-provider.md</a></td></tr><tr><td><strong>API reference</strong></td><td>Every endpoint, header, limit and error code, with copy-paste examples in curl, Python, Node and Go.</td><td><a href="bulders/app-developer/swan-inference-api.md">swan-inference-api.md</a></td></tr><tr><td><strong>How the marketplace works</strong></td><td>Routing, the two-price model, settlement, verification and billing — for anyone who wants to know what happens behind a request.</td><td><a href="core-concepts/market-provider/inference-marketplace.md">inference-marketplace.md</a></td></tr></tbody></table>
 
 ## Live network
 
@@ -17,7 +17,7 @@ Swan Chain is a decentralized **AI inference cloud**. Developers call one OpenAI
 | Marketplace | [inference.swanchain.io](https://inference.swanchain.io) |
 | Model catalog and prices | [inference.swanchain.io/models](https://inference.swanchain.io/models) |
 | Providers, models and traffic in real time | [inference.swanchain.io/network](https://inference.swanchain.io/network) |
-| Pricing and Token Plan | [inference.swanchain.io/pricing](https://inference.swanchain.io/pricing) |
+| Pricing and deposit bonuses | [inference.swanchain.io/pricing](https://inference.swanchain.io/pricing) |
 | Provider software (open source) | [github.com/swanchain/computing-provider](https://github.com/swanchain/computing-provider) |
 | Governance proposals (SIPs) | [github.com/swanchain/governance](https://github.com/swanchain/governance) |
 
