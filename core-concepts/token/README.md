@@ -10,7 +10,7 @@ With the [Inference Cloud](../swan-2.0-inference-cloud/README.md), SWAN's utilit
 
 | Utility | Description |
 |---------|-------------|
-| **Pay with SWAN** | Consumers who deposit SWAN on Swan Chain (254) receive a 20% credit bonus, making it the cheapest way to buy inference |
+| **Pay with SWAN** | Consumers who deposit SWAN on Swan Chain (254) receive a 10% credit bonus, making it the cheapest way to buy inference |
 | **Provider collateral** | 35,000 SWAN on Swan Chain is one of the accepted collateral forms for GPU providers (USDC on Ethereum or Base, and card, are the others) |
 | **Governance** | SIPs on pricing policy, incentives and protocol parameters — see the [governance repository](https://github.com/swanchain/governance) |
 

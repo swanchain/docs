@@ -320,7 +320,7 @@ computing-provider inference set-beneficiary 0xYourWalletAddress
 ### What you earn, and how you get paid
 
 * Each request credits you `tokens × payout price` for that model. Payout prices are shown in the dashboard's model market and in the public catalog; at the time of writing they are 90% of the consumer price for almost every model. See [Computing Provider Income](../token/swan-provider-income.md).
-* Token Plan traffic is paid at the same rate but pro-rated against the plan pool at month end.
+* Traffic covered by the retired Token Plan is paid at the same rate but pro-rated against that month's plan pool, until the last subscription expires.
 * Request a payout to your beneficiary wallet from **Payments**: minimum $10, flat $1 fee, one request per chain per hour. Set the wallet with `computing-provider inference set-beneficiary 0x…`, or convert earnings into inference credit instead.
 
 ### Provider status values

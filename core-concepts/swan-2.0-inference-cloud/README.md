@@ -8,7 +8,7 @@ description: >-
 
 ## Overview
 
-Swan Inference ([inference.swanchain.io](https://inference.swanchain.io)) is a marketplace for AI inference. Developers call a single OpenAI-compatible API and pay per token from a prepaid credit balance or a monthly Token Plan. Independent GPU providers run the open-source [`computing-provider`](https://github.com/swanchain/computing-provider) agent, connect outbound over WebSocket, and are paid a published per-token payout price for every request they serve. The platform verifies that providers serve what they claim, routes requests to healthy providers, and settles usage.
+Swan Inference ([inference.swanchain.io](https://inference.swanchain.io)) is a marketplace for AI inference. Developers call a single OpenAI-compatible API and pay per token from a prepaid credit balance. Independent GPU providers run the open-source [`computing-provider`](https://github.com/swanchain/computing-provider) agent, connect outbound over WebSocket, and are paid a published per-token payout price for every request they serve. The platform verifies that providers serve what they claim, routes requests to healthy providers, and settles usage.
 
 Two audiences, two guides:
 
@@ -23,7 +23,7 @@ This page explains the design that both sit on.
 |--------|----------|---------------------------|
 | **What providers sell** | Registered hardware, sampled by UBI tasks | AI inference actually served — LLM, multimodal, image, audio, embedding |
 | **How providers are paid** | Daily UBI allocation in SWAN | Per token, at a payout price published for every model |
-| **How consumers pay** | Task auctions in SWAN | USD credits (card or crypto: USDC, USDT, SWAN) or a monthly Token Plan; one OpenAI-compatible API |
+| **How consumers pay** | Task auctions in SWAN | Prepaid USD credits (card or crypto: USDC, USDT, SWAN), per token; one OpenAI-compatible API |
 | **Provider roles** | Separate ECP and FCP | One Computing Provider |
 | **Network requirements** | Public IP, domain, TLS | None — the agent connects outbound over WebSocket |
 | **Quality control** | Random sampling tasks | Registration and periodic benchmarks, fingerprint/logprob verification, context-window integrity checks, trust-weighted routing, collateral slashing with appeal |
@@ -88,7 +88,7 @@ The catalog is curated by the platform and is the source of truth for model IDs,
 * **Open-source models on community GPUs** — served by independent providers running SGLang, vLLM or Ollama. Each model is advertised at a *canonical serving configuration* (precision and engine), and providers are verified against it.
 * **Frontier gateway models** — `anthropic/*`, `openai/*`, `gemini/*`, `moonshotai/*` and similar, reachable through the same API and billing.
 
-Every model carries a **tier** — `standard` or `premium` — which decides whether the Token Plan covers it, and publishes **two prices** per million tokens: what consumers pay and what the serving provider is paid. Browse it at [inference.swanchain.io/models](https://inference.swanchain.io/models) or fetch `GET /api/v1/models`. Because prices and availability change, this documentation does not reproduce the price list.
+Every model carries a **tier** — `standard` or `premium` — a catalog grouping, and publishes **two prices** per million tokens: what consumers pay and what the serving provider is paid. Browse it at [inference.swanchain.io/models](https://inference.swanchain.io/models) or fetch `GET /api/v1/models`. Because prices and availability change, this documentation does not reproduce the price list.
 
 {% hint style="info" %}
 A model is callable only while at least one provider is online for it. The catalog shows the live provider count per model, and the [network page](https://inference.swanchain.io/network) shows who is serving what right now. Providers looking for demand can use `computing-provider inference recommend-models`.
@@ -96,9 +96,13 @@ A model is callable only while at least one provider is online for it. The catal
 
 ## Paying for inference
 
-**Credits (pay-as-you-go).** Your balance is one USD-denominated pool. Fund it by card through Stripe (minimum $5; card processing fees are shown before you pay) or by crypto deposit to your personal deposit address (minimum $1): **USDC on Ethereum or Base**, or **SWAN on Swan Chain**. SWAN deposits are credited at the current SWAN/USD rate **plus a 20% bonus** — $100 of SWAN becomes $120 of credits. Requests deduct from the balance in real time; the ledger is under **Billing** in the dashboard.
+**Credits (pay-as-you-go).** There is no subscription: every request is metered per token at the model's list price and deducted from one USD-denominated balance in real time. Fund it by card through Stripe (minimum $5; card processing fees are shown before you pay) or by crypto deposit to your personal deposit address (minimum $1): **USDC on Ethereum or Base**, or **SWAN on Swan Chain**. The ledger is under **Billing** in the dashboard.
 
-**Token Plan (Pro).** $6/month, billed monthly by card. It includes **$24 of inference per month at list prices** on free- and standard-tier models, at 1,500 requests per day (and 75 images/day), 50 requests/min and 8 concurrent. The allowance is denominated in value rather than tokens, so it stretches further on cheaper models. Premium-tier models, and anything beyond the allowance, are pay-as-you-go from your credit balance. See [inference.swanchain.io/pricing](https://inference.swanchain.io/pricing).
+**Deposit bonuses.** A single deposit of **$100 or more** is credited with **+2%**, **$500 or more** with **+4%**, and **$2,000 or more** with **+6%**. Depositing **SWAN on Swan Chain** earns a flat **10%** instead; the two do not stack. The live schedule is `GET /api/v1/subscription/deposit-bonus-tiers`, and the [pricing page](https://inference.swanchain.io/pricing) shows the same figures.
+
+{% hint style="info" %}
+The monthly Token Plan (Pro) has been retired and is no longer sold. Subscriptions bought before then run to the end of the period already paid for and are not renewed.
+{% endhint %}
 
 **Playground.** [inference.swanchain.io/playground](https://inference.swanchain.io/playground) runs a small model for anonymous visitors, rate-limited per IP, so you can try the service before creating an account.
 
@@ -113,7 +117,7 @@ There is no percentage commission. For every model the platform publishes:
 
 The platform's margin is the spread between the two, and a payout price can never exceed the consumer price. Providers do not quote their own prices; they choose which catalog models to serve at the published payout. At the time of writing the payout is **90% of the consumer price** for almost every model in the catalog — you can check any model yourself, since both prices are returned by `GET /api/v1/models`.
 
-For Token Plan traffic, providers are credited at the same payout price; the total paid out for plan requests each month is capped at the plan revenue pool and pro-rated if usage exceeds it. Details in [How the Marketplace Works](../market-provider/inference-marketplace.md).
+Every request is settled the same way, at the model's payout price. Details in [How the Marketplace Works](../market-provider/inference-marketplace.md).
 
 ## Quality assurance
 
@@ -186,7 +190,7 @@ The current table is always available from `GET /api/v1/provider/collateral/cont
 ### Earnings and payouts
 
 * Earnings accrue per request at the model's payout price and are visible in the provider dashboard (daily/weekly/monthly, per model, CSV export).
-* Settlement runs in daily batches; earnings from Token Plan traffic are held until the month-end pro-rating.
+* Settlement runs in daily batches.
 * Payouts are requested from the dashboard to your beneficiary wallet: **minimum $10**, a **flat $1 fee**, one request per chain per hour, one pending payout at a time.
 * Providers can also convert earnings directly into inference credit without an on-chain round-trip.
 
@@ -207,7 +211,7 @@ Under Swan 1.0 most daily UBI went to registered hardware that served nothing. [
 
 | Utility | Description |
 |---------|-------------|
-| **Pay with SWAN** | Deposit SWAN on Swan Chain for a 20% credit bonus — the lowest effective price on every model |
+| **Pay with SWAN** | Deposit SWAN on Swan Chain for a 10% credit bonus — the lowest effective price on every model |
 | **Provider collateral** | 35,000 SWAN on Swan Chain is one of the accepted collateral forms |
 | **Governance** | Vote on protocol parameters, pricing policy and incentive changes through SIPs |
 
@@ -220,7 +224,7 @@ By default the router picks the provider for you. You can also choose one yourse
 
 Every response then carries a **receipt**: `X-Swan-Route-Mode` (`auto` or `explicit`), `X-Swan-Requested-Provider`, `X-Swan-Fallback-Reason` (`requested_provider_unavailable` or `requested_provider_failed`), `X-Swan-Billing-Type`, and the context window you were actually given (`X-Swan-Context-Source`, `X-Swan-Context-Length`).
 
-**Explicit selection is always pay-as-you-go**, billed from your credit balance at the catalog price — even for Token Plan subscribers, and even when a fallback ends up serving the request. A plan prices the pooled, platform-routed route; picking the offering yourself is outside it. Full details: [Choosing a provider](../../bulders/app-developer/swan-inference-api.md#choosing-a-provider) in the API reference.
+Pinned or routed, every request is billed from your credit balance at the catalog price — including when a fallback ends up serving it. Full details: [Choosing a provider](../../bulders/app-developer/swan-inference-api.md#choosing-a-provider) in the API reference.
 
 Each model also states what context it can **guarantee** across the providers currently online (`guaranteed_context_length`, with a basis of `reported`, `partial`, `unknown` or `no_online_providers`) next to the **maximum** any provider reports — so a long-context request can be sized against a promise rather than a catalog number.
 

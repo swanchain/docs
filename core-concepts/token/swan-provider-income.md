@@ -14,9 +14,9 @@ $$
 
 The platform margin is the spread between the consumer price and the payout price; there is no percentage commission. Payout prices are visible in the provider dashboard and in the public catalog (`payout_input_price`, `payout_output_price` in `GET /api/v1/models`). At the time of writing the payout is 90% of the consumer price for almost every model. Providers do not set prices; they choose which models to serve. `computing-provider inference recommend-models` ranks models by current demand against your hardware.
 
-### Token Plan traffic
+### Retired Token Plan traffic
 
-Requests covered by a consumer's Token Plan credit the provider at the same payout price, but the month's total plan payouts are capped at the plan revenue pool (subscribers × $6). If plan usage costs more than the pool, payouts are pro-rated across providers by their share of plan tokens served. These earnings are held as *settlement pending* until month end; pay-as-you-go earnings are not.
+The monthly Token Plan is no longer sold. Until the last subscription expires, requests still covered by one credit the provider at the same payout price but are capped at that month's plan revenue pool and pro-rated by share of plan tokens served if usage exceeds it; those earnings are held as *settlement pending* until month end. Every other request pays the full payout price and settles in the daily batches.
 
 ### What moves your income
 
