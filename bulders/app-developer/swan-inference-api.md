@@ -6,7 +6,7 @@ description: Call frontier and open-source AI models through one OpenAI-compatib
 
 Swan Inference provides an **OpenAI-compatible REST API** for accessing decentralized AI models. If you've used the OpenAI API or any OpenAI-compatible client, you already know how to use Swan Inference — just change the base URL and API key.
 
-**Base URL**: `https://inference.swanchain.io`
+**Base URL**: `https://api.swanchain.io` — the OpenAI-compatible endpoints live under `/v1`, so SDKs take `https://api.swanchain.io/v1` as their base URL.
 
 ## Quick Start
 
